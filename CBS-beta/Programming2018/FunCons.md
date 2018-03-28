@@ -10,7 +10,8 @@ Compiler Coding Dojo
 --------------------
 
 The FunCons session at CoCoDo 2018 gives participants the opportunity to try
-compiling programs to so-called 'funcons' (fundamental programming constructs).
+compiling a programming language to so-called 'funcons' (fundamental programming
+constructs).
 
 A collection of funcons is essentially a very high level intermediate language.
 The operational definitions of funcons are reusable components of language
