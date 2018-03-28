@@ -1,9 +1,17 @@
 /*
-  Testing whether CSS works in web pages generted from CBS files.
-  Links in the menu may not yet work.
+  Testing that the CSS for CBS web pages works as intended on GitHub Pages.
+  
+  Note: Links in the menu may not yet work.
 */
 
 # Computations
 
+/*
+  A comment.
+*/
+
 # Values
 
+/*
+  Another comment.
+*/
