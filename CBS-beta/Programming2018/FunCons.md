@@ -23,10 +23,10 @@ the language.
 At this dojo, participants will use the beta-release of the current collection
 of funcons, and specify compilation of parts of SL to funcons using the CBS 
 meta-language for component-based semantics developed by the 
-[PLanCompS](http://www.plancomps.org) project.
+[PLanCompS](http://www.plancomps.org)
+project.
 [SL](https://github.com/graalvm/simplelanguage) 
-is a simple dynamic demonstration language built using Truffle for the GraalVM 
-at 
+is a simple dynamic demonstration language built using Truffle for the GraalVM at 
 [Oracle Labs](https://labs.oracle.com). 
 Browsing, editing, and running the specifications are supported
 by editors generated using the
