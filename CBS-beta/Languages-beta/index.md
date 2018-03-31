@@ -10,4 +10,6 @@ a language is specified by translating its constructs to funcon terms,
 reusing (by reference) the definitions of the required funcons.
 
 The beta-release of an initial collection of funcons will be provided at 
-[Funcons-beta](../Funcons-beta/index.md).
+[Funcons-beta].
+
+[Funcons-beta]: ../Funcons-beta/index.md

@@ -6,8 +6,11 @@ so-called 'funcons' (fundamental programming constructs).
 
 Funcons are reusable components of programming language specifications:
 a language is specified by translating its constructs to funcon terms,
-reusing (by reference) the definitions of the required funcons.
+reusing (by reference) the definitions of the required [funcons].
 
 Some initial examples of component-based language specifications will be
-provided at [Languages-beta](../Languages-beta/index.md).
+provided at [Languages-beta].
 
+[funcons]: Funcons-Index/index.html
+
+[Languages-beta]: ../Languages-beta/index.md
