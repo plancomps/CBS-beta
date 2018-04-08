@@ -16,7 +16,7 @@ Funcons-SL-Interpreter (Haskell cabal package)
 
 CBS-beta (folder)
 
-	CBS-Editor
+	CBS-Editor (Spoofax language editor)
 	
 	Funcons-beta
 		Computations
@@ -29,8 +29,6 @@ CBS-beta (folder)
 		cbs.css
 
 	Languages-beta
-
-		IMP-Language
 
 		SL-Language
 
@@ -46,5 +44,5 @@ CBS-beta (folder)
 					SL-Funcons-Index
 					SL-Start
 
-			SL-Editor (project)
+			SL-Editor (Spoofax language editor)
 ```
