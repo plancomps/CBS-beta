@@ -12,6 +12,8 @@ Funcons-Workspace (folder)
 
 Funcons_beta_DynSem.interpreter (Java application)
 
+Funcons-SL-Interpreter (Haskell cabal package)
+
 CBS-beta (folder)
 
 	CBS-Editor

@@ -32,3 +32,5 @@ Browsing, editing, and running the specifications are supported
 by editors generated using the
 [Spoofax](http://spoofax.readthedocs.io)
 language workbench in Eclipse.
+
+[Agenda](Dojo.md)

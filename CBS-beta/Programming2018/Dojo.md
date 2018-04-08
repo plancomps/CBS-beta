@@ -1,6 +1,8 @@
 FunCons Dojo Agenda
 ===================
 
+[Abstract](FunCons.md)
+
 ## Introduction
 
 * FunCons: fundamental programming constructs
@@ -12,9 +14,10 @@ FunCons Dojo Agenda
 
 ## Hand-out
 
-* USB memory sticks (pass them around, then return to PDM)
+* [USB memory sticks]
+  (pass them around, then return to PDM)
 	- copy `Funcons.zip` from memory stick to disk
-	- unzip `Funcons.zip` to create the [`Funcons` folder]
+	- unzip `Funcons.zip` to create the `Funcons` folder
 
 * work in pairs ?
 
@@ -146,4 +149,4 @@ green `Run` button in the bar of icons.
 
 
 
-[`Funcons` folder]: USB.md
+[USB memory sticks]: USB.md
