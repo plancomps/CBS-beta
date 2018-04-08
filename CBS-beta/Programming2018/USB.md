@@ -32,17 +32,30 @@ CBS-beta (folder)
 
 		SL-Language
 
-			SL-cbs (project)
+			SL-Base-cbs (project)
 				Funcons-beta (link)
-				SL
-					SL-1-Lexemes
-					SL-2-Expressions
-					SL-3-Statements
-					SL-4-Definitions
-					SL-Disambiguation
-					SL-Funcons
-					SL-Funcons-Index
-					SL-Start
+				SL-Base
+					SL-Base-Lexemes
+					SL-Base-Expressions
+					SL-Base-Statements
+					SL-Base-Disambiguation
+					SL-Base-Funcons
+					SL-Base-Funcons-Index
+					SL-Base-Start
 
-			SL-Editor (Spoofax language editor)
+			SL-Base-Editor (Spoofax language editor)
+
+			SL-Fun-cbs (project)
+				Funcons-beta (link)
+				SL-Fun
+					SL-Fun-Lexemes
+					SL-Fun-Expressions
+					SL-Fun-Statements
+					SL-Fun-Definitions
+					SL-Fun-Disambiguation
+					SL-Fun-Funcons
+					SL-Fun-Funcons-Index
+					SL-Fun-Start
+
+			SL-Fun-Editor (Spoofax language editor)
 ```
