@@ -22,20 +22,32 @@ FIX-ME
 
 - Replace `svn:external-links` to `Funcons-beta` by symbolic links
 
-#### CL
-
-- Check
-
 #### MiniJava
 
 - Add tests for Classes, Objects
 
 - Add further example programs
 
+- Represent methods by functions?
+
 - Check whether can use X+ instead of X* in translation equations
 
 #### SL
 
-- Update CBS to avoid use of natives
+- ~~Update CBS to avoid use of natives~~
 
-- Generate SL-Interpreter
+- ~~Generate SL-Interpreter~~
+
+- Remove superfluous tests
+
+#### CL
+
+- Check
+
+#### IMP
+
+- Check
+
+#### SIMPLE
+
+- Check
