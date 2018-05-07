@@ -14,7 +14,7 @@ FIX-ME
 
 ### Funcons-beta
 
-- Meta-variables: use `DT<:defined-values` and `GT<:ground-values`.
+- ~~Meta-variables: use `DT<:defined-values` and `GT<:ground-values`.~~
 
 ### Languages-beta
 
@@ -30,7 +30,7 @@ FIX-ME
 
 - Represent methods by functions?
 
-- ~~Check whether can use X+ instead of X* in translation equations~~
+- ~~Check OK to use X+ instead of X* in translation equations~~
 
 #### SL
 
@@ -38,7 +38,7 @@ FIX-ME
 
 - ~~Generate SL-Interpreter~~
 
-- Check whether can use X+ instead of X* in translation equations
+- Check OK to use X+ instead of X* in translation equations
 
 - Remove superfluous tests
 
