@@ -16,9 +16,11 @@ FIX-ME
 
 - ~~Meta-variables: use `DT<:defined-values` and `GT<:ground-values`.~~
 
+- Add remaining unit tests for `Values`
+
 ### Languages-beta
 
-- Replace `svn:external-links` to `Funcons-beta` by symbolic links
+- Replace `Funcons-beta` by symbolic links
 
 #### MiniJava
 
