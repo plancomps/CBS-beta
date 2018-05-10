@@ -20,7 +20,7 @@ FIX-ME
 
 ### Languages-beta
 
-- Replace `Funcons-beta` by symbolic links
+- Replace `Funcons-beta` by symbolic links on GitHub.
 
 #### MiniJava
 
@@ -30,7 +30,7 @@ FIX-ME
 
 - Add full priorities
 
-- Represent methods by functions?
+- ~~Represent methods by functions~~
 
 - ~~Check OK to use X+ instead of X* in translation equations~~
 
