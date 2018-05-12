@@ -6,52 +6,52 @@ FIX-ME
 
 ### HTML
 
-- ~~Add links in Menu to CBS-beta and Languages-beta~~
+- [X] Add links in Menu to CBS-beta and Languages-beta
 
-- ~~Correct capitalisation of `PLanCompS`~~
+- [X] Correct capitalisation of `PLanCompS`
 
-- Add page generation date
+- [ ] Add page generation date
 
 ### Funcons-beta
 
-- ~~Meta-variables: use `DT<:defined-values` and `GT<:ground-values`.~~
+- [X] Meta-variables: use `DT<:defined-values` and `GT<:ground-values`.
 
-- Add remaining unit tests for `Values`
+- [ ] Add remaining unit tests for `Values`
 
 ### Languages-beta
 
-- Replace `Funcons-beta` by symbolic links on GitHub.
+- [ ] Replace `Funcons-beta` by symbolic links on GitHub.
 
 #### MiniJava
 
-- ~~Add tests for Classes, Objects~~
+- [X] Add tests for Classes, Objects
 
-- Add further example programs
+- [ ] Add further example programs
 
-- Add full priorities
+- [ ] Add full priorities
 
-- ~~Represent methods by functions~~
+- [X] Represent methods by functions
 
-- ~~Check OK to use X+ instead of X* in translation equations~~
+- [X] Check OK to use X+ instead of X* in translation equations
 
 #### SL
 
-- ~~Update CBS to avoid use of natives~~
+- [X] Update CBS to avoid use of natives
 
-- ~~Generate SL-Interpreter~~
+- [X] Generate SL-Interpreter
 
-- Check OK to use X+ instead of X* in translation equations
+- [ ] Check OK to use X+ instead of X* in translation equations
 
-- Remove superfluous tests
+- [X] Remove superfluous tests
 
 #### CL
 
-- Check
+- [ ] Check
 
 #### IMP
 
-- Check
+- [X] Check
 
 #### SIMPLE
 
-- Check
+- [ ] Check
