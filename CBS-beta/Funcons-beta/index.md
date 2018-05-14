@@ -1,5 +1,8 @@
-Funcons-beta
+Funcons-beta ![PREVIEW](preview.png)
 ============
+
+**(The CBS-beta website is currently being constructed. This preview of it**
+**will be updated when complete and ready for review.)**
 
 This page will provide access to the beta-release of an initial collection of
 so-called 'funcons' (fundamental programming constructs).
@@ -13,4 +16,4 @@ provided at [Languages-beta].
 
 [funcons]: Funcons-Index/index.html
 
-[Languages-beta]: ../Languages-beta/index.md
+[Languages-beta]: ../Languages-beta/index.html

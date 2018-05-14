@@ -4,8 +4,9 @@ CBS-beta ![PREVIEW](Funcons-beta/preview.png)
 **(The CBS-beta website is currently being constructed. This preview of it**
 **will be updated when complete and ready for review.)**
 
-CBS supports _component-based specification of programming languages_ by
-translation to so-called _'funcons'_ ([fundamental programming constructs]).
+_CBS_ is a framework and meta-language for _component-based specification of
+programming languages_ by translation to so-called _'funcons'_ 
+([fundamental programming constructs]).
 
 Defining a translation of programming language constructs to funcons in CBS can
 be significantly easier than defining the behaviour of the language constructs

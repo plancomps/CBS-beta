@@ -1,4 +1,4 @@
-Languages-beta
+Languages-beta ![PREVIEW](Funcons-beta/preview.png)
 ==============
 
 This page will provide access to the beta-release of examples of component-based
@@ -12,4 +12,4 @@ reusing (by reference) the definitions of the required funcons.
 The beta-release of an initial collection of funcons will be provided at 
 [Funcons-beta].
 
-[Funcons-beta]: ../Funcons-beta/index.md
+[Funcons-beta]: ../Funcons-beta/index.html

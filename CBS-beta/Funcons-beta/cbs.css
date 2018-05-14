@@ -91,15 +91,26 @@ summary pre {
 
 header {
     background-color: #F1F1F1;
-    text-align: left;
     font-size: 1.2em;
     padding: 1em;
+    text-align: center;
 }
 
-header span {
-    padding: 0em 3em 0em 0em;
-    display: inline-block;
+header div {
+    padding: 0em 1em 0em 0em;
 }
+
+header div.topic {
+    margin-left: 0;
+    margin-right: auto;
+    text-align: left;
+}
+
+header div.title {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 /* Footer */
 
@@ -114,7 +125,7 @@ footer span {
     display: inline-block;
 }
 
-footer span a {
+footer span a, header div a {
     background-color: #F1F1F1;
     color: #3e8e41;
 }
@@ -122,6 +133,10 @@ footer span a {
 /* Menus */
 
 @media screen {
+
+    pre {
+        margin-left: 1em;
+    }
 
 	/* Style The Dropdown Button */
 	.dropbtn {
@@ -217,5 +232,14 @@ footer span a {
       text-align: right;
       font-weight: bold;
     }
+
+    details > summary {
+      list-style: none;
+    }
+    /* Needed for Chrome? */
+    details > summary::-webkit-details-marker {
+      display: none;
+}
+
 
 }
