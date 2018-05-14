@@ -40,7 +40,7 @@ FIX-ME
 
 - [X] Generate SL-Interpreter
 
-- [ ] Check OK to use X+ instead of X* in translation equations
+- [X] Check OK to use X+ instead of X* in translation equations
 
 - [X] Remove superfluous tests
 
@@ -54,4 +54,4 @@ FIX-ME
 
 #### SIMPLE
 
-- [ ] Check
+- [X] Check

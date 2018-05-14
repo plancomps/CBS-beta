@@ -36,14 +36,14 @@ collaboration, and welcomes new [contributors].
 
 If you would like to contribute to PLanCompS (e.g., by using CBS to define a new
 or existing language, or by suggesting new or improved funcons) please email 
-plancomps at gmail.com.
+plancomps@gmail.com.
 
-[Fundamental programming constructs]: Funcons-beta/index.html
+[Fundamental programming constructs]: Funcons-beta/index.md
 
-[Languages-beta]: Languages-beta/index.html
+[Languages-beta]: Languages-beta/index.md
 
 [CBS library]: Funcons-beta/Funcons-Index/index.html
 
 [PLanCompS]: http://plancomps.org
 
-[Contributors]: Contributors.html
+[Contributors]: Contributors.md

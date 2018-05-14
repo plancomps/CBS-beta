@@ -16,4 +16,4 @@ provided at [Languages-beta].
 
 [funcons]: Funcons-Index/index.html
 
-[Languages-beta]: ../Languages-beta/index.html
+[Languages-beta]: ../Languages-beta/index.md
