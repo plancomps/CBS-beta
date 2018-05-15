@@ -1,0 +1,46 @@
+Language "IMP" 
+
+#1 Arithmetic expressions
+
+Syntax 
+  AExp : aexp ::= num
+               |  id 
+               |  aexp '+' aexp 
+               |  aexp '/' aexp
+               |  '(' aexp ')'
+
+Semantics		
+  eval-arith[[ _:aexp ]] : =>integers
+Rule
+  eval-arith[[ N ]] = int-val[[ N ]]
+Rule
+  eval-arith[[ I ]] = assigned(bound(id[[ I ]]))
+Rule
+  eval-arith[[ AExp1 '+' AExp2 ]] = 
+	integer-add(eval-arith[[ AExp1 ]], eval-arith[[ AExp2 ]])
+Rule
+  eval-arith[[ AExp1 '/' AExp2 ]] = 
+	defined integer-divide(eval-arith[[ AExp1 ]], eval-arith[[ AExp2 ]])
+Rule
+  eval-arith[[ '(' AExp ')' ]] = eval-arith[[ AExp ]]
+
+Syntax
+  N : num ::= '-'?_decimal
+Lexis
+  D : decimal ::= ('0'-'9')+
+Semantics
+  int-val[[ _:num ]] : integers
+Rule
+  int-val[[ D ]] = decimal-natural(\"D\")
+Rule
+  int-val[[ '-' D ]] = integer-negate(int-val[[ D ]])
+
+Lexis
+  I : id ::= ('A'-'Z'|'a'-'z')+
+Semantics
+  id[[ _:id ]] : ids
+Rule
+  id[[ I ]] = \"I\"
+
+Lexis
+  keyword ::= 'else' | 'false' | 'if' | 'true' | 'while'

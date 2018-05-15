@@ -1,0 +1,37 @@
+Language "IMP"
+
+#3 Statements and blocks
+
+Syntax
+  Stmt : stmt ::= block
+               |  id '=' aexp ';'
+               |  'if' '(' bexp ')' block ('else' block)?
+               |  'while' '(' bexp ')' block
+               |  stmt stmt
+Syntax
+  Block : block ::= '{' stmt? '}'
+
+Rule
+  [[ 'if' '(' BExp ')' Block ]] : stmt = 
+  [[ 'if' '(' BExp ')' Block 'else' '{' '}' ]]
+
+Semantics
+  execute[[ _:stmt ]] : =>nothing
+Rule
+  execute[[ I '=' AExp ';' ]] = 
+	assign(bound(id[[ I ]]), eval-arith[[ AExp ]])
+Rule
+  execute[[ 'if' '(' BExp ')' Block1 'else' Block2 ]] =
+	if-true-else(eval-bool[[ BExp ]], 
+	             execute[[ Block1 ]],
+	             execute[[ Block2 ]])
+Rule
+  execute[[ 'while' '(' BExp ')' Block ]] =
+	while-true(eval-bool[[ BExp ]], execute[[ Block ]])
+Rule
+  execute[[ Stmt1 Stmt2 ]] = 
+	sequential(execute[[ Stmt1 ]], execute[[ Stmt2 ]])
+Rule
+  execute[[ '{' '}' ]] = none
+Rule
+  execute[[ '{' Stmt '}' ]] = execute[[ Stmt ]]

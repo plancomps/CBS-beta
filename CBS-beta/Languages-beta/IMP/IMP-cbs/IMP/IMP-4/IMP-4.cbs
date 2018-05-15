@@ -1,0 +1,25 @@
+Language "IMP"
+
+#4 Programs and variable declarations
+
+Syntax
+  Pgm : pgm ::= 'int' idlist ';' stmt
+
+Semantics
+  run[[ _:pgm ]] : =>nothing
+Rule
+  run[[ 'int' IL ';' Stmt ]] = 
+	scope( collateral(declare-int-vars[[ IL ]]), 
+	       execute[[ Stmt ]] )
+
+Syntax
+  IL : idlist ::= id (',' idlist)?
+
+Semantics
+  declare-int-vars[[ _: idlist ]] : (=>environments)+
+Rule
+  declare-int-vars[[ I ]] =
+    bind(id[[ I ]], allocate-initialised-variable(integers, 0))
+Rule
+  declare-int-vars[[ I ',' IL ]] = 
+  	declare-int-vars[[ I ]], declare-int-vars[[ IL ]]
