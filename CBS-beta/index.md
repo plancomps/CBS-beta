@@ -31,37 +31,38 @@ The funcons provided by the [CBS library] are to have *fixed* definitions, so
 specifications. The aim of this beta-release of CBS and its initial library of
 funcons is to allow review of the current definitions before their full release.
 
-**The beta-release period is currently expected to end in October 2018.**
-
-After that, the only way of dealing with mistakes in funcon definitions will
-be to define new funcons (with fresh names) to use instead.
+**The beta-release period is expected to end in October 2018.**
 
 The current funcon definitions have been validated by empirical testing of
 generated interpreters for several programming languages, as well as by unit
 testing of individual funcon definitions. Further testing during the
 beta-release period may however reveal issues that require changes to
-definitions. The expected algebraic properties of the funcons also need to be
-verified, which might motivate some changes.
+definitions; lack of expected algebraic properties of the funcons might
+also motivate some changes. Language definitions that use the affected funcons
+may then need to be updated to take account of the changes.
 
-The current names of funcons are reasonably suggestive, but proposals for 
+The current names of funcons seem reasonably suggestive, but proposals for 
 improvements are welcome. The tension between conciseness and suggestiveness
-has been addressed by defining short aliases for longer names. Note also that
-many funcons are closely related to fundamental concepts of programming
-languages, and their names could be used as a precise vocabulary in
-programming linguistics.
+has been addressed by defining short aliases for longer names. Bias towards
+keywords used in particular language families has been avoided. Many funcons
+are directly related to fundamental concepts of programming languages, and
+their names try to reflect current terminology.
 
-New funcons are likely to be introduced in the beta-release, and further
+New funcons are likely to be introduced in the beta-release period, and further
 examples of language definitions will be provided. All additions and changes
 will be listed in the [beta-release change log], as well as in the version
 history of this project site.
+
+Tool support for CBS has been implemented, and will be released when it is
+sufficiently robust and well-documented.
 
 
 PLanCompS: Programming Language Components and Specifications
 ----------
 
-CBS has been developed by the [PLanCompS] project. From 2011 to 2016, the research
-was funded by EPSRC in the UK. The PLanCompS project is now an open international
-collaboration, and welcomes new [contributors]. 
+CBS has been developed by the [PLanCompS] project. From 2011 to 2016, the
+research was funded by EPSRC in the UK. The PLanCompS project is now an open
+international collaboration, and welcomes new [contributors]. 
 
 If you would like to contribute to PLanCompS (e.g., by using CBS to define a new
 or existing language, or by suggesting new or improved funcons) please email 
@@ -73,7 +74,7 @@ plancomps@gmail.com.
 
 [CBS library]: Funcons-beta/Funcons-Index/index.html
 
-[beta-release change log]: ???
+[Beta-release change log]: ???
 
 [PLanCompS]: http://plancomps.org
 
