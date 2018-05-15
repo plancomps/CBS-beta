@@ -1,8 +1,8 @@
 PLanCompS: Programming Language Components and Specifications
 =============================================================
 
-PLanCompS is an open international collaboration, continuing from the
-[EPSRC-funded research project PLANCOMPS (2011-16)](http://plancomps.org).
+PLanCompS is an open international collaboration, continuing from an
+[EPSRC-funded research project (2011-16)](http://plancomps.org).
 
 The main activity of PLanCompS is the development of the [CBS] framework,
 meta-language, and tools, together with case studies of language specification

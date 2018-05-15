@@ -20,12 +20,40 @@ language development.
 
 Funcons are highly reusable components of language specifications. In CBS, the 
 name, signature, and behaviour of each funcon are defined independently, using
-a modular variant of structural operational semantics.
+a modular variant of structural operational semantics. Crucially, adding new 
+funcons does not require any changes to the definitions of existing funcons. 
 
-The funcons provided by the [CBS library] have fixed definitions, so version
-control is not needed for their safe reuse in CBS language specifications.
-Crucially, adding new funcons to the library does not require any changes to the
-definitions of its current funcons. 
+Beta-release
+------------
+
+The funcons provided by the [CBS library] are to have *fixed* definitions, so 
+*no version control* will be needed for their safe reuse in CBS language 
+specifications. The aim of this beta-release of CBS and its initial library of
+funcons is to allow review of the current definitions before their full release.
+After that, the only way of dealing with mistakes in funcon definitions will
+be to define new funcons (with fresh names) to replace them.
+
+The current funcon definitions have been validated by empirical testing of
+generated interpreters for several programming languages, as well as by unit
+testing of individual funcon definitions. Further testing during the
+beta-release period may however reveal issues that require changes to
+definitions. The expected algebraic properties of the funcons also need to be
+verified, which might also motivate some changes.
+
+The current names of funcons are reasonably suggestive, but proposals for 
+improvements are welcome. The tension between conciseness and suggestiveness
+has been addressed by defining short aliases for longer names. Note also that
+many funcons are closely related to fundamental concepts of programming
+languages, and their names could be used as a precise vocabulary in
+programming linguistics.
+
+New funcons are likely to be introduced in the beta-release, and further
+examples of language definitions will be provided. All additions and changes
+will be listed in the [beta-release change log], as well as in the version
+history of this project site.
+
+**The beta-release period is currently expected to end in October 2018.**
+
 
 PLanCompS: Programming Language Components and Specifications
 ----------
