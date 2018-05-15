@@ -14,13 +14,21 @@ FIX-ME
 
 ### Funcons-beta
 
-- [X] Meta-variables: use `DT<:defined-values` and `GT<:ground-values`.
+- [X] Meta-variables: use `DT<:defined-values` and `GT<:ground-values`
 
 - [ ] Add remaining unit tests for `Values`
 
 ### Languages-beta
 
-- [ ] Replace `Funcons-beta` by symbolic links on GitHub.
+- [ ] Adding missing guide pages
+
+#### IMP
+
+- [X] Check
+
+#### SIMPLE
+
+- [X] Check
 
 #### MiniJava
 
@@ -47,11 +55,3 @@ FIX-ME
 #### CL
 
 - [ ] Check
-
-#### IMP
-
-- [X] Check
-
-#### SIMPLE
-
-- [X] Check
