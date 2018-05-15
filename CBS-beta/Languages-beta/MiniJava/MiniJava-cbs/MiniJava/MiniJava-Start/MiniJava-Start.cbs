@@ -1,0 +1,28 @@
+Language "MiniJava"
+
+Syntax
+START:
+  start ::= program
+
+Semantics
+  start[[ START:start ]] : => nothing
+Rule
+  start[[ P ]] =
+    initialise-binding
+    initialise-storing
+    initialise-giving
+    finalise-failing
+      run[[P]]
+
+// Contents:
+
+[
+#1 Programs
+#2 Declarations
+#3 Statements
+#4 Expressions
+#5 Lexemes
+#6 Disambiguation
+]
+
+// The section numbers above are links into other files.
