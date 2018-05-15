@@ -1,0 +1,41 @@
+Language "SL"
+
+#1 Lexemes
+
+## Identifiers
+
+Lexis
+  Id : id ::= ('a'-'z'|'A'-'Z') ('a'-'z'|'A'-'Z'|'0'-'9')*
+
+Semantics
+  id[[ Id:id ]] : => ids
+Rule
+  id[[ Id ]] = \"Id\"
+
+## Numerals
+
+Syntax
+  Int : int ::= '-'? _ nat
+Lexis
+  Nat : nat ::= ('0'-'9')+
+
+Semantics
+  int-val[[ Int:int ]] : => integers
+Rule
+  int-val[[ '-' Nat ]] = integer-negate int-val[[Nat]]
+Rule
+  int-val[[ Nat ]] = decimal-natural \"Nat\"
+
+## Strings
+
+Syntax
+       String :       string ::= '"' _ string-chars _ '"'
+Lexis
+  StringChars : string-chars ::= string-char*
+  
+                 string-char ::= ~( '"' | '\n' )
+
+Semantics
+  string-val[[ String:string ]] : => strings
+Rule
+  string-val[[ '"' StringChars '"' ]] = \"StringChars\"

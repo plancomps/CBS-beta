@@ -33,28 +33,34 @@ definition of [SIMPLE in CBS] for further details.
 MiniJava
 --------
 
-MiniJava is a very simple subset of Java, useful for illustrating the CBS
-funcons for classes and objects. See the page about the 
-definition of [MiniJava in CBS] for further details. 
+MiniJava is a very simple subset of Java, useful for illustrating the funcons 
+for classes and objects. See the page about the definition of [MiniJava in CBS]
+for further details. 
 
 SL
 --
 
+The SimpleLanguage, abbreviated "SL", is useful for illustrating the CBS of
+dynamic language features. See the page about the definition of [SL in CBS]
+for further details. 
 
 
 Caml Light
 ----------
 
-Pending.
+(Pending)
+
 
 [CBS framework]: ../index.md
 
 [Funcons-beta]: ../Funcons-beta/index.md
 
-[CBS-beta language specification reading guide]: ???
+[CBS-beta language specification reading guide]
 
 [IMP in CBS]: IMP/index.md
 
 [SIMPLE in CBS]: SIMPLE/index.md
 
 [MiniJava in CBS]: MiniJava/index.md
+
+[SL in CBS]: SL/index.md

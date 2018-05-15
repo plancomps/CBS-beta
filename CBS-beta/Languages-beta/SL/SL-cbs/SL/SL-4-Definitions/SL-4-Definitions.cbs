@@ -1,0 +1,40 @@
+Language "SL"
+
+#4 Function definitions
+
+Syntax
+  FunDef : fun-def ::= 'function' id '(' id-list? ')' block   
+
+Semantics
+  declare[[ FunDef*:fun-def* ]] : => environments
+Rule
+  declare[[ 'function' Id '(' IdList? ')' Block ]] =
+    { id[[Id]] |->
+      function closure
+        scope(initialise-local-variables,
+          sequential(
+            pass-list[[IdList?]],
+            handle-return(exec[[Block]]))) }
+Rule
+  declare[[ ]] = map( )
+Rule
+  declare[[ FunDef FunDef+ ]] = 
+    collateral(declare[[FunDef]], declare[[FunDef+]])
+
+## Parameter lists
+
+Syntax
+  IdList : id-list ::= id (',' id-list)?
+
+Semantics
+  pass-list[[ IdList:id-list? ]] : lists(values) => nothing
+Rule
+  pass-list[[ ]] = none
+Rule
+  pass-list[[ Id ]] =
+    local-variable-initialise(id[[Id]], defined head given)
+Rule
+  pass-list[[ Id ',' IdList ]] = 
+    sequential(
+      local-variable-initialise(id[[Id]], defined head given), 
+      give(defined tail given, pass-list[[IdList]]))

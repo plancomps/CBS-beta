@@ -1,0 +1,138 @@
+Language "SL"
+
+#2 Expressions
+
+Syntax
+  Expr : expr ::= int
+                | string
+                | 'true'
+                | 'false'
+                | expr '+'  expr
+                | expr '/'  expr
+                | expr '*'  expr
+                | expr '-'  expr
+                | expr '==' expr
+                | expr '<=' expr
+                | expr '<'  expr
+                | expr '!=' expr
+                | expr '>=' expr
+                | expr '>'  expr
+                | expr '&&' expr
+                | expr '||' expr
+                | '!' expr
+                | id '(' expr-list? ')'
+                | id
+                | id '=' expr
+                | expr '.' id
+                | expr '.' id '=' expr
+                | expr '.' id '(' expr-list? ')'
+                | '(' expr ')'
+Rule
+  [[ '(' Expr ')' ]] : expr = [[ Expr ]]
+
+Type
+  sl-values ~> bools | integers | strings | objects | nothing
+
+Semantics
+  eval[[ Expr:expr ]] : => sl-values
+Rule
+  eval[[ Int ]] = int-val[[Int]]
+Rule
+  eval[[ String ]] = string-val[[String]]
+Rule
+  eval[[ 'true' ]] = true
+Rule
+  eval[[ 'false' ]] = false
+Rule
+  eval[[ Expr1 '+' Expr2 ]] =
+    integer-add-else-string-append(eval[[Expr1]], eval[[Expr2]])
+Rule
+  eval[[ Expr1 '/' Expr2 ]] =
+    defined integer-divide(int eval[[Expr1]], int eval[[Expr2]])
+Rule
+  eval[[ Expr1 '*' Expr2 ]] =
+    integer-multiply(int eval[[Expr1]], int eval[[Expr2]])
+Rule
+  eval[[ Expr1 '-' Expr2 ]] =
+    integer-subtract(int eval[[Expr1]], int eval[[Expr2]])
+Rule
+  eval[[ Expr1 '==' Expr2 ]] =
+    is-equal(eval[[Expr1]], eval[[Expr2]])
+Rule
+  eval[[ Expr1 '<=' Expr2 ]] =
+    is-less-or-equal(int eval[[Expr1]], int eval[[Expr2]])
+Rule
+  eval[[ Expr1 '<' Expr2 ]] =
+    is-less(int eval[[Expr1]], int eval[[Expr2]])
+Rule
+  eval[[ Expr1 '!=' Expr2 ]] =
+    not is-equal(eval[[Expr1]], eval[[Expr2]])
+Rule
+  eval[[ Expr1 '>=' Expr2 ]] =
+    is-greater-or-equal(int eval[[Expr1]], int eval[[Expr2]])
+Rule
+  eval[[ Expr1 '>' Expr2 ]] =
+    is-greater(int eval[[Expr1]], int eval[[Expr2]])
+Rule
+  eval[[ Expr1 '&&' Expr2 ]] =
+    if-true-else(bool eval[[Expr1]], bool eval[[Expr2]], false)
+Rule
+  eval[[ Expr1 '||' Expr2 ]] =
+    if-true-else(bool eval[[Expr1]], true, bool eval[[Expr2]])
+Rule
+  eval[[ '!' Expr ]] = not(bool eval[[Expr]])
+Rule
+  eval[[ 'new' '(' ')' ]] =
+    object(fresh-atom, "Object", initialise-local-variables)
+Rule
+  eval[[ 'println' '(' Expr ')' ]] = print-line sl-to-string eval[[Expr]]
+Rule
+  eval[[ 'readln' '(' ')' ]] = [ read-line ]
+Rule
+  eval[[ 'defineFunction' '(' Expr ')' ]] = fail
+//    give(str eval[[Expr]],  
+//      override-global-bindings(declare[[given]]))
+//  //Dynamic parsing and translation to funcons not yet implemented
+Rule
+  eval[[ 'nanoTime' '(' ')' ]] = fail
+Rule
+  eval[[ 'stacktrace' '(' ')' ]] = fail
+Otherwise
+  eval[[ Id '(' ExprList? ')'  ]] =
+    apply(fun global-bound eval[[Id]], eval-list[[ExprList?]])
+Rule
+  eval[[ Id ]] = 
+    else(assigned local-variable id[[Id]], str id[[Id]])
+Rule
+  eval[[ Id '=' Expr ]] = 
+    give(eval[[Expr]],
+      sequential(local-variable-assign(id[[Id]], given),
+        given))
+Rule
+  eval[[ Expr '.' Id ]] =
+    scope-closed(object-feature-map obj eval[[Expr]], 
+      else(assigned local-variable id[[Id]], none))
+Rule
+  eval[[ Expr1 '.' Id '=' Expr2 ]] =
+    give(eval[[Expr2]],
+      scope-closed(
+        object-feature-map obj eval[[Expr1]],
+        sequential(local-variable-assign(id[[Id]], given),
+          given)))
+Rule
+  eval[[ Expr '.' Id '(' ExprList? ')' ]] = 
+    apply(fun global-bound eval[[Expr '.' Id]], eval-list[[ExprList?]])
+
+Syntax
+  ExprList : expr-list ::= expr (',' expr-list)?
+
+Semantics
+  eval-list[[ _:expr-list? ]] : => lists(sl-values)
+Rule
+  eval-list[[ ]] = nil
+Rule
+  eval-list[[ Expr ]] = cons(eval[[Expr]], nil)
+Rule
+  eval-list[[ Expr ',' ExprList ]] = 
+    cons(eval[[Expr]], eval-list[[ExprList]])
+          

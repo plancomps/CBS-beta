@@ -1,0 +1,49 @@
+Language "SL"
+
+#3 Statements
+
+Syntax
+  Stmt  : stmt  ::= expr ';'
+                  | 'return' expr ';'
+                  | 'return' ';'
+                  | 'if' '(' expr ')' block
+                  | 'if' '(' expr ')' block 'else' block  
+                  | 'while' '(' expr ')' block
+                  | 'break' ';'
+                  | 'continue' ';'
+                  | block
+
+  Block : block ::= '{' stmt* '}'
+
+Rule
+  [[ 'if' '(' Expr ')' Block ]] : stmt = 
+  [[ 'if' '(' Expr ')' Block 'else' '{' '}' ]]
+
+Semantics
+  exec[[ Stmt*:stmt* ]] : => nothing
+Rule
+  exec[[ Expr ';' ]] = effect(eval[[Expr]])
+Rule
+  exec[[ 'return' Expr ';' ]] = return(eval[[Expr]])
+Rule
+  exec[[ 'return' ';' ]] = return(none)
+Rule
+  exec[[ 'if' '(' Expr ')' Block1 'else' Block2 ]] = 
+    if-true-else(bool eval[[Expr]], exec[[Block1]], exec[[Block2]])
+Rule
+  exec[[ 'while' '(' Expr ')' Block ]] = 
+    handle-break(
+      while-true(bool eval[[Expr]], 
+        handle-continue(exec[[Block]])))
+Rule
+  exec[[ 'break' ';' ]] = break
+Rule
+  exec[[ 'continue' ';' ]] = continue
+Rule
+  exec[[ '{' Stmt* '}' ]] = exec[[Stmt*]]
+Rule
+  exec[[  ]] = none
+Rule
+  exec[[ Stmt Stmt+ ]] = 
+    sequential(exec[[Stmt]], exec[[Stmt+]])
+  

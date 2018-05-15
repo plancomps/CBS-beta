@@ -1,0 +1,52 @@
+Language "SL"
+
+/*
+  The SimpleLanguage, abbreviated "SL", is a dynamic demonstration language.
+  It was built using Truffle for the GraalVM at Oracle Labs
+  [https://github.com/graalvm/simplelanguage].
+  
+  A DynSem specification of SL in Spoofax has been given by Vlad Vergu
+  [https://github.com/MetaBorgCube/metaborg-sl/].
+  
+  This CBS specification of SL has been prototyped using a funcon interpreter
+  generated using the Haskell package Funcons Tools
+  [https://hackage.haskell.org/package/funcons-tools].
+  
+  Acknowledgements: Vlad Vergu provided helpful advice regarding SL and DynSem.
+  L. Thomas van Binsbergen implemented the Funcons Tools (in collaboration with
+  Neil Sculthorpe) and provided support with using them.
+*/
+
+[
+#1 Lexemes
+#2 Expressions
+#3 Statements
+#4 Function definitions
+#A Disambiguation
+]
+
+Syntax
+  START : start ::= program
+
+Semantics
+  start[[ START:start ]] : => values
+Rule
+  start[[ Program ]] = 
+    initialise-binding 
+    initialise-storing 
+    initialise-giving
+    finalise-abrupting
+      run[[Program]]
+
+Syntax
+  Program : program ::= fun-def*
+
+Semantics
+  run[[ Program:program ]] : => values
+Rule
+  run[[ FunDef* ]] =
+    scope(
+      initialise-global-bindings,
+      sequential(
+        override-global-bindings(declare[[FunDef*]]),
+        apply(fun global-bound "main", nil)))
