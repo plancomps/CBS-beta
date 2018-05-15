@@ -1,0 +1,37 @@
+### Graphs
+
+[
+  Type   directed-graphs
+  Funcon is-cyclic
+  Funcon topological-sort
+]
+
+Meta-variables
+  GT <: ground-values
+
+Type
+  directed-graphs(GT) ~> maps(GT, sets(GT))
+/*
+  `directed-graphs(GT)` models directed graphs with vertices of type `GT`,
+  represented as maps from vertices to the set of vertices to which the
+  vertex has an edge.  E.g., the graph
+
+    (1)--->(2)
+
+  would be represented as `{ 1 |-> {2}, 2 |-> {} }`  
+*/
+
+Built-in Funcon
+  is-cyclic(DG:directed-graphs(GT)) : =>booleans
+
+Built-in Funcon
+  topological-sort(DG:directed-graphs(GT)) : =>(GT)*|nothing
+/*
+  `topological-sort(DG)` returns a topological ordering of the vertices
+  of the graph `DG`, as a sequence of vertices, provided that `DG` is not
+  cyclic.
+*/
+
+// Consider providing a general graphs type. FIX-ME
+
+// Also edge-ordered directed graphs. FIX-ME

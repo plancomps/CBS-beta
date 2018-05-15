@@ -1,0 +1,80 @@
+### Throwing
+
+[
+  Datatype throwing
+  Funcon   thrown
+  Funcon   finalise-throwing
+  Funcon   throw
+  Funcon   handle-thrown
+  Funcon   handle-recursively
+  Funcon   catch-else-throw
+]
+
+Meta-variables
+  T <: values
+  DT, DT' <: defined-values
+
+Datatype
+  throwing ::= thrown(V:defined-values)
+/*
+  `thrown(V)` is a reason for abrupt termination.
+*/
+
+Funcon
+  finalise-throwing(X:=>T) : =>T|nothing
+   ~> finalise-abrupting(X)
+/*
+  `finalise-throwing(X)` handles abrupt termination of `X` due to
+  executing `throw(V)`.
+*/
+
+Funcon
+  throw(V:DT) : =>empty-type
+   ~> abrupt(thrown(V))
+/*
+  `throw(V)` abruptly terminates all enclosing computations until it is handled.
+*/
+
+Funcon
+  handle-thrown(X:DT=>T, Y:DT'=>T) : DT=>T
+/*
+  `handle-thrown(X, Y)` first evaluates `X`. If `X` terminates normally with
+  value `V`, then `V` is returned and `Y` is ignored. If `X` terminates abruptly
+  with a thrown entity having value `V`, then `Y` is executed with `V` as
+  `given` value.
+  
+  `handle-thrown(X, Y)` is associative, with `throw(given)` as unit.
+  `handle-thrown(X, else(Y, throw(given)))` ensures that if `Y` fails, the
+  thrown value is re-thrown.
+*/
+Rule
+                    X -- abrupted( ) -> X'
+  ----------------------------------------------------------
+  handle-thrown(X, Y) -- abrupted( ) -> handle-thrown(X', Y)
+Rule
+    X -- abrupted(thrown(V:defined-values)) -> X'
+  ------------------------------------------------
+  handle-thrown(X, Y) -- abrupted( ) -> give(V, Y)
+Rule
+                    X -- abrupted(V':~throwing) -> X'
+  -----------------------------------------------------------
+  handle-thrown(X, Y) -- abrupted(V') -> handle-thrown(X', Y)
+Rule
+  handle-thrown(V:values, Y) ~> V
+
+Funcon
+  handle-recursively(X:S=>T, Y:R=>T) : S=>T
+    ~> handle-thrown(X, else(handle-recursively(Y, Y), throw(given)))
+/*
+  `handle-recursively(X, Y)` behaves similarly to `handle-thrown(X, Y)`, except
+  that another copy of the handler attempts to handle any values thrown by `Y`.
+  Thus, many thrown values may get handled by the same handler. 
+*/
+
+Funcon
+  catch-else-throw(P:defined-values, Y:=>T) : =>T
+    ~> else(case-match(P, Y), throw(given))
+ /*
+   `handle-thrown(X, catch-else-throw(P, Y))` handles those values thrown by `X`
+   that match pattern `P`.  Other thrown values are re-thrown.  
+ */

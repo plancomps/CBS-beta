@@ -1,0 +1,106 @@
+### Failing
+
+[
+  Datatype failing
+  Funcon   failed
+  Funcon   finalise-failing
+  Funcon   fail
+  Funcon   else
+  Funcon   else-choice
+  Funcon   check-true      Alias check
+  Funcon   defined         Alias def
+]
+
+Meta-variables
+  T <: values
+  DT <: defined-values
+
+Datatype
+  failing ::= failed
+/*
+  `failed` is a reason for abrupt termination.
+*/
+
+Funcon
+  finalise-failing(X:=>T) : =>T|nothing
+   ~> finalise-abrupting(X)
+/*
+  `finalise-failing(X)` handles abrupt termination of `X` due to executing `fail`.
+*/
+
+Funcon
+  fail : =>empty-type
+   ~> abrupt(failed)
+/*
+  `fail` abruptly terminates all enclosing computations until it is handled.
+*/
+
+Funcon
+  else(X:=>T, X+:(=>T)+) : =>T
+/*
+  `else(X1, X2, ...)` executes the arguments in turn until either some
+  `Xi` does *not* fail, or all arguments `Xi` have been executed.
+  The last argument executed determines the result.
+  `else(X, Y)` is associative, with unit `fail`.
+*/
+Rule
+           X -- abrupted( ) -> X'
+  ----------------------------------------
+  else(X, Y) -- abrupted( ) -> else(X', Y)
+Rule
+           X -- abrupted(failed) -> _
+  -----------------------------------
+  else(X, Y) -- abrupted( ) -> Y
+Rule
+           X -- abrupted(V:~failing) -> X'
+  ----------------------------------------
+  else(X, Y) -- abrupted(V) -> else(X', Y)
+Rule
+  else(V:T, Y) ~> V
+Rule
+  else(X, Y, Z+) ~> else(X, else(Y, Z+))
+
+Funcon
+  else-choice(X+:(=>T)+) : =>T
+/*
+  `else-choice(X,...)` executes the arguments in any order until either some
+  `Xi` does *not* fail, or all arguments `Xi` have been executed.
+  The last argument executed determines the result.
+  `else(X, Y)` is associative and commutative, with unit `fail`.
+*/
+Rule
+  else-choice(W*, X, Y, Z*)
+   ~> choice(else(X, else-choice(W*, Y, Z*), 
+             else(Y, else-choice(W*, X, Z*))))
+Rule
+  else-choice(X) ~> X
+
+Funcon
+  check-true(B:booleans) : =>nothing
+Alias
+  check = check-true
+/*
+  `check-true(X)` terminates normally if the value computed by `X` is `true`,
+  and fails if it is `false`.
+*/
+Rule
+  check-true(true)  ~> none
+Rule
+  check-true(false) ~> fail
+
+Funcon 
+  defined(_:DT|nothing) : =>DT
+Alias
+  def = defined
+/*
+  `defined X` fails when the value of `X` is undefined, which is represented
+  by `X` computing `none`. It otherwise computes the same as `X`.
+  When the result type of a funcon is `DT|nothing`, use of `defined(X)` 
+  allows the funcon to be used to compute an argument of type `DT`.
+  When `X` can never compute a defined value, `defined X` never terminates
+  normally.
+*/
+Rule
+  defined(V:DT) ~> V
+Rule
+  defined(none) ~> fail

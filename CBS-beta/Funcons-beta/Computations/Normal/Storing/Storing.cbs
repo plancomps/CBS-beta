@@ -1,0 +1,313 @@
+### Storing
+
+[
+  Datatype locations                     Alias locs
+  Type     stores
+  Entity   store
+  Funcon   initialise-storing
+  Funcon   store-clear
+  Datatype variables                     Alias vars
+  Funcon   variable                      Alias var
+  Funcon   allocate-variable             Alias alloc
+  Funcon   recycle-variables             Alias recycle
+  Funcon   initialise-variable           Alias init
+  Funcon   allocate-initialised-variable Alias alloc-init
+  Funcon   assign
+  Funcon   assigned
+  Funcon   un-assign
+  Funcon   structural-assign
+  Funcon   structural-assigned
+]
+
+Meta-variables
+  DT, DT' <: defined-values
+  T <: values
+
+
+#### Stores
+
+Type
+  locations ~> atoms
+Alias
+  locs = locations
+/*
+  A storage location is represented by an atom.
+*/
+ 
+Type
+  stores ~> maps(locations, values)
+/*
+  The domain of a store is the set of currently allocated locations.
+  Mapping a location to `none` models the absence of its stored value.
+*/
+
+Entity
+  < _ , store(Sigma:stores) > ---> < _ , store(Sigma':stores) >
+/*
+  The current store is a mutable entity.
+  A transition ``< X , store(Sigma) > ---> < X' , store(Sigma') >`` models
+  a step from `X` to `X'` where the difference between `Sigma` and `Sigma'`
+  (if any) corresponds to storage effects.
+*/
+
+Funcon
+  store-clear : =>nothing
+Rule
+  < store-clear , store(_) > ---> < none , store(map( )) >
+/*
+  `store-clear` ensures the store is empty.
+*/
+
+Funcon 
+  initialise-storing(X:=>T) : =>T
+   ~> sequential(store-clear, 
+        initialise-giving(initialise-generating(X)))
+Alias
+  init-storing = initialise-storing
+/*
+  `initialise-storing(X)` ensures that the entities used by the funcons for
+  storing are properly initialised.
+*/
+
+#### Simple variables
+
+/*  
+  Simple variables may store primitive or structured values. The type of
+  values stored by a variable is fixed when it is allocated. For instance,
+  `allocate-variable(ints)` allocates a simple integer variable, and
+  `allocate-variable(vectors(integers))` allocates a structured variable for
+  storing vectors of integers, which can be updated only monolithically.
+*/
+
+Datatype
+//  variables ::= variable(L:locations, DT<:defined-values) // FIX-ME (here and later):
+variables ::= variable(L:locations, DT:value-types)
+Alias
+  vars = variables
+Alias
+  var = variable
+/*
+  `variables` is the type of simple variables that can store defined-values of
+  a particular type.
+
+  `variable(L, DT)` constructs a simple variable for storing defined-values of
+  type `DT` at location `L`. Variables at different locations are independent. 
+*/
+
+Funcon
+  allocate-variable(DT) : =>variables
+Alias
+  alloc = allocate-variable
+/*
+  `allocate-variable(DT)` gives a simple variable whose location is not in the
+  current store. Subsequent uses of `allocate-variable(DT')` give independent
+  variables, except after `recycle-variables(V,...)` or `store-clear`.
+*/
+Rule
+  < use-atom-not-in(dom(Sigma)) , store(Sigma) > ---> < L , store(Sigma') >
+  map-override({L |-> none}, Sigma') ~> Sigma''
+  -------------------------------------------------------------------------
+  < allocate-variable(DT:types) , store(Sigma) >
+    ---> < variable(L, DT) , store(Sigma'') >
+
+Funcon
+  recycle-variables(Var+:variables+) : =>nothing
+Alias
+  recycle = recycle-variables
+/*
+  `recycle-variables(Var,...)` removes the locations of `Var`, ..., from the
+  current store, so that they may subsequently be re-allocated.
+*/
+Rule
+  is-in-set(L, dom(Sigma)) == true
+  ---------------------------------------------------------------------
+  < recycle-variables(variable(L:locations, DT:types)) , store(Sigma) >
+    ---> < none , store(map-delete(Sigma, {L})) >
+Rule
+  is-in-set(L, dom(Sigma)) == false
+  ---------------------------------------------------------------------
+  < recycle-variables(variable(L:locations, DT:types)) , store(Sigma) >
+    ---> < fail , store(Sigma) >
+Rule
+  recycle-variables(Var:variables, Var+:variables+)
+    ~> sequential(recycle-variables(Var), recycle-variables(Var+))
+
+Funcon
+  initialise-variable(_:variables, _:defined-values) : =>nothing
+Alias
+  init = initialise-variable
+/*
+  `initialise-variable(Var, Val)` assigns `Val` as the initial value of `Var`,
+  and gives `none`. If `Var` already has an assigned value, it fails.
+*/
+Rule
+  and(is-in-set(L, dom(Sigma)),
+      not is-defined(lookup(Sigma, L)),
+      is-in-type(Val, DT)) 
+    == true
+  ----------------------------------------------------------------------------
+  < initialise-variable(variable(L:locations, DT:types), Val:defined-values) , 
+    store(Sigma) > ---> < none , store(map-override({L|->Val}, Sigma)) >
+Rule
+  and(is-in-set(L, dom(Sigma)),
+      not is-defined(lookup(Sigma, L)),
+      is-in-type(Val, DT)) 
+    == false
+  ----------------------------------------------------------------------------
+  < initialise-variable(variable(L:locations, DT:types), Val:defined-values) , 
+    store(Sigma) > ---> < fail , store(Sigma) >
+
+Funcon
+  allocate-initialised-variable(DT, Val:DT) : =>variables
+    ~> give(allocate-variable(DT),
+         sequential(initialise-variable(given, Val), given))
+Alias
+  alloc-init = allocate-initialised-variable
+/*
+  `allocate-initialised-variable(DT, Val)` allocates a simple variable for
+  storing values of type `DT`, initialises its value to `Val`, and returns the
+  variable.
+*/
+
+Funcon
+  assign(Var:variables, Val:defined-values) : =>nothing
+/*
+  `assign(Var, Val)` assigns the value `Val` to the variable `Var`,
+  provided that `Var` was allocated with a type that contains `Val`.
+*/
+Rule
+  and(is-in-set(L, dom(Sigma)), is-in-type(Val, DT)) == true
+  -----------------------------------------------------------------------
+  < assign(variable(L:locations, DT:types), Val:defined-values) ,
+    store(Sigma) > ---> < none , store(map-override({L|->Val}, Sigma)) >
+Rule
+   and(is-in-set(L, dom(Sigma)), is-in-type(Val, DT)) == false
+  --------------------------------------------------------------------------
+  < assign(variable(L:locations,DT:types), Val:defined-values) ,
+    store(Sigma) > ---> < fail , store(Sigma) >
+
+Funcon
+  assigned(Var:variables) : =>defined-values
+/*
+  `assigned(Var)` gives the value assigned to the variable `Var`,
+  failing if no value is currently assigned.
+*/
+Rule
+  lookup(Sigma, L) ~> Val:defined-values
+  ------------------------------------------------------------------
+  < assigned(variable(L:locations, DT:types)) , store(Sigma) >
+    ---> < Val , store(Sigma) >
+Rule
+  lookup(Sigma, L) == none
+  ------------------------------------------------------------------
+  < assigned(variable(L:locations, DT:types)) , store(Sigma) >
+    ---> < fail , store(Sigma) >
+
+Funcon
+  un-assign(Var:variables) : =>nothing
+/*
+  `un-assign(Var)` remove the value assigned to the variable `Var`.
+*/
+Rule
+  is-in-set(L, dom(Sigma)) == true
+  --------------------------------------------------------------------------
+  < un-assign(variable(L:locations, DT:types)) , store(Sigma) >
+    ---> < none , store(map-override({L|->none}, Sigma)) >
+Rule
+   is-in-set(L, dom(Sigma)) == false
+  --------------------------------------------------------------------------
+  < un-assign(variable(L:locations, DT:types)) , store(Sigma) >
+    ---> < fail , store(Sigma) >
+
+
+#### Structured variables
+
+/*
+  Structured variables are structured values where some components are
+  simple variables. Such component variables can be selected using the
+  same funcons as for selecting components of structured values. 
+
+  Structured variables containing both variables and values correspond to
+  hybrid structures where particular components are mutable.
+  
+  All datatypes (except for abstractions) can be used to form structured
+  variables. So can maps, but not sets or multisets.
+  
+  Structural generalisations of `assign(Var, Val)` and 
+  `assigned(Var)` access all the simple variables contained in a
+  structured variable. Assignment requires each component value of a hybrid
+  structured variable to be equal to the corresponding component of the
+  structured value.
+*/
+
+Funcon
+  structural-assign(V1:defined-values, V2:defined-values) : =>nothing
+/*
+  `structural-assign(V1, V2)` takes a (potentially) structured variable
+  `V1`and a (potentially) structured value `V2`. Provided that the structure and
+  all non-variable values in `V1` match the structure and corresponding values
+  of `V2`, all the simple variables in `V1` are assigned the corresponding
+  values of `V2`.
+*/
+Rule
+  structural-assign(V1:variables, V2:defined-values)
+    ~> assign(V1, V2)
+Rule
+  I1 =/= "variable"
+  -----------------------------------------------------------------------
+  structural-assign(datatype-value(I1:ids, V1*:defined-values*),
+                    datatype-value(I2:ids, V2*:defined-values*))
+    ~> sequential(
+         check-true(is-equal(I1, I2)),
+         effect(tuple(interleave-map(
+           structural-assign(tuple-elements(given)),
+           tuple-zip(tuple(V1*), tuple(V2*))))),
+         none)
+Rule
+  dom(M1) == {}
+  ------------------------------------------------------
+  structural-assign(M1:maps(_,_), M2:maps(_,_))
+    ~> check-true(is-equal(dom(M2), {}))
+Rule
+  some-element(dom(M1)) ~> K
+  ----------------------------------------------------------------------------
+  structural-assign(M1:maps(_, _), M2:maps(_, _))
+    ~> sequential(check-true(is-in-set(K, dom(M2))),
+         structural-assign(lookup(M1, K), lookup(M2, K)),
+         structural-assign(map-delete(M1, {K}), map-delete(M2, {K})))
+Rule
+  V1 : ~(variables|maps(_, _))
+  ---------------------------------------------------------------
+  structural-assign(V1:defined-values,V2:defined-values)
+    ~> check-true(is-equal(V1, V2))
+
+Funcon
+  structural-assigned(_:defined-values) : =>defined-values|nothing
+/*
+  `structural-assigned(V)` takes a (potentially) structured variable `V`,
+  and computes the value of `V` with all simple variables in `V` replaced by
+  their assigned values.
+*/
+Rule
+  structural-assigned(Var:variables) ~> assigned(Var)
+Rule
+  I =/= "variable"
+  ----------------------------------------------------------------------------
+  structural-assigned(datatype-value(I:ids, V*:defined-values*))
+    ~> datatype-value(I, interleave-map(structural-assigned(given), V*))
+Rule
+  structural-assigned(M:maps(_, _))
+    ~> map(interleave-map(structural-assigned(given), map-elements(M)))
+Rule
+  U : ~(variables|maps(_, _))
+  ------------------------------------------
+  structural-assigned(U:values) ~> U
+
+
+Funcon
+  current-value(V:defined-values) : =>defined-values
+   ~> def structural-assigned(V)
+/*
+  `current-value(V)` gives the value assigned to a (possibly structured)
+  variable `V`. When `V` does not contain any variables, it gives `V`.
+*/

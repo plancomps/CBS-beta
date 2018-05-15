@@ -1,0 +1,89 @@
+### Controlling
+
+[
+  Datatype continuations
+  Funcon   continuation
+  Entity   plug-signal
+  Funcon   hole
+  Funcon   resume-continuation
+  Entity   control-signal
+  Funcon   control
+  Funcon   delimit-current-continuation  Alias delimit-cc
+]
+
+Meta-variables
+  T, T1, T2 <: values
+
+Datatype
+  continuations(T1,T2) ::= continuation(A:abstractions(values=>T2))
+/*
+  `continuations(T1, T2)` consists of abstractions whose bodies contain a `hole`,
+  and which will normally compute a value of type T2 when the `hole` is plugged
+  with a value of type T1.
+*/
+
+Entity
+  _ -- plug-signal(V?:values?) -> _
+/*
+   A plug-signal contains the value to be filled into a `hole` in a continuation,
+   thereby allowing a continuation to resume.
+*/
+
+ Funcon
+  hole : =>values
+/*
+  A `hole` in a term cannot proceed until it receives a plug-signal
+  containing a value to plug the hole.
+*/
+Rule
+ hole -- plug-signal(V) -> V
+
+Funcon
+  resume-continuation(C:continuations(T1, T2), V:T1) : =>T2
+/*
+ `resume-continuation(C, V)` resumes a continuation `C` by plugging the value
+ `V` into the `hole` in the continuation. 
+*/
+Rule
+                  X -- plug-signal(V) -> X'
+ -----------------------------------------------------------------------------
+ resume-continuation(continuation(abstraction(X)), V:T) -- plug-signal() -> X'
+
+ 
+Entity
+  _ -- control-signal(F?:(functions(continuations(T1, T2) ,T2))?) -> _
+/*
+   A control-signal contains the function to which control is about to be passed
+   by the enclosing `delimit-current-continuation(X)`.
+*/
+
+Funcon
+  control(F:functions(continuations(T1, T2), T2)) : =>T1
+/*
+  `control(F)` emits a control-signal that, when handled by an enclosing
+  `delimit-current-continuation(X)`, will apply `F` to the current continuation of
+  `control(F)`, (rather than proceeding with that current continuation).
+*/
+Rule
+  control(F:functions(continuations(_,_),_)) -- control-signal(F) -> hole
+
+
+Funcon
+  delimit-current-continuation(X:=>T) : =>T
+Alias
+  delimit-cc = delimit-current-continuation
+/*
+  `delimit-current-continuation(X)` delimits the scope of captured continuations.
+*/
+Rule
+  delimit-current-continuation(V:T) ~> V
+Rule
+                         X -- control-signal( ) -> X'
+  ----------------------------------------------------------------------------------------
+  delimit-current-continuation(X) -- control-signal( ) -> delimit-current-continuation(X')
+Rule
+                         X -- control-signal(F) -> X'
+  -----------------------------------------------------------
+  delimit-current-continuation(X) -- control-signal( ) -> 
+    delimit-current-continuation(apply(F, continuation closure(X')))
+

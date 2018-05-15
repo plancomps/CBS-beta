@@ -1,0 +1,166 @@
+### Sequences of defined-values
+
+[
+  Funcon length
+  Funcon index
+  Funcon first
+  Funcon second
+  Funcon third
+  Funcon is-in
+  Funcon first-n
+  Funcon drop-first-n
+  Funcon reverse
+  Funcon n-of
+  Funcon intersperse
+  Funcon filter-defined
+]
+
+/*
+  Sequences of two or more values are not themselves values, nor is the empty
+  sequence a value. However, sequences can be provided to funcons as arguments,
+  and returned as results. Many operations on composite values can be expressed
+  by extracting their components as sequences, operating on the sequences, then
+  forming the required composite values from the resulting sequences.
+  
+  A sequence with elements `X1`, ..., `Xn` is written `X1,...,Xn`.
+  A sequence with a single element `X` is identified with (and written) `X`.
+  An empty sequence is indicated by the absence of a term.
+  Any sequence `X*` can be enclosed in parentheses `(X*)`, e.g.:
+  `( )`, `(1)`, `(1,2,3)`. Superfluous commas are ignored.
+  
+  The values of a type sequence `T1,...,Tn` are the value sequences `V1,...,Vn`
+  where `V1:T1`, ..., `Vn:Tn`.
+  
+  The sequence type `(T)^N` is equivalent to `T,...,T` with `N` occurrences of `T`.
+  `(T)*` is equivalent to the union of all `(T)^N` for N>=0,
+  `(T)+` is equivalent to the union of all `(T)^N` for N>=1, and
+  `(T)?` is equivalent to `T | ( )`.
+  The parentheses around `T` above can be omitted when they are not needed for
+  disambiguation.
+  
+  Sequences can contain `none` as well as defined values.
+  
+  (Non-trivial) sequence types are not values, so not included in `types`.
+*/
+
+Meta-variables 
+  T, T', T1, T2, T3 <: values
+  T* <: values*
+/*
+  Note that `T` and `T*` can be instantiated differently in signatures and
+  individual rules. Moreover, `T*` ranges over arbitrary sequence types.
+*/
+
+Funcon
+  length(V*:T*) : =>nats
+Rule
+  length( ) ~> 0
+Rule
+  length(V:T, V*:T*) ~> nat-succ(length(V*))
+
+
+#### Sequence indexing
+
+Funcon
+  index(N:nats, V*:T*) : =>values 
+/*
+  The result `none` may be due to the index value being invalid, or to the
+  indexed component being `none`.
+*/
+Rule
+  index(1, V:T, V*:T*) ~> V
+Rule
+  nat-pred(N) ~> N'
+  ----------------------------------------------
+  index(N:pos-ints, V:T, V*:T*) ~> index(N', V*)
+Rule
+  index(0, V*:T*) ~> none
+Rule
+  index(P:pos-ints, ( )) ~> none
+
+// Total indexing funcons:
+// FIX-ME: are these needed?
+
+Funcon 
+  first(V1:T1, V*:T*) : =>T1
+Rule
+  first(V1:T1, V*:T*) ~> V1
+
+Funcon 
+  second(V1:T1, V2:T2, V*:T*) : =>T2
+Rule
+  second(V1:T1, V2:T2, V*:T*) ~> V2
+
+Funcon 
+  third(V1:T1, V2:T2, V3:T3, V*:T*) : =>T3
+Rule
+  third(V1:T1, V2:T2, V3:T3, V*:T*) ~> V3
+
+Funcon
+  is-in(V:T, V*:T*) : =>booleans
+Rule
+  is-in(V:T ,V':T', V*:T*) ~> or(is-equal(V, V'), is-in(V, V*))
+Rule
+  is-in(V:T, ( )) ~> false
+
+
+#### Homogeneous sequences
+
+Funcon
+  first-n(N:nats, V*:(T)*) : =>(T)*|nothing
+Rule
+  first-n(0, V*:(T)*) ~> ( )
+Rule
+  nat-pred(N) ~> N'
+  ----------------------------------------------------
+  first-n(N:pos-ints, V:T, V*:(T)*) ~> first-n(N', V*)
+Rule
+  first-n(N:pos-ints, ( )) ~> none
+
+Funcon
+  drop-first-n(N:nats, V*:(T)*) : =>(T)*|nothing
+Rule
+  drop-first-n(0, V*:(T)*) ~> V*
+Rule
+  nat-pred(N) ~> N'
+  --------------------------------------------------------------
+  drop-first-n(N:pos-ints, V:T, V*:(T)*) ~> drop-first-n(N', V*)
+Rule
+  drop-first-n(N:pos-ints, ( )) ~> none
+
+Funcon
+  reverse(V*:(T)*) : =>(T)*
+Rule
+  reverse( ) ~> ( )
+Rule
+  reverse(V:T, V*:(T)*) ~> (reverse(V*), V)
+
+Funcon
+  n-of(N:nats, V:T) : =>(T)*
+Rule
+  n-of(0, V) ~> ( )
+Rule
+  nat-pred(N) ~> N'
+  -----------------------------------------
+  n-of(N:pos-ints, V:T) ~> (V, n-of(N', V))
+
+Funcon
+  intersperse(V':T', V*:(T)*) : =>(T, (T', T)*)?
+Rule
+  intersperse(V':T', ( )) ~> ( )
+Rule
+  intersperse(V':T', V) ~> V
+Rule
+  intersperse(V':T', V1:T, V2:T, V*:(T)*) ~> (V1, V', intersperse(V', V2, V*))
+
+Funcon
+  filter-defined(V*:(T)*) : =>(T & defined-values)*
+/*
+  `filter-defined(V*)` returns the defined values from the sequence `V*`.
+*/
+Rule
+  filter-defined(V:defined-values, V*:values*) ~> (V, filter-defined(V*))
+Rule
+  filter-defined(none, V*:values*) ~> filter-defined(V*)
+Rule
+  filter-defined( ) ~> ( )

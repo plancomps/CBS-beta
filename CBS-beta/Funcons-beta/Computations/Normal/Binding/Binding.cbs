@@ -1,0 +1,247 @@
+### Binding
+
+[
+  Type     environments       Alias envs
+  Datatype identifiers        Alias ids
+  Funcon   identifier-tagged  Alias id-tagged // FIX-ME: qualified-identifier Alias qual-id ?
+  Funcon   fresh-identifier
+  Entity   environment        Alias env
+  Funcon   initialise-binding
+  Funcon   bind-value         Alias bind
+  Funcon   unbind
+  Funcon   bound-directly
+  Funcon   bound-value        Alias bound
+  Funcon   closed
+  Funcon   scope
+  Funcon   accumulate
+  Funcon   collateral
+  Funcon   bind-recursively
+  Funcon   recursive
+]
+
+Meta-variables
+  T <: values
+
+#### Environments
+
+Type
+  environments ~> maps(identifiers, values)
+Alias
+  envs = environments
+/*
+  An environment represents bindings of identifiers to defined values.
+  Mapping an identifier to `none` represents that its binding is hidden.
+*/
+
+Datatype
+  identifiers ::= // FIX-ME: improve the notation
+    {_:strings} | 
+    identifier-tagged(I:identifiers, V:defined-values)
+Alias
+  ids = identifiers
+Alias
+  id-tagged = identifier-tagged
+/*
+  An identifier is either a string of characters, or an identifier tagged with
+  some value (e.g., with the identifier of a namespace).
+*/
+
+Funcon
+  fresh-identifier : =>identifiers
+/*
+  `fresh-identifier` computes an identifier distinct from all previously
+  computed identifiers.
+*/
+Rule
+  fresh-identifier ~> identifier-tagged("generated", fresh-atom)
+
+#### Current bindings
+
+Entity
+  environment(_:environments) |- _ ---> _
+Alias
+  env = environments
+/*
+  The environment entity allows a computation to refer to the current bindings
+  of identifiers to values.
+*/
+
+Funcon
+  initialise-binding(X:=>T) : =>T
+   ~> initialise-linking(initialise-generating(closed(X)))
+/*
+  `initialise-binding(X)` ensures that `X` does not depend on non-local bindings.
+  It also ensures that the linking entity (used to represent potentially cyclic
+  bindings) and the generating entity (for creating fresh identifiers) are 
+  initialised.
+*/
+
+Funcon
+  bind-value(I:identifiers, V:defined-values) : =>environments
+    ~> { I |-> V }
+Alias
+  bind = bind-value
+/*
+  `bind-value(I, X)` computes the environment that binds only `I` to the value
+  computed by `X`.
+*/
+  
+Funcon
+  unbind(I:identifiers) : =>environments
+    ~> { I |-> none }
+/*
+  `unbind(I)` computes the environment that hides the binding of `I`.
+*/
+
+Funcon
+  bound-directly(I:identifiers) : =>defined-values
+/* 
+  `bound-directly(I)` returns the value to which `I` is currently bound, if any,
+  and otherwise fails.
+
+  `bound-directly(I)` does *not* follow links. It is used in connection with
+  recursively-bound values when references are not encapsulated in abstractions.
+*/
+Rule 
+  lookup(Rho, I) ~> V:defined-values
+  --------------------------------------------------------
+  environment(Rho) |- bound-directly(I:identifiers) ---> V
+Rule 
+  lookup(Rho, I) ~> none
+  -----------------------------------------------------------
+  environment(Rho) |- bound-directly(I:identifiers) ---> fail
+
+Funcon
+  bound-value(I:identifiers) : =>(defined-values & ~links)
+   ~> follow-if-link(bound-directly(I))
+Alias
+  bound = bound-value
+/* 
+   `bound-value(I)` inspects the value to which `I` is currently bound, if any,
+   and otherwise fails. If the value is a link, `bound-value(I)` returns the
+   value obtained by following the link, if any, and otherwise fails. If the 
+   inspected value is not a link, `bound-value(I)` returns it. 
+   
+   `bound-value(I)` is used for references to non-recursive bindings and to
+   recursively-bound values when references are encapsulated in abstractions.
+*/
+
+#### Scope
+
+Funcon
+  closed(X:=>T) : =>T
+/*
+  `closed(X)` ensures that `X` does not depend on non-local bindings.
+*/
+Rule
+  environment(map( )) |- X ---> X'
+  -------------------------------------------
+  environment(_) |- closed(X) ---> closed(X')
+Rule
+  closed(V:T) ~> V
+
+Funcon
+  scope(Rho:environments, X:=>T) : =>T
+/*
+  `scope(D,X)` executes `D` with the current bindings, to compute an environment
+  `Rho` representing local bindings. It then executes `X` to compute the result,
+  with the current bindings extended by `Rho`, which may shadow or hide previous
+  bindings.
+  
+  `closed(scope(Rho, X))` ensures that `X` can reference only the bindings
+  provided by `Rho`.
+*/
+Rule
+  environment(map-override(Rho1, Rho0)) |- X ---> X'
+  ---------------------------------------------------------------------
+  environment(Rho0) |- scope(Rho1:environments, X) ---> scope(Rho1, X')
+Rule
+  scope(_:environments, V:T) ~> V
+
+Funcon
+  accumulate(D*:(=>environments)*) : =>environments
+/*
+  `accumulate(D1, D2)` executes `D1` with the current bindings, to compute an
+  environment `Rho1` representing some local bindings. It then executes `D2` to
+  compute an environment `Rho2` representing further local bindings, with the
+  current bindings extended by `Rho1`, which may shadow or hide previous
+  current bindings. The result is `Rho1` extended by `Rho2`, which may shadow
+  or hide the bindings of `Rho1`.
+  
+  `accumulate(_, _)` is associative, with `map( )` as unit, and extends to any
+  number of arguments.
+*/
+Rule
+                  D1 ---> D1'
+  -------------------------------------------
+  accumulate(D1, D2) ---> accumulate(D1', D2)
+Rule
+  accumulate(Rho1:environments, D2) ~> scope(Rho1, map-override(D2, Rho1))
+Rule
+  accumulate( ) ~> map( ) //FIX-ME (implementation) order matters
+Rule
+  accumulate(D1) ~> D1
+Rule
+  accumulate(D1, D2, D+) ~> accumulate(D1, accumulate(D2, D+))
+
+Funcon
+  collateral(Rho*:environments*) : =>environments
+   ~> def map-unite(Rho*)
+/* 
+  `collateral(D1, ...)` pre-evaluates its arguments with the current bindings,
+  and unites the resulting maps, which fails if the domains are not pairwise
+  disjoint.
+
+  `collateral(D1, D2)` is associative and commutative with `map( )` as unit, 
+  and extends to any number of arguments.
+*/
+
+#### Recurse
+
+Funcon
+  bind-recursively(I:identifiers, E:=>defined-values) : =>environments
+    ~> recursive({I}, bind-value(I, E))
+/*
+  `bind-recursively(I, E)` binds `I` to a link that refers to the value of `E`, 
+  representing a recursive binding of `I` to the value of `E`.
+  Since `bound-value(I)` follows links, it should not be executed during the
+  evaluation of `E`.
+*/
+
+Funcon
+  recursive(SI:sets(identifiers), D:=>environments) : =>environments
+    ~> re-close(bind-to-forward-links(SI), D)
+/*
+  `recursive(SI, D)` executes `D` with potential recursion on the bindings of 
+  the identifiers in the set `SI` (which need not be the same as the set of
+  identifiers bound by `D`).
+*/
+
+Auxiliary Funcon
+  re-close(M:maps(identifiers, links), D:=>environments) : =>environments
+    ~> accumulate(scope(M, D), sequential(set-forward-links(M), map( )))
+/*
+  `re-close(M, D)` first executes `D` in the scope `M`, which maps identifiers
+  to freshly allocated links. This computes an environment `Rho` where the bound
+  values may contain links, or implicit references to links in abstraction
+  values. It then sets the link for each identifier in the domain of `M` to
+  refer to its bound value in `Rho`, and returns `Rho` as the result.
+*/
+
+Auxiliary Funcon
+  bind-to-forward-links(SI:sets(identifiers)) : =>maps(identifiers, links)
+    ~> map-unite(interleave-map(bind-value(given, fresh-link(defined-values)), 
+                                set-elements(SI)))
+/*
+  `bind-to-forward-links(SI)` binds each identifier in the set `SI` to a
+  freshly allocated link.
+*/
+
+Auxiliary Funcon
+  set-forward-links(M:maps(identifiers, links)) : =>nothing
+    ~> effect(interleave-map(set-link(lookup(M, given), bound-value(given)),
+                             set-elements(map-domain(M))))
+/*
+  For each identifier `I` in the domain of `M`, `set-forward-links(M)` sets the 
+  link to which `I` is mapped by `M` to the current bound value of `I`.
+*/

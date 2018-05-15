@@ -1,0 +1,85 @@
+### Abruptly terminating
+
+[
+  Funcon stuck
+  Entity abrupted
+  Funcon finalise-abrupting
+  Funcon abrupt
+  Funcon handle-abrupt
+  Funcon finally
+]
+
+Meta-variables
+  T <: values
+  DT, DT' <: defined-values
+
+Funcon
+  stuck : =>empty-type
+/*
+  `stuck` does not have any computation. It is used to represent the result of
+  a transition that causes the computation to terminate abruptly.
+*/
+
+Entity
+  _ --abrupted(V?:defined-values?)-> _
+/*
+  `abrupted(V)` in a label on a tranistion indicates abrupt termination for
+  reason `V`. `abrupted( )` indicates the absence of abrupt termination.
+*/
+
+Funcon
+  finalise-abrupting(X:=>T) : =>T|nothing
+   ~> handle-abrupt(X, none)
+/*
+  `finalise-abrupting(X)` handles abrupt termination of `X` for any reason.
+*/
+
+Funcon
+  abrupt(V:defined-values) :=>empty-type
+/*
+  `abrupt(V)` terminates abruptly for reason `V`.
+*/
+Rule
+  abrupt(V:defined-values) --abrupted(V)-> stuck
+
+Funcon
+  handle-abrupt(X:DT=>T, Y:DT'=>T) : DT=>T
+/*
+  `handle-abrupt(X, Y)` first evaluates `X`. If `X` terminates normally with
+  value `V`, then `V` is returned and `Y` is ignored. If `X` terminates abruptly
+  for reason `V`, then `Y` is executed with `V` as `given` value.
+
+  `handle-abrupt(X, Y)` is associative, with `abrupt(given)` as left and right
+  unit. `handle-abrupt(X, else(Y, abrupt(given)))` ensures propagation of 
+  abrupt termination for the given reason if `Y` fails
+*/
+Rule
+                    X -- abrupted( ) -> X'
+  ----------------------------------------------------------
+  handle-abrupt(X, Y) -- abrupted( ) -> handle-abrupt(X', Y)
+Rule
+                    X -- abrupted(V:DT') -> X'
+  ------------------------------------------------
+  handle-abrupt(X, Y) -- abrupted( ) -> give(V, Y)
+Rule
+  handle-abrupt(V:T, Y) ~> V
+
+Funcon
+  finally(X:=>T, Y:=>nothing) : =>T
+/*
+  `finally(X, Y)` first executes `X`. If `X` terminates normally with 
+  value `V`, then `Y` is executed before terminating normally with value `V`.
+  If `X` terminates abruptly for reason `V`, then `Y` is executed before
+  terminating abruptly with the same reason `V`.
+*/
+Rule
+              X -- abrupted( ) -> X'
+  ----------------------------------------------
+  finally(X, Y) -- abrupted( ) -> finally(X', Y)
+Rule
+              X -- abrupted(V:defined-values) -> X'
+  -------------------------------------------------------
+  finally(X, Y) -- abrupted() -> sequential(Y, abrupt(V))
+Rule
+  finally(V:T, Y) ~> sequential(Y,V)
+  

@@ -1,0 +1,237 @@
+## Value Types
+
+[ 
+  Type   values           Alias vals
+  Type   defined-values   Alias def-vals
+  Type   value-types      Alias types
+  Type   empty-type
+  Funcon is-in-type       Alias is
+  Type   datatype-values
+  Type   nothing
+  Funcon none
+  Type   cast-to-type     Alias cast
+  Type   is-defined       Alias is-def
+  Type   ground-values    Alias ground-vals
+  Funcon is-equal         Alias is-eq
+]
+
+
+### The universe of values
+
+Built-in Type
+  values
+Alias
+  vals = values
+/* 
+  The set of all values is a fixed, infinite universe. It consists of:
+  * datatype values, 
+  * built-in values, and
+  * values formed from computations
+  together with a special value `none` that indicates the absence of an
+  ordinary value.
+
+  Values are used to represent the information processed by funcon computations.
+*/
+
+Meta-variables
+  T, T1, T2 <: values
+  DT, DT' <: defined-values
+
+
+### Ordinary values
+
+Built-in Type
+  defined-values <: values
+Alias
+  def-vals = defined-values
+/*
+  The values of type `defined-values` are all the ordinary values.
+*/
+
+
+### Types
+
+Built-in Type
+  value-types <: defined-values
+Alias
+  types = value-types
+Built-in Type
+  empty-type <: defined-values
+/* 
+  A type `T` is a value that represents a subset of the universe of values. 
+
+  The values of type `types` are all the types, including `types` itself.
+
+  The formula ``V : T`` holds when `V` is a value of type `T`, i.e., `V` is in
+  the set represented by the type `T`.
+
+  The formula ``T1 <: T2`` holds when `T1` is a subtype of `T2`, i.e., the set
+  represented by `T1` is a subset of the set represented by `T2`.
+
+  The set of types forms a Boolean algebra with the following operations and
+  constants:
+    * `T1 & T2`    (meet/intersection)
+    * `T1 | T2`    (join/union)
+    * `~ T`        (complement)
+    * `values`   (top)
+    * `empty-type` (bottom)
+  
+  Subtyping: ``T1 <: T2`` is the partial order defined by the algebra. 
+
+  Subsumption: If ``V : T1`` and ``T1 <: T2`` both hold, then so does ``V : T2``.
+
+  Indivisibility: For each value `V` and type `T`, either ``V : T`` or
+  ``V : ~T`` holds.
+
+  Universality: ``V : values`` holds for all values `V`.
+
+  Emptiness: ``V : empty-type`` holds for no value `V`.
+
+  'Type N' declares the name 'N' to refer to a fresh value constructor
+  in `types`. 
+  
+  'Type N ~> T' moreover specifies 'Rule N ~> T', so that 'N' can be used as
+  an abbreviation for 'T'.
+  
+  'Type N <: T' declares the name 'N' to refer to a fresh value constructor
+  in `types`, and asserts 'N <: T'. 
+  
+  Parametrised type declarations introduce generic (possibly dependent) types, 
+  i.e., families of individual types, indexed by types (and by other values). 
+  For example, `lists(T)` is parameterised by the type of list elements `T`.
+  Replacing a parameter by `_` denotes the union over all instances of that
+  parameter, e.g., `lists(_)` is the union of the type instances `lists(T)` with
+  `T:types`.
+  
+  Qualified variables `V:T` in terms range over values of type `T`.
+  Qualified variables ``T1<:T2`` in terms range over subtypes `T1` of `T2`.
+*/
+  
+Funcon 
+  is-in-type(V:values, T':types) : =>booleans
+Alias
+  is = is-in-type
+/*
+  The funcon `is-in-type(V, T')` tests whether ``V:T'`` holds.  The value `V`
+  need not be a ground value, but `T'` should not require testing the
+  computation type in an abstraction.
+*/
+Rule
+  V : T'
+  --------------------------------
+  is-in-type(V:T, T':types) ~> true
+Rule
+  V : ~ T'
+  --------------------------------
+  is-in-type(V:T, T':types) ~> false
+		
+
+### Datatypes
+
+Built-in Type
+  datatype-values <: values
+/*
+  A datatype value consists of an atom and a value.
+
+  'Datatype T ::= ...' declares the name 'T' to refer to a fresh value
+  constructor in `types`, and asserts ``T <: datatype-values``. 
+  
+  Each constructor funcon 'f(V1:T1, ..., Vn:Tn)' of the datatype declaration
+  generates values in 'T' of the form 'datatype-value("f", V1, ..., Vn)' from
+  the name 'f' and values 'V1:T1, ..., 'Vn:Tn'.
+  
+  'Datatype T', followed by declarations of constructor funcons for 't',
+  allows GADTs.
+*/
+
+
+### Nothing
+
+Built-in Type // not a subtype of `defined-values`
+  nothing <: values
+Built-in Funcon
+  none : nothing
+/*
+  The only value of the special datatype `nothing` is the value constructor
+  `none`, which represents the absence of an ordinary value.
+  
+  The absence of an ordinary value may arise from a funcon computation with
+  arguments for which the result is undefined (e.g., `head(nil)`) or merely
+  of no interest (e.g., `effect(V)`). As an element of a composite value, it may
+  correspond to an unassigned variable or an unbound identifier.
+  
+  Note that value constructors may allow `none` as an argument.
+*/
+Assert
+  (defined-values | nothing) == values
+Assert
+  (defined-values & nothing) == empty-type
+
+Funcon
+  cast-to-type(V:values, T':types) : =>T'
+Alias
+  cast = cast-to-type
+/*
+  Note that `cast-to-type(V, T')` allows `V` to be `none`. 
+*/
+Rule
+  V : T'
+  --------------------------------
+  cast-to-type(V:T, T':types) ~> V
+Rule
+  V : ~ T'
+  -----------------------------------
+  cast-to-type(V:T, T':types) ~> none
+Assert
+  cast-to-type(V:T, T':types) == if-true-else(is-in-type(V, T'), V, none) 
+  
+Funcon
+  is-defined(V:values) : =>booleans
+Alias
+  is-def = is-defined
+Rule
+  is-defined(V:defined-values) ~> true
+Rule
+  is-defined(none) ~> false
+Assert
+  is-defined(cast-to-type(V:defined-values, T':types)) == is-in-type(V, T')
+Assert
+  is-defined(cast-to-type(none, T':types)) == false
+
+
+### Ground values
+
+Built-in Type
+  ground-values <: values
+Alias
+  ground-vals = ground-values
+/*
+  All types whose values do not involve the value constructor `abstraction(_)`
+  are subtypes of `ground-values`. 
+  
+  Note that ``nothing <: ground-values``, so `ground-values` is not a
+  subtype of `defined-values`. 
+*/
+
+Funcon
+  is-equal(V:values, W:values) : =>booleans
+Alias
+  is-eq = is-equal
+/*
+  `is-equal(V, W)` returns `true` when `V` and `W` are identical ground values,
+  and otherwise `false`.
+*/ 
+Rule
+  V == W
+  --------------------------------------------------
+  is-equal(V:ground-values, W:ground-values) ~> true
+Rule
+  V =/= W
+  ---------------------------------------------------
+  is-equal(V:ground-values, W:ground-values) ~> false
+Rule
+  is-equal(V:~ground-values, W:values) ~> false
+Rule
+  is-equal(V:values, W:~ground-values) ~> false
+Assert
+  is-equal(none, none) == true

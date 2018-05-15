@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Objects</title>
+  <link rel="stylesheet" type="text/css" href="../../../cbs.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+	$(document).ready(function(){
+	    $("#hidesections").click(function(){
+	        $(".sectiondetails").removeAttr("open");
+	    });
+	    $("#showsections").click(function(){
+	        $(".sectiondetails").attr("open", "true");
+	    });
+	    $("#hidecomments").click(function(){
+	        $(".commentdetails").removeAttr("open");
+	    });
+	    $("#showcomments").click(function(){
+	        $(".commentdetails").attr("open", "true");
+	    });
+	    $("#hiderules").click(function(){
+	        $(".ruledetails").removeAttr("open");
+	    });
+	    $("#showrules").click(function(){
+	        $(".ruledetails").attr("open", "true");
+	    });
+        document.getElementById('jsbuttons').style.display='';
+	  });
+	</script>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+  <div class="topic">
+    <a href="../../../../index.html" title="CBS-BETA">CBS-beta</a> / 
+    <a href="../../../index.html" title="FUNCONS-BETA">Funcons-beta</a>
+  </div>
+  <div class="title">
+    <a href="Objects.cbs" title="CBS SOURCE FILE">Objects</a>
+  </div>
+  <div class="topic">
+    <img src="../../..//preview.png" 
+         alt="Preview badge" width="67" height="17">
+  </div>
+</header>
+
+<nav>
+  <div id="jsbuttons" style="display:none">
+  <div class="buttons">
+  <p>Rule 
+  <button id="showrules" title="SHOW ALL RULES">&#9660;</button>
+  <button id="hiderules" title="HIDE ALL RULES">&#9658;</button>
+  </p>
+  <p>/**/
+  <button id="showcomments" title="SHOW ALL COMMENTS">&#9660;</button>
+  <button id="hidecomments" title="HIDE ALL COMMENTS">&#9658;</button>
+  </p>
+  <p>#...
+  <button id="showsections" title="EXPAND ALL SECTIONS">&#9660;</button>
+  <button id="hidesections" title="COLLAPSE ALL SECTIONS">&#9658;</button>
+  </p>
+  </div>
+  </div>
+<div class="dropdown">
+  <button class="dropbtn">Menu</button>
+  <div class="dropdown-content">
+    
+    
+    <a href="../../../Funcons-Index/index.html" title="CURRENT FUNCON LIBRARY INDEX">Funcons-beta</a>
+    <a href="../../../../Languages-beta/index.html" title="LANGUAGES-BETA">Languages-beta</a>
+    <a href="../../../../index.html" title="CBS-BETA">CBS-beta</a>
+  </div>
+</div>
+</nav>
+
+<pre>
+</pre><details open class="sectiondetails"><summary><pre>### <b class="title"><i>Objects</i></b></pre></summary><pre>
+
+[
+  <i class="keyword">Datatype</i> <span class="name"><a href="#Name_objects" title=" -&gt; values">objects</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_object" title="values, values, values, values* -&gt; values">object</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_object-identity" title="values -&gt; values">object-identity</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_object-class-name" title="values -&gt; values">object-class-name</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_object-feature-map" title="values -&gt; values">object-feature-map</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_object-subobject-sequence" title="values -&gt; values*">object-subobject-sequence</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_object-tree" title="values -&gt; values">object-tree</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_object-single-inheritance-feature-map" title="values -&gt; values">object-single-inheritance-feature-map</a></span>
+]
+
+<i class="keyword">Datatype</i>
+  <span class="name"><span id="Name_objects" class="decl">objects</span></span> ::= <span id="Name_object" class="decl">object</span> ( _:<span class="name"><a href="../../../Computations/Normal/Generating/index.html#Name_atoms" title=" -&gt; values">atoms</a></span>, _:<span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_ids" title=" -&gt; values">ids</a></span>, _:<span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_envs" title=" -&gt; values">envs</a></span>, _:<span class="name"><a href="#Name_objects" title=" -&gt; values">objects</a></span>* )
+</pre><details class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_object" title="values, values, values, values* -&gt; values">object</a></span>( <i class="var">A</i>, <i class="var">C</i>, <i class="var">Env</i>, <i class="var">O*</i> )` is an object:
+  * distinguished by an atom `<i class="var">A</i>`,
+  * of a class named `<i class="var">C</i>`,
+  * with an environment `<i class="var">Env</i>` with the features of the object, and 
+  * a sequence `<i class="var">O*</i>` of subobjects of the direct superclasses of `<i class="var">C</i>`.
+  `<span class="name"><a href="#Name_object" title="values, values, values, values* -&gt; values">object</a></span>( <i class="var">A</i>, <i class="var">C</i>, <i class="var">Env</i> )` is an object of a base class.
+  `<span class="name"><a href="#Name_object" title="values, values, values, values* -&gt; values">object</a></span>( <i class="var">A</i>, <i class="var">C</i>, <i class="var">Env</i>, <i class="var">O&prime;</i> )` is an object of a class with a single superclass.
+  With multiple inheritance, subobjects due to repeated inheritance of the 
+  same class may be shared.
+  
+  Implementations of objects generally represent an object as a vector of
+  fields, and use pointers and offsets for efficient access to individual
+  fields. The representation of objects used in this specification is
+  independent of such implementation concerns.
+*/</span></pre></details><pre>
+
+<i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_object-identity" class="decl">object-identity</span></span> ( _:<span class="name"><a href="#Name_objects" title=" -&gt; values">objects</a></span> ) : => <span class="name"><a href="../../../Computations/Normal/Generating/index.html#Name_atoms" title=" -&gt; values">atoms</a></span>
+</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_object-identity" title="values -&gt; values">object-identity</a></span> <span class="name"><a href="#Name_object" title="values, values, values, values* -&gt; values">object</a></span> ( <span id="Variable_A" class="decl"><i class="var">A</i></span>:<span class="name"><a href="../../../Computations/Normal/Generating/index.html#Name_atoms" title=" -&gt; values">atoms</a></span>, <span id="Variable_C" class="decl"><i class="var">C</i></span>:<span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_ids" title=" -&gt; values">ids</a></span>, <span id="Variable_Env" class="decl"><i class="var">Env</i></span>:<span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_envs" title=" -&gt; values">envs</a></span>, <span id="Variable_O*" class="decl"><i class="var">O*</i></span>:<span class="name"><a href="#Name_objects" title=" -&gt; values">objects</a></span>* ) ~> <a href="#Variable_A"><i class="var">A</i></a></pre></details><pre>
+<i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_object-class-name" class="decl">object-class-name</span></span> ( _:<span class="name"><a href="#Name_objects" title=" -&gt; values">objects</a></span> ) : => <span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_ids" title=" -&gt; values">ids</a></span>
+</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_object-class-name" title="values -&gt; values">object-class-name</a></span> <span class="name"><a href="#Name_object" title="values, values, values, values* -&gt; values">object</a></span> ( <span id="Variable_A" class="decl"><i class="var">A</i></span>:<span class="name"><a href="../../../Computations/Normal/Generating/index.html#Name_atoms" title=" -&gt; values">atoms</a></span>, <span id="Variable_C" class="decl"><i class="var">C</i></span>:<span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_ids" title=" -&gt; values">ids</a></span>, <span id="Variable_Env" class="decl"><i class="var">Env</i></span>:<span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_envs" title=" -&gt; values">envs</a></span>, <span id="Variable_O*" class="decl"><i class="var">O*</i></span>:<span class="name"><a href="#Name_objects" title=" -&gt; values">objects</a></span>* ) ~> <a href="#Variable_C"><i class="var">C</i></a></pre></details><pre>
+<i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_object-feature-map" class="decl">object-feature-map</span></span> ( _:<span class="name"><a href="#Name_objects" title=" -&gt; values">objects</a></span> ) : => <span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_envs" title=" -&gt; values">envs</a></span>
+</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_object-feature-map" title="values -&gt; values">object-feature-map</a></span> <span class="name"><a href="#Name_object" title="values, values, values, values* -&gt; values">object</a></span> ( <span id="Variable_A" class="decl"><i class="var">A</i></span>:<span class="name"><a href="../../../Computations/Normal/Generating/index.html#Name_atoms" title=" -&gt; values">atoms</a></span>, <span id="Variable_C" class="decl"><i class="var">C</i></span>:<span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_ids" title=" -&gt; values">ids</a></span>, <span id="Variable_Env" class="decl"><i class="var">Env</i></span>:<span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_envs" title=" -&gt; values">envs</a></span>, <span id="Variable_O*" class="decl"><i class="var">O*</i></span>:<span class="name"><a href="#Name_objects" title=" -&gt; values">objects</a></span>* ) ~> <a href="#Variable_Env"><i class="var">Env</i></a></pre></details><pre>
+<i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_object-subobject-sequence" class="decl">object-subobject-sequence</span></span> ( _:<span class="name"><a href="#Name_objects" title=" -&gt; values">objects</a></span> ) : => <span class="name"><a href="#Name_objects" title=" -&gt; values">objects</a></span>*
+</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_object-subobject-sequence" title="values -&gt; values*">object-subobject-sequence</a></span> <span class="name"><a href="#Name_object" title="values, values, values, values* -&gt; values">object</a></span> ( <span id="Variable_A" class="decl"><i class="var">A</i></span>:<span class="name"><a href="../../../Computations/Normal/Generating/index.html#Name_atoms" title=" -&gt; values">atoms</a></span>, <span id="Variable_C" class="decl"><i class="var">C</i></span>:<span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_ids" title=" -&gt; values">ids</a></span>, <span id="Variable_Env" class="decl"><i class="var">Env</i></span>:<span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_envs" title=" -&gt; values">envs</a></span>, <span id="Variable_O*" class="decl"><i class="var">O*</i></span>:<span class="name"><a href="#Name_objects" title=" -&gt; values">objects</a></span>* ) ~> <a href="#Variable_O*"><i class="var">O*</i></a></pre></details><pre>
+
+<i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_object-tree" class="decl">object-tree</span></span> ( <span id="Variable_O" class="decl"><i class="var">O</i></span>:<span class="name"><a href="#Name_objects" title=" -&gt; values">objects</a></span> ) : => <span class="name"><a href="../Trees/index.html#Name_trees" title="values -&gt; values">trees</a></span>(<span class="name"><a href="#Name_objects" title=" -&gt; values">objects</a></span>)
+</pre><details class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_object-tree" title="values -&gt; values">object-tree</a></span> <i class="var">O</i>` forms a tree where the branches are the object trees for
+  the direct subobjects of `<i class="var">O</i>`.
+*/</span></pre></details><pre>
+</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_object-tree" title="values -&gt; values">object-tree</a></span> ( <span id="Variable_O" class="decl"><i class="var">O</i></span>:<span class="name"><a href="#Name_objects" title=" -&gt; values">objects</a></span> )
+   ~> <span class="name"><a href="../Trees/index.html#Name_tree" title="values, values* -&gt; values">tree</a></span> ( <a href="#Variable_O"><i class="var">O</i></a>,
+        <span class="name"><a href="../../../Computations/Normal/Giving/index.html#Name_interleave-map" title="values, values* -&gt; values*">interleave-map</a></span> (
+          <span class="name"><a href="#Name_object-tree" title="values -&gt; values">object-tree</a></span> <span class="name"><a href="../../../Computations/Normal/Giving/index.html#Name_given" title=" -&gt; values">given</a></span>,
+          <span class="name"><a href="#Name_object-subobject-sequence" title="values -&gt; values*">object-subobject-sequence</a></span> <a href="#Variable_O"><i class="var">O</i></a> ) )</pre></details><pre>
+
+</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_object-single-inheritance-feature-map" class="decl">object-single-inheritance-feature-map</span></span> ( <span id="Variable_O" class="decl"><i class="var">O</i></span>:<span class="name"><a href="#Name_objects" title=" -&gt; values">objects</a></span> ) : => <span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_envs" title=" -&gt; values">envs</a></span></span></pre></summary><pre>   ~> <span class="name"><a href="../Maps/index.html#Name_map-override" title="values* -&gt; values">map-override</a></span> <span class="name"><a href="../../../Computations/Normal/Giving/index.html#Name_left-to-right-map" title="values, values* -&gt; values*">left-to-right-map</a></span> ( 
+        <span class="name"><a href="#Name_object-feature-map" title="values -&gt; values">object-feature-map</a></span> <span class="name"><a href="../../../Computations/Normal/Giving/index.html#Name_given" title=" -&gt; values">given</a></span>,
+        <span class="name"><a href="../Trees/index.html#Name_single-branching-sequence" title="values -&gt; values+">single-branching-sequence</a></span> <span class="name"><a href="#Name_object-tree" title="values -&gt; values">object-tree</a></span> <a href="#Variable_O"><i class="var">O</i></a> )</pre></details><pre>
+</pre><details class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  For multiple inheritance, different resolution orders can be specified
+  by using difference linearisations of the object tree.
+*/</span></pre></details><pre>
+          
+</pre></details><pre>
+</pre>
+
+<footer>
+  <span>From the <a href="http://plancomps.org" title="PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS">PLanCompS Project, 2018</a></span>
+  <span><a href="mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20Funcons-beta/Values/Composite/Objects/Objects.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A" title="GENERATE AN EMAIL TEMPLATE">Suggest an improvement...</a></span>
+</footer>
+
+</div>
+</body>
+</html>

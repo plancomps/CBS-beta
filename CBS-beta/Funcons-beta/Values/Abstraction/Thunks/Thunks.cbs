@@ -1,0 +1,27 @@
+### Thunks
+
+[
+  Datatype thunks
+  Funcon   thunk
+  Funcon   force
+]
+
+Meta-variables
+  T <: values
+
+Datatype
+  thunks(T) ::= thunk(A:abstractions(nothing=>T))
+/*
+  `thunks(T)` consists of abstractions whose bodies do not depend on
+  a given value, and whose executions normally compute values of type `T`.
+  `thunk(abstraction(X))` evaluates to a thunk with dynamic bindings,
+  `thunk(closure(X))` computes a thunk with static bindings.
+*/
+
+Funcon
+  force(H:thunks(T)) : =>T
+/*
+  `force(H)` enacts the abstraction of the thunk `H`.
+*/
+Rule
+  force(thunk(abstraction(X))) ~> X

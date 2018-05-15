@@ -1,0 +1,45 @@
+### Generic abstractions
+
+[
+  Type   abstractions
+  Funcon abstraction
+  Funcon closure
+  Funcon enact
+]
+
+Meta-variables
+  DT <: defined-values
+  T <: values
+
+Type
+  abstractions(_:computation-types) <: defined-values
+
+Funcon
+  abstraction(X:DT=>T) : abstractions(DT=>T)
+/*
+  The funcon `abstraction(X)` forms abstraction values from computations.
+  It is the only non-strict value constructor.
+  
+  References to bindings of identifiers in `X` are dynamic.
+  The funcon `closure(X)` forms abstractions with static bindings.
+*/
+
+Funcon
+  closure(X:DT=>T) : =>abstractions(DT=>T)
+/*
+  `closure(X)` computes a closed abstraction from the computation `X`.
+  In contrast to `abstraction(X)`, references to bindings of identifiers
+  in `X` are static. Moreover, `closure(X)` is not a value constructor,
+  so it cannot be used in pattern terms in rules.
+*/
+Rule
+  environment(Rho) |- closure(X) ---> abstraction(closed(scope(Rho, X)))
+
+Funcon
+  enact(A:abstractions(DT=>T)) : DT=>T
+/*
+  `enact(A)` executes the computation of the abstraction `A`,
+  with access to all the current entities.
+*/
+Rule
+  enact(abstraction(X)) ~> X

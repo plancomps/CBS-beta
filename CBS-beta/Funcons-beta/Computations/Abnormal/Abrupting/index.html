@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Abrupting</title>
+  <link rel="stylesheet" type="text/css" href="../../../cbs.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+	$(document).ready(function(){
+	    $("#hidesections").click(function(){
+	        $(".sectiondetails").removeAttr("open");
+	    });
+	    $("#showsections").click(function(){
+	        $(".sectiondetails").attr("open", "true");
+	    });
+	    $("#hidecomments").click(function(){
+	        $(".commentdetails").removeAttr("open");
+	    });
+	    $("#showcomments").click(function(){
+	        $(".commentdetails").attr("open", "true");
+	    });
+	    $("#hiderules").click(function(){
+	        $(".ruledetails").removeAttr("open");
+	    });
+	    $("#showrules").click(function(){
+	        $(".ruledetails").attr("open", "true");
+	    });
+        document.getElementById('jsbuttons').style.display='';
+	  });
+	</script>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+  <div class="topic">
+    <a href="../../../../index.html" title="CBS-BETA">CBS-beta</a> / 
+    <a href="../../../index.html" title="FUNCONS-BETA">Funcons-beta</a>
+  </div>
+  <div class="title">
+    <a href="Abrupting.cbs" title="CBS SOURCE FILE">Abrupting</a>
+  </div>
+  <div class="topic">
+    <img src="../../..//preview.png" 
+         alt="Preview badge" width="67" height="17">
+  </div>
+</header>
+
+<nav>
+  <div id="jsbuttons" style="display:none">
+  <div class="buttons">
+  <p>Rule 
+  <button id="showrules" title="SHOW ALL RULES">&#9660;</button>
+  <button id="hiderules" title="HIDE ALL RULES">&#9658;</button>
+  </p>
+  <p>/**/
+  <button id="showcomments" title="SHOW ALL COMMENTS">&#9660;</button>
+  <button id="hidecomments" title="HIDE ALL COMMENTS">&#9658;</button>
+  </p>
+  <p>#...
+  <button id="showsections" title="EXPAND ALL SECTIONS">&#9660;</button>
+  <button id="hidesections" title="COLLAPSE ALL SECTIONS">&#9658;</button>
+  </p>
+  </div>
+  </div>
+<div class="dropdown">
+  <button class="dropbtn">Menu</button>
+  <div class="dropdown-content">
+    
+    
+    <a href="../../../Funcons-Index/index.html" title="CURRENT FUNCON LIBRARY INDEX">Funcons-beta</a>
+    <a href="../../../../Languages-beta/index.html" title="LANGUAGES-BETA">Languages-beta</a>
+    <a href="../../../../index.html" title="CBS-BETA">CBS-beta</a>
+  </div>
+</div>
+</nav>
+
+<pre>
+</pre><details open class="sectiondetails"><summary><pre>### <b class="title"><i>Abruptly terminating</i></b></pre></summary><pre>
+
+[
+  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_stuck" title=" -&gt; values">stuck</a></span>
+  <i class="keyword">Entity</i> <span class="name"><a href="#Name_abrupted" title=" -&gt; values">abrupted</a></span>
+  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_finalise-abrupting" title="values -&gt; values">finalise-abrupting</a></span>
+  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_abrupt" title="values -&gt; values">abrupt</a></span>
+  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_handle-abrupt" title="values, values -&gt; values">handle-abrupt</a></span>
+  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_finally" title="values, values -&gt; values">finally</a></span>
+]
+
+<i class="keyword">Meta-variables</i>
+  <span id="PartVariable_T" class="decl"><i class="var">T</i></span> <: <span class="name"><a href="../../../Values/Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>
+  <span id="PartVariable_DT" class="decl"><i class="var">DT</i></span>, <span id="PartVariable_DT'" class="decl"><i class="var">DT&prime;</i></span> <: <span class="name"><a href="../../../Values/Value-Types/index.html#Name_defined-values" title=" -&gt; values">defined-values</a></span>
+
+<i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_stuck" class="decl">stuck</span></span> : =><span class="name"><a href="../../../Values/Value-Types/index.html#Name_empty-type" title=" -&gt; values">empty-type</a></span>
+</pre><details class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_stuck" title=" -&gt; values">stuck</a></span>` does not have any computation. It is used to represent the result of
+  a transition that causes the computation to terminate abruptly.
+*/</span></pre></details><pre>
+
+<i class="keyword">Entity</i>
+  _ --<span class="ent-name"><span id="Name_abrupted" class="decl">abrupted</span></span>(<i class="var">V<sup class="sup">?</sup></i>:<span class="name"><a href="../../../Values/Value-Types/index.html#Name_defined-values" title=" -&gt; values">defined-values</a></span><sup class="sup">?</sup>)-> _
+</pre><details class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_abrupted" title=" -&gt; values">abrupted</a></span>(<i class="var">V</i>)` in a label on a tranistion indicates abrupt termination for
+  reason `<i class="var">V</i>`. `<span class="name"><a href="#Name_abrupted" title=" -&gt; values">abrupted</a></span>( )` indicates the absence of abrupt termination.
+*/</span></pre></details><pre>
+
+</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_finalise-abrupting" class="decl">finalise-abrupting</span></span>(<span id="Variable_X" class="decl"><i class="var">X</i></span>:=><span id="Variable_T" class="decl"><i class="var">T</i></span>) : =><span id="Variable_T" class="decl"><i class="var">T</i></span>|<span class="name"><a href="../../../Values/Value-Types/index.html#Name_nothing" title=" -&gt; values">nothing</a></span></span></pre></summary><pre>   ~> <span class="name"><a href="#Name_handle-abrupt" title="values, values -&gt; values">handle-abrupt</a></span>(<a href="#Variable_X"><i class="var">X</i></a>, <span class="name"><a href="../../../Values/Value-Types/index.html#Name_none" title=" -&gt; values">none</a></span>)</pre></details><pre>
+</pre><details class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_finalise-abrupting" title="values -&gt; values">finalise-abrupting</a></span>(<i class="var">X</i>)` handles abrupt termination of `<i class="var">X</i>` for any reason.
+*/</span></pre></details><pre>
+
+<i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_abrupt" class="decl">abrupt</span></span>(<span id="Variable_V" class="decl"><i class="var">V</i></span>:<span class="name"><a href="../../../Values/Value-Types/index.html#Name_defined-values" title=" -&gt; values">defined-values</a></span>) :=><span class="name"><a href="../../../Values/Value-Types/index.html#Name_empty-type" title=" -&gt; values">empty-type</a></span>
+</pre><details class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_abrupt" title="values -&gt; values">abrupt</a></span>(<i class="var">V</i>)` terminates abruptly for reason `<i class="var">V</i>`.
+*/</span></pre></details><pre>
+</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_abrupt" title="values -&gt; values">abrupt</a></span>(<span id="Variable_V" class="decl"><i class="var">V</i></span>:<span class="name"><a href="../../../Values/Value-Types/index.html#Name_defined-values" title=" -&gt; values">defined-values</a></span>) --<span class="ent-name"><a href="#Name_abrupted" title=" -&gt; values">abrupted</a></span>(<a href="#Variable_V"><i class="var">V</i></a>)-> <span class="name"><a href="#Name_stuck" title=" -&gt; values">stuck</a></span></pre></details><pre>
+
+<i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_handle-abrupt" class="decl">handle-abrupt</span></span>(<span id="Variable_X" class="decl"><i class="var">X</i></span>:<span id="Variable_DT" class="decl"><i class="var">DT</i></span>=><span id="Variable_T" class="decl"><i class="var">T</i></span>, <span id="Variable_Y" class="decl"><i class="var">Y</i></span>:<span id="Variable_DT'" class="decl"><i class="var">DT&prime;</i></span>=><span id="Variable_T" class="decl"><i class="var">T</i></span>) : <span id="Variable_DT" class="decl"><i class="var">DT</i></span>=><span id="Variable_T" class="decl"><i class="var">T</i></span>
+</pre><details class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_handle-abrupt" title="values, values -&gt; values">handle-abrupt</a></span>(<i class="var">X</i>, <i class="var">Y</i>)` first evaluates `<i class="var">X</i>`. If `<i class="var">X</i>` terminates normally with
+  value `<i class="var">V</i>`, then `<i class="var">V</i>` is returned and `<i class="var">Y</i>` is ignored. If `<i class="var">X</i>` terminates abruptly
+  for reason `<i class="var">V</i>`, then `<i class="var">Y</i>` is executed with `<i class="var">V</i>` as `<span class="name"><a href="../../Normal/Giving/index.html#Name_given" title=" -&gt; values">given</a></span>` value.
+
+  `<span class="name"><a href="#Name_handle-abrupt" title="values, values -&gt; values">handle-abrupt</a></span>(<i class="var">X</i>, <i class="var">Y</i>)` is associative, with `<span class="name"><a href="#Name_abrupt" title="values -&gt; values">abrupt</a></span>(<span class="name"><a href="../../Normal/Giving/index.html#Name_given" title=" -&gt; values">given</a></span>)` as left and right
+  unit. `<span class="name"><a href="#Name_handle-abrupt" title="values, values -&gt; values">handle-abrupt</a></span>(<i class="var">X</i>, <span class="name"><a href="../Failing/index.html#Name_else" title="values, values+ -&gt; values">else</a></span>(<i class="var">Y</i>, <span class="name"><a href="#Name_abrupt" title="values -&gt; values">abrupt</a></span>(<span class="name"><a href="../../Normal/Giving/index.html#Name_given" title=" -&gt; values">given</a></span>)))` ensures propagation of 
+  abrupt termination for the given reason if `<i class="var">Y</i>` fails
+*/</span></pre></details><pre>
+</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>                    <a href="#Variable_X"><i class="var">X</i></a> -- <span class="ent-name"><a href="#Name_abrupted" title=" -&gt; values">abrupted</a></span>( ) -> <span id="Variable_X'" class="decl"><i class="var">X&prime;</i></span>
+  ----------------------------------------------------------
+  <span class="name"><a href="#Name_handle-abrupt" title="values, values -&gt; values">handle-abrupt</a></span>(<span id="Variable_X" class="decl"><i class="var">X</i></span>, <span id="Variable_Y" class="decl"><i class="var">Y</i></span>) -- <span class="ent-name"><a href="#Name_abrupted" title=" -&gt; values">abrupted</a></span>( ) -> <span class="name"><a href="#Name_handle-abrupt" title="values, values -&gt; values">handle-abrupt</a></span>(<a href="#Variable_X'"><i class="var">X&prime;</i></a>, <a href="#Variable_Y"><i class="var">Y</i></a>)</pre></details><pre>
+</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>                    <a href="#Variable_X"><i class="var">X</i></a> -- <span class="ent-name"><a href="#Name_abrupted" title=" -&gt; values">abrupted</a></span>(<span id="Variable_V" class="decl"><i class="var">V</i></span>:<i class="var">DT&prime;</i>) -> <span id="Variable_X'" class="decl"><i class="var">X&prime;</i></span>
+  ------------------------------------------------
+  <span class="name"><a href="#Name_handle-abrupt" title="values, values -&gt; values">handle-abrupt</a></span>(<span id="Variable_X" class="decl"><i class="var">X</i></span>, <span id="Variable_Y" class="decl"><i class="var">Y</i></span>) -- <span class="ent-name"><a href="#Name_abrupted" title=" -&gt; values">abrupted</a></span>( ) -> <span class="name"><a href="../../Normal/Giving/index.html#Name_give" title="values, values -&gt; values">give</a></span>(<a href="#Variable_V"><i class="var">V</i></a>, <a href="#Variable_Y"><i class="var">Y</i></a>)</pre></details><pre>
+</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_handle-abrupt" title="values, values -&gt; values">handle-abrupt</a></span>(<span id="Variable_V" class="decl"><i class="var">V</i></span>:<i class="var">T</i>, <span id="Variable_Y" class="decl"><i class="var">Y</i></span>) ~> <a href="#Variable_V"><i class="var">V</i></a></pre></details><pre>
+
+<i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_finally" class="decl">finally</span></span>(<span id="Variable_X" class="decl"><i class="var">X</i></span>:=><span id="Variable_T" class="decl"><i class="var">T</i></span>, <span id="Variable_Y" class="decl"><i class="var">Y</i></span>:=><span class="name"><a href="../../../Values/Value-Types/index.html#Name_nothing" title=" -&gt; values">nothing</a></span>) : =><span id="Variable_T" class="decl"><i class="var">T</i></span>
+</pre><details class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_finally" title="values, values -&gt; values">finally</a></span>(<i class="var">X</i>, <i class="var">Y</i>)` first executes `<i class="var">X</i>`. If `<i class="var">X</i>` terminates normally with 
+  value `<i class="var">V</i>`, then `<i class="var">Y</i>` is executed before terminating normally with value `<i class="var">V</i>`.
+  If `<i class="var">X</i>` terminates abruptly for reason `<i class="var">V</i>`, then `<i class="var">Y</i>` is executed before
+  terminating abruptly with the same reason `<i class="var">V</i>`.
+*/</span></pre></details><pre>
+</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>              <a href="#Variable_X"><i class="var">X</i></a> -- <span class="ent-name"><a href="#Name_abrupted" title=" -&gt; values">abrupted</a></span>( ) -> <span id="Variable_X'" class="decl"><i class="var">X&prime;</i></span>
+  ----------------------------------------------
+  <span class="name"><a href="#Name_finally" title="values, values -&gt; values">finally</a></span>(<span id="Variable_X" class="decl"><i class="var">X</i></span>, <span id="Variable_Y" class="decl"><i class="var">Y</i></span>) -- <span class="ent-name"><a href="#Name_abrupted" title=" -&gt; values">abrupted</a></span>( ) -> <span class="name"><a href="#Name_finally" title="values, values -&gt; values">finally</a></span>(<a href="#Variable_X'"><i class="var">X&prime;</i></a>, <a href="#Variable_Y"><i class="var">Y</i></a>)</pre></details><pre>
+</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>              <a href="#Variable_X"><i class="var">X</i></a> -- <span class="ent-name"><a href="#Name_abrupted" title=" -&gt; values">abrupted</a></span>(<span id="Variable_V" class="decl"><i class="var">V</i></span>:<span class="name"><a href="../../../Values/Value-Types/index.html#Name_defined-values" title=" -&gt; values">defined-values</a></span>) -> <span id="Variable_X'" class="decl"><i class="var">X&prime;</i></span>
+  -------------------------------------------------------
+  <span class="name"><a href="#Name_finally" title="values, values -&gt; values">finally</a></span>(<span id="Variable_X" class="decl"><i class="var">X</i></span>, <span id="Variable_Y" class="decl"><i class="var">Y</i></span>) -- <span class="ent-name"><a href="#Name_abrupted" title=" -&gt; values">abrupted</a></span>() -> <span class="name"><a href="../../Normal/Flowing/index.html#Name_sequential" title="values*, values -&gt; values">sequential</a></span>(<a href="#Variable_Y"><i class="var">Y</i></a>, <span class="name"><a href="#Name_abrupt" title="values -&gt; values">abrupt</a></span>(<a href="#Variable_V"><i class="var">V</i></a>))</pre></details><pre>
+</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_finally" title="values, values -&gt; values">finally</a></span>(<span id="Variable_V" class="decl"><i class="var">V</i></span>:<i class="var">T</i>, <span id="Variable_Y" class="decl"><i class="var">Y</i></span>) ~> <span class="name"><a href="../../Normal/Flowing/index.html#Name_sequential" title="values*, values -&gt; values">sequential</a></span>(<a href="#Variable_Y"><i class="var">Y</i></a>,<a href="#Variable_V"><i class="var">V</i></a>)</pre></details><pre>
+  </pre></details><pre>
+</pre>
+
+<footer>
+  <span>From the <a href="http://plancomps.org" title="PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS">PLanCompS Project, 2018</a></span>
+  <span><a href="mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20Funcons-beta/Computations/Abnormal/Abrupting/Abrupting.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A" title="GENERATE AN EMAIL TEMPLATE">Suggest an improvement...</a></span>
+</footer>
+
+</div>
+</body>
+</html>

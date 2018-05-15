@@ -1,0 +1,54 @@
+### Returning
+
+[
+  Datatype returning
+  Funcon   returned
+  Funcon   finalise-returning
+  Funcon   return
+  Funcon   handle-return
+]
+
+Meta-variables
+  T <: values
+
+Datatype
+  returning ::= returned(V:defined-values)
+/*
+  `returned(V)` is a reason for abrupt termination.
+*/
+
+Funcon
+  finalise-returning(X:=>T) : =>T|nothing
+   ~> finalise-abrupting(X)
+/*
+  `finalise-returning(X)` handles abrupt termination of `X` due to
+  executing `return(V)`.
+*/
+
+Funcon
+  return(V:T) : =>empty-type
+   ~> abrupt(returned(V))
+/*
+  `return(V)` abruptly terminates all enclosing computations until it is handled.
+*/
+
+Funcon
+  handle-return(X:=>T) : =>T
+/*
+  `handle-return(X)` first evaluates `X`. If `X` either terminates abruptly for 
+  reason `returned(V)`, or terminates normally with value `V`, it gives `V`.
+*/
+Rule
+                 X -- abrupted( ) -> X'
+  ----------------------------------------------------
+  handle-return(X) -- abrupted( ) -> handle-return(X')
+Rule
+  X -- abrupted(returned(V:defined-values)) -> X'
+  -----------------------------------------------
+  handle-return(X) -- abrupted( ) -> V
+Rule
+                 X -- abrupted(V':~returning) -> X'
+  -----------------------------------------------------
+  handle-return(X) -- abrupted(V') -> handle-return(X')
+Rule
+  handle-return(V:T) ~> V

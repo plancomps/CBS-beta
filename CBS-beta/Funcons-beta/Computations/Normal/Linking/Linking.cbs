@@ -1,0 +1,62 @@
+### Linking
+
+[
+  Datatype links
+  Funcon   initialise-linking
+  Funcon   link
+  Funcon   fresh-link
+  Funcon   fresh-initialised-link    Alias fresh-init-link
+  Funcon   set-link
+  Funcon   follow-if-link
+]
+
+Meta-variables
+  DT <: defined-values
+  T <: values
+
+Datatype
+  links ::= link(_:variables)
+
+Funcon
+  initialise-linking(X:=>T) : =>T
+   ~> initialise-storing(X)
+/*
+  `initialise-linking(X)` ensures that the entities used by the funcons for
+  linking are properly initialised.
+*/
+
+Funcon
+  fresh-link(DT) : =>links
+    ~> link(allocate-variable(DT))
+
+Funcon
+  fresh-initialised-link(DT, V:DT) : =>links
+    ~> link(allocate-initialised-variable(DT, V))
+Alias
+  fresh-init-link = fresh-initialised-link
+
+Funcon
+  set-link(L:links, V:DT) : =>nothing
+/*
+  The value of a link can be set only once.
+*/
+Rule
+  set-link(link(Var:variables),V:DT) ~> initialise-variable(Var,V)
+
+Funcon
+  follow-link(L:links) : =>defined-values
+Rule
+  follow-link(link(Var:variables)) ~> assigned(Var)
+
+Funcon
+  follow-if-link(V:defined-values) : =>defined-values
+/*
+  If `V` is a link, `follow-if-link(V)` computes the set value, and
+  otherwise it evaluates to `V`.
+*/
+Rule
+  follow-if-link(link(Var:variables)) ~> assigned(Var)
+Rule
+   V : ~ (links|nothing)
+  -----------------------
+  follow-if-link(V) ~> V

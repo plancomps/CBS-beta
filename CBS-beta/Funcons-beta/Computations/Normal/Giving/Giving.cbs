@@ -1,0 +1,193 @@
+### Giving
+
+[
+  Entity given-value
+  Funcon initialise-giving
+  Funcon give
+  Funcon given
+  Funcon no-given
+  Funcon left-to-right-map
+  Funcon interleave-map
+  Funcon left-to-right-repeat
+  Funcon interleave-repeat
+  Funcon left-to-right-filter
+  Funcon interleave-filter
+  Funcon fold-left
+  Funcon fold-right
+]
+
+Meta-variables
+  T, T' <: values
+  DT <: defined-values
+
+Entity
+  given-value(V:values) |- _ ---> _
+/*
+  The given-value entity allows a computation to refer to a single
+  previously-computed `V:defined-values`. The given value `none` represents 
+  the absence of a current given value.
+*/
+
+Funcon
+  initialise-giving(X:nothing=>T) : nothing=>T
+   ~> no-given(X)
+/*
+  `initialise-giving(X)` ensures that the entities used by the funcons for
+  giving are properly initialised.
+*/
+
+Funcon
+  give(V:DT, Y:DT=>T) : =>T
+/*
+  `give(X, Y)` executes `X`, possibly referring to the current `given` value,
+  to compute a value `V`. It then executes `Y` with `V` as the `given` value,
+  to compute the result.
+*/
+Rule
+  given-value(V) |- Y ---> Y'
+  ------------------------------------------------
+  given-value(_) |- give(V:DT, Y) ---> give(V, Y')
+Rule
+  give(V:DT, W:T) ~> W
+
+Funcon
+  given : DT=>DT
+/*
+  `given` refers to the current given value.
+*/
+Rule
+  given-value(V:defined-values) |- given ---> V
+Rule
+  given-value(none) |- given ---> fail
+
+Funcon
+  no-given(_:nothing=>T) : nothing=>T
+/*
+  `no-given(X)` computes `X` without references to the current given value.
+*/
+Rule
+  given-value(none) |- X ---> X'
+  ---------------------------------------------------
+  given-value(_) |- no-given(X) ---> no-given(X')
+Rule
+  no-given(U:T) ~> U
+
+
+#### Mapping
+
+/*
+  Maps on collection values can be expressed directly, e.g.,
+  `list(left-to-right-map(F, list-elements(L)))`.
+*/
+
+Funcon
+  left-to-right-map(F:DT=>T, V*:(DT)*) : =>(T)*
+/*
+  `left-to-right-map(F, V*)` computes `F` for each value in `V*` from left
+  to right, returning the sequence of resulting values.
+
+  Note that when ``nothing<:T``, the sequence of results may include `none`.
+*/
+Rule
+  left-to-right-map(F, V:DT, V*:(DT)*)
+    ~> left-to-right(give(V, F), left-to-right-map(F, V*))
+Rule
+  left-to-right-map(F, ( )) ~> ( )
+
+Funcon
+  interleave-map(F:DT=>T, V*:(DT)*) : =>(T)*
+/*
+  `interleave-map(F, V*)` computes `F` for each value in `V*` interleaved, 
+  returning the sequence of resulting values.
+*/
+Rule
+  interleave-map(F, V:DT, V*:(DT)*)
+    ~> interleave(give(V, F), interleave-map(F, V*))
+Rule
+  interleave-map(F, ( )) ~> ( )
+
+Funcon
+  left-to-right-repeat(F:ints=>T, M:ints, N:ints) : =>(T)*
+/*
+  `left-to-right-repeat(F, M, N)` computes `F` for each value from `M` to `N` 
+  sequentially, returning the sequence of resulting values.
+*/
+Rule
+  is-less-or-equal(M, N) == true
+  -------------------------------------------------------------------------
+  left-to-right-repeat(F, M:ints, N:ints)
+    ~> left-to-right(give(M, F), left-to-right-repeat(F, int-add(M, 1), N))
+Rule
+  is-less-or-equal(M, N) == false
+  ----------------------------------------------
+  left-to-right-repeat(F, M:ints, N:ints) ~> ( )
+
+Funcon
+  interleave-repeat(F:ints=>T, M:ints, N:ints) : =>(T)*
+/*
+  `interleave-repeat(F, M, N)` computes `F` for each value from `M` to `N` 
+  interleaved, returning the sequence of resulting values.
+*/
+Rule
+  is-less-or-equal(M, N) == true
+  -------------------------------------------------------------------
+  interleave-repeat(F, M:ints, N:ints)
+    ~> interleave(give(M, F), interleave-repeat(F, int-add(M, 1), N))
+Rule
+  is-less-or-equal(M, N) == false
+  -------------------------------------------
+  interleave-repeat(F, M:ints, N:ints) ~> ( )
+
+
+#### Filtering
+
+/*
+  Filters on collections of values can be expressed directly, e.g., 
+  `list(left-to-right-filter(P, list-elements(L)))` to filter a list `L`.
+*/
+
+Funcon
+  left-to-right-filter(P:DT=>booleans, V*:(DT)*) : =>(DT)*
+   ~> filter-defined(left-to-right-map(if-true-else(P, given, none), V*))
+/*
+  `left-to-right-filter(P, V*)` computes `P` for each value in `V*` from left
+  to right, returning the sequence of argument values for which the result is
+  `true`.
+*/
+
+Funcon
+  interleave-filter(P:DT=>booleans, V*:(DT)*) : =>(DT)*
+   ~> filter-defined(interleave-map(if-true-else(P, given, none), V*))
+/*
+  `interleave-filter(P, V*)` computes `P` for each value in `V*` interleaved,
+  returning the sequence of argument values for which the result is `true`.
+*/
+
+
+#### Folding
+
+Funcon
+  fold-left(F:tuples(T,T')=>T, A:T, V*:(T')*) : =>T
+/*
+  `fold-left(F, A, V*)` reduces a sequence `V*` to a single value by folding it
+  from the left, using `A` as the initial accumulator value, and iteratively
+  updating the accumulator by giving `F` the pair of the accumulator value and
+  the first of the remaining arguments.
+*/
+Rule
+  fold-left(F, A:T, ( )) ~> A
+Rule
+  fold-left(F, A:T, V:T', V*:(T')*) ~> fold-left(F, give(tuple(A, V), F), V*)
+
+Funcon
+  fold-right(F:tuples(T,T')=>T', A:T', V*:(T)*) : =>T'
+/*
+  `fold-right(F, A, V*)` reduces a sequence `V*` to a single value by folding it
+  from the right, using `A` as the initial accumulator value, and iteratively
+  updating the accumulator by giving `F` the pair of the the last of the 
+  remaining arguments and the accumulator value.
+*/
+Rule
+  fold-right(_, A:T', ( )) ~> A
+Rule
+  fold-right(F, A:T', V*:(T)*, V:T) ~> give(tuple(V, fold-right(F, A, V*)), F)

@@ -1,0 +1,88 @@
+### Lists
+
+[
+  Datatype lists
+  Funcon   list
+  Funcon   list-elements
+  Funcon   list-nil       Alias nil
+  Funcon   list-cons      Alias cons
+  Funcon   list-head      Alias head
+  Funcon   list-tail      Alias tail
+  Funcon   list-length
+  Funcon   list-append
+]
+
+Meta-variables
+  T<:values
+
+Datatype
+  lists(T) ::= list(V*:(T)*)
+/*
+  `lists(T)` is the type of possibly-empty finite lists `[V1,...,Vn]` 
+  where `V1:T`, ..., `Vn:T`.
+  
+  N.B. `[T]` is always a single list value, and *not* interpreted as the
+  type `lists(T)`.
+  
+  The notation `[V1, ..., Vn]` for `list(V1, ..., Vn)` is built-in.
+*/
+Assert
+  [V*:values*] == list(V*)
+
+Funcon
+  list-elements(L:lists(T)) : =>(T)*
+Rule
+  list-elements(list(V*:values*)) ~> V*
+
+Funcon
+  list-nil : =>lists(_)
+    ~> [ ]
+Alias
+  nil = list-nil
+
+Funcon 
+  list-cons(V:T, L:lists(T)) : =>lists(T) 
+Alias
+  cons = list-cons
+Rule
+  list-cons(V:values, [V*:values*]) ~> [V, V*]
+
+Funcon
+  list-head(L:lists(T)) : =>T|nothing 
+Alias
+  head = list-head
+Rule
+  list-head[V:values, V*:values*] ~> V 
+Rule
+  list-head[ ] ~> none
+
+Funcon
+  list-tail(L:lists(T)) : =>lists(T)|nothing 
+Alias
+  tail = list-tail
+Rule
+  list-tail[V:values, V*:values*] ~> [V*] 
+Rule
+  list-tail[ ] ~> none
+
+Funcon
+  list-length(L:lists(T)) : =>nats
+Rule
+  list-length[V*:values*] ~> length(V*)
+
+Funcon
+  list-append(L*:(lists(T))*) : =>lists(T)
+Rule
+  list-append([V1*:values*], [V2*:values*]) ~> [V1*, V2*]
+Rule
+  list-append(L1:lists(_), L2:lists(_), L3:lists(_), L*:(lists(_))*)
+   ~> list-append(L1, list-append(L2, L3, L*))
+Rule
+  list-append( ) ~> [ ]
+Rule
+  list-append(L:lists(_)) ~> L
+
+/*
+  Datatypes of infinite and possibly-infinite lists can be specified as
+  algebraic datatypes using abstractions.
+*/

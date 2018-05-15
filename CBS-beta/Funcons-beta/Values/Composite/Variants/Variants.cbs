@@ -1,0 +1,28 @@
+### Variants
+
+[
+  Datatype variants
+  Funcon   variant
+  Funcon   variant-id
+  Funcon   variant-value
+]
+
+Meta-variables
+  T <: values
+
+Datatype
+  variants(T) ::= variant(_:ids, _:values)
+/*
+  A value of type `variants(T)` is a pair formed from an identifier and 
+  a value of type `T`.
+*/
+
+Funcon
+  variant-id(V:variants(T)) : =>ids
+Rule
+  variant-id(variant(I:ids, V:T)) ~> I
+
+Funcon
+  variant-value(V:variants(T)) : =>T
+Rule
+  variant-value(variant(I:ids, V:T)) ~> V

@@ -1,0 +1,69 @@
+### Multisets (bags)
+
+[
+  Type   multisets
+  Funcon multiset
+  Funcon multiset-elements
+  Funcon multiset-occurrences
+  Funcon multiset-insert
+  Funcon multiset-delete
+  Funcon is-submultiset
+]
+
+Meta-variables
+  GT <: ground-values
+
+Built-in Type
+  multisets(GT) <: defined-values
+/*
+  `multisets(GT)` is the type of possibly-empty finite multisets of elements
+  of `GT`. 
+*/
+
+Built-in Funcon
+  multiset(MS:(GT)*) : =>multisets(GT)
+/*
+  Note that `multiset(...)` is not a constructor operation. The order of
+  argument values is ignored, but duplicates are significant, e.g., 
+  `multiset(1, 2, 2)` is equivalent to `multiset(2, 1, 2)`, but not to
+  `multiset(1, 2)` or `multiset(2, 1)`.
+*/
+
+Built-in Funcon 
+  multiset-elements(MS:multisets(GT)) : =>(GT)*
+/*
+  For each multiset `MS`, the sequence of defined-values `V*` returned by 
+  `multiset-elements(MS)` contains each element of `MS` the same number of times
+  as `MS` does.
+  The order of the values in `V*` is unspecified, and may vary between multisets.
+*/
+Assert
+  multiset(multiset-elements(S)) == S
+
+Built-in Funcon
+  multiset-occurrences(GV:GT, MS:multisets(GT)) : =>nats
+/*
+  `multiset-occurrences(GV, MS)` returns the number of occurrences of `GV`
+  in `MS`. 
+*/
+
+Built-in Funcon
+  multiset-insert(GV:GT, N:nats, MS:multisets(GT)) : =>multisets(GT)
+/*
+  `multiset-insert(GV, N, MS)` returns the multiset that differs from `MS` 
+  by containing `N` more copies of `GV`.
+*/
+
+Built-in Funcon
+  multiset-delete(MS:multisets(GT), GV:GT, N:nats) : =>multisets(GT)
+/*
+ `multiset-delete(MS, GV, N)` removes `N` copies of `V` from the multiset `MS`,
+ or all copies of `GV` if there are fewer than `N` in `MS`.
+*/
+
+Built-in Funcon
+  is-submultiset(MS1:multisets(GT), MS2:multisets(GT)) : =>booleans
+/*
+  `is-submultiset(MS1, MS2)` tests whether every element of `MS1` has equal or
+  fewer occurrences in `MS1` than in `MS2`. 
+*/

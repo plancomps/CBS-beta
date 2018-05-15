@@ -1,0 +1,15 @@
+### The null value
+
+[
+  Datatype unit-type
+  Funcon   null-value    Alias null
+]
+
+Datatype 
+  unit-type ::= null-value
+/*
+  The value `null-value` represents a fixed computed value (in contrast to
+  `none`, which represents the absence of a value).
+*/
+Alias
+  null = null-value

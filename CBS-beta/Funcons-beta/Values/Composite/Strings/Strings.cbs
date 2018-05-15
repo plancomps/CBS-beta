@@ -1,0 +1,32 @@
+### Strings
+
+[
+  Type   strings
+  Funcon string
+  Funcon string-append
+  Funcon to-string
+]
+
+Type
+  strings ~> lists(characters)
+
+Funcon
+  string(C*:characters*) : =>strings
+    ~> [C*]
+/*
+  Literal strings are written `"C1...Cn"`.
+  A double-quote or backslash needs to be escaped: `"...\"..."`, `"...\\..."`.
+*/
+
+Funcon
+  string-append(S*:strings*) : =>strings
+    ~> list-append(S*)
+
+Built-in Funcon
+  to-string(GV:ground-values) : =>strings
+/*
+  The strings returned by `to-string(GV)` are unspecified, except that when
+  `GV` is already a string, it is returned unchanged.
+*/
+Assert
+  to-string(S:strings) == S

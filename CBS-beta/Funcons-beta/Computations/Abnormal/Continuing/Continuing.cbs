@@ -1,0 +1,51 @@
+### Continuing
+
+[
+  Datatype continuing
+  Funcon   continued
+  Funcon   finalise-continuing
+  Funcon   continue
+  Funcon   handle-continue
+]
+
+Datatype
+  continuing ::= continued
+/*
+  `continued` is a reason for abrupt termination.
+*/
+
+Funcon
+  finalise-continuing(X:=>T) : =>T|nothing
+   ~> finalise-abrupting(X)
+/*
+  `finalise-continuing(X)` handles abrupt termination of `X` due to executing
+  `continue`.
+*/
+
+Funcon
+  continue : =>empty-type
+   ~> abrupt(continued)
+/*
+  `continue` abruptly terminates all enclosing computations until it is handled.
+*/
+
+Funcon
+  handle-continue(X:=>nothing) : =>nothing
+/*
+  `handle-continue(X)` terminates normally when `X` terminates abruptly for the
+  reason `continued`.
+*/
+Rule
+                   X -- abrupted( ) -> X'
+  -------------------------------------------------------
+  handle-continue(X) -- abrupted( ) -> handle-continue(X')
+Rule
+                   X -- abrupted(continued) -> _
+  ----------------------------------------------
+  handle-continue(X) -- abrupted( ) -> none
+Rule
+                   X -- abrupted(V:~continuing) -> X'
+  --------------------------------------------------------
+  handle-continue(X) -- abrupted(V) -> handle-continue(X')
+Rule
+  handle-continue(none) ~> none

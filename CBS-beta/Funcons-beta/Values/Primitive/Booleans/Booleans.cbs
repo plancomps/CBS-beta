@@ -1,0 +1,81 @@
+### Booleans
+
+[
+  Datatype booleans      Alias bools
+  Funcon   true
+  Funcon   false
+  Funcon   not
+  Funcon   implies
+  Funcon   and
+  Funcon   or
+  Funcon   exclusive-or  Alias xor
+]
+
+Datatype
+  booleans ::= true | false
+Alias
+  bools = booleans
+
+Funcon
+  not(B:booleans) : =>booleans
+/*
+  `not(B)`   is logical negation.
+*/
+Rule
+  not(false) ~> true
+Rule
+  not(true) ~> false
+
+Funcon
+  implies(B1:booleans ,B2:booleans) : =>booleans 
+/*
+  `implies(B1, B2)` is logical implication.
+*/
+Rule
+  implies(false, false) ~> true
+Rule
+  implies(false, true) ~> true
+Rule
+  implies(true, true) ~> true
+Rule
+  implies(true, false) ~> false
+
+Funcon
+  and(B*:booleans*) : =>booleans
+/*
+  `and(B, ...)` is logical conjunction of any number of Boolean defined-values.
+*/
+Rule
+  and( ) ~> true
+Rule
+  and(false, B*:booleans*) ~> false  
+Rule
+  and(true, B*:booleans*) ~> and(B*)
+
+Funcon
+  or(B*:booleans*) : =>booleans
+/*
+  `or(B, ...)` is logical disjunction of any number of Boolean defined-values.
+*/
+Rule
+  or( ) ~> false
+Rule
+  or(true, B*:booleans*) ~> true
+Rule
+  or(false, B*:booleans*) ~> or(B*)
+
+Funcon
+  exclusive-or(B1:booleans, B2:booleans) : =>booleans
+Alias
+  xor = exclusive-or
+/*
+  `exclusive-or(B1, B2)` is exclusive disjunction.
+*/
+Rule
+  exclusive-or(false, false) ~> false
+Rule
+  exclusive-or(false, true)  ~> true
+Rule
+  exclusive-or(true, false)  ~> true
+Rule
+  exclusive-or(true, true)   ~> false

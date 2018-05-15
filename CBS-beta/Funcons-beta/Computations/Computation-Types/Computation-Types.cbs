@@ -1,0 +1,13 @@
+## Computation Types
+
+Built-in Funcon
+  computation-types : types
+/*
+  For any value type `T`, the term `=>T` is the type of computations that
+  compute values of type `T` whenever they terminate normally.
+  
+  For any type of defined values `DT` and type of arbitrary values `T`, the term
+  `DT=>T` is the subtype of computations that compute values of type `T`
+  whenever they terminate normally, and either do not refer at all to the 
+  `given` entity, or require the `given` entity to have type `DT`.
+*/

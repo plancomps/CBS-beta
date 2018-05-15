@@ -1,0 +1,232 @@
+### Flowing
+
+[
+  Funcon   interleave
+  Datatype yielding
+  Funcon   signal
+  Funcon   yielded
+  Funcon   yield
+  Funcon   yield-on-value
+  Funcon   yield-on-abrupt
+  Funcon   atomic
+  Funcon   left-to-right   Alias l-to-r
+  Funcon   right-to-left   Alias r-to-l
+  Funcon   sequential      Alias seq
+  Funcon   effect
+  Funcon   choice
+  Funcon   if-true-else    Alias if-else
+  Funcon   while-true      Alias while
+  Funcon   do-while-true   Alias do-while
+]
+
+Meta-variables
+  T <: values
+  T* <: values*
+
+
+#### Interleaving
+
+Funcon
+  interleave(V*:T*) : =>T*
+/*
+  `interleave(...)` computes its arguments in any order, possibly interleaved,
+  and returns the resulting sequence of values, provided all terminate normally.
+  Fairness of interleaving is not required, so pure left-to-right computation
+  is allowed.
+  
+  `atomic(X)` prevents interleaving in `X`, except after transitions that emit
+  a `yielded(signal)`.
+*/
+Rule
+  interleave(V*:T*) ~> V*
+
+Datatype
+  yielding ::= signal
+
+Entity
+  _ -- yielded(Y?:yielding?) -> _
+/*
+  `yielded(signal)` in a label on a transition allows interleaving at that point
+  in the enclosing atomic computation. 
+  `yielded( )` indicates interleaving at that point in an atomic computation
+  is not allowed.
+*/
+
+Funcon
+  yield : =>nothing
+   ~> yield-on-value(none)
+
+Funcon
+  yield-on-value(V:T) : =>T
+/*
+  `yield-on-value(X)` allows interleaving in an enclosing atomic computation
+  on normal termination of `X`.
+*/
+Rule
+  yield-on-value(V:T) -- yielded(signal) -> V
+
+Funcon
+  yield-on-abrupt(X:=>T) : =>T
+/*
+  `yield-on-abrupt(X)` ensures that abrupt termination of `X` is propagated
+  through an enclosing atomic computation.
+*/
+Rule
+                   X -- abrupt(V:T),yielded(_?) -> X'
+  ----------------------------------------------------------------------
+  yield-on-abrupt(X) -- abrupt(V),yielded(signal) -> yield-on-abrupt(X')
+Rule
+                   X -- abrupt( ) -> X'
+  ------------------------------------------------------
+  yield-on-abrupt(X) -- abrupt( ) -> yield-on-abrupt(X') 
+Rule
+  yield-on-abrupt(V:T) ~> V
+
+Funcon
+  atomic(X:=>T) : =>T
+/*
+  `atomic(X)` computes `X`, but controls its potential interleaving with other
+  computations: interleaving is only allowed following a transition of `X` that 
+  emits `yielded(signal)`.
+*/
+Rule
+                   X -- yielded( ) ->1 X'
+          atomic(X') -- yielded( ) ->2 X''
+  -----------------------------------------------
+  atomic(X) -- yielded( )->1;--yielded( ) ->2 X''
+Rule
+     X -- yielded( ) -> V
+     V : T
+  ----------------------------
+  atomic(X) -- yielded( ) -> V
+Rule
+  atomic(V:T) ~> V
+Rule
+      X -- yielded(signal) -> X'
+  -------------------------------------
+  atomic(X) -- yielded( ) -> atomic(X')
+
+
+#### Sequencing
+
+Funcon
+  left-to-right(X*:(=>(T)*)*) : =>(T)*
+Alias
+  l-to-r = left-to-right
+/*
+  `left-to-right(...)` computes its arguments sequentially, from left to right,
+  and returns the resulting sequence of values, provided all terminate normally.
+  For example, `integer-add(X, Y)` may interleave the computations of `X` and 
+  `Y`, whereas `integer-add left-to-right(X, Y)` always computes `X` before `Y`.
+  
+  When each argument of `left-to-right(...)` computes a single value, the type
+  of the result is the same as that of the argument sequence. For instance,
+  when `X:T` and `Y:T'`, the result of `left-to-right(X, Y)` is of type `(T, T')`.
+  The only effect of wrapping an argument sequence in `left-to-right(...)` is to
+  ensure that when the arguments are to be evaluated, it is done in the
+  specified order.
+*/
+Rule
+                              Y ---> Y'
+  ------------------------------------------------------------
+  left-to-right(V*:(T)*, Y, Z*) ---> left-to-right(V*, Y', Z*)
+Rule
+  left-to-right(V*:(T)*) ~> V*
+
+Funcon
+  right-to-left(X*:(=>(T)*)*) : =>(T)*
+Alias
+  r-to-l = right-to-left
+/*
+  `right-to-left(...)` computes its arguments sequentially, from right to left,
+  and returns the resulting sequence of values, provided all terminate normally.
+
+  Note that `right-to-left(X*)` is not equivalent to 
+  `reverse left-to-right reverse(X*)`: `reverse(...)` is strict, and interleaves
+  the evaluation of `X*`.
+*/
+Rule
+                              Y ---> Y'
+  ------------------------------------------------------------
+  right-to-left(X*, Y, V*:(T)*) ---> right-to-left(X*, Y', V*)
+Rule
+  right-to-left(V*:(T)*) ~> V*
+
+Funcon
+  sequential(X*:(=>nothing)*,Y:=>T) : =>T
+Alias
+  seq = sequential
+/*
+  `sequential(X,...)` computes its arguments in the given order. On normal
+  termination, it returns the value of the last argument; the other arguments
+  all compute `none`.
+  
+  Binary `sequential(X, Y)` is associative, with unit `none`.
+*/
+Rule
+                  X ---> X'
+  -----------------------------------------
+  sequential(X, Y+) ---> sequential(X', Y+)
+Rule
+  sequential(none, Y+) ~> sequential(Y+)
+Rule
+  sequential(Y) ~> Y
+
+Funcon
+  effect(V*:T*) : =>nothing
+    ~> none
+/*
+  `effect(...)` interleaves the computations of its arguments, then discards
+  all the computed values.
+*/
+
+
+#### Choosing
+
+Funcon
+  choice(X+:(=>T)+) : =>T
+/*
+  `choice(Y,...)` selects one of its arguments, then computes it.
+  It is associative and commutative.
+*/
+Rule
+  choice(X*, Y, Z*) ~> Y
+
+Funcon
+  if-true-else(B:booleans, X:=>T, Y:=>T) : =>T
+Alias
+  if-else = if-true-else
+/*
+  `if-true-else(B, X, Y)` evaluates `B` to a Boolean value, then reduces
+  to `X` or `Y`, depending on the value of `B`.
+*/
+Rule
+  if-true-else(true, X, Y) ~> X
+Rule
+  if-true-else(false, X, Y) ~> Y
+
+
+#### Iterating
+
+Funcon
+  while-true(B:=>booleans, X:=>nothing) : =>nothing
+    ~> if-true-else(B, sequential(X, while-true(B, X)), none)
+Alias
+  while = while-true
+/*
+  `while-true(B, X)` evaluates `B` to a Boolean value. Depending on the value of `B`,
+  it either executes `C` and iterates, or terminates normally.
+  
+  The effect of abruptly breaking the iteration is obtained by the combination
+  `handle-break(while-true(B, X))`, and that of abruptly continuing the iteration by
+  `while-true(B, handle-continue(X))`.
+*/
+
+Funcon
+  do-while-true(X:=>nothing, B:=>booleans) : =>nothing
+    ~> sequential(X, if-true-else(B, do-while-true(X, B), none))
+Alias
+  do-while = do-while-true
+/*
+  `do-while-true(X, B)` is equivalent to `sequential(X, while-true(B, X))`.
+*/

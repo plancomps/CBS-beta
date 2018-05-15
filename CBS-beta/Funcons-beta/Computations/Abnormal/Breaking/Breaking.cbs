@@ -1,0 +1,51 @@
+### Breaking
+
+[
+  Datatype breaking
+  Funcon   broken
+  Funcon   finalise-breaking
+  Funcon   break
+  Funcon   handle-break
+]
+
+Datatype
+  breaking ::= broken
+/*
+  `broken` is a reason for abrupt termination.
+*/
+
+Funcon
+  finalise-breaking(X:=>T) : =>T|nothing
+   ~> finalise-abrupting(X)
+/*
+  `finalise-breaking(X)` handles abrupt termination of `X` due to executing
+  `break`.
+*/
+
+Funcon
+  break : =>empty-type
+   ~> abrupt(broken)
+/*
+  `break` abruptly terminates all enclosing computations until it is handled.
+*/
+
+Funcon
+  handle-break(X:=>nothing) : =>nothing
+/*
+  `handle-break(X)` terminates normally when `X` terminates abruptly for the
+  reason `broken`.
+*/
+Rule
+                X -- abrupted( ) -> X'
+  --------------------------------------------------
+  handle-break(X) -- abrupted( ) -> handle-break(X')
+Rule
+                X -- abrupted(broken) -> _
+  ----------------------------------------
+  handle-break(X) -- abrupted( ) -> none
+Rule
+                X -- abrupted(V:~breaking) -> X'
+  --------------------------------------------------
+  handle-break(X) -- abrupted(V) -> handle-break(X')
+Rule
+  handle-break(none) ~> none
