@@ -19,27 +19,33 @@ Before proceeding, it is recommended to take a look at the
 IMP
 ---
 
-Grigore Rosu gave a definition of [IMP in the K framework]. He wrote:
-
-> IMP is considered a folklore language, without an official inventor, 
-> and has been used in many textbooks and papers, often with slight 
-> syntactic variations and often without being called IMP. It includes 
-> the most basic imperative language constructs, namely basic constructs 
-> for arithmetic and Boolean expressions, and variable assignment, 
-> conditional, while loop and sequential composition constructs for statements.
-
-IMP is useful for a first illustration of CBS. The start of the definition of 
-IMP in CBS is at [IMP-Start].
+IMP is a very small imperative language, useful for illustration of the basic
+features of the CBS framework. See the page about the definition of 
+[IMP in CBS] for further details.
 
 SIMPLE
 ------
 
+SIMPLE is a somewhat larger imperative language than IMP, useful for
+illustration of further features of the CBS framework. See the page about the 
+definition of [SIMPLE in CBS] for further details. 
+
 MiniJava
 --------
+
+MiniJava is a very simple subset of Java, useful for illustrating the CBS
+funcons for classes and objects. See the page about the 
+definition of [MiniJava in CBS] for further details. 
 
 SL
 --
 
+
+
+Caml Light
+----------
+
+Pending.
 
 [CBS framework]: ../index.md
 
@@ -47,6 +53,8 @@ SL
 
 [CBS-beta language specification reading guide]: ???
 
-[IMP in the K framework]: http://www.kframework.org/language-pdfs/new/imp.pdf
+[IMP in CBS]: IMP/index.md
 
-[IMP-Start]: IMP/IMP-cbs/IMP/IMP-Start/index.html
+[SIMPLE in CBS]: SIMPLE/index.md
+
+[MiniJava in CBS]: MiniJava/index.md
