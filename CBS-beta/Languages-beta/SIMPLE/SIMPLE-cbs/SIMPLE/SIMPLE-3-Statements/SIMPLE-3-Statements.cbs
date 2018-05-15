@@ -1,0 +1,86 @@
+Language "SIMPLE"
+
+#3 Statements
+
+Syntax
+  Block : block ::= '{' stmts? '}'
+
+  Stmts : stmts ::= stmt stmts?
+
+  Stmt : stmt ::= imp-stmt | vars-decl
+    
+  ImpStmt : imp-stmt ::= block
+               |  exp ';'
+               |  'if' '(' exp ')' block ('else' block)?
+               |  'while' '(' exp ')' block
+               |  'for' '(' stmt exp ';' exp ')' block
+               |  'print' '(' exps ')' ';'
+               |  'return' exp? ';'
+               |  'try' block 'catch' '(' id ')' block
+               |  'throw' exp ';'
+//             |  'join' exp ';'
+//             |  'acquire' exp ';'
+//             |  'release' exp ';'
+//             |  'rendezvous' exp ';'
+
+Rule
+  [[ 'if' '(' Exp ')' Block ]] : stmt =
+  [[ 'if' '(' Exp ')' Block 'else' '{' '}' ]]
+Rule
+  [[ 'for' '(' Stmt Exp1 ';' Exp2 ')' 
+       '{' Stmts '}' ]] : stmt =
+  [[ '{' Stmt 
+         'while' '(' Exp1 ')' 
+            '{' '{' Stmts '}' Exp2 ';' '}'
+     '}' ]]
+
+Semantics
+  exec[[ _:stmts ]] : =>nothing
+Rule
+  exec[[ '{' '}' ]] = none
+Rule
+  exec[[ '{' Stmts '}' ]] = exec[[ Stmts ]]
+Rule
+  exec[[ ImpStmt Stmts ]] = 
+    sequential(exec[[ ImpStmt ]], exec[[ Stmts ]])
+Rule
+  exec[[ VarsDecl Stmts ]] = 
+    scope(declare[[ VarsDecl ]], exec[[ Stmts ]])
+Rule
+  exec[[ VarsDecl ]] = effect(declare[[ VarsDecl]])
+Rule
+  exec[[ Exp ';' ]] = effect(rval[[ Exp ]])
+Rule
+  exec[[ 'if' '(' Exp ')' Block1 'else' Block2 ]] =
+  	if-else(rval[[ Exp ]], exec[[ Block1 ]], exec[[ Block2 ]])
+Rule
+  exec[[ 'while' '(' Exp ')' Block ]] = while(rval[[ Exp ]], exec[[ Block ]])
+Rule
+  exec[[ 'print' '(' Exps ')' ';' ]] = print(rvals[[ Exps ]])
+Rule
+  exec[[ 'return' Exp ';' ]] = return(rval[[ Exp ]])
+Rule
+  exec[[ 'return' ';' ]] = return(null)
+Rule
+  exec[[ 'try' Block1 'catch' '(' Id ')' Block2 ]] =
+  	handle-thrown(
+  	  exec[[ Block1 ]],
+  	  else(
+  	    scope(
+  	      bind(id[[ Id ]],
+  	  	    allocate-initialised-variable(values,given)),
+  	      exec[[ Block2 ]]),
+  	    throw(given)))
+Rule
+  exec[[ 'throw' Exp ';' ]] = throw(rval[[ Exp ]])
+/*
+  Funcons for concurrency are not yet available.
+Rule
+  exec[[ 'join' Exp ';' ]] = fail // FIX-ME
+Rule
+  exec[[ 'acquire' Exp ';' ]] = fail // FIX-ME
+Rule
+  exec[[ 'release' Exp ';' ]] = fail // FIX-ME
+Rule
+  exec[[ 'rendezvous' Exp ';' ]] = fail // FIX-ME
+*/

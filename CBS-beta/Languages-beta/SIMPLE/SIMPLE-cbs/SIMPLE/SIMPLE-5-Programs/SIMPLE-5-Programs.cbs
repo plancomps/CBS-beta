@@ -1,0 +1,31 @@
+Language "SIMPLE"
+
+#5 Programs
+
+Syntax
+  Pgm : pgm ::= decls
+
+Semantics
+  run[[ Decls:pgm ]] : =>values
+    = scope(
+    	   collateral(declarations[[ Decls ]]),
+    	   sequential(
+    	     initialisations[[ Decls ]],
+    	     apply(assigned(bound("main")), tuple( ))))
+
+Syntax
+  Decls : decls ::= decl decls?
+Semantics
+  declarations[[ _:decls ]] : (=>environments)+
+Rule
+  declarations[[ Decl ]] = declare[[ Decl ]]
+Rule
+  declarations[[ Decl Decls ]] = declare[[ Decl ]], declarations[[ Decls ]]
+
+Semantics
+  initialisations[[ _:decls ]] : (=>nothing)+
+Rule
+  initialisations[[ Decl ]] = initialise[[ Decl ]]
+Rule
+  initialisations[[ Decl Decls ]] =
+  	initialise[[ Decl ]], initialisations[[ Decls ]]

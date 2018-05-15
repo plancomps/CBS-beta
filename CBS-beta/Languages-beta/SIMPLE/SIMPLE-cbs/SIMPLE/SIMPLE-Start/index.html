@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>SIMPLE-Start</title>
+  <link rel="stylesheet" type="text/css" href="../../../../../Funcons-beta/cbs.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+	$(document).ready(function(){
+	    $("#hidesections").click(function(){
+	        $(".sectiondetails").removeAttr("open");
+	    });
+	    $("#showsections").click(function(){
+	        $(".sectiondetails").attr("open", "true");
+	    });
+	    $("#hidecomments").click(function(){
+	        $(".commentdetails").removeAttr("open");
+	    });
+	    $("#showcomments").click(function(){
+	        $(".commentdetails").attr("open", "true");
+	    });
+	    $("#hiderules").click(function(){
+	        $(".ruledetails").removeAttr("open");
+	    });
+	    $("#showrules").click(function(){
+	        $(".ruledetails").attr("open", "true");
+	    });
+        document.getElementById('jsbuttons').style.display='';
+	  });
+	</script>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+  <div class="topic">
+    <a href="../../../../../Funcons-beta/../index.html" title="CBS-BETA">CBS-beta</a> / 
+    <a href="../../../../../Funcons-beta/../Languages-beta/index.html" title="LANGUAGES-BETA">Languages-beta</a>
+  </div>
+  <div class="title">
+    <a href="SIMPLE-Start.cbs" title="CBS SOURCE FILE">SIMPLE-Start</a>
+  </div>
+  <div class="topic">
+    <img src="../../../../../Funcons-beta//preview.png" 
+         alt="Preview badge" width="67" height="17">
+  </div>
+</header>
+
+<nav>
+  <div id="jsbuttons" style="display:none">
+  <div class="buttons">
+  <p>Rule 
+  <button id="showrules" title="SHOW ALL RULES">&#9660;</button>
+  <button id="hiderules" title="HIDE ALL RULES">&#9658;</button>
+  </p>
+  <p>/**/
+  <button id="showcomments" title="SHOW ALL COMMENTS">&#9660;</button>
+  <button id="hidecomments" title="HIDE ALL COMMENTS">&#9658;</button>
+  </p>
+  <p>#...
+  <button id="showsections" title="EXPAND ALL SECTIONS">&#9660;</button>
+  <button id="hidesections" title="COLLAPSE ALL SECTIONS">&#9658;</button>
+  </p>
+  </div>
+  </div>
+<div class="dropdown">
+  <button class="dropbtn">Menu</button>
+  <div class="dropdown-content">
+    <a href="../SIMPLE-Start/index.html" title="LANGUAGE CBS ROOT">SIMPLE-Start</a>
+    <a href="../SIMPLE-Funcons-Index/index.html" title="REUSED FUNCON INDEX">SIMPLE-Funcons-Index</a>
+    <a href="../../../../../Funcons-beta/Funcons-Index/index.html" title="CURRENT FUNCON LIBRARY INDEX">Funcons-beta</a>
+    <a href="../../../../../Funcons-beta/../Languages-beta/index.html" title="LANGUAGES-BETA">Languages-beta</a>
+    <a href="../../../../../Funcons-beta/../index.html" title="CBS-BETA">CBS-beta</a>
+  </div>
+</div>
+</nav>
+
+<pre>
+<i class="keyword">Language</i> <span id="Language_"SIMPLE"" class="decl">"SIMPLE"</span>
+
+</pre><details class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  The SIMPLE language is described in the following publication:
+  	
+    K Overview and SIMPLE Case Study.
+    Grigore Rosu and Traian Florin Serbanuta.
+    K'11, ENTCS 304, pp 3-56, 2014.
+    http://dx.doi.org/10.1016/j.entcs.2014.05.002
+
+  Our CBS definition does not include the concurrency aspects of SIMPLE, as
+  fundamental constructs for concurrency are not yet available in the funcon
+  repository, but all other SIMPLE language constructs are specified.
+
+  Note that our defintion uses a more precise abstract syntax grammar than
+  presented in the above publication.  In particular, rather than allowing
+  arbitrary expressions as variable declarators and l-expressions, we introduce
+  specialised productions.  We also make use of "?" (optional) to avoid the
+  need for multiple productions for variations of the same syntactic construct.  
+*/</span></pre></details><pre>
+
+<i class="keyword">Syntax</i>
+  <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_START" class="decl">START</span></i> :</i> <span class="syn-name"><span id="SyntaxName_start" class="decl">start</span></span> ::= <span class="syn-name"><a href="../SIMPLE-5-Programs/index.html#SyntaxName_pgm" title="decls">pgm</a></span>
+<i class="keyword">Semantics</i>
+  <i class="sem-name"><span id="SemanticsName_start" class="decl">start</span></i>[[_:<span class="syn-name"><a href="#SyntaxName_start" title="pgm">start</a></span>]] : =><span class="name"><a href="../../../../../Funcons-beta/Values/Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>
+</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_start" title="[[start]] -&gt; values">start</a></i>[[ <span id="Variable_Pgm" class="decl"><i class="var"><a href="../SIMPLE-5-Programs/index.html#VariableStem_Pgm" title="pgm">Pgm</a></i></span> ]] = 
+    <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Binding/index.html#Name_initialise-binding" title="values -&gt; values">initialise-binding</a></span> <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_initialise-storing" title="values -&gt; values">initialise-storing</a></span> <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Giving/index.html#Name_initialise-giving" title="values -&gt; values">initialise-giving</a></span>
+    <span class="name"><a href="../../../../../Funcons-beta/Computations/Abnormal/Failing/index.html#Name_finalise-failing" title="values -&gt; values">finalise-failing</a></span> <span class="name"><a href="../../../../../Funcons-beta/Computations/Abnormal/Throwing/index.html#Name_finalise-throwing" title="values -&gt; values">finalise-throwing</a></span>
+      <i class="sem-name"><a href="../SIMPLE-5-Programs/index.html#SemanticsName_run" title="[[pgm]] -&gt; values">run</a></i>[[ <a href="#Variable_Pgm"><i class="var"><a href="../SIMPLE-5-Programs/index.html#VariableStem_Pgm" title="pgm">Pgm</a></i></a> ]]
+
+</pre></details><pre>[
+  <span class="sectnumtitle"><a href="../SIMPLE-1-Lexical/index.html#SectionNumber_#1">#1</a> <b class="title"><i>Lexical Syntax</i></b></span>
+  <span class="sectnumtitle"><a href="../SIMPLE-2-Expressions/index.html#SectionNumber_#2">#2</a> <b class="title"><i>Expressions</i></b></span>
+  <span class="sectnumtitle"><a href="../SIMPLE-3-Statements/index.html#SectionNumber_#3">#3</a> <b class="title"><i>Statements</i></b></span>
+  <span class="sectnumtitle"><a href="../SIMPLE-4-Declarations/index.html#SectionNumber_#4">#4</a> <b class="title"><i>Declarations</i></b></span>
+  <span class="sectnumtitle"><a href="../SIMPLE-5-Programs/index.html#SectionNumber_#5">#5</a> <b class="title"><i>Programs</i></b></span>
+  <span class="sectnumtitle"><a href="../SIMPLE-A-Disambiguation/index.html#SectionNumber_#A">#A</a> <b class="title"><i>Disambiguation</i></b></span>
+]
+   
+</pre>
+
+<footer>
+  <span>From the <a href="http://plancomps.org" title="PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS">PLanCompS Project, 2018</a></span>
+  <span><a href="mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20SIMPLE/SIMPLE-Start/SIMPLE-Start.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A" title="GENERATE AN EMAIL TEMPLATE">Suggest an improvement...</a></span>
+</footer>
+
+</div>
+</body>
+</html>

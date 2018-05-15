@@ -1,0 +1,62 @@
+Language "SIMPLE"
+
+#A Disambiguation
+
+Lexis SDF
+/*
+lexical syntax 
+  ``id`` = ``keyword`` {reject}
+
+lexical restrictions
+  ``id`` -/- [A-Za-z0-9]
+*/
+
+Syntax SDF
+/*
+context-free syntax
+``exp ::= exp '*' exp`` {left}
+``exp ::= exp '/' exp`` {left}
+``exp ::= exp '%' exp`` {left}
+  
+``exp ::= exp '+' exp`` {left}
+``exp ::= exp '-' exp`` {left}
+  
+``exp ::= exp '&&' exp`` {left}
+``exp ::= exp '||' exp`` {left}
+
+context-free priorities
+{
+``exp ::= exp '(' exps? ')'``
+} >
+{
+``exp ::= '-' exp``
+``exp ::= '++' lexp``
+``exp ::= '!' exp``
+} >
+{left: 
+``exp ::= exp '*' exp``
+``exp ::= exp '/' exp``
+``exp ::= exp '%' exp``
+} >
+{left: 
+``exp ::= exp '+' exp``
+``exp ::= exp '-' exp``
+} >
+{non-assoc: 
+``exp ::= exp '<' exp``
+``exp ::= exp '<=' exp``
+``exp ::= exp '>' exp``
+``exp ::= exp '>=' exp``
+``exp ::= exp '==' exp``
+``exp ::= exp '!=' exp``
+} >
+{assoc: 
+``exp ::= exp '&&' exp``
+} >
+{assoc: 
+``exp ::= exp '||' exp``
+} >
+{       
+``exp ::= lexp '=' exp``
+}
+*/
