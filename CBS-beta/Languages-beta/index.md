@@ -47,4 +47,6 @@ SL
 
 [CBS-beta language specification reading guide]: ???
 
+[IMP in the K framework]: http://www.kframework.org/language-pdfs/new/imp.pdf
+
 [IMP-Start]: IMP/IMP-cbs/IMP/IMP-Start/index.html
