@@ -48,7 +48,9 @@ for further details.
 Caml Light
 ----------
 
-(Pending)
+Caml Light is a lightweight, portable implementation of the core Caml language
+that was developed in the early 1990's, as a precursor to OCaml. See the page
+about the definition of [Caml Light in CBS] for further details. 
 
 
 [CBS framework]: ../index.md
@@ -64,3 +66,5 @@ Caml Light
 [MiniJava in CBS]: MiniJava/index.md
 
 [SL in CBS]: SL/index.md
+
+[Caml Light in CBS]: Caml-Light/index.md
