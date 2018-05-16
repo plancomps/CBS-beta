@@ -16,12 +16,12 @@ Primitive values
 Composite values
 ----------------
 
-- [algebraic datatypes]:
+- algebraic [datatypes]:
   - [tuples]
   - [lists] \(strings are lists of characters)
   - [vectors]
   - [trees]
-  - [references]
+  - [references] \(pointers or null-value)
   - [records]
   - [variants]
   - [classes]
@@ -29,16 +29,16 @@ Composite values
   - [bit-vectors]
 - [sets]
 - [maps]
-- [multisets]
-- [graphs]
+- [multisets] \(bags)
+- [graphs] \(directed)
 
-Abstractions
+Abstraction
 ------------
 
-- [generic]
-- [thunks]
-- [functions]
-- [patterns]
+- [abstractions] \(closures or dynamic)
+- [thunks] \(no argument)
+- [functions] \(single value argument)
+- [patterns] \(binding or failing)
 
 Types
 -----
@@ -67,7 +67,7 @@ sequences of length one.
 [characters]: Primitive/Characters/index.html
 [null]: Primitive/Unit/index.html
 
-[algebraic datatypes]: Composite/Datatypes/index.html
+[datatypes]: Composite/Datatypes/index.html
 [tuples]: Composite/Tuples/index.html
 [lists]: Composite/Lists/index.html
 [vectors]: Composite/Vectors/index.html
@@ -83,7 +83,7 @@ sequences of length one.
 [multisets]: Composite/Multisets/index.html
 [graphs]: Composite/Graphs/index.html
 
-[generic]: Abstraction/Generic/index.html
+[abstractions]: Abstraction/Generic/index.html
 [thunks]: Abstraction/Thunks/index.html
 [functions]: Abstraction/Functions/index.html
 [patterns]: Abstraction/Patterns/index.html

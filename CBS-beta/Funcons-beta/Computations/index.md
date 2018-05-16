@@ -11,24 +11,24 @@ Normal computation
 
 Funcons compute (sequences) of values on normal termination.
 
-- [flowing]
-- [giving]
-- [binding]
-- [generating]
-- [storing]
-- [linking]
-- [interacting]
+- [Flowing]
+- [Giving]
+- [Binding]
+- [Generating]
+- [Storing]
+- [Linking]
+- [Interacting]
 
 Abnormal computation
 --------------------
 
-- [abrupting]
-- [failing]
-- [throwing]
-- [returning]
-- [breaking]
-- [continuing]
-- [controlling]
+- [Abrupting]
+- [Failing]
+- [Throwing]
+- [Returning]
+- [Breaking]
+- [Continuing]
+- [Controlling]
 
 Sequences of computations
 -------------------------
