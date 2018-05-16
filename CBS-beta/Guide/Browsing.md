@@ -18,37 +18,41 @@ displays the declared arity of symbol \(where `values` stands for a *single*
 argument value).
 
 <dl>
-  <dt>Menu links</dt>
-  <dd>
+<dt>Menu links</dt>
+<dd>
+
   The large button at the top right of each CBS page is a fixed drop-down menu.
     
   For pages in the `Funcons-beta` folder, it has the following links:
+
   - [Funcons-beta]: the funcon index
   - [Languages-beta]: the languages overview 
   - [CBS-beta]: the CBS-beta overview
 
   For pages in the `Languages-beta/L` folder, it has also the following links:
+
   - `L-Start`: the root of the CBS of language `L` (which includes links to
     all the other sections for that language)
   - `L-Funcons-Index`: the index of funcons used for language `L`
-  </dd>
 
-  <dt>Header links</dt>
-  <dd>
+</dd>
+
+<dt>Header links</dt>
+<dd>
 
   - [CBS-beta]: the overview page
   - [Funcons-beta] or [Languages-beta]: the overview page
   - In the middle: the CBS source file from which the web page was generated
 
-  </dd>
+</dd>
 
-  <dt>Footer links</dt>
-  <dd>
+<dt>Footer links</dt>
+<dd>
   
   - [PLanCompS Project, 2018]: the main PLanCompS project website
   - [Suggest an improvement...]: a template for an email to plancomps@gmail.com
     
-  </dd>
+</dd>
 </dl>
 
 Folding
