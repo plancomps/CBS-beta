@@ -23,9 +23,9 @@ argument value).
     
   For pages in the `Funcons-beta` folder, it has the following links:
 
-  - [Funcons-beta]: the funcon index
-  - [Languages-beta]: the languages overview 
-  - [CBS-beta]: the CBS-beta overview
+  - [Funcons-beta]\: the funcon index
+  - [Languages-beta]\: the languages overview 
+  - [CBS-beta]\: the CBS-beta overview
 
   For pages in the `Languages-beta/L` folder, it has also the following links:
 
@@ -35,14 +35,14 @@ argument value).
 
 ### Header links
 
-  - [CBS-beta]: the overview page
-  - [Funcons-beta] or [Languages-beta]: the overview page
+  - [CBS-beta]\: the overview page
+  - [Funcons-beta] or [Languages-beta]\: the overview page
   - In the middle: the CBS source file from which the web page was generated
 
-### Footer 
+### Footer links
   
-  - [PLanCompS Project, 2018]: the main PLanCompS project website
-  - [Suggest an improvement...]: a template for an email to plancomps@gmail.com
+  - [PLanCompS Project, 2018]\: the main PLanCompS project website
+  - [Suggest an improvement...]\: a template for an email to plancomps@gmail.com
 
 Folding
 -------
