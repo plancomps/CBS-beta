@@ -9,6 +9,9 @@ funcon terms, reusing (by reference) the definitions of the required funcons.
 
 See [Languages-beta] for examples of language specifications in CBS.
 
+Before proceeding, it is recommended to take a look at the funcon definition
+section of the CBS-beta [Browsing guide].
+
 Funcons-Index
 -------------
 
@@ -31,6 +34,8 @@ in the library.
 
 
 [Funcons-Index]: Funcons-Index/index.html
+
+[Browsing guide]: ../Guide/Browsing.md
 
 [CBS framework]: ../index.md
 

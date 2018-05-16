@@ -19,6 +19,9 @@ Funcons compute (sequences) of values on normal termination.
 - [Linking]
 - [Interacting]
 
+(Funcons for threads, distributed processes, and low level memory have not yet
+been defined.)
+
 Abnormal computation
 --------------------
 

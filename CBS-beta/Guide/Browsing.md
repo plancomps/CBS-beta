@@ -23,7 +23,7 @@ argument value).
     
   For pages in the `Funcons-beta` folder, it has the following links:
 
-  - [Funcons-beta]\: the funcon index
+  - [Funcons-beta]\: the funcons index
   - [Languages-beta]\: the languages overview 
   - [CBS-beta]\: the CBS-beta overview
 
@@ -63,13 +63,14 @@ The top right corner of each CBS web page has buttons for unfolding (&#9660;)
 or folding (&#9658;) all rules, comments, or subsections on the current page. 
 (These buttons require Javascript.)
 
+--------------------
 Language definitions
 --------------------
 
 See the [CBS of IMP] for illustration of the following points.
 
 - Each file of the definition of a language `L` starts with the line
-  *`Language "L"`*. Splitting a CBS specification across multiple files
+  *`Language "L"`*. Splitting a language definition across multiple files
   (within the same project) does not affect its well-formedness.
 
 - When a language definition is split into numbered sections, links to them
@@ -79,7 +80,8 @@ See the [CBS of IMP] for illustration of the following points.
   abstract (context-free) syntax of the language, together with meta-variables
   ranging over the associated sorts of ASTs.
   
-  - Nonterminals start with lowercase letters.
+  - Nonterminals start with lowercase letters, and may include letters, digits,
+    and dashes `-`.
   - The start symbol of the grammar is named `start`.
   - Meta-variables start with uppercase letters, e.g., *`Pgm`*.
   - The left and right sides of productions are separated by `::=`.
@@ -101,7 +103,7 @@ See the [CBS of IMP] for illustration of the following points.
   - *`Lexis`* productions are otherwise as for *`Syntax`*.
 
 - Parsers generated from grammars for abstract syntax are usually ambiguous.
-  Associativity, relative priority, and lexical disambiguation is currently
+  Associativity, relative priority, and lexical disambiguation are currently
   specified in CBS using notation from SDF, embedded in multi-line comments
   `/*...*/`.
 
@@ -129,8 +131,46 @@ See the [CBS of IMP] for illustration of the following points.
     that desugaring rules do *not* refer to particular translation functions.
 
 - Multi-line comments are written `/*...*/`, and may include funcon terms
-  (delimited by back-ticks). End-of-line comments are written `//...`.
+  (delimited by back-ticks `` ` ``). End-of-line comments are written `//...`.
  
+- All funcons (etc.) defined in [Funcons-beta] can be used in all language
+  definitions. Funcons defined in a language definition file must have fresh
+  names, and cannot be reused in other language definitions \(except by 
+  copy-paste).
+
+------------------
+Funcon definitions
+------------------
+
+- The funcon definitions in [Funcons-beta] are language-independent, and cannot
+  refer to funcons defined in language definition files.
+
+- The division of [Funcons-beta] into files is not significant.
+
+- Files in [Funcons-beta] are generally divided into *unnumbered* subsections.
+  The number of `#` characters in a subsection heading indicates its level,
+  with the top level sections [Computations] and [Values] having a single `#`.
+
+- The keyword *`Funcon`* introduces a declaration of a fresh funcon name,
+  together with its signature. 
+  
+  - Funcon names start with lowercase letters, and may include letters, digits,
+    and dashes `-`.
+  
+  - The signature of a funcon taking no arguments is written `: =>T`, where
+    `T` is a type of values.
+
+  - The signature of a funcon taking one or more arguments is written 
+    `(V1:CT1, ..., Vn:CTn) : =>T`, where each `Vi` is a meta-variable,
+    each `CTi` is either a type of values `Ti` or a computation type `=>Ti`, 
+    and `T` is a type of values.
+
+  - One of the argument types in a signature can be an indefinite sequence
+    type, formed using postfix `?`, `*`, or `+`, allowing use of the funcon
+    with varying numbers of arguments.
+
+(To be continued.)
+
 
 [Funcons-beta]: ../Funcons-beta/Funcons-Index/index.html
 
@@ -145,3 +185,8 @@ See the [CBS of IMP] for illustration of the following points.
 [Suggest an improvement...]: mailto:plancomps@gmail.com
 
 [CBS of IMP]: ../Languages-beta/IMP/IMP-cbs/IMP/IMP-Start/index.html
+
+[Values]: ../Funcons-beta/Values/index.md
+
+[Computations]: ../Funcons-beta/Computations/index.md
+

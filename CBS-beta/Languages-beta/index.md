@@ -10,8 +10,8 @@ reusing (by reference) the definitions of the required funcons.
 
 See [Funcons-beta] for the beta-release of an initial collection of funcons.
 
-Before proceeding, it is recommended to take a look at the 
-[CBS-beta language specification reading guide].
+Before proceeding, it is recommended to take a look at the language definition
+section of the CBS-beta [Browsing guide].
 
 IMP
 ---
@@ -51,6 +51,8 @@ about the definition of [Caml Light in CBS] for further details.
 
 
 [CBS framework]: ../index.md
+
+[Browsing guide]: ../Guide/Browsing.md
 
 [Funcons-beta]: ../Funcons-beta/index.md
 
