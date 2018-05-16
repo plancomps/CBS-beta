@@ -17,9 +17,7 @@ of funcons used in the CBS of particular languages. Hovering on a hyperlink
 displays the declared arity of symbol \(where `values` stands for a *single*
 argument value).
 
-<dl>
-<dt>Menu links</dt>
-<dd>
+### Menu links
 
   The large button at the top right of each CBS page is a fixed drop-down menu.
     
@@ -35,25 +33,16 @@ argument value).
     all the other sections for that language)
   - `L-Funcons-Index`: the index of funcons used for language `L`
 
-</dd>
-
-<dt>Header links</dt>
-<dd>
+### Header links
 
   - [CBS-beta]: the overview page
   - [Funcons-beta] or [Languages-beta]: the overview page
   - In the middle: the CBS source file from which the web page was generated
 
-</dd>
-
-<dt>Footer links</dt>
-<dd>
+### Footer 
   
   - [PLanCompS Project, 2018]: the main PLanCompS project website
   - [Suggest an improvement...]: a template for an email to plancomps@gmail.com
-    
-</dd>
-</dl>
 
 Folding
 -------
