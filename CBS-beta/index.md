@@ -1,9 +1,6 @@
 CBS-beta ![PREVIEW](Funcons-beta/preview.png)
 ========
 
-**(The CBS-beta website is currently being constructed. This preview of it**
-**will be updated when complete and ready for review.)**
-
 _CBS_ is a framework and meta-language for _component-based specification of
 programming languages_ by translation to so-called _'funcons'_ 
 ([fundamental programming constructs]).

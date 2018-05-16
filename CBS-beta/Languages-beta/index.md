@@ -1,9 +1,6 @@
 Languages-beta ![PREVIEW](../Funcons-beta/preview.png)
 ==============
 
-**(The CBS-beta website is currently being constructed. This preview of it**
-**will be updated when complete and ready for review.)**
-
 This page provides access to the beta-release of several examples of language
 specifications in CBS, based on an initial collection of so-called 'funcons' 
 (fundamental programming constructs). Funcons are reusable components of 

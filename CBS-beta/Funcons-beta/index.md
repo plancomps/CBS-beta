@@ -1,9 +1,6 @@
 Funcons-beta ![PREVIEW](preview.png)
 ============
 
-**(The CBS-beta website is currently being constructed. This preview of it**
-**will be updated when complete and ready for review.)**
-
 This page provides access to the beta-release of an initial collection of
 so-called 'funcons' (fundamental programming constructs). Funcons are reusable
 components of programming language specifications: in the [CBS framework], 
