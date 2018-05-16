@@ -1,3 +1,4 @@
 theme: jekyll-theme-minimal
-plugins:
-  - jekyll-sitemap
+title: [CBS-beta]
+description: [Beta-release of the CBS framework (PREVIEW)]
+show_downloads: "true"
