@@ -3,3 +3,19 @@
 
 @import "{{ site.theme }}";
 
+div.nav1 a, div.nav2 a {
+    color: #267CB9;
+}
+
+div.nav1 a:hover, div.nav1 a:focus, div.nav2 a:hover, div.nav2 a:focus {
+    color: #069;
+    font-weight: bold
+}
+
+div.nav1 a:active, div.nav2 a:active {
+    background-color: #f0f0f0
+}
+
+div.nav2 p {
+	margin: 0 0 0 1em;
+}
