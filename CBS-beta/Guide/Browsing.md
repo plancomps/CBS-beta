@@ -64,6 +64,7 @@ or folding (&#9658;) all rules, comments, or subsections on the current page.
 (These buttons require Javascript.)
 
 --------------------
+
 Language definitions
 --------------------
 
@@ -139,6 +140,7 @@ See the [CBS of IMP] for illustration of the following points.
   copy-paste).
 
 ------------------
+
 Funcon definitions
 ------------------
 
