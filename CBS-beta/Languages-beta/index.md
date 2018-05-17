@@ -47,7 +47,8 @@ Caml Light
 
 Caml Light is a lightweight, portable implementation of the core Caml language
 that was developed in the early 1990's, as a precursor to OCaml. See the page
-about the definition of [Caml Light in CBS] for further details. 
+about the definition of [Caml Light in CBS] for further details. \(This example
+is to be replaced by a corresponding sublanguage of OCaml.)
 
 
 [CBS framework]: ../index.md
@@ -55,8 +56,6 @@ about the definition of [Caml Light in CBS] for further details.
 [Browsing guide]: ../Guide/Browsing.md
 
 [Funcons-beta]: ../Funcons-beta/index.md
-
-[CBS-beta language specification reading guide]
 
 [IMP in CBS]: IMP/index.md
 
