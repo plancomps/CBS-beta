@@ -4,8 +4,8 @@ CBS-beta Browsing Guide
 Navigation
 ----------
 
-**All references to names of funcons (etc.) in CBS files are hyperlinks leading
-to their declarations.**
+**All references to names of funcons (etc.) in CBS specifications are 
+hyperlinks leading to their declarations.**
 
 Use of these hyperlinks avoids the need to become familiar with the hierarchy of
 folders and files in the funcons library, and to drill down through it to find
