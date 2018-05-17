@@ -144,10 +144,10 @@ See the [CBS of IMP] for illustration of the following points.
 Funcon definitions
 ------------------
 
-- The funcon definitions in [Funcons-beta] are language-independent, and cannot
-  refer to funcons defined in language definition files.
+- The funcon definitions in [Funcons-beta] are language-independent.
 
-- The division of [Funcons-beta] into files is not significant.
+- CBS specifications do not refer to the hierarchy of folders and files 
+  used for [Funcons-beta].
 
 - Files in [Funcons-beta] are generally divided into *unnumbered* subsections.
   The number of `#` characters in a subsection heading indicates its level,
@@ -158,18 +158,28 @@ Funcon definitions
   
   - Funcon names start with lowercase letters, and may include letters, digits,
     and dashes `-`.
-  
-  - The signature of a funcon taking no arguments is written `: =>T`, where
+  - The signature of a funcon taking no arguments is written `:=>T`, where
     `T` is a type of values.
-
   - The signature of a funcon taking one or more arguments is written 
-    `(V1:CT1, ..., Vn:CTn) : =>T`, where each `Vi` is a meta-variable,
+    `(V1:CT1,...,Vn:CTn):=>T`, where each `Vi` is a meta-variable,
     each `CTi` is either a type of values `Ti` or a computation type `=>Ti`, 
     and `T` is a type of values.
-
-  - One of the argument types in a signature can be an indefinite sequence
+  - One of the argument types in a signature may be an indefinite sequence
     type, formed using postfix `?`, `*`, or `+`, allowing use of the funcon
     with varying numbers of arguments.
+
+- The keyword *`Rule`* introduces a formula or inference rule defining the
+  operational behaviour of a funcon.
+  
+  - `T1 ~> T2` is a rewrite from `T1` to `T2` .
+  - `T1 ---> T2` is simple transition from `T1` to `T2`.
+  - `env(E) |- T1 ---> T2` specifies dependence on an environment `E`.
+  - `<T1,S1> ---> <T2,S2>` specifies inspection and/or change of a store `S`.
+  - `T1 --I?(V)-> T2` specifies input of a value `V` on a stream `I`.
+  - `T1 --O!(V)-> T2` specifies output of a value `V` on a stream `O`.
+  - `T1 --C(V)-> T2` specifies a control signal `V` for reason `C`.
+  - An annotated meta-variable `V:T` is restricted to value terms.
+  - A single defining rule for a funcon may be combined with its declaration.
 
 (To be continued.)
 
