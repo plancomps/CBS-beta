@@ -10,7 +10,7 @@ FIX-ME
 
 - [X] Correct capitalisation of `PLanCompS`
 
-- [ ] Add page generation date
+- [ ] Add page generation date?
 
 ### Funcons-beta
 
@@ -20,7 +20,7 @@ FIX-ME
 
 ### Languages-beta
 
-- [ ] Adding missing guide pages
+- [X] Adding missing guide pages
 
 #### IMP
 
@@ -55,3 +55,5 @@ FIX-ME
 #### CL
 
 - [ ] Check
+
+- [ ] Migrate to OCaml Light
