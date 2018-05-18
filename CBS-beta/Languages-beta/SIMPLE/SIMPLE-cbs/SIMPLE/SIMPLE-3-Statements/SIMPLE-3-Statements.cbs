@@ -65,12 +65,9 @@ Rule
   exec[[ 'try' Block1 'catch' '(' Id ')' Block2 ]] =
   	handle-thrown(
   	  exec[[ Block1 ]],
-  	  else(
-  	    scope(
-  	      bind(id[[ Id ]],
-  	  	    allocate-initialised-variable(values,given)),
-  	      exec[[ Block2 ]]),
-  	    throw(given)))
+  	  scope(
+  	    bind(id[[ Id ]], allocate-initialised-variable(defined-values,given)),
+  	    exec[[ Block2 ]]))
 Rule
   exec[[ 'throw' Exp ';' ]] = throw(rval[[ Exp ]])
 /*
