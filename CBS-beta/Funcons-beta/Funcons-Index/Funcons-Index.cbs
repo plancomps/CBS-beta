@@ -36,6 +36,8 @@
   Funcon   no-given
   Funcon   left-to-right-map
   Funcon   interleave-map
+  Funcon   left-to-right-repeat
+  Funcon   interleave-repeat
   Funcon   left-to-right-filter
   Funcon   interleave-filter
   Funcon   fold-left
