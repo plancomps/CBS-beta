@@ -171,15 +171,27 @@ Funcon definitions
 - The keyword *`Rule`* introduces a formula or inference rule defining the
   operational behaviour of a funcon.
   
-  - `T1 ~> T2` is a rewrite from `T1` to `T2` .
+  - `T1 ~> T2` is a rewrite from `T1` to `T2`.
   - `T1 ---> T2` is simple transition from `T1` to `T2`.
-  - `env(E) |- T1 ---> T2` specifies dependence on an environment `E`.
-  - `<T1,S1> ---> <T2,S2>` specifies inspection and/or change of a store `S`.
-  - `T1 --I?(V)-> T2` specifies input of a value `V` on a stream `I`.
-  - `T1 --O!(V)-> T2` specifies output of a value `V` on a stream `O`.
-  - `T1 --C(V)-> T2` specifies a control signal `V` for reason `C`.
+  - `env(Env) |- T1 ---> T2` specifies dependence on an environment `Env`.
+  - `<T1,store(S1)> ---> <T2,store(S2)>` specifies inspection of a store `S1`
+    and its replacement by `S2`.
+  - `T1 --stream?(V1,...,Vn)-> T2` specifies input of values matching `V1`,
+    ..., `Vn` from `stream`.
+  - `T1 --stream!(V1,...,Vn)-> T2` specifies output of the values of `V1`,
+    ..., `Vn` to `stream`.
+  - `T1 --signal(V)-> T2` specifies a `signal` `V`. Omitting `V` specifies the
+    absence of the signal.
   - An annotated meta-variable `V:T` is restricted to value terms.
   - A single defining rule for a funcon may be combined with its declaration.
+
+
+- The keyword *`Entity`* introduces a declaration of a fresh entity name.
+  
+  - Entities are implicitly propagated in transition rules when not mentioned.
+  - Rewrites are independent of entities.
+  - The declaration of an entity specifies how the entity is written when used,
+    which determines how it is propagated.
 
 (To be continued.)
 
