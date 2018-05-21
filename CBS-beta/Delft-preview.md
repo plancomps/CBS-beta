@@ -16,6 +16,8 @@ FIX-ME
 
 - [X] Meta-variables: use `DT<:defined-values` and `GT<:ground-values`
 
+- [X] Add 2 missing funcons to Funcons-Index
+
 - [ ] Add remaining unit tests for `Values`
 
 ### Languages-beta
@@ -29,6 +31,8 @@ FIX-ME
 #### SIMPLE
 
 - [X] Check
+
+- [X] Remove a redundant subterm in SIMPLE-3-Statements
 
 #### MiniJava
 
@@ -54,6 +58,6 @@ FIX-ME
 
 #### CL
 
-- [ ] Check
+- [X] Check
 
-- [ ] Migrate to OCaml Light
+- [ ] Upgrade to OCaml Light
