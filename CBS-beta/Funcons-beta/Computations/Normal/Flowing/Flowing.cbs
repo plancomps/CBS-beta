@@ -215,7 +215,7 @@ Alias
   while = while-true
 /*
   `while-true(B, X)` evaluates `B` to a Boolean value. Depending on the value of `B`,
-  it either executes `C` and iterates, or terminates normally.
+  it either executes `X` and iterates, or terminates normally.
   
   The effect of abruptly breaking the iteration is obtained by the combination
   `handle-break(while-true(B, X))`, and that of abruptly continuing the iteration by
