@@ -191,7 +191,24 @@ Funcon definitions
   - Entities are implicitly propagated in transition rules when not mentioned.
   - Rewrites are independent of entities.
   - The declaration of an entity specifies how the entity is written when used,
-    which determines how it is propagated.
+    which determines how it is propagated when omitted in transition formulae.
+  - When a contextual entity such as `env(Env) |- _ ---> _` is omitted, it is
+    implicitly the same in the conclusion and any premises.
+  - When a mutable entity such as `<_,store(S1)> ---> <_,store(S2)>` is omitted
+    in an *axiom*, `S1` and `S2` are implicitly required to be equal. 
+    When it is omitted in a rule with a single premise, the pair of stores in
+    the conclusion is the same as the pair in the premise. Mutable entities are
+    threaded through sequences of transitions. (Rules with multiple transitions
+    in premises are seldom needed in small-step semantics.)
+  - When an input entity such as `_ --stream?(V*)-> _` is omitted in an axiom,
+    `V*` is implicitly required to be empty. When it is omitted in a rule with
+    a single premise, the `V*` in the conclusion is the same as in the premise.
+    The value sequences of input entities are concatenated in sequences of
+    transitions.
+  - When an output entity `_ --stream!(V1,...,Vn)-> _` is omitted, the implicit
+    requirements are analogous to those for input entities.
+  - When an output entity `_ --signal(V?)-> _` is omitted, the implicit
+    requirements are analogous to those for input entities.
 
 (To be continued.)
 
