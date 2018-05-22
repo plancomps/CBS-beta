@@ -166,9 +166,10 @@ Funcon definitions
     and `T` is a type of values.
   - One of the argument types in a signature may be an indefinite sequence
     type, formed using postfix `?`, `*`, or `+`, allowing use of the funcon
-    with varying numbers of arguments.
+    with varying numbers of arguments. (A sequence argument is usually at the
+    end, but with the funcon `sequential` it is at the beginning.)
 
-- The keyword *`Rule`* introduces a formula or inference rule defining the
+- *`Rule`* introduces a formula or inference rule defining the
   operational behaviour of a funcon.
   
   - `T1 ~> T2` is a rewrite from `T1` to `T2`.
@@ -185,8 +186,7 @@ Funcon definitions
   - An annotated meta-variable `V:T` is restricted to value terms.
   - A single defining rule for a funcon may be combined with its declaration.
 
-
-- The keyword *`Entity`* introduces a declaration of a fresh entity name.
+- *`Entity`* introduces a declaration of a fresh entity name.
   
   - Entities are implicitly propagated in transition rules when not mentioned.
   - Rewrites are independent of entities.
@@ -209,6 +209,26 @@ Funcon definitions
     requirements are analogous to those for input entities.
   - When an output entity `_ --signal(V?)-> _` is omitted, the implicit
     requirements are analogous to those for input entities.
+
+- *`Type`* introduces a declaration of a fresh funcon name. The
+  type of values it computes is `types`, which is a value that represents 
+  a subtype of `values`. 
+  
+  - Type definitions `Type t... ~> T` combine type declarations with rewrites.
+
+- *`Datatype`* introduces a declaration of an algebraic datatype,
+  together with constructor funcons for its values.
+
+- *`Built-in`* introduces a declaration of a fresh name and its
+  signature, but does not provide a definition for it.
+
+- *`Assert`* introduces a formula that expresses the intention
+  that it should hold (either as a consequence of specified definitions, or
+  as a requirement for built-ins).
+  
+- *`Auxiliary`* introduces a name that is not intended for direct
+  use. 
+
 
 (To be continued.)
 
