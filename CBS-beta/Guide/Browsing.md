@@ -219,6 +219,11 @@ Funcon definitions
 - *`Datatype`* introduces a declaration of an algebraic datatype,
   together with constructor funcons for its values.
 
+- *`Alias`* introduces an equation `N1 = N2` that declares a fresh name `N1`
+  and defines it to be equivalent to another name `N2`. `N1` is usually an
+  abbreviation for a longer `N2`; its declaration as an alias prevents it from
+  being defined elsewhere to have a different interpretation.
+
 - *`Built-in`* introduces a declaration of a fresh name and its
   signature, but does not provide a definition for it.
 
@@ -229,6 +234,9 @@ Funcon definitions
 - *`Auxiliary`* introduces a name that is not intended for direct
   use. 
 
+- *`Meta-variables`* introduces type constraints on variables used in rules.
+  These constraints are usually of the form `V <: T` where `V` is a variable,
+  requiring `V` to be a subtype of `T`.
 
 (To be continued.)
 
