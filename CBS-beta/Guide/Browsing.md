@@ -231,8 +231,8 @@ Funcon definitions
   that it should hold (either as a consequence of specified definitions, or
   as a requirement for built-ins).
   
-- *`Auxiliary`* introduces a name that is not intended for direct
-  use. 
+- *`Auxiliary`* introduces a name that is not intended for direct use in 
+  language definitions. 
 
 - *`Meta-variables`* introduces type constraints on variables used in rules.
   These constraints are usually of the form `V <: T` where `V` is a variable,
