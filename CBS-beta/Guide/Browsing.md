@@ -77,7 +77,7 @@ See the [CBS of IMP] for illustration of the following points.
 - When a language definition is split into numbered sections, links to them
   may be listed between brackets `[...]` to provide a table of contents.
 
-- The keyword *`Syntax`* introduces one or more grammar productions for the 
+- *`Syntax`* introduces one or more grammar productions for the 
   abstract (context-free) syntax of the language, together with meta-variables
   ranging over the associated sorts of ASTs.
   
@@ -95,7 +95,7 @@ See the [CBS of IMP] for illustration of the following points.
   - Layout (including comments) is implicitly allowed everywhere. It can
     be excluded by inserting an underscore `_` between symbols.
 
-- The keyword *`Lexis`* introduces one or more grammar productions for the 
+- *`Lexis`* introduces one or more grammar productions for the 
   lexical (regular or context-free) syntax of the language, together with
   meta-variables ranging over the specified strings of characters.
   
@@ -108,7 +108,7 @@ See the [CBS of IMP] for illustration of the following points.
   specified in CBS using notation from SDF, embedded in multi-line comments
   `/*...*/`.
 
-- The keyword *`Semantics`* introduces a declaration of a translation function
+- *`Semantics`* introduces a declaration of a translation function
   from ASTs (with strings as leaves) to funcon terms.
   
   - A translation functions takes a single AST (or string) as argument,
@@ -118,7 +118,7 @@ See the [CBS of IMP] for illustration of the following points.
     a computation type `=>T` for some value type `T`; it can also be a
     computation sequence type such as `(=>T)*`.
 
-- The keyword *`Rule`* introduces an equation defining the translation function
+- *`Rule`* introduces an equation defining the translation function
   on trees matching a specified pattern.
   
   - The pattern in a rule usually corresponds to a single alternative of the
@@ -139,6 +139,47 @@ See the [CBS of IMP] for illustration of the following points.
   names, and cannot be reused in other language definitions \(except by 
   copy-paste).
 
+
+------------------
+
+Funcon terms
+------------
+
+A funcon term formed from a funcon `f` and arguments `t1`, ..., `tn` is
+written in prefix form: `f(t1,...,tn)`. When `f` has no arguments, the term
+is written without parentheses: `f`. 
+
+Parentheses may also be omitted when there is a single argument term, writing
+`f t` instead of `f(t)`.
+
+- **N.B. Parentheses may also be omitted around composite argument terms: 
+  `f g t` is *always* grouped as `f(g(t))`!**
+
+Funcons are not higher-order, so grouping `f g t` as `(f g)(t)` would be
+completely useless, as it would *never* give a well-formed term. Funcons
+correspond to prefix operations, such as the `-` in `-sin(x)`.
+(Readers accustomed to higher-order programming in Haskell may find it helpful
+to imagine `f g t` written as `f$g t`.)
+
+Some funcons can take argument sequences of varying lengths; funcons may also
+compute sequences of values. A funcon that does both is `left-to-right`,
+which is used to ensure that arguments are evaluated in the specified order
+(the default order allows interleaving). Composition with `left-to-right`
+provides sequential variants of all multi-argument funcons, e.g.:
+
+- `integer-add left-to-right(t1,t2)` (which abbreviates 
+  `integer-add(left-to-right(t1,t2))`) 
+
+The following special forms of funcon terms are allowed:
+
+- Natural numbers in decimal notation
+- Characters `'c'` (with the usual `\`-escapes)
+- Strings `"c1...cn"` (with the usual `\`-escapes)
+- Lists `[t1,...,tn]`, empty list `[ ]`
+- Sets `{t1,...,tn}`, empty set `{ }`
+- Maps `{k1|->t1,...,kn|->tn}`, empty map `map( )`.
+
+
 ------------------
 
 Funcon definitions
@@ -153,7 +194,7 @@ Funcon definitions
   The number of `#` characters in a subsection heading indicates its level,
   with the top level sections [Computations] and [Values] having a single `#`.
 
-- The keyword *`Funcon`* introduces a declaration of a fresh funcon name,
+- *`Funcon`* introduces a declaration of a fresh funcon name,
   together with its signature. 
   
   - Funcon names start with lowercase letters, and may include letters, digits,
