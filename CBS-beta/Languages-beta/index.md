@@ -46,7 +46,7 @@ OCaml Light
 -----------
 
 Caml Light is a lightweight, portable implementation of the core Caml language
-that was developed in the early 1990's, as a precursor to OCaml. The [published
+that was developed in the early 1990's, as a precursor to [OCaml]. The [published
 specification of Caml Light] \(given in a preliminary version of CBS) illustrates
 the use of funcons for specifying the (static and dynamic) semantics of 
 higher-order functional programming language features.
@@ -80,3 +80,5 @@ for further details.
 [Caml Light home page]: https://caml.inria.fr/caml-light/
 
 [Published specification of Caml Light]: http://plancomps.org/taosd2015/
+
+[OCaml]: http://ocaml.org
