@@ -145,21 +145,20 @@ See the [CBS of IMP] for illustration of the following points.
 Funcon terms
 ------------
 
-A funcon term formed from a funcon `f` and arguments `t1`, ..., `tn` is
-written in prefix form: `f(t1,...,tn)`. When `f` has no arguments, the term
-is written without parentheses: `f`. 
+A funcon term formed from a funcon `f` and argument sequence `s` is written in 
+prefix form: `f s`. When `f` has no arguments, it is written without 
+parentheses: `f`; when it has 2 or more arguments `t1`, ..., `tn`, they are
+written in ordinary parentheses: `f(t1,...,tn)`. Parentheses are optional when
+there is a single argument term, so both `f t` and `f(t)` are allowed.
 
-Parentheses may also be omitted when there is a single argument term, writing
-`f t` instead of `f(t)`.
-
-- **N.B. Parentheses may also be omitted around composite argument terms: 
+- **N.B. Parentheses are also optional around composite argument terms: 
   `f g t` is *always* grouped as `f(g(t))`!**
 
-Funcons are not higher-order, so grouping `f g t` as `(f g)(t)` would be
-completely useless, as it would *never* give a well-formed term. Funcons
-correspond to prefix operations, such as the `-` in `-sin(x)`.
-(Readers accustomed to higher-order programming in Haskell may find it helpful
-to imagine `f g t` written as `f$g t`.)
+Funcons are not higher-order, so implicit grouping of `f g t` as `(f g)(t)`
+would here be *completely useless*, as it would *never* give a well-formed term. 
+Grouping in funcon terms treats funcon names as prefix operations, such as the
+'`-`' in '`-sin(x)`'. Readers accustomed to higher-order programming in Haskell
+may find it helpful to imagine `f g t` written as `f$g t`.
 
 Some funcons can take argument sequences of varying lengths; funcons may also
 compute sequences of values. A funcon that does both is `left-to-right`,
