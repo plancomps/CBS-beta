@@ -42,13 +42,23 @@ dynamic language features. See the page about the definition of [SL in CBS]
 for further details. 
 
 
-Caml Light
-----------
+OCaml Light
+-----------
 
 Caml Light is a lightweight, portable implementation of the core Caml language
-that was developed in the early 1990's, as a precursor to OCaml. See the page
-about the definition of [Caml Light in CBS] for further details. \(This example
-is to be replaced by a corresponding sublanguage of OCaml.)
+that was developed in the early 1990's, as a precursor to OCaml. The [published
+specification of Caml Light] \(given in a preliminary version of CBS) illustrates
+the use of funcons for specifying the (static and dynamic) semantics of 
+higher-order functional programming language features.
+
+However, the [Caml Light home page] now states:
+
+> The implementation is obsolete, no longer actively maintained, and will be 
+> removed eventually.
+
+This case study is therefore to be replaced by the CBS of a corresponding
+sublanguage of OCaml. See the page about the definition of [OCaml Light in CBS]
+for further details.
 
 
 [CBS framework]: ../index.md
@@ -65,4 +75,8 @@ is to be replaced by a corresponding sublanguage of OCaml.)
 
 [SL in CBS]: SL/index.md
 
-[Caml Light in CBS]: Caml-Light/index.md
+[OCaml Light in CBS]: OCaml-Light/index.md
+
+[Caml Light home page]: https://caml.inria.fr/caml-light/
+
+[Published specification of Caml Light]: http://plancomps.org/taosd2015/
