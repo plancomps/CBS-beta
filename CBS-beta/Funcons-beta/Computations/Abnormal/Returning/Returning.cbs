@@ -12,7 +12,7 @@ Meta-variables
   T <: values
 
 Datatype
-  returning ::= returned(V:defined-values)
+  returning ::= returned(V:values)
 /*
   `returned(V)` is a reason for abrupt termination.
 */
@@ -43,8 +43,8 @@ Rule
   ----------------------------------------------------
   handle-return(X) -- abrupted( ) -> handle-return(X')
 Rule
-  X -- abrupted(returned(V:defined-values)) -> X'
-  -----------------------------------------------
+  X -- abrupted(returned(V:values)) -> X'
+  ---------------------------------------
   handle-return(X) -- abrupted( ) -> V
 Rule
                  X -- abrupted(V':~returning) -> X'

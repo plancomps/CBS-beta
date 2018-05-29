@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>Multisets</title>
-  <link rel="stylesheet" type="text/css" href="../../../cbs.css">
+  <link rel="stylesheet" type="text/css" href="../../.././cbs.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>
 	$(document).ready(function(){
@@ -39,14 +39,14 @@
 
 <header>
   <div class="topic">
-    <a href="../../../../index.html" title="CBS-BETA">CBS-beta</a> / 
-    <a href="../../../index.html" title="FUNCONS-BETA">Funcons-beta</a>
+    <a href="../../.././../index.html" title="CBS-BETA">CBS-beta</a> / 
+    <a href="../../.././index.html" title="FUNCONS-BETA">Funcons-beta</a>
   </div>
   <div class="title">
     <a href="Multisets.cbs" title="CBS SOURCE FILE">Multisets</a>
   </div>
   <div class="topic">
-    <img src="../../..//preview.png" 
+    <img src="../../.././preview.png" 
          alt="Preview badge" width="67" height="17">
   </div>
 </header>
@@ -73,9 +73,9 @@
   <div class="dropdown-content">
     
     
-    <a href="../../../Funcons-Index/index.html" title="CURRENT FUNCON LIBRARY INDEX">Funcons-beta</a>
-    <a href="../../../../Languages-beta/index.html" title="LANGUAGES-BETA">Languages-beta</a>
-    <a href="../../../../index.html" title="CBS-BETA">CBS-beta</a>
+    <a href="../../.././Funcons-Index/index.html" title="CURRENT FUNCON LIBRARY INDEX">Funcons-beta</a>
+    <a href="../../.././../Languages-beta/index.html" title="LANGUAGES-BETA">Languages-beta</a>
+    <a href="../../.././../index.html" title="CBS-BETA">CBS-beta</a>
   </div>
 </div>
 </nav>
@@ -98,13 +98,13 @@
 
 <i class="keyword">Built-in</i> <i class="keyword">Type</i>
   <span class="name"><span id="Name_multisets" class="decl">multisets</span></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>) <: <span class="name"><a href="../../Value-Types/index.html#Name_defined-values" title=" -&gt; values">defined-values</a></span>
-</pre><details class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_multisets" title="values -&gt; values">multisets</a></span>(<i class="var">GT</i>)` is the type of possibly-empty finite multisets of elements
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_multisets" title="values -&gt; values">multisets</a></span>(<i class="var">GT</i>)` is the type of possibly-empty finite multisets of elements
   of `<i class="var">GT</i>`. 
 */</span></pre></details><pre>
 
 <i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
   <span class="name"><span id="Name_multiset" class="decl">multiset</span></span>(<span id="Variable_MS" class="decl"><i class="var">MS</i></span>:(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>)*) : =><span class="name"><a href="#Name_multisets" title="values -&gt; values">multisets</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>)
-</pre><details class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  Note that `<span class="name"><a href="#Name_multiset" title="values* -&gt; values">multiset</a></span>(...)` is not a constructor operation. The order of
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  Note that `<span class="name"><a href="#Name_multiset" title="values* -&gt; values">multiset</a></span>(...)` is not a constructor operation. The order of
   argument values is ignored, but duplicates are significant, e.g., 
   `<span class="name"><a href="#Name_multiset" title="values* -&gt; values">multiset</a></span>(1, 2, 2)` is equivalent to `<span class="name"><a href="#Name_multiset" title="values* -&gt; values">multiset</a></span>(2, 1, 2)`, but not to
   `<span class="name"><a href="#Name_multiset" title="values* -&gt; values">multiset</a></span>(1, 2)` or `<span class="name"><a href="#Name_multiset" title="values* -&gt; values">multiset</a></span>(2, 1)`.
@@ -112,34 +112,34 @@
 
 <i class="keyword">Built-in</i> <i class="keyword">Funcon</i> 
   <span class="name"><span id="Name_multiset-elements" class="decl">multiset-elements</span></span>(<span id="Variable_MS" class="decl"><i class="var">MS</i></span>:<span class="name"><a href="#Name_multisets" title="values -&gt; values">multisets</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>)) : =>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>)*
-</pre><details class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  For each multiset `<i class="var">MS</i>`, the sequence of defined-values `<i class="var">V*</i>` returned by 
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  For each multiset `<i class="var">MS</i>`, the sequence of defined-values `<i class="var">V*</i>` returned by 
   `<span class="name"><a href="#Name_multiset-elements" title="values -&gt; values*">multiset-elements</a></span>(<i class="var">MS</i>)` contains each element of `<i class="var">MS</i>` the same number of times
   as `<i class="var">MS</i>` does.
   The order of the values in `<i class="var">V*</i>` is unspecified, and may vary between multisets.
 */</span></pre></details><pre>
-</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Assert</i></span></pre></summary><pre>  <span class="name"><a href="#Name_multiset" title="values* -&gt; values">multiset</a></span>(<span class="name"><a href="#Name_multiset-elements" title="values -&gt; values*">multiset-elements</a></span>(<i class="var">S</i>)) == <i class="var">S</i></pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Assert</i></span></pre></summary><pre>  <span class="name"><a href="#Name_multiset" title="values* -&gt; values">multiset</a></span>(<span class="name"><a href="#Name_multiset-elements" title="values -&gt; values*">multiset-elements</a></span>(<i class="var">S</i>)) == <i class="var">S</i></pre></details><pre>
 
 <i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
   <span class="name"><span id="Name_multiset-occurrences" class="decl">multiset-occurrences</span></span>(<span id="Variable_GV" class="decl"><i class="var">GV</i></span>:<span id="Variable_GT" class="decl"><i class="var">GT</i></span>, <span id="Variable_MS" class="decl"><i class="var">MS</i></span>:<span class="name"><a href="#Name_multisets" title="values -&gt; values">multisets</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>)) : =><span class="name"><a href="../../Primitive/Integers/index.html#Name_nats" title=" -&gt; values">nats</a></span>
-</pre><details class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_multiset-occurrences" title="values, values -&gt; values">multiset-occurrences</a></span>(<i class="var">GV</i>, <i class="var">MS</i>)` returns the number of occurrences of `<i class="var">GV</i>`
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_multiset-occurrences" title="values, values -&gt; values">multiset-occurrences</a></span>(<i class="var">GV</i>, <i class="var">MS</i>)` returns the number of occurrences of `<i class="var">GV</i>`
   in `<i class="var">MS</i>`. 
 */</span></pre></details><pre>
 
 <i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
   <span class="name"><span id="Name_multiset-insert" class="decl">multiset-insert</span></span>(<span id="Variable_GV" class="decl"><i class="var">GV</i></span>:<span id="Variable_GT" class="decl"><i class="var">GT</i></span>, <span id="Variable_N" class="decl"><i class="var">N</i></span>:<span class="name"><a href="../../Primitive/Integers/index.html#Name_nats" title=" -&gt; values">nats</a></span>, <span id="Variable_MS" class="decl"><i class="var">MS</i></span>:<span class="name"><a href="#Name_multisets" title="values -&gt; values">multisets</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>)) : =><span class="name"><a href="#Name_multisets" title="values -&gt; values">multisets</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>)
-</pre><details class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_multiset-insert" title="values, values, values -&gt; values">multiset-insert</a></span>(<i class="var">GV</i>, <i class="var">N</i>, <i class="var">MS</i>)` returns the multiset that differs from `<i class="var">MS</i>` 
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_multiset-insert" title="values, values, values -&gt; values">multiset-insert</a></span>(<i class="var">GV</i>, <i class="var">N</i>, <i class="var">MS</i>)` returns the multiset that differs from `<i class="var">MS</i>` 
   by containing `<i class="var">N</i>` more copies of `<i class="var">GV</i>`.
 */</span></pre></details><pre>
 
 <i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
   <span class="name"><span id="Name_multiset-delete" class="decl">multiset-delete</span></span>(<span id="Variable_MS" class="decl"><i class="var">MS</i></span>:<span class="name"><a href="#Name_multisets" title="values -&gt; values">multisets</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>), <span id="Variable_GV" class="decl"><i class="var">GV</i></span>:<span id="Variable_GT" class="decl"><i class="var">GT</i></span>, <span id="Variable_N" class="decl"><i class="var">N</i></span>:<span class="name"><a href="../../Primitive/Integers/index.html#Name_nats" title=" -&gt; values">nats</a></span>) : =><span class="name"><a href="#Name_multisets" title="values -&gt; values">multisets</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>)
-</pre><details class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment"> `<span class="name"><a href="#Name_multiset-delete" title="values, values, values -&gt; values">multiset-delete</a></span>(<i class="var">MS</i>, <i class="var">GV</i>, <i class="var">N</i>)` removes `<i class="var">N</i>` copies of `<i class="var">V</i>` from the multiset `<i class="var">MS</i>`,
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment"> `<span class="name"><a href="#Name_multiset-delete" title="values, values, values -&gt; values">multiset-delete</a></span>(<i class="var">MS</i>, <i class="var">GV</i>, <i class="var">N</i>)` removes `<i class="var">N</i>` copies of `<i class="var">V</i>` from the multiset `<i class="var">MS</i>`,
  or all copies of `<i class="var">GV</i>` if there are fewer than `<i class="var">N</i>` in `<i class="var">MS</i>`.
 */</span></pre></details><pre>
 
 <i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
   <span class="name"><span id="Name_is-submultiset" class="decl">is-submultiset</span></span>(<span id="Variable_MS1" class="decl"><i class="var">MS<sub class="sub">1</sub></i></span>:<span class="name"><a href="#Name_multisets" title="values -&gt; values">multisets</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>), <span id="Variable_MS2" class="decl"><i class="var">MS<sub class="sub">2</sub></i></span>:<span class="name"><a href="#Name_multisets" title="values -&gt; values">multisets</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>)) : =><span class="name"><a href="../../Primitive/Booleans/index.html#Name_booleans" title=" -&gt; values">booleans</a></span>
-</pre><details class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_is-submultiset" title="values, values -&gt; values">is-submultiset</a></span>(<i class="var">MS<sub class="sub">1</sub></i>, <i class="var">MS<sub class="sub">2</sub></i>)` tests whether every element of `<i class="var">MS<sub class="sub">1</sub></i>` has equal or
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_is-submultiset" title="values, values -&gt; values">is-submultiset</a></span>(<i class="var">MS<sub class="sub">1</sub></i>, <i class="var">MS<sub class="sub">2</sub></i>)` tests whether every element of `<i class="var">MS<sub class="sub">1</sub></i>` has equal or
   fewer occurrences in `<i class="var">MS<sub class="sub">1</sub></i>` than in `<i class="var">MS<sub class="sub">2</sub></i>`. 
 */</span></pre></details><pre>
 </pre></details><pre>

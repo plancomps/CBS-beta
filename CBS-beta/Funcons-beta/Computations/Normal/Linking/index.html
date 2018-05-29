@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>Linking</title>
-  <link rel="stylesheet" type="text/css" href="../../../cbs.css">
+  <link rel="stylesheet" type="text/css" href="../../.././cbs.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>
 	$(document).ready(function(){
@@ -39,14 +39,14 @@
 
 <header>
   <div class="topic">
-    <a href="../../../../index.html" title="CBS-BETA">CBS-beta</a> / 
-    <a href="../../../index.html" title="FUNCONS-BETA">Funcons-beta</a>
+    <a href="../../.././../index.html" title="CBS-BETA">CBS-beta</a> / 
+    <a href="../../.././index.html" title="FUNCONS-BETA">Funcons-beta</a>
   </div>
   <div class="title">
     <a href="Linking.cbs" title="CBS SOURCE FILE">Linking</a>
   </div>
   <div class="topic">
-    <img src="../../..//preview.png" 
+    <img src="../../.././preview.png" 
          alt="Preview badge" width="67" height="17">
   </div>
 </header>
@@ -73,9 +73,9 @@
   <div class="dropdown-content">
     
     
-    <a href="../../../Funcons-Index/index.html" title="CURRENT FUNCON LIBRARY INDEX">Funcons-beta</a>
-    <a href="../../../../Languages-beta/index.html" title="LANGUAGES-BETA">Languages-beta</a>
-    <a href="../../../../index.html" title="CBS-BETA">CBS-beta</a>
+    <a href="../../.././Funcons-Index/index.html" title="CURRENT FUNCON LIBRARY INDEX">Funcons-beta</a>
+    <a href="../../.././../Languages-beta/index.html" title="LANGUAGES-BETA">Languages-beta</a>
+    <a href="../../.././../index.html" title="CBS-BETA">CBS-beta</a>
   </div>
 </div>
 </nav>
@@ -100,34 +100,34 @@
 <i class="keyword">Datatype</i>
   <span class="name"><span id="Name_links" class="decl">links</span></span> ::= <span id="Name_link" class="decl">link</span>(_:<span class="name"><a href="../Storing/index.html#Name_variables" title=" -&gt; values">variables</a></span>)
 
-</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_initialise-linking" class="decl">initialise-linking</span></span>(<span id="Variable_X" class="decl"><i class="var">X</i></span>:=><span id="Variable_T" class="decl"><i class="var">T</i></span>) : =><span id="Variable_T" class="decl"><i class="var">T</i></span></span></pre></summary><pre>   ~> <span class="name"><a href="../Storing/index.html#Name_initialise-storing" title="values -&gt; values">initialise-storing</a></span>(<a href="#Variable_X"><i class="var">X</i></a>)</pre></details><pre>
-</pre><details class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_initialise-linking" title="values -&gt; values">initialise-linking</a></span>(<i class="var">X</i>)` ensures that the entities used by the funcons for
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_initialise-linking" class="decl">initialise-linking</span></span>(<span id="Variable_X" class="decl"><i class="var">X</i></span>:=><span id="Variable_T" class="decl"><i class="var">T</i></span>) : =><span id="Variable_T" class="decl"><i class="var">T</i></span></span></pre></summary><pre>   ~> <span class="name"><a href="../Storing/index.html#Name_initialise-storing" title="values -&gt; values">initialise-storing</a></span>(<a href="#Variable_X"><i class="var">X</i></a>)</pre></details><pre>
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_initialise-linking" title="values -&gt; values">initialise-linking</a></span>(<i class="var">X</i>)` ensures that the entities used by the funcons for
   linking are properly initialised.
 */</span></pre></details><pre>
 
-</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_fresh-link" class="decl">fresh-link</span></span>(<span id="Variable_DT" class="decl"><i class="var">DT</i></span>) : =><span class="name"><a href="#Name_links" title=" -&gt; values">links</a></span></span></pre></summary><pre>    ~> <span class="name"><a href="#Name_link" title="values -&gt; values">link</a></span>(<span class="name"><a href="../Storing/index.html#Name_allocate-variable" title="values -&gt; values">allocate-variable</a></span>(<a href="#Variable_DT"><i class="var">DT</i></a>))</pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_fresh-link" class="decl">fresh-link</span></span>(<span id="Variable_DT" class="decl"><i class="var">DT</i></span>) : =><span class="name"><a href="#Name_links" title=" -&gt; values">links</a></span></span></pre></summary><pre>    ~> <span class="name"><a href="#Name_link" title="values -&gt; values">link</a></span>(<span class="name"><a href="../Storing/index.html#Name_allocate-variable" title="values -&gt; values">allocate-variable</a></span>(<a href="#Variable_DT"><i class="var">DT</i></a>))</pre></details><pre>
 
-</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_fresh-initialised-link" class="decl">fresh-initialised-link</span></span>(<span id="Variable_DT" class="decl"><i class="var">DT</i></span>, <span id="Variable_V" class="decl"><i class="var">V</i></span>:<span id="Variable_DT" class="decl"><i class="var">DT</i></span>) : =><span class="name"><a href="#Name_links" title=" -&gt; values">links</a></span></span></pre></summary><pre>    ~> <span class="name"><a href="#Name_link" title="values -&gt; values">link</a></span>(<span class="name"><a href="../Storing/index.html#Name_allocate-initialised-variable" title="values, values -&gt; values">allocate-initialised-variable</a></span>(<i class="var">DT</i>, <a href="#Variable_V"><i class="var">V</i></a>))</pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_fresh-initialised-link" class="decl">fresh-initialised-link</span></span>(<span id="Variable_DT" class="decl"><i class="var">DT</i></span>, <span id="Variable_V" class="decl"><i class="var">V</i></span>:<span id="Variable_DT" class="decl"><i class="var">DT</i></span>) : =><span class="name"><a href="#Name_links" title=" -&gt; values">links</a></span></span></pre></summary><pre>    ~> <span class="name"><a href="#Name_link" title="values -&gt; values">link</a></span>(<span class="name"><a href="../Storing/index.html#Name_allocate-initialised-variable" title="values, values -&gt; values">allocate-initialised-variable</a></span>(<i class="var">DT</i>, <a href="#Variable_V"><i class="var">V</i></a>))</pre></details><pre>
 <i class="keyword">Alias</i>
   <span class="name"><span id="Name_fresh-init-link" class="decl">fresh-init-link</span></span> = <span class="name"><a href="#Name_fresh-initialised-link" title="values, values -&gt; values">fresh-initialised-link</a></span>
 
 <i class="keyword">Funcon</i>
   <span class="name"><span id="Name_set-link" class="decl">set-link</span></span>(<span id="Variable_L" class="decl"><i class="var">L</i></span>:<span class="name"><a href="#Name_links" title=" -&gt; values">links</a></span>, <span id="Variable_V" class="decl"><i class="var">V</i></span>:<span id="Variable_DT" class="decl"><i class="var">DT</i></span>) : =><span class="name"><a href="../../../Values/Value-Types/index.html#Name_nothing" title=" -&gt; values">nothing</a></span>
-</pre><details class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  The value of a link can be set only once.
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  The value of a link can be set only once.
 */</span></pre></details><pre>
-</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_set-link" title="values, values -&gt; values">set-link</a></span>(<span class="name"><a href="#Name_link" title="values -&gt; values">link</a></span>(<span id="Variable_Var" class="decl"><i class="var">Var</i></span>:<span class="name"><a href="../Storing/index.html#Name_variables" title=" -&gt; values">variables</a></span>),<span id="Variable_V" class="decl"><i class="var">V</i></span>:<i class="var">DT</i>) ~> <span class="name"><a href="../Storing/index.html#Name_initialise-variable" title="values, values -&gt; values">initialise-variable</a></span>(<a href="#Variable_Var"><i class="var">Var</i></a>,<a href="#Variable_V"><i class="var">V</i></a>)</pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_set-link" title="values, values -&gt; values">set-link</a></span>(<span class="name"><a href="#Name_link" title="values -&gt; values">link</a></span>(<span id="Variable_Var" class="decl"><i class="var">Var</i></span>:<span class="name"><a href="../Storing/index.html#Name_variables" title=" -&gt; values">variables</a></span>),<span id="Variable_V" class="decl"><i class="var">V</i></span>:<i class="var">DT</i>) ~> <span class="name"><a href="../Storing/index.html#Name_initialise-variable" title="values, values -&gt; values">initialise-variable</a></span>(<a href="#Variable_Var"><i class="var">Var</i></a>,<a href="#Variable_V"><i class="var">V</i></a>)</pre></details><pre>
 
 <i class="keyword">Funcon</i>
   <span class="name"><span id="Name_follow-link" class="decl">follow-link</span></span>(<span id="Variable_L" class="decl"><i class="var">L</i></span>:<span class="name"><a href="#Name_links" title=" -&gt; values">links</a></span>) : =><span class="name"><a href="../../../Values/Value-Types/index.html#Name_defined-values" title=" -&gt; values">defined-values</a></span>
-</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_follow-link" title="values -&gt; values">follow-link</a></span>(<span class="name"><a href="#Name_link" title="values -&gt; values">link</a></span>(<span id="Variable_Var" class="decl"><i class="var">Var</i></span>:<span class="name"><a href="../Storing/index.html#Name_variables" title=" -&gt; values">variables</a></span>)) ~> <span class="name"><a href="../Storing/index.html#Name_assigned" title="values -&gt; values">assigned</a></span>(<a href="#Variable_Var"><i class="var">Var</i></a>)</pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_follow-link" title="values -&gt; values">follow-link</a></span>(<span class="name"><a href="#Name_link" title="values -&gt; values">link</a></span>(<span id="Variable_Var" class="decl"><i class="var">Var</i></span>:<span class="name"><a href="../Storing/index.html#Name_variables" title=" -&gt; values">variables</a></span>)) ~> <span class="name"><a href="../Storing/index.html#Name_assigned" title="values -&gt; values">assigned</a></span>(<a href="#Variable_Var"><i class="var">Var</i></a>)</pre></details><pre>
 
 <i class="keyword">Funcon</i>
   <span class="name"><span id="Name_follow-if-link" class="decl">follow-if-link</span></span>(<span id="Variable_V" class="decl"><i class="var">V</i></span>:<span class="name"><a href="../../../Values/Value-Types/index.html#Name_defined-values" title=" -&gt; values">defined-values</a></span>) : =><span class="name"><a href="../../../Values/Value-Types/index.html#Name_defined-values" title=" -&gt; values">defined-values</a></span>
-</pre><details class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  If `<i class="var">V</i>` is a link, `<span class="name"><a href="#Name_follow-if-link" title="values -&gt; values">follow-if-link</a></span>(<i class="var">V</i>)` computes the set value, and
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  If `<i class="var">V</i>` is a link, `<span class="name"><a href="#Name_follow-if-link" title="values -&gt; values">follow-if-link</a></span>(<i class="var">V</i>)` computes the set value, and
   otherwise it evaluates to `<i class="var">V</i>`.
 */</span></pre></details><pre>
-</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_follow-if-link" title="values -&gt; values">follow-if-link</a></span>(<span class="name"><a href="#Name_link" title="values -&gt; values">link</a></span>(<span id="Variable_Var" class="decl"><i class="var">Var</i></span>:<span class="name"><a href="../Storing/index.html#Name_variables" title=" -&gt; values">variables</a></span>)) ~> <span class="name"><a href="../Storing/index.html#Name_assigned" title="values -&gt; values">assigned</a></span>(<a href="#Variable_Var"><i class="var">Var</i></a>)</pre></details><pre>
-</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>   <a href="#Variable_V"><i class="var">V</i></a> : ~ (<span class="name"><a href="#Name_links" title=" -&gt; values">links</a></span>|<span class="name"><a href="../../../Values/Value-Types/index.html#Name_nothing" title=" -&gt; values">nothing</a></span>)
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_follow-if-link" title="values -&gt; values">follow-if-link</a></span>(<span class="name"><a href="#Name_link" title="values -&gt; values">link</a></span>(<span id="Variable_Var" class="decl"><i class="var">Var</i></span>:<span class="name"><a href="../Storing/index.html#Name_variables" title=" -&gt; values">variables</a></span>)) ~> <span class="name"><a href="../Storing/index.html#Name_assigned" title="values -&gt; values">assigned</a></span>(<a href="#Variable_Var"><i class="var">Var</i></a>)</pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>   <a href="#Variable_V"><i class="var">V</i></a> : ~ (<span class="name"><a href="#Name_links" title=" -&gt; values">links</a></span>|<span class="name"><a href="../../../Values/Value-Types/index.html#Name_nothing" title=" -&gt; values">nothing</a></span>)
   -----------------------
   <span class="name"><a href="#Name_follow-if-link" title="values -&gt; values">follow-if-link</a></span>(<span id="Variable_V" class="decl"><i class="var">V</i></span>) ~> <a href="#Variable_V"><i class="var">V</i></a></pre></details><pre>
 </pre></details><pre>

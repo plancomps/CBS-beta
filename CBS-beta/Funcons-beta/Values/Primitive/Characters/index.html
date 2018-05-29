@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>Characters</title>
-  <link rel="stylesheet" type="text/css" href="../../../cbs.css">
+  <link rel="stylesheet" type="text/css" href="../../.././cbs.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>
 	$(document).ready(function(){
@@ -39,14 +39,14 @@
 
 <header>
   <div class="topic">
-    <a href="../../../../index.html" title="CBS-BETA">CBS-beta</a> / 
-    <a href="../../../index.html" title="FUNCONS-BETA">Funcons-beta</a>
+    <a href="../../.././../index.html" title="CBS-BETA">CBS-beta</a> / 
+    <a href="../../.././index.html" title="FUNCONS-BETA">Funcons-beta</a>
   </div>
   <div class="title">
     <a href="Characters.cbs" title="CBS SOURCE FILE">Characters</a>
   </div>
   <div class="topic">
-    <img src="../../..//preview.png" 
+    <img src="../../.././preview.png" 
          alt="Preview badge" width="67" height="17">
   </div>
 </header>
@@ -73,9 +73,9 @@
   <div class="dropdown-content">
     
     
-    <a href="../../../Funcons-Index/index.html" title="CURRENT FUNCON LIBRARY INDEX">Funcons-beta</a>
-    <a href="../../../../Languages-beta/index.html" title="LANGUAGES-BETA">Languages-beta</a>
-    <a href="../../../../index.html" title="CBS-BETA">CBS-beta</a>
+    <a href="../../.././Funcons-Index/index.html" title="CURRENT FUNCON LIBRARY INDEX">Funcons-beta</a>
+    <a href="../../.././../Languages-beta/index.html" title="LANGUAGES-BETA">Languages-beta</a>
+    <a href="../../.././../index.html" title="CBS-BETA">CBS-beta</a>
   </div>
 </div>
 </nav>
@@ -111,7 +111,7 @@
 
 <i class="keyword">Built-in</i> <i class="keyword">Type</i>
   <span class="name"><span id="Name_characters" class="decl">characters</span></span> <: <span class="name"><a href="../../Value-Types/index.html#Name_defined-values" title=" -&gt; values">defined-values</a></span>
-</pre><details class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  Literal characters can be written `<b class="atom">'C'</b>` where `<i class="var">C</i>` is any visible character
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  Literal characters can be written `<b class="atom">'C'</b>` where `<i class="var">C</i>` is any visible character
   other than a single quote or backslash character, which needs to be escaped:
   `<b class="atom">'\''</b>` and `<b class="atom">'\\'</b>`.
 */</span></pre></details><pre>
@@ -120,7 +120,7 @@
 
 
 </pre><details open class="sectiondetails"><summary><pre>#### <b class="title"><i>Unicode character set</i></b></pre></summary><pre>
-</pre><details class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  The set of Unicode characters and allocated points is open to extension.
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  The set of Unicode characters and allocated points is open to extension.
   See https://en.wikipedia.org/wiki/Plane_(Unicode)
 */</span></pre></details><pre>
 
@@ -134,18 +134,18 @@
   <span class="name"><span id="Name_unicode-character" class="decl">unicode-character</span></span>(<span id="Variable_UP" class="decl"><i class="var">UP</i></span>:<span class="name"><a href="#Name_unicode-points" title=" -&gt; values">unicode-points</a></span>) : <span class="name"><a href="#Name_unicode-characters" title=" -&gt; values">unicode-characters</a></span>
 <i class="keyword">Alias</i>
   <span class="name"><span id="Name_char" class="decl">char</span></span> = <span class="name"><a href="#Name_unicode-character" title="values -&gt; values">unicode-character</a></span>
-</pre><details class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  The defined-values in `<span class="name"><a href="#Name_unicode-characters" title=" -&gt; values">unicode-characters</a></span>` are the defined-values of
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  The defined-values in `<span class="name"><a href="#Name_unicode-characters" title=" -&gt; values">unicode-characters</a></span>` are the defined-values of
   `<span class="name"><a href="#Name_unicode-character" title="values -&gt; values">unicode-character</a></span>(<i class="var">UP</i>:<span class="name"><a href="#Name_unicode-points" title=" -&gt; values">unicode-points</a></span>)`.
 */</span></pre></details><pre>
 <i class="keyword">Funcon</i>
   <span class="name"><span id="Name_unicode-point" class="decl">unicode-point</span></span>(<span id="Variable_UC" class="decl"><i class="var">UC</i></span>:<span class="name"><a href="#Name_unicode-characters" title=" -&gt; values">unicode-characters</a></span>) : =><span class="name"><a href="#Name_unicode-points" title=" -&gt; values">unicode-points</a></span>
 <i class="keyword">Alias</i>
   <span class="name"><span id="Name_unicode" class="decl">unicode</span></span> = <span class="name"><a href="#Name_unicode-point" title="values -&gt; values">unicode-point</a></span>
-</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_unicode-point" title="values -&gt; values">unicode-point</a></span>(<span class="name"><a href="#Name_unicode-character" title="values -&gt; values">unicode-character</a></span>(<span id="Variable_UP" class="decl"><i class="var">UP</i></span>:<span class="name"><a href="#Name_unicode-points" title=" -&gt; values">unicode-points</a></span>)) ~> <a href="#Variable_UP"><i class="var">UP</i></a></pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_unicode-point" title="values -&gt; values">unicode-point</a></span>(<span class="name"><a href="#Name_unicode-character" title="values -&gt; values">unicode-character</a></span>(<span id="Variable_UP" class="decl"><i class="var">UP</i></span>:<span class="name"><a href="#Name_unicode-points" title=" -&gt; values">unicode-points</a></span>)) ~> <a href="#Variable_UP"><i class="var">UP</i></a></pre></details><pre>
 
 
 </pre></details><pre></pre><details open class="sectiondetails"><summary><pre>#### <b class="title"><i>Unicode basic multilingual plane</i></b></pre></summary><pre>
-</pre><details class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  The set of Unicode BMP characters and allocated points is open to extension.
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  The set of Unicode BMP characters and allocated points is open to extension.
 */</span></pre></details><pre>
 
 <i class="keyword">Built-in</i> <i class="keyword">Datatype</i>
@@ -155,7 +155,7 @@
 <i class="keyword">Built-in</i> <i class="keyword">Type</i>
   <span class="name"><span id="Name_basic-multilingual-plane-points" class="decl">basic-multilingual-plane-points</span></span> <:
     <span class="name"><a href="../Integers/index.html#Name_bounded-integers" title="values, values -&gt; values">bounded-integers</a></span>(0, <span class="name"><a href="../../Composite/Bits/index.html#Name_unsigned-bit-vector-maximum" title="values -&gt; values">unsigned-bit-vector-maximum</a></span>(17))
-</pre><details class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  The defined-values in `<span class="name"><a href="#Name_basic-multilingual-plane-characters" title=" -&gt; values">basic-multilingual-plane-characters</a></span>` are the values of
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  The defined-values in `<span class="name"><a href="#Name_basic-multilingual-plane-characters" title=" -&gt; values">basic-multilingual-plane-characters</a></span>` are the values of
   `<span class="name"><a href="#Name_unicode-character" title="values -&gt; values">unicode-character</a></span>(<i class="var">BMPP</i>:<span class="name"><a href="#Name_basic-multilingual-plane-points" title=" -&gt; values">basic-multilingual-plane-points</a></span>)`.
 */</span></pre></details><pre>
 
@@ -168,7 +168,7 @@
   <span class="name"><span id="Name_latin-1-chars" class="decl">latin-1-chars</span></span> = <span class="name"><a href="#Name_iso-latin-1-characters" title=" -&gt; values">iso-latin-1-characters</a></span>
 <i class="keyword">Type</i>
   <span class="name"><span id="Name_iso-latin-1-points" class="decl">iso-latin-1-points</span></span> ~> <span class="name"><a href="../Integers/index.html#Name_bounded-integers" title="values, values -&gt; values">bounded-integers</a></span>(0, <span class="name"><a href="../../Composite/Bits/index.html#Name_unsigned-bit-vector-maximum" title="values -&gt; values">unsigned-bit-vector-maximum</a></span>(8))
-</pre><details class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  The values in `<span class="name"><a href="#Name_iso-latin-1-characters" title=" -&gt; values">iso-latin-1-characters</a></span>` are the values of
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  The values in `<span class="name"><a href="#Name_iso-latin-1-characters" title=" -&gt; values">iso-latin-1-characters</a></span>` are the values of
   `<span class="name"><a href="#Name_unicode-character" title="values -&gt; values">unicode-character</a></span>(<i class="var">ILP</i>:<span class="name"><a href="#Name_iso-latin-1-points" title=" -&gt; values">iso-latin-1-points</a></span>)`.
 */</span></pre></details><pre>
 
@@ -181,25 +181,25 @@
   <span class="name"><span id="Name_ascii-chars" class="decl">ascii-chars</span></span> = <span class="name"><a href="#Name_ascii-characters" title=" -&gt; values">ascii-characters</a></span>
 <i class="keyword">Type</i>
   <span class="name"><span id="Name_ascii-points" class="decl">ascii-points</span></span> ~> <span class="name"><a href="../Integers/index.html#Name_bounded-integers" title="values, values -&gt; values">bounded-integers</a></span>(0, <span class="name"><a href="../../Composite/Bits/index.html#Name_unsigned-bit-vector-maximum" title="values -&gt; values">unsigned-bit-vector-maximum</a></span>(7))
-</pre><details class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  The values in `<span class="name"><a href="#Name_ascii-characters" title=" -&gt; values">ascii-characters</a></span>` are the values of
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  The values in `<span class="name"><a href="#Name_ascii-characters" title=" -&gt; values">ascii-characters</a></span>` are the values of
   `<span class="name"><a href="#Name_unicode-character" title="values -&gt; values">unicode-character</a></span>(<i class="var">AP</i>:<span class="name"><a href="#Name_ascii-points" title=" -&gt; values">ascii-points</a></span>)`.
 */</span></pre></details><pre>
 <i class="keyword">Funcon</i>
   <span class="name"><span id="Name_ascii-character" class="decl">ascii-character</span></span>(<span id="Variable_S" class="decl"><i class="var">S</i></span>:<span class="name"><a href="../../Composite/Strings/index.html#Name_strings" title=" -&gt; values">strings</a></span>) : =><span class="name"><a href="#Name_ascii-characters" title=" -&gt; values">ascii-characters</a></span>|<span class="name"><a href="../../Value-Types/index.html#Name_nothing" title=" -&gt; values">nothing</a></span>
-</pre><details class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_ascii-character" title="values -&gt; values">ascii-character</a></span>"C"` takes a string containing a single ASCII character `<i class="var">C</i>`
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_ascii-character" title="values -&gt; values">ascii-character</a></span>"C"` takes a string containing a single ASCII character `<i class="var">C</i>`
   and gives the character; the value is undefined on all other strings.
 */</span></pre></details><pre>
-</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_ascii-character" title="values -&gt; values">ascii-character</a></span>[<span id="Variable_C" class="decl"><i class="var">C</i></span>:<span class="name"><a href="#Name_ascii-characters" title=" -&gt; values">ascii-characters</a></span>] ~> <a href="#Variable_C"><i class="var">C</i></a></pre></details><pre>
-</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <a href="#Variable_C"><i class="var">C</i></a> : ~ <span class="name"><a href="#Name_ascii-characters" title=" -&gt; values">ascii-characters</a></span>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_ascii-character" title="values -&gt; values">ascii-character</a></span>[<span id="Variable_C" class="decl"><i class="var">C</i></span>:<span class="name"><a href="#Name_ascii-characters" title=" -&gt; values">ascii-characters</a></span>] ~> <a href="#Variable_C"><i class="var">C</i></a></pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <a href="#Variable_C"><i class="var">C</i></a> : ~ <span class="name"><a href="#Name_ascii-characters" title=" -&gt; values">ascii-characters</a></span>
   -------------------------------------
   <span class="name"><a href="#Name_ascii-character" title="values -&gt; values">ascii-character</a></span>[<span id="Variable_C" class="decl"><i class="var">C</i></span>:<span class="name"><a href="#Name_characters" title=" -&gt; values">characters</a></span>] ~> <span class="name"><a href="../../Value-Types/index.html#Name_none" title=" -&gt; values">none</a></span></pre></details><pre>
-</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="../../Composite/Sequences/index.html#Name_length" title="values* -&gt; values">length</a></span>(<a href="#Variable_C*"><i class="var">C*</i></a>) =/= 1
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="../../Composite/Sequences/index.html#Name_length" title="values* -&gt; values">length</a></span>(<a href="#Variable_C*"><i class="var">C*</i></a>) =/= 1
   ---------------------------------------
   <span class="name"><a href="#Name_ascii-character" title="values -&gt; values">ascii-character</a></span>[<span id="Variable_C*" class="decl"><i class="var">C*</i></span>:<span class="name"><a href="#Name_characters" title=" -&gt; values">characters</a></span>*] ~> <span class="name"><a href="../../Value-Types/index.html#Name_none" title=" -&gt; values">none</a></span></pre></details><pre>
 
 
 </pre></details><pre></pre><details open class="sectiondetails"><summary><pre>#### <b class="title"><i>Character point encodings</i></b></pre></summary><pre>
-</pre><details class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  See https://en.wikipedia.org/wiki/Character_encoding
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  See https://en.wikipedia.org/wiki/Character_encoding
 */</span></pre></details><pre>
 
 <i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
@@ -212,14 +212,14 @@
 
 </pre></details><pre></pre><details open class="sectiondetails"><summary><pre>#### <b class="title"><i>Control characters</i></b></pre></summary><pre>
 
-</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_backspace" class="decl">backspace</span></span> : =><span class="name"><a href="#Name_ascii-characters" title=" -&gt; values">ascii-characters</a></span> </span></pre></summary><pre>    ~> <span class="name"><a href="#Name_unicode-character" title="values -&gt; values">unicode-character</a></span>(<span class="name"><a href="../Integers/index.html#Name_hexadecimal-natural" title="values -&gt; values">hexadecimal-natural</a></span>"0008")</pre></details><pre>
-</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_horizontal-tab" class="decl">horizontal-tab</span></span> : =><span class="name"><a href="#Name_ascii-characters" title=" -&gt; values">ascii-characters</a></span> </span></pre></summary><pre>    ~> <span class="name"><a href="#Name_unicode-character" title="values -&gt; values">unicode-character</a></span>(<span class="name"><a href="../Integers/index.html#Name_hexadecimal-natural" title="values -&gt; values">hexadecimal-natural</a></span>"0009")</pre></details><pre>
-</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_line-feed" class="decl">line-feed</span></span> : =><span class="name"><a href="#Name_ascii-characters" title=" -&gt; values">ascii-characters</a></span> </span></pre></summary><pre>    ~> <span class="name"><a href="#Name_unicode-character" title="values -&gt; values">unicode-character</a></span>(<span class="name"><a href="../Integers/index.html#Name_hexadecimal-natural" title="values -&gt; values">hexadecimal-natural</a></span>"000a")</pre></details><pre>
-</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_form-feed" class="decl">form-feed</span></span> : =><span class="name"><a href="#Name_ascii-characters" title=" -&gt; values">ascii-characters</a></span> </span></pre></summary><pre>    ~> <span class="name"><a href="#Name_unicode-character" title="values -&gt; values">unicode-character</a></span>(<span class="name"><a href="../Integers/index.html#Name_hexadecimal-natural" title="values -&gt; values">hexadecimal-natural</a></span>"000c")</pre></details><pre>
-</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_carriage-return" class="decl">carriage-return</span></span> : =><span class="name"><a href="#Name_ascii-characters" title=" -&gt; values">ascii-characters</a></span> </span></pre></summary><pre>    ~> <span class="name"><a href="#Name_unicode-character" title="values -&gt; values">unicode-character</a></span>(<span class="name"><a href="../Integers/index.html#Name_hexadecimal-natural" title="values -&gt; values">hexadecimal-natural</a></span>"000d")</pre></details><pre>
-</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_double-quote" class="decl">double-quote</span></span> : =><span class="name"><a href="#Name_ascii-characters" title=" -&gt; values">ascii-characters</a></span> </span></pre></summary><pre>    ~> <span class="name"><a href="#Name_unicode-character" title="values -&gt; values">unicode-character</a></span>(<span class="name"><a href="../Integers/index.html#Name_hexadecimal-natural" title="values -&gt; values">hexadecimal-natural</a></span>"0022")</pre></details><pre>
-</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_single-quote" class="decl">single-quote</span></span> : =><span class="name"><a href="#Name_ascii-characters" title=" -&gt; values">ascii-characters</a></span> </span></pre></summary><pre>    ~> <span class="name"><a href="#Name_unicode-character" title="values -&gt; values">unicode-character</a></span>(<span class="name"><a href="../Integers/index.html#Name_hexadecimal-natural" title="values -&gt; values">hexadecimal-natural</a></span>"0027")</pre></details><pre>
-</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_backslash" class="decl">backslash</span></span> : =><span class="name"><a href="#Name_ascii-characters" title=" -&gt; values">ascii-characters</a></span> </span></pre></summary><pre>    ~> <span class="name"><a href="#Name_unicode-character" title="values -&gt; values">unicode-character</a></span>(<span class="name"><a href="../Integers/index.html#Name_hexadecimal-natural" title="values -&gt; values">hexadecimal-natural</a></span>"005c")</pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_backspace" class="decl">backspace</span></span> : =><span class="name"><a href="#Name_ascii-characters" title=" -&gt; values">ascii-characters</a></span> </span></pre></summary><pre>    ~> <span class="name"><a href="#Name_unicode-character" title="values -&gt; values">unicode-character</a></span>(<span class="name"><a href="../Integers/index.html#Name_hexadecimal-natural" title="values -&gt; values">hexadecimal-natural</a></span>"0008")</pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_horizontal-tab" class="decl">horizontal-tab</span></span> : =><span class="name"><a href="#Name_ascii-characters" title=" -&gt; values">ascii-characters</a></span> </span></pre></summary><pre>    ~> <span class="name"><a href="#Name_unicode-character" title="values -&gt; values">unicode-character</a></span>(<span class="name"><a href="../Integers/index.html#Name_hexadecimal-natural" title="values -&gt; values">hexadecimal-natural</a></span>"0009")</pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_line-feed" class="decl">line-feed</span></span> : =><span class="name"><a href="#Name_ascii-characters" title=" -&gt; values">ascii-characters</a></span> </span></pre></summary><pre>    ~> <span class="name"><a href="#Name_unicode-character" title="values -&gt; values">unicode-character</a></span>(<span class="name"><a href="../Integers/index.html#Name_hexadecimal-natural" title="values -&gt; values">hexadecimal-natural</a></span>"000a")</pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_form-feed" class="decl">form-feed</span></span> : =><span class="name"><a href="#Name_ascii-characters" title=" -&gt; values">ascii-characters</a></span> </span></pre></summary><pre>    ~> <span class="name"><a href="#Name_unicode-character" title="values -&gt; values">unicode-character</a></span>(<span class="name"><a href="../Integers/index.html#Name_hexadecimal-natural" title="values -&gt; values">hexadecimal-natural</a></span>"000c")</pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_carriage-return" class="decl">carriage-return</span></span> : =><span class="name"><a href="#Name_ascii-characters" title=" -&gt; values">ascii-characters</a></span> </span></pre></summary><pre>    ~> <span class="name"><a href="#Name_unicode-character" title="values -&gt; values">unicode-character</a></span>(<span class="name"><a href="../Integers/index.html#Name_hexadecimal-natural" title="values -&gt; values">hexadecimal-natural</a></span>"000d")</pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_double-quote" class="decl">double-quote</span></span> : =><span class="name"><a href="#Name_ascii-characters" title=" -&gt; values">ascii-characters</a></span> </span></pre></summary><pre>    ~> <span class="name"><a href="#Name_unicode-character" title="values -&gt; values">unicode-character</a></span>(<span class="name"><a href="../Integers/index.html#Name_hexadecimal-natural" title="values -&gt; values">hexadecimal-natural</a></span>"0022")</pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_single-quote" class="decl">single-quote</span></span> : =><span class="name"><a href="#Name_ascii-characters" title=" -&gt; values">ascii-characters</a></span> </span></pre></summary><pre>    ~> <span class="name"><a href="#Name_unicode-character" title="values -&gt; values">unicode-character</a></span>(<span class="name"><a href="../Integers/index.html#Name_hexadecimal-natural" title="values -&gt; values">hexadecimal-natural</a></span>"0027")</pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_backslash" class="decl">backslash</span></span> : =><span class="name"><a href="#Name_ascii-characters" title=" -&gt; values">ascii-characters</a></span> </span></pre></summary><pre>    ~> <span class="name"><a href="#Name_unicode-character" title="values -&gt; values">unicode-character</a></span>(<span class="name"><a href="../Integers/index.html#Name_hexadecimal-natural" title="values -&gt; values">hexadecimal-natural</a></span>"005c")</pre></details><pre>
 </pre></details><pre></pre></details><pre>
 </pre>
 

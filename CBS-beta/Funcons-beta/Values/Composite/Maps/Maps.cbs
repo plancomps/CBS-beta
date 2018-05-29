@@ -59,7 +59,7 @@ Built-in Funcon
 */
 
 Built-in Funcon
-  map-lookup(M:maps(GT, T), K:GT) : T|nothing
+  map-lookup(M:maps(GT, T), K:GT) : =>T|nothing
 Alias
   lookup = map-lookup
 /*
