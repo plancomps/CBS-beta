@@ -1,0 +1,23 @@
+Language "OCaml Light"
+
+#4 Type expressions
+
+Syntax
+  T : typexpr
+  ::= '\'' ident
+	| '_'
+	| '(' typexpr ')'
+	| typexpr '->' typexpr
+	| typexpr star-typexpr+
+	| typeconstr
+	| typexpr typeconstr
+	| '(' typexpr comma-typexpr+ ')' typeconstr
+
+  ST : star-typexpr ::= '*' typexpr
+
+  CT : comma-typexpr ::= ',' typexpr
+
+  PT : poly-typexpr 
+  ::= typexpr  
+    | ( '\'' ident )+ '.' typexpr 
+

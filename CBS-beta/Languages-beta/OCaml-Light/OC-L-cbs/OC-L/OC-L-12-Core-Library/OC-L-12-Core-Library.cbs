@@ -1,0 +1,469 @@
+Language "OCaml Light"
+
+#12 Core library
+
+[
+Funcon ocaml-light-core-library
+Funcon ocaml-light-match-failure
+Funcon is-structurally-equal
+Funcon ocaml-light-to-string
+Funcon record-map
+]
+
+Meta-variables
+  R, S, S1, S2, S3, T, U <: values
+  S* <: values*
+  T+ <: values+
+
+## Abbreviations
+
+/*
+  The following funcons take computations `X` and return (curried) functions.
+  `X` refers to a single function argument as `arg`, or to individual arguments
+  of a curried function of several arguments as `arg-1`, `arg-2`, `arg-3`.
+*/
+Auxiliary Funcon
+  op-1(X:S=>T) : =>functions(S,T)
+    ~> function abstraction X
+Auxiliary Funcon
+  op-2(X:tuples(S1,S2)=>T) : =>functions(S1, functions(S2,T))
+    ~> curry function abstraction X
+Auxiliary Funcon
+  op-3(X:tuples(S1,S2,S3)=>T) : =>functions(S1, functions(S2, functions(S3, T)))
+   ~> function abstraction(
+        curry partial-apply-first(function abstraction X, given))
+
+Auxiliary Funcon
+  partial-apply-first(F:functions(tuples(R,S,T+),U), V:R) :
+    =>functions(tuples(S,T+),U)
+    ~> function abstraction(apply(F, tuple(V, tuple-elements given)))
+/*
+  `partial-apply-first(F, V)` provides `V` as the first argument to a function
+  expecting a tuple of 3 or more arguments, returning a function expecting
+  a tuple of one fewer arguments.
+*/
+
+Auxiliary Funcon
+  arg : T=>T
+    ~> given
+Auxiliary Funcon
+  arg-1 : tuples(S1,S*)=>S1
+    ~> index(1, tuple-elements given)
+Auxiliary Funcon
+  arg-2 : tuples(S1,S2,S*)=>S2
+    ~> index(2, tuple-elements given)
+Auxiliary Funcon
+  arg-3 : tuples(S1,S2,S3,S*)=>S3
+    ~> index(3, tuple-elements given)
+
+
+## Library
+
+/*
+  The `ocaml-light-core-library` environment maps most of the names defined
+  in OCaml Module Pervasives (the initially opened module) to funcon terms.
+  See [https://caml.inria.fr/pub/docs/manual-ocaml-4.06/core.html] for further
+  details and comments.
+  
+  It also maps some other names defined in the OCaml Standard Libarary to
+  funcon terms (to support tests using them without opening those modules).
+*/
+
+
+Funcon
+  ocaml-light-core-library : =>environments 
+   ~>
+   {// Predefined exceptions
+    "Match_failure" |->
+	  op-1(variant("Match_failure", arg)),
+    "Invalid_argument" |->
+	  op-1(variant("Invalid_argument", arg)),
+    "Division_by_zero" |->
+	  variant("Division_by_zero", null),
+
+	// Exceptions	
+	"raise" |->
+	  op-1(throw(arg)),
+
+    //Comparisons
+    "(=)" |->
+	  op-2(is-structurally-equal(arg-1, arg-2)),
+	"(<>)" |->
+	  op-2(not(is-structurally-equal(arg-1, arg-2))),
+	"(<)" |->
+	  op-2(is-less(arg-1, arg-2)),
+	"(>)" |->
+	  op-2(is-greater(arg-1, arg-2)),
+	"(<=)" |->
+	  op-2(is-less-or-equal(arg-1, arg-2)),
+	"(>=)" |->
+	  op-2(is-greater-or-equal(arg-1, arg-2)),
+	"min" |->
+	  op-2(if-true-else(is-less(arg-1, arg-2), arg-1, arg-2)),
+	"max" |->
+	  op-2(if-true-else(is-greater(arg-1, arg-2), arg-1, arg-2)),
+    "(==)" |->
+	  op-2(if-true-else(
+	    and(is-in-type(arg-1, ground-values), is-in-type(arg-2, ground-values)),
+		is-equal(arg-1, arg-2),
+		throw(variant("Invalid_argument", "equal: functional value")))),
+    "(!=)" |->
+	  op-2(if-true-else(
+	    and(is-in-type(arg-1, ground-values), is-in-type(arg-2, ground-values)),
+		not is-equal(arg-1, arg-2),
+		throw(variant("Invalid_argument", "equal: functional value")))),
+ 
+    // Boolean operations (excluding lazy conditionals)
+    "not" |->
+	  op-1(not(arg)),
+
+    // Integer arithmetic
+    "(~-)" |->
+	  op-1(implemented-integer integer-negate(arg)),
+    "(~+)" |->
+	  op-1(implemented-integer arg),
+	"succ" |->
+	  op-1(implemented-integer integer-add(arg, 1)),
+	"pred" |->
+	  op-1(implemented-integer integer-subtract(arg, 1)),
+	"(+)" |->
+	  op-2(implemented-integer integer-add(arg-1, arg-2)),
+	"(-)" |->
+	  op-2(implemented-integer integer-subtract(arg-1, arg-2)),
+	"(*)" |->
+	  op-2(implemented-integer integer-multiply(arg-1, arg-2)),
+	"(/)" |->
+	  op-2(implemented-integer if-true-else(is-equal(arg-2, 0),
+					throw(variant("Division_by_zero", null)),
+					integer-divide(arg-1, arg-2))),
+	"(mod)" |->
+	  op-2(implemented-integer integer-modulo(arg-1, arg-2)),
+ 	"abs" |->
+	  op-1(implemented-integer integer-absolute-value(arg)),
+	"max_int" |->
+	  op-1(signed-bit-vector-maximum(implemented-integers-width)),
+	"min_int" |->
+	  op-1(signed-bit-vector-minimum(implemented-integers-width)),
+
+    // Bitwise operations
+	"(land)" |->
+	  op-2(bit-vector-to-integer
+	    bit-vector-and(implemented-bit-vector arg-1, 
+	      implemented-bit-vector arg-2)),
+	"(lor)" |->
+	  op-2(bit-vector-to-integer
+	    bit-vector-or(implemented-bit-vector arg-1, 
+	      implemented-bit-vector arg-2)),
+	"(lxor)" |->
+	  op-2(bit-vector-to-integer
+	    bit-vector-xor(implemented-bit-vector arg-1, 
+	      implemented-bit-vector arg-2)),
+	"lnot" |->
+	  op-1(bit-vector-to-integer
+	    bit-vector-not(implemented-bit-vector arg)),
+	"(lsl)" |->
+	  op-2(bit-vector-to-integer
+        bit-vector-shift-left(implemented-bit-vector arg-1, arg-2)),
+	"(lsr)" |->
+	  op-2(bit-vector-to-integer
+        bit-vector-logical-shift-right(implemented-bit-vector arg-1, arg-2)),
+	"(asr)" |->
+	  op-2(bit-vector-to-integer
+        bit-vector-arithmetic-shift-right(implemented-bit-vector arg-1, arg-2)),
+
+	// Floating-point arithmetic
+	"(~-.)" |->
+	  op-1(float-negate(implemented-floats-format, arg)),
+	"(~+.)" |->
+	  op-1(arg),
+	"(+.)" |->
+	  op-2(float-add(implemented-floats-format, arg-1, arg-2)),
+	"(-.)" |->
+	  op-2(float-subtract(implemented-floats-format, arg-1, arg-2)),
+	"(*.)" |->
+	  op-2(float-multiply(implemented-floats-format, arg-1, arg-2)),
+	"(/.)" |->
+	  op-2(float-divide(implemented-floats-format, arg-1, arg-2)),
+	"(**)" |->
+	  op-2(float-float-power(implemented-floats-format, arg-1, arg-2)),
+	"sqrt" |->
+	  op-1(float-sqrt(implemented-floats-format, arg)),
+	"exp" |->
+	  op-1(float-exp(implemented-floats-format, arg)),
+	"log" |->
+	  op-1(float-log(implemented-floats-format, arg)),
+	"log10" |->
+	  op-1(float-log10(implemented-floats-format, arg)),
+	"cos" |->
+	  op-1(float-cos(implemented-floats-format, arg)),
+	"sin" |->
+	  op-1(float-sin(implemented-floats-format, arg)),
+	"tan" |->
+	  op-1(float-tan(implemented-floats-format, arg)),
+	"acos" |->
+	  op-1(float-acos(implemented-floats-format, arg)),
+	"asin" |->
+	  op-1(float-asin(implemented-floats-format, arg)),
+	"atan" |->
+	  op-1(float-atan(implemented-floats-format, arg)),
+	"atan2" |->
+	  op-2(float-atan2(implemented-floats-format, arg-1, arg-2)),
+	"cosh" |->
+	  op-1(float-cosh(implemented-floats-format, arg)),
+	"sinh" |->
+	  op-1(float-sinh(implemented-floats-format, arg)),
+	"tanh" |->
+	  op-1(float-tanh(implemented-floats-format, arg)),
+	"ceil" |->
+	  op-1(implemented-integer float-ceiling(implemented-floats-format, arg)),
+    "floor" |->
+	  op-1(implemented-integer float-floor(implemented-floats-format, arg)),
+	"abs_float" |->
+	  op-1(float-absolute-value(implemented-floats-format, arg)),
+	"mod_float" |->
+	  op-2(float-remainder(implemented-floats-format, arg-1, arg-2)),
+	"int_of_float" |->
+	  op-1(implemented-integer float-truncate(implemented-floats-format, arg)),
+	"float_of_int" |->
+	  op-1(implemented-float-literal(string-append(to-string(arg), ".0"))),
+
+    // String operations
+	"(^)" |->
+	  op-2(string-append(arg-1, arg-2)),
+
+	// String conversion operations
+	"string_of_int" |->
+	  op-1(to-string(arg)),
+	"int_of_string" |->
+	  op-1(implemented-integer implemented-integer-literal(arg)),
+	"string_of_float" |->
+	  op-1(to-string(arg)),
+    "float_of_string" |->
+	  op-1(implemented-float-literal(arg)),	
+
+	// List operations
+	"(@)" |->
+	  op-2(list-append(arg-1, arg-2)),
+
+	// Input/output
+	//   Output functions on standard output
+    "print_char" |->
+	  op-1(sequential(print(to-string(arg)), null)),
+	"print_string" |->
+	  op-1(sequential(print(arg), null)),
+    "print_int" |->
+	  op-1(sequential(print(to-string(arg)), null)),
+ 	"print_float" |->
+	  op-1(sequential(print(to-string(arg)), null)),
+	"print_newline" |->
+	  op-1(sequential(print "\n", null)),
+	//   Input functions on standard input
+    "read_line" |->
+	  op-1(read),
+    "read_int" |->
+	  op-1(implemented-integer-literal(read)),
+    "read_float" |->
+	  op-1(implemented-float-literal(read)),
+
+    // References (not represented as mutable records)
+	"ref" |->
+	  op-1(allocate-initialised-variable(implemented-values, arg)),
+	"(!)" |->
+	  op-1(assigned(arg)),
+	"(:=)" |->
+	  op-2(sequential(assign(arg-1, arg-2), null)),
+
+    // Module List
+	"length" |->
+	  op-1(implemented-integer list-length(arg)),
+	"cons" |->
+	  op-2(cons(arg-1, arg-2)),
+	"hd" |->
+	  op-1(else(head(arg), throw(variant("Failure", "hd")))),
+	"tl" |->
+	  op-1(else(tail(arg), throw(variant("Failure", "tl")))),
+	"rev" |->
+	  op-1(list(reverse(list-elements(arg)))),
+	
+	// Module Array
+	"array_length" |->
+	  op-1(implemented-integer length(vector-elements(arg))),
+	"array_make" |->
+	  op-2(if-true-else(is-greater-or-equal(arg-1, 0),
+			 vector(interleave-map(
+			   allocate-initialised-variable(values, arg),
+			   n-of(arg-1, arg-2))),
+			 throw(variant("Invalid_argument", "array_make")))),
+    "array_append" |->
+	  op-2(vector(vector-elements(arg-1), vector-elements(arg-2))),
+    "array_get" |->
+	  op-2(else(assigned(def index(nat-succ arg-2, vector-elements(arg-1))),
+    			throw(variant("Invalid_argument", "array_get")))),
+    "array_set" |->
+	  op-3(else(assign(def index(nat-succ arg-2, vector-elements(arg-1)), arg-3),
+				throw(variant("Invalid_argument", "array_set"))))
+   }
+
+
+## Language-specific funcons
+
+Funcon
+  ocaml-light-match-failure : =>variants(M)
+    ~> variant("Match_failure", tuple("", 0, 0))
+/*
+  `ocaml-light-match-failure` gives a value to be thrown when a match fails.
+  The variant value should consist of the source program text, line, and column,
+  but these are currently not included in the translation of OCaml Light.
+*/
+
+Funcon
+  is-structurally-equal(_:T, _:T) : =>booleans
+/*
+  `is-structurally-equal(V1, V2)` is false whenever `V1` or `V2` contains a
+  function. For vectors, it compares all their respective assigned values.
+  It is equality on primitive values, and defined inductively on composite values.
+*/
+
+// Unit value
+Rule
+  is-structurally-equal(null, null) ~> true
+// Booleans
+Rule
+  is-structurally-equal(B1:booleans, B2:booleans) ~> is-equal(B1,B2)
+// Integers
+Rule
+  is-structurally-equal(I1:implemented-integers, I2:implemented-integers) ~>
+  	is-equal(I1,I2)
+// Floats
+Rule
+  is-structurally-equal(F1:implemented-floats, F2:implemented-floats) ~>
+  	is-equal(F1,F2)
+// Characters
+Rule
+  is-structurally-equal(C1:implemented-characters, C2:implemented-characters) ~>
+  	is-equal(C1,C2)
+// Strings
+Rule
+  is-structurally-equal(S1:implemented-strings, S2:implemented-strings) ~>
+  	is-equal(S1,S2)
+// Functions
+Rule
+  is-structurally-equal(_:functions(_,_), _:functions(_,_)) ~>
+  	throw(variant("Invalid_argument", "equal: functional value"))
+// References
+Rule
+  is-structurally-equal(V1:variables, V2:variables) ~>
+  	is-structurally-equal(assigned(V1), assigned(V2))
+// Lists
+Rule
+  is-structurally-equal([], []) ~> true
+Rule
+  is-structurally-equal([], [V+]) ~> false
+Rule
+  is-structurally-equal([V+], []) ~> false
+Rule
+  is-structurally-equal([V,V*], [W,W*]) ~>
+  	and(is-structurally-equal(V,W), is-structurally-equal([V*], [W*]))
+// Tuples
+Rule
+  is-structurally-equal(tuple(), tuple()) ~> true
+Rule
+  is-structurally-equal(tuple(), tuple(V+)) ~> false
+Rule
+  is-structurally-equal(tuple(V+), tuple()) ~> false
+Rule
+  is-structurally-equal(tuple(V, V*), tuple(W, W*)) ~>
+  	and(is-structurally-equal(V, W), is-structurally-equal(tuple(V*), tuple(W*)))
+// Variants
+Rule
+  is-structurally-equal(variant(Con1,V1), variant(Con2,V2)) ~>
+  	if-true-else(
+  	  is-equal(Con1, Con2),
+  	  if-true-else(
+  	  	or(is-equal(null, V1), is-equal(null, V2)),
+  	  	and(is-equal(null, V1), is-equal(null, V2)),
+  	  	is-structurally-equal(V1, V2)),
+  	  false)
+// Records
+Rule
+                       dom(Map1) == dom(Map2)
+  ----------------------------------------------------------------------
+  is-structurally-equal(record(Map1:maps(_,_)), record(Map2:maps(_,_)))
+    ~> not(is-in-set(false, 
+         set(interleave-map(
+           is-structurally-equal(lookup(Map1, given), lookup(Map2, given)),
+           set-elements(dom(Map1))))))
+// Vectors
+Rule
+  is-structurally-equal(Vec1:vectors(values), Vec2:vectors(values)) ~>
+  	is-structurally-equal([vector-elements(Vec1)], [vector-elements(Vec2)])
+
+
+Funcon
+  ocaml-light-to-string(_:values) : =>strings
+/*
+  `ocaml-light-to-string(V)` gives the string represention of OCaml Light values
+  as implemented by the ocaml interpreter.
+*/
+
+Rule // Unit
+  ocaml-light-to-string(null-value) ~> "()"
+Rule // Booleans
+  ocaml-light-to-string(B:booleans) ~> to-string(B)
+Rule // Integers
+  ocaml-light-to-string(I:integers) ~> to-string(I)
+Rule // Floats
+  ocaml-light-to-string(F:implemented-floats) ~> to-string(F)
+Rule // Characters
+  ocaml-light-to-string(C:implemented-characters) ~>
+  	string-append("'", to-string(C), "'")
+Rule // Strings
+  S =/= []
+  ----------------------------------------------------------------
+  ocaml-light-to-string(S:implemented-strings) ~> string-append("\"", S, "\"")
+Rule // Functions
+  ocaml-light-to-string(_:functions(_,_)) ~> "<fun>"
+Rule // References
+  ocaml-light-to-string(V:variables) ~>
+  	string-append("ref ", ocaml-light-to-string(assigned(V)))
+Rule // Variants
+  ocaml-light-to-string(variant(Con,Arg)) ~>
+  	if-true-else(is-equal(null,Arg), Con,
+  	  string-append(Con, " ", ocaml-light-to-string(Arg)))
+Rule // Tuples
+  ocaml-light-to-string(tuple(V:values, V+:values+)) ~>
+  	string-append(
+  	  "(",
+  	  intersperse(", ", interleave-map(ocaml-light-to-string(given), V, V+)),
+  	  ")")
+Rule // Lists
+  ocaml-light-to-string([V*:values*]) ~>
+  	string-append(
+  	  "[",
+  	  intersperse("; ", interleave-map(ocaml-light-to-string(given), V*)),
+  	  "]")
+Rule // Vectors
+  ocaml-light-to-string(V:implemented-vectors) ~>
+  	string-append(
+  	  "[|",
+  	  intersperse("; ", interleave-map(ocaml-light-to-string(given), 
+  	    vector-elements(current-value(V)))),
+  	  "|]")
+Rule // Records
+  ocaml-light-to-string(record(M:maps(_,_))) ~>
+  	string-append(
+  	  "{",
+  	  intersperse("; ", interleave-map(
+  	        string-append(arg-1," = ",ocaml-light-to-string(arg-2)),
+  	        map-points(M))),
+  	  "}")
+
+
+## Records
+
+// FIX-ME: Move to Funcons-beta.
+
+Funcon
+  record-map(R:records(T)) : =>maps(ids,T)
+Rule
+  record-map(record(M:maps(_,_))) ~> M

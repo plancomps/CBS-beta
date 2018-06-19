@@ -1,0 +1,43 @@
+Language "OCaml Light"
+
+#5 Constants
+
+Syntax
+  CNST : constant 
+  ::= integer-literal 
+    | float-literal 
+    | char-literal 
+    | string-literal 
+    | constr
+    | 'false'  
+    | 'true'  
+    | '(' ')'  
+    | 'begin' 'end'  
+    | '[' ']'  
+    | '[|' '|]'  
+
+Semantics
+  value[[ _:constant ]] : =>implemented-values
+Rule
+  value[[ IL ]] = integer-value[[ IL ]]
+Rule
+  value[[ FL ]] = float-value[[ FL ]]
+Rule
+  value[[ CL ]] = character-value[[ CL ]]
+Rule
+  value[[ SL ]] = string-value[[ SL ]]
+Rule
+  value[[ CSTR ]] = bound(constr-name[[ CSTR ]])
+Rule
+  value[[ 'false' ]] = false
+Rule
+  value[[ 'true' ]] = true
+Rule
+  value[[ '(' ')' ]] = null
+Rule
+  value[[ 'begin' 'end' ]] = null
+Rule
+  value[[ '[' ']' ]] = nil
+Rule
+  value[[ '[|' '|]' ]] = vector( )
+  

@@ -1,0 +1,46 @@
+Language "OCaml Light"
+
+Syntax
+  START: start ::= unit-implementation
+Semantics
+  start[[ _:start ]] : =>environments|nothing
+
+
+Rule
+  start[[ UI ]] = 
+    initialise-binding initialise-storing initialise-giving
+    finalise-failing finalise-throwing
+      interpret[[ UI ]]
+
+[
+#1  Lexical conventions
+#2  Values
+#3  Names
+#4  Type expressions
+#5  Constants
+#6  Patterns
+#7  Expressions
+#8  Type and exception definitions
+#9  Classes
+#10 Module interfaces
+#11 Module implementations
+#12 Core library
+#A  Disambiguation
+]
+
+/*
+  The dynamic semantics of the OCaml Light language is specified here in CBS.
+  The specification is divided into sections corresponding to Chapter 7 of the
+  [OCaml System Manual](https://caml.inria.fr/pub/docs/manual-ocaml-4.06).
+  The section numbers listed above are links to the respective files.
+  
+  The OCaml Light language corresponds closely to the language whose static
+  and dynamic semantics have been specified by Scott Owens in the Ott framework
+  (https://github.com/ott-lang/ott/tree/master/examples/ocaml_light).
+  
+  The correctness of the CBS semantics (in relation to the implementation
+  provided by the OCaml developers) has been partially tested by generating
+  a parser, translator, and interpreter from the specifications, and checking
+  that the results of running a suite of about 150 small programs using the
+  generated implementation correspond to the results of running them directly.
+*/

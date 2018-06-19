@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>OC-L-01-Lexical-Conventions</title>
+  <link rel="stylesheet" type="text/css" href="../../../../../Funcons-beta/cbs.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+	$(document).ready(function(){
+	    $("#hidesections").click(function(){
+	        $(".sectiondetails").removeAttr("open");
+	    });
+	    $("#showsections").click(function(){
+	        $(".sectiondetails").attr("open", "true");
+	    });
+	    $("#hidecomments").click(function(){
+	        $(".commentdetails").removeAttr("open");
+	    });
+	    $("#showcomments").click(function(){
+	        $(".commentdetails").attr("open", "true");
+	    });
+	    $("#hiderules").click(function(){
+	        $(".ruledetails").removeAttr("open");
+	    });
+	    $("#showrules").click(function(){
+	        $(".ruledetails").attr("open", "true");
+	    });
+        document.getElementById('jsbuttons').style.display='';
+	  });
+	</script>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+  <div class="topic">
+    <a href="../../../../../Funcons-beta/../index.html" title="CBS-BETA">CBS-beta</a> / 
+    <a href="../../../../../Funcons-beta/../Languages-beta/index.html" title="LANGUAGES-BETA">Languages-beta</a>
+  </div>
+  <div class="title">
+    <a href="OC-L-01-Lexical-Conventions.cbs" title="CBS SOURCE FILE">OC-L-01-Lexical-Conventions</a>
+  </div>
+  <div class="topic">
+    <img src="../../../../../Funcons-beta/preview.png" 
+         alt="Preview badge" width="67" height="17">
+  </div>
+</header>
+
+<nav>
+  <div id="jsbuttons" style="display:none">
+  <div class="buttons">
+  <p>Rule 
+  <button id="showrules" title="SHOW ALL RULES">&#9660;</button>
+  <button id="hiderules" title="HIDE ALL RULES">&#9658;</button>
+  </p>
+  <p>/**/
+  <button id="showcomments" title="SHOW ALL COMMENTS">&#9660;</button>
+  <button id="hidecomments" title="HIDE ALL COMMENTS">&#9658;</button>
+  </p>
+  <p>#...
+  <button id="showsections" title="EXPAND ALL SECTIONS">&#9660;</button>
+  <button id="hidesections" title="COLLAPSE ALL SECTIONS">&#9658;</button>
+  </p>
+  </div>
+  </div>
+<div class="dropdown">
+  <button class="dropbtn">Menu</button>
+  <div class="dropdown-content">
+    <a href="../OC-L-Start/index.html" title="LANGUAGE CBS ROOT">OC-L-Start</a>
+    <a href="../OC-L-Funcons-Index/index.html" title="REUSED FUNCON INDEX">OC-L-Funcons-Index</a>
+    <a href="../../../../../Funcons-beta/Funcons-Index/index.html" title="CURRENT FUNCON LIBRARY INDEX">Funcons-beta</a>
+    <a href="../../../../../Funcons-beta/../Languages-beta/index.html" title="LANGUAGES-BETA">Languages-beta</a>
+    <a href="../../../../../Funcons-beta/../index.html" title="CBS-BETA">CBS-beta</a>
+  </div>
+</div>
+</nav>
+
+<pre>
+<i class="keyword">Language</i> <span id="Language_"OCaml Light"" class="decl">"OCaml Light"</span>
+
+<span class="sectnumtitle"><span id="SectionNumber_#1" class="decl">#1</span> <b class="title"><i>Lexical conventions</i></b></span>
+
+
+</pre><details open class="sectiondetails"><summary><pre>## <b class="title"><i>Identifiers</i></b></pre></summary><pre>
+
+<i class="keyword">Lexis</i>
+  <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_I" class="decl">I</span></i> :</i> <span class="syn-name"><span id="SyntaxName_ident" class="decl">ident</span></span> 
+  ::= <span class="syn-name"><a href="#SyntaxName_capitalized-ident" title="uppercase ( uppercase | lowercase | decimal | '_' | '\'' ) *">capitalized-ident</a></span> | <span class="syn-name"><a href="#SyntaxName_lowercase-ident" title="lowercase ( uppercase | lowercase | decimal | '_' | '\'' ) * | '_' ( uppercase | lowercase | decimal | '_' | '\'' ) +">lowercase-ident</a></span>
+
+  <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_CI" class="decl">CI</span></i> :</i> <span class="syn-name"><span id="SyntaxName_capitalized-ident" class="decl">capitalized-ident</span></span> 
+  ::= <span class="syn-name"><a href="#SyntaxName_uppercase" title="'A' - 'Z'">uppercase</a></span> ( <span class="syn-name"><a href="#SyntaxName_uppercase" title="'A' - 'Z'">uppercase</a></span> | <span class="syn-name"><a href="#SyntaxName_lowercase" title="'a' - 'z'">lowercase</a></span> | <span class="syn-name"><a href="#SyntaxName_decimal" title="'0' - '9'">decimal</a></span> | <b class="atom">'_'</b> | <b class="atom">'\''</b> )*
+
+  <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_LI" class="decl">LI</span></i> :</i> <span class="syn-name"><span id="SyntaxName_lowercase-ident" class="decl">lowercase-ident</span></span> 
+  ::= <span class="syn-name"><a href="#SyntaxName_lowercase" title="'a' - 'z'">lowercase</a></span> ( <span class="syn-name"><a href="#SyntaxName_uppercase" title="'A' - 'Z'">uppercase</a></span> | <span class="syn-name"><a href="#SyntaxName_lowercase" title="'a' - 'z'">lowercase</a></span> | <span class="syn-name"><a href="#SyntaxName_decimal" title="'0' - '9'">decimal</a></span> | <b class="atom">'_'</b> | <b class="atom">'\''</b> )*
+    | <b class="atom">'_'</b>       ( <span class="syn-name"><a href="#SyntaxName_uppercase" title="'A' - 'Z'">uppercase</a></span> | <span class="syn-name"><a href="#SyntaxName_lowercase" title="'a' - 'z'">lowercase</a></span> | <span class="syn-name"><a href="#SyntaxName_decimal" title="'0' - '9'">decimal</a></span> | <b class="atom">'_'</b> | <b class="atom">'\''</b> )<sup class="sup">+</sup>
+    // restricted to exclude the keyword '_' used in patterns
+  
+  <i class="keyword"></i><i class="var"></i><span class="syn-name"><span id="SyntaxName_uppercase" class="decl">uppercase</span></span> ::= <b class="atom">'A'</b>-<b class="atom">'Z'</b>
+
+  <i class="keyword"></i><i class="var"></i><span class="syn-name"><span id="SyntaxName_lowercase" class="decl">lowercase</span></span> ::= <b class="atom">'a'</b>-<b class="atom">'z'</b>
+
+  <i class="keyword"></i><i class="var"></i><span class="syn-name"><span id="SyntaxName_decimal" class="decl">decimal</span></span>   ::= <b class="atom">'0'</b>-<b class="atom">'9'</b>
+
+<i class="keyword">Semantics</i>
+  <i class="sem-name"><span id="SemanticsName_id" class="decl">id</span></i>[[ _:<span class="syn-name"><a href="#SyntaxName_ident" title="capitalized-ident | lowercase-ident">ident</a></span> ]] : <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Binding/index.html#Name_ids" title=" -&gt; values">ids</a></span>
+
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_id" title="[[ident]] -&gt; values">id</a></i>[[ <span id="Variable_I" class="decl"><i class="var"><a href="#VariableStem_I" title="ident">I</a></i></span> ]] = \"<a href="#Variable_I"><i class="var">I</i></a>\"</pre></details><pre>
+
+
+</pre></details><pre></pre><details open class="sectiondetails"><summary><pre>## <b class="title"><i>Integer literals</i></b></pre></summary><pre>
+
+<i class="keyword">Syntax</i>
+  <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_IL" class="decl">IL</span></i> :</i> <span class="syn-name"><span id="SyntaxName_integer-literal" class="decl">integer-literal</span></span>
+  ::= <b class="atom">'-'</b><sup class="sup">?</sup> _ <span class="syn-name"><a href="#SyntaxName_natural-literal" title="decimal-plus | ( '0x' | '0X' ) hexadecimal-plus | ( '0o' | '0O' ) octal-plus | ( '0b' | '0B' ) binary-plus">natural-literal</a></span>
+
+  <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_NL" class="decl">NL</span></i> :</i> <span class="syn-name"><span id="SyntaxName_natural-literal" class="decl">natural-literal</span></span>
+  ::= <span class="syn-name"><a href="#SyntaxName_decimal-plus" title="decimal +">decimal-plus</a></span> 
+	| (<b class="atom">'0x'</b>|<b class="atom">'0X'</b>) <span class="syn-name"><a href="#SyntaxName_hexadecimal-plus" title="( decimal | 'A' - 'F' | 'a' - 'f' ) +">hexadecimal-plus</a></span>
+	| (<b class="atom">'0o'</b>|<b class="atom">'0O'</b>) <span class="syn-name"><a href="#SyntaxName_octal-plus" title="( '0' - '7' ) +">octal-plus</a></span>
+	| (<b class="atom">'0b'</b>|<b class="atom">'0B'</b>) <span class="syn-name"><a href="#SyntaxName_binary-plus" title="( '0' | '1' ) +">binary-plus</a></span>
+<i class="keyword">Lexis</i>
+  <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_DP" class="decl">DP</span></i> :</i> <span class="syn-name"><span id="SyntaxName_decimal-plus" class="decl">decimal-plus</span></span> ::= <span class="syn-name"><a href="#SyntaxName_decimal" title="'0' - '9'">decimal</a></span><sup class="sup">+</sup>
+  
+  <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_HP" class="decl">HP</span></i> :</i> <span class="syn-name"><span id="SyntaxName_hexadecimal-plus" class="decl">hexadecimal-plus</span></span> ::= ( <span class="syn-name"><a href="#SyntaxName_decimal" title="'0' - '9'">decimal</a></span> | <b class="atom">'A'</b>-<b class="atom">'F'</b> | <b class="atom">'a'</b>-<b class="atom">'f'</b> )<sup class="sup">+</sup>
+
+  <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_OP" class="decl">OP</span></i> :</i> <span class="syn-name"><span id="SyntaxName_octal-plus" class="decl">octal-plus</span></span> ::= ( <b class="atom">'0'</b>-<b class="atom">'7'</b> )<sup class="sup">+</sup>
+
+  <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_BP" class="decl">BP</span></i> :</i> <span class="syn-name"><span id="SyntaxName_binary-plus" class="decl">binary-plus</span></span> ::= ( <b class="atom">'0'</b>|<b class="atom">'1'</b> )<sup class="sup">+</sup>
+  
+<i class="keyword">Semantics</i>
+  <i class="sem-name"><span id="SemanticsName_integer-value" class="decl">integer-value</span></i>[[ _:<span class="syn-name"><a href="#SyntaxName_integer-literal" title="'-' ? _ natural-literal">integer-literal</a></span> ]] : =><span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-integers" title=" -&gt; values">implemented-integers</a></span>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_integer-value" title="[[integer-literal]] -&gt; values">integer-value</a></i>[[ <b class="atom">'-'</b> <span id="Variable_NL" class="decl"><i class="var"><a href="#VariableStem_NL" title="natural-literal">NL</a></i></span> ]] = <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Integers/index.html#Name_integer-negate" title="values -&gt; values">integer-negate</a></span>(<i class="sem-name"><a href="#SemanticsName_integer-value" title="[[integer-literal]] -&gt; values">integer-value</a></i>[[ <a href="#Variable_NL"><i class="var"><a href="#VariableStem_NL" title="natural-literal">NL</a></i></a> ]])</pre></details><pre>
+
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_integer-value" title="[[integer-literal]] -&gt; values">integer-value</a></i>[[ <span id="Variable_DP" class="decl"><i class="var"><a href="#VariableStem_DP" title="decimal-plus">DP</a></i></span> ]] = <span class="name"><a href="../../../../../Funcons-beta/Computations/Abnormal/Failing/index.html#Name_defined" title="values -&gt; values">defined</a></span> <span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-integer" title="values -&gt; values">implemented-integer</a></span> <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Integers/index.html#Name_decimal-natural" title="values -&gt; values">decimal-natural</a></span>(\"<a href="#Variable_DP"><i class="var">DP</i></a>\")</pre></details><pre>
+
+
+</pre></details><pre></pre><details open class="sectiondetails"><summary><pre>## <b class="title"><i>Floating-point literals</i></b></pre></summary><pre>
+
+<i class="keyword">Syntax</i>
+  <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_FL" class="decl">FL</span></i> :</i> <span class="syn-name"><span id="SyntaxName_float-literal" class="decl">float-literal</span></span>
+  ::= <b class="atom">'-'</b><sup class="sup">?</sup> _ <span class="syn-name"><a href="#SyntaxName_non-negative-float-literal" title="decimal-plus _ '.' _ decimal-plus | decimal-plus _ '.' | decimal-plus _ '.' _ decimal-plus _ float-exponent | decimal-plus _ '.' _ float-exponent | decimal-plus _ float-exponent">non-negative-float-literal</a></span>
+
+  <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_NNFL" class="decl">NNFL</span></i> :</i> <span class="syn-name"><span id="SyntaxName_non-negative-float-literal" class="decl">non-negative-float-literal</span></span>
+  ::= <span class="syn-name"><a href="#SyntaxName_decimal-plus" title="decimal +">decimal-plus</a></span> _ <b class="atom">'.'</b> _ <span class="syn-name"><a href="#SyntaxName_decimal-plus" title="decimal +">decimal-plus</a></span>
+  	| <span class="syn-name"><a href="#SyntaxName_decimal-plus" title="decimal +">decimal-plus</a></span> _ <b class="atom">'.'</b>
+  	| <span class="syn-name"><a href="#SyntaxName_decimal-plus" title="decimal +">decimal-plus</a></span> _ <b class="atom">'.'</b> _ <span class="syn-name"><a href="#SyntaxName_decimal-plus" title="decimal +">decimal-plus</a></span> _ <span class="syn-name"><a href="#SyntaxName_float-exponent" title="( 'e' | 'E' ) _ ( '+' | '-' ) ? _ decimal-plus">float-exponent</a></span>
+  	| <span class="syn-name"><a href="#SyntaxName_decimal-plus" title="decimal +">decimal-plus</a></span> _ <b class="atom">'.'</b> _ <span class="syn-name"><a href="#SyntaxName_float-exponent" title="( 'e' | 'E' ) _ ( '+' | '-' ) ? _ decimal-plus">float-exponent</a></span>
+  	| <span class="syn-name"><a href="#SyntaxName_decimal-plus" title="decimal +">decimal-plus</a></span> _ <span class="syn-name"><a href="#SyntaxName_float-exponent" title="( 'e' | 'E' ) _ ( '+' | '-' ) ? _ decimal-plus">float-exponent</a></span>
+
+  <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_FE" class="decl">FE</span></i> :</i> <span class="syn-name"><span id="SyntaxName_float-exponent" class="decl">float-exponent</span></span>
+  ::= (<b class="atom">'e'</b>|<b class="atom">'E'</b>) _ (<b class="atom">'+'</b>|<b class="atom">'-'</b>)<sup class="sup">?</sup> _ <span class="syn-name"><a href="#SyntaxName_decimal-plus" title="decimal +">decimal-plus</a></span>
+
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  [[ <span id="Variable_DP1" class="decl"><i class="var"><a href="#VariableStem_DP" title="decimal-plus">DP</a><sub class="sub">1</sub></i></span><b class="atom">'.'</b><span id="Variable_DP2" class="decl"><i class="var"><a href="#VariableStem_DP" title="decimal-plus">DP</a><sub class="sub">2</sub></i></span> ]] : <span class="syn-name"><a href="#SyntaxName_non-negative-float-literal" title="decimal-plus _ '.' _ decimal-plus | decimal-plus _ '.' | decimal-plus _ '.' _ decimal-plus _ float-exponent | decimal-plus _ '.' _ float-exponent | decimal-plus _ float-exponent">non-negative-float-literal</a></span> = [[ <a href="#Variable_DP1"><i class="var"><a href="#VariableStem_DP" title="decimal-plus">DP</a><sub class="sub">1</sub></i></a><b class="atom">'.'</b><a href="#Variable_DP2"><i class="var"><a href="#VariableStem_DP" title="decimal-plus">DP</a><sub class="sub">2</sub></i></a><b class="atom">'e'</b><b class="atom">'1'</b> ]]</pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  [[ <span id="Variable_DP" class="decl"><i class="var"><a href="#VariableStem_DP" title="decimal-plus">DP</a></i></span><b class="atom">'.'</b>     ]] : <span class="syn-name"><a href="#SyntaxName_non-negative-float-literal" title="decimal-plus _ '.' _ decimal-plus | decimal-plus _ '.' | decimal-plus _ '.' _ decimal-plus _ float-exponent | decimal-plus _ '.' _ float-exponent | decimal-plus _ float-exponent">non-negative-float-literal</a></span> = [[ <a href="#Variable_DP"><i class="var"><a href="#VariableStem_DP" title="decimal-plus">DP</a></i></a><b class="atom">'.'</b><b class="atom">'0'</b><b class="atom">'e'</b><b class="atom">'1'</b> ]]</pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  [[ <span id="Variable_DP" class="decl"><i class="var"><a href="#VariableStem_DP" title="decimal-plus">DP</a></i></span><b class="atom">'.'</b><span id="Variable_FE" class="decl"><i class="var"><a href="#VariableStem_FE" title="float-exponent">FE</a></i></span>   ]] : <span class="syn-name"><a href="#SyntaxName_non-negative-float-literal" title="decimal-plus _ '.' _ decimal-plus | decimal-plus _ '.' | decimal-plus _ '.' _ decimal-plus _ float-exponent | decimal-plus _ '.' _ float-exponent | decimal-plus _ float-exponent">non-negative-float-literal</a></span> = [[ <a href="#Variable_DP"><i class="var"><a href="#VariableStem_DP" title="decimal-plus">DP</a></i></a><b class="atom">'.'</b><b class="atom">'0'</b><a href="#Variable_FE"><i class="var"><a href="#VariableStem_FE" title="float-exponent">FE</a></i></a>  ]]</pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  [[ <span id="Variable_DP" class="decl"><i class="var"><a href="#VariableStem_DP" title="decimal-plus">DP</a></i></span>   <span id="Variable_FE" class="decl"><i class="var"><a href="#VariableStem_FE" title="float-exponent">FE</a></i></span>   ]] : <span class="syn-name"><a href="#SyntaxName_non-negative-float-literal" title="decimal-plus _ '.' _ decimal-plus | decimal-plus _ '.' | decimal-plus _ '.' _ decimal-plus _ float-exponent | decimal-plus _ '.' _ float-exponent | decimal-plus _ float-exponent">non-negative-float-literal</a></span> = [[ <a href="#Variable_DP"><i class="var"><a href="#VariableStem_DP" title="decimal-plus">DP</a></i></a><b class="atom">'.'</b><b class="atom">'0'</b><a href="#Variable_FE"><i class="var"><a href="#VariableStem_FE" title="float-exponent">FE</a></i></a>  ]]</pre></details><pre>
+
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  [[ <b class="atom">'e'</b><b class="atom">'+'</b><span id="Variable_DP" class="decl"><i class="var"><a href="#VariableStem_DP" title="decimal-plus">DP</a></i></span> ]] : <span class="syn-name"><a href="#SyntaxName_float-exponent" title="( 'e' | 'E' ) _ ( '+' | '-' ) ? _ decimal-plus">float-exponent</a></span> = [[ <b class="atom">'e'</b><a href="#Variable_DP"><i class="var"><a href="#VariableStem_DP" title="decimal-plus">DP</a></i></a> ]]</pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  [[ <b class="atom">'E'</b><b class="atom">'+'</b><span id="Variable_DP" class="decl"><i class="var"><a href="#VariableStem_DP" title="decimal-plus">DP</a></i></span> ]] : <span class="syn-name"><a href="#SyntaxName_float-exponent" title="( 'e' | 'E' ) _ ( '+' | '-' ) ? _ decimal-plus">float-exponent</a></span> = [[ <b class="atom">'e'</b><a href="#Variable_DP"><i class="var"><a href="#VariableStem_DP" title="decimal-plus">DP</a></i></a> ]]</pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  [[ <b class="atom">'E'</b><b class="atom">'-'</b><span id="Variable_DP" class="decl"><i class="var"><a href="#VariableStem_DP" title="decimal-plus">DP</a></i></span> ]] : <span class="syn-name"><a href="#SyntaxName_float-exponent" title="( 'e' | 'E' ) _ ( '+' | '-' ) ? _ decimal-plus">float-exponent</a></span> = [[ <b class="atom">'e'</b><b class="atom">'-'</b><a href="#Variable_DP"><i class="var"><a href="#VariableStem_DP" title="decimal-plus">DP</a></i></a> ]]</pre></details><pre>
+
+<i class="keyword">Semantics</i>
+  <i class="sem-name"><span id="SemanticsName_float-value" class="decl">float-value</span></i>[[ _:<span class="syn-name"><a href="#SyntaxName_float-literal" title="'-' ? _ non-negative-float-literal">float-literal</a></span> ]] : =><span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-floats" title=" -&gt; values">implemented-floats</a></span>
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<i class="sem-name"><a href="#SemanticsName_float-value" title="[[float-literal]] -&gt; values">float-value</a></i>[[ _ ]]` is unspecified if the literal value is not representable
+  in `<span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Floats/index.html#Name_floats" title="values -&gt; values">floats</a></span>(<span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-floats-format" title=" -&gt; values">implemented-floats-format</a></span>)`.
+*/</span></pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_float-value" title="[[float-literal]] -&gt; values">float-value</a></i>[[ <b class="atom">'-'</b> <span id="Variable_NNFL" class="decl"><i class="var"><a href="#VariableStem_NNFL" title="non-negative-float-literal">NNFL</a></i></span> ]] =
+    <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Floats/index.html#Name_float-negate" title="values, values -&gt; values">float-negate</a></span>(<span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-floats-format" title=" -&gt; values">implemented-floats-format</a></span>, <i class="sem-name"><a href="#SemanticsName_float-value" title="[[float-literal]] -&gt; values">float-value</a></i>[[ <a href="#Variable_NNFL"><i class="var"><a href="#VariableStem_NNFL" title="non-negative-float-literal">NNFL</a></i></a>]])</pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_float-value" title="[[float-literal]] -&gt; values">float-value</a></i>[[ <span id="Variable_DP1" class="decl"><i class="var"><a href="#VariableStem_DP" title="decimal-plus">DP</a><sub class="sub">1</sub></i></span> <b class="atom">'.'</b> <span id="Variable_DP2" class="decl"><i class="var"><a href="#VariableStem_DP" title="decimal-plus">DP</a><sub class="sub">2</sub></i></span> <b class="atom">'e'</b> <span id="Variable_DP3" class="decl"><i class="var"><a href="#VariableStem_DP" title="decimal-plus">DP</a><sub class="sub">3</sub></i></span> ]] = 
+    <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Floats/index.html#Name_decimal-float" title="values, values, values, values -&gt; values">decimal-float</a></span>(
+      <span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-floats-format" title=" -&gt; values">implemented-floats-format</a></span>, \"<a href="#Variable_DP1"><i class="var">DP<sub class="sub">1</sub></i></a>\", \"<a href="#Variable_DP2"><i class="var">DP<sub class="sub">2</sub></i></a>\", \"<a href="#Variable_DP3"><i class="var">DP<sub class="sub">3</sub></i></a>\")</pre></details><pre> 
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_float-value" title="[[float-literal]] -&gt; values">float-value</a></i>[[ <span id="Variable_DP1" class="decl"><i class="var"><a href="#VariableStem_DP" title="decimal-plus">DP</a><sub class="sub">1</sub></i></span> <b class="atom">'.'</b> <span id="Variable_DP2" class="decl"><i class="var"><a href="#VariableStem_DP" title="decimal-plus">DP</a><sub class="sub">2</sub></i></span> <b class="atom">'e'</b> <b class="atom">'-'</b> <span id="Variable_DP3" class="decl"><i class="var"><a href="#VariableStem_DP" title="decimal-plus">DP</a><sub class="sub">3</sub></i></span> ]] = 
+    <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Floats/index.html#Name_decimal-float" title="values, values, values, values -&gt; values">decimal-float</a></span>(
+      <span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-floats-format" title=" -&gt; values">implemented-floats-format</a></span>, \"<a href="#Variable_DP1"><i class="var">DP<sub class="sub">1</sub></i></a>\", \"<a href="#Variable_DP2"><i class="var">DP<sub class="sub">2</sub></i></a>\", <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Lists/index.html#Name_cons" title="values, values -&gt; values">cons</a></span>(<b class="atom">'-'</b>, \"<a href="#Variable_DP3"><i class="var">DP<sub class="sub">3</sub></i></a>\"))</pre></details><pre>
+
+
+</pre></details><pre></pre><details open class="sectiondetails"><summary><pre>## <b class="title"><i>Character literals</i></b></pre></summary><pre>
+
+<i class="keyword">Syntax</i>
+  <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_CL" class="decl">CL</span></i> :</i> <span class="syn-name"><span id="SyntaxName_char-literal" class="decl">char-literal</span></span> 
+  ::= <b class="atom">'\''</b> _ <span class="syn-name"><a href="#SyntaxName_regular-char" title="~ ( '\'' | '\\' )">regular-char</a></span> _ <b class="atom">'\''</b>
+    | <b class="atom">'\''</b> _ <span class="syn-name"><a href="#SyntaxName_escape-sequence" title="'\\' _ escaped-char | '\\' _ escaped-char-code">escape-sequence</a></span> _ <b class="atom">'\''</b>
+
+  <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_ES" class="decl">ES</span></i> :</i> <span class="syn-name"><span id="SyntaxName_escape-sequence" class="decl">escape-sequence</span></span> 
+  ::= <b class="atom">'\\'</b> _ <span class="syn-name"><a href="#SyntaxName_escaped-char" title="'\\' | '"' | '\'' | 'n' | 't' | 'b' | 'r' | ' '">escaped-char</a></span>
+	| <b class="atom">'\\'</b> _ <span class="syn-name"><a href="#SyntaxName_escaped-char-code" title="decimal decimal decimal">escaped-char-code</a></span>
+<i class="keyword">Lexis</i>
+  <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_RC" class="decl">RC</span></i> :</i> <span class="syn-name"><span id="SyntaxName_regular-char" class="decl">regular-char</span></span> 
+  ::= ~ ( <b class="atom">'\''</b> | <b class="atom">'\\'</b> )
+
+  <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_EC" class="decl">EC</span></i> :</i> <span class="syn-name"><span id="SyntaxName_escaped-char" class="decl">escaped-char</span></span> 
+  ::= <b class="atom">'\\'</b> | <b class="atom">'"'</b> | <b class="atom">'\''</b> | <b class="atom">'n'</b> | <b class="atom">'t'</b> | <b class="atom">'b'</b> | <b class="atom">'r'</b> | <b class="atom">' '</b>
+
+  <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_ECC" class="decl">ECC</span></i> :</i> <span class="syn-name"><span id="SyntaxName_escaped-char-code" class="decl">escaped-char-code</span></span> 
+  ::= <span class="syn-name"><a href="#SyntaxName_decimal" title="'0' - '9'">decimal</a></span> <span class="syn-name"><a href="#SyntaxName_decimal" title="'0' - '9'">decimal</a></span> <span class="syn-name"><a href="#SyntaxName_decimal" title="'0' - '9'">decimal</a></span>
+
+<i class="keyword">Semantics</i>
+  <i class="sem-name"><span id="SemanticsName_character-value" class="decl">character-value</span></i>[[ _:<span class="syn-name"><a href="#SyntaxName_char-literal" title="'\'' _ regular-char _ '\'' | '\'' _ escape-sequence _ '\''">char-literal</a></span> ]] : =><span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-characters" title=" -&gt; values">implemented-characters</a></span>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_character-value" title="[[char-literal]] -&gt; values">character-value</a></i>[[ <b class="atom">'\''</b> <span id="Variable_RC" class="decl"><i class="var"><a href="#VariableStem_RC" title="regular-char">RC</a></i></span> <b class="atom">'\''</b> ]] = <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Characters/index.html#Name_ascii-character" title="values -&gt; values">ascii-character</a></span>(\"<a href="#Variable_RC"><i class="var">RC</i></a>\")</pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_character-value" title="[[char-literal]] -&gt; values">character-value</a></i>[[ <b class="atom">'\''</b> <span id="Variable_ES" class="decl"><i class="var"><a href="#VariableStem_ES" title="escape-sequence">ES</a></i></span> <b class="atom">'\''</b> ]] = <i class="sem-name"><a href="#SemanticsName_capture" title="[[escape-sequence]] -&gt; values">capture</a></i>[[ <a href="#Variable_ES"><i class="var"><a href="#VariableStem_ES" title="escape-sequence">ES</a></i></a> ]]
+
+</pre></details><pre><i class="keyword">Semantics</i>
+  <i class="sem-name"><span id="SemanticsName_capture" class="decl">capture</span></i>[[ _:<span class="syn-name"><a href="#SyntaxName_escape-sequence" title="'\\' _ escaped-char | '\\' _ escaped-char-code">escape-sequence</a></span> ]] : <span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-characters" title=" -&gt; values">implemented-characters</a></span>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_capture" title="[[escape-sequence]] -&gt; values">capture</a></i>[[ <b class="atom">'\'</b> <b class="atom">'\'</b> ]]  = <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Characters/index.html#Name_backslash" title=" -&gt; values">backslash</a></span></pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_capture" title="[[escape-sequence]] -&gt; values">capture</a></i>[[ <b class="atom">'\'</b> <b class="atom">'\''</b> ]] = <b class="atom">'\''</b></pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_capture" title="[[escape-sequence]] -&gt; values">capture</a></i>[[ <b class="atom">'\'</b> <b class="atom">'n'</b> ]]  = <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Characters/index.html#Name_line-feed" title=" -&gt; values">line-feed</a></span></pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_capture" title="[[escape-sequence]] -&gt; values">capture</a></i>[[ <b class="atom">'\'</b> <b class="atom">'t'</b> ]]  = <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Characters/index.html#Name_horizontal-tab" title=" -&gt; values">horizontal-tab</a></span></pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_capture" title="[[escape-sequence]] -&gt; values">capture</a></i>[[ <b class="atom">'\'</b> <b class="atom">'b'</b> ]]  = <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Characters/index.html#Name_backspace" title=" -&gt; values">backspace</a></span></pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_capture" title="[[escape-sequence]] -&gt; values">capture</a></i>[[ <b class="atom">'\'</b> <b class="atom">'r'</b> ]]  = <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Characters/index.html#Name_carriage-return" title=" -&gt; values">carriage-return</a></span></pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_capture" title="[[escape-sequence]] -&gt; values">capture</a></i>[[ <b class="atom">'\'</b> <span id="Variable_ECC" class="decl"><i class="var"><a href="#VariableStem_ECC" title="escaped-char-code">ECC</a></i></span> ]]  = 
+    <span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-character" title="values -&gt; values">implemented-character</a></span> <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Characters/index.html#Name_unicode-character" title="values -&gt; values">unicode-character</a></span> <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Integers/index.html#Name_decimal-natural" title="values -&gt; values">decimal-natural</a></span>(\"<a href="#Variable_ECC"><i class="var">ECC</i></a>\")</pre></details><pre>
+
+
+</pre></details><pre></pre><details open class="sectiondetails"><summary><pre>## <b class="title"><i>String literals</i></b></pre></summary><pre>
+
+<i class="keyword">Syntax</i>
+  <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_SL" class="decl">SL</span></i> :</i> <span class="syn-name"><span id="SyntaxName_string-literal" class="decl">string-literal</span></span> 
+  ::= <b class="atom">'"'</b> _ <span class="syn-name"><a href="#SyntaxName_string-character-star" title="string-character _ string-character-star | (  )">string-character-star</a></span> _ <b class="atom">'"'</b>
+
+  <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_SCS" class="decl">SCS</span></i> :</i> <span class="syn-name"><span id="SyntaxName_string-character-star" class="decl">string-character-star</span></span>
+  ::= <span class="syn-name"><a href="#SyntaxName_string-character" title="regular-string-char | escape-sequence">string-character</a></span> _ <span class="syn-name"><a href="#SyntaxName_string-character-star" title="string-character _ string-character-star | (  )">string-character-star</a></span>
+	| ( )
+  
+  <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_SC" class="decl">SC</span></i> :</i> <span class="syn-name"><span id="SyntaxName_string-character" class="decl">string-character</span></span>
+  ::= <span class="syn-name"><a href="#SyntaxName_regular-string-char" title="~ ( '"' | '\\' )">regular-string-char</a></span>
+	| <span class="syn-name"><a href="#SyntaxName_escape-sequence" title="'\\' _ escaped-char | '\\' _ escaped-char-code">escape-sequence</a></span>
+//	| '\\' _ '\n' _ (' '|'\t')*
+<i class="keyword">Lexis</i>
+  <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_RSC" class="decl">RSC</span></i> :</i> <span class="syn-name"><span id="SyntaxName_regular-string-char" class="decl">regular-string-char</span></span>
+  ::= ~ (<b class="atom">'"'</b> | <b class="atom">'\\'</b>)
+
+<i class="keyword">Semantics</i>
+  <i class="sem-name"><span id="SemanticsName_string-value" class="decl">string-value</span></i>[[ _:<span class="syn-name"><a href="#SyntaxName_string-literal" title="'"' _ string-character-star _ '"'">string-literal</a></span> ]] : =><span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-strings" title=" -&gt; values">implemented-strings</a></span>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_string-value" title="[[string-literal]] -&gt; values">string-value</a></i>[[ <b class="atom">'"'</b> <span id="Variable_SCS" class="decl"><i class="var"><a href="#VariableStem_SCS" title="string-character-star">SCS</a></i></span> <b class="atom">'"'</b> ]] = [ <i class="sem-name"><a href="#SemanticsName_string-chars" title="[[string-character-star]] -&gt; values*">string-chars</a></i>[[ <a href="#Variable_SCS"><i class="var"><a href="#VariableStem_SCS" title="string-character-star">SCS</a></i></a> ]] ]</pre></details><pre>
+
+<i class="keyword">Semantics</i>
+  <i class="sem-name"><span id="SemanticsName_string-chars" class="decl">string-chars</span></i>[[ _:<span class="syn-name"><a href="#SyntaxName_string-character-star" title="string-character _ string-character-star | (  )">string-character-star</a></span> ]] : =><span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-characters" title=" -&gt; values">implemented-characters</a></span>*
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_string-chars" title="[[string-character-star]] -&gt; values*">string-chars</a></i>[[  ]] = 
+</pre></details><pre></pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_string-chars" title="[[string-character-star]] -&gt; values*">string-chars</a></i>[[ <span id="Variable_SC" class="decl"><i class="var"><a href="#VariableStem_SC" title="string-character">SC</a></i></span> <span id="Variable_SCS" class="decl"><i class="var"><a href="#VariableStem_SCS" title="string-character-star">SCS</a></i></span> ]] = <i class="sem-name"><a href="#SemanticsName_string-capture" title="[[string-character]] -&gt; values">string-capture</a></i>[[ <a href="#Variable_SC"><i class="var"><a href="#VariableStem_SC" title="string-character">SC</a></i></a> ]], <i class="sem-name"><a href="#SemanticsName_string-chars" title="[[string-character-star]] -&gt; values*">string-chars</a></i>[[ <a href="#Variable_SCS"><i class="var"><a href="#VariableStem_SCS" title="string-character-star">SCS</a></i></a> ]]
+
+</pre></details><pre><i class="keyword">Semantics</i>
+  <i class="sem-name"><span id="SemanticsName_string-capture" class="decl">string-capture</span></i>[[ _:<span class="syn-name"><a href="#SyntaxName_string-character" title="regular-string-char | escape-sequence">string-character</a></span> ]] : <span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-characters" title=" -&gt; values">implemented-characters</a></span>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_string-capture" title="[[string-character]] -&gt; values">string-capture</a></i>[[ <span id="Variable_RSC" class="decl"><i class="var"><a href="#VariableStem_RSC" title="regular-string-char">RSC</a></i></span> ]] = <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Characters/index.html#Name_ascii-character" title="values -&gt; values">ascii-character</a></span>(\"<a href="#Variable_RSC"><i class="var">RSC</i></a>\")</pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_string-capture" title="[[string-character]] -&gt; values">string-capture</a></i>[[ <span id="Variable_ES" class="decl"><i class="var"><a href="#VariableStem_ES" title="escape-sequence">ES</a></i></span> ]] = <i class="sem-name"><a href="#SemanticsName_capture" title="[[escape-sequence]] -&gt; values">capture</a></i>[[ <a href="#Variable_ES"><i class="var"><a href="#VariableStem_ES" title="escape-sequence">ES</a></i></a> ]]
+
+
+</pre></details><pre></pre></details><pre></pre><details open class="sectiondetails"><summary><pre>## <b class="title"><i>Prefix and infix symbols</i></b></pre></summary><pre>
+
+<i class="keyword">Lexis</i>
+//  infix-symbol
+//  ::= ( '=' | '<' | '>' | '@' | '^' | '|'
+//      | '&' | '+' | '-' | '*' | '/' | '$' | '%' ) operator-char*
+ 
+  <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_PS" class="decl">PS</span></i> :</i> <span class="syn-name"><span id="SyntaxName_prefix-symbol" class="decl">prefix-symbol</span></span>	
+  ::= <b class="atom">'!'</b>       <span class="syn-name"><a href="#SyntaxName_operator-char" title="'!' | '$' | '%' | '&amp;' | '*' | '+' | '-' | '.' | '/' | ':' | '&lt;' | '=' | '&gt;' | '?' | '@' | '^' | '|' | '~'">operator-char</a></span>*
+ 	| (<b class="atom">'?'</b>|<b class="atom">'~'</b>) <span class="syn-name"><a href="#SyntaxName_operator-char" title="'!' | '$' | '%' | '&amp;' | '*' | '+' | '-' | '.' | '/' | ':' | '&lt;' | '=' | '&gt;' | '?' | '@' | '^' | '|' | '~'">operator-char</a></span><sup class="sup">+</sup>  
+ 
+  <i class="keyword"></i><i class="var"></i><span class="syn-name"><span id="SyntaxName_operator-char" class="decl">operator-char</span></span>
+  ::= <b class="atom">'!'</b> | <b class="atom">'$'</b> | <b class="atom">'%'</b> | <b class="atom">'&'</b> | <b class="atom">'*'</b> | <b class="atom">'+'</b> | <b class="atom">'-'</b> | <b class="atom">'.'</b> | <b class="atom">'/'</b>
+    | <b class="atom">':'</b> | <b class="atom">'<'</b> | <b class="atom">'='</b> | <b class="atom">'>'</b> | <b class="atom">'?'</b> | <b class="atom">'@'</b> | <b class="atom">'^'</b> | <b class="atom">'|'</b> | <b class="atom">'~'</b>
+
+  <i class="keyword"></i><i class="var"></i><span class="syn-name"><span id="SyntaxName_operator-char-not-asterisk" class="decl">operator-char-not-asterisk</span></span>
+  ::= <b class="atom">'!'</b> | <b class="atom">'$'</b> | <b class="atom">'%'</b> | <b class="atom">'&'</b>       | <b class="atom">'+'</b> | <b class="atom">'-'</b> | <b class="atom">'.'</b> | <b class="atom">'/'</b>
+    | <b class="atom">':'</b> | <b class="atom">'<'</b> | <b class="atom">'='</b> | <b class="atom">'>'</b> | <b class="atom">'?'</b> | <b class="atom">'@'</b> | <b class="atom">'^'</b> | <b class="atom">'|'</b> | <b class="atom">'~'</b>
+
+  <i class="keyword"></i><i class="var"></i><span class="syn-name"><span id="SyntaxName_operator-char-not-bar" class="decl">operator-char-not-bar</span></span>
+  ::= <b class="atom">'!'</b> | <b class="atom">'$'</b> | <b class="atom">'%'</b> | <b class="atom">'&'</b> | <b class="atom">'*'</b> | <b class="atom">'+'</b> | <b class="atom">'-'</b> | <b class="atom">'.'</b> | <b class="atom">'/'</b>
+    | <b class="atom">':'</b> | <b class="atom">'<'</b> | <b class="atom">'='</b> | <b class="atom">'>'</b> | <b class="atom">'?'</b> | <b class="atom">'@'</b> | <b class="atom">'^'</b>       | <b class="atom">'~'</b>
+
+  <i class="keyword"></i><i class="var"></i><span class="syn-name"><span id="SyntaxName_operator-char-not-ampersand" class="decl">operator-char-not-ampersand</span></span>
+  ::= <b class="atom">'!'</b> | <b class="atom">'$'</b> | <b class="atom">'%'</b>       | <b class="atom">'*'</b> | <b class="atom">'+'</b> | <b class="atom">'-'</b> | <b class="atom">'.'</b> | <b class="atom">'/'</b>
+    | <b class="atom">':'</b> | <b class="atom">'<'</b> | <b class="atom">'='</b> | <b class="atom">'>'</b> | <b class="atom">'?'</b> | <b class="atom">'@'</b> | <b class="atom">'^'</b> | <b class="atom">'|'</b> | <b class="atom">'~'</b>
+
+
+</pre></details><pre></pre><details open class="sectiondetails"><summary><pre>## <b class="title"><i>Keywords</i></b></pre></summary><pre>
+
+<i class="keyword">Lexis</i>
+  <i class="keyword"></i><i class="var"></i><span class="syn-name"><span id="SyntaxName_keyword" class="decl">keyword</span></span> 
+  ::= <b class="atom">'and'</b>        | <b class="atom">'as'</b>       | <b class="atom">'assert'</b> | <b class="atom">'asr'</b>     | <b class="atom">'begin'</b>   | <b class="atom">'class'</b>
+    | <b class="atom">'constraint'</b> | <b class="atom">'do'</b>       | <b class="atom">'done'</b>   | <b class="atom">'downto'</b>  | <b class="atom">'else'</b>    | <b class="atom">'end'</b>
+    | <b class="atom">'exception'</b>  | <b class="atom">'external'</b> | <b class="atom">'false'</b>  | <b class="atom">'for'</b>     | <b class="atom">'fun'</b>     | <b class="atom">'function'</b>
+	| <b class="atom">'functor'</b>    | <b class="atom">'if'</b>       | <b class="atom">'in'</b>     | <b class="atom">'include'</b> | <b class="atom">'inherit'</b> | <b class="atom">'initializer'</b>
+	| <b class="atom">'land'</b>       | <b class="atom">'lazy'</b>     | <b class="atom">'let'</b>    | <b class="atom">'lor'</b>     | <b class="atom">'lsl'</b>     | <b class="atom">'lsr'</b>
+	| <b class="atom">'lxor'</b>       | <b class="atom">'match'</b>    | <b class="atom">'method'</b> | <b class="atom">'mod'</b>     | <b class="atom">'module'</b>  | <b class="atom">'mutable'</b> 
+	| <b class="atom">'new'</b>        | <b class="atom">'nonrec'</b>   | <b class="atom">'object'</b> | <b class="atom">'of'</b>      | <b class="atom">'open'</b>    | <b class="atom">'or'</b>	  
+	| <b class="atom">'private'</b>    | <b class="atom">'rec'</b>      | <b class="atom">'sig'</b>    | <b class="atom">'struct'</b>  | <b class="atom">'then'</b>    | <b class="atom">'to'</b>
+	| <b class="atom">'true'</b>       | <b class="atom">'try'</b>      | <b class="atom">'type'</b>   | <b class="atom">'val'</b>     | <b class="atom">'virtual'</b> | <b class="atom">'when'</b> 
+	| <b class="atom">'while'</b>      | <b class="atom">'with'</b>
+</pre></details><pre>
+</pre>
+
+<footer>
+  <span>From the <a href="http://plancomps.org" title="PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS">PLanCompS Project, 2018</a></span>
+  <span><a href="mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20OC-L/OC-L-01-Lexical-Conventions/OC-L-01-Lexical-Conventions.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A" title="GENERATE AN EMAIL TEMPLATE">Suggest an improvement...</a></span>
+</footer>
+
+</div>
+</body>
+</html>
