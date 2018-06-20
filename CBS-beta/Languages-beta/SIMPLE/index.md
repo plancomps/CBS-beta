@@ -10,7 +10,10 @@ Grigore Rosu and Traian Florin Serbanuta gave a definition of
 
 SIMPLE is a somewhat larger imperative language than IMP, useful for
 illustration of further features of the CBS framework. The start of the 
-definition of SIMPLE in CBS is at [SIMPLE-Start].
+specification of SIMPLE in CBS is at [SIMPLE-Start].
+
+Note that the CBS specification of SIMPLE does not yet include threads, since
+funcons for threads are not yet available.
 
 [SIMPLE in the K framework]: http://fsl.cs.illinois.edu/index.php/K_Overview_and_SIMPLE_Case_Study
 

@@ -10,7 +10,7 @@ Grigore Rosu gave a definition of [IMP in the K framework]. He wrote:
 > for arithmetic and Boolean expressions, and variable assignment, 
 > conditional, while loop and sequential composition constructs for statements.
 
-IMP is useful for a first illustration of CBS. The start of the definition of 
+IMP is useful for a first illustration of CBS. The start of the specification of 
 IMP in CBS is at [IMP-Start].
 
 [IMP in the K framework]: http://www.kframework.org/language-pdfs/new/imp.pdf

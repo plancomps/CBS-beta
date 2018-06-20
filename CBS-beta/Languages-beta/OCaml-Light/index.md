@@ -1,23 +1,20 @@
 OCaml Light ![PREVIEW](../../Funcons-beta/preview.png)
 ===========
 
-[Caml Light] is a lightweight, portable implementation of the core Caml 
-language that was developed in the early 1990's, as a precursor to [OCaml]. 
-A concise [Caml Light manual] is available online. The [specification of Caml 
-Light] in a preliminary version of CBS was published in 2016.
+OCaml Light is a core sublanguage of [OCaml], corresponding closely to 
+[Caml Light] (an obsolete pedagogical functional programming language). 
 
-Scott Owens gave an operational semantics of a corresponding sublanguage of 
-OCaml, dubbed 'OCaml Light', using the [Ott framework]. OCaml Light is useful
-for illustrating the use of funcons for specifying the semantics of
-higher-order functional programming language features. A CBS of 
-OCaml Light is to appear here.
+The CBS of OCaml Light is useful for illustrating the use of funcons for
+specifying the semantics of higher-order programming language features. 
+The start of the specification of OCaml Light in CBS is at [OC-L-Start].
+
 
 [Caml Light]: https://caml.inria.fr/caml-light/
 
-[Caml Light manual]: https://caml.inria.fr/pub/docs/manual-caml-light/
-
-[Specification of Caml Light]: http://plancomps.org/taosd2015/
-
 [OCaml]: http://ocaml.org
 
+[OC-L-Start]: OC-L-cbs/OC-L/OC-L-Start/index.html
+
 [Ott framework]: http://www.cl.cam.ac.uk/~pes20/ott/
+
+[Specification of Caml Light]: http://plancomps.org/taosd2015/

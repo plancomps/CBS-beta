@@ -6,7 +6,7 @@ It was built using [Truffle for the GraalVM] at Oracle Labs.
 A specification of [SL in DynSem] has been given by Vlad Vergu.
 
 SL is useful for illustrating the CBS of dynamic language features.
-The start of the definition of SL in CBS is at [SL-Start].
+The start of the specification of SL in CBS is at [SL-Start].
 
 
 [Truffle for the GraalVM]: https://github.com/graalvm/simplelanguage
