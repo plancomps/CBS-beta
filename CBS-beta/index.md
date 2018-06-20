@@ -23,7 +23,9 @@ concepts.
 The [PLanCompS] project has developed an initial collection of funcons:
 [Funcons-beta]. Crucially, adding new funcons does not require any changes to
 the specifications of existing funcons, thanks to the use of a modular variant
-of structural operational semantics.
+of structural operational semantics. (CBS does not currently include static
+semantics for funcons, which requires modular specification of effects and
+co-effects along with types.)
 
 Current tool support for CBS (not yet released) includes a CBS editor with
 syntax highlighting, hyperlinks from references to declarations, and generation
