@@ -1,4 +1,4 @@
-CBS-beta
+CBS-beta ![PREVIEW](../preview.png)
 ========
 
 _CBS_ is a framework and meta-language for _component-based specification of

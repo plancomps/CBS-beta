@@ -1,4 +1,4 @@
-Values
+Values ![PREVIEW](../preview.png)
 ======
 
 The CBS library provides funcons for expressing and computing various kinds of

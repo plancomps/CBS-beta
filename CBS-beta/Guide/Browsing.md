@@ -1,4 +1,4 @@
-CBS-beta Browsing Guide
+CBS-beta Browsing Guide ![PREVIEW](../preview.png)
 =======================
 
 Navigation

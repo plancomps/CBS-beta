@@ -1,4 +1,4 @@
-Funcons-beta
+Funcons-beta ![PREVIEW](preview.png)
 ============
 
 This page provides access to the beta-release of an initial collection of
