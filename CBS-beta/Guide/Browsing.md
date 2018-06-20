@@ -1,4 +1,4 @@
-CBS-beta Browsing Guide ![PREVIEW](../preview.png)
+CBS-beta Browsing Guide ![PREVIEW](../Funcons-beta/preview.png)
 =======================
 
 Navigation
