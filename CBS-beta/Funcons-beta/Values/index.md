@@ -1,4 +1,4 @@
-Values ![PREVIEW](../preview.png)
+Values
 ======
 
 The CBS library provides funcons for expressing and computing various kinds of
@@ -11,7 +11,6 @@ Primitive values
 - [integers]
 - [floats]
 - [characters] 
-- a [null] value
 
 Composite values
 ----------------
@@ -21,7 +20,7 @@ Composite values
   - [lists] \(strings are lists of characters)
   - [vectors]
   - [trees]
-  - [references] \(pointers or null-value)
+  - [references] \(pointers are [references] or [null])
   - [records]
   - [variants]
   - [classes]
@@ -45,7 +44,7 @@ Types
 
 - [value-types] \(representing sets of values\)
 
-There is also a distinguished value [none], representing the absence of an 
+There is also a distinguished value [null], representing the absence of an 
 ordinary value.
 
 (Further kinds of values are provided in connection with particular kinds of
@@ -65,7 +64,6 @@ sequences of length one.
 [integers]: Primitive/Integers/index.html
 [floats]: Primitive/Floats/index.html
 [characters]: Primitive/Characters/index.html
-[null]: Primitive/Unit/index.html
 
 [datatypes]: Composite/Datatypes/index.html
 [tuples]: Composite/Tuples/index.html
@@ -89,6 +87,6 @@ sequences of length one.
 [patterns]: Abstraction/Patterns/index.html
 
 [value-types]: Value-Types/index.html
-[none]: Value-Types/index.html#Name_none
+[null]: Value-Types/index.html#Name_null
 [computations]: ../Computations/index.md
 [sequences]: Composite/Sequences/index.html

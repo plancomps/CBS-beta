@@ -60,4 +60,4 @@ FIX-ME
 
 - [X] Check
 
-- [ ] Upgrade to OCaml Light
+- [X] Upgrade to OCaml Light
