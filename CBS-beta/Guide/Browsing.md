@@ -7,15 +7,18 @@ Navigation
 **All references to names of funcons (etc.) in CBS specifications are 
 hyperlinks leading to their declarations.**
 
-Use of these hyperlinks avoids the need to become familiar with the hierarchy of
-folders and files in the funcons library, and to drill down through it to find
-declarations.
+These hyperlinks avoid the need to drill down through the hierarchy of folders
+and files. Specifications in CBS are independent of the file system: all names
+declared in Funcons-beta are globally visible, and names declared in a particular
+language specification are local to that language, regardless of file structure.
 
-The global [Funcons-Index] page has hyperlinks to all funcons, with those 
-defined in the same file grouped together. Similarly for local indexes
-of funcons used in the CBS of particular languages. Hovering on a hyperlink
-displays the declared arity of symbol \(where `values` stands for a *single*
-argument value).
+The global [Funcons-Index] page lists the names of all current funcons, grouped
+according to their types. The local funcons-index page for a particular language
+lists only the names of the funcons actually used in its specification.
+
+Hovering on a reference to a funcon displays the declared arity of symbol:
+`values` stands for a *single* argument, and `values*` for any number of
+arguments.
 
 ### Menu links
 
