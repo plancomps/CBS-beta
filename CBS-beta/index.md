@@ -1,4 +1,4 @@
-CBS-beta ![PREVIEW](Funcons-beta/preview.png)
+CBS-beta
 ========
 
 _CBS_ is a framework and meta-language for _component-based specification of

@@ -45,10 +45,6 @@
   <div class="title">
     <a href="MiniJava-Start.cbs" title="CBS SOURCE FILE">MiniJava-Start</a>
   </div>
-  <div class="topic">
-    <img src="../../../../../Funcons-beta//preview.png" 
-         alt="Preview badge" width="67" height="17">
-  </div>
 </header>
 
 <nav>
@@ -88,8 +84,8 @@
   <span class="syn-name"><span id="SyntaxName_start" class="decl">start</span></span> ::= <span class="syn-name"><a href="../MiniJava-Dynamics/index.html#SyntaxName_program" title="main-class class-declaration *">program</a></span>
 
 <i class="keyword">Semantics</i>
-  <i class="sem-name"><span id="SemanticsName_start" class="decl">start</span></i>[[ <span id="Variable_START" class="decl"><i class="var"><a href="#VariableStem_START" title="start">START</a></i></span>:<span class="syn-name"><a href="#SyntaxName_start" title="program">start</a></span> ]] : => <span class="name"><a href="../../../../../Funcons-beta/Values/Value-Types/index.html#Name_nothing" title=" -&gt; values">nothing</a></span>
-</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_start" title="[[start]] -&gt; values">start</a></i>[[ <span id="Variable_P" class="decl"><i class="var"><a href="../MiniJava-Dynamics/index.html#VariableStem_P" title="program">P</a></i></span> ]] =
+  <i class="sem-name"><span id="SemanticsName_start" class="decl">start</span></i>[[ <span id="Variable_START" class="decl"><i class="var"><a href="#VariableStem_START" title="start">START</a></i></span>:<span class="syn-name"><a href="#SyntaxName_start" title="program">start</a></span> ]] : => <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Null/index.html#Name_null-type" title=" -&gt; values">null-type</a></span>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_start" title="[[start]] -&gt; values">start</a></i>[[ <span id="Variable_P" class="decl"><i class="var"><a href="../MiniJava-Dynamics/index.html#VariableStem_P" title="program">P</a></i></span> ]] =
     <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Binding/index.html#Name_initialise-binding" title="values -&gt; values">initialise-binding</a></span>
     <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_initialise-storing" title="values -&gt; values">initialise-storing</a></span>
     <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Giving/index.html#Name_initialise-giving" title="values -&gt; values">initialise-giving</a></span>
@@ -109,10 +105,47 @@
 
 // The section numbers above are links into other files.
 
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  Joao Cangussu, Jens Palsberg and Vidyut Samanta gave a BNF grammar for a very 
+  simple subset of Java in the [MiniJava project]. They wrote:
+
+> MiniJava is a subset of Java. The meaning of a MiniJava program is given by 
+> its meaning as a Java program. Overloading is not allowed in MiniJava. [...]
+
+  The CBS of MiniJava is useful for illustrating funcons for classes and objects.
+
+  [MiniJava project]: http://www.cambridge.org/us/features/052182060X/
+</span></pre></details><pre>*/
+
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/* CBS-beta/Languages-beta/MiniJava/MiniJava-cbs released 2018-07-07</span></pre></summary><pre><span class="comment">
+* Status: 
+  - abstract syntax:   complete, derived from [BNF for MiniJava]
+  - dynamic semantics: complete
+  - static semantics:  not specified
+  - disambiguation:    incomplete
+* Tests:
+  - 8 small-to-medium-size programs from the [MiniJava Project]
+  - unknown coverage
+* Evolution:
+  - first version
+* References:
+  [MiniJava Project]: 
+    http://www.cambridge.org/us/features/052182060X/
+  [Java Manual]:
+    FIX-ME
+  [BNF for MiniJava]:
+    http://www.cambridge.org/us/features/052182060X/grammar.html
+* Keywords: 
+  - Java, object-oriented
+* Main contributors:
+  - Peter Mosses
+
+</span></pre></details><pre>*/
+
 </pre>
 
 <footer>
   <span>From the <a href="http://plancomps.org" title="PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS">PLanCompS Project, 2018</a></span>
+  <span><a href="https://github.com/plancomps/plancomps.github.io/issues" title="CBS-BETA ISSUE REPORTS ON GITHUB">CBS-beta issues...</a></span>
   <span><a href="mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20MiniJava/MiniJava-Start/MiniJava-Start.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A" title="GENERATE AN EMAIL TEMPLATE">Suggest an improvement...</a></span>
 </footer>
 

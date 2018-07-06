@@ -6,31 +6,35 @@
   Funcon   tuple-zip
 ]
 
+
 Meta-variables
   T1, T2 <: values
   T1+, T2+ <: values+
   T*, T1*, T2* <: values*
 
+
 Datatype 
-  tuples(T*) ::= tuple(V*:T*) 
+  tuples(T*) ::= tuple(_:T*) 
 /*
-  `T*` can be any sequence of types, including `nothing` and `values`.
+  `T*` can be any sequence of types, including `( )` and `values*`.
   
-  The values of type `tuples(T1, ..., Tn)` are of the form `tuples(V1, ..., Vn)`
+  The values of type `tuples(T1, ..., Tn)` are of the form `tuple(V1, ..., Vn)`
   with `V1:T1`, ..., `Vn:Tn`.
 */
 
+
 Funcon
-  tuple-elements(V:tuples(T*)) : =>(T*)
+  tuple-elements(_:tuples(T*)) : =>(T*)
 Rule
   tuple-elements(tuple(V*:T*)) ~> V*
 
+
 Funcon
-  tuple-zip(TV1:tuples(values*), TV2:tuples(values*)) : 
-    =>(tuples(values,values))*|nothing
+  tuple-zip(_:tuples(values*), _:tuples(values*)) : =>(tuples(values,values))*
 /*
   `tuple-zip(TV1, TV2)` takes two tuples, and returns the sequence of pairs of
-  their elements, provided that they have the same length.
+  their elements, provided that they have the same length. If they have
+  different lengths, the last elements of the longer sequence are ignored.
 */
 Rule
   tuple-zip(tuple(V1:T1, V1*:T1*), tuple(V2:T2, V2*:T2*))
@@ -38,6 +42,6 @@ Rule
 Rule
   tuple-zip(tuple( ), tuple( )) ~> ( )
 Rule
-  tuple-zip(tuple(V1+:T1+), tuple()) ~> none
+  tuple-zip(tuple(V1+:T1+), tuple( )) ~> ( )
 Rule
-  tuple-zip(tuple( ), tuple(V2+:T2+)) ~> none
+  tuple-zip(tuple( ), tuple(V2+:T2+)) ~> ( )

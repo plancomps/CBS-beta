@@ -1,24 +1,29 @@
 ### References and pointers
 
 [
-  Datatype references
-  Funcon   reference
-  Type     pointers
-  Funcon   dereference
+ Datatype references
+ Funcon   reference
+ Type     pointers
+ Funcon   pointer-null
+ Funcon   dereference
 ]
 
+
 Meta-variables
-  DT <: defined-values
+ T <: values
+
 
 Datatype
-  references(DT) ::= reference(V:DT)
+ references(T) ::= reference(_:T)
 
-Type
-  pointers(DT) ~> unit-type | references(DT)
+
+Datatype
+ pointers(T) ::= pointer-null | { _:references(T) }
+
 
 Funcon
-  dereference(P:pointers(DT)) : =>DT|nothing
+  dereference(_:pointers(T)) : =>(T)?
 Rule
-  dereference(reference(DV:DT)) ~> DV
+ dereference(reference(V:T)) ~> V
 Rule
-  dereference(null-value) ~> none
+  dereference(pointer-null) ~> ( )

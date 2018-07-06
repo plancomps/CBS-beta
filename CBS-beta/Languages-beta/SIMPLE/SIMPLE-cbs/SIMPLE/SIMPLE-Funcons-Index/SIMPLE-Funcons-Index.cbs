@@ -15,6 +15,7 @@
   Funcon   initialise-giving
   Funcon   give
   Funcon   given
+  Funcon   left-to-right-repeat
 ]
 
 ### Binding
@@ -55,8 +56,7 @@
 ### Failing
 [
   Funcon   finalise-failing
-  Funcon   else
-  Funcon   defined         Alias def
+  Funcon   checked
 ]
 
 ### Throwing
@@ -74,21 +74,13 @@
 
 # Values
 
-## Types of values
+## Value Types
 [
-  Type     values           Alias vals
-  Type     defined-values   Alias def-vals
-  Type     nothing
-  Funcon   none
-  Funcon   is-equal         Alias is-eq
+  Type   values           Alias vals
+  Funcon is-equal         Alias is-eq
 ]
 
 ## Primitive values
-
-### The null value
-[
-  Funcon   null-value    Alias null
-]
 
 ### Booleans
 [
@@ -111,6 +103,13 @@
   Funcon   integer-is-greater           Alias is-greater
   Funcon   integer-is-greater-or-equal  Alias is-greater-or-equal
   Funcon   decimal-natural              Alias decimal
+]
+
+### The null value
+
+[
+  Datatype null-type
+  Funcon   null-value Alias null
 ]
 
 ## Composite values

@@ -10,7 +10,7 @@ Syntax
    | 'begin' expr 'end'
    | '(' expr ':' typexpr ')'
    | expr comma-expr+
-// | constr expr // was ambiguous!
+// | constr expr // ambiguous!
    | expr '::' expr
    | '[' expr semic-expr* ']'
    | '[' expr semic-expr* ';' ']'
@@ -76,78 +76,55 @@ Rule
 Rule
   [[ '(' E ':' T ')' ]] : expr = [[ E ]]
 Rule
-  [[ E1 E2 A A* ]] : expr =
-  [[ ( '(' E1 E2 ')' ) A A* ]]
-  // "... E+" not yet supported 
+  [[ E1 E2 A A* ]] : expr = [[ ( '(' E1 E2 ')' ) A A* ]]
+  // FIX-ME: "... E+" not yet supported 
 Rule
-  [[ PS E ]] : expr  =  
-  [[ ( '(' PS ')' ) E ]]
+  [[ PS E ]] : expr   = [[ ( '(' PS ')' ) E ]]
 Rule
-  [[ '-' E ]] : expr =  
-  [[ ( '(' '~-' ')' ) E ]]
+  [[ '-' E ]] : expr  = [[ ( '(' '~-' ')' ) E ]]
 Rule
-  [[ '-.' E ]] : expr = 
-  [[ ( '(' '~-.' ')' ) E ]]
+  [[ '-.' E ]] : expr = [[ ( '(' '~-.' ')' ) E ]]
 Rule
-  [[ E1 IO-1 E2 ]] : expr = 
-  [[ ( '(' IO-1 ')' ) E1 E2 ]]
+  [[ E1 IO-1 E2 ]] : expr = [[ ( '(' IO-1 ')' ) E1 E2 ]]
 Rule
-  [[ E1 IO-2 E2 ]] : expr = 
-  [[ ( '(' IO-2 ')' ) E1 E2 ]]
+  [[ E1 IO-2 E2 ]] : expr = [[ ( '(' IO-2 ')' ) E1 E2 ]]
 Rule
-  [[ E1 IO-3 E2 ]] : expr = 
-  [[ ( '(' IO-3 ')' ) E1 E2 ]]
+  [[ E1 IO-3 E2 ]] : expr = [[ ( '(' IO-3 ')' ) E1 E2 ]]
 Rule
-  [[ E1 IO-4 E2 ]] : expr = 
-  [[ ( '(' IO-4 ')' ) E1 E2 ]]
+  [[ E1 IO-4 E2 ]] : expr = [[ ( '(' IO-4 ')' ) E1 E2 ]]
 Rule
-  [[ E1 IO-5 E2 ]] : expr = 
-  [[ ( '(' IO-5 ')' ) E1 E2 ]]
+  [[ E1 IO-5 E2 ]] : expr = [[ ( '(' IO-5 ')' ) E1 E2 ]]
 Rule
-  [[ E1 '&' E2 ]] : expr  = 
-  [[ E1 '&&' E2 ]]
+  [[ E1 '&' E2 ]] : expr  = [[ E1 '&&' E2 ]]
 Rule
-  [[ E1 'or' E2 ]] : expr = 
-  [[ E1 '||' E2 ]]
+  [[ E1 'or' E2 ]] : expr = [[ E1 '||' E2 ]]
 Rule
-  [[ E1 IO-8 E2 ]] : expr = 
-  [[ ( '(' IO-8 ')' ) E1 E2 ]]
+  [[ E1 IO-8 E2 ]] : expr = [[ ( '(' IO-8 ')' ) E1 E2 ]]
 Rule
-  [[ E1 '.(' E2 ')' ]] : expr = 
-  [[ 'array_get' E1 E2 ]]
+  [[ E1 '.(' E2 ')' ]] : expr = [[ 'array_get' E1 E2 ]]
 Rule
-  [[ E1 '.(' E2 ')' '<-' E3 ]] : expr = 
-  [[ 'array_set' E1 E2 E3 ]]
+  [[ E1 '.(' E2 ')' '<-' E3 ]] : expr = [[ 'array_set' E1 E2 E3 ]]
 Rule
-  [[ 'if' E1 'then' E2 ]] : expr = 
-  [[ 'if' E1 'then' E2 'else' ( '(' ')' ) ]]
+  [[ 'if' E1 'then' E2 ]] : expr = [[ 'if' E1 'then' E2 'else' ( '(' ')' ) ]]
 Rule
-  [[ 'fun' P '->' E ]] : expr = 
-  [[ 'function' P '->' E ]]
+  [[ 'fun' P '->' E ]] : expr = [[ 'function' P '->' E ]]
 Rule
-  [[ 'fun' P P+ '->' E ]] : expr = 
-  [[ 'fun' P '->' ( 'fun' P+ '->' E ) ]]
+  [[ 'fun' P P+ '->' E ]] : expr = [[ 'fun' P '->' ( 'fun' P+ '->' E ) ]]
 Rule
- [[ '[' E SE* ';' ']' ]] : expr = 
- [[ '[' E SE* ']' ]]
+ [[ '[' E SE* ';' ']' ]] : expr = [[ '[' E SE* ']' ]]
 Rule
- [[ '[|' E SE* ';' '|]' ]] : expr = 
- [[ '[|' E SE* '|]' ]]
+ [[ '[|' E SE* ';' '|]' ]] : expr = [[ '[|' E SE* '|]' ]]
 Rule
- [[ '{' F '=' E SFE* ';' '}' ]] : expr = 
- [[ '{' F '=' E SFE* '}' ]]
+ [[ '{' F '=' E SFE* ';' '}' ]] : expr = [[ '{' F '=' E SFE* '}' ]]
 Rule
  [[ '{' E1 'with' F '=' E2 SFE* ';' '}' ]] : expr = 
  [[ '{' E1 'with' F '=' E2 SFE* '}' ]]
 Rule
-  [[ '|' P '->' E PE* ]] : pattern-matching = 
-  [[ P '->' E PE* ]]
+  [[ '|' P '->' E PE* ]] : pattern-matching = [[ P '->' E PE* ]]
 Rule
-  [[ VN ':' PT '=' E ]] : let-binding = 
-  [[ VN '=' E ]]
+  [[ VN ':' PT '=' E ]] : let-binding = [[ VN '=' E ]]
 Rule
-  [[ VN P+ '=' E ]] : let-binding = 
-  [[ VN '=' ( 'fun' P+ '->' E ) ]]
+  [[ VN P+ '=' E ]] : let-binding = [[ VN '=' ( 'fun' P+ '->' E ) ]]
 
 
 Semantics
@@ -168,7 +145,7 @@ Rule
 Rule
   evaluate[[ '[|' E SE* '|]' ]] =
     vector(left-to-right-map(
-      allocate-initialised-variable(implemented-values,given),
+      allocate-initialised-variable(implemented-values, given),
       evaluate-semic-sequence[[ E SE* ]]))
 Rule
   evaluate[[ '[|' '|]' ]] = vector( )
@@ -180,7 +157,7 @@ Rule
     record(
       map-override(
         evaluate-field-sequence[[ F '=' E2 SFE* ]],
-        defined record-map(evaluate[[E1]])))
+        checked record-map(evaluate[[E1]])))
 Rule
   evaluate[[ CSTR E ]] =
     variant(constr-name[[ CSTR ]], evaluate[[ E ]])
@@ -201,21 +178,17 @@ Rule
     if-true-else(evaluate[[ E1 ]], evaluate[[ E2 ]], evaluate[[ E3 ]])
 Rule
   evaluate[[ 'while' E1 'do' E2 'done' ]] =
-    sequential(while(evaluate[[ E1 ]], effect(evaluate[[ E2 ]])), null)
+    while(evaluate[[ E1 ]], effect(evaluate[[ E2 ]]))
 Rule
   evaluate[[ 'for' VN '=' E1 'to' E2 'do' E3 'done' ]] =
-    sequential(
-      effect(left-to-right-map(
-        case-match(pattern-bind(value-name[[ VN ]]), evaluate[[ E3 ]]),
-        integer-sequence(evaluate[[ E1 ]], evaluate[[ E2 ]]))),
-      null)
+    effect(left-to-right-map(
+      case-match(pattern-bind(value-name[[ VN ]]), evaluate[[ E3 ]]),
+      integer-sequence(evaluate[[ E1 ]], evaluate[[ E2 ]])))
 Rule
   evaluate[[ 'for' VN '=' E1 'downto' E2 'do' E3 'done' ]] =
-    sequential(
-      effect(left-to-right-map(
-        case-match(pattern-bind(value-name[[ VN ]]), evaluate[[ E3 ]]),
-        reverse integer-sequence(evaluate[[ E2 ]], evaluate[[ E1 ]]))),
-      null)
+    effect(left-to-right-map(
+      case-match(pattern-bind(value-name[[ VN ]]), evaluate[[ E3 ]]),
+      reverse integer-sequence(evaluate[[ E2 ]], evaluate[[ E1 ]])))
 Rule
   evaluate[[ E1 ';' E2 ]] =
     sequential(effect(evaluate[[ E1 ]]), evaluate[[ E2 ]])

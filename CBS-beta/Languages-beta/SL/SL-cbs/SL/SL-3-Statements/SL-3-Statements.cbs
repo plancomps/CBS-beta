@@ -20,13 +20,13 @@ Rule
   [[ 'if' '(' Expr ')' Block 'else' '{' '}' ]]
 
 Semantics
-  exec[[ Stmt*:stmt* ]] : => nothing
+  exec[[ Stmt*:stmt* ]] : => null-type
 Rule
   exec[[ Expr ';' ]] = effect(eval[[Expr]])
 Rule
   exec[[ 'return' Expr ';' ]] = return(eval[[Expr]])
 Rule
-  exec[[ 'return' ';' ]] = return(none)
+  exec[[ 'return' ';' ]] = return(null-value)
 Rule
   exec[[ 'if' '(' Expr ')' Block1 'else' Block2 ]] = 
     if-true-else(bool eval[[Expr]], exec[[Block1]], exec[[Block2]])
@@ -42,7 +42,7 @@ Rule
 Rule
   exec[[ '{' Stmt* '}' ]] = exec[[Stmt*]]
 Rule
-  exec[[  ]] = none
+  exec[[  ]] = null-value
 Rule
   exec[[ Stmt Stmt+ ]] = 
     sequential(exec[[Stmt]], exec[[Stmt+]])

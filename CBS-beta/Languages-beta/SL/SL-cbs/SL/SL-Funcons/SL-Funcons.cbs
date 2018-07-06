@@ -36,11 +36,11 @@ Language "SL"
 # SL-specific funcons
 
 Funcon
-  sl-to-string(V:values) : => strings
+  sl-to-string(V:sl-values) : => strings
 Rule
-  sl-to-string(none) ~> "null"
+  sl-to-string(null-value) ~> "null"
 Rule
-  sl-to-string(V:sl-values) ~> to-string(V)
+  sl-to-string(V:~null-type) ~> to-string(V)
 
 Funcon 
   integer-add-else-string-append(V1:sl-values, V2:sl-values) : => sl-values
@@ -51,24 +51,24 @@ Funcon
 # Abbreviations
 
 Funcon
-  int(V:values) : => integers
-    ~> defined cast-to-type(V, integers)
+  int(V:sl-values) : => integers
+    ~> checked cast-to-type(V, integers)
 
 Funcon
-  bool(V:values) : => booleans
-    ~> defined cast-to-type(V, booleans)
+  bool(V:sl-values) : => booleans
+    ~> checked cast-to-type(V, booleans)
 
 Funcon
-  str(V:values) : => strings
-    ~> defined cast-to-type(V, strings)
+  str(V:sl-values) : => strings
+    ~> checked cast-to-type(V, strings)
 
 Funcon
-  obj(V:values) : => objects
-    ~> defined cast-to-type(V, objects)
+  obj(V:sl-values) : => objects
+    ~> checked cast-to-type(V, objects)
 
 Funcon
   fun(V:values) : => functions(_, _)
-    ~> defined cast-to-type(V, functions(_, _))
+    ~> checked cast-to-type(V, functions(_, _))
 
 # Further funcons
 
@@ -104,17 +104,17 @@ Funcon
 
 Funcon
   local-variable(I:ids) : => variables
-   ~> defined lookup(assigned bound "local-variables", I)
+   ~> checked lookup(assigned bound "local-variables", I)
 
 Funcon
-  local-variable-initialise(I:ids, V:values) : => nothing
+  local-variable-initialise(I:ids, V:values) : => null-type
    ~> assign(bound "local-variables", 
         map-override(
           { I |-> allocate-initialised-variable(values, V) },
           assigned bound "local-variables"))
 
 Funcon
-  local-variable-assign(I:ids, V:values) : => nothing
+  local-variable-assign(I:ids, V:values) : => null-type
    ~> else(
         assign(local-variable I, V),
         local-variable-initialise(I, V))
@@ -133,13 +133,13 @@ Funcon
           allocate-initialised-variable(environments, map( )))
 
 Funcon
-  override-global-bindings(E:environments) : => nothing
+  override-global-bindings(E:environments) : => null-type
     ~> assign(bound "global-bindings",
          map-override(E, assigned bound "global-bindings"))
 
 Funcon
   global-bound(I:ids) : => values
-    ~>  defined lookup(assigned bound "global-bindings", I)
+    ~>  checked lookup(assigned bound "global-bindings", I)
 
 ## Composite input and output
 
@@ -157,5 +157,5 @@ Funcon
 */
 
 Funcon
-  print-line(S:strings) : => nothing
+  print-line(S:strings) : => null-type
    ~> print(S, "\n")

@@ -63,18 +63,19 @@
     - http://doi.org/10.1109/IEEESTD.2008.4610935
     - https://en.wikipedia.org/wiki/IEEE_754
 */
+
 Datatype
   float-formats ::= binary32 | binary64 | binary128 | decimal64 | decimal128
 Built-in Type
-  floats(FF:float-formats) <: defined-values
+  floats(_:float-formats)
 /*
   Note that for distinct formats `FF1`, `FF2`, the types `floats(FF1)` and
   `floats(FF2)` are not necessarily disjoint.
 */
 
 Built-in Funcon
-  float(FF:float-formats, S:bounded-ints(0, 1), C:nats, Q:ints) : 
-    =>floats(FF)|nothing
+  float(FF:float-formats, 
+        _:bounded-integers(0, 1), _:natural-numbers, _:integers) : =>floats(FF)
 /*
   Each finite number is described by three integers: 
   * s = a sign (zero or one), 
@@ -115,71 +116,78 @@ Alias
 #### Conversions
 
 Built-in Funcon
-  float-convert(FF1:float-formats, FF2:float-formats, F:floats(FF1)) : 
-    =>floats(FF2)
+  float-convert(FF1:float-formats, 
+                FF2:float-formats, F:floats(FF1)) : =>floats(FF2)
 Built-in Funcon
-  decimal-float(FF:float-formats, M:strings, N:strings, E:strings) : =>floats(FF)
+  decimal-float(FF:float-formats, 
+                _:strings, _:strings, _:strings) : =>floats(FF)
 /*
-  `decimal-float(F,"M","N","E")` is an approximation in `floats(FF)` to the
+  `decimal-float(F, "M", "N", "E")` is an approximation in `floats(FF)` to the
   value of 'M.N' times 10 to the power 'E', where "M.N" is decimal notation
   (optionally-signed) for a fixed-point number and "E" is decimal notation
   (optionally signed) for an integer. When any argument string is invalid,
   the result is `quiet-not-a-number(F)`.
 */
 
+
 #### Comparison
 
 Built-in Funcon
-  float-equal(FF:float-formats, F1:floats(FF), F2:floats(FF)) : =>booleans
+  float-equal(FF:float-formats,
+              _:floats(FF), _:floats(FF)) : =>booleans
 Built-in Funcon
-  float-is-less(FF:float-formats, F1:floats(FF), F2:floats(FF)) : =>booleans
+  float-is-less(FF:float-formats,
+                _:floats(FF), _:floats(FF)) : =>booleans
 Built-in Funcon
-  float-is-less-or-equal(FF:float-formats, F1:floats(FF), F2:floats(FF)) : =>booleans
+  float-is-less-or-equal(FF:float-formats,
+                         _:floats(FF), _:floats(FF)) : =>booleans
 Built-in Funcon
-  float-is-greater(FF:float-formats, F1:floats(FF), F2:floats(FF)) : =>booleans
+  float-is-greater(FF:float-formats,
+                   _:floats(FF), _:floats(FF)) : =>booleans
 Built-in Funcon
-  float-is-greater-or-equal(FF:float-formats, F1:floats(FF), F2:floats(FF)) : =>booleans
+  float-is-greater-or-equal(FF:float-formats,
+                            _:floats(FF), _:floats(FF)) : =>booleans
 
 
 #### Arithmetic
 
 Built-in Funcon
-  float-negate(FF:float-formats, F:floats(FF)) : =>floats(FF)
+  float-negate(FF:float-formats, _:floats(FF)) : =>floats(FF)
 Built-in Funcon
-  float-absolute-value(FF:float-formats, F:floats(FF)) : =>floats(FF)
+  float-absolute-value(FF:float-formats, _:floats(FF)) : =>floats(FF)
 Built-in Funcon
-  float-add(FF:float-formats, F1:floats(FF), F2:floats(FF)) : =>floats(FF)
+  float-add(FF:float-formats, _:floats(FF), _:floats(FF)) : =>floats(FF)
 Built-in Funcon
-  float-subtract(FF:float-formats, F1:floats(FF), F2:floats(FF)) : =>floats(FF)
+  float-subtract(FF:float-formats, _:floats(FF), _:floats(FF)) : =>floats(FF)
 Built-in Funcon
-  float-multiply(FF:float-formats, F1:floats(FF), F2:floats(FF)) : =>floats(FF)
+  float-multiply(FF:float-formats, _:floats(FF), _:floats(FF)) : =>floats(FF)
 Built-in Funcon
-  float-multiply-add(FF:float-formats, F1:floats(FF), F2:floats(FF), F:floats(FF)) :
-    =>floats(FF)
+  float-multiply-add(FF:float-formats,
+                     _:floats(FF), _:floats(FF), _:floats(FF)) : =>floats(FF)
 Built-in Funcon
-  float-divide(FF:float-formats, F1:floats(FF), F2:floats(FF)) : =>floats(FF)
+  float-divide(FF:float-formats, _:floats(FF), _:floats(FF)) : =>floats(FF)
 Built-in Funcon
-  float-remainder(FF:float-formats, F1:floats(FF), F2:floats(FF)) : =>floats(FF)
+  float-remainder(FF:float-formats, _:floats(FF), _:floats(FF)) : =>floats(FF)
 Built-in Funcon
-  float-sqrt(FF:float-formats, F:floats(FF)) : =>floats(FF)
+  float-sqrt(FF:float-formats, _:floats(FF)) : =>floats(FF)
 Built-in Funcon
-  float-integer-power(FF:float-formats, F:floats(FF), N:ints) : =>floats(FF)
+  float-integer-power(FF:float-formats, _:floats(FF), _:integers) : =>floats(FF)
 Built-in Funcon
-  float-float-power(FF:float-formats, F1:floats(FF), F2:floats(FF)) : =>floats(FF)
+  float-float-power(FF:float-formats, _:floats(FF), _:floats(FF)) : =>floats(FF)
 
 
 #### Rounding
 
 Built-in Funcon
-  float-round-ties-to-even(FF:float-formats, F:floats(FF)) : =>ints
+  float-round-ties-to-even(FF:float-formats, _:floats(FF)) : =>integers
 Built-in Funcon
-  float-round-ties-to-infinity(FF:float-formats, F:floats(FF)) : =>ints
+  float-round-ties-to-infinity(FF:float-formats, _:floats(FF)) : =>integers
 Built-in Funcon
-  float-floor(FF:float-formats, F:floats(FF)) : =>ints
+  float-floor(FF:float-formats, _:floats(FF)) : =>integers
 Built-in Funcon
-  float-ceiling(FF:float-formats, F:floats(FF)) : =>ints
+  float-ceiling(FF:float-formats, _:floats(FF)) : =>integers
 Built-in Funcon
-  float-truncate(FF:float-formats, F:floats(FF)) : =>ints
+  float-truncate(FF:float-formats, _:floats(FF)) : =>integers
 
 
 #### Miscellaneous
@@ -189,34 +197,34 @@ Built-in Funcon
 Built-in Funcon
   float-e(FF:float-formats) : =>floats(FF)
 Built-in Funcon
-  float-log(FF:float-formats, F:floats(FF)) : =>floats(FF)
+  float-log(FF:float-formats, _:floats(FF)) : =>floats(FF)
 Built-in Funcon
-  float-log10(FF:float-formats, F:floats(FF)) : =>floats(FF)
+  float-log10(FF:float-formats, _:floats(FF)) : =>floats(FF)
 Built-in Funcon
-  float-exp(FF:float-formats, F:floats(FF)) : =>floats(FF)
+  float-exp(FF:float-formats, _:floats(FF)) : =>floats(FF)
 Built-in Funcon
-  float-sin(FF:float-formats, F:floats(FF)) : =>floats(FF)
+  float-sin(FF:float-formats, _:floats(FF)) : =>floats(FF)
 Built-in Funcon
-  float-cos(FF:float-formats, F:floats(FF)) : =>floats(FF)
+  float-cos(FF:float-formats, _:floats(FF)) : =>floats(FF)
 Built-in Funcon
-  float-tan(FF:float-formats, F:floats(FF)) : =>floats(FF)
+  float-tan(FF:float-formats, _:floats(FF)) : =>floats(FF)
 Built-in Funcon
-  float-asin(FF:float-formats, F:floats(FF)) : =>floats(FF)
+  float-asin(FF:float-formats, _:floats(FF)) : =>floats(FF)
 Built-in Funcon
-  float-acos(FF:float-formats, F:floats(FF)) : =>floats(FF)
+  float-acos(FF:float-formats, _:floats(FF)) : =>floats(FF)
 Built-in Funcon
-  float-atan(FF:float-formats, F:floats(FF)) : =>floats(FF)
+  float-atan(FF:float-formats, _:floats(FF)) : =>floats(FF)
 Built-in Funcon
-  float-sinh(FF:float-formats, F:floats(FF)) : =>floats(FF)
+  float-sinh(FF:float-formats, _:floats(FF)) : =>floats(FF)
 Built-in Funcon
-  float-cosh(FF:float-formats, F:floats(FF)) : =>floats(FF)
+  float-cosh(FF:float-formats, _:floats(FF)) : =>floats(FF)
 Built-in Funcon
-  float-tanh(FF:float-formats, F:floats(FF)) : =>floats(FF)
+  float-tanh(FF:float-formats, _:floats(FF)) : =>floats(FF)
 Built-in Funcon
-  float-asinh(FF:float-formats, F:floats(FF)) : =>floats(FF)
+  float-asinh(FF:float-formats, _:floats(FF)) : =>floats(FF)
 Built-in Funcon
-  float-acosh(FF:float-formats, F:floats(FF)) : =>floats(FF)
+  float-acosh(FF:float-formats, _:floats(FF)) : =>floats(FF)
 Built-in Funcon
-  float-atanh(FF:float-formats, F:floats(FF)) : =>floats(FF)
+  float-atanh(FF:float-formats, _:floats(FF)) : =>floats(FF)
 Built-in Funcon
-  float-atan2(FF:float-formats, F1:floats(FF), F2:floats(FF)) : =>floats(FF)
+  float-atan2(FF:float-formats, _:floats(FF), _:floats(FF)) : =>floats(FF)

@@ -20,7 +20,7 @@ Rule
 	integer-add(eval-arith[[ AExp1 ]], eval-arith[[ AExp2 ]])
 Rule
   eval-arith[[ AExp1 '/' AExp2 ]] = 
-	defined integer-divide(eval-arith[[ AExp1 ]], eval-arith[[ AExp2 ]])
+	checked integer-divide(eval-arith[[ AExp1 ]], eval-arith[[ AExp2 ]])
 Rule
   eval-arith[[ '(' AExp ')' ]] = eval-arith[[ AExp ]]
 

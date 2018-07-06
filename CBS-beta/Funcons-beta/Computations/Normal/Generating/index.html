@@ -45,10 +45,6 @@
   <div class="title">
     <a href="Generating.cbs" title="CBS SOURCE FILE">Generating</a>
   </div>
-  <div class="topic">
-    <img src="../../.././preview.png" 
-         alt="Preview badge" width="67" height="17">
-  </div>
 </header>
 
 <nav>
@@ -91,39 +87,45 @@
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_use-atom-not-in" title="values -&gt; values">use-atom-not-in</a></span>
 ]
 
+
 <i class="keyword">Meta-variables</i>
   <span id="PartVariable_T" class="decl"><i class="var">T</i></span> <: <span class="name"><a href="../../../Values/Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>
 
+
 <i class="keyword">Built-in</i> <i class="keyword">Type</i>
   <span class="name"><span id="Name_atoms" class="decl">atoms</span></span>
-</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_atoms" title=" -&gt; values">atoms</a></span>` is the type of defined-values used as distinguishable tags.
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_atoms" title=" -&gt; values">atoms</a></span>` is the type of values used as distinguishable tags.
   Notation for individual atoms is not provided.
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
+
 
 <i class="keyword">Entity</i>
-  < _ , <span class="ent-name"><span id="Name_used-atom-set" class="decl">used-atom-set</span></span>(<i class="var">SA</i>:<span class="name"><a href="../../../Values/Composite/Sets/index.html#Name_set" title="values* -&gt; values">set</a></span>(<span class="name"><a href="#Name_atoms" title=" -&gt; values">atoms</a></span>)) > ---> < _ , <span class="ent-name">used-atom-set</span>(<i class="var">SA&prime;</i>:<span class="name">set</span>(<span class="name">atoms</span>)) >
+  < _ , <span class="ent-name"><span id="Name_used-atom-set" class="decl">used-atom-set</span></span>(_:<span class="name"><a href="../../../Values/Composite/Sets/index.html#Name_set" title="values* -&gt; values">set</a></span>(<span class="name"><a href="#Name_atoms" title=" -&gt; values">atoms</a></span>)) > ---> < _ , <span class="ent-name">used-atom-set</span>(_:<span class="name">set</span>(<span class="name">atoms</span>)) >
+
 
 <i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_initialise-generating" class="decl">initialise-generating</span></span>(<span id="Variable_X" class="decl"><i class="var">X</i></span>:=><span id="Variable_T" class="decl"><i class="var">T</i></span>) : =><span id="Variable_T" class="decl"><i class="var">T</i></span>
+  <span class="name"><span id="Name_initialise-generating" class="decl">initialise-generating</span></span>(_:=><span id="Variable_T" class="decl"><i class="var">T</i></span>) : =><span id="Variable_T" class="decl"><i class="var">T</i></span>
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  The initial value of the `<span class="name"><a href="#Name_used-atom-set" title=" -&gt; values">used-atom-set</a></span>(<i class="var">SA</i>)` entity is unspecified. It could
   contains atoms that are reserved for internal use.
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
+
 
 <i class="keyword">Funcon</i>
   <span class="name"><span id="Name_fresh-atom" class="decl">fresh-atom</span></span> : =><span class="name"><a href="#Name_atoms" title=" -&gt; values">atoms</a></span>
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_fresh-atom" title=" -&gt; values">fresh-atom</a></span>` computes an atom distinct from all previously computed atoms.
-*/</span></pre></details><pre>
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="../../../Values/Composite/Sets/index.html#Name_element-not-in" title="values, values -&gt; values">element-not-in</a></span>(<span class="name"><a href="#Name_atoms" title=" -&gt; values">atoms</a></span>, <a href="#Variable_SA"><i class="var">SA</i></a>) ~> <span id="Variable_A" class="decl"><i class="var">A</i></span>
+</span></pre></details><pre>*/
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="../../../Values/Composite/Sets/index.html#Name_element-not-in" title="values, values -&gt; values?">element-not-in</a></span>(<span class="name"><a href="#Name_atoms" title=" -&gt; values">atoms</a></span>, <a href="#Variable_SA"><i class="var">SA</i></a>) ~> <span id="Variable_A" class="decl"><i class="var">A</i></span>
   -----------------------------------------------
   < <span class="name"><a href="#Name_fresh-atom" title=" -&gt; values">fresh-atom</a></span> , <span class="ent-name"><a href="#Name_used-atom-set" title=" -&gt; values">used-atom-set</a></span>(<span id="Variable_SA" class="decl"><i class="var">SA</i></span>) > 
     ---> < <a href="#Variable_A"><i class="var">A</i></a> , <span class="ent-name"><a href="#Name_used-atom-set" title=" -&gt; values">used-atom-set</a></span>(<span class="name"><a href="../../../Values/Composite/Sets/index.html#Name_set-insert" title="values, values -&gt; values">set-insert</a></span>(<a href="#Variable_A"><i class="var">A</i></a>, <a href="#Variable_SA"><i class="var">SA</i></a>)) ></pre></details><pre>
+
 
 <i class="keyword">Funcon</i>
   <span class="name"><span id="Name_use-atom-not-in" class="decl">use-atom-not-in</span></span>(_:<span class="name"><a href="../../../Values/Composite/Sets/index.html#Name_sets" title="values -&gt; values">sets</a></span>(<span class="name"><a href="#Name_atoms" title=" -&gt; values">atoms</a></span>)) : =><span class="name"><a href="#Name_atoms" title=" -&gt; values">atoms</a></span>
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_use-atom-not-in" title="values -&gt; values">use-atom-not-in</a></span>(<i class="var">SA</i>)` computes an atom not in the set `<i class="var">SA</i>`, and inserts it
   in the `<span class="name"><a href="#Name_used-atom-set" title=" -&gt; values">used-atom-set</a></span>(<i class="var">SA&prime;</i>)` entity, in case it was not previously used.
-*/</span></pre></details><pre>
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="../../../Values/Composite/Sets/index.html#Name_element-not-in" title="values, values -&gt; values">element-not-in</a></span>(<span class="name"><a href="#Name_atoms" title=" -&gt; values">atoms</a></span>, <a href="#Variable_SA"><i class="var">SA</i></a>) ~> <span id="Variable_A" class="decl"><i class="var">A</i></span>
+</span></pre></details><pre>*/
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="../../../Values/Composite/Sets/index.html#Name_element-not-in" title="values, values -&gt; values?">element-not-in</a></span>(<span class="name"><a href="#Name_atoms" title=" -&gt; values">atoms</a></span>, <a href="#Variable_SA"><i class="var">SA</i></a>) ~> <span id="Variable_A" class="decl"><i class="var">A</i></span>
   --------------------------------------------------------
   < <span class="name"><a href="#Name_use-atom-not-in" title="values -&gt; values">use-atom-not-in</a></span>(<span id="Variable_SA" class="decl"><i class="var">SA</i></span>:<span class="name"><a href="../../../Values/Composite/Sets/index.html#Name_sets" title="values -&gt; values">sets</a></span>(<span class="name"><a href="#Name_atoms" title=" -&gt; values">atoms</a></span>)) , <span class="ent-name"><a href="#Name_used-atom-set" title=" -&gt; values">used-atom-set</a></span>(<span id="Variable_SA'" class="decl"><i class="var">SA&prime;</i></span>) >
     ---> < <a href="#Variable_A"><i class="var">A</i></a> , <span class="ent-name"><a href="#Name_used-atom-set" title=" -&gt; values">used-atom-set</a></span>(<span class="name"><a href="../../../Values/Composite/Sets/index.html#Name_set-insert" title="values, values -&gt; values">set-insert</a></span>(<a href="#Variable_A"><i class="var">A</i></a>, <a href="#Variable_SA'"><i class="var">SA&prime;</i></a>)) ></pre></details><pre>
@@ -132,6 +134,7 @@
 
 <footer>
   <span>From the <a href="http://plancomps.org" title="PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS">PLanCompS Project, 2018</a></span>
+  <span><a href="https://github.com/plancomps/plancomps.github.io/issues" title="CBS-BETA ISSUE REPORTS ON GITHUB">CBS-beta issues...</a></span>
   <span><a href="mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20Funcons-beta/Computations/Normal/Generating/Generating.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A" title="GENERATE AN EMAIL TEMPLATE">Suggest an improvement...</a></span>
 </footer>
 

@@ -38,16 +38,10 @@
 ### Failing
 [
   Funcon   finalise-failing
-  Funcon   defined         Alias def
+  Funcon   checked
 ]
 
 # Values
-
-## Types of values
-[
-  Type     nothing
-  Funcon   none
-]
 
 ## Primitive values
 
@@ -67,5 +61,12 @@
   Funcon   integer-negate               Alias int-neg
   Funcon   integer-is-less-or-equal     Alias is-less-or-equal
   Funcon   decimal-natural              Alias decimal
+]
+
+### The null value
+
+[
+  Datatype null-type
+  Funcon   null-value Alias null
 ]
 

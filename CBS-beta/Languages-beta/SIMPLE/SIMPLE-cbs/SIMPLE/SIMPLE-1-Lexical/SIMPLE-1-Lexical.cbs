@@ -14,7 +14,7 @@ Lexis
   S : string-chars ::= (~'"')*
 
 Semantics
-  val[[ _:value ]] : defined-values
+  val[[ _:value ]] : =>values
 
 ## 1.1 Booleans
 
@@ -38,7 +38,7 @@ Rule
 Lexis
   Id : id ::= ('A'-'Z'|'a'-'z'|'_') ('0'-'9'|'A'-'Z'|'a'-'z'|'_')*
 Semantics
-  id[[ _:id ]] : ids
+  id[[ _:id ]] : =>ids
 Rule
   id[[ Id ]] = \"Id\"
 
@@ -47,3 +47,4 @@ Lexis
            | 'spawn' |  'if' | 'else' | 'while' | 'for' | 'print' | 'return'
            | 'try' | 'catch' | 'throw' | 'join' | 'acquire' | 'release'
            | 'rendezvous'
+

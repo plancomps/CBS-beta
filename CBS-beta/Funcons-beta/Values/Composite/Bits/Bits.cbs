@@ -22,18 +22,20 @@
   Funcon   is-in-unsigned-bit-vector
 ]
 
+
 #### Bits
 
 Type
-  bits ~> bools
+  bits ~> booleans
 /*
   `false` represents the absence of a bit, `true` its presence.
 */
 
+
 #### Bit vectors
 
 Datatype
-  bit-vectors(N:nats) ::= bit-vector(VN*:bits^N)
+  bit-vectors(N:natural-numbers) ::= bit-vector(_:bits^N)
 
 Type
   bytes ~> bit-vectors(8)
@@ -44,64 +46,65 @@ Meta-variables
   BT <: bit-vectors(_)
 
 Built-in Funcon
-  bit-vector-not(BV:BT) : =>BT
+  bit-vector-not(_:BT) : =>BT
 Built-in Funcon
-  bit-vector-and(BV1:BT, BV2:BT) : =>BT
+  bit-vector-and(_:BT, _:BT) : =>BT
 Built-in Funcon
-  bit-vector-or(BV1:BT, BV2:BT) : =>BT
+  bit-vector-or(_:BT, _:BT) : =>BT
 Built-in Funcon
-  bit-vector-xor(BV1:BT, BV2:BT) : =>BT
+  bit-vector-xor(_:BT, _:BT) : =>BT
 /*
-  The above four funcons are the natural extensions of funcons from `bools`
+  The above four funcons are the natural extensions of funcons from `booleans`
   to `bit-vectors(N)` of the same length.
 */
 
 Built-in Funcon
-  bit-vector-shift-left(BV:BT, N:nats) : BT
+  bit-vector-shift-left(_:BT, _:natural-numbers) : BT
 Built-in Funcon
-  bit-vector-logical-shift-right(BV:BT, N:nats) : BT
+  bit-vector-logical-shift-right(_:BT, _:natural-numbers) : BT
 Built-in Funcon
-  bit-vector-arithmetic-shift-right(BV:BT, N:nats) : BT
+  bit-vector-arithmetic-shift-right(_:BT, _:natural-numbers) : BT
 
 Built-in Funcon
-  integer-to-bit-vector(M:integers, N:nats) : bit-vectors(N)
+  integer-to-bit-vector(_:integers, N:natural-numbers) : bit-vectors(N)
 /*
   `integer-to-bit-vector(M, N)` converts an integer `M` to a bit-vector of
   length `N`, using Two's Complement representation.  If the integer is out of
   range of the representation, it will wrap around (modulo 2^N).
 */
+
 Built-in Funcon
-  bit-vector-to-integer(BV:BT) : =>ints
+  bit-vector-to-integer(_:BT) : =>integers
 /*
-  `bit-vector-to-integer(BV)` interprets a bit-vector `BV` as an integer
+  `bit-vector-to-integer(B)` interprets a bit-vector `BV` as an integer
   in Two's Complement representation.
 */
+
 Built-in Funcon
-  bit-vector-to-natural(BV:BT) : =>nats
+  bit-vector-to-natural(_:BT) : =>natural-numbers
 /*
   `bit-vector-to-natural(BV)` interprets a bit-vector `BV` as a natural number
   in unsigned representation.
 */
 
 Funcon
-  unsigned-bit-vector-maximum(N:nats) : =>nats
+  unsigned-bit-vector-maximum(N:natural-numbers) : =>natural-numbers
     ~> integer-subtract(integer-power(2, N), 1)
 
 Funcon
-  signed-bit-vector-maximum(N:nats) : =>ints
+  signed-bit-vector-maximum(N:natural-numbers) : =>integers
     ~> integer-subtract(integer-power(2, integer-subtract(N, 1)), 1)
 
 Funcon
-  signed-bit-vector-minimum(N:nats) : =>ints
+  signed-bit-vector-minimum(N:natural-numbers) : =>integers
     ~> integer-negate(integer-power(2, integer-subtract(N, 1)))
 
 Funcon
-  is-in-signed-bit-vector(M:integers, N:nats) : =>bools
+  is-in-signed-bit-vector(M:integers, N:natural-numbers) : =>booleans
     ~> and(integer-is-less-or-equal(M, signed-bit-vector-maximum(N)),
            integer-is-greater-or-equal(M, signed-bit-vector-minimum(N)))
 
 Funcon
-  is-in-unsigned-bit-vector(M:integers, N:nats) : =>bools
+  is-in-unsigned-bit-vector(M:integers, N:natural-numbers) : =>booleans
     ~> and(integer-is-less-or-equal(M, unsigned-bit-vector-maximum(N)),
            integer-is-greater-or-equal(M, 0))
-

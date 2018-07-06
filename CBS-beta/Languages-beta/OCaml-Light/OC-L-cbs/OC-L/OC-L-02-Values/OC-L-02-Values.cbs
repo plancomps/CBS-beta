@@ -11,7 +11,7 @@ Language "OCaml Light"
 
 Type
   implemented-values
-   ~> unit-type
+   ~> null-type
     | booleans
     | implemented-integers
     | implemented-floats
@@ -41,8 +41,9 @@ Funcon
   implemented-integer(I:integers) : =>implemented-integers
     ~> I // FIX-ME: Two's complement, modulo 2^31
 Assert
-  is-defined(implemented-integer(N:bounded-integers(-1073741824,1073741823)))
-    == true
+  is-equal(null,
+    implemented-integer(N:bounded-integers(-1073741824,1073741823)))
+    == false
 Funcon
   implemented-integers-width : =>natural-numbers
    ~> 31
@@ -59,7 +60,7 @@ Funcon
   Floating-point values are numbers in floating-point representation. 
   The current implementation uses double-precision floating-point numbers
   conforming to the IEEE 754 standard, with 53 bits of mantissa and
-  an exponent ranging from −1022 to 1023.
+  an exponent ranging from -1022 to 1023.
 */
 Type
   implemented-floats // ~> floats(implemented-floats-format)
@@ -82,36 +83,38 @@ Type
   implemented-character-points
    ~> bounded-integers(0,255)
 Funcon
-  implemented-character(C:characters) : =>implemented-characters|nothing
+  implemented-character(C:characters) : =>implemented-characters?
    ~> ascii-character[C] // FIX-ME: allow ISO-Latin-1
 
 ### Character strings
 /*
   String values are finite sequences of characters. The current implementation
-  supports strings containing up to 2^24 − 5 characters (16777211 characters);
+  supports strings containing up to 2^24 - 5 characters (16777211 characters);
   (...)
 */
 Type
   implemented-strings <: lists(implemented-characters)
 Funcon
-  implemented-string(L:lists(implemented-characters)) : 
-                                                 =>implemented-strings|nothing
-    ~> if-true-else(is-less-or-equal(length list-elements L, 16777211), L, none)
+  implemented-string(L:lists(implemented-characters)) : =>implemented-strings?
+    ~> when-true(is-less-or-equal(length list-elements L, 16777211), L)
 
 
 ## Tuples
 /*
   Tuples of values are written (v_1, ..., v_n), standing for the n-tuple of
   values v_1 to v_n. The current implementation supports tuples of up to 
-  2^22 − 1 elements (4194303 elements).
+  2^22 - 1 elements (4194303 elements).
 */
 Type
   implemented-tuples <: tuples(implemented-values*)
    ~> tuples(values*) // FIX-ME: remove
 Funcon
-  implemented-tuple(T:tuples(values*)) : =>implemented-tuples|nothing
-    ~> if-true-else(
-         is-less-or-equal(length tuple-elements T, 4194303), T, none)
+  implemented-tuple(T:tuples(values*)) : =>implemented-tuples?
+    ~> when-true(is-less-or-equal(length tuple-elements T, 4194303), T)
+
+/*
+  In OCaml Light, the unit value is represented by `tuple( )`.
+*/
 
 /*
   In OCaml Light, lists are written [v_1; ...; v_n], and their values are
@@ -121,9 +124,8 @@ Type
   implemented-lists <: lists(implemented-values)
    ~> lists(values) // FIX-ME: remove
 Funcon
-  implemented-list(L:lists(values)) : =>implemented-lists|nothing
-    ~> if-true-else(
-         is-less-or-equal(length list-elements L, 4194303), L, none)
+  implemented-list(L:lists(values)) : =>implemented-lists?
+    ~> when-true(is-less-or-equal(length list-elements L, 4194303), L)
 
 
 ## Records
@@ -131,15 +133,14 @@ Funcon
   Record values are labeled tuples of values. The record value written 
   { field_1 = v_1; ...; field_n = v_n } associates the value v_i to the
   record field field_i, for i = 1 ... n. The current implementation supports
-  records with up to 2^22 − 1 fields (4194303 fields).
+  records with up to 2^22 - 1 fields (4194303 fields).
 */
 Type
   implemented-records <: records(implemented-values)
    ~> records(values) // FIX-ME: remove
 Funcon
-  implemented-record(R:records(implemented-values)) : =>implemented-records|nothing
-    ~> if-true-else(
-         is-less-or-equal(length map-points record-map R, 4194303), R, none)
+  implemented-record(R:records(implemented-values)) : =>implemented-records?
+    ~> when-true(is-less-or-equal(length map-elements record-map R, 4194303), R)
 
 /*
   In OCaml Light, records are non-mutable, and references are represented by
@@ -152,7 +153,7 @@ Type
 ## Arrays
 /*
   Arrays are finite, variable-sized sequences of values of the same type. 
-  The current implementation supports arrays containing up to 2^22 − 1 elements
+  The current implementation supports arrays containing up to 2^22 - 1 elements
   (4194303 elements) unless the elements are floating-point numbers (2097151
   elements in this case); (...)
 */
@@ -160,10 +161,9 @@ Type
   implemented-vectors <: vectors(implemented-values)
    ~> vectors(values) // FIX-ME: remove
 Funcon
-  implemented-vector(V:vectors(implemented-values)) : =>implemented-vectors|nothing
-    ~> if-true-else(
-         is-less-or-equal(length map-points record-map V, 4194303), V, none)
-
+  implemented-vector(V:vectors(implemented-values)) : =>implemented-vectors?
+    ~> when-true(is-less-or-equal(length map-elements record-map V, 4194303),V)
+// FIX ME: I think the use of "record-map" here might be an error
 
 ## Variant values
 /*
@@ -172,14 +172,14 @@ Funcon
   is written (v1, ..., vn), where the vi are said to be the arguments of the 
   non-constant constructor constr. The parentheses may be omitted if there is
   only one argument. (...) The current implementation limits each variant type
-  to have at most 246 non-constant constructors and 2^30−1 constant constructors.
+  to have at most 246 non-constant constructors and 2^30-1 constant constructors.
 */
 
 Type
   implemented-variants <: variants(implemented-values)
    ~> variants(values) // FIX-ME: remove
 Funcon
-  implemented-variant(V:variants(implemented-values)) : =>implemented-variants|nothing
+  implemented-variant(V:variants(implemented-values)) : =>implemented-variants
     ~> V
 
 
@@ -193,5 +193,5 @@ Type
    ~> functions(values, values) // FIX-ME: remove
 Funcon
   implemented-function(F:functions(implemented-values, implemented-values)) : 
-                                               =>implemented-functions|nothing
+                                                       =>implemented-functions
     ~> F

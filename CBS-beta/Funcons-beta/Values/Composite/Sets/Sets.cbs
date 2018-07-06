@@ -15,18 +15,21 @@
   Funcon element-not-in
 ]
 
+
 Meta-variables
   GT <: ground-values
 
+
 Built-in Type
-  sets(GT) <: defined-values
+  sets(GT)
 /*
   `sets(GT)` is the type of possibly-empty finite sets `{V1, ..., Vn}` 
   where `V1:GT`, ..., `Vn:GT`.
 */
 
+
 Built-in Funcon
-  set(GV*:(GT)*) : =>sets(GT)
+  set(_:(GT)*) : =>sets(GT)
 /*
   The notation `{V1, ..., Vn}` for `set(V1, ..., Vn)` is built-in.
 */
@@ -37,6 +40,7 @@ Assert
   of argument values are ignored (e.g., `{1,2,1}` denotes the same set as `{1,2}` 
   and `{2,1}`).
 */
+
 
 Built-in Funcon
   set-elements(_:sets(GT)) : =>(GT)*
@@ -49,8 +53,9 @@ Built-in Funcon
 Assert
   set(set-elements(S)) == S
 
+
 Built-in Funcon
-  is-in-set(GV:GT, S:sets(GT)) : =>booleans
+  is-in-set(_:GT, _:sets(GT)) : =>booleans
 /*
   `is-in-set(GV,S)` tests whether `GV` is in the set `S`.
 */
@@ -59,8 +64,9 @@ Assert
 Assert
   is-in-set(GV:GT, {GV}:sets(GT)) == true
 
+
 Built-in Funcon
-  is-subset(S1:sets(GT), S2:sets(GT)) : =>booleans
+  is-subset(_:sets(GT), _:sets(GT)) : =>booleans
 /*
   `is-subset(S1,S2)` tests whether `S1` is a subset of `S2`.
 */
@@ -69,16 +75,18 @@ Assert
 Assert
   is-subset(S:sets(GT), S) == true
 
+
 Built-in Funcon
-  set-insert(GV:GT, S:sets(GT)) : =>sets(GT)
+  set-insert(_:GT, _:sets(GT)) : =>sets(GT)
 /*
   `set-insert(GV, S)` returns the set union of `{GV}` and `S`.
 */
 Assert
   is-in-set(GV:GT, set-insert(GV:GT, S:sets(GT))) == true
 
+
 Built-in Funcon
-  set-unite(S*:(sets(GT))*) : =>sets(GT)
+  set-unite(_:(sets(GT))*) : =>sets(GT)
 /*
   `set-unite(...)` unites a sequence of sets.
 */
@@ -97,8 +105,9 @@ Assert
 Assert
   set-unite( ) == { }
 
+
 Built-in Funcon
-  set-intersect(S+:(sets(GT))+) : =>sets(GT)
+  set-intersect(_:(sets(GT))+) : =>sets(GT)
 /*
   `set-intersect(GT,...)` intersects a non-empty sequence of sets.
 */
@@ -115,30 +124,32 @@ Assert
 Assert
   set-intersect(S:sets(GT)) == S
 
+
 Built-in Funcon
-  set-difference(S1:sets(GT), S2:sets(GT)) : =>sets(GT)
+  set-difference(_:sets(GT), _:sets(GT)) : =>sets(GT)
 /*
   `set-difference(S1, S2)` returns the set containing those elements of `S1`
   that are not in `S2`.
 */
 
 Built-in Funcon
-  set-size(S:sets(GT)) : =>nats
+  set-size(_:sets(GT)) : =>natural-numbers
 Assert
   set-size(S:sets(GT)) == length(set-elements(S))
 
+
 Funcon
-  some-element(S:sets(GT)) : =>GT|nothing
+  some-element(_:sets(GT)) : =>GT?
 Assert
   some-element(S:sets(GT)) == index(1, set-elements(S))
 Assert
-  some-element{ } == none
+  some-element{ } == ( )
+
 
 Built-in Funcon
-  element-not-in(GT:types, S:set(GT)) : =>GT|nothing
+  element-not-in(GT:types, _:set(GT)) : =>GT?
 /*
-  `element-not-in(GT, S)` returns an element of the type `T` not in the set `S`.
-  
-  When the set of elements of `GT` is infinite, `element-not-in(GT, S)` never
-  returns `none`.
+  `element-not-in(GT, S)` gives an element of the type `GT` not in the set 
+  `S`, or `( )` when `S` is empty. When the set of elements of `GT` is infinite,
+  `element-not-in(GT, S)` never gives `( )`.
 */

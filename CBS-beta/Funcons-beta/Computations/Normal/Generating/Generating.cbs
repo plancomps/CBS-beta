@@ -8,25 +8,30 @@
   Funcon use-atom-not-in
 ]
 
+
 Meta-variables
   T <: values
+
 
 Built-in Type
   atoms
 /*
-  `atoms` is the type of defined-values used as distinguishable tags.
+  `atoms` is the type of values used as distinguishable tags.
   Notation for individual atoms is not provided.
 */
 
+
 Entity
-  < _ , used-atom-set(SA:set(atoms)) > ---> < _ , used-atom-set(SA':set(atoms)) >
+  < _ , used-atom-set(_:set(atoms)) > ---> < _ , used-atom-set(_:set(atoms)) >
+
 
 Built-in Funcon
-  initialise-generating(X:=>T) : =>T
+  initialise-generating(_:=>T) : =>T
 /*
   The initial value of the `used-atom-set(SA)` entity is unspecified. It could
   contains atoms that are reserved for internal use.
 */
+
 
 Funcon
   fresh-atom : =>atoms
@@ -38,6 +43,7 @@ Rule
   -----------------------------------------------
   < fresh-atom , used-atom-set(SA) > 
     ---> < A , used-atom-set(set-insert(A, SA)) >
+
 
 Funcon
   use-atom-not-in(_:sets(atoms)) : =>atoms

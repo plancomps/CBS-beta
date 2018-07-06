@@ -10,15 +10,11 @@ FIX-ME
 
 - [X] Correct capitalisation of `PLanCompS`
 
-- [ ] Add page generation date?
-
 ### Funcons-beta
 
 - [X] Meta-variables: use `DT<:defined-values` and `GT<:ground-values`
 
 - [X] Add 2 missing funcons to Funcons-Index
-
-- [ ] Add remaining unit tests for `Values`
 
 ### Languages-beta
 
@@ -37,10 +33,6 @@ FIX-ME
 #### MiniJava
 
 - [X] Add tests for Classes, Objects
-
-- [ ] Add further example programs
-
-- [ ] Add full priorities
 
 - [X] Represent methods by functions
 

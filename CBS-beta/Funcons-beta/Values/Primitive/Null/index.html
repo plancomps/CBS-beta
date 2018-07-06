@@ -5,7 +5,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
-  <title>Vectors</title>
+  <title>Null</title>
   <link rel="stylesheet" type="text/css" href="../../.././cbs.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>
@@ -43,7 +43,7 @@
     <a href="../../.././index.html" title="FUNCONS-BETA">Funcons-beta</a>
   </div>
   <div class="title">
-    <a href="Vectors.cbs" title="CBS SOURCE FILE">Vectors</a>
+    <a href="Null.cbs" title="CBS SOURCE FILE">Null</a>
   </div>
 </header>
 
@@ -77,33 +77,27 @@
 </nav>
 
 <pre>
-</pre><details open class="sectiondetails"><summary><pre>### <b class="title"><i>Vectors</i></b></pre></summary><pre>
+</pre><details open class="sectiondetails"><summary><pre>### <b class="title"><i>Null</i></b></pre></summary><pre>
 
 [
-  <i class="keyword">Datatype</i> <span class="name"><a href="#Name_vectors" title="values -&gt; values">vectors</a></span>
-  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_vector" title="values* -&gt; values">vector</a></span>
-  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_vector-elements" title="values -&gt; values*">vector-elements</a></span>
+<i class="keyword">Datatype</i> <span class="name"><a href="#Name_null-type" title=" -&gt; values">null-type</a></span>
+<i class="keyword">Funcon</i>   <span class="name"><a href="#Name_null-value" title=" -&gt; values">null-value</a></span> <i class="keyword">Alias</i> <span class="name"><a href="#Name_null" title=" -&gt; values">null</a></span>
 ]
 
 
-<i class="keyword">Meta-variables</i>
-  <span id="PartVariable_T" class="decl"><i class="var">T</i></span> <: <span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>
-
-
 <i class="keyword">Datatype</i>
-  <span class="name"><span id="Name_vectors" class="decl">vectors</span></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>) ::= <span id="Name_vector" class="decl">vector</span>(_:(<span id="Variable_T" class="decl"><i class="var">T</i></span>)*)
-
-
-<i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_vector-elements" class="decl">vector-elements</span></span>(_:<span class="name"><a href="#Name_vectors" title="values -&gt; values">vectors</a></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>)) : =>(<span id="Variable_T" class="decl"><i class="var">T</i></span>)*
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_vector-elements" title="values -&gt; values*">vector-elements</a></span>(<span class="name"><a href="#Name_vector" title="values* -&gt; values">vector</a></span>(<span id="Variable_V*" class="decl"><i class="var">V*</i></span>:(<i class="var">T</i>)*)) ~> <a href="#Variable_V*"><i class="var">V*</i></a></pre></details><pre>
+  <span class="name"><span id="Name_null-type" class="decl">null-type</span></span> ::= <span id="Name_null-value" class="decl">null-value</span>
+<i class="keyword">Alias</i>
+  <span class="name"><span id="Name_null" class="decl">null</span></span> = <span class="name"><a href="#Name_null-value" title=" -&gt; values">null-value</a></span>
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  The only element of the datatype `<span class="name"><a href="#Name_null-type" title=" -&gt; values">null-type</a></span>` is `<span class="name"><a href="#Name_null-value" title=" -&gt; values">null-value</a></span>`.
+</span></pre></details><pre>*/
 </pre></details><pre>
 </pre>
 
 <footer>
   <span>From the <a href="http://plancomps.org" title="PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS">PLanCompS Project, 2018</a></span>
   <span><a href="https://github.com/plancomps/plancomps.github.io/issues" title="CBS-BETA ISSUE REPORTS ON GITHUB">CBS-beta issues...</a></span>
-  <span><a href="mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20Funcons-beta/Values/Composite/Vectors/Vectors.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A" title="GENERATE AN EMAIL TEMPLATE">Suggest an improvement...</a></span>
+  <span><a href="mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20Funcons-beta/Values/Primitive/Null/Null.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A" title="GENERATE AN EMAIL TEMPLATE">Suggest an improvement...</a></span>
 </footer>
 
 </div>

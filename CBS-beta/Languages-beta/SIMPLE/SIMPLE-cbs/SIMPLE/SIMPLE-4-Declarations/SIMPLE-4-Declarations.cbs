@@ -37,11 +37,10 @@ Rule
   var-declare[[ Id ]] = bind(id[[ Id ]], allocate-variable(values))
 Rule
   var-declare[[ Id '=' Exp ]] =
-  	bind(id[[ Id ]],
-  	  allocate-initialised-variable(values, rval[[ Exp ]]))
+  	bind(id[[ Id ]], allocate-initialised-variable(values, rval[[ Exp ]]))
 Rule
   var-declare[[ Id Ranks ]] =
-  		bind(id[[ Id ]], allocate-nested-vectors(ranks[[ Ranks ]]))
+  	bind(id[[ Id ]], allocate-nested-vectors(ranks[[ Ranks ]]))
 
 
 ## 4.2 Arrays
@@ -64,11 +63,11 @@ Funcon
   allocate-nested-vectors(_:nats+) : =>variables
 Rule
   allocate-nested-vectors(N:nats) ~>
-  	allocate-initialised-variable(vectors(values),
+  	allocate-initialised-variable(vectors(variables),
   	  vector(left-to-right-repeat(allocate-variable(values),1,N)))
 Rule
   allocate-nested-vectors(N:nats,N+:nats+) ~>
-  	allocate-initialised-variable(vectors(values),
+  	allocate-initialised-variable(vectors(variables),
   	  vector(left-to-right-repeat(allocate-nested-vectors(N+),1,N)))
 
 
@@ -80,12 +79,12 @@ Syntax
 Rule
   declare[[ 'function' Id '(' Ids? ')' Block ]] =
     bind(id[[ Id ]], 
-      allocate-variable(functions(tuples(defined-values*),defined-values)))
+      allocate-variable(functions(tuples(values*),values)))
 
 Semantics
-  initialise[[ _:decl ]] : =>nothing
+  initialise[[ _:decl ]] : =>null-type
 Rule
-  initialise[[ 'var' Declarators ';' ]] = none
+  initialise[[ 'var' Declarators ';' ]] = null
 Rule
   initialise[[ 'function' Id '(' Ids? ')' Block ]] =
   	assign(
@@ -101,7 +100,7 @@ Syntax
 Semantics
   patts[[ _:ids? ]] : patterns*
 Rule
-  patts[[ ]] =
+  patts[[ ]] = ( )
 Rule
   patts[[ Id ]] = 
  	pattern closure(bind(id[[ Id ]], 
@@ -109,3 +108,4 @@ Rule
 Rule
   patts[[ Id ',' Ids ]] =
     patts[[ Id ]] , patts[[ Ids ]]
+

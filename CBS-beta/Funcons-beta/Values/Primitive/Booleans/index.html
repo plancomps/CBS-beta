@@ -45,10 +45,6 @@
   <div class="title">
     <a href="Booleans.cbs" title="CBS SOURCE FILE">Booleans</a>
   </div>
-  <div class="topic">
-    <img src="../../.././preview.png" 
-         alt="Preview badge" width="67" height="17">
-  </div>
 </header>
 
 <nav>
@@ -94,49 +90,55 @@
   <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_exclusive-or" title="values, values -&gt; values">exclusive-or</a></span>  <i class="keyword">Alias</i> <span class="name"><a href="#Name_xor" title="values, values -&gt; values">xor</a></span>
 ]
 
+
 <i class="keyword">Datatype</i>
   <span class="name"><span id="Name_booleans" class="decl">booleans</span></span> ::= <span id="Name_true" class="decl">true</span> | <span id="Name_false" class="decl">false</span>
 <i class="keyword">Alias</i>
   <span class="name"><span id="Name_bools" class="decl">bools</span></span> = <span class="name"><a href="#Name_booleans" title=" -&gt; values">booleans</a></span>
 
+
 <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_not" class="decl">not</span></span>(<span id="Variable_B" class="decl"><i class="var">B</i></span>:<span class="name"><a href="#Name_booleans" title=" -&gt; values">booleans</a></span>) : =><span class="name"><a href="#Name_booleans" title=" -&gt; values">booleans</a></span>
+  <span class="name"><span id="Name_not" class="decl">not</span></span>(_:<span class="name"><a href="#Name_booleans" title=" -&gt; values">booleans</a></span>) : =><span class="name"><a href="#Name_booleans" title=" -&gt; values">booleans</a></span>
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_not" title="values -&gt; values">not</a></span>(<i class="var">B</i>)`   is logical negation.
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
 </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_not" title="values -&gt; values">not</a></span>(<span class="name"><a href="#Name_false" title=" -&gt; values">false</a></span>) ~> <span class="name"><a href="#Name_true" title=" -&gt; values">true</a></span></pre></details><pre>
 </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_not" title="values -&gt; values">not</a></span>(<span class="name"><a href="#Name_true" title=" -&gt; values">true</a></span>) ~> <span class="name"><a href="#Name_false" title=" -&gt; values">false</a></span></pre></details><pre>
 
+
 <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_implies" class="decl">implies</span></span>(<span id="Variable_B1" class="decl"><i class="var">B<sub class="sub">1</sub></i></span>:<span class="name"><a href="#Name_booleans" title=" -&gt; values">booleans</a></span> ,<span id="Variable_B2" class="decl"><i class="var">B<sub class="sub">2</sub></i></span>:<span class="name"><a href="#Name_booleans" title=" -&gt; values">booleans</a></span>) : =><span class="name"><a href="#Name_booleans" title=" -&gt; values">booleans</a></span> 
+  <span class="name"><span id="Name_implies" class="decl">implies</span></span>(_:<span class="name"><a href="#Name_booleans" title=" -&gt; values">booleans</a></span>, _:<span class="name"><a href="#Name_booleans" title=" -&gt; values">booleans</a></span>) : =><span class="name"><a href="#Name_booleans" title=" -&gt; values">booleans</a></span> 
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_implies" title="values, values -&gt; values">implies</a></span>(<i class="var">B<sub class="sub">1</sub></i>, <i class="var">B<sub class="sub">2</sub></i>)` is logical implication.
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
 </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_implies" title="values, values -&gt; values">implies</a></span>(<span class="name"><a href="#Name_false" title=" -&gt; values">false</a></span>, <span class="name"><a href="#Name_false" title=" -&gt; values">false</a></span>) ~> <span class="name"><a href="#Name_true" title=" -&gt; values">true</a></span></pre></details><pre>
 </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_implies" title="values, values -&gt; values">implies</a></span>(<span class="name"><a href="#Name_false" title=" -&gt; values">false</a></span>, <span class="name"><a href="#Name_true" title=" -&gt; values">true</a></span>) ~> <span class="name"><a href="#Name_true" title=" -&gt; values">true</a></span></pre></details><pre>
 </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_implies" title="values, values -&gt; values">implies</a></span>(<span class="name"><a href="#Name_true" title=" -&gt; values">true</a></span>, <span class="name"><a href="#Name_true" title=" -&gt; values">true</a></span>) ~> <span class="name"><a href="#Name_true" title=" -&gt; values">true</a></span></pre></details><pre>
 </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_implies" title="values, values -&gt; values">implies</a></span>(<span class="name"><a href="#Name_true" title=" -&gt; values">true</a></span>, <span class="name"><a href="#Name_false" title=" -&gt; values">false</a></span>) ~> <span class="name"><a href="#Name_false" title=" -&gt; values">false</a></span></pre></details><pre>
 
+
 <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_and" class="decl">and</span></span>(<span id="Variable_B*" class="decl"><i class="var">B*</i></span>:<span class="name"><a href="#Name_booleans" title=" -&gt; values">booleans</a></span>*) : =><span class="name"><a href="#Name_booleans" title=" -&gt; values">booleans</a></span>
-</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_and" title="values* -&gt; values">and</a></span>(<i class="var">B</i>, ...)` is logical conjunction of any number of Boolean defined-values.
-*/</span></pre></details><pre>
+  <span class="name"><span id="Name_and" class="decl">and</span></span>(_:<span class="name"><a href="#Name_booleans" title=" -&gt; values">booleans</a></span>*) : =><span class="name"><a href="#Name_booleans" title=" -&gt; values">booleans</a></span>
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_and" title="values* -&gt; values">and</a></span>(<i class="var">B</i>, ...)` is logical conjunction of any number of Boolean values.
+</span></pre></details><pre>*/
 </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_and" title="values* -&gt; values">and</a></span>( ) ~> <span class="name"><a href="#Name_true" title=" -&gt; values">true</a></span></pre></details><pre>
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_and" title="values* -&gt; values">and</a></span>(<span class="name"><a href="#Name_false" title=" -&gt; values">false</a></span>, <span id="Variable_B*" class="decl"><i class="var">B*</i></span>:<span class="name"><a href="#Name_booleans" title=" -&gt; values">booleans</a></span>*) ~> <span class="name"><a href="#Name_false" title=" -&gt; values">false</a></span></pre></details><pre>  
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_and" title="values* -&gt; values">and</a></span>(<span class="name"><a href="#Name_false" title=" -&gt; values">false</a></span>, _*:<span class="name"><a href="#Name_booleans" title=" -&gt; values">booleans</a></span>*) ~> <span class="name"><a href="#Name_false" title=" -&gt; values">false</a></span></pre></details><pre>  
 </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_and" title="values* -&gt; values">and</a></span>(<span class="name"><a href="#Name_true" title=" -&gt; values">true</a></span>, <span id="Variable_B*" class="decl"><i class="var">B*</i></span>:<span class="name"><a href="#Name_booleans" title=" -&gt; values">booleans</a></span>*) ~> <span class="name"><a href="#Name_and" title="values* -&gt; values">and</a></span>(<a href="#Variable_B*"><i class="var">B*</i></a>)</pre></details><pre>
 
-<i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_or" class="decl">or</span></span>(<span id="Variable_B*" class="decl"><i class="var">B*</i></span>:<span class="name"><a href="#Name_booleans" title=" -&gt; values">booleans</a></span>*) : =><span class="name"><a href="#Name_booleans" title=" -&gt; values">booleans</a></span>
-</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_or" title="values* -&gt; values">or</a></span>(<i class="var">B</i>, ...)` is logical disjunction of any number of Boolean defined-values.
-*/</span></pre></details><pre>
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_or" title="values* -&gt; values">or</a></span>( ) ~> <span class="name"><a href="#Name_false" title=" -&gt; values">false</a></span></pre></details><pre>
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_or" title="values* -&gt; values">or</a></span>(<span class="name"><a href="#Name_true" title=" -&gt; values">true</a></span>, <span id="Variable_B*" class="decl"><i class="var">B*</i></span>:<span class="name"><a href="#Name_booleans" title=" -&gt; values">booleans</a></span>*) ~> <span class="name"><a href="#Name_true" title=" -&gt; values">true</a></span></pre></details><pre>
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_or" title="values* -&gt; values">or</a></span>(<span class="name"><a href="#Name_false" title=" -&gt; values">false</a></span>, <span id="Variable_B*" class="decl"><i class="var">B*</i></span>:<span class="name"><a href="#Name_booleans" title=" -&gt; values">booleans</a></span>*) ~> <span class="name"><a href="#Name_or" title="values* -&gt; values">or</a></span>(<a href="#Variable_B*"><i class="var">B*</i></a>)</pre></details><pre>
 
 <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_exclusive-or" class="decl">exclusive-or</span></span>(<span id="Variable_B1" class="decl"><i class="var">B<sub class="sub">1</sub></i></span>:<span class="name"><a href="#Name_booleans" title=" -&gt; values">booleans</a></span>, <span id="Variable_B2" class="decl"><i class="var">B<sub class="sub">2</sub></i></span>:<span class="name"><a href="#Name_booleans" title=" -&gt; values">booleans</a></span>) : =><span class="name"><a href="#Name_booleans" title=" -&gt; values">booleans</a></span>
+  <span class="name"><span id="Name_or" class="decl">or</span></span>(_:<span class="name"><a href="#Name_booleans" title=" -&gt; values">booleans</a></span>*) : =><span class="name"><a href="#Name_booleans" title=" -&gt; values">booleans</a></span>
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_or" title="values* -&gt; values">or</a></span>(<i class="var">B</i>, ...)` is logical disjunction of any number of Boolean values.
+</span></pre></details><pre>*/
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_or" title="values* -&gt; values">or</a></span>( ) ~> <span class="name"><a href="#Name_false" title=" -&gt; values">false</a></span></pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_or" title="values* -&gt; values">or</a></span>(<span class="name"><a href="#Name_true" title=" -&gt; values">true</a></span>, _*:<span class="name"><a href="#Name_booleans" title=" -&gt; values">booleans</a></span>*) ~> <span class="name"><a href="#Name_true" title=" -&gt; values">true</a></span></pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_or" title="values* -&gt; values">or</a></span>(<span class="name"><a href="#Name_false" title=" -&gt; values">false</a></span>, <span id="Variable_B*" class="decl"><i class="var">B*</i></span>:<span class="name"><a href="#Name_booleans" title=" -&gt; values">booleans</a></span>*) ~> <span class="name"><a href="#Name_or" title="values* -&gt; values">or</a></span>(<a href="#Variable_B*"><i class="var">B*</i></a>)</pre></details><pre>
+
+
+<i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_exclusive-or" class="decl">exclusive-or</span></span>(_:<span class="name"><a href="#Name_booleans" title=" -&gt; values">booleans</a></span>, _:<span class="name"><a href="#Name_booleans" title=" -&gt; values">booleans</a></span>) : =><span class="name"><a href="#Name_booleans" title=" -&gt; values">booleans</a></span>
 <i class="keyword">Alias</i>
   <span class="name"><span id="Name_xor" class="decl">xor</span></span> = <span class="name"><a href="#Name_exclusive-or" title="values, values -&gt; values">exclusive-or</a></span>
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_exclusive-or" title="values, values -&gt; values">exclusive-or</a></span>(<i class="var">B<sub class="sub">1</sub></i>, <i class="var">B<sub class="sub">2</sub></i>)` is exclusive disjunction.
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
 </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_exclusive-or" title="values, values -&gt; values">exclusive-or</a></span>(<span class="name"><a href="#Name_false" title=" -&gt; values">false</a></span>, <span class="name"><a href="#Name_false" title=" -&gt; values">false</a></span>) ~> <span class="name"><a href="#Name_false" title=" -&gt; values">false</a></span></pre></details><pre>
 </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_exclusive-or" title="values, values -&gt; values">exclusive-or</a></span>(<span class="name"><a href="#Name_false" title=" -&gt; values">false</a></span>, <span class="name"><a href="#Name_true" title=" -&gt; values">true</a></span>)  ~> <span class="name"><a href="#Name_true" title=" -&gt; values">true</a></span></pre></details><pre>
 </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_exclusive-or" title="values, values -&gt; values">exclusive-or</a></span>(<span class="name"><a href="#Name_true" title=" -&gt; values">true</a></span>, <span class="name"><a href="#Name_false" title=" -&gt; values">false</a></span>)  ~> <span class="name"><a href="#Name_true" title=" -&gt; values">true</a></span></pre></details><pre>
@@ -146,6 +148,7 @@
 
 <footer>
   <span>From the <a href="http://plancomps.org" title="PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS">PLanCompS Project, 2018</a></span>
+  <span><a href="https://github.com/plancomps/plancomps.github.io/issues" title="CBS-BETA ISSUE REPORTS ON GITHUB">CBS-beta issues...</a></span>
   <span><a href="mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20Funcons-beta/Values/Primitive/Booleans/Booleans.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A" title="GENERATE AN EMAIL TEMPLATE">Suggest an improvement...</a></span>
 </footer>
 

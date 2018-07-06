@@ -45,10 +45,6 @@
   <div class="title">
     <a href="OC-L-Start.cbs" title="CBS SOURCE FILE">OC-L-Start</a>
   </div>
-  <div class="topic">
-    <img src="../../../../../Funcons-beta/preview.png" 
-         alt="Preview badge" width="67" height="17">
-  </div>
 </header>
 
 <nav>
@@ -86,7 +82,7 @@
 <i class="keyword">Syntax</i>
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_START" class="decl">START</span></i>:</i> <span class="syn-name"><span id="SyntaxName_start" class="decl">start</span></span> ::= <span class="syn-name"><a href="../OC-L-11-Module-Implementations/index.html#SyntaxName_unit-implementation" title="( semicolon-pair * module-items semicolon-pair * ) ?">unit-implementation</a></span>
 <i class="keyword">Semantics</i>
-  <i class="sem-name"><span id="SemanticsName_start" class="decl">start</span></i>[[ _:<span class="syn-name"><a href="#SyntaxName_start" title="unit-implementation">start</a></span> ]] : =><span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Binding/index.html#Name_environments" title=" -&gt; values">environments</a></span>|<span class="name"><a href="../../../../../Funcons-beta/Values/Value-Types/index.html#Name_nothing" title=" -&gt; values">nothing</a></span>
+  <i class="sem-name"><span id="SemanticsName_start" class="decl">start</span></i>[[ _:<span class="syn-name"><a href="#SyntaxName_start" title="unit-implementation">start</a></span> ]] : =><span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Binding/index.html#Name_environments" title=" -&gt; values">environments</a></span>|<span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Null/index.html#Name_null-type" title=" -&gt; values">null-type</a></span>
 
 
 </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_start" title="[[start]] -&gt; values">start</a></i>[[ <span id="Variable_UI" class="decl"><i class="var"><a href="../OC-L-11-Module-Implementations/index.html#VariableStem_UI" title="unit-implementation">UI</a></i></span> ]] = 
@@ -124,12 +120,41 @@
   a parser, translator, and interpreter from the specifications, and checking
   that the results of running a suite of about 150 small programs using the
   generated implementation correspond to the results of running them directly.
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
+
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/* CBS-beta/Languages-beta/OCaml-Light/OC-L-cbs released 2018-07-07</span></pre></summary><pre><span class="comment">
+* Status: 
+  - abstract syntax:   complete, derived from [OCaml Manual]
+  - dynamic semantics: complete
+  - static semantics:  not specified
+  - disambiguation:    incomplete, derived from [OCaml Manual]
+* Tests:
+  - 149 small programs
+  - high coverage (to be verified)
+* Evolution:
+  - supersedes [Reusable Components of Semantic Specifications]
+* References:
+  [OCaml Implementation]: 
+    http://ocaml.org/docs/install.html
+  [OCaml Manual]:
+    https://caml.inria.fr/pub/docs/manual-ocaml-4.06
+  [A formal specification for OCaml: the Core Language]:
+    https://github.com/ott-lang/ott/tree/master/examples/ocaml_light
+  [Reusable Components of Semantic Specifications]:
+    http://plancomps.org/taosd2015
+* Keywords: 
+  - OCaml, higher-order, functional, imperative, patterns, disambiguation
+* Main contributors:
+  - recent: Peter Mosses, Neil Sculthorpe
+  - previous: Martin Churchill, Paolo Torrini
+
+</span></pre></details><pre>*/
 
 </pre>
 
 <footer>
   <span>From the <a href="http://plancomps.org" title="PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS">PLanCompS Project, 2018</a></span>
+  <span><a href="https://github.com/plancomps/plancomps.github.io/issues" title="CBS-BETA ISSUE REPORTS ON GITHUB">CBS-beta issues...</a></span>
   <span><a href="mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20OC-L/OC-L-Start/OC-L-Start.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A" title="GENERATE AN EMAIL TEMPLATE">Suggest an improvement...</a></span>
 </footer>
 

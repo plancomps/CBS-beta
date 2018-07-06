@@ -10,18 +10,21 @@
   Funcon is-submultiset
 ]
 
+
 Meta-variables
   GT <: ground-values
 
+
 Built-in Type
-  multisets(GT) <: defined-values
+  multisets(GT)
 /*
   `multisets(GT)` is the type of possibly-empty finite multisets of elements
   of `GT`. 
 */
 
+
 Built-in Funcon
-  multiset(MS:(GT)*) : =>multisets(GT)
+  multiset(_:(GT)*) : =>multisets(GT)
 /*
   Note that `multiset(...)` is not a constructor operation. The order of
   argument values is ignored, but duplicates are significant, e.g., 
@@ -29,10 +32,11 @@ Built-in Funcon
   `multiset(1, 2)` or `multiset(2, 1)`.
 */
 
+
 Built-in Funcon 
-  multiset-elements(MS:multisets(GT)) : =>(GT)*
+  multiset-elements(_:multisets(GT)) : =>(GT)*
 /*
-  For each multiset `MS`, the sequence of defined-values `V*` returned by 
+  For each multiset `MS`, the sequence of values `V*` returned by 
   `multiset-elements(MS)` contains each element of `MS` the same number of times
   as `MS` does.
   The order of the values in `V*` is unspecified, and may vary between multisets.
@@ -40,29 +44,33 @@ Built-in Funcon
 Assert
   multiset(multiset-elements(S)) == S
 
+
 Built-in Funcon
-  multiset-occurrences(GV:GT, MS:multisets(GT)) : =>nats
+  multiset-occurrences(_:GT, _:multisets(GT)) : =>natural-numbers
 /*
   `multiset-occurrences(GV, MS)` returns the number of occurrences of `GV`
   in `MS`. 
 */
 
+
 Built-in Funcon
-  multiset-insert(GV:GT, N:nats, MS:multisets(GT)) : =>multisets(GT)
+  multiset-insert(_:GT, _:natural-numbers, _:multisets(GT)) : =>multisets(GT)
 /*
   `multiset-insert(GV, N, MS)` returns the multiset that differs from `MS` 
   by containing `N` more copies of `GV`.
 */
 
+
 Built-in Funcon
-  multiset-delete(MS:multisets(GT), GV:GT, N:nats) : =>multisets(GT)
+  multiset-delete(_:multisets(GT), _:GT, _:natural-numbers) : =>multisets(GT)
 /*
  `multiset-delete(MS, GV, N)` removes `N` copies of `V` from the multiset `MS`,
  or all copies of `GV` if there are fewer than `N` in `MS`.
 */
 
+
 Built-in Funcon
-  is-submultiset(MS1:multisets(GT), MS2:multisets(GT)) : =>booleans
+  is-submultiset(_:multisets(GT), _:multisets(GT)) : =>booleans
 /*
   `is-submultiset(MS1, MS2)` tests whether every element of `MS1` has equal or
   fewer occurrences in `MS1` than in `MS2`. 

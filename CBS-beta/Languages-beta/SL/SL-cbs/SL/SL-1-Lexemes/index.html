@@ -45,10 +45,6 @@
   <div class="title">
     <a href="SL-1-Lexemes.cbs" title="CBS SOURCE FILE">SL-1-Lexemes</a>
   </div>
-  <div class="topic">
-    <img src="../../../../../Funcons-beta//preview.png" 
-         alt="Preview badge" width="67" height="17">
-  </div>
 </header>
 
 <nav>
@@ -92,7 +88,7 @@
 
 <i class="keyword">Semantics</i>
   <i class="sem-name"><span id="SemanticsName_id" class="decl">id</span></i>[[ <span id="Variable_Id" class="decl"><i class="var"><a href="#VariableStem_Id" title="id">Id</a></i></span>:<span class="syn-name"><a href="#SyntaxName_id" title="( 'a' - 'z' | 'A' - 'Z' ) ( 'a' - 'z' | 'A' - 'Z' | '0' - '9' ) *">id</a></span> ]] : => <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Binding/index.html#Name_ids" title=" -&gt; values">ids</a></span>
-</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_id" title="[[id]] -&gt; values">id</a></i>[[ <span id="Variable_Id" class="decl"><i class="var"><a href="#VariableStem_Id" title="id">Id</a></i></span> ]] = \"<a href="#Variable_Id"><i class="var">Id</i></a>\"</pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_id" title="[[id]] -&gt; values">id</a></i>[[ <span id="Variable_Id" class="decl"><i class="var"><a href="#VariableStem_Id" title="id">Id</a></i></span> ]] = \"<a href="#Variable_Id"><i class="var">Id</i></a>\"</pre></details><pre>
 
 </pre></details><pre></pre><details open class="sectiondetails"><summary><pre>## <b class="title"><i>Numerals</i></b></pre></summary><pre>
 
@@ -103,26 +99,27 @@
 
 <i class="keyword">Semantics</i>
   <i class="sem-name"><span id="SemanticsName_int-val" class="decl">int-val</span></i>[[ <span id="Variable_Int" class="decl"><i class="var"><a href="#VariableStem_Int" title="int">Int</a></i></span>:<span class="syn-name"><a href="#SyntaxName_int" title="'-' ? _ nat">int</a></span> ]] : => <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Integers/index.html#Name_integers" title=" -&gt; values">integers</a></span>
-</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_int-val" title="[[int]] -&gt; values">int-val</a></i>[[ <b class="atom">'-'</b> <span id="Variable_Nat" class="decl"><i class="var"><a href="#VariableStem_Nat" title="nat">Nat</a></i></span> ]] = <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Integers/index.html#Name_integer-negate" title="values -&gt; values">integer-negate</a></span> <i class="sem-name"><a href="#SemanticsName_int-val" title="[[int]] -&gt; values">int-val</a></i>[[<a href="#Variable_Nat"><i class="var"><a href="#VariableStem_Nat" title="nat">Nat</a></i></a>]]
-</pre></details><pre></pre><details class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_int-val" title="[[int]] -&gt; values">int-val</a></i>[[ <span id="Variable_Nat" class="decl"><i class="var"><a href="#VariableStem_Nat" title="nat">Nat</a></i></span> ]] = <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Integers/index.html#Name_decimal-natural" title="values -&gt; values">decimal-natural</a></span> \"<a href="#Variable_Nat"><i class="var">Nat</i></a>\"</pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_int-val" title="[[int]] -&gt; values">int-val</a></i>[[ <b class="atom">'-'</b> <span id="Variable_Nat" class="decl"><i class="var"><a href="#VariableStem_Nat" title="nat">Nat</a></i></span> ]] = <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Integers/index.html#Name_integer-negate" title="values -&gt; values">integer-negate</a></span> <i class="sem-name"><a href="#SemanticsName_int-val" title="[[int]] -&gt; values">int-val</a></i>[[<a href="#Variable_Nat"><i class="var"><a href="#VariableStem_Nat" title="nat">Nat</a></i></a>]]
+</pre></details><pre></pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_int-val" title="[[int]] -&gt; values">int-val</a></i>[[ <span id="Variable_Nat" class="decl"><i class="var"><a href="#VariableStem_Nat" title="nat">Nat</a></i></span> ]] = <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Integers/index.html#Name_decimal-natural" title="values -&gt; values?">decimal-natural</a></span> \"<a href="#Variable_Nat"><i class="var">Nat</i></a>\"</pre></details><pre>
 
 </pre></details><pre></pre><details open class="sectiondetails"><summary><pre>## <b class="title"><i>Strings</i></b></pre></summary><pre>
 
 <i class="keyword">Syntax</i>
-       <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_String" class="decl">String</span></i> :</i>       <span class="syn-name"><span id="SyntaxName_string" class="decl">string</span></span> ::= <b class="atom">'"'</b> _ <span class="syn-name"><a href="#SyntaxName_string-chars" title="string-char *">string-chars</a></span> _ <b class="atom">'"'</b>
+  <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_String" class="decl">String</span></i> :</i> <span class="syn-name"><span id="SyntaxName_string" class="decl">string</span></span> ::= <b class="atom">'"'</b> _ <span class="syn-name"><a href="#SyntaxName_string-chars" title="string-char *">string-chars</a></span> _ <b class="atom">'"'</b>
 <i class="keyword">Lexis</i>
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_StringChars" class="decl">StringChars</span></i> :</i> <span class="syn-name"><span id="SyntaxName_string-chars" class="decl">string-chars</span></span> ::= <span class="syn-name"><a href="#SyntaxName_string-char" title="~ ( '"' | '\n' )">string-char</a></span>*
   
-                 <i class="keyword"></i><i class="var"></i><span class="syn-name"><span id="SyntaxName_string-char" class="decl">string-char</span></span> ::= ~( <b class="atom">'"'</b> | <b class="atom">'\n'</b> )
+  <i class="keyword"></i><i class="var"></i><span class="syn-name"><span id="SyntaxName_string-char" class="decl">string-char</span></span> ::= ~( <b class="atom">'"'</b> | <b class="atom">'\n'</b> )
 
 <i class="keyword">Semantics</i>
   <i class="sem-name"><span id="SemanticsName_string-val" class="decl">string-val</span></i>[[ <span id="Variable_String" class="decl"><i class="var"><a href="#VariableStem_String" title="string">String</a></i></span>:<span class="syn-name"><a href="#SyntaxName_string" title="'"' _ string-chars _ '"'">string</a></span> ]] : => <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_strings" title=" -&gt; values">strings</a></span>
-</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_string-val" title="[[string]] -&gt; values">string-val</a></i>[[ <b class="atom">'"'</b> <span id="Variable_StringChars" class="decl"><i class="var"><a href="#VariableStem_StringChars" title="string-chars">StringChars</a></i></span> <b class="atom">'"'</b> ]] = \"<a href="#Variable_StringChars"><i class="var">StringChars</i></a>\"</pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_string-val" title="[[string]] -&gt; values">string-val</a></i>[[ <b class="atom">'"'</b> <span id="Variable_StringChars" class="decl"><i class="var"><a href="#VariableStem_StringChars" title="string-chars">StringChars</a></i></span> <b class="atom">'"'</b> ]] = \"<a href="#Variable_StringChars"><i class="var">StringChars</i></a>\"</pre></details><pre>
 </pre></details><pre>
 </pre>
 
 <footer>
   <span>From the <a href="http://plancomps.org" title="PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS">PLanCompS Project, 2018</a></span>
+  <span><a href="https://github.com/plancomps/plancomps.github.io/issues" title="CBS-BETA ISSUE REPORTS ON GITHUB">CBS-beta issues...</a></span>
   <span><a href="mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20SL/SL-1-Lexemes/SL-1-Lexemes.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A" title="GENERATE AN EMAIL TEMPLATE">Suggest an improvement...</a></span>
 </footer>
 

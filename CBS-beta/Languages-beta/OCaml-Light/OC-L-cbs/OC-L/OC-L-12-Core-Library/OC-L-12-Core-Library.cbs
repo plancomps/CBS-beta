@@ -5,9 +5,10 @@ Language "OCaml Light"
 [
 Funcon ocaml-light-core-library
 Funcon ocaml-light-match-failure
-Funcon is-structurally-equal
+Funcon ocaml-light-is-structurally-equal
 Funcon ocaml-light-to-string
-Funcon record-map
+Funcon ocaml-light-define-and-display
+Funcon ocaml-light-evaluate-and-display
 ]
 
 Meta-variables
@@ -48,13 +49,13 @@ Auxiliary Funcon
     ~> given
 Auxiliary Funcon
   arg-1 : tuples(S1,S*)=>S1
-    ~> index(1, tuple-elements given)
+    ~> checked index(1, tuple-elements given)
 Auxiliary Funcon
   arg-2 : tuples(S1,S2,S*)=>S2
-    ~> index(2, tuple-elements given)
+    ~> checked index(2, tuple-elements given)
 Auxiliary Funcon
   arg-3 : tuples(S1,S2,S3,S*)=>S3
-    ~> index(3, tuple-elements given)
+    ~> checked index(3, tuple-elements given)
 
 
 ## Library
@@ -79,7 +80,7 @@ Funcon
     "Invalid_argument" |->
 	  op-1(variant("Invalid_argument", arg)),
     "Division_by_zero" |->
-	  variant("Division_by_zero", null),
+	  variant("Division_by_zero", tuple( )),
 
 	// Exceptions	
 	"raise" |->
@@ -87,9 +88,9 @@ Funcon
 
     //Comparisons
     "(=)" |->
-	  op-2(is-structurally-equal(arg-1, arg-2)),
+	  op-2(ocaml-light-is-structurally-equal(arg-1, arg-2)),
 	"(<>)" |->
-	  op-2(not(is-structurally-equal(arg-1, arg-2))),
+	  op-2(not(ocaml-light-is-structurally-equal(arg-1, arg-2))),
 	"(<)" |->
 	  op-2(is-less(arg-1, arg-2)),
 	"(>)" |->
@@ -134,10 +135,10 @@ Funcon
 	  op-2(implemented-integer integer-multiply(arg-1, arg-2)),
 	"(/)" |->
 	  op-2(implemented-integer if-true-else(is-equal(arg-2, 0),
-					throw(variant("Division_by_zero", null)),
-					integer-divide(arg-1, arg-2))),
+					throw(variant("Division_by_zero", tuple( ))),
+					checked integer-divide(arg-1, arg-2))),
 	"(mod)" |->
-	  op-2(implemented-integer integer-modulo(arg-1, arg-2)),
+	  op-2(implemented-integer checked integer-modulo(arg-1, arg-2)),
  	"abs" |->
 	  op-1(implemented-integer integer-absolute-value(arg)),
 	"max_int" |->
@@ -248,15 +249,15 @@ Funcon
 	// Input/output
 	//   Output functions on standard output
     "print_char" |->
-	  op-1(sequential(print(to-string(arg)), null)),
+	  op-1(print(to-string(arg))),
 	"print_string" |->
-	  op-1(sequential(print(arg), null)),
+	  op-1(print(arg)),
     "print_int" |->
-	  op-1(sequential(print(to-string(arg)), null)),
+	  op-1(print(to-string(arg))),
  	"print_float" |->
-	  op-1(sequential(print(to-string(arg)), null)),
+	  op-1(print(to-string(arg))),
 	"print_newline" |->
-	  op-1(sequential(print "\n", null)),
+	  op-1(print "\n"),
 	//   Input functions on standard input
     "read_line" |->
 	  op-1(read),
@@ -271,7 +272,7 @@ Funcon
 	"(!)" |->
 	  op-1(assigned(arg)),
 	"(:=)" |->
-	  op-2(sequential(assign(arg-1, arg-2), null)),
+	  op-2(assign(arg-1, arg-2)),
 
     // Module List
 	"length" |->
@@ -297,15 +298,17 @@ Funcon
     "array_append" |->
 	  op-2(vector(vector-elements(arg-1), vector-elements(arg-2))),
     "array_get" |->
-	  op-2(else(assigned(def index(nat-succ arg-2, vector-elements(arg-1))),
+	  op-2(else(assigned(checked index(nat-succ arg-2, vector-elements(arg-1))),
     			throw(variant("Invalid_argument", "array_get")))),
     "array_set" |->
-	  op-3(else(assign(def index(nat-succ arg-2, vector-elements(arg-1)), arg-3),
+	  op-3(else(assign(checked index(nat-succ arg-2, vector-elements(arg-1)), arg-3),
 				throw(variant("Invalid_argument", "array_set"))))
    }
 
 
 ## Language-specific funcons
+
+### Exception values
 
 Funcon
   ocaml-light-match-failure : =>variants(M)
@@ -316,88 +319,94 @@ Funcon
   but these are currently not included in the translation of OCaml Light.
 */
 
+### Structural equality
+
 Funcon
-  is-structurally-equal(_:T, _:T) : =>booleans
+  ocaml-light-is-structurally-equal(_:implemented-values, _:implemented-values) : 
+                                                                       =>booleans
 /*
-  `is-structurally-equal(V1, V2)` is false whenever `V1` or `V2` contains a
+  `ocaml-light-is-structurally-equal(V1, V2)` is false whenever `V1` or `V2` contains a
   function. For vectors, it compares all their respective assigned values.
   It is equality on primitive values, and defined inductively on composite values.
 */
 
-// Unit value
+// Unit Type
 Rule
-  is-structurally-equal(null, null) ~> true
+  ocaml-light-is-structurally-equal(null-value, null-value) ~> true
 // Booleans
 Rule
-  is-structurally-equal(B1:booleans, B2:booleans) ~> is-equal(B1,B2)
+  ocaml-light-is-structurally-equal(B1:booleans, B2:booleans) ~> is-equal(B1,B2)
 // Integers
 Rule
-  is-structurally-equal(I1:implemented-integers, I2:implemented-integers) ~>
+  ocaml-light-is-structurally-equal(I1:implemented-integers, I2:implemented-integers) ~>
   	is-equal(I1,I2)
 // Floats
 Rule
-  is-structurally-equal(F1:implemented-floats, F2:implemented-floats) ~>
+  ocaml-light-is-structurally-equal(F1:implemented-floats, F2:implemented-floats) ~>
   	is-equal(F1,F2)
 // Characters
 Rule
-  is-structurally-equal(C1:implemented-characters, C2:implemented-characters) ~>
+  ocaml-light-is-structurally-equal(C1:implemented-characters, C2:implemented-characters) ~>
   	is-equal(C1,C2)
 // Strings
 Rule
-  is-structurally-equal(S1:implemented-strings, S2:implemented-strings) ~>
+  ocaml-light-is-structurally-equal(S1:implemented-strings, S2:implemented-strings) ~>
   	is-equal(S1,S2)
-// Functions
-Rule
-  is-structurally-equal(_:functions(_,_), _:functions(_,_)) ~>
-  	throw(variant("Invalid_argument", "equal: functional value"))
-// References
-Rule
-  is-structurally-equal(V1:variables, V2:variables) ~>
-  	is-structurally-equal(assigned(V1), assigned(V2))
-// Lists
-Rule
-  is-structurally-equal([], []) ~> true
-Rule
-  is-structurally-equal([], [V+]) ~> false
-Rule
-  is-structurally-equal([V+], []) ~> false
-Rule
-  is-structurally-equal([V,V*], [W,W*]) ~>
-  	and(is-structurally-equal(V,W), is-structurally-equal([V*], [W*]))
 // Tuples
 Rule
-  is-structurally-equal(tuple(), tuple()) ~> true
+  ocaml-light-is-structurally-equal(tuple(), tuple()) ~> true
 Rule
-  is-structurally-equal(tuple(), tuple(V+)) ~> false
+  ocaml-light-is-structurally-equal(tuple(), tuple(V+)) ~> false
 Rule
-  is-structurally-equal(tuple(V+), tuple()) ~> false
+  ocaml-light-is-structurally-equal(tuple(V+), tuple()) ~> false
 Rule
-  is-structurally-equal(tuple(V, V*), tuple(W, W*)) ~>
-  	and(is-structurally-equal(V, W), is-structurally-equal(tuple(V*), tuple(W*)))
-// Variants
+  ocaml-light-is-structurally-equal(tuple(V, V*), tuple(W, W*)) ~>
+  	and(ocaml-light-is-structurally-equal(V, W), ocaml-light-is-structurally-equal(tuple(V*), tuple(W*)))
+// Lists
 Rule
-  is-structurally-equal(variant(Con1,V1), variant(Con2,V2)) ~>
-  	if-true-else(
-  	  is-equal(Con1, Con2),
-  	  if-true-else(
-  	  	or(is-equal(null, V1), is-equal(null, V2)),
-  	  	and(is-equal(null, V1), is-equal(null, V2)),
-  	  	is-structurally-equal(V1, V2)),
-  	  false)
+  ocaml-light-is-structurally-equal([], []) ~> true
+Rule
+  ocaml-light-is-structurally-equal([], [V+]) ~> false
+Rule
+  ocaml-light-is-structurally-equal([V+], []) ~> false
+Rule
+  ocaml-light-is-structurally-equal([V,V*], [W,W*]) ~>
+  	and(ocaml-light-is-structurally-equal(V,W), ocaml-light-is-structurally-equal([V*], [W*]))
 // Records
 Rule
                        dom(Map1) == dom(Map2)
   ----------------------------------------------------------------------
-  is-structurally-equal(record(Map1:maps(_,_)), record(Map2:maps(_,_)))
+  ocaml-light-is-structurally-equal(record(Map1:maps(_,_)), record(Map2:maps(_,_)))
     ~> not(is-in-set(false, 
          set(interleave-map(
-           is-structurally-equal(lookup(Map1, given), lookup(Map2, given)),
+           ocaml-light-is-structurally-equal(
+             checked lookup(Map1, given), 
+             checked lookup(Map2, given)),
            set-elements(dom(Map1))))))
+// References
+Rule
+  ocaml-light-is-structurally-equal(V1:variables, V2:variables) ~>
+  	ocaml-light-is-structurally-equal(assigned(V1), assigned(V2))
 // Vectors
 Rule
-  is-structurally-equal(Vec1:vectors(values), Vec2:vectors(values)) ~>
-  	is-structurally-equal([vector-elements(Vec1)], [vector-elements(Vec2)])
+  ocaml-light-is-structurally-equal(Vec1:vectors(values), Vec2:vectors(values)) ~>
+  	ocaml-light-is-structurally-equal([vector-elements(Vec1)], [vector-elements(Vec2)])
+// Variants
+Rule
+  ocaml-light-is-structurally-equal(variant(Con1,V1), variant(Con2,V2)) ~>
+  	if-true-else(
+  	  is-equal(Con1, Con2),
+  	  if-true-else(
+  	  	or(is-equal(tuple( ), V1), is-equal(tuple( ), V2)),
+  	  	and(is-equal(tuple( ), V1), is-equal(tuple( ), V2)),
+  	  	ocaml-light-is-structurally-equal(V1, V2)),
+  	  false)
+// Functions
+Rule
+  ocaml-light-is-structurally-equal(_:functions(_,_), _:functions(_,_)) ~>
+  	throw(variant("Invalid_argument", "equal: functional value"))
 
+### Console display
 
 Funcon
   ocaml-light-to-string(_:values) : =>strings
@@ -428,7 +437,7 @@ Rule // References
   	string-append("ref ", ocaml-light-to-string(assigned(V)))
 Rule // Variants
   ocaml-light-to-string(variant(Con,Arg)) ~>
-  	if-true-else(is-equal(null,Arg), Con,
+  	if-true-else(is-equal(tuple( ),Arg), Con,
   	  string-append(Con, " ", ocaml-light-to-string(Arg)))
 Rule // Tuples
   ocaml-light-to-string(tuple(V:values, V+:values+)) ~>
@@ -455,15 +464,20 @@ Rule // Records
   	  "{",
   	  intersperse("; ", interleave-map(
   	        string-append(arg-1," = ",ocaml-light-to-string(arg-2)),
-  	        map-points(M))),
+  	        map-elements(M))),
   	  "}")
 
-
-## Records
-
-// FIX-ME: Move to Funcons-beta.
+Funcon
+  ocaml-light-define-and-display(Env:envs) : =>envs
+   ~> sequential(
+        effect left-to-right-map(
+          print(arg-1, " = ", ocaml-light-to-string arg-2, "\n"),
+          map-elements Env), 
+        Env)
 
 Funcon
-  record-map(R:records(T)) : =>maps(ids,T)
-Rule
-  record-map(record(M:maps(_,_))) ~> M
+  ocaml-light-evaluate-and-display(V:implemented-values) : =>envs
+   ~> sequential(
+        print("- = ", ocaml-light-to-string V, "\n"), 
+        map())
+  	  

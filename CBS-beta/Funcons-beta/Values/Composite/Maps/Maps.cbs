@@ -4,7 +4,6 @@
   Type   maps
   Funcon map
   Funcon map-elements
-  Funcon map-points
   Funcon map-lookup    Alias lookup
   Funcon map-domain    Alias dom
   Funcon map-override
@@ -12,94 +11,98 @@
   Funcon map-delete
 ]
 
+
 Meta-variables
   GT <: ground-values
-  T <: values
+  T? <: values?
+
 
 Built-in Type
-  maps(GT, T) <: defined-values
+  maps(GT, T?)
 /*
-  `maps(GT, T)` is the type of possibly-empty finite maps from values of 
-  type `GT` to values of type `T`.
+  `maps(GT, T?)` is the type of possibly-empty finite maps from values of 
+  type `GT` to optional values of type `T?`.
 */
 
+
 Built-in Funcon
-  map(KV*:(GT, T)*) : maps(GT, T)|nothing
+  map(_:(tuples(GT, T?))*) : =>(maps(GT, T?))?
 /* 
-  `map(K1, V1, ..., Kn, Vn)` constructs a map from `K1:GT` to `V1:T`, ..., 
-  `Kn:GT` to `Vn:T`, provided that `K1`, ..., `Kn` are distinct, otherwise the
-  result is `none`.   Note that `map(...)` is not a constructor operation.
+  `map(tuple(K1, V1?), ..., tuple(Kn, Vn?))` constructs a map from 
+  `K1` to `V1?`, ..., `Kn` to `Vn?`, provided that `K1`, ..., `Kn`
+  are distinct, otherwise the result is `( )`.
   
-  The built-in notation `{K1|->V1, ..., Kn|->Vn}` is equivalent to 
-  `map(K1 ,V1, ..., Kn, Vn)`. Note however that maps are not identified with
-  sets of pairs, since the defined-values `Vi` need not be in `ground-values`.
+  Note that `map(...)` is not a constructor operation.
   
-  When ``T <: types``, ``maps(GT, T) <: types``. A type-map `MT:maps(GT, T)`
-  represents the set of value-maps `MV:maps(GT, values)` such that 
-  `dom(MV)` is a subset of `dom(MT)` and for all `GV` in `dom(MV)`, 
-  ``map-lookup(MV, GV) : map-lookup(MT,GV)``.
+  The built-in notation `{K1|->V1?, ..., Kn|->Vn?}` is equivalent to 
+  `map(tuple(K1, V1?), ..., tuple(Kn, Vn?))`. Note however that in general, 
+  maps cannot be identified with sets of tuples, since the values `Vi?` are 
+  not restricted to `ground-values`.
+  
+  When ``T? <: types``, ``maps(GT, T?) <: types``. The type `MT:maps(GT, T?)`
+  represents the set of value-maps `MV:maps(GT, values?)` such that 
+  `dom(MV)` is a subset of `dom(MT)` and for all `K` in `dom(MV)`, 
+  ``map-lookup(MV, K) : map-lookup(MT, K)``.
 */
 
+
 Built-in Funcon
-  map-elements(M:maps(GT, T)) : =>(GT, T)*
+  map-elements(_:maps(GT, T?)) : =>(tuples(GT, T?))*
 /*
-  For each map `M`, the sequence of values (K1, V1, ..., Kn, Vn) 
-  returned by `map-elements(M)` contains each mapped value `Ki` just once. 
-  The order of the pairs is unspecified, and may vary between maps.
+  The sequence of tuples `(tuple(K1, V1?), ..., tuple(Kn, Vn?))` given by
+  `map-elements(M)` contains each mapped value `Ki` just once. The order of
+  the elements is unspecified, and may vary between maps.
 */
 Assert
   map(map-elements(M)) == M
 
-Built-in Funcon
-  map-points(M:maps(GT, T)) : =>(tuples(GT, T))*
-/*
-  For each map `M`, the sequence of pairs `tuple(K1, V1)`, ..., `tuple(Kn, Vn)`
-  returned by `map-points(M)` contains each mapped value `Ki` just once. 
-  The order of the pairs is unspecified, and may vary between maps.
-*/
 
 Built-in Funcon
-  map-lookup(M:maps(GT, T), K:GT) : =>T|nothing
+  map-lookup(_:maps(GT, T?), K:GT) : =>(T?)?
 Alias
   lookup = map-lookup
 /*
-  `map-lookup(M,K)` gives the value to which `K` is mapped by `M`, if any,
-  and otherwise `none`.
+  `map-lookup(M,K)` gives the optional value to which `K` is mapped by `M`,
+  if any, and otherwise `( )`.
 */
 
+
 Built-in Funcon
-  map-domain(M:maps(GT, T)) : =>sets(GT)
+  map-domain(_:maps(GT, T?)) : =>sets(GT)
 Alias
   dom = map-domain
 /*
-  `map-domain(M)` gives the set of defined-values mapped by `M`.
+  `map-domain(M)` gives the set of values mapped by `M`.
   
-  `map-lookup(M, K)` is always `none` when `K` is not in `map-domain(M)`.
-  Note that `map-lookup(M, K)` may be `none` also when `K` is in `map-domain(M)`
-  (e.g., `M` could be `{K|->none}`).
+  `map-lookup(M, K)` is always `( )` when `K` is not in `map-domain(M)`.
 */
 
+
 Built-in Funcon
-  map-override(M*:(maps(GT, T))*) : =>maps(GT,T)
+  map-override(_:(maps(GT, T?))*) : =>maps(GT,T?)
 /*
   `map-override(...)` takes a sequence of maps. It returns the map whose
   domain is the union of their domains, and which maps each of those values
-  to the same value as the first map in the sequence in whose domain it occurs
-  (regardless of whether that value is `none`). When the domains of the `M*`
-  are disjoint, `map-override(M*)` is equivalent to `map-unite(M*)`.
+  to the same optional value as the first map in the sequence in whose domain 
+  it occurs
+  . 
+  When the domains of the `M*` are disjoint, `map-override(M*)` is equivalent
+  to `map-unite(M*)`.
 */
 
+
 Built-in Funcon
-  map-unite(M*:(maps(GT, T))*) : =>maps(GT, T)|nothing
+  map-unite(_:(maps(GT, T?))*) : =>(maps(GT, T?))?
 /*
   `map-unite(...)` takes a sequence of maps. It returns the map whose
   domain is the union of their domains, and which maps each of those values
-  to the same value as the map in the sequence in whose domain it occurs,
-  provided that those domains are disjoint - otherwise the result is `none`.
+  to the same optional value as the map in the sequence in whose domain it occurs,
+  provided that those domains are disjoint - otherwise the result is `( )`.
 */
 
+
 Built-in Funcon
-  map-delete(M:maps(GT, T), S:sets(GT)) : =>maps(GT, T)
+  map-delete(_:maps(GT, T?), _:sets(GT)) : =>maps(GT, T?)
 /*
   `map-delete(M, S)` takes a map `M` and a set of values `S`, and returns the
   map obtained from `M` by removing `S` from its domain. 

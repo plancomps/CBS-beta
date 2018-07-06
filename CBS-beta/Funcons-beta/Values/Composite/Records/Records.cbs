@@ -3,20 +3,30 @@
 [
   Datatype records
   Funcon   record
+  Funcon   record-map
   Funcon   record-select
 ]
+
 
 Meta-variables
   T <: values
 
+
 Datatype
-  records(T) ::= record(_:maps(ids,T))
+  records(T) ::= record(_:maps(identifiers,T))
 /*
   A value of type `records(T)` contains a map from identifiers to values of
   type `T`.
 */
 
+
 Funcon
-  record-select(R:records(T), I:ids) : =>T|nothing
+  record-map(_:records(T)) : =>maps(identifiers,T)
 Rule
-  record-select(record(M:maps(_,_)), I:ids) ~> lookup(M, I)
+  record-map(record(M:maps(_,_))) ~> M
+
+
+Funcon
+  record-select(R:records(T), I:identifiers) : =>T?
+   ~> map-lookup(record-map(R), I)
+  

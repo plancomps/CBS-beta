@@ -8,47 +8,53 @@
   Funcon   handle-return
 ]
 
+
 Meta-variables
   T <: values
 
+
 Datatype
-  returning ::= returned(V:values)
+  returning ::= returned(_:values)
 /*
-  `returned(V)` is a reason for abrupt termination.
+  `returned(V?)` is a reason for abrupt termination.
 */
 
+
 Funcon
-  finalise-returning(X:=>T) : =>T|nothing
+  finalise-returning(X:=>T) : =>T|null-type
    ~> finalise-abrupting(X)
 /*
   `finalise-returning(X)` handles abrupt termination of `X` due to
   executing `return(V)`.
 */
 
+
 Funcon
   return(V:T) : =>empty-type
    ~> abrupt(returned(V))
 /*
-  `return(V)` abruptly terminates all enclosing computations until it is handled.
+  `return(V)` abruptly terminates all enclosing computations until it is
+  handled, then giving `V`. Note that `V` may be `null-value`.
 */
 
+
 Funcon
-  handle-return(X:=>T) : =>T
+  handle-return(_:=>T) : =>T
 /*
   `handle-return(X)` first evaluates `X`. If `X` either terminates abruptly for 
   reason `returned(V)`, or terminates normally with value `V`, it gives `V`.
 */
 Rule
-                 X -- abrupted( ) -> X'
-  ----------------------------------------------------
-  handle-return(X) -- abrupted( ) -> handle-return(X')
+                 X --abrupted( )-> X'
+  --------------------------------------------------
+  handle-return(X) --abrupted( )-> handle-return(X')
 Rule
-  X -- abrupted(returned(V:values)) -> X'
-  ---------------------------------------
-  handle-return(X) -- abrupted( ) -> V
+  X --abrupted(returned(V:values))-> X'
+  ----------------------------------------------
+  handle-return(X) --abrupted( )-> V
 Rule
-                 X -- abrupted(V':~returning) -> X'
-  -----------------------------------------------------
-  handle-return(X) -- abrupted(V') -> handle-return(X')
+                 X --abrupted(V':~returning)-> X'
+  ---------------------------------------------------
+  handle-return(X) --abrupted(V')-> handle-return(X')
 Rule
   handle-return(V:T) ~> V

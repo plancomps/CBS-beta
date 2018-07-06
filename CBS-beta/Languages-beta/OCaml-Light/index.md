@@ -1,11 +1,10 @@
-OCaml Light ![PREVIEW](../../Funcons-beta/preview.png)
+OCaml Light
 ===========
 
 OCaml Light is a core sublanguage of [OCaml], corresponding closely to 
 [Caml Light] (an obsolete pedagogical functional programming language). 
 
-The CBS of OCaml Light is useful for illustrating the use of funcons for
-specifying the semantics of higher-order programming language features. 
+Its CBS illustrates scaling up to a medium-sized language. 
 The start of the specification of OCaml Light in CBS is at [OC-L-Start].
 
 

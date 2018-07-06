@@ -10,12 +10,14 @@
   Funcon   follow-if-link
 ]
 
+
 Meta-variables
-  DT <: defined-values
   T <: values
+
 
 Datatype
   links ::= link(_:variables)
+
 
 Funcon
   initialise-linking(X:=>T) : =>T
@@ -25,31 +27,36 @@ Funcon
   linking are properly initialised.
 */
 
-Funcon
-  fresh-link(DT) : =>links
-    ~> link(allocate-variable(DT))
 
 Funcon
-  fresh-initialised-link(DT, V:DT) : =>links
-    ~> link(allocate-initialised-variable(DT, V))
+  fresh-link(T) : =>links
+    ~> link(allocate-variable(T))
+
+
+Funcon
+  fresh-initialised-link(T, V:T) : =>links
+    ~> link(allocate-initialised-variable(T, V))
 Alias
   fresh-init-link = fresh-initialised-link
 
+
 Funcon
-  set-link(L:links, V:DT) : =>nothing
+  set-link(_:links, _:T) : =>null-type
 /*
   The value of a link can be set only once.
 */
 Rule
-  set-link(link(Var:variables),V:DT) ~> initialise-variable(Var,V)
+  set-link(link(Var:variables), V:T) ~> initialise-variable(Var, V)
+
 
 Funcon
-  follow-link(L:links) : =>defined-values
+  follow-link(_:links) : =>values
 Rule
   follow-link(link(Var:variables)) ~> assigned(Var)
 
+
 Funcon
-  follow-if-link(V:defined-values) : =>defined-values
+  follow-if-link(_:values) : =>values
 /*
   If `V` is a link, `follow-if-link(V)` computes the set value, and
   otherwise it evaluates to `V`.
@@ -57,6 +64,4 @@ Funcon
 Rule
   follow-if-link(link(Var:variables)) ~> assigned(Var)
 Rule
-   V : ~ (links|nothing)
-  -----------------------
-  follow-if-link(V) ~> V
+  follow-if-link(V:~links) ~> V

@@ -6,7 +6,7 @@ Syntax
   Pgm : pgm ::= 'int' idlist ';' stmt
 
 Semantics
-  run[[ _:pgm ]] : =>nothing
+  run[[ _:pgm ]] : =>null-type
 Rule
   run[[ 'int' IL ';' Stmt ]] = 
 	scope( collateral(declare-int-vars[[ IL ]]), 

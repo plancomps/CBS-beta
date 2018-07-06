@@ -27,11 +27,11 @@
 
 
 Built-in Type
-  characters <: defined-values
+  characters <: values
 /*
   Literal characters can be written `'C'` where `C` is any visible character
-  other than a single quote or backslash character, which needs to be escaped:
-  `'\''` and `'\\'`.
+  other than a `single-quote` or `backslash` character, which need to be
+  escaped as `'\''` and `'\\'`.
 */
 Alias
   chars = characters
@@ -50,15 +50,15 @@ Alias
 Built-in Type
   unicode-points <: bounded-integers(0, unsigned-bit-vector-maximum(21))
 Built-in Funcon
-  unicode-character(UP:unicode-points) : unicode-characters
+  unicode-character(_:unicode-points) : unicode-characters
 Alias
   char = unicode-character
 /*
-  The defined-values in `unicode-characters` are the defined-values of
+  The values in `unicode-characters` are the values of
   `unicode-character(UP:unicode-points)`.
 */
 Funcon
-  unicode-point(UC:unicode-characters) : =>unicode-points
+  unicode-point(_:unicode-characters) : =>unicode-points
 Alias
   unicode = unicode-point
 Rule
@@ -78,7 +78,7 @@ Built-in Type
   basic-multilingual-plane-points <:
     bounded-integers(0, unsigned-bit-vector-maximum(17))
 /*
-  The defined-values in `basic-multilingual-plane-characters` are the values of
+  The values in `basic-multilingual-plane-characters` are the values of
   `unicode-character(BMPP:basic-multilingual-plane-points)`.
 */
 
@@ -110,21 +110,21 @@ Type
   `unicode-character(AP:ascii-points)`.
 */
 Funcon
-  ascii-character(S:strings) : =>ascii-characters|nothing
+  ascii-character(_:strings) : =>ascii-characters?
 /*
-  `ascii-character"C"` takes a string containing a single ASCII character `C`
-  and gives the character; the value is undefined on all other strings.
+  `ascii-character"C"` takes a string. When it consists of a single ASCII
+  character `C` it gives the character, otherwise `( )`.
 */
 Rule
   ascii-character[C:ascii-characters] ~> C
 Rule
   C : ~ ascii-characters
-  -------------------------------------
-  ascii-character[C:characters] ~> none
+  ------------------------------------
+  ascii-character[C:characters] ~> ( )
 Rule
   length(C*) =/= 1
-  ---------------------------------------
-  ascii-character[C*:characters*] ~> none
+  --------------------------------------
+  ascii-character[C*:characters*] ~> ( )
 
 
 #### Character point encodings
@@ -133,11 +133,11 @@ Rule
 */
 
 Built-in Funcon
-  utf-8(UP:unicode-points) : =>(octets, (octets, (octets, octets?)? )? )
+  utf-8(_:unicode-points) : =>(bytes, (bytes, (bytes, bytes?)? )? )
 Built-in Funcon
-  utf-16(UP:unicode-points) : =>(bit-vectors(16), (bit-vectors(16))? )
+  utf-16(_:unicode-points) : =>(bit-vectors(16), (bit-vectors(16))? )
 Built-in Funcon
-  utf-32(UP:unicode-points) : =>bit-vectors(32)
+  utf-32(_:unicode-points) : =>bit-vectors(32)
 
 
 #### Control characters

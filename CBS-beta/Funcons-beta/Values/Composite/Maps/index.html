@@ -45,10 +45,6 @@
   <div class="title">
     <a href="Maps.cbs" title="CBS SOURCE FILE">Maps</a>
   </div>
-  <div class="topic">
-    <img src="../../.././preview.png" 
-         alt="Preview badge" width="67" height="17">
-  </div>
 </header>
 
 <nav>
@@ -84,105 +80,110 @@
 </pre><details open class="sectiondetails"><summary><pre>### <b class="title"><i>Maps</i></b></pre></summary><pre>
 
 [
-  <i class="keyword">Type</i>   <span class="name"><a href="#Name_maps" title="values, values -&gt; values">maps</a></span>
-  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_map" title="values* -&gt; values">map</a></span>
+  <i class="keyword">Type</i>   <span class="name"><a href="#Name_maps" title="values, values? -&gt; values">maps</a></span>
+  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_map" title="values* -&gt; values?">map</a></span>
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_map-elements" title="values -&gt; values*">map-elements</a></span>
-  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_map-points" title="values -&gt; values*">map-points</a></span>
-  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_map-lookup" title="values, values -&gt; values">map-lookup</a></span>    <i class="keyword">Alias</i> <span class="name"><a href="#Name_lookup" title="values, values -&gt; values">lookup</a></span>
+  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_map-lookup" title="values, values -&gt; values?">map-lookup</a></span>    <i class="keyword">Alias</i> <span class="name"><a href="#Name_lookup" title="values, values -&gt; values?">lookup</a></span>
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_map-domain" title="values -&gt; values">map-domain</a></span>    <i class="keyword">Alias</i> <span class="name"><a href="#Name_dom" title="values -&gt; values">dom</a></span>
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_map-override" title="values* -&gt; values">map-override</a></span>
-  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_map-unite" title="values* -&gt; values">map-unite</a></span>
+  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_map-unite" title="values* -&gt; values?">map-unite</a></span>
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_map-delete" title="values, values -&gt; values">map-delete</a></span>
 ]
 
+
 <i class="keyword">Meta-variables</i>
   <span id="PartVariable_GT" class="decl"><i class="var">GT</i></span> <: <span class="name"><a href="../../Value-Types/index.html#Name_ground-values" title=" -&gt; values">ground-values</a></span>
-  <span id="PartVariable_T" class="decl"><i class="var">T</i></span> <: <span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>
+  <span id="PartVariable_T?" class="decl"><i class="var">T<sup class="sup">?</sup></i></span> <: <span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span><sup class="sup">?</sup>
+
 
 <i class="keyword">Built-in</i> <i class="keyword">Type</i>
-  <span class="name"><span id="Name_maps" class="decl">maps</span></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>, <span id="Variable_T" class="decl"><i class="var">T</i></span>) <: <span class="name"><a href="../../Value-Types/index.html#Name_defined-values" title=" -&gt; values">defined-values</a></span>
-</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_maps" title="values, values -&gt; values">maps</a></span>(<i class="var">GT</i>, <i class="var">T</i>)` is the type of possibly-empty finite maps from values of 
-  type `<i class="var">GT</i>` to values of type `<i class="var">T</i>`.
-*/</span></pre></details><pre>
+  <span class="name"><span id="Name_maps" class="decl">maps</span></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>, <span id="Variable_T?" class="decl"><i class="var">T<sup class="sup">?</sup></i></span>)
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_maps" title="values, values? -&gt; values">maps</a></span>(<i class="var">GT</i>, <i class="var">T<sup class="sup">?</sup></i>)` is the type of possibly-empty finite maps from values of 
+  type `<i class="var">GT</i>` to optional values of type `<i class="var">T<sup class="sup">?</sup></i>`.
+</span></pre></details><pre>*/
+
 
 <i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_map" class="decl">map</span></span>(<span id="Variable_KV*" class="decl"><i class="var">KV*</i></span>:(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>, <span id="Variable_T" class="decl"><i class="var">T</i></span>)*) : <span class="name"><a href="#Name_maps" title="values, values -&gt; values">maps</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>, <span id="Variable_T" class="decl"><i class="var">T</i></span>)|<span class="name"><a href="../../Value-Types/index.html#Name_nothing" title=" -&gt; values">nothing</a></span>
-</pre><details open class="commentdetails"><summary><pre><span class="comment">/* </span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_map" title="values* -&gt; values">map</a></span>(<i class="var">K<sub class="sub">1</sub></i>, <i class="var">V<sub class="sub">1</sub></i>, ..., <i class="var">Kn</i>, <i class="var">Vn</i>)` constructs a map from `<i class="var">K<sub class="sub">1</sub></i>:<i class="var">GT</i>` to `<i class="var">V<sub class="sub">1</sub></i>:<i class="var">T</i>`, ..., 
-  `<i class="var">Kn</i>:<i class="var">GT</i>` to `<i class="var">Vn</i>:<i class="var">T</i>`, provided that `<i class="var">K<sub class="sub">1</sub></i>`, ..., `<i class="var">Kn</i>` are distinct, otherwise the
-  result is `<span class="name"><a href="../../Value-Types/index.html#Name_none" title=" -&gt; values">none</a></span>`.   Note that `<span class="name"><a href="#Name_map" title="values* -&gt; values">map</a></span>(...)` is not a constructor operation.
+  <span class="name"><span id="Name_map" class="decl">map</span></span>(_:(<span class="name"><a href="../Tuples/index.html#Name_tuples" title="values* -&gt; values">tuples</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>, <span id="Variable_T?" class="decl"><i class="var">T<sup class="sup">?</sup></i></span>))*) : =>(<span class="name"><a href="#Name_maps" title="values, values? -&gt; values">maps</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>, <span id="Variable_T?" class="decl"><i class="var">T<sup class="sup">?</sup></i></span>))<sup class="sup">?</sup>
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/* </span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_map" title="values* -&gt; values?">map</a></span>(<span class="name"><a href="../Tuples/index.html#Name_tuple" title="values* -&gt; values">tuple</a></span>(<i class="var">K<sub class="sub">1</sub></i>, <i class="var">V<sub class="sub">1</sub><sup class="sup">?</sup></i>), ..., <span class="name"><a href="../Tuples/index.html#Name_tuple" title="values* -&gt; values">tuple</a></span>(<i class="var">Kn</i>, <i class="var">Vn<sup class="sup">?</sup></i>))` constructs a map from 
+  `<i class="var">K<sub class="sub">1</sub></i>` to `<i class="var">V<sub class="sub">1</sub><sup class="sup">?</sup></i>`, ..., `<i class="var">Kn</i>` to `<i class="var">Vn<sup class="sup">?</sup></i>`, provided that `<i class="var">K<sub class="sub">1</sub></i>`, ..., `<i class="var">Kn</i>`
+  are distinct, otherwise the result is `( )`.
   
-  The built-in notation `{<i class="var">K<sub class="sub">1</sub></i>|-><i class="var">V<sub class="sub">1</sub></i>, ..., <i class="var">Kn</i>|-><i class="var">Vn</i>}` is equivalent to 
-  `<span class="name"><a href="#Name_map" title="values* -&gt; values">map</a></span>(<i class="var">K<sub class="sub">1</sub></i> ,<i class="var">V<sub class="sub">1</sub></i>, ..., <i class="var">Kn</i>, <i class="var">Vn</i>)`. Note however that maps are not identified with
-  sets of pairs, since the defined-values `<i class="var">Vi</i>` need not be in `<span class="name"><a href="../../Value-Types/index.html#Name_ground-values" title=" -&gt; values">ground-values</a></span>`.
+  Note that `<span class="name"><a href="#Name_map" title="values* -&gt; values?">map</a></span>(...)` is not a constructor operation.
   
-  When ``<i class="var">T</i> <: <span class="name"><a href="../../Value-Types/index.html#Name_types" title=" -&gt; values">types</a></span>``, ``<span class="name"><a href="#Name_maps" title="values, values -&gt; values">maps</a></span>(<i class="var">GT</i>, <i class="var">T</i>) <: <span class="name"><a href="../../Value-Types/index.html#Name_types" title=" -&gt; values">types</a></span>``. A type-map `<i class="var">MT</i>:<span class="name"><a href="#Name_maps" title="values, values -&gt; values">maps</a></span>(<i class="var">GT</i>, <i class="var">T</i>)`
-  represents the set of value-maps `<i class="var">MV</i>:<span class="name"><a href="#Name_maps" title="values, values -&gt; values">maps</a></span>(<i class="var">GT</i>, <span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>)` such that 
-  `<span class="name"><a href="#Name_dom" title="values -&gt; values">dom</a></span>(<i class="var">MV</i>)` is a subset of `<span class="name"><a href="#Name_dom" title="values -&gt; values">dom</a></span>(<i class="var">MT</i>)` and for all `<i class="var">GV</i>` in `<span class="name"><a href="#Name_dom" title="values -&gt; values">dom</a></span>(<i class="var">MV</i>)`, 
-  ``<span class="name"><a href="#Name_map-lookup" title="values, values -&gt; values">map-lookup</a></span>(<i class="var">MV</i>, <i class="var">GV</i>) : <span class="name"><a href="#Name_map-lookup" title="values, values -&gt; values">map-lookup</a></span>(<i class="var">MT</i>,<i class="var">GV</i>)``.
-*/</span></pre></details><pre>
+  The built-in notation `{<i class="var">K<sub class="sub">1</sub></i>|-><i class="var">V<sub class="sub">1</sub><sup class="sup">?</sup></i>, ..., <i class="var">Kn</i>|-><i class="var">Vn<sup class="sup">?</sup></i>}` is equivalent to 
+  `<span class="name"><a href="#Name_map" title="values* -&gt; values?">map</a></span>(<span class="name"><a href="../Tuples/index.html#Name_tuple" title="values* -&gt; values">tuple</a></span>(<i class="var">K<sub class="sub">1</sub></i>, <i class="var">V<sub class="sub">1</sub><sup class="sup">?</sup></i>), ..., <span class="name"><a href="../Tuples/index.html#Name_tuple" title="values* -&gt; values">tuple</a></span>(<i class="var">Kn</i>, <i class="var">Vn<sup class="sup">?</sup></i>))`. Note however that in general, 
+  maps cannot be identified with sets of tuples, since the values `<i class="var">Vi<sup class="sup">?</sup></i>` are 
+  not restricted to `<span class="name"><a href="../../Value-Types/index.html#Name_ground-values" title=" -&gt; values">ground-values</a></span>`.
+  
+  When ``<i class="var">T<sup class="sup">?</sup></i> <: <span class="name"><a href="../../Value-Types/index.html#Name_types" title=" -&gt; values">types</a></span>``, ``<span class="name"><a href="#Name_maps" title="values, values? -&gt; values">maps</a></span>(<i class="var">GT</i>, <i class="var">T<sup class="sup">?</sup></i>) <: <span class="name"><a href="../../Value-Types/index.html#Name_types" title=" -&gt; values">types</a></span>``. The type `<i class="var">MT</i>:<span class="name"><a href="#Name_maps" title="values, values? -&gt; values">maps</a></span>(<i class="var">GT</i>, <i class="var">T<sup class="sup">?</sup></i>)`
+  represents the set of value-maps `<i class="var">MV</i>:<span class="name"><a href="#Name_maps" title="values, values? -&gt; values">maps</a></span>(<i class="var">GT</i>, <span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span><sup class="sup">?</sup>)` such that 
+  `<span class="name"><a href="#Name_dom" title="values -&gt; values">dom</a></span>(<i class="var">MV</i>)` is a subset of `<span class="name"><a href="#Name_dom" title="values -&gt; values">dom</a></span>(<i class="var">MT</i>)` and for all `<i class="var">K</i>` in `<span class="name"><a href="#Name_dom" title="values -&gt; values">dom</a></span>(<i class="var">MV</i>)`, 
+  ``<span class="name"><a href="#Name_map-lookup" title="values, values -&gt; values?">map-lookup</a></span>(<i class="var">MV</i>, <i class="var">K</i>) : <span class="name"><a href="#Name_map-lookup" title="values, values -&gt; values?">map-lookup</a></span>(<i class="var">MT</i>, <i class="var">K</i>)``.
+</span></pre></details><pre>*/
+
 
 <i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_map-elements" class="decl">map-elements</span></span>(<span id="Variable_M" class="decl"><i class="var">M</i></span>:<span class="name"><a href="#Name_maps" title="values, values -&gt; values">maps</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>, <span id="Variable_T" class="decl"><i class="var">T</i></span>)) : =>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>, <span id="Variable_T" class="decl"><i class="var">T</i></span>)*
-</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  For each map `<i class="var">M</i>`, the sequence of values (K1, V1, ..., Kn, Vn) 
-  returned by `<span class="name"><a href="#Name_map-elements" title="values -&gt; values*">map-elements</a></span>(<i class="var">M</i>)` contains each mapped value `<i class="var">Ki</i>` just once. 
-  The order of the pairs is unspecified, and may vary between maps.
-*/</span></pre></details><pre>
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Assert</i></span></pre></summary><pre>  <span class="name"><a href="#Name_map" title="values* -&gt; values">map</a></span>(<span class="name"><a href="#Name_map-elements" title="values -&gt; values*">map-elements</a></span>(<i class="var">M</i>)) == <i class="var">M</i></pre></details><pre>
+  <span class="name"><span id="Name_map-elements" class="decl">map-elements</span></span>(_:<span class="name"><a href="#Name_maps" title="values, values? -&gt; values">maps</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>, <span id="Variable_T?" class="decl"><i class="var">T<sup class="sup">?</sup></i></span>)) : =>(<span class="name"><a href="../Tuples/index.html#Name_tuples" title="values* -&gt; values">tuples</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>, <span id="Variable_T?" class="decl"><i class="var">T<sup class="sup">?</sup></i></span>))*
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  The sequence of tuples `(<span class="name"><a href="../Tuples/index.html#Name_tuple" title="values* -&gt; values">tuple</a></span>(<i class="var">K<sub class="sub">1</sub></i>, <i class="var">V<sub class="sub">1</sub><sup class="sup">?</sup></i>), ..., <span class="name"><a href="../Tuples/index.html#Name_tuple" title="values* -&gt; values">tuple</a></span>(<i class="var">Kn</i>, <i class="var">Vn<sup class="sup">?</sup></i>))` given by
+  `<span class="name"><a href="#Name_map-elements" title="values -&gt; values*">map-elements</a></span>(<i class="var">M</i>)` contains each mapped value `<i class="var">Ki</i>` just once. The order of
+  the elements is unspecified, and may vary between maps.
+</span></pre></details><pre>*/
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Assert</i></span></pre></summary><pre>  <span class="name"><a href="#Name_map" title="values* -&gt; values?">map</a></span>(<span class="name"><a href="#Name_map-elements" title="values -&gt; values*">map-elements</a></span>(<i class="var">M</i>)) == <i class="var">M</i></pre></details><pre>
+
 
 <i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_map-points" class="decl">map-points</span></span>(<span id="Variable_M" class="decl"><i class="var">M</i></span>:<span class="name"><a href="#Name_maps" title="values, values -&gt; values">maps</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>, <span id="Variable_T" class="decl"><i class="var">T</i></span>)) : =>(<span class="name"><a href="../Tuples/index.html#Name_tuples" title="values* -&gt; values">tuples</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>, <span id="Variable_T" class="decl"><i class="var">T</i></span>))*
-</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  For each map `<i class="var">M</i>`, the sequence of pairs `<span class="name"><a href="../Tuples/index.html#Name_tuple" title="values* -&gt; values">tuple</a></span>(<i class="var">K<sub class="sub">1</sub></i>, <i class="var">V<sub class="sub">1</sub></i>)`, ..., `<span class="name"><a href="../Tuples/index.html#Name_tuple" title="values* -&gt; values">tuple</a></span>(<i class="var">Kn</i>, <i class="var">Vn</i>)`
-  returned by `<span class="name"><a href="#Name_map-points" title="values -&gt; values*">map-points</a></span>(<i class="var">M</i>)` contains each mapped value `<i class="var">Ki</i>` just once. 
-  The order of the pairs is unspecified, and may vary between maps.
-*/</span></pre></details><pre>
-
-<i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_map-lookup" class="decl">map-lookup</span></span>(<span id="Variable_M" class="decl"><i class="var">M</i></span>:<span class="name"><a href="#Name_maps" title="values, values -&gt; values">maps</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>, <span id="Variable_T" class="decl"><i class="var">T</i></span>), <span id="Variable_K" class="decl"><i class="var">K</i></span>:<span id="Variable_GT" class="decl"><i class="var">GT</i></span>) : =><span id="Variable_T" class="decl"><i class="var">T</i></span>|<span class="name"><a href="../../Value-Types/index.html#Name_nothing" title=" -&gt; values">nothing</a></span>
+  <span class="name"><span id="Name_map-lookup" class="decl">map-lookup</span></span>(_:<span class="name"><a href="#Name_maps" title="values, values? -&gt; values">maps</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>, <span id="Variable_T?" class="decl"><i class="var">T<sup class="sup">?</sup></i></span>), <span id="Variable_K" class="decl"><i class="var">K</i></span>:<span id="Variable_GT" class="decl"><i class="var">GT</i></span>) : =>(<span id="Variable_T?" class="decl"><i class="var">T<sup class="sup">?</sup></i></span>)<sup class="sup">?</sup>
 <i class="keyword">Alias</i>
-  <span class="name"><span id="Name_lookup" class="decl">lookup</span></span> = <span class="name"><a href="#Name_map-lookup" title="values, values -&gt; values">map-lookup</a></span>
-</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_map-lookup" title="values, values -&gt; values">map-lookup</a></span>(<i class="var">M</i>,<i class="var">K</i>)` gives the value to which `<i class="var">K</i>` is mapped by `<i class="var">M</i>`, if any,
-  and otherwise `<span class="name"><a href="../../Value-Types/index.html#Name_none" title=" -&gt; values">none</a></span>`.
-*/</span></pre></details><pre>
+  <span class="name"><span id="Name_lookup" class="decl">lookup</span></span> = <span class="name"><a href="#Name_map-lookup" title="values, values -&gt; values?">map-lookup</a></span>
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_map-lookup" title="values, values -&gt; values?">map-lookup</a></span>(<i class="var">M</i>,<i class="var">K</i>)` gives the optional value to which `<i class="var">K</i>` is mapped by `<i class="var">M</i>`,
+  if any, and otherwise `( )`.
+</span></pre></details><pre>*/
+
 
 <i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_map-domain" class="decl">map-domain</span></span>(<span id="Variable_M" class="decl"><i class="var">M</i></span>:<span class="name"><a href="#Name_maps" title="values, values -&gt; values">maps</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>, <span id="Variable_T" class="decl"><i class="var">T</i></span>)) : =><span class="name"><a href="../Sets/index.html#Name_sets" title="values -&gt; values">sets</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>)
+  <span class="name"><span id="Name_map-domain" class="decl">map-domain</span></span>(_:<span class="name"><a href="#Name_maps" title="values, values? -&gt; values">maps</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>, <span id="Variable_T?" class="decl"><i class="var">T<sup class="sup">?</sup></i></span>)) : =><span class="name"><a href="../Sets/index.html#Name_sets" title="values -&gt; values">sets</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>)
 <i class="keyword">Alias</i>
   <span class="name"><span id="Name_dom" class="decl">dom</span></span> = <span class="name"><a href="#Name_map-domain" title="values -&gt; values">map-domain</a></span>
-</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_map-domain" title="values -&gt; values">map-domain</a></span>(<i class="var">M</i>)` gives the set of defined-values mapped by `<i class="var">M</i>`.
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_map-domain" title="values -&gt; values">map-domain</a></span>(<i class="var">M</i>)` gives the set of values mapped by `<i class="var">M</i>`.
   
-  `<span class="name"><a href="#Name_map-lookup" title="values, values -&gt; values">map-lookup</a></span>(<i class="var">M</i>, <i class="var">K</i>)` is always `<span class="name"><a href="../../Value-Types/index.html#Name_none" title=" -&gt; values">none</a></span>` when `<i class="var">K</i>` is not in `<span class="name"><a href="#Name_map-domain" title="values -&gt; values">map-domain</a></span>(<i class="var">M</i>)`.
-  Note that `<span class="name"><a href="#Name_map-lookup" title="values, values -&gt; values">map-lookup</a></span>(<i class="var">M</i>, <i class="var">K</i>)` may be `<span class="name"><a href="../../Value-Types/index.html#Name_none" title=" -&gt; values">none</a></span>` also when `<i class="var">K</i>` is in `<span class="name"><a href="#Name_map-domain" title="values -&gt; values">map-domain</a></span>(<i class="var">M</i>)`
-  (e.g., `<i class="var">M</i>` could be `{<i class="var">K</i>|-><span class="name"><a href="../../Value-Types/index.html#Name_none" title=" -&gt; values">none</a></span>}`).
-*/</span></pre></details><pre>
+  `<span class="name"><a href="#Name_map-lookup" title="values, values -&gt; values?">map-lookup</a></span>(<i class="var">M</i>, <i class="var">K</i>)` is always `( )` when `<i class="var">K</i>` is not in `<span class="name"><a href="#Name_map-domain" title="values -&gt; values">map-domain</a></span>(<i class="var">M</i>)`.
+</span></pre></details><pre>*/
+
 
 <i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_map-override" class="decl">map-override</span></span>(<span id="Variable_M*" class="decl"><i class="var">M*</i></span>:(<span class="name"><a href="#Name_maps" title="values, values -&gt; values">maps</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>, <span id="Variable_T" class="decl"><i class="var">T</i></span>))*) : =><span class="name"><a href="#Name_maps" title="values, values -&gt; values">maps</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>,<span id="Variable_T" class="decl"><i class="var">T</i></span>)
+  <span class="name"><span id="Name_map-override" class="decl">map-override</span></span>(_:(<span class="name"><a href="#Name_maps" title="values, values? -&gt; values">maps</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>, <span id="Variable_T?" class="decl"><i class="var">T<sup class="sup">?</sup></i></span>))*) : =><span class="name"><a href="#Name_maps" title="values, values? -&gt; values">maps</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>,<span id="Variable_T?" class="decl"><i class="var">T<sup class="sup">?</sup></i></span>)
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_map-override" title="values* -&gt; values">map-override</a></span>(...)` takes a sequence of maps. It returns the map whose
   domain is the union of their domains, and which maps each of those values
-  to the same value as the first map in the sequence in whose domain it occurs
-  (regardless of whether that value is `<span class="name"><a href="../../Value-Types/index.html#Name_none" title=" -&gt; values">none</a></span>`). When the domains of the `<i class="var">M*</i>`
-  are disjoint, `<span class="name"><a href="#Name_map-override" title="values* -&gt; values">map-override</a></span>(<i class="var">M*</i>)` is equivalent to `<span class="name"><a href="#Name_map-unite" title="values* -&gt; values">map-unite</a></span>(<i class="var">M*</i>)`.
-*/</span></pre></details><pre>
+  to the same optional value as the first map in the sequence in whose domain 
+  it occurs
+  . 
+  When the domains of the `<i class="var">M*</i>` are disjoint, `<span class="name"><a href="#Name_map-override" title="values* -&gt; values">map-override</a></span>(<i class="var">M*</i>)` is equivalent
+  to `<span class="name"><a href="#Name_map-unite" title="values* -&gt; values?">map-unite</a></span>(<i class="var">M*</i>)`.
+</span></pre></details><pre>*/
+
 
 <i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_map-unite" class="decl">map-unite</span></span>(<span id="Variable_M*" class="decl"><i class="var">M*</i></span>:(<span class="name"><a href="#Name_maps" title="values, values -&gt; values">maps</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>, <span id="Variable_T" class="decl"><i class="var">T</i></span>))*) : =><span class="name"><a href="#Name_maps" title="values, values -&gt; values">maps</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>, <span id="Variable_T" class="decl"><i class="var">T</i></span>)|<span class="name"><a href="../../Value-Types/index.html#Name_nothing" title=" -&gt; values">nothing</a></span>
-</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_map-unite" title="values* -&gt; values">map-unite</a></span>(...)` takes a sequence of maps. It returns the map whose
+  <span class="name"><span id="Name_map-unite" class="decl">map-unite</span></span>(_:(<span class="name"><a href="#Name_maps" title="values, values? -&gt; values">maps</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>, <span id="Variable_T?" class="decl"><i class="var">T<sup class="sup">?</sup></i></span>))*) : =>(<span class="name"><a href="#Name_maps" title="values, values? -&gt; values">maps</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>, <span id="Variable_T?" class="decl"><i class="var">T<sup class="sup">?</sup></i></span>))<sup class="sup">?</sup>
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_map-unite" title="values* -&gt; values?">map-unite</a></span>(...)` takes a sequence of maps. It returns the map whose
   domain is the union of their domains, and which maps each of those values
-  to the same value as the map in the sequence in whose domain it occurs,
-  provided that those domains are disjoint - otherwise the result is `<span class="name"><a href="../../Value-Types/index.html#Name_none" title=" -&gt; values">none</a></span>`.
-*/</span></pre></details><pre>
+  to the same optional value as the map in the sequence in whose domain it occurs,
+  provided that those domains are disjoint - otherwise the result is `( )`.
+</span></pre></details><pre>*/
+
 
 <i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_map-delete" class="decl">map-delete</span></span>(<span id="Variable_M" class="decl"><i class="var">M</i></span>:<span class="name"><a href="#Name_maps" title="values, values -&gt; values">maps</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>, <span id="Variable_T" class="decl"><i class="var">T</i></span>), <span id="Variable_S" class="decl"><i class="var">S</i></span>:<span class="name"><a href="../Sets/index.html#Name_sets" title="values -&gt; values">sets</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>)) : =><span class="name"><a href="#Name_maps" title="values, values -&gt; values">maps</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>, <span id="Variable_T" class="decl"><i class="var">T</i></span>)
+  <span class="name"><span id="Name_map-delete" class="decl">map-delete</span></span>(_:<span class="name"><a href="#Name_maps" title="values, values? -&gt; values">maps</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>, <span id="Variable_T?" class="decl"><i class="var">T<sup class="sup">?</sup></i></span>), _:<span class="name"><a href="../Sets/index.html#Name_sets" title="values -&gt; values">sets</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>)) : =><span class="name"><a href="#Name_maps" title="values, values? -&gt; values">maps</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>, <span id="Variable_T?" class="decl"><i class="var">T<sup class="sup">?</sup></i></span>)
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_map-delete" title="values, values -&gt; values">map-delete</a></span>(<i class="var">M</i>, <i class="var">S</i>)` takes a map `<i class="var">M</i>` and a set of values `<i class="var">S</i>`, and returns the
   map obtained from `<i class="var">M</i>` by removing `<i class="var">S</i>` from its domain. 
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
 </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Assert</i></span></pre></summary><pre>  <span class="name"><a href="#Name_map-domain" title="values -&gt; values">map-domain</a></span>(<span class="name"><a href="#Name_map-delete" title="values, values -&gt; values">map-delete</a></span>(<i class="var">M</i>, <i class="var">S</i>)) == <span class="name"><a href="../Sets/index.html#Name_set-difference" title="values, values -&gt; values">set-difference</a></span>(<span class="name"><a href="#Name_map-domain" title="values -&gt; values">map-domain</a></span>(<i class="var">M</i>), <i class="var">S</i>)</pre></details><pre>
 </pre></details><pre>
 </pre>
 
 <footer>
   <span>From the <a href="http://plancomps.org" title="PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS">PLanCompS Project, 2018</a></span>
+  <span><a href="https://github.com/plancomps/plancomps.github.io/issues" title="CBS-BETA ISSUE REPORTS ON GITHUB">CBS-beta issues...</a></span>
   <span><a href="mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20Funcons-beta/Values/Composite/Maps/Maps.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A" title="GENERATE AN EMAIL TEMPLATE">Suggest an improvement...</a></span>
 </footer>
 

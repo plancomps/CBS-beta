@@ -54,21 +54,3 @@ Rule
 Rule
   define-or-evaluate-items[[ MIS SCP* SCP E ]] =
     ( define-or-evaluate-items[[ MIS ]], define-or-evaluate-items[[ E ]] )
-
-Funcon
-  ocaml-light-define-and-display(Env:envs) : =>envs
-   ~> sequential(ocaml-light-print-env Env, Env)
-
-Funcon
-  ocaml-light-evaluate-and-display(V:implemented-values) : =>envs
-   ~> sequential(ocaml-light-print-val V, map())
-
-Funcon
-  ocaml-light-print-env(Env:envs) : =>nothing
-   ~> effect left-to-right-map(
-        print(arg-1, " = ", ocaml-light-to-string arg-2, "\n"),
-        map-points Env)
-
-Funcon
-  ocaml-light-print-val(V:implemented-values) : =>nothing
-   ~> print("- = ", ocaml-light-to-string V, "\n")

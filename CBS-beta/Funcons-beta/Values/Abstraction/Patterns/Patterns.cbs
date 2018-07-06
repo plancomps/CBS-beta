@@ -30,21 +30,20 @@
   matching component values analogously to simple variable components assigned
   component values.
   
-  Note that patterns match only defined values. Although elements of datatype
-  values can be `none`, composite values that represent program data should
-  be totally defined.
+  Note that patterns match only values, not (empty or proper) sequences.
 */
 
+
 Meta-variables
-  DT <: defined-values
-  T <: values
+  T, T' <: values
+
 
 #### Simple patterns
 
 Datatype
-  patterns ::= pattern(A:abstractions(defined-values=>environments))
+  patterns ::= pattern(_:abstractions(values=>environments))
 /*  
-  `patterns` is the type of simple patterns that can match defined-values of a
+  `patterns` is the type of simple patterns that can match values of a
   particular type.
    
   `pattern(abstraction(X))` constructs a pattern with dynamic bindings, and
@@ -53,6 +52,7 @@ Datatype
   is matched in the same scope where it is constructed.
 */
 
+
 Funcon
   pattern-any : =>patterns
     ~> pattern(abstraction(map( )))
@@ -60,64 +60,67 @@ Funcon
   `pattern-any` matches any value, computing the empty environment.
 */
 
+
 Funcon
-  pattern-bind(I:ids) : =>patterns
-    ~> pattern(abstraction(bind(I, given)))
+  pattern-bind(I:identifiers) : =>patterns
+    ~> pattern(abstraction(bind-value(I, given)))
 /*
   `pattern-bind(I)` matches any value, computing the environment binding `I`
   to that value.
 */
 
+
 Funcon
-  pattern-type(DT) : =>patterns
-    ~> pattern(abstraction(if-true-else(is-in-type(given, DT), map( ), fail)))
+  pattern-type(T) : =>patterns
+    ~> pattern(abstraction(if-true-else(is-in-type(given, T), map( ), fail)))
 /*
-  `pattern-type(DT)` matches any value of type `DT`, computing the empty
+  `pattern-type(T)` matches any value of type `T`, computing the empty
   environment.
 */
 
+
 Funcon
-  pattern-else(P1:defined-values, P2:defined-values) : =>patterns
+  pattern-else(_:values, _:values) : =>patterns
 Rule
-  pattern-else(P1:defined-values, P2:defined-values)
+  pattern-else(P1:values, P2:values)
     ~> pattern(abstraction(else(match(given, P1), match(given, P2))))
 /*
   `pattern-else(P1, P2)` matches all values matched by `P1` or by `P2`.
   If a value matches `P1`, that match gives the computed environment;
   if a value does not match `P1` but matches `P2`, that match gives 
   the computed environment; otherwise the match fails.
-  FIX-ME: allow non-empty sequences of arguments.
 */
 
+
 Funcon
-  pattern-unite(P1:defined-values, P2:defined-values) : =>patterns
+  pattern-unite(_:values, _:values) : =>patterns
 Rule
-  pattern-unite(P1:defined-values, P2:defined-values)
+  pattern-unite(P1:values, P2:values)
     ~> pattern(abstraction(collateral(match(given, P1), match(given, P2))))
 /*
   `pattern-unite(P1, P2)` matches all values matched by both `P1` and `P2`,
   then uniting the computed environments, which fails if the domains of the
   environments overlap.
-  FIX-ME: allow non-empty sequences of arguments.
 */
+
 
 #### Pattern matching
 
 Funcon
-  match(DV:defined-values, P:defined-values) : =>environments
+  match(_:values, _:values) : =>environments
 /*
-  `match(DV, P)` takes a (potentially structured) value `DV` and a
+  `match(V, P)` takes a (potentially structured) value `V` and a
   (potentially structured) pattern `P`. Provided that the structure and all
   components of `P` exactly match the structure and corresponding components
-  of `DV`, the environments computed by the simple pattern matches are united.
+  of `V`, the environments computed by the simple pattern matches are united.
 */
 Rule
-  match(DV:defined-values, pattern(abstraction(X))) ~> give(DV, X)
+  match(V:values, pattern(abstraction(X))) ~> give(V, X)
 Rule
   I2 =/= "pattern"
   --------------------------------------------
-  match(datatype-value(I1:ids, V1*:values*),
-        datatype-value(I2:ids, V2*:values*))
+  match(datatype-value(I1:identifiers, V1*:values*),
+        datatype-value(I2:identifiers, V2*:values*))
     ~> sequential(
          check-true(is-equal(I1, I2)),
          check-true(is-equal(length V1*, length V2*)),
@@ -137,17 +140,18 @@ Rule
     ~> if-true-else(
          is-in-set(K, dom(M1)),
          collateral(
-           match(lookup(M1, K), lookup(M2, K)),
+           match(map-lookup(M1, K), map-lookup(M2, K)),
            match(map-delete(M1, {K}), map-delete(M2, {K}))),
          fail)
 Rule
   P : ~(datatype-values|maps(_,_))
   -----------------------------------------------
-  match(DV:defined-values, P:defined-values)
-    ~> if-true-else(is-equal(DV, P), map( ), fail)
+  match(V:values, P:values)
+    ~> if-true-else(is-equal(V, P), map( ), fail)
+
 
 Funcon
-  match-loosely(DV:defined-values, P:defined-values) : =>environments
+  match-loosely(_:values, _:values) : =>environments
 /*
   `match-loosely(V, P)` takes a (potentially structured) value `V` and a
   (potentially structured) pattern `P`. Provided that the structure and all
@@ -155,12 +159,12 @@ Funcon
   of `V`, the environments computed by the simple pattern matches are united.
 */
 Rule
-  match-loosely(DV:defined-values, pattern(abstraction(X))) ~> give(DV, X)
+  match-loosely(V:values, pattern(abstraction(X))) ~> give(V, X)
 Rule
   I2 =/= "pattern"
   ---------------------------------------------------
-  match-loosely(datatype-value(I1:ids, V1*:values*),
-        datatype-value(I2:ids, V2*:values*))
+  match-loosely(datatype-value(I1:identifiers, V1*:values*),
+        datatype-value(I2:identifiers, V2*:values*))
     ~> sequential(
          check-true(is-equal(I1, I2)),
          check-true(is-equal(length V1*, length V2*)),
@@ -179,40 +183,42 @@ Rule
     ~> if-true-else(
          is-in-set(K, dom(M1)),
          collateral(
-           match-loosely(lookup(M1, K), lookup(M2, K)),
+           match-loosely(map-lookup(M1, K), map-lookup(M2, K)),
            match-loosely(map-delete(M1, {K}), map-delete(M2, {K}))),
          fail)
 Rule
   P : ~(datatype-values|maps(_,_))
   -------------------------------------------
-  match-loosely(DV:defined-values, P:defined-values)
+  match-loosely(DV:values, P:values)
     ~> if-true-else(is-equal(DV, P), map( ), fail)
 
 
 Funcon
-  case-match(P:defined-values, X:=>T) : =>T
+  case-match(_:values, _:=>T') : =>T'
 /*
   `case-match(P, X)` matches `P` exactly to the given value.
   If the match succeeds, the computed bindings have scope `X`.
 */
 Rule
-  case-match(P:defined-values, X) ~> scope(match(given, P), X)
+  case-match(P:values, X) ~> scope(match(given, P), X)
+
 
 Funcon
-  case-match-loosely(P:defined-values, X:=>T) : =>T
+  case-match-loosely(_:values, _:=>T') : =>T'
 /*
   `case-match(P, X)` matches `P` loosely to the given value. 
   If the match succeeds, the computed bindings have scope `X`.
 */
 Rule
-  case-match-loosely(P:defined-values, X) ~> scope(match-loosely(given, P), X)
+  case-match-loosely(P:values, X) ~> scope(match-loosely(given, P), X)
+
 
 Funcon
-  case-variant-value(I:ids) : =>defined-values
+  case-variant-value(_:identifiers) : =>values
 /*
-  `case-variant-value(I)` matches defined-values of variant `I`, then
+  `case-variant-value(I)` matches values of variant `I`, then
   giving the value contained in the variant.
 */
 Rule
-  case-variant-value(I:ids) ~>
+  case-variant-value(I:identifiers) ~>
     case-match(variant(I, pattern-any), variant-value(given))

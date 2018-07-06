@@ -14,6 +14,7 @@
   Funcon   initialise-giving
   Funcon   give
   Funcon   given
+  Funcon   interleave-repeat
 ]
 
 ### Binding
@@ -53,26 +54,17 @@
 ### Failing
 [
   Funcon   finalise-failing
-  Funcon   defined         Alias def
+  Funcon   checked
 ]
 
 # Values
 
-## Types of values
+## Value Types
 [
-  Type     values           Alias vals
-  Type     types
-  Type     nothing
-  Funcon   none
+  Type   value-types      Alias types
 ]
 
 ## Primitive values
-
-### The null value
-[
-  Datatype unit-type
-  Funcon   null-value    Alias null
-]
 
 ### Booleans
 [
@@ -90,6 +82,13 @@
   Funcon   integer-multiply             Alias int-mul
   Funcon   integer-is-less              Alias is-less
   Funcon   decimal-natural              Alias decimal
+]
+
+### The null value
+
+[
+  Datatype null-type
+  Funcon   null-value Alias null
 ]
 
 ## Composite values

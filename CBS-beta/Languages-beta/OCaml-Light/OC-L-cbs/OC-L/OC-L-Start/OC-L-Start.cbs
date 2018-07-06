@@ -3,7 +3,7 @@ Language "OCaml Light"
 Syntax
   START: start ::= unit-implementation
 Semantics
-  start[[ _:start ]] : =>environments|nothing
+  start[[ _:start ]] : =>environments|null-type
 
 
 Rule
@@ -43,4 +43,33 @@ Rule
   a parser, translator, and interpreter from the specifications, and checking
   that the results of running a suite of about 150 small programs using the
   generated implementation correspond to the results of running them directly.
+*/
+
+/* CBS-beta/Languages-beta/OCaml-Light/OC-L-cbs released 2018-07-07
+
+* Status: 
+  - abstract syntax:   complete, derived from [OCaml Manual]
+  - dynamic semantics: complete
+  - static semantics:  not specified
+  - disambiguation:    incomplete, derived from [OCaml Manual]
+* Tests:
+  - 149 small programs
+  - high coverage (to be verified)
+* Evolution:
+  - supersedes [Reusable Components of Semantic Specifications]
+* References:
+  [OCaml Implementation]: 
+    http://ocaml.org/docs/install.html
+  [OCaml Manual]:
+    https://caml.inria.fr/pub/docs/manual-ocaml-4.06
+  [A formal specification for OCaml: the Core Language]:
+    https://github.com/ott-lang/ott/tree/master/examples/ocaml_light
+  [Reusable Components of Semantic Specifications]:
+    http://plancomps.org/taosd2015
+* Keywords: 
+  - OCaml, higher-order, functional, imperative, patterns, disambiguation
+* Main contributors:
+  - recent: Peter Mosses, Neil Sculthorpe
+  - previous: Martin Churchill, Paolo Torrini
+
 */

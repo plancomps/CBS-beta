@@ -2,63 +2,57 @@
 
 [ 
   Type   values           Alias vals
-  Type   defined-values   Alias def-vals
   Type   value-types      Alias types
   Type   empty-type
   Funcon is-in-type       Alias is
-  Type   datatype-values
-  Type   nothing
-  Funcon none
+  Funcon is-value         Alias is-val
+  Funcon when-true        Alias when
   Type   cast-to-type     Alias cast
-  Type   is-defined       Alias is-def
   Type   ground-values    Alias ground-vals
   Funcon is-equal         Alias is-eq
 ]
 
 
-### The universe of values
+### Values
 
 Built-in Type
   values
 Alias
   vals = values
 /* 
-  The set of all values is a fixed, infinite universe. It consists of:
-  * datatype values, 
-  * built-in values, and
-  * values formed from computations
-  together with a special value `none` that indicates the absence of an
-  ordinary value.
-
-  Values are used to represent the information processed by funcon computations.
+  The type `values` includes all values provided by CBS.
+  
+  Some funcons are declared as value constructors. Values are constructed by
+  applying value constructor funcons to the required arguments.
+  
+  Values are immutable and context-independent. Their structure can be
+  inspected using patterns formed from value constructors and variables.
+  Computations can be extracted from values and executed, but the structure
+  of computations cannot be inspected.
+  
+  Some types of values and their funcons are declared as built-in, and not
+  further specified in CBS. New types of built-in values can be added to CBS
+  by its developers.
+ 
+  New algebraic datatypes may be declared by users of CBS. Their values are
+  disjoint from built-in values.
 */
+
 
 Meta-variables
   T, T1, T2 <: values
-  DT, DT' <: defined-values
-
-
-### Ordinary values
-
-Built-in Type
-  defined-values <: values
-Alias
-  def-vals = defined-values
-/*
-  The values of type `defined-values` are all the ordinary values.
-*/
 
 
 ### Types
 
 Built-in Type
-  value-types <: defined-values
+  value-types
 Alias
   types = value-types
 Built-in Type
-  empty-type <: defined-values
+  empty-type
 /* 
-  A type `T` is a value that represents a subset of the universe of values. 
+  A type `T` is a value that represents a set of values. 
 
   The values of type `types` are all the types, including `types` itself.
 
@@ -73,12 +67,12 @@ Built-in Type
     * `T1 & T2`    (meet/intersection)
     * `T1 | T2`    (join/union)
     * `~ T`        (complement)
-    * `values`   (top)
+    * `values`     (top)
     * `empty-type` (bottom)
   
   Subtyping: ``T1 <: T2`` is the partial order defined by the algebra. 
 
-  Subsumption: If ``V : T1`` and ``T1 <: T2`` both hold, then so does ``V : T2``.
+  Subsumption: If ``V : T1`` and ``T1 <: T2`` both hold, so does ``V : T2``.
 
   Indivisibility: For each value `V` and type `T`, either ``V : T`` or
   ``V : ~T`` holds.
@@ -88,10 +82,10 @@ Built-in Type
   Emptiness: ``V : empty-type`` holds for no value `V`.
 
   'Type N' declares the name 'N' to refer to a fresh value constructor
-  in `types`. 
+  and includes it as an element of `types`. 
   
   'Type N ~> T' moreover specifies 'Rule N ~> T', so that 'N' can be used as
-  an abbreviation for 'T'.
+  an abbreviation for the type term 'T'.
   
   'Type N <: T' declares the name 'N' to refer to a fresh value constructor
   in `types`, and asserts 'N <: T'. 
@@ -100,118 +94,105 @@ Built-in Type
   i.e., families of individual types, indexed by types (and by other values). 
   For example, `lists(T)` is parameterised by the type of list elements `T`.
   Replacing a parameter by `_` denotes the union over all instances of that
-  parameter, e.g., `lists(_)` is the union of the type instances `lists(T)` with
-  `T:types`.
+  parameter, e.g., `lists(_)` is the union of all types `lists(T)` with `T:types`.
   
   Qualified variables `V:T` in terms range over values of type `T`.
   Qualified variables ``T1<:T2`` in terms range over subtypes `T1` of `T2`.
 */
-  
+
+
 Funcon 
-  is-in-type(V:values, T':types) : =>booleans
+  is-in-type(V:values, T:types) : =>booleans
 Alias
   is = is-in-type
 /*
-  The funcon `is-in-type(V, T')` tests whether ``V:T'`` holds.  The value `V`
-  need not be a ground value, but `T'` should not require testing the
-  computation type in an abstraction.
+  `is-in-type(V, T)` tests whether ``V : T`` holds. The value `V` need not be a
+  ground value, but `T` should not require testing any computation types.
 */
 Rule
-  V : T'
-  --------------------------------
-  is-in-type(V:T, T':types) ~> true
+  V : T
+  -------------------------------------
+  is-in-type(V:values, T:types) ~> true
 Rule
-  V : ~ T'
-  --------------------------------
-  is-in-type(V:T, T':types) ~> false
+  V : ~ T
+  --------------------------------------
+  is-in-type(V:values, T:types) ~> false
 		
 
-### Datatypes
+### Option types
 
-Built-in Type
-  datatype-values <: values
 /*
-  A datatype value consists of an atom and a value.
+  For any value type `T`, the elements of the option type `(T)?` are the
+  elements of `T` together with the empty sequence `( )`, which represents
+  the absence of a value. Option types are a special case of sequence types.
+  
+  A funcon whose result type is an option type `(T)?` may compute a value of
+  type `T` or the empty sequence `( )`; the latter represents undefined results
+  of partial operations.
 
-  'Datatype T ::= ...' declares the name 'T' to refer to a fresh value
-  constructor in `types`, and asserts ``T <: datatype-values``. 
-  
-  Each constructor funcon 'f(V1:T1, ..., Vn:Tn)' of the datatype declaration
-  generates values in 'T' of the form 'datatype-value("f", V1, ..., Vn)' from
-  the name 'f' and values 'V1:T1, ..., 'Vn:Tn'.
-  
-  'Datatype T', followed by declarations of constructor funcons for 't',
-  allows GADTs.
+  The parentheses in `(T)?` and `( )` can be omitted when this does not give
+  rise to grouoing ambiguity. Note however that `T?` is a meta-variable ranging
+  over option types, whereas `(T)?` is the option type for the value type `T`.
 */
 
-
-### Nothing
-
-Built-in Type // not a subtype of `defined-values`
-  nothing <: values
-Built-in Funcon
-  none : nothing
-/*
-  The only value of the special datatype `nothing` is the value constructor
-  `none`, which represents the absence of an ordinary value.
-  
-  The absence of an ordinary value may arise from a funcon computation with
-  arguments for which the result is undefined (e.g., `head(nil)`) or merely
-  of no interest (e.g., `effect(V)`). As an element of a composite value, it may
-  correspond to an unassigned variable or an unbound identifier.
-  
-  Note that value constructors may allow `none` as an argument.
-*/
-Assert
-  (defined-values | nothing) == values
-Assert
-  (defined-values & nothing) == empty-type
 
 Funcon
-  cast-to-type(V:values, T':types) : =>T'
+  is-value(_:values?) : =>booleans
+Alias
+  is-val = is-value
+/*
+  `is-value(V?)` tests whether the optional value `V?` is a value or absent.
+*/
+Rule
+  is-value(_:values) ~> true
+Rule
+  is-value( ) ~> false
+
+
+Funcon
+  when-true(_:booleans, _:T) : =>(T)?
+Alias
+  when = when-true
+/*
+  `when-true(B, V)` gives `V` when `B` is `true`, and `( )` when `B` is `false`.
+*/
+Rule
+  when-true(true, V:values) ~> V
+Rule
+  when-true(false, V:values) ~> ( )
+
+
+Funcon
+  cast-to-type(V:values, T:types) : =>(T)?
 Alias
   cast = cast-to-type
 /*
-  Note that `cast-to-type(V, T')` allows `V` to be `none`. 
+  `cast-to-type(V, T)` gives `V` if it is in `T`, otherwise `( )`.
 */
 Rule
-  V : T'
-  --------------------------------
-  cast-to-type(V:T, T':types) ~> V
+  V : T
+  -------------------------------------
+  cast-to-type(V:values, T:types) ~> V
 Rule
-  V : ~ T'
-  -----------------------------------
-  cast-to-type(V:T, T':types) ~> none
-Assert
-  cast-to-type(V:T, T':types) == if-true-else(is-in-type(V, T'), V, none) 
-  
-Funcon
-  is-defined(V:values) : =>booleans
-Alias
-  is-def = is-defined
-Rule
-  is-defined(V:defined-values) ~> true
-Rule
-  is-defined(none) ~> false
-Assert
-  is-defined(cast-to-type(V:defined-values, T':types)) == is-in-type(V, T')
-Assert
-  is-defined(cast-to-type(none, T':types)) == false
+  V : ~ T
+  --------------------------------------
+  cast-to-type(V:values, T:types) ~> ( )
 
 
 ### Ground values
 
 Built-in Type
-  ground-values <: values
+  ground-values
 Alias
   ground-vals = ground-values
 /*
-  All types whose values do not involve the value constructor `abstraction(_)`
-  are subtypes of `ground-values`. 
+  The elements of `ground-values` are all values that are formed entirely
+  from value-constructors, and thus do not involve computations. 
   
-  Note that ``nothing <: ground-values``, so `ground-values` is not a
-  subtype of `defined-values`. 
+  A type is a subtype of `ground-values` if and only if all its elements are
+  included in `ground-values`.
 */
+
 
 Funcon
   is-equal(V:values, W:values) : =>booleans
@@ -219,7 +200,7 @@ Alias
   is-eq = is-equal
 /*
   `is-equal(V, W)` returns `true` when `V` and `W` are identical ground values,
-  and otherwise `false`.
+  otherwise `false`.
 */ 
 Rule
   V == W
@@ -233,5 +214,3 @@ Rule
   is-equal(V:~ground-values, W:values) ~> false
 Rule
   is-equal(V:values, W:~ground-values) ~> false
-Assert
-  is-equal(none, none) == true

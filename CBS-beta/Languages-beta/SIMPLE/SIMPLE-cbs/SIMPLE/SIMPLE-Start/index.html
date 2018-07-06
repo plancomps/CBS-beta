@@ -45,10 +45,6 @@
   <div class="title">
     <a href="SIMPLE-Start.cbs" title="CBS SOURCE FILE">SIMPLE-Start</a>
   </div>
-  <div class="topic">
-    <img src="../../../../../Funcons-beta//preview.png" 
-         alt="Preview badge" width="67" height="17">
-  </div>
 </header>
 
 <nav>
@@ -83,7 +79,7 @@
 <pre>
 <i class="keyword">Language</i> <span id="Language_"SIMPLE"" class="decl">"SIMPLE"</span>
 
-</pre><details class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  The SIMPLE language is described in the following publication:
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  The SIMPLE language is described in the following publication:
   	
     K Overview and SIMPLE Case Study.
     Grigore Rosu and Traian Florin Serbanuta.
@@ -99,13 +95,13 @@
   arbitrary expressions as variable declarators and l-expressions, we introduce
   specialised productions.  We also make use of "?" (optional) to avoid the
   need for multiple productions for variations of the same syntactic construct.  
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
 
 <i class="keyword">Syntax</i>
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_START" class="decl">START</span></i> :</i> <span class="syn-name"><span id="SyntaxName_start" class="decl">start</span></span> ::= <span class="syn-name"><a href="../SIMPLE-5-Programs/index.html#SyntaxName_pgm" title="decls">pgm</a></span>
 <i class="keyword">Semantics</i>
   <i class="sem-name"><span id="SemanticsName_start" class="decl">start</span></i>[[_:<span class="syn-name"><a href="#SyntaxName_start" title="pgm">start</a></span>]] : =><span class="name"><a href="../../../../../Funcons-beta/Values/Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>
-</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_start" title="[[start]] -&gt; values">start</a></i>[[ <span id="Variable_Pgm" class="decl"><i class="var"><a href="../SIMPLE-5-Programs/index.html#VariableStem_Pgm" title="pgm">Pgm</a></i></span> ]] = 
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_start" title="[[start]] -&gt; values">start</a></i>[[ <span id="Variable_Pgm" class="decl"><i class="var"><a href="../SIMPLE-5-Programs/index.html#VariableStem_Pgm" title="pgm">Pgm</a></i></span> ]] = 
     <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Binding/index.html#Name_initialise-binding" title="values -&gt; values">initialise-binding</a></span> <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_initialise-storing" title="values -&gt; values">initialise-storing</a></span> <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Giving/index.html#Name_initialise-giving" title="values -&gt; values">initialise-giving</a></span>
     <span class="name"><a href="../../../../../Funcons-beta/Computations/Abnormal/Failing/index.html#Name_finalise-failing" title="values -&gt; values">finalise-failing</a></span> <span class="name"><a href="../../../../../Funcons-beta/Computations/Abnormal/Throwing/index.html#Name_finalise-throwing" title="values -&gt; values">finalise-throwing</a></span>
       <i class="sem-name"><a href="../SIMPLE-5-Programs/index.html#SemanticsName_run" title="[[pgm]] -&gt; values">run</a></i>[[ <a href="#Variable_Pgm"><i class="var"><a href="../SIMPLE-5-Programs/index.html#VariableStem_Pgm" title="pgm">Pgm</a></i></a> ]]
@@ -118,11 +114,33 @@
   <span class="sectnumtitle"><a href="../SIMPLE-5-Programs/index.html#SectionNumber_#5">#5</a> <b class="title"><i>Programs</i></b></span>
   <span class="sectnumtitle"><a href="../SIMPLE-A-Disambiguation/index.html#SectionNumber_#A">#A</a> <b class="title"><i>Disambiguation</i></b></span>
 ]
-   
+
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/* CBS-beta/Languages-beta/SIMPLE/SIMPLE-cbs released 2018-07-07</span></pre></summary><pre><span class="comment">
+* Status: 
+  - abstract syntax:   complete, derived from [K Overview and SIMPLE Case Study]
+  - dynamic semantics: complete except for concurrency constructs
+  - static semantics:  not specified
+  - disambiguation:    incomplete
+* Tests:
+  - 53 small programs
+  - high coverage (to be verified)
+* Evolution:
+  - initial version
+* References:
+  [K Overview and SIMPLE Case Study]: 
+    http://dx.doi.org/10.1016/j.entcs.2014.05.002
+* Keywords: 
+  - imperative, illustrative, simple, disambiguation, K framework
+* Main contributors:
+  - Thomas van Binsbergen, Peter Mosses, Neil Sculthorpe
+
+</span></pre></details><pre>*/
+
 </pre>
 
 <footer>
   <span>From the <a href="http://plancomps.org" title="PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS">PLanCompS Project, 2018</a></span>
+  <span><a href="https://github.com/plancomps/plancomps.github.io/issues" title="CBS-BETA ISSUE REPORTS ON GITHUB">CBS-beta issues...</a></span>
   <span><a href="mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20SIMPLE/SIMPLE-Start/SIMPLE-Start.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A" title="GENERATE AN EMAIL TEMPLATE">Suggest an improvement...</a></span>
 </footer>
 

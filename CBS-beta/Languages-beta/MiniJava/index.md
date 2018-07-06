@@ -1,4 +1,4 @@
-MiniJava ![PREVIEW](../../Funcons-beta/preview.png)
+MiniJava
 ========
 
 Joao Cangussu, Jens Palsberg and Vidyut Samanta gave a BNF grammar for a very 
@@ -7,8 +7,9 @@ simple subset of Java in the [MiniJava project]. They wrote:
 > MiniJava is a subset of Java. The meaning of a MiniJava program is given by 
 > its meaning as a Java program. Overloading is not allowed in MiniJava. [...]
 
-The CBS of MiniJava is useful for illustrating funcons for classes and objects.
-The start of the specification of MiniJava in CBS is at [MiniJava-Start].
+MiniJava is a very simple subset of Java. Its CBS illustrates the funcons 
+for classes and objects. The start of the specification of MiniJava in CBS 
+is at [MiniJava-Start].
 
 [MiniJava project]: http://www.cambridge.org/us/features/052182060X/
 

@@ -60,7 +60,7 @@
   Funcon   finalise-failing
   Funcon   fail
   Funcon   else
-  Funcon   defined         Alias def
+  Funcon   checked
 ]
 
 ### Throwing
@@ -72,25 +72,16 @@
 
 # Values
 
-## Types of values
+## Value Types
 [
-  Type     values           Alias vals
-  Type     types
-  Funcon   is-in-type       Alias is
-  Type     nothing
-  Funcon   none
-  Type     is-defined       Alias is-def
-  Type     ground-values    Alias ground-vals
-  Funcon   is-equal         Alias is-eq
+  Type   values           Alias vals
+  Funcon is-in-type       Alias is
+  Funcon when-true        Alias when
+  Type   ground-values    Alias ground-vals
+  Funcon is-equal         Alias is-eq
 ]
 
 ## Primitive values
-
-### The null value
-[
-  Datatype unit-type
-  Funcon   null-value    Alias null
-]
 
 ### Booleans
 [
@@ -128,10 +119,6 @@
   Datatype float-formats
   Funcon   binary64
   Type     floats
-  Funcon   float-is-less
-  Funcon   float-is-less-or-equal
-  Funcon   float-is-greater
-  Funcon   float-is-greater-or-equal
   Funcon   float-negate
   Funcon   float-absolute-value
   Funcon   float-add
@@ -163,12 +150,18 @@
 [
   Type     characters                          Alias chars
   Funcon   unicode-character                   Alias char
-  Funcon   unicode-point                       Alias unicode
   Funcon   backspace
   Funcon   horizontal-tab
   Funcon   line-feed
   Funcon   carriage-return
   Funcon   backslash
+]
+
+### The null value
+
+[
+  Datatype null-type
+  Funcon   null-value Alias null
 ]
 
 ## Composite values
@@ -177,8 +170,6 @@
 [
   Funcon   length
   Funcon   index
-  Funcon   first
-  Funcon   drop-first-n
   Funcon   reverse
   Funcon   n-of
   Funcon   intersperse
@@ -244,7 +235,7 @@
 [
   Type     maps
   Funcon   map
-  Funcon   map-points
+  Funcon   map-elements
   Funcon   map-lookup    Alias lookup
   Funcon   map-domain    Alias dom
   Funcon   map-override
@@ -255,6 +246,7 @@
 [
   Datatype records
   Funcon   record
+  Funcon   record-map
   Funcon   record-select
 ]
 
@@ -277,7 +269,6 @@
   Datatype functions
   Funcon   function
   Funcon   apply
-  Funcon   uncurry
   Funcon   curry
 ]
 

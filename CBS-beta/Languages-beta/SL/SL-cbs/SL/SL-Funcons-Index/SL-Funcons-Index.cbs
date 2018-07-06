@@ -66,7 +66,7 @@
 [
   Funcon   fail
   Funcon   else
-  Funcon   defined         Alias def
+  Funcon   checked
 ]
 
 ### Returning
@@ -89,14 +89,11 @@
 
 # Values
 
-## Types of values
+## Value Types
 [
-  Type     values           Alias vals
-  Type     defined-values   Alias def-vals
-  Type     nothing
-  Funcon   none
-  Type     cast-to-type     Alias cast
-  Funcon   is-equal         Alias is-eq
+  Type   values           Alias vals
+  Type   cast-to-type     Alias cast
+  Funcon is-equal         Alias is-eq
 ]
 
 ## Primitive values
@@ -124,6 +121,13 @@
   Funcon   decimal-natural              Alias decimal
 ]
 
+### The null value
+
+[
+  Datatype null-type
+  Funcon   null-value Alias null
+]
+
 ## Composite values
 
 ### Lists
@@ -144,7 +148,6 @@
 
 ### Maps
 [
-  Type     maps
   Funcon   map
   Funcon   map-lookup    Alias lookup
   Funcon   map-override

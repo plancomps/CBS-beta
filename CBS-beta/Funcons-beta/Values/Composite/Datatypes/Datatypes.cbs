@@ -1,18 +1,19 @@
 ### Datatypes
 
 [
+  Type   datatype-values
   Funcon datatype-value
   Funcon datatype-value-id
   Funcon datatype-value-elements
 ]
 
 /*
-  A datatype value consists of an identifier and a sequence of defined-values.
+  A datatype value consists of an identifier and a sequence of values.
 
   'Datatype T ::= ...' declares the type `T` to refer to a fresh value
-  constructor in `types`, and asserts ``N <: datatype-values``. 
+  constructor in `types`, and asserts ``T <: datatype-values``. 
   
-  Each constructor funcon 'F(V1:T1,...,Vn:Tn)' of the datatype declaration
+  Each constructor funcon 'F(_:T1,...,_:Tn)' of the datatype declaration
   generates values in `T` of the form `datatype-value("F", V1, ..., Vn)` from
   `V1:T1`, ..., `Vn:Tn`.
   
@@ -23,15 +24,18 @@
   allows specification of GADTs.
 */
 
+Built-in Type
+  datatype-values
+
 Built-in Funcon
-  datatype-value(I:ids, V*:values*) : datatype-values
+  datatype-value(_:identifiers, _:values*) : datatype-values
 
 Funcon
-  datatype-value-id(DV:datatype-values) : =>ids
+  datatype-value-id(_:datatype-values) : =>identifiers
 Rule
-  datatype-value-id(datatype-value(I:ids, V*:values*)) ~> I
+  datatype-value-id(datatype-value(I:identifiers, _*:values*)) ~> I
 
 Funcon
-  datatype-value-elements(DV:datatype-values) : =>values*
+  datatype-value-elements(_:datatype-values) : =>values*
 Rule
-  datatype-value-elements(datatype-value(I:ids, V*:values*)) ~> V*
+  datatype-value-elements(datatype-value(_:identifiers, V*:values*)) ~> V*

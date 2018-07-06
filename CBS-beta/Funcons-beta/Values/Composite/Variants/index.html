@@ -45,10 +45,6 @@
   <div class="title">
     <a href="Variants.cbs" title="CBS SOURCE FILE">Variants</a>
   </div>
-  <div class="topic">
-    <img src="../../.././preview.png" 
-         alt="Preview badge" width="67" height="17">
-  </div>
 </header>
 
 <nav>
@@ -90,27 +86,32 @@
   <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_variant-value" title="values -&gt; values">variant-value</a></span>
 ]
 
+
 <i class="keyword">Meta-variables</i>
   <span id="PartVariable_T" class="decl"><i class="var">T</i></span> <: <span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>
 
+
 <i class="keyword">Datatype</i>
-  <span class="name"><span id="Name_variants" class="decl">variants</span></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>) ::= <span id="Name_variant" class="decl">variant</span>(_:<span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_ids" title=" -&gt; values">ids</a></span>, _:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>)
+  <span class="name"><span id="Name_variants" class="decl">variants</span></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>) ::= <span id="Name_variant" class="decl">variant</span>(_:<span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_identifiers" title=" -&gt; values">identifiers</a></span>, _:<span id="Variable_T" class="decl"><i class="var">T</i></span>)
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  A value of type `<span class="name"><a href="#Name_variants" title="values -&gt; values">variants</a></span>(<i class="var">T</i>)` is a pair formed from an identifier and 
   a value of type `<i class="var">T</i>`.
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
+
 
 <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_variant-id" class="decl">variant-id</span></span>(<span id="Variable_V" class="decl"><i class="var">V</i></span>:<span class="name"><a href="#Name_variants" title="values -&gt; values">variants</a></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>)) : =><span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_ids" title=" -&gt; values">ids</a></span>
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_variant-id" title="values -&gt; values">variant-id</a></span>(<span class="name"><a href="#Name_variant" title="values, values -&gt; values">variant</a></span>(<span id="Variable_I" class="decl"><i class="var">I</i></span>:<span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_ids" title=" -&gt; values">ids</a></span>, <span id="Variable_V" class="decl"><i class="var">V</i></span>:<i class="var">T</i>)) ~> <a href="#Variable_I"><i class="var">I</i></a></pre></details><pre>
+  <span class="name"><span id="Name_variant-id" class="decl">variant-id</span></span>(_:<span class="name"><a href="#Name_variants" title="values -&gt; values">variants</a></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>)) : =><span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_identifiers" title=" -&gt; values">identifiers</a></span>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_variant-id" title="values -&gt; values">variant-id</a></span>(<span class="name"><a href="#Name_variant" title="values, values -&gt; values">variant</a></span>(<span id="Variable_I" class="decl"><i class="var">I</i></span>:<span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_identifiers" title=" -&gt; values">identifiers</a></span>, _:<i class="var">T</i>)) ~> <a href="#Variable_I"><i class="var">I</i></a></pre></details><pre>
+
 
 <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_variant-value" class="decl">variant-value</span></span>(<span id="Variable_V" class="decl"><i class="var">V</i></span>:<span class="name"><a href="#Name_variants" title="values -&gt; values">variants</a></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>)) : =><span id="Variable_T" class="decl"><i class="var">T</i></span>
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_variant-value" title="values -&gt; values">variant-value</a></span>(<span class="name"><a href="#Name_variant" title="values, values -&gt; values">variant</a></span>(<span id="Variable_I" class="decl"><i class="var">I</i></span>:<span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_ids" title=" -&gt; values">ids</a></span>, <span id="Variable_V" class="decl"><i class="var">V</i></span>:<i class="var">T</i>)) ~> <a href="#Variable_V"><i class="var">V</i></a></pre></details><pre>
+  <span class="name"><span id="Name_variant-value" class="decl">variant-value</span></span>(_:<span class="name"><a href="#Name_variants" title="values -&gt; values">variants</a></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>)) : =><span id="Variable_T" class="decl"><i class="var">T</i></span>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_variant-value" title="values -&gt; values">variant-value</a></span>(<span class="name"><a href="#Name_variant" title="values, values -&gt; values">variant</a></span>(_:<span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_identifiers" title=" -&gt; values">identifiers</a></span>, <span id="Variable_V" class="decl"><i class="var">V</i></span>:<i class="var">T</i>)) ~> <a href="#Variable_V"><i class="var">V</i></a></pre></details><pre>
 </pre></details><pre>
 </pre>
 
 <footer>
   <span>From the <a href="http://plancomps.org" title="PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS">PLanCompS Project, 2018</a></span>
+  <span><a href="https://github.com/plancomps/plancomps.github.io/issues" title="CBS-BETA ISSUE REPORTS ON GITHUB">CBS-beta issues...</a></span>
   <span><a href="mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20Funcons-beta/Values/Composite/Variants/Variants.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A" title="GENERATE AN EMAIL TEMPLATE">Suggest an improvement...</a></span>
 </footer>
 

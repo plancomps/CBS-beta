@@ -78,7 +78,7 @@ Rule
     define-constrs[[ CD1 ]], define-constrs[[ CD2 BCD* ]] 
 Rule
   define-constrs[[ CN ]] =
-    { constr-name[[ CN ]] |-> variant(constr-name[[ CN ]],null-value) } 
+    { constr-name[[ CN ]] |-> variant(constr-name[[ CN ]],tuple( )) } 
 Rule
   define-constrs[[ CN 'of' CA ]] =
     { constr-name[[ CN ]] |-> 

@@ -45,10 +45,6 @@
   <div class="title">
     <a href="OC-L-A-Disambiguation.cbs" title="CBS SOURCE FILE">OC-L-A-Disambiguation</a>
   </div>
-  <div class="topic">
-    <img src="../../../../../Funcons-beta/preview.png" 
-         alt="Preview badge" width="67" height="17">
-  </div>
 </header>
 
 <nav>
@@ -126,7 +122,7 @@ lexical restrictions
   ``<span class="syn-name"><a href="../OC-L-01-Lexical-Conventions/index.html#SyntaxName_ident" title="capitalized-ident | lowercase-ident">ident</a></span>`` 
   ``<span class="syn-name"><a href="../OC-L-01-Lexical-Conventions/index.html#SyntaxName_lowercase-ident" title="lowercase ( uppercase | lowercase | decimal | '_' | '\'' ) * | '_' ( uppercase | lowercase | decimal | '_' | '\'' ) +">lowercase-ident</a></span>`` 
   ``<span class="syn-name"><a href="../OC-L-01-Lexical-Conventions/index.html#SyntaxName_capitalized-ident" title="uppercase ( uppercase | lowercase | decimal | '_' | '\'' ) *">capitalized-ident</a></span>`` -/- [A-Za-z0-9\_\']
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
 
 <i class="keyword">Syntax</i> <i class="keyword">SDF</i>
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">// Integer literals
@@ -134,7 +130,7 @@ lexical restrictions
 context-free restrictions
 
   ``<span class="syn-name"><a href="../OC-L-01-Lexical-Conventions/index.html#SyntaxName_integer-literal" title="'-' ? _ natural-literal">integer-literal</a></span>``     -/- [0-9eE]
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
 
 <i class="keyword">Syntax</i> <i class="keyword">SDF</i>
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">// Floating-point literals
@@ -148,7 +144,7 @@ context-free restrictions
 syntax
 
   ``<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../OC-L-01-Lexical-Conventions/index.html#SyntaxName_string-character-star" title="string-character _ string-character-star | (  )">string-character-star</a></span> ::= <span class="syn-name"><a href="../OC-L-01-Lexical-Conventions/index.html#SyntaxName_string-character" title="regular-string-char | escape-sequence">string-character</a></span> _ <span class="syn-name"><a href="../OC-L-01-Lexical-Conventions/index.html#SyntaxName_string-character-star" title="string-character _ string-character-star | (  )">string-character-star</a></span>``    {avoid}
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
 
 <i class="keyword">Lexis</i> <i class="keyword">SDF</i>
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">// Keywords
@@ -182,7 +178,7 @@ lexical syntax
   ``<span class="syn-name"><a href="../OC-L-03-Names/index.html#SyntaxName_infix-op-3" title="( '+' | '-' ) operator-char *">infix-op-3</a></span>`` = "->" {reject}
 
   ``<span class="syn-name"><a href="../OC-L-03-Names/index.html#SyntaxName_infix-op-5" title="( '=' | '&lt;' | '&gt;' | '$' ) operator-char * | '|' ( operator-char-not-bar operator-char * ) ? | '||' operator-char + | '&amp;' operator-char-not-ampersand operator-char * | '&amp;&amp;' operator-char + | '!='">infix-op-5</a></span>`` = "<-" {reject}
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
 
 
 <i class="keyword">Syntax</i> <i class="keyword">SDF</i>
@@ -353,11 +349,12 @@ context-free priorities
 } > 
 ``<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../OC-L-07-Expressions/index.html#SyntaxName_expr" title="value-path | constant | '(' expr ')' | 'begin' expr 'end' | '(' expr ':' typexpr ')' | expr comma-expr + | expr '::' expr | '[' expr semic-expr * ']' | '[' expr semic-expr * ';' ']' | '[|' expr semic-expr * '|]' | '[|' expr semic-expr * ';' '|]' | '{' field '=' expr semic-field-expr * '}' | '{' field '=' expr semic-field-expr * ';' '}' | '{' expr 'with' field '=' expr semic-field-expr * '}' | '{' expr 'with' field '=' expr semic-field-expr * ';' '}' | expr argument + | prefix-symbol expr | '-' expr | '-.' expr | expr infix-op-1 expr | expr infix-op-2 expr | expr infix-op-3 expr | expr infix-op-4 expr | expr infix-op-5 expr | expr infix-op-6 expr | expr infix-op-7 expr | expr infix-op-8 expr | expr '.' field | expr '.(' expr ')' | expr '.(' expr ')' '&lt;-' expr | 'if' expr 'then' expr ( 'else' expr ) ? | 'while' expr 'do' expr 'done' | 'for' value-name '=' expr ( 'to' | 'downto' ) expr 'do' expr 'done' | expr ';' expr | 'match' expr 'with' pattern-matching | 'function' pattern-matching | 'fun' pattern + '-&gt;' expr | 'try' expr 'with' pattern-matching | let-definition 'in' expr">expr</a></span> ::= <span class="syn-name"><a href="../OC-L-07-Expressions/index.html#SyntaxName_expr" title="value-path | constant | '(' expr ')' | 'begin' expr 'end' | '(' expr ':' typexpr ')' | expr comma-expr + | expr '::' expr | '[' expr semic-expr * ']' | '[' expr semic-expr * ';' ']' | '[|' expr semic-expr * '|]' | '[|' expr semic-expr * ';' '|]' | '{' field '=' expr semic-field-expr * '}' | '{' field '=' expr semic-field-expr * ';' '}' | '{' expr 'with' field '=' expr semic-field-expr * '}' | '{' expr 'with' field '=' expr semic-field-expr * ';' '}' | expr argument + | prefix-symbol expr | '-' expr | '-.' expr | expr infix-op-1 expr | expr infix-op-2 expr | expr infix-op-3 expr | expr infix-op-4 expr | expr infix-op-5 expr | expr infix-op-6 expr | expr infix-op-7 expr | expr infix-op-8 expr | expr '.' field | expr '.(' expr ')' | expr '.(' expr ')' '&lt;-' expr | 'if' expr 'then' expr ( 'else' expr ) ? | 'while' expr 'do' expr 'done' | 'for' value-name '=' expr ( 'to' | 'downto' ) expr 'do' expr 'done' | expr ';' expr | 'match' expr 'with' pattern-matching | 'function' pattern-matching | 'fun' pattern + '-&gt;' expr | 'try' expr 'with' pattern-matching | let-definition 'in' expr">expr</a></span> <b class="atom">';'</b> <span class="syn-name"><a href="../OC-L-07-Expressions/index.html#SyntaxName_expr" title="value-path | constant | '(' expr ')' | 'begin' expr 'end' | '(' expr ':' typexpr ')' | expr comma-expr + | expr '::' expr | '[' expr semic-expr * ']' | '[' expr semic-expr * ';' ']' | '[|' expr semic-expr * '|]' | '[|' expr semic-expr * ';' '|]' | '{' field '=' expr semic-field-expr * '}' | '{' field '=' expr semic-field-expr * ';' '}' | '{' expr 'with' field '=' expr semic-field-expr * '}' | '{' expr 'with' field '=' expr semic-field-expr * ';' '}' | expr argument + | prefix-symbol expr | '-' expr | '-.' expr | expr infix-op-1 expr | expr infix-op-2 expr | expr infix-op-3 expr | expr infix-op-4 expr | expr infix-op-5 expr | expr infix-op-6 expr | expr infix-op-7 expr | expr infix-op-8 expr | expr '.' field | expr '.(' expr ')' | expr '.(' expr ')' '&lt;-' expr | 'if' expr 'then' expr ( 'else' expr ) ? | 'while' expr 'do' expr 'done' | 'for' value-name '=' expr ( 'to' | 'downto' ) expr 'do' expr 'done' | expr ';' expr | 'match' expr 'with' pattern-matching | 'function' pattern-matching | 'fun' pattern + '-&gt;' expr | 'try' expr 'with' pattern-matching | let-definition 'in' expr">expr</a></span>``
 
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
 </pre>
 
 <footer>
   <span>From the <a href="http://plancomps.org" title="PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS">PLanCompS Project, 2018</a></span>
+  <span><a href="https://github.com/plancomps/plancomps.github.io/issues" title="CBS-BETA ISSUE REPORTS ON GITHUB">CBS-beta issues...</a></span>
   <span><a href="mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20OC-L/OC-L-A-Disambiguation/OC-L-A-Disambiguation.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A" title="GENERATE AN EMAIL TEMPLATE">Suggest an improvement...</a></span>
 </footer>
 

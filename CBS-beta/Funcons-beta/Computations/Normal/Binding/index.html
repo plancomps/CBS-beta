@@ -45,10 +45,6 @@
   <div class="title">
     <a href="Binding.cbs" title="CBS SOURCE FILE">Binding</a>
   </div>
-  <div class="topic">
-    <img src="../../.././preview.png" 
-         alt="Preview badge" width="67" height="17">
-  </div>
 </header>
 
 <nav>
@@ -86,7 +82,7 @@
 [
   <i class="keyword">Type</i>     <span class="name"><a href="#Name_environments" title=" -&gt; values">environments</a></span>       <i class="keyword">Alias</i> <span class="name"><a href="#Name_envs" title=" -&gt; values">envs</a></span>
   <i class="keyword">Datatype</i> <span class="name"><a href="#Name_identifiers" title=" -&gt; values">identifiers</a></span>        <i class="keyword">Alias</i> <span class="name"><a href="#Name_ids" title=" -&gt; values">ids</a></span>
-  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_identifier-tagged" title="values, values -&gt; values">identifier-tagged</a></span>  <i class="keyword">Alias</i> <span class="name"><a href="#Name_id-tagged" title="values, values -&gt; values">id-tagged</a></span> // FIX-ME: qualified-identifier Alias qual-id ?
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_identifier-tagged" title="values, values -&gt; values">identifier-tagged</a></span>  <i class="keyword">Alias</i> <span class="name"><a href="#Name_id-tagged" title="values, values -&gt; values">id-tagged</a></span>
   <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_fresh-identifier" title=" -&gt; values">fresh-identifier</a></span>
   <i class="keyword">Entity</i>   <span class="name"><a href="#Name_environment" title=" -&gt; values">environment</a></span>        <i class="keyword">Alias</i> <span class="name"><a href="#Name_env" title=" -&gt; values">env</a></span>
   <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_initialise-binding" title="values -&gt; values">initialise-binding</a></span>
@@ -102,82 +98,95 @@
   <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_recursive" title="values, values -&gt; values">recursive</a></span>
 ]
 
+
 <i class="keyword">Meta-variables</i>
   <span id="PartVariable_T" class="decl"><i class="var">T</i></span> <: <span class="name"><a href="../../../Values/Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>
+
 
 </pre><details open class="sectiondetails"><summary><pre>#### <b class="title"><i>Environments</i></b></pre></summary><pre>
 
 <i class="keyword">Type</i>
-  <span class="name"><span id="Name_environments" class="decl">environments</span></span> ~> <span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_maps" title="values, values -&gt; values">maps</a></span>(<span class="name"><a href="#Name_identifiers" title=" -&gt; values">identifiers</a></span>, <span class="name"><a href="../../../Values/Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>)
+  <span class="name"><span id="Name_environments" class="decl">environments</span></span> ~> <span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_maps" title="values, values? -&gt; values">maps</a></span>(<span class="name"><a href="#Name_identifiers" title=" -&gt; values">identifiers</a></span>, <span class="name"><a href="../../../Values/Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span><sup class="sup">?</sup>)
 <i class="keyword">Alias</i>
   <span class="name"><span id="Name_envs" class="decl">envs</span></span> = <span class="name"><a href="#Name_environments" title=" -&gt; values">environments</a></span>
-</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  An environment represents bindings of identifiers to defined values.
-  Mapping an identifier to `<span class="name"><a href="../../../Values/Value-Types/index.html#Name_none" title=" -&gt; values">none</a></span>` represents that its binding is hidden.
-*/</span></pre></details><pre>
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  An environment represents bindings of identifiers to values.
+  Mapping an identifier to `( )` represents that its binding is hidden.
+  
+  Circularity in environments (due to recursive bindings) is represented using
+  bindings to cut-points called `<span class="name"><a href="../Linking/index.html#Name_links" title=" -&gt; values">links</a></span>`. Funcons are provided for making
+  declarations recursive and for referring to bound values without explicit
+  mention of links, so their existence can generally be ignored.
+</span></pre></details><pre>*/
+
 
 <i class="keyword">Datatype</i>
-  <span class="name"><span id="Name_identifiers" class="decl">identifiers</span></span> ::= // FIX-ME: improve the notation
-    {_:<span class="name"><a href="../../../Values/Composite/Strings/index.html#Name_strings" title=" -&gt; values">strings</a></span>} | 
-    <span id="Name_identifier-tagged" class="decl">identifier-tagged</span>(<span id="Variable_I" class="decl"><i class="var">I</i></span>:<span class="name"><a href="#Name_identifiers" title=" -&gt; values">identifiers</a></span>, <span id="Variable_V" class="decl"><i class="var">V</i></span>:<span class="name"><a href="../../../Values/Value-Types/index.html#Name_defined-values" title=" -&gt; values">defined-values</a></span>)
+  <span class="name"><span id="Name_identifiers" class="decl">identifiers</span></span> ::= {_:<span class="name"><a href="../../../Values/Composite/Strings/index.html#Name_strings" title=" -&gt; values">strings</a></span>} | <span id="Name_identifier-tagged" class="decl">identifier-tagged</span>(_:<span class="name"><a href="#Name_identifiers" title=" -&gt; values">identifiers</a></span>, _:<span class="name"><a href="../../../Values/Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>)
 <i class="keyword">Alias</i>
   <span class="name"><span id="Name_ids" class="decl">ids</span></span> = <span class="name"><a href="#Name_identifiers" title=" -&gt; values">identifiers</a></span>
 <i class="keyword">Alias</i>
   <span class="name"><span id="Name_id-tagged" class="decl">id-tagged</span></span> = <span class="name"><a href="#Name_identifier-tagged" title="values, values -&gt; values">identifier-tagged</a></span>
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  An identifier is either a string of characters, or an identifier tagged with
   some value (e.g., with the identifier of a namespace).
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
+
 
 <i class="keyword">Funcon</i>
   <span class="name"><span id="Name_fresh-identifier" class="decl">fresh-identifier</span></span> : =><span class="name"><a href="#Name_identifiers" title=" -&gt; values">identifiers</a></span>
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_fresh-identifier" title=" -&gt; values">fresh-identifier</a></span>` computes an identifier distinct from all previously
   computed identifiers.
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
 </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_fresh-identifier" title=" -&gt; values">fresh-identifier</a></span> ~> <span class="name"><a href="#Name_identifier-tagged" title="values, values -&gt; values">identifier-tagged</a></span>("generated", <span class="name"><a href="../Generating/index.html#Name_fresh-atom" title=" -&gt; values">fresh-atom</a></span>)</pre></details><pre>
+
 
 </pre></details><pre></pre><details open class="sectiondetails"><summary><pre>#### <b class="title"><i>Current bindings</i></b></pre></summary><pre>
 
 <i class="keyword">Entity</i>
   <span class="ent-name"><span id="Name_environment" class="decl">environment</span></span>(_:<span class="name"><a href="#Name_environments" title=" -&gt; values">environments</a></span>) |- _ ---> _
 <i class="keyword">Alias</i>
-  <span class="name"><span id="Name_env" class="decl">env</span></span> = <span class="name"><a href="#Name_environments" title=" -&gt; values">environments</a></span>
+  <span class="name"><span id="Name_env" class="decl">env</span></span> = <span class="name"><a href="#Name_environment" title=" -&gt; values">environment</a></span>
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  The environment entity allows a computation to refer to the current bindings
   of identifiers to values.
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
+
 
 </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_initialise-binding" class="decl">initialise-binding</span></span>(<span id="Variable_X" class="decl"><i class="var">X</i></span>:=><span id="Variable_T" class="decl"><i class="var">T</i></span>) : =><span id="Variable_T" class="decl"><i class="var">T</i></span></span></pre></summary><pre>   ~> <span class="name"><a href="../Linking/index.html#Name_initialise-linking" title="values -&gt; values">initialise-linking</a></span>(<span class="name"><a href="../Generating/index.html#Name_initialise-generating" title="values -&gt; values">initialise-generating</a></span>(<span class="name"><a href="#Name_closed" title="values -&gt; values">closed</a></span>(<a href="#Variable_X"><i class="var">X</i></a>)))</pre></details><pre>
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_initialise-binding" title="values -&gt; values">initialise-binding</a></span>(<i class="var">X</i>)` ensures that `<i class="var">X</i>` does not depend on non-local bindings.
   It also ensures that the linking entity (used to represent potentially cyclic
   bindings) and the generating entity (for creating fresh identifiers) are 
   initialised.
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
 
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_bind-value" class="decl">bind-value</span></span>(<span id="Variable_I" class="decl"><i class="var">I</i></span>:<span class="name"><a href="#Name_identifiers" title=" -&gt; values">identifiers</a></span>, <span id="Variable_V" class="decl"><i class="var">V</i></span>:<span class="name"><a href="../../../Values/Value-Types/index.html#Name_defined-values" title=" -&gt; values">defined-values</a></span>) : =><span class="name"><a href="#Name_environments" title=" -&gt; values">environments</a></span></span></pre></summary><pre>    ~> { <a href="#Variable_I"><i class="var">I</i></a> |-> <a href="#Variable_V"><i class="var">V</i></a> }</pre></details><pre>
+
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_bind-value" class="decl">bind-value</span></span>(<span id="Variable_I" class="decl"><i class="var">I</i></span>:<span class="name"><a href="#Name_identifiers" title=" -&gt; values">identifiers</a></span>, <span id="Variable_V" class="decl"><i class="var">V</i></span>:<span class="name"><a href="../../../Values/Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>) : =><span class="name"><a href="#Name_environments" title=" -&gt; values">environments</a></span></span></pre></summary><pre>    ~> { <a href="#Variable_I"><i class="var">I</i></a> |-> <a href="#Variable_V"><i class="var">V</i></a> }</pre></details><pre>
 <i class="keyword">Alias</i>
   <span class="name"><span id="Name_bind" class="decl">bind</span></span> = <span class="name"><a href="#Name_bind-value" title="values, values -&gt; values">bind-value</a></span>
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_bind-value" title="values, values -&gt; values">bind-value</a></span>(<i class="var">I</i>, <i class="var">X</i>)` computes the environment that binds only `<i class="var">I</i>` to the value
   computed by `<i class="var">X</i>`.
-*/</span></pre></details><pre>
-  
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_unbind" class="decl">unbind</span></span>(<span id="Variable_I" class="decl"><i class="var">I</i></span>:<span class="name"><a href="#Name_identifiers" title=" -&gt; values">identifiers</a></span>) : =><span class="name"><a href="#Name_environments" title=" -&gt; values">environments</a></span></span></pre></summary><pre>    ~> { <a href="#Variable_I"><i class="var">I</i></a> |-> <span class="name"><a href="../../../Values/Value-Types/index.html#Name_none" title=" -&gt; values">none</a></span> }</pre></details><pre>
+</span></pre></details><pre>*/
+
+
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_unbind" class="decl">unbind</span></span>(<span id="Variable_I" class="decl"><i class="var">I</i></span>:<span class="name"><a href="#Name_identifiers" title=" -&gt; values">identifiers</a></span>) : =><span class="name"><a href="#Name_environments" title=" -&gt; values">environments</a></span></span></pre></summary><pre>    ~> { <a href="#Variable_I"><i class="var">I</i></a> |-> ( ) }</pre></details><pre>
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_unbind" title="values -&gt; values">unbind</a></span>(<i class="var">I</i>)` computes the environment that hides the binding of `<i class="var">I</i>`.
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
+
 
 <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_bound-directly" class="decl">bound-directly</span></span>(<span id="Variable_I" class="decl"><i class="var">I</i></span>:<span class="name"><a href="#Name_identifiers" title=" -&gt; values">identifiers</a></span>) : =><span class="name"><a href="../../../Values/Value-Types/index.html#Name_defined-values" title=" -&gt; values">defined-values</a></span>
+  <span class="name"><span id="Name_bound-directly" class="decl">bound-directly</span></span>(_:<span class="name"><a href="#Name_identifiers" title=" -&gt; values">identifiers</a></span>) : =><span class="name"><a href="../../../Values/Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/* </span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_bound-directly" title="values -&gt; values">bound-directly</a></span>(<i class="var">I</i>)` returns the value to which `<i class="var">I</i>` is currently bound, if any,
   and otherwise fails.
 
-  `<span class="name"><a href="#Name_bound-directly" title="values -&gt; values">bound-directly</a></span>(<i class="var">I</i>)` does *not* follow links. It is used in connection with
+  `<span class="name"><a href="#Name_bound-directly" title="values -&gt; values">bound-directly</a></span>(<i class="var">I</i>)` does *not* follow links. It is used only in connection with
   recursively-bound values when references are not encapsulated in abstractions.
-*/</span></pre></details><pre>
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i> </span></pre></summary><pre>  <span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_lookup" title="values, values -&gt; values">lookup</a></span>(<a href="#Variable_Rho"><i class="var">Rho</i></a>, <a href="#Variable_I"><i class="var">I</i></a>) ~> <span id="Variable_V" class="decl"><i class="var">V</i></span>:<span class="name"><a href="../../../Values/Value-Types/index.html#Name_defined-values" title=" -&gt; values">defined-values</a></span>
+</span></pre></details><pre>*/
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i> </span></pre></summary><pre>  <span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_lookup" title="values, values -&gt; values?">lookup</a></span>(<a href="#Variable_Rho"><i class="var">Rho</i></a>, <a href="#Variable_I"><i class="var">I</i></a>) ~> <span id="Variable_V" class="decl"><i class="var">V</i></span>:<span class="name"><a href="../../../Values/Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>
   --------------------------------------------------------
   <span class="ent-name"><a href="#Name_environment" title=" -&gt; values">environment</a></span>(<span id="Variable_Rho" class="decl"><i class="var">Rho</i></span>) |- <span class="name"><a href="#Name_bound-directly" title="values -&gt; values">bound-directly</a></span>(<span id="Variable_I" class="decl"><i class="var">I</i></span>:<span class="name"><a href="#Name_identifiers" title=" -&gt; values">identifiers</a></span>) ---> <a href="#Variable_V"><i class="var">V</i></a></pre></details><pre>
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i> </span></pre></summary><pre>  <span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_lookup" title="values, values -&gt; values">lookup</a></span>(<a href="#Variable_Rho"><i class="var">Rho</i></a>, <a href="#Variable_I"><i class="var">I</i></a>) ~> <span class="name"><a href="../../../Values/Value-Types/index.html#Name_none" title=" -&gt; values">none</a></span>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i> </span></pre></summary><pre>  <span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_lookup" title="values, values -&gt; values?">lookup</a></span>(<a href="#Variable_Rho"><i class="var">Rho</i></a>, <a href="#Variable_I"><i class="var">I</i></a>) ~> ( )
   -----------------------------------------------------------
   <span class="ent-name"><a href="#Name_environment" title=" -&gt; values">environment</a></span>(<span id="Variable_Rho" class="decl"><i class="var">Rho</i></span>) |- <span class="name"><a href="#Name_bound-directly" title="values -&gt; values">bound-directly</a></span>(<span id="Variable_I" class="decl"><i class="var">I</i></span>:<span class="name"><a href="#Name_identifiers" title=" -&gt; values">identifiers</a></span>) ---> <span class="name"><a href="../../Abnormal/Failing/index.html#Name_fail" title=" -&gt; values">fail</a></span></pre></details><pre>
 
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_bound-value" class="decl">bound-value</span></span>(<span id="Variable_I" class="decl"><i class="var">I</i></span>:<span class="name"><a href="#Name_identifiers" title=" -&gt; values">identifiers</a></span>) : =>(<span class="name"><a href="../../../Values/Value-Types/index.html#Name_defined-values" title=" -&gt; values">defined-values</a></span> & ~<span class="name"><a href="../Linking/index.html#Name_links" title=" -&gt; values">links</a></span>)</span></pre></summary><pre>   ~> <span class="name"><a href="../Linking/index.html#Name_follow-if-link" title="values -&gt; values">follow-if-link</a></span>(<span class="name"><a href="#Name_bound-directly" title="values -&gt; values">bound-directly</a></span>(<a href="#Variable_I"><i class="var">I</i></a>))</pre></details><pre>
+
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_bound-value" class="decl">bound-value</span></span>(<span id="Variable_I" class="decl"><i class="var">I</i></span>:<span class="name"><a href="#Name_identifiers" title=" -&gt; values">identifiers</a></span>) : =><span class="name"><a href="../../../Values/Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span></span></pre></summary><pre>   ~> <span class="name"><a href="../Linking/index.html#Name_follow-if-link" title="values -&gt; values">follow-if-link</a></span>(<span class="name"><a href="#Name_bound-directly" title="values -&gt; values">bound-directly</a></span>(<a href="#Variable_I"><i class="var">I</i></a>))</pre></details><pre>
 <i class="keyword">Alias</i>
   <span class="name"><span id="Name_bound" class="decl">bound</span></span> = <span class="name"><a href="#Name_bound-value" title="values -&gt; values">bound-value</a></span>
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/* </span></pre></summary><pre><span class="comment">   `<span class="name"><a href="#Name_bound-value" title="values -&gt; values">bound-value</a></span>(<i class="var">I</i>)` inspects the value to which `<i class="var">I</i>` is currently bound, if any,
@@ -187,21 +196,23 @@
    
    `<span class="name"><a href="#Name_bound-value" title="values -&gt; values">bound-value</a></span>(<i class="var">I</i>)` is used for references to non-recursive bindings and to
    recursively-bound values when references are encapsulated in abstractions.
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
+
 
 </pre></details><pre></pre><details open class="sectiondetails"><summary><pre>#### <b class="title"><i>Scope</i></b></pre></summary><pre>
 
 <i class="keyword">Funcon</i>
   <span class="name"><span id="Name_closed" class="decl">closed</span></span>(<span id="Variable_X" class="decl"><i class="var">X</i></span>:=><span id="Variable_T" class="decl"><i class="var">T</i></span>) : =><span id="Variable_T" class="decl"><i class="var">T</i></span>
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_closed" title="values -&gt; values">closed</a></span>(<i class="var">X</i>)` ensures that `<i class="var">X</i>` does not depend on non-local bindings.
-*/</span></pre></details><pre>
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="ent-name"><a href="#Name_environment" title=" -&gt; values">environment</a></span>(<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_map" title="values* -&gt; values">map</a></span>( )) |- <a href="#Variable_X"><i class="var">X</i></a> ---> <span id="Variable_X'" class="decl"><i class="var">X&prime;</i></span>
+</span></pre></details><pre>*/
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="ent-name"><a href="#Name_environment" title=" -&gt; values">environment</a></span>(<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_map" title="values* -&gt; values?">map</a></span>( )) |- <a href="#Variable_X"><i class="var">X</i></a> ---> <span id="Variable_X'" class="decl"><i class="var">X&prime;</i></span>
   -------------------------------------------
   <span class="ent-name"><a href="#Name_environment" title=" -&gt; values">environment</a></span>(_) |- <span class="name"><a href="#Name_closed" title="values -&gt; values">closed</a></span>(<span id="Variable_X" class="decl"><i class="var">X</i></span>) ---> <span class="name"><a href="#Name_closed" title="values -&gt; values">closed</a></span>(<a href="#Variable_X'"><i class="var">X&prime;</i></a>)</pre></details><pre>
 </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_closed" title="values -&gt; values">closed</a></span>(<span id="Variable_V" class="decl"><i class="var">V</i></span>:<i class="var">T</i>) ~> <a href="#Variable_V"><i class="var">V</i></a></pre></details><pre>
 
+
 <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_scope" class="decl">scope</span></span>(<span id="Variable_Rho" class="decl"><i class="var">Rho</i></span>:<span class="name"><a href="#Name_environments" title=" -&gt; values">environments</a></span>, <span id="Variable_X" class="decl"><i class="var">X</i></span>:=><span id="Variable_T" class="decl"><i class="var">T</i></span>) : =><span id="Variable_T" class="decl"><i class="var">T</i></span>
+  <span class="name"><span id="Name_scope" class="decl">scope</span></span>(_:<span class="name"><a href="#Name_environments" title=" -&gt; values">environments</a></span>, _:=><span id="Variable_T" class="decl"><i class="var">T</i></span>) : =><span id="Variable_T" class="decl"><i class="var">T</i></span>
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_scope" title="values, values -&gt; values">scope</a></span>(<i class="var">D</i>,<i class="var">X</i>)` executes `<i class="var">D</i>` with the current bindings, to compute an environment
   `<i class="var">Rho</i>` representing local bindings. It then executes `<i class="var">X</i>` to compute the result,
   with the current bindings extended by `<i class="var">Rho</i>`, which may shadow or hide previous
@@ -209,14 +220,15 @@
   
   `<span class="name"><a href="#Name_closed" title="values -&gt; values">closed</a></span>(<span class="name"><a href="#Name_scope" title="values, values -&gt; values">scope</a></span>(<i class="var">Rho</i>, <i class="var">X</i>))` ensures that `<i class="var">X</i>` can reference only the bindings
   provided by `<i class="var">Rho</i>`.
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
 </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="ent-name"><a href="#Name_environment" title=" -&gt; values">environment</a></span>(<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_map-override" title="values* -&gt; values">map-override</a></span>(<a href="#Variable_Rho1"><i class="var">Rho<sub class="sub">1</sub></i></a>, <a href="#Variable_Rho0"><i class="var">Rho<sub class="sub">0</sub></i></a>)) |- <a href="#Variable_X"><i class="var">X</i></a> ---> <span id="Variable_X'" class="decl"><i class="var">X&prime;</i></span>
   ---------------------------------------------------------------------
   <span class="ent-name"><a href="#Name_environment" title=" -&gt; values">environment</a></span>(<span id="Variable_Rho0" class="decl"><i class="var">Rho<sub class="sub">0</sub></i></span>) |- <span class="name"><a href="#Name_scope" title="values, values -&gt; values">scope</a></span>(<span id="Variable_Rho1" class="decl"><i class="var">Rho<sub class="sub">1</sub></i></span>:<span class="name"><a href="#Name_environments" title=" -&gt; values">environments</a></span>, <span id="Variable_X" class="decl"><i class="var">X</i></span>) ---> <span class="name"><a href="#Name_scope" title="values, values -&gt; values">scope</a></span>(<a href="#Variable_Rho1"><i class="var">Rho<sub class="sub">1</sub></i></a>, <a href="#Variable_X'"><i class="var">X&prime;</i></a>)</pre></details><pre>
 </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_scope" title="values, values -&gt; values">scope</a></span>(_:<span class="name"><a href="#Name_environments" title=" -&gt; values">environments</a></span>, <span id="Variable_V" class="decl"><i class="var">V</i></span>:<i class="var">T</i>) ~> <a href="#Variable_V"><i class="var">V</i></a></pre></details><pre>
 
+
 <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_accumulate" class="decl">accumulate</span></span>(<span id="Variable_D*" class="decl"><i class="var">D*</i></span>:(=><span class="name"><a href="#Name_environments" title=" -&gt; values">environments</a></span>)*) : =><span class="name"><a href="#Name_environments" title=" -&gt; values">environments</a></span>
+  <span class="name"><span id="Name_accumulate" class="decl">accumulate</span></span>(_:(=><span class="name"><a href="#Name_environments" title=" -&gt; values">environments</a></span>)*) : =><span class="name"><a href="#Name_environments" title=" -&gt; values">environments</a></span>
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_accumulate" title="values* -&gt; values">accumulate</a></span>(<i class="var">D<sub class="sub">1</sub></i>, <i class="var">D<sub class="sub">2</sub></i>)` executes `<i class="var">D<sub class="sub">1</sub></i>` with the current bindings, to compute an
   environment `<i class="var">Rho<sub class="sub">1</sub></i>` representing some local bindings. It then executes `<i class="var">D<sub class="sub">2</sub></i>` to
   compute an environment `<i class="var">Rho<sub class="sub">2</sub></i>` representing further local bindings, with the
@@ -224,65 +236,72 @@
   current bindings. The result is `<i class="var">Rho<sub class="sub">1</sub></i>` extended by `<i class="var">Rho<sub class="sub">2</sub></i>`, which may shadow
   or hide the bindings of `<i class="var">Rho<sub class="sub">1</sub></i>`.
   
-  `<span class="name"><a href="#Name_accumulate" title="values* -&gt; values">accumulate</a></span>(_, _)` is associative, with `<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_map" title="values* -&gt; values">map</a></span>( )` as unit, and extends to any
+  `<span class="name"><a href="#Name_accumulate" title="values* -&gt; values">accumulate</a></span>(_, _)` is associative, with `<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_map" title="values* -&gt; values?">map</a></span>( )` as unit, and extends to any
   number of arguments.
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
 </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>                  <a href="#Variable_D1"><i class="var">D<sub class="sub">1</sub></i></a> ---> <span id="Variable_D1'" class="decl"><i class="var">D<sub class="sub">1'</sub>&prime;</i></span>
   -------------------------------------------
   <span class="name"><a href="#Name_accumulate" title="values* -&gt; values">accumulate</a></span>(<span id="Variable_D1" class="decl"><i class="var">D<sub class="sub">1</sub></i></span>, <span id="Variable_D2" class="decl"><i class="var">D<sub class="sub">2</sub></i></span>) ---> <span class="name"><a href="#Name_accumulate" title="values* -&gt; values">accumulate</a></span>(<a href="#Variable_D1'"><i class="var">D<sub class="sub">1'</sub>&prime;</i></a>, <a href="#Variable_D2"><i class="var">D<sub class="sub">2</sub></i></a>)</pre></details><pre>
 </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_accumulate" title="values* -&gt; values">accumulate</a></span>(<span id="Variable_Rho1" class="decl"><i class="var">Rho<sub class="sub">1</sub></i></span>:<span class="name"><a href="#Name_environments" title=" -&gt; values">environments</a></span>, <span id="Variable_D2" class="decl"><i class="var">D<sub class="sub">2</sub></i></span>) ~> <span class="name"><a href="#Name_scope" title="values, values -&gt; values">scope</a></span>(<a href="#Variable_Rho1"><i class="var">Rho<sub class="sub">1</sub></i></a>, <span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_map-override" title="values* -&gt; values">map-override</a></span>(<a href="#Variable_D2"><i class="var">D<sub class="sub">2</sub></i></a>, <a href="#Variable_Rho1"><i class="var">Rho<sub class="sub">1</sub></i></a>))</pre></details><pre>
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_accumulate" title="values* -&gt; values">accumulate</a></span>( ) ~> <span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_map" title="values* -&gt; values">map</a></span>( )</pre></details><pre> //FIX-ME (implementation) order matters
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_accumulate" title="values* -&gt; values">accumulate</a></span>( ) ~> <span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_map" title="values* -&gt; values?">map</a></span>( )</pre></details><pre>
 </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_accumulate" title="values* -&gt; values">accumulate</a></span>(<span id="Variable_D1" class="decl"><i class="var">D<sub class="sub">1</sub></i></span>) ~> <a href="#Variable_D1"><i class="var">D<sub class="sub">1</sub></i></a></pre></details><pre>
 </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_accumulate" title="values* -&gt; values">accumulate</a></span>(<span id="Variable_D1" class="decl"><i class="var">D<sub class="sub">1</sub></i></span>, <span id="Variable_D2" class="decl"><i class="var">D<sub class="sub">2</sub></i></span>, <span id="Variable_D+" class="decl"><i class="var">D<sup class="sup">+</sup></i></span>) ~> <span class="name"><a href="#Name_accumulate" title="values* -&gt; values">accumulate</a></span>(<a href="#Variable_D1"><i class="var">D<sub class="sub">1</sub></i></a>, <span class="name"><a href="#Name_accumulate" title="values* -&gt; values">accumulate</a></span>(<a href="#Variable_D2"><i class="var">D<sub class="sub">2</sub></i></a>, <a href="#Variable_D+"><i class="var">D<sup class="sup">+</sup></i></a>))</pre></details><pre>
 
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_collateral" class="decl">collateral</span></span>(<span id="Variable_Rho*" class="decl"><i class="var">Rho*</i></span>:<span class="name"><a href="#Name_environments" title=" -&gt; values">environments</a></span>*) : =><span class="name"><a href="#Name_environments" title=" -&gt; values">environments</a></span></span></pre></summary><pre>   ~> <span class="name"><a href="../../Abnormal/Failing/index.html#Name_def" title="values -&gt; values">def</a></span> <span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_map-unite" title="values* -&gt; values">map-unite</a></span>(<a href="#Variable_Rho*"><i class="var">Rho*</i></a>)</pre></details><pre>
+
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_collateral" class="decl">collateral</span></span>(<span id="Variable_Rho*" class="decl"><i class="var">Rho*</i></span>:<span class="name"><a href="#Name_environments" title=" -&gt; values">environments</a></span>*) : =><span class="name"><a href="#Name_environments" title=" -&gt; values">environments</a></span></span></pre></summary><pre>   ~> <span class="name"><a href="../../Abnormal/Failing/index.html#Name_checked" title="values? -&gt; values">checked</a></span> <span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_map-unite" title="values* -&gt; values?">map-unite</a></span>(<a href="#Variable_Rho*"><i class="var">Rho*</i></a>)</pre></details><pre>
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/* </span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_collateral" title="values* -&gt; values">collateral</a></span>(<i class="var">D<sub class="sub">1</sub></i>, ...)` pre-evaluates its arguments with the current bindings,
   and unites the resulting maps, which fails if the domains are not pairwise
   disjoint.
 
-  `<span class="name"><a href="#Name_collateral" title="values* -&gt; values">collateral</a></span>(<i class="var">D<sub class="sub">1</sub></i>, <i class="var">D<sub class="sub">2</sub></i>)` is associative and commutative with `<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_map" title="values* -&gt; values">map</a></span>( )` as unit, 
+  `<span class="name"><a href="#Name_collateral" title="values* -&gt; values">collateral</a></span>(<i class="var">D<sub class="sub">1</sub></i>, <i class="var">D<sub class="sub">2</sub></i>)` is associative and commutative with `<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_map" title="values* -&gt; values?">map</a></span>( )` as unit, 
   and extends to any number of arguments.
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
+
 
 </pre></details><pre></pre><details open class="sectiondetails"><summary><pre>#### <b class="title"><i>Recurse</i></b></pre></summary><pre>
 
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_bind-recursively" class="decl">bind-recursively</span></span>(<span id="Variable_I" class="decl"><i class="var">I</i></span>:<span class="name"><a href="#Name_identifiers" title=" -&gt; values">identifiers</a></span>, <span id="Variable_E" class="decl"><i class="var">E</i></span>:=><span class="name"><a href="../../../Values/Value-Types/index.html#Name_defined-values" title=" -&gt; values">defined-values</a></span>) : =><span class="name"><a href="#Name_environments" title=" -&gt; values">environments</a></span></span></pre></summary><pre>    ~> <span class="name"><a href="#Name_recursive" title="values, values -&gt; values">recursive</a></span>({<a href="#Variable_I"><i class="var">I</i></a>}, <span class="name"><a href="#Name_bind-value" title="values, values -&gt; values">bind-value</a></span>(<a href="#Variable_I"><i class="var">I</i></a>, <a href="#Variable_E"><i class="var">E</i></a>))</pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_bind-recursively" class="decl">bind-recursively</span></span>(<span id="Variable_I" class="decl"><i class="var">I</i></span>:<span class="name"><a href="#Name_identifiers" title=" -&gt; values">identifiers</a></span>, <span id="Variable_E" class="decl"><i class="var">E</i></span>:=><span class="name"><a href="../../../Values/Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>) : =><span class="name"><a href="#Name_environments" title=" -&gt; values">environments</a></span></span></pre></summary><pre>    ~> <span class="name"><a href="#Name_recursive" title="values, values -&gt; values">recursive</a></span>({<a href="#Variable_I"><i class="var">I</i></a>}, <span class="name"><a href="#Name_bind-value" title="values, values -&gt; values">bind-value</a></span>(<a href="#Variable_I"><i class="var">I</i></a>, <a href="#Variable_E"><i class="var">E</i></a>))</pre></details><pre>
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_bind-recursively" title="values, values -&gt; values">bind-recursively</a></span>(<i class="var">I</i>, <i class="var">E</i>)` binds `<i class="var">I</i>` to a link that refers to the value of `<i class="var">E</i>`, 
   representing a recursive binding of `<i class="var">I</i>` to the value of `<i class="var">E</i>`.
   Since `<span class="name"><a href="#Name_bound-value" title="values -&gt; values">bound-value</a></span>(<i class="var">I</i>)` follows links, it should not be executed during the
   evaluation of `<i class="var">E</i>`.
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
+
 
 </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_recursive" class="decl">recursive</span></span>(<span id="Variable_SI" class="decl"><i class="var">SI</i></span>:<span class="name"><a href="../../../Values/Composite/Sets/index.html#Name_sets" title="values -&gt; values">sets</a></span>(<span class="name"><a href="#Name_identifiers" title=" -&gt; values">identifiers</a></span>), <span id="Variable_D" class="decl"><i class="var">D</i></span>:=><span class="name"><a href="#Name_environments" title=" -&gt; values">environments</a></span>) : =><span class="name"><a href="#Name_environments" title=" -&gt; values">environments</a></span></span></pre></summary><pre>    ~> <span class="name"><a href="#Name_re-close" title="values, values -&gt; values">re-close</a></span>(<span class="name"><a href="#Name_bind-to-forward-links" title="values -&gt; values">bind-to-forward-links</a></span>(<a href="#Variable_SI"><i class="var">SI</i></a>), <a href="#Variable_D"><i class="var">D</i></a>)</pre></details><pre>
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_recursive" title="values, values -&gt; values">recursive</a></span>(<i class="var">SI</i>, <i class="var">D</i>)` executes `<i class="var">D</i>` with potential recursion on the bindings of 
   the identifiers in the set `<i class="var">SI</i>` (which need not be the same as the set of
   identifiers bound by `<i class="var">D</i>`).
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
 
-<i class="keyword">Auxiliary</i> </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_re-close" class="decl">re-close</span></span>(<span id="Variable_M" class="decl"><i class="var">M</i></span>:<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_maps" title="values, values -&gt; values">maps</a></span>(<span class="name"><a href="#Name_identifiers" title=" -&gt; values">identifiers</a></span>, <span class="name"><a href="../Linking/index.html#Name_links" title=" -&gt; values">links</a></span>), <span id="Variable_D" class="decl"><i class="var">D</i></span>:=><span class="name"><a href="#Name_environments" title=" -&gt; values">environments</a></span>) : =><span class="name"><a href="#Name_environments" title=" -&gt; values">environments</a></span></span></pre></summary><pre>    ~> <span class="name"><a href="#Name_accumulate" title="values* -&gt; values">accumulate</a></span>(<span class="name"><a href="#Name_scope" title="values, values -&gt; values">scope</a></span>(<a href="#Variable_M"><i class="var">M</i></a>, <a href="#Variable_D"><i class="var">D</i></a>), <span class="name"><a href="../Flowing/index.html#Name_sequential" title="values*, values -&gt; values">sequential</a></span>(<span class="name"><a href="#Name_set-forward-links" title="values -&gt; values">set-forward-links</a></span>(<a href="#Variable_M"><i class="var">M</i></a>), <span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_map" title="values* -&gt; values">map</a></span>( )))</pre></details><pre>
+
+<i class="keyword">Auxiliary</i> </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_re-close" class="decl">re-close</span></span>(<span id="Variable_M" class="decl"><i class="var">M</i></span>:<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_maps" title="values, values? -&gt; values">maps</a></span>(<span class="name"><a href="#Name_identifiers" title=" -&gt; values">identifiers</a></span>, <span class="name"><a href="../Linking/index.html#Name_links" title=" -&gt; values">links</a></span>), <span id="Variable_D" class="decl"><i class="var">D</i></span>:=><span class="name"><a href="#Name_environments" title=" -&gt; values">environments</a></span>) : =><span class="name"><a href="#Name_environments" title=" -&gt; values">environments</a></span></span></pre></summary><pre>    ~> <span class="name"><a href="#Name_accumulate" title="values* -&gt; values">accumulate</a></span>(<span class="name"><a href="#Name_scope" title="values, values -&gt; values">scope</a></span>(<a href="#Variable_M"><i class="var">M</i></a>, <a href="#Variable_D"><i class="var">D</i></a>), <span class="name"><a href="../Flowing/index.html#Name_sequential" title="values*, values -&gt; values">sequential</a></span>(<span class="name"><a href="#Name_set-forward-links" title="values -&gt; values">set-forward-links</a></span>(<a href="#Variable_M"><i class="var">M</i></a>), <span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_map" title="values* -&gt; values?">map</a></span>( )))</pre></details><pre>
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_re-close" title="values, values -&gt; values">re-close</a></span>(<i class="var">M</i>, <i class="var">D</i>)` first executes `<i class="var">D</i>` in the scope `<i class="var">M</i>`, which maps identifiers
   to freshly allocated links. This computes an environment `<i class="var">Rho</i>` where the bound
   values may contain links, or implicit references to links in abstraction
   values. It then sets the link for each identifier in the domain of `<i class="var">M</i>` to
   refer to its bound value in `<i class="var">Rho</i>`, and returns `<i class="var">Rho</i>` as the result.
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
 
-<i class="keyword">Auxiliary</i> </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_bind-to-forward-links" class="decl">bind-to-forward-links</span></span>(<span id="Variable_SI" class="decl"><i class="var">SI</i></span>:<span class="name"><a href="../../../Values/Composite/Sets/index.html#Name_sets" title="values -&gt; values">sets</a></span>(<span class="name"><a href="#Name_identifiers" title=" -&gt; values">identifiers</a></span>)) : =><span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_maps" title="values, values -&gt; values">maps</a></span>(<span class="name"><a href="#Name_identifiers" title=" -&gt; values">identifiers</a></span>, <span class="name"><a href="../Linking/index.html#Name_links" title=" -&gt; values">links</a></span>)</span></pre></summary><pre>    ~> <span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_map-unite" title="values* -&gt; values">map-unite</a></span>(<span class="name"><a href="../Giving/index.html#Name_interleave-map" title="values, values* -&gt; values*">interleave-map</a></span>(<span class="name"><a href="#Name_bind-value" title="values, values -&gt; values">bind-value</a></span>(<span class="name"><a href="../Giving/index.html#Name_given" title=" -&gt; values">given</a></span>, <span class="name"><a href="../Linking/index.html#Name_fresh-link" title="values -&gt; values">fresh-link</a></span>(<span class="name"><a href="../../../Values/Value-Types/index.html#Name_defined-values" title=" -&gt; values">defined-values</a></span>)), 
+
+<i class="keyword">Auxiliary</i> </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_bind-to-forward-links" class="decl">bind-to-forward-links</span></span>(<span id="Variable_SI" class="decl"><i class="var">SI</i></span>:<span class="name"><a href="../../../Values/Composite/Sets/index.html#Name_sets" title="values -&gt; values">sets</a></span>(<span class="name"><a href="#Name_identifiers" title=" -&gt; values">identifiers</a></span>)) : =><span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_maps" title="values, values? -&gt; values">maps</a></span>(<span class="name"><a href="#Name_identifiers" title=" -&gt; values">identifiers</a></span>, <span class="name"><a href="../Linking/index.html#Name_links" title=" -&gt; values">links</a></span>)</span></pre></summary><pre>    ~> <span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_map-unite" title="values* -&gt; values?">map-unite</a></span>(<span class="name"><a href="../Giving/index.html#Name_interleave-map" title="values, values* -&gt; values*">interleave-map</a></span>(<span class="name"><a href="#Name_bind-value" title="values, values -&gt; values">bind-value</a></span>(<span class="name"><a href="../Giving/index.html#Name_given" title=" -&gt; values">given</a></span>, <span class="name"><a href="../Linking/index.html#Name_fresh-link" title="values -&gt; values">fresh-link</a></span>(<span class="name"><a href="../../../Values/Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>)), 
                                 <span class="name"><a href="../../../Values/Composite/Sets/index.html#Name_set-elements" title="values -&gt; values*">set-elements</a></span>(<a href="#Variable_SI"><i class="var">SI</i></a>)))</pre></details><pre>
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_bind-to-forward-links" title="values -&gt; values">bind-to-forward-links</a></span>(<i class="var">SI</i>)` binds each identifier in the set `<i class="var">SI</i>` to a
   freshly allocated link.
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
 
-<i class="keyword">Auxiliary</i> </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_set-forward-links" class="decl">set-forward-links</span></span>(<span id="Variable_M" class="decl"><i class="var">M</i></span>:<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_maps" title="values, values -&gt; values">maps</a></span>(<span class="name"><a href="#Name_identifiers" title=" -&gt; values">identifiers</a></span>, <span class="name"><a href="../Linking/index.html#Name_links" title=" -&gt; values">links</a></span>)) : =><span class="name"><a href="../../../Values/Value-Types/index.html#Name_nothing" title=" -&gt; values">nothing</a></span></span></pre></summary><pre>    ~> <span class="name"><a href="../Flowing/index.html#Name_effect" title="values* -&gt; values">effect</a></span>(<span class="name"><a href="../Giving/index.html#Name_interleave-map" title="values, values* -&gt; values*">interleave-map</a></span>(<span class="name"><a href="../Linking/index.html#Name_set-link" title="values, values -&gt; values">set-link</a></span>(<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_lookup" title="values, values -&gt; values">lookup</a></span>(<a href="#Variable_M"><i class="var">M</i></a>, <span class="name"><a href="../Giving/index.html#Name_given" title=" -&gt; values">given</a></span>), <span class="name"><a href="#Name_bound-value" title="values -&gt; values">bound-value</a></span>(<span class="name"><a href="../Giving/index.html#Name_given" title=" -&gt; values">given</a></span>)),
+
+<i class="keyword">Auxiliary</i> </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_set-forward-links" class="decl">set-forward-links</span></span>(<span id="Variable_M" class="decl"><i class="var">M</i></span>:<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_maps" title="values, values? -&gt; values">maps</a></span>(<span class="name"><a href="#Name_identifiers" title=" -&gt; values">identifiers</a></span>, <span class="name"><a href="../Linking/index.html#Name_links" title=" -&gt; values">links</a></span>)) : =><span class="name"><a href="../../../Values/Primitive/Null/index.html#Name_null-type" title=" -&gt; values">null-type</a></span></span></pre></summary><pre>    ~> <span class="name"><a href="../Flowing/index.html#Name_effect" title="values* -&gt; values">effect</a></span>(<span class="name"><a href="../Giving/index.html#Name_interleave-map" title="values, values* -&gt; values*">interleave-map</a></span>(<span class="name"><a href="../Linking/index.html#Name_set-link" title="values, values -&gt; values">set-link</a></span>(<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_map-lookup" title="values, values -&gt; values?">map-lookup</a></span>(<a href="#Variable_M"><i class="var">M</i></a>, <span class="name"><a href="../Giving/index.html#Name_given" title=" -&gt; values">given</a></span>), <span class="name"><a href="#Name_bound-value" title="values -&gt; values">bound-value</a></span>(<span class="name"><a href="../Giving/index.html#Name_given" title=" -&gt; values">given</a></span>)),
                              <span class="name"><a href="../../../Values/Composite/Sets/index.html#Name_set-elements" title="values -&gt; values*">set-elements</a></span>(<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_map-domain" title="values -&gt; values">map-domain</a></span>(<a href="#Variable_M"><i class="var">M</i></a>))))</pre></details><pre>
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  For each identifier `<i class="var">I</i>` in the domain of `<i class="var">M</i>`, `<span class="name"><a href="#Name_set-forward-links" title="values -&gt; values">set-forward-links</a></span>(<i class="var">M</i>)` sets the 
   link to which `<i class="var">I</i>` is mapped by `<i class="var">M</i>` to the current bound value of `<i class="var">I</i>`.
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
 </pre></details><pre></pre></details><pre>
 </pre>
 
 <footer>
   <span>From the <a href="http://plancomps.org" title="PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS">PLanCompS Project, 2018</a></span>
+  <span><a href="https://github.com/plancomps/plancomps.github.io/issues" title="CBS-BETA ISSUE REPORTS ON GITHUB">CBS-beta issues...</a></span>
   <span><a href="mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20Funcons-beta/Computations/Normal/Binding/Binding.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A" title="GENERATE AN EMAIL TEMPLATE">Suggest an improvement...</a></span>
 </footer>
 

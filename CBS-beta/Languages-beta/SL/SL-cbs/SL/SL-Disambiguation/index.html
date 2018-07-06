@@ -45,10 +45,6 @@
   <div class="title">
     <a href="SL-Disambiguation.cbs" title="CBS SOURCE FILE">SL-Disambiguation</a>
   </div>
-  <div class="topic">
-    <img src="../../../../../Funcons-beta//preview.png" 
-         alt="Preview badge" width="67" height="17">
-  </div>
 </header>
 
 <nav>
@@ -85,15 +81,15 @@
 
 <span class="sectnumtitle"><span id="SectionNumber_#A" class="decl">#A</span> <b class="title"><i>Disambiguation</i></b></span>
 
-</pre><details class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  Specification of disambiguation for parsing currently requires direct use of
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  Specification of disambiguation for parsing currently requires direct use of
   the corresponding SDF3 notation in comments, along with embedded productions
   in CBS notation. The well-formedness of the SDF3 notation is not checked.
   A future version of CBS is to include appropriate constructs for specifying
   disambiguation.
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
 
 <i class="keyword">Syntax</i> <i class="keyword">SDF</i>
-</pre><details class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">context-free syntax
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">context-free syntax
 
 ``<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../SL-2-Expressions/index.html#SyntaxName_expr" title="int | string | 'true' | 'false' | expr '+' expr | expr '/' expr | expr '*' expr | expr '-' expr | expr '==' expr | expr '&lt;=' expr | expr '&lt;' expr | expr '!=' expr | expr '&gt;=' expr | expr '&gt;' expr | expr '&amp;&amp;' expr | expr '||' expr | '!' expr | id '(' expr-list ? ')' | id | id '=' expr | expr '.' id | expr '.' id '=' expr | expr '.' id '(' expr-list ? ')' | '(' expr ')'">expr</a></span> ::= <span class="syn-name"><a href="../SL-2-Expressions/index.html#SyntaxName_expr" title="int | string | 'true' | 'false' | expr '+' expr | expr '/' expr | expr '*' expr | expr '-' expr | expr '==' expr | expr '&lt;=' expr | expr '&lt;' expr | expr '!=' expr | expr '&gt;=' expr | expr '&gt;' expr | expr '&amp;&amp;' expr | expr '||' expr | '!' expr | id '(' expr-list ? ')' | id | id '=' expr | expr '.' id | expr '.' id '=' expr | expr '.' id '(' expr-list ? ')' | '(' expr ')'">expr</a></span> <b class="atom">'+'</b> <span class="syn-name"><a href="../SL-2-Expressions/index.html#SyntaxName_expr" title="int | string | 'true' | 'false' | expr '+' expr | expr '/' expr | expr '*' expr | expr '-' expr | expr '==' expr | expr '&lt;=' expr | expr '&lt;' expr | expr '!=' expr | expr '&gt;=' expr | expr '&gt;' expr | expr '&amp;&amp;' expr | expr '||' expr | '!' expr | id '(' expr-list ? ')' | id | id '=' expr | expr '.' id | expr '.' id '=' expr | expr '.' id '(' expr-list ? ')' | '(' expr ')'">expr</a></span>``          {left}
 ``<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../SL-2-Expressions/index.html#SyntaxName_expr" title="int | string | 'true' | 'false' | expr '+' expr | expr '/' expr | expr '*' expr | expr '-' expr | expr '==' expr | expr '&lt;=' expr | expr '&lt;' expr | expr '!=' expr | expr '&gt;=' expr | expr '&gt;' expr | expr '&amp;&amp;' expr | expr '||' expr | '!' expr | id '(' expr-list ? ')' | id | id '=' expr | expr '.' id | expr '.' id '=' expr | expr '.' id '(' expr-list ? ')' | '(' expr ')'">expr</a></span> ::= <span class="syn-name"><a href="../SL-2-Expressions/index.html#SyntaxName_expr" title="int | string | 'true' | 'false' | expr '+' expr | expr '/' expr | expr '*' expr | expr '-' expr | expr '==' expr | expr '&lt;=' expr | expr '&lt;' expr | expr '!=' expr | expr '&gt;=' expr | expr '&gt;' expr | expr '&amp;&amp;' expr | expr '||' expr | '!' expr | id '(' expr-list ? ')' | id | id '=' expr | expr '.' id | expr '.' id '=' expr | expr '.' id '(' expr-list ? ')' | '(' expr ')'">expr</a></span> <b class="atom">'/'</b> <span class="syn-name"><a href="../SL-2-Expressions/index.html#SyntaxName_expr" title="int | string | 'true' | 'false' | expr '+' expr | expr '/' expr | expr '*' expr | expr '-' expr | expr '==' expr | expr '&lt;=' expr | expr '&lt;' expr | expr '!=' expr | expr '&gt;=' expr | expr '&gt;' expr | expr '&amp;&amp;' expr | expr '||' expr | '!' expr | id '(' expr-list ? ')' | id | id '=' expr | expr '.' id | expr '.' id '=' expr | expr '.' id '(' expr-list ? ')' | '(' expr ')'">expr</a></span>``          {left}
@@ -144,10 +140,10 @@ context-free priorities
     ``<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../SL-2-Expressions/index.html#SyntaxName_expr" title="int | string | 'true' | 'false' | expr '+' expr | expr '/' expr | expr '*' expr | expr '-' expr | expr '==' expr | expr '&lt;=' expr | expr '&lt;' expr | expr '!=' expr | expr '&gt;=' expr | expr '&gt;' expr | expr '&amp;&amp;' expr | expr '||' expr | '!' expr | id '(' expr-list ? ')' | id | id '=' expr | expr '.' id | expr '.' id '=' expr | expr '.' id '(' expr-list ? ')' | '(' expr ')'">expr</a></span> ::= <span class="syn-name"><a href="../SL-1-Lexemes/index.html#SyntaxName_id" title="( 'a' - 'z' | 'A' - 'Z' ) ( 'a' - 'z' | 'A' - 'Z' | '0' - '9' ) *">id</a></span> <b class="atom">'='</b> <span class="syn-name"><a href="../SL-2-Expressions/index.html#SyntaxName_expr" title="int | string | 'true' | 'false' | expr '+' expr | expr '/' expr | expr '*' expr | expr '-' expr | expr '==' expr | expr '&lt;=' expr | expr '&lt;' expr | expr '!=' expr | expr '&gt;=' expr | expr '&gt;' expr | expr '&amp;&amp;' expr | expr '||' expr | '!' expr | id '(' expr-list ? ')' | id | id '=' expr | expr '.' id | expr '.' id '=' expr | expr '.' id '(' expr-list ? ')' | '(' expr ')'">expr</a></span>``
     ``<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../SL-2-Expressions/index.html#SyntaxName_expr" title="int | string | 'true' | 'false' | expr '+' expr | expr '/' expr | expr '*' expr | expr '-' expr | expr '==' expr | expr '&lt;=' expr | expr '&lt;' expr | expr '!=' expr | expr '&gt;=' expr | expr '&gt;' expr | expr '&amp;&amp;' expr | expr '||' expr | '!' expr | id '(' expr-list ? ')' | id | id '=' expr | expr '.' id | expr '.' id '=' expr | expr '.' id '(' expr-list ? ')' | '(' expr ')'">expr</a></span> ::= <span class="syn-name"><a href="../SL-2-Expressions/index.html#SyntaxName_expr" title="int | string | 'true' | 'false' | expr '+' expr | expr '/' expr | expr '*' expr | expr '-' expr | expr '==' expr | expr '&lt;=' expr | expr '&lt;' expr | expr '!=' expr | expr '&gt;=' expr | expr '&gt;' expr | expr '&amp;&amp;' expr | expr '||' expr | '!' expr | id '(' expr-list ? ')' | id | id '=' expr | expr '.' id | expr '.' id '=' expr | expr '.' id '(' expr-list ? ')' | '(' expr ')'">expr</a></span> <b class="atom">'.'</b> <span class="syn-name"><a href="../SL-1-Lexemes/index.html#SyntaxName_id" title="( 'a' - 'z' | 'A' - 'Z' ) ( 'a' - 'z' | 'A' - 'Z' | '0' - '9' ) *">id</a></span> <b class="atom">'='</b> <span class="syn-name"><a href="../SL-2-Expressions/index.html#SyntaxName_expr" title="int | string | 'true' | 'false' | expr '+' expr | expr '/' expr | expr '*' expr | expr '-' expr | expr '==' expr | expr '&lt;=' expr | expr '&lt;' expr | expr '!=' expr | expr '&gt;=' expr | expr '&gt;' expr | expr '&amp;&amp;' expr | expr '||' expr | '!' expr | id '(' expr-list ? ')' | id | id '=' expr | expr '.' id | expr '.' id '=' expr | expr '.' id '(' expr-list ? ')' | '(' expr ')'">expr</a></span>``
   }
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
 
 <i class="keyword">Lexis</i> <i class="keyword">SDF</i>
-</pre><details class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">lexical syntax
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">lexical syntax
 ``<span class="syn-name"><a href="../SL-1-Lexemes/index.html#SyntaxName_id" title="( 'a' - 'z' | 'A' - 'Z' ) ( 'a' - 'z' | 'A' - 'Z' | '0' - '9' ) *">id</a></span>`` = "function" {reject}
 ``<span class="syn-name"><a href="../SL-1-Lexemes/index.html#SyntaxName_id" title="( 'a' - 'z' | 'A' - 'Z' ) ( 'a' - 'z' | 'A' - 'Z' | '0' - '9' ) *">id</a></span>`` = "true"     {reject}
 ``<span class="syn-name"><a href="../SL-1-Lexemes/index.html#SyntaxName_id" title="( 'a' - 'z' | 'A' - 'Z' ) ( 'a' - 'z' | 'A' - 'Z' | '0' - '9' ) *">id</a></span>`` = "false"    {reject}
@@ -162,12 +158,13 @@ lexical restrictions
 // Ensure greedy matching for lexicals
 ``<span class="syn-name"><a href="../SL-1-Lexemes/index.html#SyntaxName_nat" title="( '0' - '9' ) +">nat</a></span>`` -/- [0-9]
 ``<span class="syn-name"><a href="../SL-1-Lexemes/index.html#SyntaxName_id" title="( 'a' - 'z' | 'A' - 'Z' ) ( 'a' - 'z' | 'A' - 'Z' | '0' - '9' ) *">id</a></span>``  -/- [a-zA-Z0-9\_]
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
 
 </pre>
 
 <footer>
   <span>From the <a href="http://plancomps.org" title="PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS">PLanCompS Project, 2018</a></span>
+  <span><a href="https://github.com/plancomps/plancomps.github.io/issues" title="CBS-BETA ISSUE REPORTS ON GITHUB">CBS-beta issues...</a></span>
   <span><a href="mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20SL/SL-Disambiguation/SL-Disambiguation.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A" title="GENERATE AN EMAIL TEMPLATE">Suggest an improvement...</a></span>
 </footer>
 

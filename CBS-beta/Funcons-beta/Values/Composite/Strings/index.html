@@ -45,10 +45,6 @@
   <div class="title">
     <a href="Strings.cbs" title="CBS SOURCE FILE">Strings</a>
   </div>
-  <div class="topic">
-    <img src="../../.././preview.png" 
-         alt="Preview badge" width="67" height="17">
-  </div>
 </header>
 
 <nav>
@@ -90,27 +86,32 @@
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_to-string" title="values -&gt; values">to-string</a></span>
 ]
 
+
 <i class="keyword">Type</i>
   <span class="name"><span id="Name_strings" class="decl">strings</span></span> ~> <span class="name"><a href="../Lists/index.html#Name_lists" title="values -&gt; values">lists</a></span>(<span class="name"><a href="../../Primitive/Characters/index.html#Name_characters" title=" -&gt; values">characters</a></span>)
+
 
 </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_string" class="decl">string</span></span>(<span id="Variable_C*" class="decl"><i class="var">C*</i></span>:<span class="name"><a href="../../Primitive/Characters/index.html#Name_characters" title=" -&gt; values">characters</a></span>*) : =><span class="name"><a href="#Name_strings" title=" -&gt; values">strings</a></span></span></pre></summary><pre>    ~> [<a href="#Variable_C*"><i class="var">C*</i></a>]</pre></details><pre>
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  Literal strings are written `"C1...Cn"`.
   A double-quote or backslash needs to be escaped: `"...\"..."`, `"...\\..."`.
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
+
 
 </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_string-append" class="decl">string-append</span></span>(<span id="Variable_S*" class="decl"><i class="var">S*</i></span>:<span class="name"><a href="#Name_strings" title=" -&gt; values">strings</a></span>*) : =><span class="name"><a href="#Name_strings" title=" -&gt; values">strings</a></span></span></pre></summary><pre>    ~> <span class="name"><a href="../Lists/index.html#Name_list-append" title="values* -&gt; values">list-append</a></span>(<a href="#Variable_S*"><i class="var">S*</i></a>)</pre></details><pre>
 
+
 <i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_to-string" class="decl">to-string</span></span>(<span id="Variable_GV" class="decl"><i class="var">GV</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_ground-values" title=" -&gt; values">ground-values</a></span>) : =><span class="name"><a href="#Name_strings" title=" -&gt; values">strings</a></span>
+  <span class="name"><span id="Name_to-string" class="decl">to-string</span></span>(_:<span class="name"><a href="../../Value-Types/index.html#Name_ground-values" title=" -&gt; values">ground-values</a></span>) : =><span class="name"><a href="#Name_strings" title=" -&gt; values">strings</a></span>
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  The strings returned by `<span class="name"><a href="#Name_to-string" title="values -&gt; values">to-string</a></span>(<i class="var">GV</i>)` are unspecified, except that when
   `<i class="var">GV</i>` is already a string, it is returned unchanged.
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
 </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Assert</i></span></pre></summary><pre>  <span class="name"><a href="#Name_to-string" title="values -&gt; values">to-string</a></span>(<i class="var">S</i>:<span class="name"><a href="#Name_strings" title=" -&gt; values">strings</a></span>) == <i class="var">S</i></pre></details><pre>
 </pre></details><pre>
 </pre>
 
 <footer>
   <span>From the <a href="http://plancomps.org" title="PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS">PLanCompS Project, 2018</a></span>
+  <span><a href="https://github.com/plancomps/plancomps.github.io/issues" title="CBS-BETA ISSUE REPORTS ON GITHUB">CBS-beta issues...</a></span>
   <span><a href="mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20Funcons-beta/Values/Composite/Strings/Strings.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A" title="GENERATE AN EMAIL TEMPLATE">Suggest an improvement...</a></span>
 </footer>
 

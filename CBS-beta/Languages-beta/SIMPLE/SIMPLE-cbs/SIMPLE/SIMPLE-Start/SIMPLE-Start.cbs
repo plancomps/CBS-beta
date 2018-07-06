@@ -37,4 +37,25 @@ Rule
   #5 Programs
   #A Disambiguation
 ]
-   
+
+/* CBS-beta/Languages-beta/SIMPLE/SIMPLE-cbs released 2018-07-07
+
+* Status: 
+  - abstract syntax:   complete, derived from [K Overview and SIMPLE Case Study]
+  - dynamic semantics: complete except for concurrency constructs
+  - static semantics:  not specified
+  - disambiguation:    incomplete
+* Tests:
+  - 53 small programs
+  - high coverage (to be verified)
+* Evolution:
+  - initial version
+* References:
+  [K Overview and SIMPLE Case Study]: 
+    http://dx.doi.org/10.1016/j.entcs.2014.05.002
+* Keywords: 
+  - imperative, illustrative, simple, disambiguation, K framework
+* Main contributors:
+  - Thomas van Binsbergen, Peter Mosses, Neil Sculthorpe
+
+*/

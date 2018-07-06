@@ -35,9 +35,9 @@ Rule
      '}' ]]
 
 Semantics
-  exec[[ _:stmts ]] : =>nothing
+  exec[[ _:stmts ]] : =>null-type
 Rule
-  exec[[ '{' '}' ]] = none
+  exec[[ '{' '}' ]] = null
 Rule
   exec[[ '{' Stmts '}' ]] = exec[[ Stmts ]]
 Rule
@@ -66,7 +66,7 @@ Rule
   	handle-thrown(
   	  exec[[ Block1 ]],
   	  scope(
-  	    bind(id[[ Id ]], allocate-initialised-variable(defined-values,given)),
+  	    bind(id[[ Id ]], allocate-initialised-variable(values,given)),
   	    exec[[ Block2 ]]))
 Rule
   exec[[ 'throw' Exp ';' ]] = throw(rval[[ Exp ]])
@@ -81,3 +81,4 @@ Rule
 Rule
   exec[[ 'rendezvous' Exp ';' ]] = fail // FIX-ME
 */
+

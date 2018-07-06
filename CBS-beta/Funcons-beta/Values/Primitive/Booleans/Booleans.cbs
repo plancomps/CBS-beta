@@ -11,13 +11,15 @@
   Funcon   exclusive-or  Alias xor
 ]
 
+
 Datatype
   booleans ::= true | false
 Alias
   bools = booleans
 
+
 Funcon
-  not(B:booleans) : =>booleans
+  not(_:booleans) : =>booleans
 /*
   `not(B)`   is logical negation.
 */
@@ -26,8 +28,9 @@ Rule
 Rule
   not(true) ~> false
 
+
 Funcon
-  implies(B1:booleans ,B2:booleans) : =>booleans 
+  implies(_:booleans, _:booleans) : =>booleans 
 /*
   `implies(B1, B2)` is logical implication.
 */
@@ -40,32 +43,35 @@ Rule
 Rule
   implies(true, false) ~> false
 
+
 Funcon
-  and(B*:booleans*) : =>booleans
+  and(_:booleans*) : =>booleans
 /*
-  `and(B, ...)` is logical conjunction of any number of Boolean defined-values.
+  `and(B, ...)` is logical conjunction of any number of Boolean values.
 */
 Rule
   and( ) ~> true
 Rule
-  and(false, B*:booleans*) ~> false  
+  and(false, _*:booleans*) ~> false  
 Rule
   and(true, B*:booleans*) ~> and(B*)
 
+
 Funcon
-  or(B*:booleans*) : =>booleans
+  or(_:booleans*) : =>booleans
 /*
-  `or(B, ...)` is logical disjunction of any number of Boolean defined-values.
+  `or(B, ...)` is logical disjunction of any number of Boolean values.
 */
 Rule
   or( ) ~> false
 Rule
-  or(true, B*:booleans*) ~> true
+  or(true, _*:booleans*) ~> true
 Rule
   or(false, B*:booleans*) ~> or(B*)
 
+
 Funcon
-  exclusive-or(B1:booleans, B2:booleans) : =>booleans
+  exclusive-or(_:booleans, _:booleans) : =>booleans
 Alias
   xor = exclusive-or
 /*

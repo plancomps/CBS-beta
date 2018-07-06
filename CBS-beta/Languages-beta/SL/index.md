@@ -1,11 +1,11 @@
-SL ![PREVIEW](../../Funcons-beta/preview.png)
+SL
 ==
 
 The SimpleLanguage, abbreviated "SL", is a dynamic demonstration language.
 It was built using [Truffle for the GraalVM] at Oracle Labs.
 A specification of [SL in DynSem] has been given by Vlad Vergu.
 
-SL is useful for illustrating the CBS of dynamic language features.
+Its CBS illustrates how dynamic bindings can be translated to funcons.
 The start of the specification of SL in CBS is at [SL-Start].
 
 

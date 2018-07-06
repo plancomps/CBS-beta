@@ -8,19 +8,26 @@
   Funcon   handle-break
 ]
 
+
+Meta-variables
+  T <: values
+
+
 Datatype
   breaking ::= broken
 /*
   `broken` is a reason for abrupt termination.
 */
 
+
 Funcon
-  finalise-breaking(X:=>T) : =>T|nothing
+  finalise-breaking(X:=>T) : =>T|null-type
    ~> finalise-abrupting(X)
 /*
   `finalise-breaking(X)` handles abrupt termination of `X` due to executing
   `break`.
 */
+
 
 Funcon
   break : =>empty-type
@@ -29,23 +36,24 @@ Funcon
   `break` abruptly terminates all enclosing computations until it is handled.
 */
 
+
 Funcon
-  handle-break(X:=>nothing) : =>nothing
+  handle-break(_:=>null-type) : =>null-type
 /*
   `handle-break(X)` terminates normally when `X` terminates abruptly for the
   reason `broken`.
 */
 Rule
-                X -- abrupted( ) -> X'
-  --------------------------------------------------
-  handle-break(X) -- abrupted( ) -> handle-break(X')
+                X --abrupted( )-> X'
+  ------------------------------------------------
+  handle-break(X) --abrupted( )-> handle-break(X')
 Rule
-                X -- abrupted(broken) -> _
-  ----------------------------------------
-  handle-break(X) -- abrupted( ) -> none
+                X --abrupted(broken)-> _
+  ---------------------------------------
+  handle-break(X) --abrupted( )-> null-value
 Rule
-                X -- abrupted(V:~breaking) -> X'
-  --------------------------------------------------
-  handle-break(X) -- abrupted(V) -> handle-break(X')
+                X --abrupted(V:~breaking)-> X'
+  ------------------------------------------------
+  handle-break(X) --abrupted(V)-> handle-break(X')
 Rule
-  handle-break(none) ~> none
+  handle-break(null-value) ~> null-value

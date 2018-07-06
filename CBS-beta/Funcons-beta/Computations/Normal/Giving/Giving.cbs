@@ -16,28 +16,32 @@
   Funcon fold-right
 ]
 
+
 Meta-variables
   T, T' <: values
-  DT <: defined-values
+  T? <: values?
+
 
 Entity
-  given-value(V:values) |- _ ---> _
+  given-value(_:values?) |- _ ---> _
 /*
   The given-value entity allows a computation to refer to a single
-  previously-computed `V:defined-values`. The given value `none` represents 
+  previously-computed `V:values`. The given value `( )` represents 
   the absence of a current given value.
 */
 
+
 Funcon
-  initialise-giving(X:nothing=>T) : nothing=>T
+  initialise-giving(X:( )=>T') : ( )=>T'
    ~> no-given(X)
 /*
   `initialise-giving(X)` ensures that the entities used by the funcons for
   giving are properly initialised.
 */
 
+
 Funcon
-  give(V:DT, Y:DT=>T) : =>T
+  give(_:T, _:T=>T') : =>T'
 /*
   `give(X, Y)` executes `X`, possibly referring to the current `given` value,
   to compute a value `V`. It then executes `Y` with `V` as the `given` value,
@@ -46,31 +50,33 @@ Funcon
 Rule
   given-value(V) |- Y ---> Y'
   ------------------------------------------------
-  given-value(_) |- give(V:DT, Y) ---> give(V, Y')
+  given-value(_?) |- give(V:T, Y) ---> give(V, Y')
 Rule
-  give(V:DT, W:T) ~> W
+  give(_:T, W:T') ~> W
+
 
 Funcon
-  given : DT=>DT
+  given : T=>T
 /*
   `given` refers to the current given value.
 */
 Rule
-  given-value(V:defined-values) |- given ---> V
+  given-value(V:values) |- given ---> V
 Rule
-  given-value(none) |- given ---> fail
+  given-value( ) |- given ---> fail
+
 
 Funcon
-  no-given(_:nothing=>T) : nothing=>T
+  no-given(_:( )=>T') : ( )=>T'
 /*
   `no-given(X)` computes `X` without references to the current given value.
 */
 Rule
-  given-value(none) |- X ---> X'
-  ---------------------------------------------------
-  given-value(_) |- no-given(X) ---> no-given(X')
+         given-value( ) |- X ---> X'
+  ------------------------------------------------
+  given-value(_?) |- no-given(X) ---> no-given(X')
 Rule
-  no-given(U:T) ~> U
+  no-given(U:T') ~> U
 
 
 #### Mapping
@@ -81,33 +87,34 @@ Rule
 */
 
 Funcon
-  left-to-right-map(F:DT=>T, V*:(DT)*) : =>(T)*
+  left-to-right-map(_:T=>T', _:(T)*) : =>(T')*
 /*
   `left-to-right-map(F, V*)` computes `F` for each value in `V*` from left
   to right, returning the sequence of resulting values.
-
-  Note that when ``nothing<:T``, the sequence of results may include `none`.
 */
+
 Rule
-  left-to-right-map(F, V:DT, V*:(DT)*)
+  left-to-right-map(F, V:T, V*:(T)*)
     ~> left-to-right(give(V, F), left-to-right-map(F, V*))
 Rule
-  left-to-right-map(F, ( )) ~> ( )
+  left-to-right-map(_, ( )) ~> ( )
+
 
 Funcon
-  interleave-map(F:DT=>T, V*:(DT)*) : =>(T)*
+  interleave-map(_:T=>T', _:(T)*) : =>(T')*
 /*
   `interleave-map(F, V*)` computes `F` for each value in `V*` interleaved, 
   returning the sequence of resulting values.
 */
 Rule
-  interleave-map(F, V:DT, V*:(DT)*)
+  interleave-map(F, V:T, V*:(T)*)
     ~> interleave(give(V, F), interleave-map(F, V*))
 Rule
-  interleave-map(F, ( )) ~> ( )
+  interleave-map(_, ( )) ~> ( )
+
 
 Funcon
-  left-to-right-repeat(F:ints=>T, M:ints, N:ints) : =>(T)*
+  left-to-right-repeat(_:integers=>T', _:integers, _:integers) : =>(T')*
 /*
   `left-to-right-repeat(F, M, N)` computes `F` for each value from `M` to `N` 
   sequentially, returning the sequence of resulting values.
@@ -115,15 +122,16 @@ Funcon
 Rule
   is-less-or-equal(M, N) == true
   -------------------------------------------------------------------------
-  left-to-right-repeat(F, M:ints, N:ints)
+  left-to-right-repeat(F, M:integers, N:integers)
     ~> left-to-right(give(M, F), left-to-right-repeat(F, int-add(M, 1), N))
 Rule
   is-less-or-equal(M, N) == false
   ----------------------------------------------
-  left-to-right-repeat(F, M:ints, N:ints) ~> ( )
+  left-to-right-repeat(_, M:integers, N:integers) ~> ( )
+
 
 Funcon
-  interleave-repeat(F:ints=>T, M:ints, N:ints) : =>(T)*
+  interleave-repeat(_:integers=>T', _:integers, _:integers) : =>(T')*
 /*
   `interleave-repeat(F, M, N)` computes `F` for each value from `M` to `N` 
   interleaved, returning the sequence of resulting values.
@@ -131,43 +139,53 @@ Funcon
 Rule
   is-less-or-equal(M, N) == true
   -------------------------------------------------------------------
-  interleave-repeat(F, M:ints, N:ints)
+  interleave-repeat(F, M:integers, N:integers)
     ~> interleave(give(M, F), interleave-repeat(F, int-add(M, 1), N))
 Rule
   is-less-or-equal(M, N) == false
   -------------------------------------------
-  interleave-repeat(F, M:ints, N:ints) ~> ( )
+  interleave-repeat(_, M:integers, N:integers) ~> ( )
 
 
 #### Filtering
 
 /*
-  Filters on collections of values can be expressed directly, e.g., 
-  `list(left-to-right-filter(P, list-elements(L)))` to filter a list `L`.
+ Filters on collections of values can be expressed directly, e.g., 
+ `list(left-to-right-filter(P, list-elements(L)))` to filter a list `L`.
 */
 
+
 Funcon
-  left-to-right-filter(P:DT=>booleans, V*:(DT)*) : =>(DT)*
-   ~> filter-defined(left-to-right-map(if-true-else(P, given, none), V*))
+  left-to-right-filter(_:T=>booleans, _:(T)*) : =>(T)*
 /*
   `left-to-right-filter(P, V*)` computes `P` for each value in `V*` from left
   to right, returning the sequence of argument values for which the result is
   `true`.
 */
+Rule
+  left-to-right-filter(P, V:T, V*:(T)*)
+   ~> left-to-right(when-true(give(V, P), V), left-to-right-filter(P, V*))
+Rule
+  left-to-right-filter(_) ~> ( )
+
 
 Funcon
-  interleave-filter(P:DT=>booleans, V*:(DT)*) : =>(DT)*
-   ~> filter-defined(interleave-map(if-true-else(P, given, none), V*))
+  interleave-filter(_:T=>booleans, _:(T)*) : =>(T)*
 /*
   `interleave-filter(P, V*)` computes `P` for each value in `V*` interleaved,
   returning the sequence of argument values for which the result is `true`.
 */
+Rule
+  interleave-filter(P, V:T, V*:(T)*)
+   ~> interleave(when-true(give(V, P), V), interleave-filter(P, V*))
+Rule
+  interleave-filter(_) ~> ( )
 
 
 #### Folding
 
 Funcon
-  fold-left(F:tuples(T,T')=>T, A:T, V*:(T')*) : =>T
+  fold-left(_:tuples(T,T')=>T, _:T, _:(T')*) : =>T
 /*
   `fold-left(F, A, V*)` reduces a sequence `V*` to a single value by folding it
   from the left, using `A` as the initial accumulator value, and iteratively
@@ -175,12 +193,13 @@ Funcon
   the first of the remaining arguments.
 */
 Rule
-  fold-left(F, A:T, ( )) ~> A
+  fold-left(_, A:T, ( )) ~> A
 Rule
   fold-left(F, A:T, V:T', V*:(T')*) ~> fold-left(F, give(tuple(A, V), F), V*)
 
+
 Funcon
-  fold-right(F:tuples(T,T')=>T', A:T', V*:(T)*) : =>T'
+  fold-right(_:tuples(T,T')=>T', _:T', _:(T)*) : =>T'
 /*
   `fold-right(F, A, V*)` reduces a sequence `V*` to a single value by folding it
   from the right, using `A` as the initial accumulator value, and iteratively

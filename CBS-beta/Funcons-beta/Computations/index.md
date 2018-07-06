@@ -1,4 +1,4 @@
-Computations ![PREVIEW](../preview.png)
+Computations
 ============
 
 The CBS library provides funcons for expressing and composing various kinds of
@@ -36,8 +36,8 @@ Abnormal computation
 Sequences of computations
 -------------------------
 
-Funcons can take sequences of computations as arguments, whereas results can
-only be (sequences of) values. 
+Funcons can take sequences of values and computations as arguments, 
+whereas results can only be (sequences of) values. 
 
 
 [flowing]: Normal/Flowing/index.html

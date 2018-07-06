@@ -29,36 +29,39 @@
   Funcon integer-sequence
 ]
 
+
 Built-in Type
-  integers <: defined-values
+  integers
 Alias
   ints = integers
 /*
   `integers` is the type of unbounded integers. Decimal notation is used to
-  express particular integer defined-values.
+  express particular integer values.
 */
 
 
 #### Subtypes of integers
 
 Built-in Type
-  integers-from(M:integers) <: integers
+  integers-from(_:integers) <: integers
 Alias
   from = integers-from
 /*
   `integers-from(M)` is the subtype of integers greater than or equal to `M`.
 */
 
+
 Built-in Type
-  integers-up-to(N:integers) <: integers
+  integers-up-to(_:integers) <: integers
 Alias
   up-to = integers-up-to
 /*
   `integers-up-to(N)` is the subtype of integers less than or equal to `N`.
 */
-  
+
+
 Type
-  bounded-integers(M:integers,N:integers)
+  bounded-integers(M:integers, N:integers)
     ~> integers-from(M) & integers-up-to(N)
 Alias
   bounded-ints = bounded-integers
@@ -66,10 +69,12 @@ Alias
   `bounded-integers(M,N)` is the subtype of integers from `M` to `N`, inclusive.
 */
 
+
 Type
   positive-integers ~> integers-from(1)
 Alias
   pos-ints = positive-integers
+
 
 Type
   negative-integers ~> integers-up-to(-1)
@@ -84,59 +89,67 @@ Type
 Alias
   nats = natural-numbers
 
+
 Built-in Funcon
   natural-successor(N:natural-numbers) : =>natural-numbers
 Alias
   nat-succ = natural-successor
 
+
 Built-in Funcon
-  natural-predecessor(N:natural-numbers) : =>natural-numbers|nothing
+  natural-predecessor(_:natural-numbers) : =>natural-numbers?
 Alias
   nat-pred = natural-predecessor
 Assert
-  natural-predecessor(0) == none
+  natural-predecessor(0) == ( )
 
 
 #### Arithmetic
 
 Built-in Funcon
-  integer-add(N*:integers*) : =>integers
+  integer-add(_:integers*) : =>integers
 Alias
   int-add = integer-add
 
+
 Built-in Funcon
-  integer-subtract(M:integers, N:integers) : =>integers
+  integer-subtract(_:integers, _:integers) : =>integers
 Alias
   int-sub = integer-subtract
 
+
 Built-in Funcon
-  integer-multiply(N*:integers*) : =>integers
+  integer-multiply(_:integers*) : =>integers
 Alias
   int-mul = integer-multiply
 
+
 Built-in Funcon
-  integer-divide(M:integers, N:integers) : =>integers|nothing
+  integer-divide(_:integers, _:integers) : =>integers?
 Alias
   int-div = integer-divide
 Assert
-  integer-divide(M:integers, 0) == none
+  integer-divide(_:integers, 0) == ( )
+
 
 Built-in Funcon
-  integer-modulo(M:integers, N:integers) : =>integers|nothing
+  integer-modulo(_:integers, _:integers) : =>integers?
 Alias
   int-mod = integer-modulo
 Assert
-  integer-modulo(M:integers, 0) == none
+  integer-modulo(_:integers, 0) == ( )
+
 
 Built-in Funcon
-  integer-power(M:integers, N:natural-numbers) : =>integers
+  integer-power(_:integers, _:natural-numbers) : =>integers
 Alias
   int-pow = integer-power
 
 Built-in Funcon
-  integer-absolute-value(N:integers) : =>natural-numbers    
+  integer-absolute-value(_:integers) : =>natural-numbers    
 Alias
   int-abs = integer-absolute-value
+
 
 Funcon
   integer-negate(N:integers) : =>integers
@@ -148,22 +161,25 @@ Alias
 #### Comparison
 
 Built-in Funcon
-  integer-is-less(M:integers, N:integers) : =>booleans
+  integer-is-less(_:integers, _:integers) : =>booleans
 Alias
   is-less = integer-is-less
 
+
 Built-in Funcon
-  integer-is-less-or-equal(M:integers, N:integers) : =>booleans
+  integer-is-less-or-equal(_:integers, _:integers) : =>booleans
 Alias
   is-less-or-equal = integer-is-less-or-equal
 
+
 Built-in Funcon
-  integer-is-greater(M:integers, N:integers) : =>booleans
+  integer-is-greater(_:integers, _:integers) : =>booleans
 Alias
   is-greater = integer-is-greater
 
+
 Built-in Funcon
-  integer-is-greater-or-equal(M:integers, N:integers) : =>booleans
+  integer-is-greater-or-equal(_:integers, _:integers) : =>booleans
 Alias
   is-greater-or-equal = integer-is-greater-or-equal
 
@@ -171,30 +187,34 @@ Alias
 #### Conversion
 
 Built-in Funcon
-  binary-natural(S:strings) : =>natural-numbers|nothing
+  binary-natural(_:strings) : =>natural-numbers?
 Alias
   binary = binary-natural
 
+
 Built-in Funcon
-  octal-natural(S:strings) : =>natural-numbers|nothing
+  octal-natural(_:strings) : =>natural-numbers?
 Alias
   octal = octal-natural
 
+
 Built-in Funcon
-  decimal-natural(S:strings) : =>natural-numbers|nothing
+  decimal-natural(_:strings) : =>natural-numbers?
 Alias
   decimal = decimal-natural
 /*
   Literal natural numbers `N` are equivalent to `decimal-natural"N"`.
 */
 
+
 Built-in Funcon
-  hexadecimal-natural(S:strings) : =>natural-numbers|nothing
+  hexadecimal-natural(_:strings) : =>natural-numbers?
 Alias
   hexadecimal = hexadecimal-natural
 
+
 Funcon
-  integer-sequence(M:integers, N:integers) : =>integers*
+  integer-sequence(_:integers, _:integers) : =>integers*
 /*
   `integer-sequence(M, N)` is the seqeunce of integers from `M` to `N`,
   except that if `M` is greater than `N`, it is the empty sequence.

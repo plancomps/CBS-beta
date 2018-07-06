@@ -10,37 +10,41 @@
   Funcon   catch-else-throw
 ]
 
+
 Meta-variables
-  T <: values
-  DT, DT' <: defined-values
+  R, S, T, T', T'' <: values
+
 
 Datatype
-  throwing ::= thrown(V:defined-values)
+  throwing ::= thrown(_:values)
 /*
   `thrown(V)` is a reason for abrupt termination.
 */
 
+
 Funcon
-  finalise-throwing(X:=>T) : =>T|nothing
+  finalise-throwing(X:=>T) : =>T|null-type
    ~> finalise-abrupting(X)
 /*
   `finalise-throwing(X)` handles abrupt termination of `X` due to
   executing `throw(V)`.
 */
 
-Funcon
-  throw(V:DT) : =>empty-type
-   ~> abrupt(thrown(V))
-/*
-  `throw(V)` abruptly terminates all enclosing computations until it is handled.
-*/
 
 Funcon
-  handle-thrown(X:DT=>T, Y:DT'=>T) : DT=>T
+  throw(V:T) : =>empty-type
+   ~> abrupt(thrown(V))
+/*
+  `throw(V)` abruptly terminates all enclosing computations uTil it is handled.
+*/
+
+
+Funcon
+  handle-thrown(_:T'=>T, _:T''=>T) : T'=>T
 /*
   `handle-thrown(X, Y)` first evaluates `X`. If `X` terminates normally with
   value `V`, then `V` is returned and `Y` is ignored. If `X` terminates abruptly
-  with a thrown entity having value `V`, then `Y` is executed with `V` as
+  with a thrown eTity having value `V`, then `Y` is executed with `V` as
   `given` value.
   
   `handle-thrown(X, Y)` is associative, with `throw(given)` as unit.
@@ -48,19 +52,20 @@ Funcon
   thrown value is re-thrown.
 */
 Rule
-                    X -- abrupted( ) -> X'
-  ----------------------------------------------------------
-  handle-thrown(X, Y) -- abrupted( ) -> handle-thrown(X', Y)
+                    X --abrupted( )-> X'
+  --------------------------------------------------------
+  handle-thrown(X, Y) --abrupted( )-> handle-thrown(X', Y)
 Rule
-    X -- abrupted(thrown(V:defined-values)) -> X'
-  ------------------------------------------------
-  handle-thrown(X, Y) -- abrupted( ) -> give(V, Y)
+    X --abrupted(thrown(V'':values))-> X'
+  ----------------------------------------------
+  handle-thrown(X, Y) --abrupted( )-> give(V'', Y)
 Rule
-                    X -- abrupted(V':~throwing) -> X'
-  -----------------------------------------------------------
-  handle-thrown(X, Y) -- abrupted(V') -> handle-thrown(X', Y)
+                    X --abrupted(V':~throwing)-> X'
+  ---------------------------------------------------------
+  handle-thrown(X, Y) --abrupted(V')-> handle-thrown(X', Y)
 Rule
-  handle-thrown(V:values, Y) ~> V
+  handle-thrown(V:T, Y) ~> V
+
 
 Funcon
   handle-recursively(X:S=>T, Y:R=>T) : S=>T
@@ -71,8 +76,9 @@ Funcon
   Thus, many thrown values may get handled by the same handler. 
 */
 
+
 Funcon
-  catch-else-throw(P:defined-values, Y:=>T) : =>T
+  catch-else-throw(P:values, Y:=>T) : =>T
     ~> else(case-match(P, Y), throw(given))
  /*
    `handle-thrown(X, catch-else-throw(P, Y))` handles those values thrown by `X`

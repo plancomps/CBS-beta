@@ -1,0 +1,15 @@
+### Null
+
+[
+Datatype null-type
+Funcon   null-value Alias null
+]
+
+
+Datatype
+  null-type ::= null-value
+Alias
+  null = null-value
+/*
+  The only element of the datatype `null-type` is `null-value`.
+*/

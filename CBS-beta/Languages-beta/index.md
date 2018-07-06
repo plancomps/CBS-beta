@@ -1,4 +1,4 @@
-Languages-beta ![PREVIEW](../Funcons-beta/preview.png)
+Languages-beta
 ==============
 
 This page provides access to the beta-release of five examples of language
@@ -14,6 +14,18 @@ sections of the [Browsing guide].
 See [Funcons-beta] for the beta-release of an initial collection of funcons.
 Those funcons used in the CBS of a particular language are listed in an index,
 accessed from the dropdown menu shown when browsing its specification.
+
+The specification of each funcon has been validated by basic unit tests that
+exercise all its rules. Moreover, funcons that are reused in two or more of
+the illustrative language specifications have been exercised in different
+contexts.
+
+The current level of validation of the illustrative language specifications
+varies considerably, and the coverage of the test suites has not yet been
+analysed. The colophon on the start page of each language specification
+includes the size of the current test suite and an indication of its expected
+coverage. Further tests are to be made during the beta-release review period;
+the test suites will subsequently be added to this website.
 
 IMP
 ---

@@ -11,22 +11,24 @@
   Funcon   partial-apply
 ]
 
+
 Meta-variables
-  DT, DT1, DT2 <: defined-values
-  T <: values
+  T, T', T1, T2 <: values
+
 
 Datatype
-  functions(DT,T) ::= function(A:abstractions(DT=>T))
+  functions(T,T') ::= function(A:abstractions(T=>T'))
 /*
-  `functions(DT, T)` consists of abstractions whose bodies may depend on
-  a given value of type S, and whose executions normally compute values 
-  of type T.
+  `functions(T, T')` consists of abstractions whose bodies may depend on
+  a given value of type `T`, and whose executions normally compute values 
+  of type `T'`.
   `function(abstraction(X))` evaluates to a function with dynamic bindings,
   `function(closure(X))` computes a function with static bindings.
 */
 
+
 Funcon
-  apply(F:functions(DT, T), V:DT) : =>T
+  apply(_:functions(T, T'), _:T) : =>T'
 /*
   `apply(F, V)` applies the function `F` to the argument value `V`.
   This corresponds to call by value; using thunks as argument values
@@ -34,19 +36,21 @@ Funcon
   corresponds to application to multiple arguments.
 */
 Rule
-  apply(function(abstraction(X)), V:DT) ~> give(V, X)
+  apply(function(abstraction(X)), V:T) ~> give(V, X)
+
 
 Funcon
-  supply(F:functions(DT, T), V:DT) : =>thunks(T)
+  supply(_:functions(T, T'), _:T) : =>thunks(T')
 /*
   `supply(F, V)` determines the argument value of a function application,
   but returns a thunk that defers executing the body of the function.
 */
 Rule
-  supply(function(abstraction(X)), V:DT) ~> thunk(abstraction(give(V, X)))
+  supply(function(abstraction(X)), V:T) ~> thunk(abstraction(give(V, X)))
+
 
 Funcon
-  compose(F2:functions(DT2, T), F1:functions(DT1, DT2)) : =>functions(DT1, T)
+  compose(_:functions(T2, T'), _:functions(T1, T2)) : =>functions(T1, T')
 /*
   `compose(F2, F1)` returns the function that applies `F1` to its argument,
   then applies `F2` to the result of `F1`.
@@ -55,32 +59,34 @@ Rule
   compose(function(abstraction(Y)), function(abstraction(X)))
     ~> function(abstraction(give(X, Y)))
 
+
 Funcon
-  uncurry(F:functions(DT1, functions(DT2, T))) : 
-    =>functions(tuples(DT1, DT2), T)
+  uncurry(F:functions(T1, functions(T2, T'))) : 
+    =>functions(tuples(T1, T2), T')
    ~> function(abstraction(
          apply(
-           apply(F, def index(1, tuple-elements given)),
-           def index(2, tuple-elements given))))
+           apply(F, checked index(1, tuple-elements given)),
+           checked index(2, tuple-elements given))))
 /*
   `uncurry(F)` takes a curried function `F` and returns a function that takes
   a pair of arguments..
 */
 
+
 Funcon
-  curry(F:functions(tuples(DT1, DT2), T)) : =>functions(DT1, functions(DT2, T))
+  curry(F:functions(tuples(T1, T2), T')) : =>functions(T1, functions(T2, T'))
     ~> function(abstraction(partial-apply(F, given)))
 /*
   `curry(F)` takes a function `F` that takes a pair of arguments, and returns
   the corresponding 'curried' function.
 */
 
+
 Funcon
-  partial-apply(F:functions(tuples(DT1, DT2), T), V:DT1) : =>functions(DT2, T)
+  partial-apply(F:functions(tuples(T1, T2), T'), V:T1) : =>functions(T2, T')
     ~> function(abstraction(apply(F,tuple(V,given))))
 /*
   `partial-apply(F, V)` takes a function `F` that takes a pair of arguments, 
   and determines the first argument, returning a function of the second 
   argument.
 */
-    

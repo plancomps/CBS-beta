@@ -9,9 +9,10 @@
   Funcon finally
 ]
 
+
 Meta-variables
-  T <: values
-  DT, DT' <: defined-values
+  T, T', T'' <: values
+
 
 Funcon
   stuck : =>empty-type
@@ -20,30 +21,34 @@ Funcon
   a transition that causes the computation to terminate abruptly.
 */
 
+
 Entity
-  _ --abrupted(V?:defined-values?)-> _
+  _ --abrupted(_:values?)-> _
 /*
   `abrupted(V)` in a label on a tranistion indicates abrupt termination for
   reason `V`. `abrupted( )` indicates the absence of abrupt termination.
 */
 
+
 Funcon
-  finalise-abrupting(X:=>T) : =>T|nothing
-   ~> handle-abrupt(X, none)
+  finalise-abrupting(X:=>T) : =>T|null-type
+   ~> handle-abrupt(X, null-value)
 /*
   `finalise-abrupting(X)` handles abrupt termination of `X` for any reason.
 */
 
+
 Funcon
-  abrupt(V:defined-values) :=>empty-type
+  abrupt(_:values) :=>empty-type
 /*
   `abrupt(V)` terminates abruptly for reason `V`.
 */
 Rule
-  abrupt(V:defined-values) --abrupted(V)-> stuck
+  abrupt(V:values) --abrupted(V)-> stuck
+
 
 Funcon
-  handle-abrupt(X:DT=>T, Y:DT'=>T) : DT=>T
+  handle-abrupt(_:T'=>T, _:T''=>T) : T'=>T
 /*
   `handle-abrupt(X, Y)` first evaluates `X`. If `X` terminates normally with
   value `V`, then `V` is returned and `Y` is ignored. If `X` terminates abruptly
@@ -54,18 +59,19 @@ Funcon
   abrupt termination for the given reason if `Y` fails
 */
 Rule
-                    X -- abrupted( ) -> X'
-  ----------------------------------------------------------
-  handle-abrupt(X, Y) -- abrupted( ) -> handle-abrupt(X', Y)
+                    X --abrupted( )-> X'
+  --------------------------------------------------------
+  handle-abrupt(X, Y) --abrupted( )-> handle-abrupt(X', Y)
 Rule
-                    X -- abrupted(V:DT') -> X'
-  ------------------------------------------------
-  handle-abrupt(X, Y) -- abrupted( ) -> give(V, Y)
+                    X --abrupted(V:T'')-> X'
+  ----------------------------------------------
+  handle-abrupt(X, Y) --abrupted( )-> give(V, Y)
 Rule
   handle-abrupt(V:T, Y) ~> V
 
+
 Funcon
-  finally(X:=>T, Y:=>nothing) : =>T
+  finally(_:=>T, _:=>null-type) : =>T
 /*
   `finally(X, Y)` first executes `X`. If `X` terminates normally with 
   value `V`, then `Y` is executed before terminating normally with value `V`.
@@ -73,13 +79,13 @@ Funcon
   terminating abruptly with the same reason `V`.
 */
 Rule
-              X -- abrupted( ) -> X'
-  ----------------------------------------------
-  finally(X, Y) -- abrupted( ) -> finally(X', Y)
+              X --abrupted( )-> X'
+  --------------------------------------------
+  finally(X, Y) --abrupted( )-> finally(X', Y)
 Rule
-              X -- abrupted(V:defined-values) -> X'
-  -------------------------------------------------------
-  finally(X, Y) -- abrupted() -> sequential(Y, abrupt(V))
+              X --abrupted(V:values)-> X'
+  -----------------------------------------------------
+  finally(X, Y) --abrupted()-> sequential(Y, abrupt(V))
 Rule
   finally(V:T, Y) ~> sequential(Y,V)
   

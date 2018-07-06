@@ -7,22 +7,24 @@
   Funcon print
 ]
 
+
 Entity
-  _ -- standard-out!(V*:defined-values*) -> _
+  _ -- standard-out!(_:values*) -> _
 /*
   This entity represents the sequence of values output by a particular
   transition, where the empty sequence `( )` represents the lack of output.
   Composition of transitions concatenates their output sequences.
 */
 
+
 Funcon
-  print(V*:defined-values*) : =>nothing
+  print(_:values*) : =>null-type
 /*
   `print(X*)` evaluates the arguments `X*` and emits the resulting sequence of
   values on the standard-out channel. `print( )` has no effect.
 */
 Rule
-  print(V*:defined-values*) -- standard-out!(V*) -> none
+  print(V*:values*) -- standard-out!(V*) -> null-value
 
 
 #### Input
@@ -33,22 +35,25 @@ Rule
 ]
 
 Entity
-  _ -- standard-in?(V:defined-values*|nothing) -> _
+  _ -- standard-in?(_:values*) -> _
 /*
   This entity represents the sequence of values input by a particular
   transition, where the empty sequence `( )` represents that no values are
-  input. The value `none` represents the end of the input.
-  Composition of transitions concatenates their input sequences.
+  input. The value `null-value` represents the end of the input.
+  
+  Composition of transitions concatenates their input sequences, except that
+  when the first sequence ends with `null-value`, the second seqeunce has to be
+  just `null-value`.
 */
 
+
 Funcon
-  read : =>defined-values
+  read : =>values
 /*
   `read` inputs a single value from the standard-in channel, and returns it.
   If the end of the input has been reached, `read` fails.
 */
-
 Rule
-  read -- standard-in?(V:defined-values) -> V
+  read -- standard-in?(V:~null-type) -> V
 Rule
-  read -- standard-in?(none) -> fail
+  read -- standard-in?(null-value) -> fail

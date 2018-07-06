@@ -31,7 +31,7 @@ Rule
   [[ '(' Exp ')' ]] : exp = [[ Exp ]]
 
 Semantics
-  rval[[ _:exp ]] : =>defined-values
+  rval[[ _:exp ]] : =>values
 Rule
   rval[[ V ]] = val[[ V ]]
 Rule
@@ -63,9 +63,9 @@ Rule
 Rule
   rval[[ Exp1 '*' Exp2 ]]  = integer-multiply(rval[[ Exp1 ]],rval[[ Exp2 ]])
 Rule
-  rval[[ Exp1 '/' Exp2 ]]  = def integer-divide(rval[[ Exp1 ]],rval[[ Exp2 ]])
+  rval[[ Exp1 '/' Exp2 ]]  = checked integer-divide(rval[[ Exp1 ]],rval[[ Exp2 ]])
 Rule
-  rval[[ Exp1 '%' Exp2 ]]  = def integer-modulo(rval[[ Exp1 ]],rval[[ Exp2 ]])
+  rval[[ Exp1 '%' Exp2 ]]  = checked integer-modulo(rval[[ Exp1 ]],rval[[ Exp2 ]])
 Rule
   rval[[ Exp1 '<' Exp2 ]]  = is-less(rval[[ Exp1 ]],rval[[ Exp2 ]])
 Rule
@@ -95,9 +95,9 @@ Syntax
   Exps : exps ::= exp (',' exps)?
 
 Semantics
-  rvals[[ _:exps? ]] : (=>defined-values)*
+  rvals[[ _:exps? ]] : (=>values)*
 Rule
-  rvals[[  ]] =  
+  rvals[[  ]] = ( )
 Rule
   rvals[[ Exp ]] = rval[[ Exp ]]
 Rule
@@ -116,4 +116,5 @@ Rule
   lval[[ Id ]] = bound(id[[ Id ]])
 Rule
    lval[[ LExp '[' Exp ']' ]] =
-     def index(integer-add(1,rval[[ Exp ]]),vector-elements(rval[[ LExp ]]))
+     checked index(integer-add(1,rval[[ Exp ]]),vector-elements(rval[[ LExp ]]))
+

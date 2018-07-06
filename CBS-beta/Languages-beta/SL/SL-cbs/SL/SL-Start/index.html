@@ -45,10 +45,6 @@
   <div class="title">
     <a href="SL-Start.cbs" title="CBS SOURCE FILE">SL-Start</a>
   </div>
-  <div class="topic">
-    <img src="../../../../../Funcons-beta//preview.png" 
-         alt="Preview badge" width="67" height="17">
-  </div>
 </header>
 
 <nav>
@@ -83,7 +79,7 @@
 <pre>
 <i class="keyword">Language</i> <span id="Language_"SL"" class="decl">"SL"</span>
 
-</pre><details class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  The SimpleLanguage, abbreviated "SL", is a dynamic demonstration language.
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  The SimpleLanguage, abbreviated "SL", is a dynamic demonstration language.
   It was built using Truffle for the GraalVM at Oracle Labs
   [https://github.com/graalvm/simplelanguage].
   
@@ -97,7 +93,7 @@
   Acknowledgements: Vlad Vergu provided helpful advice regarding SL and DynSem.
   L. Thomas van Binsbergen implemented the Funcons Tools (in collaboration with
   Neil Sculthorpe) and provided support with using them.
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
 
 [
 <span class="sectnumtitle"><a href="../SL-1-Lexemes/index.html#SectionNumber_#1">#1</a> <b class="title"><i>Lexemes</i></b></span>
@@ -111,8 +107,8 @@
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_START" class="decl">START</span></i> :</i> <span class="syn-name"><span id="SyntaxName_start" class="decl">start</span></span> ::= <span class="syn-name"><a href="#SyntaxName_program" title="fun-def *">program</a></span>
 
 <i class="keyword">Semantics</i>
-  <i class="sem-name"><span id="SemanticsName_start" class="decl">start</span></i>[[ <span id="Variable_START" class="decl"><i class="var"><a href="#VariableStem_START" title="start">START</a></i></span>:<span class="syn-name"><a href="#SyntaxName_start" title="program">start</a></span> ]] : => <span class="name"><a href="../../../../../Funcons-beta/Values/Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>
-</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_start" title="[[start]] -&gt; values">start</a></i>[[ <span id="Variable_Program" class="decl"><i class="var"><a href="#VariableStem_Program" title="program">Program</a></i></span> ]] = 
+  <i class="sem-name"><span id="SemanticsName_start" class="decl">start</span></i>[[ <span id="Variable_START" class="decl"><i class="var"><a href="#VariableStem_START" title="start">START</a></i></span>:<span class="syn-name"><a href="#SyntaxName_start" title="program">start</a></span> ]] : => <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Null/index.html#Name_null-type" title=" -&gt; values">null-type</a></span>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_start" title="[[start]] -&gt; values">start</a></i>[[ <span id="Variable_Program" class="decl"><i class="var"><a href="#VariableStem_Program" title="program">Program</a></i></span> ]] = 
     <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Binding/index.html#Name_initialise-binding" title="values -&gt; values">initialise-binding</a></span> 
     <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_initialise-storing" title="values -&gt; values">initialise-storing</a></span> 
     <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Giving/index.html#Name_initialise-giving" title="values -&gt; values">initialise-giving</a></span>
@@ -123,18 +119,43 @@
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_Program" class="decl">Program</span></i> :</i> <span class="syn-name"><span id="SyntaxName_program" class="decl">program</span></span> ::= <span class="syn-name"><a href="../SL-4-Definitions/index.html#SyntaxName_fun-def" title="'function' id '(' id-list ? ')' block">fun-def</a></span>*
 
 <i class="keyword">Semantics</i>
-  <i class="sem-name"><span id="SemanticsName_run" class="decl">run</span></i>[[ <span id="Variable_Program" class="decl"><i class="var"><a href="#VariableStem_Program" title="program">Program</a></i></span>:<span class="syn-name"><a href="#SyntaxName_program" title="fun-def *">program</a></span> ]] : => <span class="name"><a href="../../../../../Funcons-beta/Values/Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>
-</pre><details class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_run" title="[[program]] -&gt; values">run</a></i>[[ <span id="Variable_FunDef*" class="decl"><i class="var"><a href="../SL-4-Definitions/index.html#VariableStem_FunDef" title="fun-def">FunDef</a>*</i></span> ]] =
+  <i class="sem-name"><span id="SemanticsName_run" class="decl">run</span></i>[[ <span id="Variable_Program" class="decl"><i class="var"><a href="#VariableStem_Program" title="program">Program</a></i></span>:<span class="syn-name"><a href="#SyntaxName_program" title="fun-def *">program</a></span> ]] : => <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Null/index.html#Name_null-type" title=" -&gt; values">null-type</a></span>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_run" title="[[program]] -&gt; values">run</a></i>[[ <span id="Variable_FunDef*" class="decl"><i class="var"><a href="../SL-4-Definitions/index.html#VariableStem_FunDef" title="fun-def">FunDef</a>*</i></span> ]] =
     <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Binding/index.html#Name_scope" title="values, values -&gt; values">scope</a></span>(
       <span class="name"><a href="../SL-Funcons/index.html#Name_initialise-global-bindings" title=" -&gt; values">initialise-global-bindings</a></span>,
       <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Flowing/index.html#Name_sequential" title="values*, values -&gt; values">sequential</a></span>(
         <span class="name"><a href="../SL-Funcons/index.html#Name_override-global-bindings" title="values -&gt; values">override-global-bindings</a></span>(<i class="sem-name"><a href="../SL-4-Definitions/index.html#SemanticsName_declare" title="[[fun-def *]] -&gt; values">declare</a></i>[[<a href="#Variable_FunDef*"><i class="var"><a href="../SL-4-Definitions/index.html#VariableStem_FunDef" title="fun-def">FunDef</a>*</i></a>]]),
         <span class="name"><a href="../../../../../Funcons-beta/Values/Abstraction/Functions/index.html#Name_apply" title="values, values -&gt; values">apply</a></span>(<span class="name"><a href="../SL-Funcons/index.html#Name_fun" title="values -&gt; values">fun</a></span> <span class="name"><a href="../SL-Funcons/index.html#Name_global-bound" title="values -&gt; values">global-bound</a></span> "main", <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Lists/index.html#Name_nil" title=" -&gt; values">nil</a></span>)))</pre></details><pre>
 
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/* CBS-beta/Languages-beta/SL/SL-cbs released 2018-07-07</span></pre></summary><pre><span class="comment">
+* Status: 
+  - abstract syntax: complete, derived from [SL in SD3]
+  - dynamic semantics: complete except for 'defineFunction', 'stackTrace', 'nanoTime'
+  - static semantics: not specified
+  - disambiguation: complete, derived from [SL in SDF3]
+* Tests:
+  - 15 small programs
+  - medium coverage (to be verified)
+* Evolution:
+  - first version
+* References:
+  [SL in DynSem]:
+    https://github.com/MetaBorgCube/metaborg-sl
+  [SL in SDF3]
+    https://github.com/MetaBorgCube/metaborg-sl/blob/master/org.metaborg.lang.sl/syntax/SL.sdf3
+* Keywords: 
+  - dynamic language, dynamic binding, imperative, disambiguation
+* Main contributors:
+  - Peter Mosses
+  - previous: Vlad Vergu
+
+</span></pre></details><pre>*/
+
 </pre>
 
 <footer>
   <span>From the <a href="http://plancomps.org" title="PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS">PLanCompS Project, 2018</a></span>
+  <span><a href="https://github.com/plancomps/plancomps.github.io/issues" title="CBS-BETA ISSUE REPORTS ON GITHUB">CBS-beta issues...</a></span>
   <span><a href="mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20SL/SL-Start/SL-Start.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A" title="GENERATE AN EMAIL TEMPLATE">Suggest an improvement...</a></span>
 </footer>
 

@@ -6,15 +6,16 @@
   Funcon   vector-elements
 ]
 
+
 Meta-variables
   T <: values
 
+
 Datatype
-  vectors(T) ::= vector(V*:(T)*)
+  vectors(T) ::= vector(_:(T)*)
+
 
 Funcon
-  vector-elements(VV:vectors(T)) : =>(T)*
+  vector-elements(_:vectors(T)) : =>(T)*
 Rule
   vector-elements(vector(V*:(T)*)) ~> V*
-
-// Consider defining n-vectors(N:naturals, T) as a dependent type. FIX-ME

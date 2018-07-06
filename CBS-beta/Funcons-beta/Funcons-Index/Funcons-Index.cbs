@@ -9,6 +9,13 @@
 
 ### Flowing
 [
+  Funcon   left-to-right   Alias l-to-r
+  Funcon   sequential      Alias seq
+  Funcon   effect
+  Funcon   choice
+  Funcon   if-true-else    Alias if-else
+  Funcon   while-true      Alias while
+  Funcon   do-while-true   Alias do-while
   Funcon   interleave
   Datatype yielding
   Funcon   signal
@@ -17,14 +24,6 @@
   Funcon   yield-on-value
   Funcon   yield-on-abrupt
   Funcon   atomic
-  Funcon   left-to-right   Alias l-to-r
-  Funcon   right-to-left   Alias r-to-l
-  Funcon   sequential      Alias seq
-  Funcon   effect
-  Funcon   choice
-  Funcon   if-true-else    Alias if-else
-  Funcon   while-true      Alias while
-  Funcon   do-while-true   Alias do-while
 ]
 
 ### Giving
@@ -138,8 +137,8 @@
   Funcon   fail
   Funcon   else
   Funcon   else-choice
-  Funcon   check-true      Alias check
-  Funcon   defined         Alias def
+  Funcon   checked
+  Funcon   check-true
 ]
 
 ### Throwing
@@ -195,29 +194,20 @@
 
 # Values
 
-## Types of values
+## Value Types
 [ 
-  Type     values           Alias vals
-  Type     defined-values   Alias def-vals
-  Type     types
-  Type     empty-type
-  Funcon   is-in-type       Alias is
-  Type     datatype-values
-  Type     nothing
-  Funcon   none
-  Type     cast-to-type     Alias cast
-  Type     is-defined       Alias is-def
-  Type     ground-values    Alias ground-vals
-  Funcon   is-equal         Alias is-eq
+  Type   values           Alias vals
+  Type   value-types      Alias types
+  Type   empty-type
+  Funcon is-in-type       Alias is
+  Funcon is-value         Alias is-val
+  Funcon when-true        Alias when
+  Type   cast-to-type     Alias cast
+  Type   ground-values    Alias ground-vals
+  Funcon is-equal         Alias is-eq
 ]
 
 ## Primitive values
-
-### The null value
-[
-  Datatype unit-type
-  Funcon   null-value    Alias null
-]
 
 ### Booleans
 [
@@ -343,22 +333,28 @@
   Funcon   backslash
 ]
 
+### The null value
+
+[
+  Datatype null-type
+  Funcon   null-value Alias null
+]
+
 ## Composite values
 
 ### Sequences of values
 [
   Funcon   length
   Funcon   index
+  Funcon   is-in
   Funcon   first
   Funcon   second
   Funcon   third
-  Funcon   is-in
   Funcon   first-n
   Funcon   drop-first-n
   Funcon   reverse
   Funcon   n-of
   Funcon   intersperse
-  Funcon   filter-defined
 ]
 
 ### Datatypes
@@ -447,7 +443,6 @@
   Type     maps
   Funcon   map
   Funcon   map-elements
-  Funcon   map-points
   Funcon   map-lookup    Alias lookup
   Funcon   map-domain    Alias dom
   Funcon   map-override
@@ -497,6 +492,7 @@
 [
   Datatype records
   Funcon   record
+  Funcon   record-map
   Funcon   record-select
 ]
 

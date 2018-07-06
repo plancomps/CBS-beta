@@ -14,7 +14,7 @@ MC:
     '}'
 
 Semantics
-  run[[ P:program ]] : => nothing
+  run[[ P:program ]] : => null-type
 Rule
   run[['class' ID1 '{' 
          'public' 'static' 'void' 'main' '(' 'String' '[' ']' ID2 ')' '{'
@@ -109,10 +109,10 @@ Rule
 
 Syntax
 T:
-        type ::= 'int' '[' ']'
-               | 'boolean'
-               | 'int'
-               | identifier
+  type ::= 'int' '[' ']'
+         | 'boolean'
+         | 'int'
+         | identifier
 
 Semantics
   type[[T:type]] : => types
@@ -134,7 +134,7 @@ Rule
 Rule
   initial-value[['int']] = 0
 Rule
-  initial-value[[ID]] = null-value
+  initial-value[[ID]] = pointer-null
 
 ## Methods
 
@@ -148,7 +148,8 @@ MD:
     '}'
 
 Type
-  methods ~> functions(tuples(references(objects), values*), values)
+  methods 
+   ~> functions(tuples(references(objects), minijava-values*), minijava-values)
   
 Semantics
   declare-methods[[MD*:method-declaration*]] : => envs
@@ -164,7 +165,7 @@ Rule
                   allocate-initialised-variable ( pointers(objects), given ) },
               bind-formals[[FL?]] ) ),
           object-single-inheritance-feature-map 
-            defined dereference first tuple-elements given, 
+            checked dereference first tuple-elements given, 
           declare-variables[[VD*]] ),
         sequential ( execute[[S*]], evaluate[[E]] ) ) }
 Rule
@@ -177,7 +178,8 @@ Rule
 
 Syntax
 FL:
- formal-list ::= type identifier ( ',' formal-list )?
+  formal-list ::=
+    type identifier ( ',' formal-list )?
 
 Semantics
   bind-formals[[FL?:formal-list?]] : => patterns*
@@ -196,15 +198,15 @@ Rule
 
 Syntax
 S:
-   statement ::= '{' statement* '}'
-               | 'if' '(' expression ')' statement 'else' statement
-               | 'while' '(' expression ')' statement
-               | 'System''.''out''.''println' '(' expression ')' ';'
-               | identifier '=' expression ';'
-               | identifier '[' expression ']' '=' expression ';'
+  statement ::= '{' statement* '}'
+              | 'if' '(' expression ')' statement 'else' statement
+              | 'while' '(' expression ')' statement
+              | 'System''.''out''.''println' '(' expression ')' ';'
+              | identifier '=' expression ';'
+              | identifier '[' expression ']' '=' expression ';'
 
 Semantics
-  execute[[S*:statement*]] : => nothing
+  execute[[S*:statement*]] : => null-type
 Rule
   execute[['{' S* '}']] = execute[[S*]]
 Rule
@@ -222,11 +224,11 @@ Rule
 Rule
   execute[[ID '[' E1 ']' '=' E2 ';']] = 
     assign ( 
-      index ( integer-add ( evaluate[[E1]], 1 ), 
+      checked index ( integer-add ( evaluate[[E1]], 1 ), 
         vector-elements assigned bound id[[ID]] ), 
       evaluate[[E2]] )
 Rule
-  execute[[ ]] = none
+  execute[[ ]] = null
 Rule
   execute[[S S+]] = sequential ( execute[[S]], execute[[S+]] )
 
@@ -255,7 +257,7 @@ E:
 
 Type
   minijava-values
-   ~> booleans | integers | vectors(variables) | references(objects) | unit-type
+   ~> booleans | integers | vectors(variables) | pointers(objects)
 
 Semantics
   evaluate[[E:expression]] : => minijava-values
@@ -280,7 +282,7 @@ Rule
     integer-multiply ( evaluate[[E1]], evaluate[[E2]] )
 Rule
   evaluate[[E1 '[' E2 ']']] =
-    assigned index ( integer-add ( evaluate[[E2]], 1 ), 
+    assigned checked index ( integer-add ( evaluate[[E2]], 1 ), 
       vector-elements evaluate[[E1]] )
 Rule
   evaluate[[E '.' 'length']] =
@@ -291,7 +293,7 @@ Rule
       apply (
         lookup (
           class-name-single-inheritance-feature-map 
-            object-class-name defined dereference given,
+            object-class-name checked dereference given,
           id[[ID]] ),
         tuple ( given, evaluate-actuals[[EL?]] ) ) )
 Rule
@@ -319,7 +321,8 @@ Rule
 
 Syntax
 EL:
-expression-list ::= expression ( ',' expression-list )?
+  expression-list ::=
+    expression ( ',' expression-list )?
 
 Semantics
   evaluate-actuals[[EL?:expression-list?]] : (=> minijava-values)*
@@ -335,7 +338,7 @@ Rule
 
 Lexis
 ID:
-     identifier ::= letter ( letter | digit | '_' )*
+  identifier ::= letter ( letter | digit | '_' )*
 
 Semantics
   id[[ID:identifier]] : => ids
@@ -343,11 +346,11 @@ Semantics
 
 Lexis
 IL:
-integer-literal ::= digit+
+  integer-literal ::= digit+
   
-      letter ::= 'a'-'z' | 'A'-'Z'
+  letter ::= 'a'-'z' | 'A'-'Z'
   
-       digit ::= '0'-'9'
+  digit ::= '0'-'9'
 
 Semantics
   integer-value[[IL:integer-literal]] : => integers

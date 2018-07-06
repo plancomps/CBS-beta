@@ -45,10 +45,6 @@
   <div class="title">
     <a href="Thunks.cbs" title="CBS SOURCE FILE">Thunks</a>
   </div>
-  <div class="topic">
-    <img src="../../.././preview.png" 
-         alt="Preview badge" width="67" height="17">
-  </div>
 </header>
 
 <nav>
@@ -89,27 +85,31 @@
   <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_force" title="values -&gt; values">force</a></span>
 ]
 
+
 <i class="keyword">Meta-variables</i>
   <span id="PartVariable_T" class="decl"><i class="var">T</i></span> <: <span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>
 
+
 <i class="keyword">Datatype</i>
-  <span class="name"><span id="Name_thunks" class="decl">thunks</span></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>) ::= <span id="Name_thunk" class="decl">thunk</span>(<span id="Variable_A" class="decl"><i class="var">A</i></span>:<span class="name"><a href="../Generic/index.html#Name_abstractions" title="values -&gt; values">abstractions</a></span>(<span class="name"><a href="../../Value-Types/index.html#Name_nothing" title=" -&gt; values">nothing</a></span>=><span id="Variable_T" class="decl"><i class="var">T</i></span>))
+  <span class="name"><span id="Name_thunks" class="decl">thunks</span></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>) ::= <span id="Name_thunk" class="decl">thunk</span>(_:<span class="name"><a href="../Generic/index.html#Name_abstractions" title="values -&gt; values">abstractions</a></span>(<span class="name"><a href="../../Primitive/Null/index.html#Name_null-type" title=" -&gt; values">null-type</a></span>=><span id="Variable_T" class="decl"><i class="var">T</i></span>))
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_thunks" title="values -&gt; values">thunks</a></span>(<i class="var">T</i>)` consists of abstractions whose bodies do not depend on
   a given value, and whose executions normally compute values of type `<i class="var">T</i>`.
   `<span class="name"><a href="#Name_thunk" title="values -&gt; values">thunk</a></span>(<span class="name"><a href="../Generic/index.html#Name_abstraction" title="values -&gt; values">abstraction</a></span>(<i class="var">X</i>))` evaluates to a thunk with dynamic bindings,
   `<span class="name"><a href="#Name_thunk" title="values -&gt; values">thunk</a></span>(<span class="name"><a href="../Generic/index.html#Name_closure" title="values -&gt; values">closure</a></span>(<i class="var">X</i>))` computes a thunk with static bindings.
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
+
 
 <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_force" class="decl">force</span></span>(<span id="Variable_H" class="decl"><i class="var">H</i></span>:<span class="name"><a href="#Name_thunks" title="values -&gt; values">thunks</a></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>)) : =><span id="Variable_T" class="decl"><i class="var">T</i></span>
+  <span class="name"><span id="Name_force" class="decl">force</span></span>(_:<span class="name"><a href="#Name_thunks" title="values -&gt; values">thunks</a></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>)) : =><span id="Variable_T" class="decl"><i class="var">T</i></span>
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_force" title="values -&gt; values">force</a></span>(<i class="var">H</i>)` enacts the abstraction of the thunk `<i class="var">H</i>`.
-*/</span></pre></details><pre>
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_force" title="values -&gt; values">force</a></span>(<span class="name"><a href="#Name_thunk" title="values -&gt; values">thunk</a></span>(<span class="name"><a href="../Generic/index.html#Name_abstraction" title="values -&gt; values">abstraction</a></span>(<span id="Variable_X" class="decl"><i class="var">X</i></span>))) ~> <a href="#Variable_X"><i class="var">X</i></a></pre></details><pre>
+</span></pre></details><pre>*/
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_force" title="values -&gt; values">force</a></span>(<span class="name"><a href="#Name_thunk" title="values -&gt; values">thunk</a></span>(<span class="name"><a href="../Generic/index.html#Name_abstraction" title="values -&gt; values">abstraction</a></span>(<span id="Variable_X" class="decl"><i class="var">X</i></span>))) ~> <span class="name"><a href="../../../Computations/Normal/Giving/index.html#Name_no-given" title="values -&gt; values">no-given</a></span>(<a href="#Variable_X"><i class="var">X</i></a>)</pre></details><pre>
 </pre></details><pre>
 </pre>
 
 <footer>
   <span>From the <a href="http://plancomps.org" title="PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS">PLanCompS Project, 2018</a></span>
+  <span><a href="https://github.com/plancomps/plancomps.github.io/issues" title="CBS-BETA ISSUE REPORTS ON GITHUB">CBS-beta issues...</a></span>
   <span><a href="mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20Funcons-beta/Values/Abstraction/Thunks/Thunks.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A" title="GENERATE AN EMAIL TEMPLATE">Suggest an improvement...</a></span>
 </footer>
 

@@ -22,16 +22,12 @@ Type
 */
 
 Built-in Funcon
-  is-cyclic(DG:directed-graphs(GT)) : =>booleans
+  is-cyclic(_:directed-graphs(GT)) : =>booleans
 
 Built-in Funcon
-  topological-sort(DG:directed-graphs(GT)) : =>(GT)*|nothing
+  topological-sort(_:directed-graphs(GT)) : =>(GT)*
 /*
   `topological-sort(DG)` returns a topological ordering of the vertices
   of the graph `DG`, as a sequence of vertices, provided that `DG` is not
   cyclic.
 */
-
-// Consider providing a general graphs type. FIX-ME
-
-// Also edge-ordered directed graphs. FIX-ME

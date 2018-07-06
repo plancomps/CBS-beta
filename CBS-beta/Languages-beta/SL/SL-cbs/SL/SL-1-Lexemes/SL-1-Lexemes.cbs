@@ -29,11 +29,11 @@ Rule
 ## Strings
 
 Syntax
-       String :       string ::= '"' _ string-chars _ '"'
+  String : string ::= '"' _ string-chars _ '"'
 Lexis
   StringChars : string-chars ::= string-char*
   
-                 string-char ::= ~( '"' | '\n' )
+  string-char ::= ~( '"' | '\n' )
 
 Semantics
   string-val[[ String:string ]] : => strings

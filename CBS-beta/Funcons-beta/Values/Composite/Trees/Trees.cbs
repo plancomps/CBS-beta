@@ -11,41 +11,46 @@
   Funcon   forest-value-sequence
 ]
 
+
 Meta-variables
   T <: values
   
+
 Datatype
-  trees(T) ::= tree( _:T, _:(trees(T))* )
+  trees(T) ::= tree( _:T, _:(trees(T))*)
 /*
   `trees(T)` consists of finitely-branching trees with elements of type `T`.
   When `V:T`, `tree(V)` is a leaf, and `tree(V,B1,...,Bn)` is a tree with
   branches `B1`, ..., `Bn`.
 */
 
-Funcon
-  tree-root-value ( B:trees(T) ) : => T
-Rule
-  tree-root-value tree ( V:T, B*:(trees(T))* ) ~> V
 
 Funcon
-  tree-branch-sequence ( B:trees(T) ) : => (trees(T))*
+  tree-root-value(_:trees(T)) : =>(T)?
 Rule
-  tree-branch-sequence tree ( V:T, B*:(trees(T))* ) ~> B*
+  tree-root-value tree(V:T, _*:(trees(T))*) ~> V
+
 
 Funcon
-  single-branching-sequence ( B:trees(T) ) : => T+
+  tree-branch-sequence(_:trees(T)) : =>(trees(T))*
+Rule
+  tree-branch-sequence tree(_:T, B*:(trees(T))*) ~> B*
+
+
+Funcon
+  single-branching-sequence(_:trees(T)) : =>T+
 /*
   `single-branching-sequence B ` extracts the values in `B` starting from 
   the root, provided that `B` is at most single-branching; otherwise it fails.
 */
 Rule
-  single-branching-sequence tree ( V:T ) ~> V
+  single-branching-sequence tree(V:T) ~> V
 Rule
-  single-branching-sequence tree ( V:T, B:trees(T) )
-   ~> left-to-right( V, single-branching-sequence B )
-   // Internal exception if left-to-right omitted
+  single-branching-sequence tree(V:T, B:trees(T))
+   ~> left-to-right( V, single-branching-sequence B)
 Rule
-  single-branching-sequence tree ( V:T, B:trees(T), B+:(trees(T))+ ) ~> fail
+  single-branching-sequence tree(_:T, _:trees(T), _+:(trees(T))+) ~> fail
+
 
 /*
   A sequence of trees corresponds to a forest, and the selector funcons
@@ -53,32 +58,35 @@ Rule
 */
 
 Funcon
-  forest-root-value-sequence ( B*:(trees(T))* ) : => T*
+  forest-root-value-sequence(_:(trees(T))*) : =>T*
 Rule
-  forest-root-value-sequence ( B:trees(T), B*:(trees(T))* )
-   ~> ( tree-root-value B , forest-root-value-sequence B* )
+  forest-root-value-sequence(B:trees(T), B*:(trees(T))*)
+   ~>(tree-root-value B , forest-root-value-sequence B*)
 Rule
-  forest-root-value-sequence ( ) ~> ( )
+  forest-root-value-sequence( ) ~>( )
+
 
 Funcon
-  forest-branch-sequence ( B*:(trees(T))* ) : => T*
+  forest-branch-sequence(_:(trees(T))*) : =>T*
 Rule
-  forest-branch-sequence ( B:trees(T), B*:(trees(T))* )
-   ~> ( tree-branch-sequence B , forest-branch-sequence B* )
+  forest-branch-sequence(B:trees(T), B*:(trees(T))*)
+   ~>(tree-branch-sequence B , forest-branch-sequence B*)
 Rule
-  forest-branch-sequence ( ) ~> ( )
+  forest-branch-sequence( ) ~>( )
+
 
 Funcon
-  forest-value-sequence ( B*:(trees(T))* ) : => T*
+  forest-value-sequence(_:(trees(T))*) : =>T*
 /*
   `forest-value-sequence B*` provides the values from a left-to-right pre-order
   depth-first traversal.
 */
 Rule
-  forest-value-sequence ( tree ( V:T, B1*:(trees(T))* ), B2*:(trees(T))* )
-   ~> ( V , forest-value-sequence B1*, forest-value-sequence B2* )
+  forest-value-sequence(tree(V:T, B1*:(trees(T))*), B2*:(trees(T))*)
+   ~>(V , forest-value-sequence B1*, forest-value-sequence B2*)
 Rule
-  forest-value-sequence ( ) ~> ( )
+  forest-value-sequence( ) ~>( )
+
 
 /*
   Other linearizations of trees can be added: breadth-first, right-to-left,

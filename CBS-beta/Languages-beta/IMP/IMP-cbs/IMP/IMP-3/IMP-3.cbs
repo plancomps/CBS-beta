@@ -16,7 +16,7 @@ Rule
   [[ 'if' '(' BExp ')' Block 'else' '{' '}' ]]
 
 Semantics
-  execute[[ _:stmt ]] : =>nothing
+  execute[[ _:stmt ]] : =>null-type
 Rule
   execute[[ I '=' AExp ';' ]] = 
 	assign(bound(id[[ I ]]), eval-arith[[ AExp ]])
@@ -32,6 +32,6 @@ Rule
   execute[[ Stmt1 Stmt2 ]] = 
 	sequential(execute[[ Stmt1 ]], execute[[ Stmt2 ]])
 Rule
-  execute[[ '{' '}' ]] = none
+  execute[[ '{' '}' ]] = null
 Rule
   execute[[ '{' Stmt '}' ]] = execute[[ Stmt ]]

@@ -12,9 +12,9 @@ Language "MiniJava"
   http://www.cambridge.org/us/features/052182060X/grammar.html
   (which differs in trivial ways from the one in the cited reference manual).
   
-  The rest of this file gives an overview of the MiniJava syntax.
-  It is in the form of a comment with embedded productions. The nonterminal
-  symbols link to their actual specifications; similarly, section numbers
+  The rest of this file gives an overview of the MiniJava syntax. It is mostly
+  in the form of a comment with embedded productions. The nonterminal symbols
+  are hyperlinks to their actual specifications; similarly, section numbers
   (such as '#1 ' below) link to the corresponding specification section.
 
 #1 Programs
@@ -51,22 +51,23 @@ MD:
       'return' expression ';' 
     '}'
 T:
-        type ::= 'int' '[' ']'
-               | 'boolean'
-               | 'int'
-               | identifier
+  type ::= 'int' '[' ']'
+         | 'boolean'
+         | 'int'
+         | identifier
 FL:
- formal-list ::= type identifier ( ',' formal-list )?
+  formal-list ::= 
+    type identifier ( ',' formal-list )?
 ``
 #3 Statements
 ``
 S:
-   statement ::= '{' statement* '}'
-               | 'if' '(' expression ')' statement 'else' statement
-               | 'while' '(' expression ')' statement
-               | 'System''.''out''.''println' '(' expression ')' ';'
-               | identifier '=' expression ';'
-               | identifier '[' expression ']' '=' expression ';'
+  statement ::= '{' statement* '}'
+              | 'if' '(' expression ')' statement 'else' statement
+              | 'while' '(' expression ')' statement
+              | 'System''.''out''.''println' '(' expression ')' ';'
+              | identifier '=' expression ';'
+              | identifier '[' expression ']' '=' expression ';'
 ``
 #4 Expressions
 ``
@@ -89,24 +90,34 @@ E:
                | '!' expression
                | '(' expression ')'
 EL:
-expression-list ::= expression ( ',' expression-list )?
+  expression-list ::=
+    expression ( ',' expression-list )?
 ``
 #5 Lexemes
 
 Lexis
 ``
 ID:
-     identifier ::= letter ( letter | digit | '_' )*
+  identifier ::= letter ( letter | digit | '_' )*
 IL:
-integer-literal ::= digit+
+  integer-literal ::= digit+
   
-      letter ::= 'a'-'z' | 'A'-'Z'
+  letter ::= 'a'-'z' | 'A'-'Z'
   
-       digit ::= '0'-'9'
+  digit ::= '0'-'9'
 ``
 */
 
 #6 Disambiguation
+
+/*
+  The mixture of CBS and SDF below specifies how MiniJava texts are to
+  be disambiguated by parsers generated from the above grammar.
+  
+  The specified rules are adequate to disambiguate all the example programs
+  provided at http://www.cambridge.org/us/features/052182060X/#progs
+  Further rules would be needed to fully disambiguate MiniJava syntax.
+*/
 
 Syntax SDF
 /*

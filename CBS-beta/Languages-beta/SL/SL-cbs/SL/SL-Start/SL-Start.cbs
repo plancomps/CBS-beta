@@ -29,7 +29,7 @@ Syntax
   START : start ::= program
 
 Semantics
-  start[[ START:start ]] : => values
+  start[[ START:start ]] : => null-type
 Rule
   start[[ Program ]] = 
     initialise-binding 
@@ -42,7 +42,7 @@ Syntax
   Program : program ::= fun-def*
 
 Semantics
-  run[[ Program:program ]] : => values
+  run[[ Program:program ]] : => null-type
 Rule
   run[[ FunDef* ]] =
     scope(
@@ -50,3 +50,28 @@ Rule
       sequential(
         override-global-bindings(declare[[FunDef*]]),
         apply(fun global-bound "main", nil)))
+
+/* CBS-beta/Languages-beta/SL/SL-cbs released 2018-07-07
+
+* Status: 
+  - abstract syntax: complete, derived from [SL in SD3]
+  - dynamic semantics: complete except for 'defineFunction', 'stackTrace', 'nanoTime'
+  - static semantics: not specified
+  - disambiguation: complete, derived from [SL in SDF3]
+* Tests:
+  - 15 small programs
+  - medium coverage (to be verified)
+* Evolution:
+  - first version
+* References:
+  [SL in DynSem]:
+    https://github.com/MetaBorgCube/metaborg-sl
+  [SL in SDF3]
+    https://github.com/MetaBorgCube/metaborg-sl/blob/master/org.metaborg.lang.sl/syntax/SL.sdf3
+* Keywords: 
+  - dynamic language, dynamic binding, imperative, disambiguation
+* Main contributors:
+  - Peter Mosses
+  - previous: Vlad Vergu
+
+*/

@@ -31,7 +31,7 @@ Rule
   [[ '(' Expr ')' ]] : expr = [[ Expr ]]
 
 Type
-  sl-values ~> bools | integers | strings | objects | nothing
+  sl-values ~> booleans | integers | strings | objects | null-type
 
 Semantics
   eval[[ Expr:expr ]] : => sl-values
@@ -48,7 +48,7 @@ Rule
     integer-add-else-string-append(eval[[Expr1]], eval[[Expr2]])
 Rule
   eval[[ Expr1 '/' Expr2 ]] =
-    defined integer-divide(int eval[[Expr1]], int eval[[Expr2]])
+    checked integer-divide(int eval[[Expr1]], int eval[[Expr2]])
 Rule
   eval[[ Expr1 '*' Expr2 ]] =
     integer-multiply(int eval[[Expr1]], int eval[[Expr2]])
@@ -111,7 +111,7 @@ Rule
 Rule
   eval[[ Expr '.' Id ]] =
     scope-closed(object-feature-map obj eval[[Expr]], 
-      else(assigned local-variable id[[Id]], none))
+      else(assigned local-variable id[[Id]], null-value))
 Rule
   eval[[ Expr1 '.' Id '=' Expr2 ]] =
     give(eval[[Expr2]],

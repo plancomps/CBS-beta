@@ -45,10 +45,6 @@
   <div class="title">
     <a href="Lists.cbs" title="CBS SOURCE FILE">Lists</a>
   </div>
-  <div class="topic">
-    <img src="../../.././preview.png" 
-         alt="Preview badge" width="67" height="17">
-  </div>
 </header>
 
 <nav>
@@ -89,17 +85,19 @@
   <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_list-elements" title="values -&gt; values*">list-elements</a></span>
   <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_list-nil" title=" -&gt; values">list-nil</a></span>       <i class="keyword">Alias</i> <span class="name"><a href="#Name_nil" title=" -&gt; values">nil</a></span>
   <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_list-cons" title="values, values -&gt; values">list-cons</a></span>      <i class="keyword">Alias</i> <span class="name"><a href="#Name_cons" title="values, values -&gt; values">cons</a></span>
-  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_list-head" title="values -&gt; values">list-head</a></span>      <i class="keyword">Alias</i> <span class="name"><a href="#Name_head" title="values -&gt; values">head</a></span>
-  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_list-tail" title="values -&gt; values">list-tail</a></span>      <i class="keyword">Alias</i> <span class="name"><a href="#Name_tail" title="values -&gt; values">tail</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_list-head" title="values -&gt; values?">list-head</a></span>      <i class="keyword">Alias</i> <span class="name"><a href="#Name_head" title="values -&gt; values?">head</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_list-tail" title="values -&gt; values?">list-tail</a></span>      <i class="keyword">Alias</i> <span class="name"><a href="#Name_tail" title="values -&gt; values?">tail</a></span>
   <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_list-length" title="values -&gt; values">list-length</a></span>
   <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_list-append" title="values* -&gt; values">list-append</a></span>
 ]
 
+
 <i class="keyword">Meta-variables</i>
-  <span id="PartVariable_T" class="decl"><i class="var">T</i></span><:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>
+  <span id="PartVariable_T" class="decl"><i class="var">T</i></span> <: <span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>
+
 
 <i class="keyword">Datatype</i>
-  <span class="name"><span id="Name_lists" class="decl">lists</span></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>) ::= <span id="Name_list" class="decl">list</span>(<span id="Variable_V*" class="decl"><i class="var">V*</i></span>:(<span id="Variable_T" class="decl"><i class="var">T</i></span>)*)
+  <span class="name"><span id="Name_lists" class="decl">lists</span></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>) ::= <span id="Name_list" class="decl">list</span>(_:(<span id="Variable_T" class="decl"><i class="var">T</i></span>)*)
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_lists" title="values -&gt; values">lists</a></span>(<i class="var">T</i>)` is the type of possibly-empty finite lists `[<i class="var">V<sub class="sub">1</sub></i>,...,<i class="var">Vn</i>]` 
   where `<i class="var">V<sub class="sub">1</sub></i>:<i class="var">T</i>`, ..., `<i class="var">Vn</i>:<i class="var">T</i>`.
   
@@ -107,57 +105,66 @@
   type `<span class="name"><a href="#Name_lists" title="values -&gt; values">lists</a></span>(<i class="var">T</i>)`.
   
   The notation `[<i class="var">V<sub class="sub">1</sub></i>, ..., <i class="var">Vn</i>]` for `<span class="name"><a href="#Name_list" title="values* -&gt; values">list</a></span>(<i class="var">V<sub class="sub">1</sub></i>, ..., <i class="var">Vn</i>)` is built-in.
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
 </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Assert</i></span></pre></summary><pre>  [<i class="var">V*</i>:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*] == <span class="name"><a href="#Name_list" title="values* -&gt; values">list</a></span>(<i class="var">V*</i>)</pre></details><pre>
 
+
 <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_list-elements" class="decl">list-elements</span></span>(<span id="Variable_L" class="decl"><i class="var">L</i></span>:<span class="name"><a href="#Name_lists" title="values -&gt; values">lists</a></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>)) : =>(<span id="Variable_T" class="decl"><i class="var">T</i></span>)*
+  <span class="name"><span id="Name_list-elements" class="decl">list-elements</span></span>(_:<span class="name"><a href="#Name_lists" title="values -&gt; values">lists</a></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>)) : =>(<span id="Variable_T" class="decl"><i class="var">T</i></span>)*
 </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_list-elements" title="values -&gt; values*">list-elements</a></span>(<span class="name"><a href="#Name_list" title="values* -&gt; values">list</a></span>(<span id="Variable_V*" class="decl"><i class="var">V*</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*)) ~> <a href="#Variable_V*"><i class="var">V*</i></a></pre></details><pre>
+
 
 </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_list-nil" class="decl">list-nil</span></span> : =><span class="name"><a href="#Name_lists" title="values -&gt; values">lists</a></span>(_)</span></pre></summary><pre>    ~> [ ]</pre></details><pre>
 <i class="keyword">Alias</i>
   <span class="name"><span id="Name_nil" class="decl">nil</span></span> = <span class="name"><a href="#Name_list-nil" title=" -&gt; values">list-nil</a></span>
 
+
 <i class="keyword">Funcon</i> 
-  <span class="name"><span id="Name_list-cons" class="decl">list-cons</span></span>(<span id="Variable_V" class="decl"><i class="var">V</i></span>:<span id="Variable_T" class="decl"><i class="var">T</i></span>, <span id="Variable_L" class="decl"><i class="var">L</i></span>:<span class="name"><a href="#Name_lists" title="values -&gt; values">lists</a></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>)) : =><span class="name"><a href="#Name_lists" title="values -&gt; values">lists</a></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>) 
+  <span class="name"><span id="Name_list-cons" class="decl">list-cons</span></span>(_:<span id="Variable_T" class="decl"><i class="var">T</i></span>, _:<span class="name"><a href="#Name_lists" title="values -&gt; values">lists</a></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>)) : =><span class="name"><a href="#Name_lists" title="values -&gt; values">lists</a></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>) 
 <i class="keyword">Alias</i>
   <span class="name"><span id="Name_cons" class="decl">cons</span></span> = <span class="name"><a href="#Name_list-cons" title="values, values -&gt; values">list-cons</a></span>
 </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_list-cons" title="values, values -&gt; values">list-cons</a></span>(<span id="Variable_V" class="decl"><i class="var">V</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>, [<span id="Variable_V*" class="decl"><i class="var">V*</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*]) ~> [<a href="#Variable_V"><i class="var">V</i></a>, <a href="#Variable_V*"><i class="var">V*</i></a>]</pre></details><pre>
 
-<i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_list-head" class="decl">list-head</span></span>(<span id="Variable_L" class="decl"><i class="var">L</i></span>:<span class="name"><a href="#Name_lists" title="values -&gt; values">lists</a></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>)) : =><span id="Variable_T" class="decl"><i class="var">T</i></span>|<span class="name"><a href="../../Value-Types/index.html#Name_nothing" title=" -&gt; values">nothing</a></span> 
-<i class="keyword">Alias</i>
-  <span class="name"><span id="Name_head" class="decl">head</span></span> = <span class="name"><a href="#Name_list-head" title="values -&gt; values">list-head</a></span>
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_list-head" title="values -&gt; values">list-head</a></span>[<span id="Variable_V" class="decl"><i class="var">V</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>, <span id="Variable_V*" class="decl"><i class="var">V*</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*] ~> <a href="#Variable_V"><i class="var">V</i></a></pre></details><pre> 
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_list-head" title="values -&gt; values">list-head</a></span>[ ] ~> <span class="name"><a href="../../Value-Types/index.html#Name_none" title=" -&gt; values">none</a></span></pre></details><pre>
 
 <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_list-tail" class="decl">list-tail</span></span>(<span id="Variable_L" class="decl"><i class="var">L</i></span>:<span class="name"><a href="#Name_lists" title="values -&gt; values">lists</a></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>)) : =><span class="name"><a href="#Name_lists" title="values -&gt; values">lists</a></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>)|<span class="name"><a href="../../Value-Types/index.html#Name_nothing" title=" -&gt; values">nothing</a></span> 
+  <span class="name"><span id="Name_list-head" class="decl">list-head</span></span>(_:<span class="name"><a href="#Name_lists" title="values -&gt; values">lists</a></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>)) : =>(<span id="Variable_T" class="decl"><i class="var">T</i></span>)<sup class="sup">?</sup> 
 <i class="keyword">Alias</i>
-  <span class="name"><span id="Name_tail" class="decl">tail</span></span> = <span class="name"><a href="#Name_list-tail" title="values -&gt; values">list-tail</a></span>
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_list-tail" title="values -&gt; values">list-tail</a></span>[<span id="Variable_V" class="decl"><i class="var">V</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>, <span id="Variable_V*" class="decl"><i class="var">V*</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*] ~> [<a href="#Variable_V*"><i class="var">V*</i></a>]</pre></details><pre> 
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_list-tail" title="values -&gt; values">list-tail</a></span>[ ] ~> <span class="name"><a href="../../Value-Types/index.html#Name_none" title=" -&gt; values">none</a></span></pre></details><pre>
+  <span class="name"><span id="Name_head" class="decl">head</span></span> = <span class="name"><a href="#Name_list-head" title="values -&gt; values?">list-head</a></span>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_list-head" title="values -&gt; values?">list-head</a></span>[<span id="Variable_V" class="decl"><i class="var">V</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>, _*:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*] ~> <a href="#Variable_V"><i class="var">V</i></a></pre></details><pre> 
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_list-head" title="values -&gt; values?">list-head</a></span>[ ] ~> ( )</pre></details><pre>
+
 
 <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_list-length" class="decl">list-length</span></span>(<span id="Variable_L" class="decl"><i class="var">L</i></span>:<span class="name"><a href="#Name_lists" title="values -&gt; values">lists</a></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>)) : =><span class="name"><a href="../../Primitive/Integers/index.html#Name_nats" title=" -&gt; values">nats</a></span>
+  <span class="name"><span id="Name_list-tail" class="decl">list-tail</span></span>(_:<span class="name"><a href="#Name_lists" title="values -&gt; values">lists</a></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>)) : =>(<span class="name"><a href="#Name_lists" title="values -&gt; values">lists</a></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>))<sup class="sup">?</sup>
+<i class="keyword">Alias</i>
+  <span class="name"><span id="Name_tail" class="decl">tail</span></span> = <span class="name"><a href="#Name_list-tail" title="values -&gt; values?">list-tail</a></span>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_list-tail" title="values -&gt; values?">list-tail</a></span>[_:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>, <span id="Variable_V*" class="decl"><i class="var">V*</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*] ~> [<a href="#Variable_V*"><i class="var">V*</i></a>]</pre></details><pre> 
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_list-tail" title="values -&gt; values?">list-tail</a></span>[ ] ~> ( )</pre></details><pre>
+
+
+<i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_list-length" class="decl">list-length</span></span>(_:<span class="name"><a href="#Name_lists" title="values -&gt; values">lists</a></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>)) : =><span class="name"><a href="../../Primitive/Integers/index.html#Name_natural-numbers" title=" -&gt; values">natural-numbers</a></span>
 </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_list-length" title="values -&gt; values">list-length</a></span>[<span id="Variable_V*" class="decl"><i class="var">V*</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*] ~> <span class="name"><a href="../Sequences/index.html#Name_length" title="values* -&gt; values">length</a></span>(<a href="#Variable_V*"><i class="var">V*</i></a>)</pre></details><pre>
 
+
 <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_list-append" class="decl">list-append</span></span>(<span id="Variable_L*" class="decl"><i class="var">L*</i></span>:(<span class="name"><a href="#Name_lists" title="values -&gt; values">lists</a></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>))*) : =><span class="name"><a href="#Name_lists" title="values -&gt; values">lists</a></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>)
+  <span class="name"><span id="Name_list-append" class="decl">list-append</span></span>(_:(<span class="name"><a href="#Name_lists" title="values -&gt; values">lists</a></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>))*) : =><span class="name"><a href="#Name_lists" title="values -&gt; values">lists</a></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>)
 </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_list-append" title="values* -&gt; values">list-append</a></span>([<span id="Variable_V1*" class="decl"><i class="var">V<sub class="sub">1</sub>*</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*], [<span id="Variable_V2*" class="decl"><i class="var">V<sub class="sub">2</sub>*</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*]) ~> [<a href="#Variable_V1*"><i class="var">V<sub class="sub">1</sub>*</i></a>, <a href="#Variable_V2*"><i class="var">V<sub class="sub">2</sub>*</i></a>]</pre></details><pre>
 </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_list-append" title="values* -&gt; values">list-append</a></span>(<span id="Variable_L1" class="decl"><i class="var">L<sub class="sub">1</sub></i></span>:<span class="name"><a href="#Name_lists" title="values -&gt; values">lists</a></span>(_), <span id="Variable_L2" class="decl"><i class="var">L<sub class="sub">2</sub></i></span>:<span class="name"><a href="#Name_lists" title="values -&gt; values">lists</a></span>(_), <span id="Variable_L3" class="decl"><i class="var">L<sub class="sub">3</sub></i></span>:<span class="name"><a href="#Name_lists" title="values -&gt; values">lists</a></span>(_), <span id="Variable_L*" class="decl"><i class="var">L*</i></span>:(<span class="name"><a href="#Name_lists" title="values -&gt; values">lists</a></span>(_))*)
    ~> <span class="name"><a href="#Name_list-append" title="values* -&gt; values">list-append</a></span>(<a href="#Variable_L1"><i class="var">L<sub class="sub">1</sub></i></a>, <span class="name"><a href="#Name_list-append" title="values* -&gt; values">list-append</a></span>(<a href="#Variable_L2"><i class="var">L<sub class="sub">2</sub></i></a>, <a href="#Variable_L3"><i class="var">L<sub class="sub">3</sub></i></a>, <a href="#Variable_L*"><i class="var">L*</i></a>))</pre></details><pre>
 </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_list-append" title="values* -&gt; values">list-append</a></span>( ) ~> [ ]</pre></details><pre>
 </pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_list-append" title="values* -&gt; values">list-append</a></span>(<span id="Variable_L" class="decl"><i class="var">L</i></span>:<span class="name"><a href="#Name_lists" title="values -&gt; values">lists</a></span>(_)) ~> <a href="#Variable_L"><i class="var">L</i></a></pre></details><pre>
 
+
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  Datatypes of infinite and possibly-infinite lists can be specified as
   algebraic datatypes using abstractions.
-*/</span></pre></details><pre>
+</span></pre></details><pre>*/
 </pre></details><pre>
 </pre>
 
 <footer>
   <span>From the <a href="http://plancomps.org" title="PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS">PLanCompS Project, 2018</a></span>
+  <span><a href="https://github.com/plancomps/plancomps.github.io/issues" title="CBS-BETA ISSUE REPORTS ON GITHUB">CBS-beta issues...</a></span>
   <span><a href="mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20Funcons-beta/Values/Composite/Lists/Lists.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A" title="GENERATE AN EMAIL TEMPLATE">Suggest an improvement...</a></span>
 </footer>
 

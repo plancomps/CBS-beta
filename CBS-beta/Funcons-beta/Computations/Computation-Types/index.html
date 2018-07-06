@@ -45,10 +45,6 @@
   <div class="title">
     <a href="Computation-Types.cbs" title="CBS SOURCE FILE">Computation-Types</a>
   </div>
-  <div class="topic">
-    <img src="../.././preview.png" 
-         alt="Preview badge" width="67" height="17">
-  </div>
 </header>
 
 <nav>
@@ -88,16 +84,17 @@
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  For any value type `<i class="var">T</i>`, the term `=><i class="var">T</i>` is the type of computations that
   compute values of type `<i class="var">T</i>` whenever they terminate normally.
   
-  For any type of defined values `<i class="var">DT</i>` and type of arbitrary values `<i class="var">T</i>`, the term
-  `<i class="var">DT</i>=><i class="var">T</i>` is the subtype of computations that compute values of type `<i class="var">T</i>`
-  whenever they terminate normally, and either do not refer at all to the 
-  `<span class="name"><a href="../Normal/Giving/index.html#Name_given" title=" -&gt; values">given</a></span>` entity, or require the `<span class="name"><a href="../Normal/Giving/index.html#Name_given" title=" -&gt; values">given</a></span>` entity to have type `<i class="var">DT</i>`.
-*/</span></pre></details><pre>
+  For any subtypes `<i class="var">S</i>`, `<i class="var">T</i>` of `<span class="name"><a href="../../Values/Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>`, `<i class="var">S</i>=><i class="var">T</i>` is the type of computations
+  that compute values of type `<i class="var">T</i>` whenever they terminate normally, and
+  either do not refer at all to the `<span class="name"><a href="../Normal/Giving/index.html#Name_given" title=" -&gt; values">given</a></span>` entity, or require the `<span class="name"><a href="../Normal/Giving/index.html#Name_given" title=" -&gt; values">given</a></span>`
+  entity to have type `<i class="var">S</i>`.
+</span></pre></details><pre>*/
 </pre></details><pre>
 </pre>
 
 <footer>
   <span>From the <a href="http://plancomps.org" title="PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS">PLanCompS Project, 2018</a></span>
+  <span><a href="https://github.com/plancomps/plancomps.github.io/issues" title="CBS-BETA ISSUE REPORTS ON GITHUB">CBS-beta issues...</a></span>
   <span><a href="mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20Funcons-beta/Computations/Computation-Types/Computation-Types.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A" title="GENERATE AN EMAIL TEMPLATE">Suggest an improvement...</a></span>
 </footer>
 

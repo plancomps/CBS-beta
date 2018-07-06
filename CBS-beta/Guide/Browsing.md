@@ -1,16 +1,17 @@
-CBS-beta Browsing Guide ![PREVIEW](../Funcons-beta/preview.png)
+CBS-beta Browsing Guide
 =======================
 
 Navigation
 ----------
 
-**All references to names of funcons (etc.) in CBS specifications are 
-hyperlinks leading to their declarations.**
+> **All references to names of funcons (etc.) in CBS specifications are 
+> hyperlinks leading to their declarations.**
 
 These hyperlinks avoid the need to drill down through the hierarchy of folders
 and files. Specifications in CBS are independent of the file system: all names
-declared in Funcons-beta are globally visible, and names declared in a particular
-language specification are local to that language, regardless of file structure.
+declared in [Funcons-beta] are globally visible, and names declared in a
+particular language specification are local to that language, regardless of
+file structure.
 
 The global [Funcons-Index] page lists the names of all current funcons, grouped
 according to their types. The local funcons-index page for a particular language
@@ -24,13 +25,13 @@ arguments.
 
   The large button at the top right of each CBS page is a fixed drop-down menu.
     
-  For pages in the `Funcons-beta` folder, it has the following links:
+  For pages in `Funcons-beta`, it has the following links:
 
   - [Funcons-beta]\: the funcons index
   - [Languages-beta]\: the languages overview 
   - [CBS-beta]\: the CBS-beta overview
 
-  For pages in the `Languages-beta/L` folder, it has also the following links:
+  For pages in `Languages-beta/L`, it has also the following links:
 
   - `L-Start`: the root of the CBS of language `L` (which includes links to
     all the other sections for that language)
@@ -45,26 +46,23 @@ arguments.
 ### Footer links
   
   - [PLanCompS Project, 2018]\: the main PLanCompS project website
+  - [CBS-beta issues...]\: the list of issues concerning CBS-beta and this website
   - [Suggest an improvement...]\: a template for an email to plancomps@gmail.com
 
 Folding
 -------
 
-When a CBS web page is opened, all the rules and comments are folded into
-single lines, as indicated by right-pointing 'disclosure' symbols 
-(e.g.: &#9658;). Any subsections (starting with a heading line `#...`) are 
-initially unfolded, as indicated by downward-pointing symbols (e.g.: &#9660;).
-This provides an overview of all the specified declarations, which are never
-folded.
+When a CBS web page is opened, all the rules, comments, and subsections are
+unfolded, as indicated by downward-pointing disclosure symbols (e.g.: &#9660;).
 
-Individual rules, comments and subsections can be folded/unfolded by clicking
-on the line containing the disclosure symbol. Note that printing the page
-omits the disclosure symbols, but does *not* show lines hidden by the current
-folding.
+Individual rules, comments, and subsections can be folded/unfolded by clicking
+on a character in the line containing the disclosure symbol. Note that printing
+the page omits the disclosure symbols, but does *not* show lines hidden by the
+current folding.
 
 The top right corner of each CBS web page has buttons for unfolding (&#9660;)
 or folding (&#9658;) all rules, comments, or subsections on the current page. 
-(These buttons require Javascript.)
+(These buttons require Javascript, and are not shown when Javascript is off.)
 
 --------------------
 
@@ -293,6 +291,8 @@ Funcon definitions
 [CBS-beta]: ../index.md
 
 [PLanCompS Project, 2018]: http://plancomps.org
+
+[CBS-beta issues...]: https://github.com/plancomps/plancomps.github.io/issues
 
 [Suggest an improvement...]: mailto:plancomps@gmail.com
 

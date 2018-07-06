@@ -8,10 +8,10 @@ Syntax
 Semantics
   run[[ Decls:pgm ]] : =>values
     = scope(
-    	   collateral(declarations[[ Decls ]]),
-    	   sequential(
-    	     initialisations[[ Decls ]],
-    	     apply(assigned(bound("main")), tuple( ))))
+    	collateral(declarations[[ Decls ]]),
+    	sequential(
+    	  initialisations[[ Decls ]],
+    	  apply(assigned(bound("main")), tuple( ))))
 
 Syntax
   Decls : decls ::= decl decls?
@@ -23,7 +23,7 @@ Rule
   declarations[[ Decl Decls ]] = declare[[ Decl ]], declarations[[ Decls ]]
 
 Semantics
-  initialisations[[ _:decls ]] : (=>nothing)+
+  initialisations[[ _:decls ]] : (=>null-type)+
 Rule
   initialisations[[ Decl ]] = initialise[[ Decl ]]
 Rule

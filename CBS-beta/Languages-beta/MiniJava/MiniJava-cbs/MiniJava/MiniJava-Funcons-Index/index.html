@@ -45,10 +45,6 @@
   <div class="title">
     <a href="MiniJava-Funcons-Index.cbs" title="CBS SOURCE FILE">MiniJava-Funcons-Index</a>
   </div>
-  <div class="topic">
-    <img src="../../../../../Funcons-beta//preview.png" 
-         alt="Preview badge" width="67" height="17">
-  </div>
 </header>
 
 <nav>
@@ -97,6 +93,7 @@
   <i class="keyword">Funcon</i>   <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Giving/index.html#Name_initialise-giving" title="values -&gt; values">initialise-giving</a></span>
   <i class="keyword">Funcon</i>   <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Giving/index.html#Name_give" title="values, values -&gt; values">give</a></span>
   <i class="keyword">Funcon</i>   <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Giving/index.html#Name_given" title=" -&gt; values">given</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Giving/index.html#Name_interleave-repeat" title="values, values, values -&gt; values*">interleave-repeat</a></span>
 ]
 
 </pre></details><pre></pre><details open class="sectiondetails"><summary><pre>### <b class="title"><i>Binding</i></b></pre></summary><pre>
@@ -136,28 +133,19 @@
 </pre><details open class="sectiondetails"><summary><pre>### <b class="title"><i>Failing</i></b></pre></summary><pre>
 [
   <i class="keyword">Funcon</i>   <span class="name"><a href="../../../../../Funcons-beta/Computations/Abnormal/Failing/index.html#Name_finalise-failing" title="values -&gt; values">finalise-failing</a></span>
-  <i class="keyword">Funcon</i>   <span class="name"><a href="../../../../../Funcons-beta/Computations/Abnormal/Failing/index.html#Name_defined" title="values -&gt; values">defined</a></span>         <i class="keyword">Alias</i> <span class="name"><a href="../../../../../Funcons-beta/Computations/Abnormal/Failing/index.html#Name_def" title="values -&gt; values">def</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="../../../../../Funcons-beta/Computations/Abnormal/Failing/index.html#Name_checked" title="values? -&gt; values">checked</a></span>
 ]
 
 </pre></details><pre></pre></details><pre></pre></details><pre></pre><details open class="sectiondetails"><summary><pre># <b class="title"><i>Values</i></b></pre></summary><pre>
 
-</pre><details open class="sectiondetails"><summary><pre>## <b class="title"><i>Types of values</i></b></pre></summary><pre>
+</pre><details open class="sectiondetails"><summary><pre>## <b class="title"><i>Value Types</i></b></pre></summary><pre>
 [
-  <i class="keyword">Type</i>     <span class="name"><a href="../../../../../Funcons-beta/Values/Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>           <i class="keyword">Alias</i> <span class="name"><a href="../../../../../Funcons-beta/Values/Value-Types/index.html#Name_vals" title=" -&gt; values">vals</a></span>
-  <i class="keyword">Type</i>     <span class="name"><a href="../../../../../Funcons-beta/Values/Value-Types/index.html#Name_types" title=" -&gt; values">types</a></span>
-  <i class="keyword">Type</i>     <span class="name"><a href="../../../../../Funcons-beta/Values/Value-Types/index.html#Name_nothing" title=" -&gt; values">nothing</a></span>
-  <i class="keyword">Funcon</i>   <span class="name"><a href="../../../../../Funcons-beta/Values/Value-Types/index.html#Name_none" title=" -&gt; values">none</a></span>
+  <i class="keyword">Type</i>   <span class="name"><a href="../../../../../Funcons-beta/Values/Value-Types/index.html#Name_value-types" title=" -&gt; values">value-types</a></span>      <i class="keyword">Alias</i> <span class="name"><a href="../../../../../Funcons-beta/Values/Value-Types/index.html#Name_types" title=" -&gt; values">types</a></span>
 ]
 
 </pre></details><pre></pre><details open class="sectiondetails"><summary><pre>## <b class="title"><i>Primitive values</i></b></pre></summary><pre>
 
-</pre><details open class="sectiondetails"><summary><pre>### <b class="title"><i>The null value</i></b></pre></summary><pre>
-[
-  <i class="keyword">Datatype</i> <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Unit/index.html#Name_unit-type" title=" -&gt; values">unit-type</a></span>
-  <i class="keyword">Funcon</i>   <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Unit/index.html#Name_null-value" title=" -&gt; values">null-value</a></span>    <i class="keyword">Alias</i> <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Unit/index.html#Name_null" title=" -&gt; values">null</a></span>
-]
-
-</pre></details><pre></pre><details open class="sectiondetails"><summary><pre>### <b class="title"><i>Booleans</i></b></pre></summary><pre>
+</pre><details open class="sectiondetails"><summary><pre>### <b class="title"><i>Booleans</i></b></pre></summary><pre>
 [
   <i class="keyword">Datatype</i> <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Booleans/index.html#Name_booleans" title=" -&gt; values">booleans</a></span>      <i class="keyword">Alias</i> <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Booleans/index.html#Name_bools" title=" -&gt; values">bools</a></span>
   <i class="keyword">Funcon</i>   <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Booleans/index.html#Name_true" title=" -&gt; values">true</a></span>
@@ -172,7 +160,14 @@
   <i class="keyword">Funcon</i>   <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Integers/index.html#Name_integer-subtract" title="values, values -&gt; values">integer-subtract</a></span>             <i class="keyword">Alias</i> <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Integers/index.html#Name_int-sub" title="values, values -&gt; values">int-sub</a></span>
   <i class="keyword">Funcon</i>   <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Integers/index.html#Name_integer-multiply" title="values* -&gt; values">integer-multiply</a></span>             <i class="keyword">Alias</i> <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Integers/index.html#Name_int-mul" title="values* -&gt; values">int-mul</a></span>
   <i class="keyword">Funcon</i>   <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Integers/index.html#Name_integer-is-less" title="values, values -&gt; values">integer-is-less</a></span>              <i class="keyword">Alias</i> <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Integers/index.html#Name_is-less" title="values, values -&gt; values">is-less</a></span>
-  <i class="keyword">Funcon</i>   <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Integers/index.html#Name_decimal-natural" title="values -&gt; values">decimal-natural</a></span>              <i class="keyword">Alias</i> <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Integers/index.html#Name_decimal" title="values -&gt; values">decimal</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Integers/index.html#Name_decimal-natural" title="values -&gt; values?">decimal-natural</a></span>              <i class="keyword">Alias</i> <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Integers/index.html#Name_decimal" title="values -&gt; values?">decimal</a></span>
+]
+
+</pre></details><pre></pre><details open class="sectiondetails"><summary><pre>### <b class="title"><i>The null value</i></b></pre></summary><pre>
+
+[
+  <i class="keyword">Datatype</i> <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Null/index.html#Name_null-type" title=" -&gt; values">null-type</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Null/index.html#Name_null-value" title=" -&gt; values">null-value</a></span> <i class="keyword">Alias</i> <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Null/index.html#Name_null" title=" -&gt; values">null</a></span>
 ]
 
 </pre></details><pre></pre></details><pre></pre><details open class="sectiondetails"><summary><pre>## <b class="title"><i>Composite values</i></b></pre></summary><pre>
@@ -180,7 +175,7 @@
 </pre><details open class="sectiondetails"><summary><pre>### <b class="title"><i>Sequences of values</i></b></pre></summary><pre>
 [
   <i class="keyword">Funcon</i>   <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Sequences/index.html#Name_length" title="values* -&gt; values">length</a></span>
-  <i class="keyword">Funcon</i>   <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Sequences/index.html#Name_index" title="values, values* -&gt; values">index</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Sequences/index.html#Name_index" title="values, values* -&gt; values?">index</a></span>
   <i class="keyword">Funcon</i>   <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Sequences/index.html#Name_first" title="values, values* -&gt; values">first</a></span>
 ]
 
@@ -210,8 +205,8 @@
 
 </pre></details><pre></pre><details open class="sectiondetails"><summary><pre>### <b class="title"><i>Maps</i></b></pre></summary><pre>
 [
-  <i class="keyword">Funcon</i>   <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Maps/index.html#Name_map" title="values* -&gt; values">map</a></span>
-  <i class="keyword">Funcon</i>   <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Maps/index.html#Name_map-lookup" title="values, values -&gt; values">map-lookup</a></span>    <i class="keyword">Alias</i> <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Maps/index.html#Name_lookup" title="values, values -&gt; values">lookup</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Maps/index.html#Name_map" title="values* -&gt; values?">map</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Maps/index.html#Name_map-lookup" title="values, values -&gt; values?">map-lookup</a></span>    <i class="keyword">Alias</i> <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Maps/index.html#Name_lookup" title="values, values -&gt; values?">lookup</a></span>
 ]
 
 </pre></details><pre></pre><details open class="sectiondetails"><summary><pre>### <b class="title"><i>References and pointers</i></b></pre></summary><pre>
@@ -219,7 +214,7 @@
   <i class="keyword">Datatype</i> <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/References/index.html#Name_references" title="values -&gt; values">references</a></span>
   <i class="keyword">Funcon</i>   <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/References/index.html#Name_reference" title="values -&gt; values">reference</a></span>
   <i class="keyword">Type</i>     <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/References/index.html#Name_pointers" title="values -&gt; values">pointers</a></span>
-  <i class="keyword">Funcon</i>   <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/References/index.html#Name_dereference" title="values -&gt; values">dereference</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/References/index.html#Name_dereference" title="values -&gt; values?">dereference</a></span>
 ]
 
 </pre></details><pre></pre><details open class="sectiondetails"><summary><pre>### <b class="title"><i>Classes</i></b></pre></summary><pre>
@@ -269,6 +264,7 @@
 
 <footer>
   <span>From the <a href="http://plancomps.org" title="PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS">PLanCompS Project, 2018</a></span>
+  <span><a href="https://github.com/plancomps/plancomps.github.io/issues" title="CBS-BETA ISSUE REPORTS ON GITHUB">CBS-beta issues...</a></span>
   <span><a href="mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20MiniJava/MiniJava-Funcons-Index/MiniJava-Funcons-Index.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A" title="GENERATE AN EMAIL TEMPLATE">Suggest an improvement...</a></span>
 </footer>
 

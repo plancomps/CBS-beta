@@ -27,14 +27,14 @@ Syntax
   IdList : id-list ::= id (',' id-list)?
 
 Semantics
-  pass-list[[ IdList:id-list? ]] : lists(values) => nothing
+  pass-list[[ IdList:id-list? ]] : lists(values) => null-type
 Rule
-  pass-list[[ ]] = none
+  pass-list[[ ]] = null-value
 Rule
   pass-list[[ Id ]] =
-    local-variable-initialise(id[[Id]], defined head given)
+    local-variable-initialise(id[[Id]], checked head given)
 Rule
   pass-list[[ Id ',' IdList ]] = 
     sequential(
-      local-variable-initialise(id[[Id]], defined head given), 
-      give(defined tail given, pass-list[[IdList]]))
+      local-variable-initialise(id[[Id]], checked head given), 
+      give(checked tail given, pass-list[[IdList]]))
