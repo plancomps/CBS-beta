@@ -1,4 +1,4 @@
-Funcons-beta ![PREVIEW](preview.png)
+Funcons-beta
 ============
 
 This page provides access to the beta-release of an initial collection of
@@ -7,7 +7,8 @@ components of programming language specifications: in the [CBS framework],
 a language is specified by defining a translation from its constructs to
 funcon terms, reusing (by reference) the definitions of the required funcons. 
 
-See [Languages-beta] for examples of language specifications in CBS.
+See [Languages-beta] for illustrative examples of language specifications in
+CBS.
 
 Before proceeding, it is recommended to take a look at the funcon definition
 section of the CBS-beta [Browsing guide].
