@@ -3,7 +3,7 @@ CBS Contributors
 
 If you would like to contribute to PLanCompS (e.g., by using CBS to
 define a new or existing language, or by suggesting new or improved
-funcons) please email plancomps@gmail.com.
+funcons) please email <plancomps@gmail.com>.
 
 Current contributors
 --------------------
@@ -17,7 +17,7 @@ Current contributors
 Past contributors
 ------------------
 
-See [PLanCompS People] for a list of PLanCompS participants during
+See the [PLanCompS People] page for a list of PLanCompS participants during
 the research project funding period \(2011-16\), who contributed to the
 development of CBS, funcons, case studies, and the preliminary tool support.
 
