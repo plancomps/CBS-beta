@@ -9,9 +9,7 @@ Current contributors
 --------------------
 
 - [L. Thomas van Binsbergen]
-
 - [Peter D. Mosses]
-
 - [Neil Sculthorpe]
 
 Past contributors
