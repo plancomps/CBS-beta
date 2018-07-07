@@ -23,9 +23,7 @@ concepts.
 The [PLanCompS] project has developed an initial collection of funcons:
 [Funcons-beta]. Crucially, adding new funcons does not require any changes to
 the specifications of existing funcons, thanks to the use of a modular variant
-of structural operational semantics. (CBS does not currently include static
-semantics for funcons, which requires modular specification of effects and
-co-effects along with types.)
+of structural operational semantics.
 
 Current tool support for CBS (not yet released) includes a CBS editor with
 syntax highlighting, hyperlinks from references to declarations, and generation
@@ -62,9 +60,13 @@ are directly related to fundamental concepts of programming languages, and
 their names try to reflect current terminology.
 
 New funcons are likely to be introduced in the beta-release period, and further
-examples of language definitions will be provided. All additions and changes
-will be listed in the forthcoming beta-release change log, as well as in the
-version history of this project site.
+examples of language definitions will be provided. Demonstration of scaling-up
+to major languages (e.g., C#) is a longer-term goal. The current funcon
+definitions cover only their dynamic semantics, but are to be extended to
+static semantics.
+
+All additions and changes will be listed in the [beta-release change log],
+as well as in the version history of this project site.
 
 Tool support for using CBS will be released as soon as it is sufficiently robust
 and well-documented. The CBS editor has been implemented as a [Spoofax] language
@@ -91,7 +93,7 @@ plancomps@gmail.com.
 
 [CBS library]: Funcons-beta/Funcons-Index/index.html
 
-[Beta-release change log]: ???
+[Beta-release change log]: Changes.md
 
 [Spoofax]: http://www.metaborg.org
 
