@@ -162,8 +162,8 @@ Type
    ~> vectors(values) // FIX-ME: remove
 Funcon
   implemented-vector(V:vectors(implemented-values)) : =>implemented-vectors?
-    ~> when-true(is-less-or-equal(length map-elements record-map V, 4194303),V)
-// FIX ME: I think the use of "record-map" here might be an error
+    ~> when-true(is-less-or-equal(length vector-elements V, 4194303),V)
+
 
 ## Variant values
 /*

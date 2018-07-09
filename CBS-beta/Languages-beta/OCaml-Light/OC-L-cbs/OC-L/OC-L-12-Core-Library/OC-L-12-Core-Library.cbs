@@ -311,10 +311,19 @@ Funcon
 ### Exception values
 
 Funcon
-  ocaml-light-match-failure : =>variants(M)
+  ocaml-light-match-failure : =>variants(tuples(strings, integers, integers))
     ~> variant("Match_failure", tuple("", 0, 0))
 /*
   `ocaml-light-match-failure` gives a value to be thrown when a match fails.
+  The variant value should consist of the source program text, line, and column,
+  but these are currently not included in the translation of OCaml Light.
+*/
+
+Funcon
+  ocaml-light-assert-failure : =>variants(tuples(strings, integers, integers))
+    ~> variant("Assert_failure", tuple("", 0, 0))
+/*
+  `ocaml-light-assert-failure` gives a value to be thrown when an assertion fails.
   The variant value should consist of the source program text, line, and column,
   but these are currently not included in the translation of OCaml Light.
 */

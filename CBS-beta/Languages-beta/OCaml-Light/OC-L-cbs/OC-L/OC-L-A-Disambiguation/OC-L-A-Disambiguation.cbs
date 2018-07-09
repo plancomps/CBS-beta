@@ -188,9 +188,10 @@ context-free priorities
 ``expr ::= prefix-symbol expr``
 >
 ``expr ::= expr '.' field``
-> 
-``expr ::= expr argument+``
 > {
+``expr ::= expr argument+``
+``expr ::= 'assert' expr``
+} > {
 ``expr ::= '-' expr``
 ``expr ::= '-.' expr``
 } > 
@@ -232,6 +233,7 @@ context-free priorities
 ``expr ::= expr '.' field``
 ``expr ::= expr '.(' expr ')'``
 ``expr ::= expr argument+``
+``expr ::= 'assert' expr``
 ``expr ::= expr infix-op-1 expr``
 ``expr ::= expr infix-op-2 expr``
 ``expr ::= expr infix-op-3 expr``
@@ -271,6 +273,8 @@ context-free priorities
 ``(expr semic-expr*)``
 ``expr ::= '{' field '=' expr semic-field-expr* '}'``
 ``expr ::= '{' field '=' expr semic-field-expr* ';' '}'``
+``expr ::= '{' expr 'with' field '=' expr semic-field-expr* '}'``
+``expr ::= '{' expr 'with' field '=' expr semic-field-expr* ';' '}'``
 ``semic-field-expr ::= ';' field '=' expr``
 } > 
 ``expr ::= expr ';' expr``

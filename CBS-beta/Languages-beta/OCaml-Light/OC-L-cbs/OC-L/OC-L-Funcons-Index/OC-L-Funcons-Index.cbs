@@ -61,6 +61,7 @@
   Funcon   fail
   Funcon   else
   Funcon   checked
+  Funcon   check-true
 ]
 
 ### Throwing

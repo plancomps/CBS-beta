@@ -44,6 +44,7 @@ Syntax
    | 'fun' pattern+ '->' expr
    | 'try' expr 'with' pattern-matching
    | let-definition 'in' expr
+   | 'assert' expr
 
   A : argument ::= expr
   
@@ -207,6 +208,9 @@ Rule
       else(match[[ PM ]], throw(given)))
 Rule
   evaluate[[ LD 'in' E ]] = scope(define-values[[ LD ]], evaluate[[ E ]])
+Rule
+  evaluate [[ 'assert' E ]] =
+    else(check-true(evaluate[[ E ]]), throw(ocaml-light-assert-failure))
 
 
 ## Expression sequences and maps
