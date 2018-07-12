@@ -13,7 +13,9 @@ sections of the [Browsing guide].
 
 See [Funcons-beta] for the beta-release of an initial collection of funcons.
 Those funcons used in the CBS of a particular language are listed in an index,
-accessed from the dropdown menu shown when browsing its specification.
+accessed from the dropdown menu shown when browsing its specification. 
+The [reuse] page shows how may funcons are directly reused in the different
+language specifications.
 
 The specification of each funcon has been validated by basic unit tests that
 exercise all its rules. Moreover, funcons that are reused in two or more of
