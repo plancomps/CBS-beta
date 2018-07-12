@@ -69,6 +69,8 @@ See [OCaml Light in CBS] for further details.
 
 [Funcons-beta]: ../Funcons-beta/index.md
 
+[Reuse]: Reuse.md
+
 [IMP in CBS]: IMP/index.md
 
 [SIMPLE in CBS]: SIMPLE/index.md
