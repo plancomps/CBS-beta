@@ -21,16 +21,11 @@ may have been used in previous versions of those language specifications,
 or in language specifications not included in Languages-beta. Some funcons
 have not yet been used.
 
-[IMP]:
-  IMP/IMP-cbs/IMP/IMP-Funcons-Index/index.html
-[SIMPLE]:
-  SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-Funcons-Index/index.html
-[MiniJava]:
-  MiniJava/MiniJava-cbs/MiniJava/MiniJava-Funcons-Index/index.html
-[SL]:
-  SL/SL-cbs/SL/SL-Funcons-Index/index.html
-[OC-L]:
-  OCaml-Light/OC-L-cbs/OC-L/OC-L-Funcons-Index/index.html
+[IMP]: IMP/IMP-cbs/IMP/IMP-Funcons-Index/index.html
+[SIMPLE]: SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-Funcons-Index/index.html
+[MiniJava]: MiniJava/MiniJava-cbs/MiniJava/MiniJava-Funcons-Index/index.html
+[SL]: SL/SL-cbs/SL/SL-Funcons-Index/index.html
+[OC-L]: OCaml-Light/OC-L-cbs/OC-L/OC-L-Funcons-Index/index.html
 
 The following tables show which languages specifications explicitly reuse each
 funcon.
