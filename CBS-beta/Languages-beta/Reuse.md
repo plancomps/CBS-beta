@@ -685,17 +685,12 @@ funcon.
 
 
 
-[IMP]:
-  IMP/IMP-cbs/IMP/IMP-Funcons-Index/index.html
+[IMP]: IMP/IMP-cbs/IMP/IMP-Funcons-Index/index.html
 
-[SIMPLE]:
-  SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-Funcons-Index/index.html
+[SIMPLE]: SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-Funcons-Index/index.html
 
-[MiniJava]:
-  MiniJava/MiniJava-cbs/MiniJava/MiniJava-Funcons-Index/index.html
+[MiniJava]: MiniJava/MiniJava-cbs/MiniJava/MiniJava-Funcons-Index/index.html
 
-[SL]:
-  SL/SL-cbs/SL/SL-Funcons-Index/index.html
+[SL]: SL/SL-cbs/SL/SL-Funcons-Index/index.html
 
-[OC-L]:
-  OCaml-Light/OC-L-cbs/OC-L/OC-L-Funcons-Index/index.html
+[OC-L]: OCaml-Light/OC-L-cbs/OC-L/OC-L-Funcons-Index/index.html
