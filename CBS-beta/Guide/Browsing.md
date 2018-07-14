@@ -167,7 +167,7 @@ there is a single argument term, so both `f t` and `f(t)` are allowed.
 - **N.B. Parentheses are also optional around composite argument terms: 
   `f g t` is *always* grouped as `f(g(t))`!**
 
-Funcons are not higher-order, so implicit grouping of `f g t` as `(f g)(t)`
+Funcons are *not* higher-order, so implicit grouping of `f g t` as `(f g)(t)`
 would here be *completely useless*, as it would *never* give a well-formed term. 
 Grouping in funcon terms treats funcon names as prefix operations, such as the
 '`-`' in '`-sin(x)`'. (Readers accustomed to higher-order programming in Haskell
@@ -189,8 +189,11 @@ The following special forms of funcon terms are allowed:
 - Strings `"c1...cn"` (with the usual `\`-escapes)
 - Lists `[t1,...,tn]`, empty list `[ ]`
 - Sets `{t1,...,tn}`, empty set `{ }`
-- Maps `{k1|->t1,...,kn|->tn}`, empty map `map( )`.
-
+- Maps `{k1|->t1,...,kn|->tn}`, empty map `map( )`
+- Type union `t1|...|tn`
+- Type intersection `t1&...&tn`
+- Type complement `~t`
+- Sequence types `t*`, `t+`, `t?`, `t^n`
 
 ------------------
 
@@ -206,24 +209,26 @@ Funcon definitions
   The number of `#` characters in a subsection heading indicates its level,
   with the top level sections [Computations] and [Values] having a single `#`.
 
-- *`Funcon`* introduces a declaration of a fresh funcon name,
-  together with its signature. 
+- *`Funcon`* introduces a declaration of a fresh funcon name,  together with
+  its signature. 
   
   - Funcon names start with lowercase letters, and may include letters, digits,
     and dashes `-`.
-  - The signature of a funcon taking no arguments is written `:=>T`, where
-    `T` is a type of values. (Types are treated as values, and type terms have
-    the same form as funcon terms.)
-  - The signature of a funcon taking one or more arguments is written 
-    `(V1:CT1,...,Vn:CTn):=>T`, where each `Vi` is a variable,
-    each `CTi` is either a type of values `Ti` or a computation type `=>Ti`, 
-    and `T` is a type of values. (Computation types `=>Ti` resemble types of
-    call-by-name parameters in Scala.)
+  - The signature of a funcon taking no arguments and computing values of type
+    `T` is written `:=>T`. 
+  - The signature of a funcon taking one or more arguments and computing values
+    of type `T` is written `(V1:CT1,...,Vn:CTn):=>T`, where each `Vi` is a
+    variable, and each `CTi` is either a type of values `Ti` or a computation
+    type `=>Ti`. (Computation types `=>Ti` resemble the types of call-by-name
+    parameters in Scala.)
   - One of the argument types in a signature may be an indefinite sequence
     type, formed using postfix `?`, `*`, or `+`, allowing use of the funcon
     with varying numbers of arguments. (A sequence argument is usually at the
     end, but could be anywhere, since the other arguments in an application
     determine where to match it.)
+  - The lack of a defined result of a partial funcon is represented by the
+    empty sequence `( )`. The result type in the signature of a partial funcon
+    is of the form `T?` for some value type `T`.
   - The signature of a *value constructor* is written `(V1:CT1,...,Vn:CTn):T`,
     using a value result type `T` instead of a computation result type `=>T`.
 
@@ -246,7 +251,7 @@ Funcon definitions
   - Arguments of funcons may be *patterns* formed from variables and *value
     constructors* (which are usually introduced by *`Datatype`* definitions).
 
-- *`Entity`* introduces a declaration of a fresh entity name.
+- *`Entity`* introduces a declaration of a fresh auxiliary entity name.
   
   - Entities are implicitly propagated in transition rules when not mentioned.
   - Rewrites are independent of entities.
@@ -265,19 +270,25 @@ Funcon definitions
     a single premise, the `V*` in the conclusion is the same as in the premise.
     The value sequences of input entities are concatenated in sequences of
     transitions.
-  - When an output entity `_ --stream!(V1,...,Vn)-> _` is omitted, the implicit
+  - When an output entity `_ --stream!(V*)-> _` is omitted, the implicit
     requirements are analogous to those for input entities.
-  - When an output entity `_ --signal(V?)-> _` is omitted, the implicit
+  - When a control entity `_ --signal(V?)-> _` is omitted, the implicit
     requirements are analogous to those for input entities.
 
 - *`Type`* introduces a declaration of a fresh funcon name. The
   type of values it computes is `types`, which is a value that represents 
   a subtype of `values`. 
   
-  - Type definitions `Type t... ~> T` combine type declarations with rewrites.
+  - A type definition `Type t... ~> T` combines a type declaration with a
+    rewrite of the type to `T`.
 
-- *`Datatype`* introduces a declaration of an algebraic datatype,
-  together with constructor funcons for its values.
+- *`Datatype`* introduces a declaration of an algebraic datatype, written
+  `t ::= f1(...) | ... | fn(...)`, which also declares the constructor funcons
+  `fi(...):t` for its values.
+  
+  - A datatype definition `Datatype t(...)` written without constructors allows
+    separate declaration of constructors with different instantiations of the
+    parameterised type `t(...)`, corresponding to a GADT.
 
 - *`Alias`* introduces an equation `N1 = N2` that declares a fresh name `N1`
   and defines it to be equivalent to another name `N2`. `N1` is usually an
