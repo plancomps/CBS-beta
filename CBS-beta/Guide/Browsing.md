@@ -15,7 +15,8 @@ file structure.
 
 The global [Funcons-Index] page lists the names of all current funcons, grouped
 according to their types. The local funcons-index page for a particular language
-lists only the names of the funcons actually used in its specification.
+lists only the names of the funcons actually used in its specification. The
+funcon [reuse] page shows which of the included languages reference each funcon.
 
 Hovering on a reference to a funcon displays the declared arity of symbol:
 `values` stands for a *single* argument, and `values*` for any number of
@@ -69,14 +70,16 @@ or folding (&#9658;) all rules, comments, or subsections on the current page.
 Language definitions
 --------------------
 
-See the [CBS of IMP] for illustration of the following points.
+__See the [CBS of IMP] for illustration of the following points.__
 
 - Each file of the definition of a language `L` starts with the line
   *`Language "L"`*. Splitting a language definition across multiple files
   (within the same project) does not affect its well-formedness.
 
-- When a language definition is split into numbered sections, links to them
-  may be listed between brackets `[...]` to provide a table of contents.
+- Language definitions can be split into numbered sections. A section number is
+  written `#N`, where `N` can be a series of numbers or (single) letters,
+  separated by dots. Section numbers are hyperlinks in a table of contents,
+  which is written `[...]`.
 
 - *`Syntax`* introduces one or more grammar productions for the 
   abstract (context-free) syntax of the language, together with meta-variables
@@ -91,22 +94,24 @@ See the [CBS of IMP] for illustration of the following points.
   - Alternatives are separated by `|`. All alternatives for the same
     nonterminal have to be specified together.
   - Regular expressions are written using postfix `?` for optional parts,
-    `*` for iteration, and `+` for non-empty iteration. Grouping parentheses
-    `(...)` are used when the subexpression is not a single symbol.
-  - Layout (including comments) is implicitly allowed everywhere. It can
-    be excluded by inserting an underscore `_` between symbols.
+    `*` for iteration, `+` for non-empty iteration, and grouping parentheses
+    `(...)`.
+  - Layout (including comments) is implicitly allowed everywhere in *`Syntax`*,
+    but it can be excluded between two symbols by inserting an underscore `_`,
+    e.g., [`num ::= '-'?_decimal`].
 
 - *`Lexis`* introduces one or more grammar productions for the 
   lexical (regular or context-free) syntax of the language, together with
-  meta-variables ranging over the specified strings of characters.
+  meta-variables ranging over the specified *strings* of characters.
   
-  - The range of characters from `'C1'` to `'C2'` is specified by `'C1'-'C2'`.
-  - Layout (including comments) in lexical grammars is specified explicitly.
-  - *`Lexis`* productions are otherwise as for *`Syntax`*.
+  - The range of characters from `'C1'` to `'C2'` is specified by `'C1'-'C2'`,
+    e.g., [`decimal ::= ('0'-'9')+`].
+  - Layout (including comments) is implicitly *excluded* everywhere in *`Lexis`*.
+  - *`Lexis`* productions are otherwise specified as for *`Syntax`*.
 
 - Parsers generated from grammars for abstract syntax are usually ambiguous.
   Associativity, relative priority, and lexical disambiguation are currently
-  specified in CBS using notation from SDF, embedded in multi-line comments
+  specified separately, using notation from SDF, embedded in multi-line comments
   `/*...*/`.
 
 - *`Semantics`* introduces a declaration of a translation function
@@ -127,7 +132,8 @@ See the [CBS of IMP] for illustration of the following points.
   - Meta-variables of the same sort in a rule are distinguished by subscripted
     digits, optionally followed by primes.
   - The notation `\"...\"` produces a funcon string value from a lexical symbol
-    `...`.
+    `...`. (In contrast, `"..."` is always a literal string, not containing
+    references to meta-variables.)
   - Desugaring rules for ASTs are written `[[...]] : SORT = [[...]]`, where
     the patterns on both sides match the nonterminal symbol `SORT`. Note
     that desugaring rules do *not* refer to particular translation functions.
@@ -146,6 +152,12 @@ See the [CBS of IMP] for illustration of the following points.
 Funcon terms
 ------------
 
+*Funcon names* start with lowercase letters, and may include letters, digits, 
+and dashes `-`.
+
+*Variables* in funcon terms start with uppercase letters, and may be suffixed by
+digits and/or primes.
+
 A funcon term formed from a funcon `f` and argument sequence `s` is written in 
 prefix form: `f s`. When `f` has no arguments, it is written without 
 parentheses: `f`; when it has 2 or more arguments `t1`, ..., `tn`, they are
@@ -158,8 +170,8 @@ there is a single argument term, so both `f t` and `f(t)` are allowed.
 Funcons are not higher-order, so implicit grouping of `f g t` as `(f g)(t)`
 would here be *completely useless*, as it would *never* give a well-formed term. 
 Grouping in funcon terms treats funcon names as prefix operations, such as the
-'`-`' in '`-sin(x)`'. Readers accustomed to higher-order programming in Haskell
-may find it helpful to imagine `f g t` written as `f$g t`.
+'`-`' in '`-sin(x)`'. (Readers accustomed to higher-order programming in Haskell
+may find it helpful to imagine `f g t` written as `f$g t`.)
 
 Some funcons can take argument sequences of varying lengths; funcons may also
 compute sequences of values. A funcon that does both is `left-to-right`,
@@ -200,15 +212,20 @@ Funcon definitions
   - Funcon names start with lowercase letters, and may include letters, digits,
     and dashes `-`.
   - The signature of a funcon taking no arguments is written `:=>T`, where
-    `T` is a type of values.
+    `T` is a type of values. (Types are treated as values, and type terms have
+    the same form as funcon terms.)
   - The signature of a funcon taking one or more arguments is written 
-    `(V1:CT1,...,Vn:CTn):=>T`, where each `Vi` is a meta-variable,
+    `(V1:CT1,...,Vn:CTn):=>T`, where each `Vi` is a variable,
     each `CTi` is either a type of values `Ti` or a computation type `=>Ti`, 
-    and `T` is a type of values.
+    and `T` is a type of values. (Computation types `=>Ti` resemble types of
+    call-by-name parameters in Scala.)
   - One of the argument types in a signature may be an indefinite sequence
     type, formed using postfix `?`, `*`, or `+`, allowing use of the funcon
     with varying numbers of arguments. (A sequence argument is usually at the
-    end, but with the funcon `sequential` it is at the beginning.)
+    end, but could be anywhere, since the other arguments in an application
+    determine where to match it.)
+  - The signature of a *value constructor* is written `(V1:CT1,...,Vn:CTn):T`,
+    using a value result type `T` instead of a computation result type `=>T`.
 
 - *`Rule`* introduces a formula or inference rule defining the
   operational behaviour of a funcon.
@@ -218,14 +235,16 @@ Funcon definitions
   - `env(Env) |- T1 ---> T2` specifies dependence on an environment `Env`.
   - `<T1,store(S1)> ---> <T2,store(S2)>` specifies inspection of a store `S1`
     and its replacement by `S2`.
-  - `T1 --stream?(V1,...,Vn)-> T2` specifies input of values matching `V1`,
-    ..., `Vn` from `stream`.
+  - `T1 --stream?(V1,...,Vn)-> T2` specifies input of values matching the
+    patterns `V1`, ..., `Vn` from `stream`.
   - `T1 --stream!(V1,...,Vn)-> T2` specifies output of the values of `V1`,
     ..., `Vn` to `stream`.
   - `T1 --signal(V)-> T2` specifies a `signal` `V`. Omitting `V` specifies the
     absence of the signal.
   - An annotated meta-variable `V:T` is restricted to value terms.
   - A single defining rule for a funcon may be combined with its declaration.
+  - Arguments of funcons may be *patterns* formed from variables and *value
+    constructors* (which are usually introduced by *`Datatype`* definitions).
 
 - *`Entity`* introduces a declaration of a fresh entity name.
   
@@ -266,7 +285,10 @@ Funcon definitions
   being defined elsewhere to have a different interpretation.
 
 - *`Built-in`* introduces a declaration of a fresh name and its
-  signature, but does not provide a definition for it.
+  signature, but does not provide a definition for it. Built-ins can be regarded
+  as parameters of a collection of funcon definitions. They are generally
+  reserved for types of values such as integers, sets, and maps, which are not
+  amenable to specification using operational rules.
 
 - *`Assert`* introduces a formula that expresses the intention
   that it should hold (either as a consequence of specified definitions, or
@@ -277,14 +299,15 @@ Funcon definitions
 
 - *`Meta-variables`* introduces type constraints on variables used in rules.
   These constraints are usually of the form `V <: T` where `V` is a variable,
-  requiring `V` to be a subtype of `T`.
-
-(To be continued.)
+  requiring `V` to be a subtype of `T`. [The keyword *`Meta-variables`* could
+  be confusing, and should be replaced.]
 
 
 [Funcons-beta]: ../Funcons-beta/Funcons-Index/index.html
 
 [Funcons-Index]: ../Funcons-beta/Funcons-Index/index.html
+
+[Reuse]: ../Languages-beta/Reuse.md
 
 [Languages-beta]: ../Languages-beta/index.md
 
@@ -302,3 +325,6 @@ Funcon definitions
 
 [Computations]: ../Funcons-beta/Computations/index.md
 
+[`num ::= '-'?_decimal`]: ../Languages-beta/IMP/IMP-cbs/IMP/IMP-1/index.html#SyntaxName_num
+
+[`decimal ::= ('0'-'9')+`]: ../Languages-beta/IMP/IMP-cbs/IMP/IMP-1/index.html#SyntaxName_decimal

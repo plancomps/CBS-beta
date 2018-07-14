@@ -4,6 +4,9 @@ Beta-Release Changes
 This page lists significant additions and changes to the funcon definitions and
 language specifications included in the CBS beta-release.
 
+2018-07-14: [Browsing guide](Guide/Browsing.md)
+* minor clarifications
+
 2018-07-12: [Languages-beta](Languages-beta/index.md)
 * [added an overview of funcon reuse](Languages-beta/Reuse.md)
 
