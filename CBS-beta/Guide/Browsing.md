@@ -279,20 +279,20 @@ Funcon definitions
     transition in the premise is the same as before the transition in the
     conclusion, and similarly for its value after the transitions. Changes to
     mutable entities are threaded through sequences of transitions.
-  - `_ --i?(V*:T*)-> _` declares an *input entity* `i` of type `T*`. When an
-    input entity is omitted in an axiom, it is implicitly required to be the
-    empty sequence. When it is omitted in a rule with a single premise, the 
-    sequence of values in the conclusion is implicitly the same as in the
-    premise. The value sequences of an input entity are concatenated in
-    sequences of transitions.
-  - `_ --o?(V*:T*)-> _` declares an *output entity* `o` of type `T*`.vWhen an
-    output entity is omitted in a rule, the implicit requirements are analogous
-    to those for input entities.
-  - `_ --c(V?:T?)-> _` declares a *control entity* `c` of type `T?`.vWhen a
-    control entity is omitted in a rule, the implicit requirements are analogous
-    to those for input entities, except that a transition with a non-empty
-    control entity value cannot be followed by a further transition (before
-    being handled).
+  - `_ --i?(V*:T*)-> _` declares an *input entity* `i` of type `T*`, e.g.,
+    `_ -- standard-in?(_:values*) -> _`. When an input entity is omitted in an
+    *axiom*, it is implicitly required to be the empty sequence. When it is
+    omitted in a rule with a single premise, the sequence of values in the
+    conclusion is implicitly the same as in the premise. The value sequences 
+    of an input entity are concatenated in sequences of transitions.
+  - `_ --o?(V*:T*)-> _` declares an *output entity* `o` of type `T*`, e.g.,
+    `_ -- standard-out!(_:values*) -> _`. When an output entity is omitted in
+    a rule, the implicit requirements are analogous to those for input entities.
+  - `_ --c(V?:T?)-> _` declares a *control entity* `c` of type `T?`, e.g.,
+    `_ --abrupted(_:values?)-> _`. When a control entity is omitted in a rule,
+    the implicit requirements are analogous to those for input entities,
+    except that a transition with a non-empty control entity value cannot be
+    followed by a further transition (before being handled).
 
 - *`Type`* introduces a declaration of a fresh funcon name. The
   type of values it computes is `types`, which is a value that represents 
