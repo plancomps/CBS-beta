@@ -104,8 +104,8 @@ __See the [CBS of IMP] for illustration of the following points.__
   lexical (regular or context-free) syntax of the language, together with
   meta-variables ranging over the specified *strings* of characters.
   
-  - The range of characters from `'C1'` to `'C2'` is specified by `'C1'-'C2'`,
-    e.g., [`decimal ::= ('0'-'9')+`].
+  - The range of characters from `'C1'` to `'C2'` is specified by `'C1'-'C2'`.
+    For example, [`decimal`] is defined as `('0'-'9')+`.
   - Layout (including comments) is implicitly *excluded* everywhere in *`Lexis`*.
   - *`Lexis`* productions are otherwise specified as for *`Syntax`*.
 
@@ -117,7 +117,7 @@ __See the [CBS of IMP] for illustration of the following points.__
 - *`Semantics`* introduces a declaration of a translation function
   from ASTs (with strings as leaves) to funcon terms.
   
-  - A translation functions takes a single AST (or string) as argument,
+  - A translation function takes a single AST (or string) as argument,
     enclosed in double brackets `[[...]]`.
   - The sort of the argument is specified by `_:...`.
   - The type of the resulting funcon term is specified after `:`. It is usually
@@ -156,7 +156,9 @@ Funcon terms
 and dashes `-`.
 
 *Variables* in funcon terms start with uppercase letters, and may be suffixed by
-digits and/or primes.
+digits and/or primes. Variables that stand for sequences of indefinite length
+are suffixed by `*`, `+`, or `?`. Variables whose values are not required may
+be replaced by underscores `_`. 
 
 A funcon term formed from a funcon `f` and argument sequence `s` is written in 
 prefix form: `f s`. When `f` has no arguments, it is written without 
@@ -174,10 +176,10 @@ Grouping in funcon terms treats funcon names as prefix operations, such as the
 may find it helpful to imagine `f g t` written as `f$g t`.)
 
 Some funcons can take argument sequences of varying lengths; funcons may also
-compute sequences of values. A funcon that does both is `left-to-right`,
-which is used to ensure that arguments are evaluated in the specified order
-(the default order allows interleaving). Composition with `left-to-right`
-provides sequential variants of all multi-argument funcons, e.g.:
+compute sequences of values. An example of a funcon that does both is
+`left-to-right`, which is used to ensure that arguments are evaluated in the
+specified order (the default is to allow interleaving). Composition with 
+`left-to-right` provides sequential variants of all multi-argument funcons, e.g.:
 
 - `integer-add left-to-right(t1,t2)` (which abbreviates 
   `integer-add(left-to-right(t1,t2))`) 
@@ -215,14 +217,19 @@ Funcon definitions
   - Funcon names start with lowercase letters, and may include letters, digits,
     and dashes `-`.
   - The signature of a funcon taking no arguments and computing values of type
-    `T` is written `:=>T`. 
+    `T` is written `:=>T`. For example, the signature of [`fail`] is written
+    `:=>empty-type`.
   - The signature of a funcon taking one or more arguments and computing values
     of type `T` is written `(V1:CT1,...,Vn:CTn):=>T`, where each `Vi` is a
     variable, and each `CTi` is either a type of values `Ti` or a computation
     type `=>Ti`. (Computation types `=>Ti` resemble the types of call-by-name
-    parameters in Scala.)
+    parameters in Scala.) For example, the signature of [`if-true-else`] is
+    `(_:booleans, _:=>T, _:=>T) : =>T`. 
+  - Arguments specified by `Vi:Ti` are implicitly pre-evaluated (possibly
+    interleaved) whereas evaluation of arguments specified by `Vi:=>Ti` is
+    determined by explicit rules.
   - One of the argument types in a signature may be an indefinite sequence
-    type, formed using postfix `?`, `*`, or `+`, allowing use of the funcon
+    type, formed using a suffixed `*`, `+`, or `?`, allowing use of the funcon
     with varying numbers of arguments. (A sequence argument is usually at the
     end, but could be anywhere, since the other arguments in an application
     determine where to match it.)
@@ -235,21 +242,25 @@ Funcon definitions
 - *`Rule`* introduces a formula or inference rule defining the
   operational behaviour of a funcon.
   
-  - `T1 ~> T2` is a rewrite from `T1` to `T2`.
-  - `T1 ---> T2` is simple transition from `T1` to `T2`.
-  - `env(Env) |- T1 ---> T2` specifies dependence on an environment `Env`.
-  - `<T1,store(S1)> ---> <T2,store(S2)>` specifies inspection of a store `S1`
-    and its replacement by `S2`.
-  - `T1 --stream?(V1,...,Vn)-> T2` specifies input of values matching the
-    patterns `V1`, ..., `Vn` from `stream`.
-  - `T1 --stream!(V1,...,Vn)-> T2` specifies output of the values of `V1`,
-    ..., `Vn` to `stream`.
-  - `T1 --signal(V)-> T2` specifies a `signal` `V`. Omitting `V` specifies the
-    absence of the signal.
-  - An annotated meta-variable `V:T` is restricted to value terms.
-  - A single defining rule for a funcon may be combined with its declaration.
-  - Arguments of funcons may be *patterns* formed from variables and *value
-    constructors* (which are usually introduced by *`Datatype`* definitions).
+  - `T1 ~> T2` is a *rewrite* from `T1` to `T2`.
+  - `T1 ---> T2` is simple *transition* from `T1` to `T2`.
+  - `e(V) |- T1 ---> T2` specifies dependence on a *contextual entity* named `e`.
+  - `<T1,s(V1)> ---> <T2,s(V2)>` specifies inspection of a *mutable entity* named
+   `s` and its replacement of its value `V1` by `V2`.
+  - `T1 --i?(V*)-> T2` specifies a sequence of values `V*` for an *input entity*
+    named `i`.
+  - `T1 --o!(V*)-> T2` specifies a sequence of values `V*` for an *output entity*
+    named `o`.
+  - `T1 --c(V?)-> T2` specifies an optional value`V?` for a *control entity*
+    named `c`.
+  - An annotated variable `V:T` is restricted to *value* terms; un-annotated
+    variables range over *computation* terms (including value terms), except that
+    type variables declared by *`Meta-variables`* are restricted to type terms.
+  - A single defining rewrite rule for a funcon may be combined with its
+    declaration.
+  - Arguments of funcons in rules may be *patterns* formed from variables and
+    *value constructors* (which are usually introduced by *`Datatype`*
+    definitions).
 
 - *`Entity`* introduces a declaration of a fresh auxiliary entity name.
   
@@ -257,23 +268,31 @@ Funcon definitions
   - Rewrites are independent of entities.
   - The declaration of an entity specifies how the entity is written when used,
     which determines how it is propagated when omitted in transition formulae.
-  - When a contextual entity such as `env(Env) |- _ ---> _` is omitted, it is
-    implicitly the same in the conclusion and any premises.
-  - When a mutable entity such as `<_,store(S1)> ---> <_,store(S2)>` is omitted
-    in an *axiom*, `S1` and `S2` are implicitly required to be equal. 
-    When it is omitted in a rule with a single premise, the pair of stores in
-    the conclusion is the same as the pair in the premise. Mutable entities are
-    threaded through sequences of transitions. (Rules with multiple transitions
-    in premises are seldom needed in small-step semantics.)
-  - When an input entity such as `_ --stream?(V*)-> _` is omitted in an axiom,
-    `V*` is implicitly required to be empty. When it is omitted in a rule with
-    a single premise, the `V*` in the conclusion is the same as in the premise.
-    The value sequences of input entities are concatenated in sequences of
-    transitions.
-  - When an output entity `_ --stream!(V*)-> _` is omitted, the implicit
-    requirements are analogous to those for input entities.
-  - When a control entity `_ --signal(V?)-> _` is omitted, the implicit
-    requirements are analogous to those for input entities.
+  - `e(V:T) |- _ ---> _` declares a *contextual entity* `e` of type `T`, e.g.,
+    `environment(_:environments) |- _ ---> _`. When a contextual entity is
+    omitted in a rule, it is implicitly the same in the conclusion and any
+    premises.
+  - `<_,s(V:T)> ---> <_,s(V:T)>` declares a *mutable entity* `s` of type `T`,
+    e.g., `< _ , store(_:stores) > ---> < _ , store(_:stores) >`. When a mutable
+    entity is omitted in an *axiom*, it is implicitly propagated unchanged. 
+    When it is omitted in a rule with a single premise, its value before the
+    transition in the premise is the same as before the transition in the
+    conclusion, and similarly for its value after the transitions. Changes to
+    mutable entities are threaded through sequences of transitions.
+  - `_ --i?(V*:T*)-> _` declares an *input entity* `i` of type `T*`. When an
+    input entity is omitted in an axiom, it is implicitly required to be the
+    empty sequence. When it is omitted in a rule with a single premise, the 
+    sequence of values in the conclusion is implicitly the same as in the
+    premise. The value sequences of an input entity are concatenated in
+    sequences of transitions.
+  - `_ --o?(V*:T*)-> _` declares an *output entity* `o` of type `T*`.vWhen an
+    output entity is omitted in a rule, the implicit requirements are analogous
+    to those for input entities.
+  - `_ --c(V?:T?)-> _` declares a *control entity* `c` of type `T?`.vWhen a
+    control entity is omitted in a rule, the implicit requirements are analogous
+    to those for input entities, except that a transition with a non-empty
+    control entity value cannot be followed by a further transition (before
+    being handled).
 
 - *`Type`* introduces a declaration of a fresh funcon name. The
   type of values it computes is `types`, which is a value that represents 
@@ -282,7 +301,7 @@ Funcon definitions
   - A type definition `Type t... ~> T` combines a type declaration with a
     rewrite of the type to `T`.
 
-- *`Datatype`* introduces a declaration of an algebraic datatype, written
+- *`Datatype`* introduces a declaration of an *algebraic datatype*, written
   `t ::= f1(...) | ... | fn(...)`, which also declares the constructor funcons
   `fi(...):t` for its values.
   
@@ -338,4 +357,8 @@ Funcon definitions
 
 [`num ::= '-'?_decimal`]: ../Languages-beta/IMP/IMP-cbs/IMP/IMP-1/index.html#SyntaxName_num
 
-[`decimal ::= ('0'-'9')+`]: ../Languages-beta/IMP/IMP-cbs/IMP/IMP-1/index.html#SyntaxName_decimal
+[`decimal`]: ../Languages-beta/IMP/IMP-cbs/IMP/IMP-1/index.html#SyntaxName_decimal
+
+[`fail`]: ../Funcons-beta/Computations/Abnormal/Failing/index.html#Name_fail
+
+[`if-true-else`]: ../Funcons-beta/Computations/Normal/Flowing/index.html#Name_if-true-else
