@@ -8,7 +8,7 @@ considerably; future publications should be consistent with the final
 release of CBS.
 
 - L. T. van Binsbergen, N. Sculthorpe, P. D. Mosses,
-  __[Tool Support for Component-Based Semantics](http://plancomps.org/modularity2016)__,
+  __[Tool support for component-based semantics](http://plancomps.org/modularity2016)__,
   in: *Companion Proceedings of the 15th International Conference on Modularity,*
   ACM, 2016, pp. 8-11.
   [doi:10.1145/2892664.2893464](http://dx.doi.org/10.1145/2892664.2893464)
@@ -57,7 +57,7 @@ release of CBS.
   [doi:10.1145/1596486.1596489](https://doi.org/10.1145/1596486.1596489)
 
 - P. D. Mosses, M. J. New,
-  __Implicit Propagation in Structural Operational Semantics__, 
+  __Implicit propagation in structural operational semantics__, 
   *Electr. Notes Theor. Comput. Sci.* 229 (2009) pp. 49-66.
   [doi:10.1016/j.entcs.2009.07.073](https://doi.org/10.1016/j.entcs.2009.07.073)
 

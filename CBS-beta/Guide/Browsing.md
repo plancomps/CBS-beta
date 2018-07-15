@@ -328,8 +328,8 @@ Funcon definitions
   language definitions. 
 
 - *`Meta-variables`* introduces type constraints on variables used in rules.
-  These constraints are usually of the form `V <: T` where `V` is a variable,
-  requiring `V` to be a subtype of `T`. [The keyword *`Meta-variables`* could
+  These constraints are usually of the form `v <: t` where `v` is a variable,
+  requiring `v` to be a subtype of `t`. [The keyword *`Meta-variables`* could
   be confusing, and should be replaced.]
 
 
