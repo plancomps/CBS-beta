@@ -77,9 +77,9 @@ __See the [CBS of IMP] for illustration of the following points.__
   (within the same project) does not affect its well-formedness.
 
 - Language definitions can be split into numbered sections. A section number is
-  written `#N`, where `N` can be a series of numbers or (single) letters,
+  written `#n`, where `n` can be a series of numbers or (single) letters,
   separated by dots. Section numbers are hyperlinks in a table of contents,
-  which is written `[...]`.
+  which is written `[...]`, and in multi-line comments `/*...*/`.
 
 - *`Syntax`* introduces one or more grammar productions for the 
   abstract (context-free) syntax of the language, together with meta-variables
@@ -104,7 +104,7 @@ __See the [CBS of IMP] for illustration of the following points.__
   lexical (regular or context-free) syntax of the language, together with
   meta-variables ranging over the specified *strings* of characters.
   
-  - The range of characters from `'C1'` to `'C2'` is specified by `'C1'-'C2'`.
+  - The range of characters from `'c1'` to `'c2'` is specified by `'c1'-'c2'`.
     For example, [`decimal`] is defined as `('0'-'9')+`.
   - Layout (including comments) is implicitly *excluded* everywhere in *`Lexis`*.
   - *`Lexis`* productions are otherwise specified as for *`Syntax`*.
@@ -121,8 +121,8 @@ __See the [CBS of IMP] for illustration of the following points.__
     enclosed in double brackets `[[...]]`.
   - The sort of the argument is specified by `_:...`.
   - The type of the resulting funcon term is specified after `:`. It is usually
-    a computation type `=>T` for some value type `T`; it can also be a
-    computation sequence type such as `(=>T)*`.
+    a computation type `=>t` for some value type `t`; it can also be a
+    computation sequence type of the form `(=>t)*`.
 
 - *`Rule`* introduces an equation defining the translation function
   on trees matching a specified pattern.
@@ -134,8 +134,8 @@ __See the [CBS of IMP] for illustration of the following points.__
   - The notation `\"...\"` produces a funcon string value from a lexical symbol
     `...`. (In contrast, `"..."` is always a literal string, not containing
     references to meta-variables.)
-  - Desugaring rules for ASTs are written `[[...]] : SORT = [[...]]`, where
-    the patterns on both sides match the nonterminal symbol `SORT`. Note
+  - Desugaring rules for ASTs are written `[[...]] : s = [[...]]`, where
+    the patterns on both sides match the nonterminal symbol `s`. Note
     that desugaring rules do *not* refer to particular translation functions.
 
 - Multi-line comments are written `/*...*/`, and may include funcon terms
@@ -217,16 +217,16 @@ Funcon definitions
   - Funcon names start with lowercase letters, and may include letters, digits,
     and dashes `-`.
   - The signature of a funcon taking no arguments and computing values of type
-    `T` is written `:=>T`. For example, the signature of [`fail`] is written
+    `t` is written `:=>t`. For example, the signature of [`fail`] is written
     `:=>empty-type`.
   - The signature of a funcon taking one or more arguments and computing values
-    of type `T` is written `(V1:CT1,...,Vn:CTn):=>T`, where each `Vi` is a
-    variable, and each `CTi` is either a type of values `Ti` or a computation
-    type `=>Ti`. (Computation types `=>Ti` resemble the types of call-by-name
+    of type `t` is written `(v1:ct1,...,vn:ctn):=>t`, where each `vi` is a
+    variable, and each `cti` is either a type of values `ti` or a computation
+    type `=>ti`. (Computation types `=>ti` resemble the types of call-by-name
     parameters in Scala.) For example, the signature of [`if-true-else`] is
-    `(_:booleans, _:=>T, _:=>T) : =>T`. 
-  - Arguments specified by `Vi:Ti` are implicitly pre-evaluated (possibly
-    interleaved) whereas evaluation of arguments specified by `Vi:=>Ti` is
+    `(_:booleans, _:=>T, _:=>T) : =>T`, where `T` is a type variable.
+  - Arguments specified by `vi:ti` are implicitly pre-evaluated (possibly
+    interleaved) whereas evaluation of arguments specified by `vi:=>ti` is
     determined by explicit rules.
   - One of the argument types in a signature may be an indefinite sequence
     type, formed using a suffixed `*`, `+`, or `?`, allowing use of the funcon
@@ -235,25 +235,25 @@ Funcon definitions
     determine where to match it.)
   - The lack of a defined result of a partial funcon is represented by the
     empty sequence `( )`. The result type in the signature of a partial funcon
-    is of the form `T?` for some value type `T`.
-  - The signature of a *value constructor* is written `(V1:CT1,...,Vn:CTn):T`,
-    using a value result type `T` instead of a computation result type `=>T`.
+    is of the form `t?` for some value type `t`.
+  - The signature of a *value constructor* is written `(v1:ct1,...,vn:ctn):t`,
+    using a value result type `t` instead of a computation result type `=>t`.
 
 - *`Rule`* introduces a formula or inference rule defining the
   operational behaviour of a funcon.
   
-  - `T1 ~> T2` is a *rewrite* from `T1` to `T2`.
-  - `T1 ---> T2` is simple *transition* from `T1` to `T2`.
-  - `e(V) |- T1 ---> T2` specifies dependence on a *contextual entity* named `e`.
-  - `<T1,s(V1)> ---> <T2,s(V2)>` specifies inspection of a *mutable entity* named
-   `s` and its replacement of its value `V1` by `V2`.
-  - `T1 --i?(V*)-> T2` specifies a sequence of values `V*` for an *input entity*
+  - `t1 ~> t2` is a *rewrite* from `t1` to `t2`.
+  - `t1 ---> t2` is simple *transition* from `t1` to `t2`.
+  - `e(v) |- t1 ---> t2` specifies dependence on a *contextual entity* named `e`.
+  - `<t1,s(v1)> ---> <t2,s(v2)>` specifies inspection of a *mutable entity* named
+   `s` and its replacement of its value `v1` by `v2`.
+  - `t1 --i?(v*)-> t2` specifies a sequence of values `v*` for an *input entity*
     named `i`.
-  - `T1 --o!(V*)-> T2` specifies a sequence of values `V*` for an *output entity*
+  - `t1 --o!(v*)-> t2` specifies a sequence of values `v*` for an *output entity*
     named `o`.
-  - `T1 --c(V?)-> T2` specifies an optional value`V?` for a *control entity*
+  - `t1 --c(v?)-> t2` specifies an optional value`v?` for a *control entity*
     named `c`.
-  - An annotated variable `V:T` is restricted to *value* terms; un-annotated
+  - An annotated variable `v:t` is restricted to *value* terms; un-annotated
     variables range over *computation* terms (including value terms), except that
     type variables declared by *`Meta-variables`* are restricted to type terms.
   - A single defining rewrite rule for a funcon may be combined with its
@@ -268,27 +268,27 @@ Funcon definitions
   - Rewrites are independent of entities.
   - The declaration of an entity specifies how the entity is written when used,
     which determines how it is propagated when omitted in transition formulae.
-  - `e(V:T) |- _ ---> _` declares a *contextual entity* `e` of type `T`, e.g.,
+  - `e(v:t) |- _ ---> _` declares a *contextual entity* `e` of type `t`, e.g.,
     `environment(_:environments) |- _ ---> _`. When a contextual entity is
     omitted in a rule, it is implicitly the same in the conclusion and any
     premises.
-  - `<_,s(V:T)> ---> <_,s(V:T)>` declares a *mutable entity* `s` of type `T`,
+  - `<_,s(v1:t)> ---> <_,s(v2:t)>` declares a *mutable entity* `s` of type `t`,
     e.g., `< _ , store(_:stores) > ---> < _ , store(_:stores) >`. When a mutable
     entity is omitted in an *axiom*, it is implicitly propagated unchanged. 
     When it is omitted in a rule with a single premise, its value before the
     transition in the premise is the same as before the transition in the
     conclusion, and similarly for its value after the transitions. Changes to
     mutable entities are threaded through sequences of transitions.
-  - `_ --i?(V*:T*)-> _` declares an *input entity* `i` of type `T*`, e.g.,
+  - `_ --i?(v*:t*)-> _` declares an *input entity* `i` of type `t*`, e.g.,
     `_ -- standard-in?(_:values*) -> _`. When an input entity is omitted in an
     *axiom*, it is implicitly required to be the empty sequence. When it is
     omitted in a rule with a single premise, the sequence of values in the
     conclusion is implicitly the same as in the premise. The value sequences 
     of an input entity are concatenated in sequences of transitions.
-  - `_ --o?(V*:T*)-> _` declares an *output entity* `o` of type `T*`, e.g.,
+  - `_ --o?(v*:t*)-> _` declares an *output entity* `o` of type `t*`, e.g.,
     `_ -- standard-out!(_:values*) -> _`. When an output entity is omitted in
     a rule, the implicit requirements are analogous to those for input entities.
-  - `_ --c(V?:T?)-> _` declares a *control entity* `c` of type `T?`, e.g.,
+  - `_ --c(v?:t?)-> _` declares a *control entity* `c` of type `t?`, e.g.,
     `_ --abrupted(_:values?)-> _`. When a control entity is omitted in a rule,
     the implicit requirements are analogous to those for input entities,
     except that a transition with a non-empty control entity value cannot be
@@ -298,8 +298,8 @@ Funcon definitions
   type of values it computes is `types`, which is a value that represents 
   a subtype of `values`. 
   
-  - A type definition `Type t... ~> T` combines a type declaration with a
-    rewrite of the type to `T`.
+  - A type definition `Type t... ~> t1` combines a type declaration with a
+    rewrite of the type to `t1`.
 
 - *`Datatype`* introduces a declaration of an *algebraic datatype*, written
   `t ::= f1(...) | ... | fn(...)`, which also declares the constructor funcons
@@ -309,9 +309,9 @@ Funcon definitions
     separate declaration of constructors with different instantiations of the
     parameterised type `t(...)`, corresponding to a GADT.
 
-- *`Alias`* introduces an equation `N1 = N2` that declares a fresh name `N1`
-  and defines it to be equivalent to another name `N2`. `N1` is usually an
-  abbreviation for a longer `N2`; its declaration as an alias prevents it from
+- *`Alias`* introduces an equation `n1 = n2` that declares a fresh name `n1`
+  and defines it to be equivalent to another name `n2`. `n1` is usually an
+  abbreviation for a longer `n2`; its declaration as an alias prevents it from
   being defined elsewhere to have a different interpretation.
 
 - *`Built-in`* introduces a declaration of a fresh name and its
