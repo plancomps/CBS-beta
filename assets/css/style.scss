@@ -9,7 +9,7 @@ div.nav1 a, div.nav2 a {
 
 div.nav1 a:hover, div.nav1 a:focus, div.nav2 a:hover, div.nav2 a:focus {
     color: #069;
-    font-weight: bold
+    font-weight: bold;
 }
 
 div.nav1 a:active, div.nav2 a:active {
@@ -22,7 +22,11 @@ div.nav2 p {
 
 div.nav1 {
 	padding-bottom: 2em;
-    font-weight: bold
+    font-weight: bold;
+}
+
+div.nav2 {
+    font-weight: normal;
 }
 
 table {
