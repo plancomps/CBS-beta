@@ -1,6 +1,11 @@
 CBS-beta Browsing Guide
 =======================
 
+- [Navigation](#navigation)
+- [Language definitions](#language-definitions)
+- [Funcons](#funcons)
+
+
 Navigation
 ----------
 
@@ -50,8 +55,7 @@ arguments.
   - [CBS-beta issues...]\: the list of issues concerning CBS-beta and this website
   - [Suggest an improvement...]\: a template for an email to plancomps@gmail.com
 
-Folding
--------
+### Folding
 
 When a CBS web page is opened, all the rules, comments, and subsections are
 unfolded, as indicated by downward-pointing disclosure symbols (e.g.: &#9660;).
