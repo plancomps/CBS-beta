@@ -10,6 +10,7 @@ CBS-beta Browsing Guide
 - [Funcons](#funcons)
   - [Type definitions](#type-definitions)
   - [Funcon definitions](#funcon-definitions)
+  - [Entities](#entities)
 
 
 Navigation
