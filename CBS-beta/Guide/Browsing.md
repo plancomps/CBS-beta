@@ -81,9 +81,14 @@ __See the [CBS of IMP] for illustration of the following points.__
   separated by dots. Section numbers are hyperlinks in a table of contents,
   which is written `[...]`, and in multi-line comments `/*...*/`.
 
-- *`Syntax`* introduces one or more grammar productions for the 
-  abstract (context-free) syntax of the language, together with meta-variables
-  ranging over the associated sorts of ASTs.
+- Multi-line comments are written `/*...*/`, and may include funcon terms
+  (delimited by back-ticks `` ` ``). End-of-line comments are written `//...`.
+
+### Language grammars
+
+*`Syntax`* introduces one or more grammar productions for the 
+abstract (context-free) syntax of the language, together with meta-variables
+ranging over the associated sorts of ASTs.
   
   - Nonterminals start with lowercase letters, and may include letters, digits,
     and dashes `-`.
@@ -100,21 +105,23 @@ __See the [CBS of IMP] for illustration of the following points.__
     but it can be excluded between two symbols by inserting an underscore `_`,
     e.g., [`num ::= '-'?_decimal`].
 
-- *`Lexis`* introduces one or more grammar productions for the 
-  lexical (regular or context-free) syntax of the language, together with
-  meta-variables ranging over the specified *strings* of characters.
+*`Lexis`* introduces one or more grammar productions for the 
+lexical (regular or context-free) syntax of the language, together with
+meta-variables ranging over the specified *strings* of characters.
   
   - The range of characters from `'c1'` to `'c2'` is specified by `'c1'-'c2'`.
     For example, [`decimal`] is defined as `('0'-'9')+`.
   - Layout (including comments) is implicitly *excluded* everywhere in *`Lexis`*.
   - *`Lexis`* productions are otherwise specified as for *`Syntax`*.
 
-- Parsers generated from grammars for abstract syntax are usually ambiguous.
-  Associativity, relative priority, and lexical disambiguation are currently
-  specified separately, using notation from SDF, embedded in multi-line comments
-  `/*...*/`.
+Parsers generated from grammars for abstract syntax are usually ambiguous.
+Associativity, relative priority, and lexical disambiguation are currently
+specified separately, using notation from SDF, embedded in multi-line comments
+`/*...*/`.
 
-- *`Semantics`* introduces a declaration of a translation function
+### Translation of languages to funcons
+
+*`Semantics`* introduces a declaration of a translation function
   from ASTs (with strings as leaves) to funcon terms.
   
   - A translation function takes a single AST (or string) as argument,
@@ -124,7 +131,7 @@ __See the [CBS of IMP] for illustration of the following points.__
     a computation type `=>t` for some value type `t`; it can also be a
     computation sequence type of the form `(=>t)*`.
 
-- *`Rule`* introduces an equation defining the translation function
+*`Rule`* introduces an equation defining the translation function
   on trees matching a specified pattern.
   
   - The pattern in a rule usually corresponds to a single alternative of the
@@ -137,20 +144,16 @@ __See the [CBS of IMP] for illustration of the following points.__
   - Desugaring rules for ASTs are written `[[...]] : s = [[...]]`, where
     the patterns on both sides match the nonterminal symbol `s`. Note
     that desugaring rules do *not* refer to particular translation functions.
-
-- Multi-line comments are written `/*...*/`, and may include funcon terms
-  (delimited by back-ticks `` ` ``). End-of-line comments are written `//...`.
  
-- All funcons (etc.) defined in [Funcons-beta] can be used in all language
-  definitions. Funcons defined in a language definition file must have fresh
-  names, and cannot be reused in other language definitions \(except by 
-  copy-paste).
-
+All funcons (etc.) defined in [Funcons-beta] can be used in all language
+definitions. Funcons defined in a language definition file must have fresh
+names, and cannot be reused in other language definitions \(except by 
+copy-paste).
 
 ------------------
 
-Funcon terms
-------------
+Funcons
+-------
 
 *Funcon names* start with lowercase letters, and may include letters, digits, 
 and dashes `-`.
@@ -197,22 +200,44 @@ The following special forms of funcon terms are allowed:
 - Type complement `~t`
 - Sequence types `t*`, `t+`, `t?`, `t^n`
 
-------------------
+The funcon definitions in [Funcons-beta] are language-independent.
 
-Funcon definitions
-------------------
-
-- The funcon definitions in [Funcons-beta] are language-independent.
-
-- CBS specifications do not refer to the hierarchy of folders and files 
+CBS specifications do not refer to the hierarchy of folders and files 
   used for [Funcons-beta].
 
-- Files in [Funcons-beta] are generally divided into *unnumbered* subsections.
-  The number of `#` characters in a subsection heading indicates its level,
-  with the top level sections [Computations] and [Values] having a single `#`.
+Files in [Funcons-beta] are generally divided into *unnumbered* subsections.
+The number of `#` characters in a subsection heading indicates its level,
+with the top level sections [Computations] and [Values] having a single `#`.
 
-- *`Funcon`* introduces a declaration of a fresh funcon name,  together with
-  its signature. 
+### Types
+
+In CBS, types are values. They can be given as arguments to funcons, and
+computed by funcons.
+
+*`Type`* introduces a declaration of a fresh funcon name for a type, and lists
+any arguments. The type of values it computes is `types`. 
+  
+  - A type definition `Type t... ~> t1` combines a type declaration with a
+    rewrite of the type to `t1`.
+  - A type definition `Type t... <: t1` combines a type declaration with an
+    assertion that `t...` is a subtype of `t1`.
+
+*`Datatype`* introduces a declaration of an *algebraic datatype*, written
+  `t ::= f1(...) | ... | fn(...)`, which also declares the constructor funcons
+  `fi(...):t` for its values.
+  
+  - A datatype definition `Datatype t(...)` written without constructors allows
+    separate declaration of constructors with different instantiations of the
+    parameterised type `t(...)`, corresponding to a GADT.
+
+*`Meta-variables`* introduces type constraints on variables used in rules.
+  These constraints are usually of the form `v <: t` where `v` is a variable,
+  requiring `v` to be a subtype of `t`.
+
+### Funcon definitions
+
+*`Funcon`* introduces a declaration of a fresh funcon name,  together with
+its signature. 
   
   - Funcon names start with lowercase letters, and may include letters, digits,
     and dashes `-`.
@@ -239,8 +264,22 @@ Funcon definitions
   - The signature of a *value constructor* is written `(v1:ct1,...,vn:ctn):t`,
     using a value result type `t` instead of a computation result type `=>t`.
 
-- *`Rule`* introduces a formula or inference rule defining the
-  operational behaviour of a funcon.
+*`Alias`* introduces an equation `n1 = n2` that declares a fresh name `n1`
+  and defines it to be equivalent to another name `n2`. `n1` is usually an
+  abbreviation for a longer `n2`; its declaration as an alias prevents it from
+  being defined elsewhere to have a different interpretation.
+
+*`Built-in`* introduces a declaration of a fresh funcon name and its
+  signature, but does not provide a definition for it. Built-ins can be regarded
+  as parameters of a collection of funcon definitions. They are generally
+  reserved for types of values such as integers, sets, and maps, which are not
+  amenable to specification using operational rules.
+  
+*`Auxiliary`* introduces a name that is not intended for direct use in 
+language definitions. 
+
+*`Rule`* introduces a formula or inference rule defining the
+operational behaviour of a funcon.
   
   - `t1 ~> t2` is a *rewrite* from `t1` to `t2`.
   - `t1 ---> t2` is simple *transition* from `t1` to `t2`.
@@ -262,7 +301,13 @@ Funcon definitions
     *value constructors* (which are usually introduced by *`Datatype`*
     definitions).
 
-- *`Entity`* introduces a declaration of a fresh auxiliary entity name.
+*`Assert`* introduces a formula that expresses the intention
+  that it should hold (either as a consequence of specified definitions, or
+  as a requirement for built-ins).
+
+### Auxiliary entities
+
+*`Entity`* introduces a declaration of a fresh auxiliary entity name.
   
   - Entities are implicitly propagated in transition rules when not mentioned.
   - Rewrites are independent of entities.
@@ -293,44 +338,6 @@ Funcon definitions
     the implicit requirements are analogous to those for input entities,
     except that a transition with a non-empty control entity value cannot be
     followed by a further transition (before being handled).
-
-- *`Type`* introduces a declaration of a fresh funcon name. The
-  type of values it computes is `types`, which is a value that represents 
-  a subtype of `values`. 
-  
-  - A type definition `Type t... ~> t1` combines a type declaration with a
-    rewrite of the type to `t1`.
-
-- *`Datatype`* introduces a declaration of an *algebraic datatype*, written
-  `t ::= f1(...) | ... | fn(...)`, which also declares the constructor funcons
-  `fi(...):t` for its values.
-  
-  - A datatype definition `Datatype t(...)` written without constructors allows
-    separate declaration of constructors with different instantiations of the
-    parameterised type `t(...)`, corresponding to a GADT.
-
-- *`Alias`* introduces an equation `n1 = n2` that declares a fresh name `n1`
-  and defines it to be equivalent to another name `n2`. `n1` is usually an
-  abbreviation for a longer `n2`; its declaration as an alias prevents it from
-  being defined elsewhere to have a different interpretation.
-
-- *`Built-in`* introduces a declaration of a fresh name and its
-  signature, but does not provide a definition for it. Built-ins can be regarded
-  as parameters of a collection of funcon definitions. They are generally
-  reserved for types of values such as integers, sets, and maps, which are not
-  amenable to specification using operational rules.
-
-- *`Assert`* introduces a formula that expresses the intention
-  that it should hold (either as a consequence of specified definitions, or
-  as a requirement for built-ins).
-  
-- *`Auxiliary`* introduces a name that is not intended for direct use in 
-  language definitions. 
-
-- *`Meta-variables`* introduces type constraints on variables used in rules.
-  These constraints are usually of the form `v <: t` where `v` is a variable,
-  requiring `v` to be a subtype of `t`. [The keyword *`Meta-variables`* could
-  be confusing, and should be replaced.]
 
 
 [Funcons-beta]: ../Funcons-beta/Funcons-Index/index.html
