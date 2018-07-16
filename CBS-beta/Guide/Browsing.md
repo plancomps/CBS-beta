@@ -2,8 +2,14 @@ CBS-beta Browsing Guide
 =======================
 
 - [Navigation](#navigation)
-- [Language definitions](#language-definitions)
+  - [Links](#links)
+  - [Folding](#folding)
+- [Languages](#languages)
+  - [Syntax](#syntax)
+  - [Semantics](#semantics)
 - [Funcons](#funcons)
+  - [Type definitions](#type-definitions)
+  - [Funcon definitions](#funcon-definitions)
 
 
 Navigation
@@ -27,29 +33,31 @@ Hovering on a reference to a funcon displays the declared arity of symbol:
 `values` stands for a *single* argument, and `values*` for any number of
 arguments.
 
-### Menu links
+### Links
 
-  The large button at the top right of each CBS page is a fixed drop-down menu.
+#### Menu
+
+The large button at the top right of each CBS page is a fixed drop-down menu.
     
-  For pages in `Funcons-beta`, it has the following links:
+For pages in `Funcons-beta`, it has the following links:
 
   - [Funcons-beta]\: the funcons index
   - [Languages-beta]\: the languages overview 
   - [CBS-beta]\: the CBS-beta overview
 
-  For pages in `Languages-beta/L`, it has also the following links:
+For pages in `Languages-beta/L`, it has also the following links:
 
   - `L-Start`: the root of the CBS of language `L` (which includes links to
     all the other sections for that language)
   - `L-Funcons-Index`: the index of funcons used for language `L`
 
-### Header links
+#### Header
 
   - [CBS-beta]\: the overview page
   - [Funcons-beta] or [Languages-beta]\: the overview page
   - In the middle: the CBS source file from which the web page was generated
 
-### Footer links
+#### Footer
   
   - [PLanCompS Project, 2018]\: the main PLanCompS project website
   - [CBS-beta issues...]\: the list of issues concerning CBS-beta and this website
@@ -71,8 +79,8 @@ or folding (&#9658;) all rules, comments, or subsections on the current page.
 
 --------------------
 
-Language definitions
---------------------
+Languages
+---------
 
 __See the [CBS of IMP] for illustration of the following points.__
 
@@ -88,7 +96,7 @@ __See the [CBS of IMP] for illustration of the following points.__
 - Multi-line comments are written `/*...*/`, and may include funcon terms
   (delimited by back-ticks `` ` ``). End-of-line comments are written `//...`.
 
-### Language grammars
+### Syntax
 
 *`Syntax`* introduces one or more grammar productions for the 
 abstract (context-free) syntax of the language, together with meta-variables
@@ -123,7 +131,7 @@ Associativity, relative priority, and lexical disambiguation are currently
 specified separately, using notation from SDF, embedded in multi-line comments
 `/*...*/`.
 
-### Translation of languages to funcons
+### Semantics
 
 *`Semantics`* introduces a declaration of a translation function
   from ASTs (with strings as leaves) to funcon terms.
@@ -213,7 +221,7 @@ Files in [Funcons-beta] are generally divided into *unnumbered* subsections.
 The number of `#` characters in a subsection heading indicates its level,
 with the top level sections [Computations] and [Values] having a single `#`.
 
-### Types
+### Type definitions
 
 In CBS, types are values. They can be given as arguments to funcons, and
 computed by funcons.
@@ -226,7 +234,7 @@ any arguments. The type of values it computes is `types`.
   - A type definition `Type t... <: t1` combines a type declaration with an
     assertion that `t...` is a subtype of `t1`.
 
-*`Datatype`* introduces a declaration of an *algebraic datatype*, written
+*`Datatype`* introduces a definition of an *algebraic datatype*, written
   `t ::= f1(...) | ... | fn(...)`, which also declares the constructor funcons
   `fi(...):t` for its values.
   
@@ -309,7 +317,7 @@ operational behaviour of a funcon.
   that it should hold (either as a consequence of specified definitions, or
   as a requirement for built-ins).
 
-### Auxiliary entities
+### Entities
 
 *`Entity`* introduces a declaration of a fresh auxiliary entity name.
   
