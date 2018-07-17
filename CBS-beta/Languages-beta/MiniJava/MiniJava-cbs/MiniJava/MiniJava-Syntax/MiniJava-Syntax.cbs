@@ -116,15 +116,30 @@ IL:
   
   The specified rules are adequate to disambiguate all the example programs
   provided at http://www.cambridge.org/us/features/052182060X/#progs
-  Further rules would be needed to fully disambiguate MiniJava syntax.
 */
 
 Syntax SDF
 /*
+context-free syntax
+``expression ::= expression '*' expression`` {left}
+``expression ::= expression '+' expression`` {left}
+``expression ::= expression '-' expression`` {left}
+``expression ::= expression '<' expression`` {non-assoc}
+``expression ::= expression '&&' expression`` {left}
+
 context-free priorities
+{
 ``expression ::= expression '.' identifier '(' expression-list? ')'``
->
+``expression ::= expression '[' expression ']'``
+} <0> >
 ``expression ::= '!' expression``
+>
+``expression ::= expression '*' expression``
+> {
+``expression ::= expression '+' expression``
+``expression ::= expression '-' expression``
+} >
+``expression ::= expression '<' expression``
 >
 ``expression ::= expression '&&' expression``
 */
