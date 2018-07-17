@@ -47,7 +47,6 @@ i.sem-name, i.sem-name a, span.comment i.sem-name a {
 
 i.var, i.var a, sub, sup {
     color: black;
-    background-color: white;
 }
 
 span.comment, span.comment a:link {
