@@ -4,6 +4,9 @@ Beta-Release Changes
 This page lists significant additions and changes to the funcon definitions and
 language specifications included in the CBS beta-release.
 
+2018-08-14: [first-n](Funcons-beta/Values/Composite/Sequences/index.html#Name_first-n)
+* rule corrected
+
 2018-07-17: [MiniJava](Languages-beta/MiniJava/index.md)
 * syntax disambiguation completed
 * semantics tested with 65 unit tests

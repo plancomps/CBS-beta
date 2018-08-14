@@ -111,8 +111,8 @@ Rule
   first-n(0, _*:(T)*) ~> ( )
 Rule
   natural-predecessor(N) ~> N'
-  -------------------------------------------------------------
-  first-n(N:positive-integers, V*:(T)*, _:T) ~> first-n(N', V*)
+  -----------------------------------------------------------------
+  first-n(N:positive-integers, V:T, V*:(T)*) ~> (V,first-n(N', V*))
 Rule
   first-n(N:positive-integers, ( )) ~> ( )
 
