@@ -1,28 +1,20 @@
 Funcon Reuse in Languages-beta
 ==============================
 
-The table below shows how many funcon names (or their aliases) are explicitly
-reused in each language specification.
+Currently, Funcons-beta includes 385 funcons (including types, datatypes, and 
+entities, but not aliases). Of these, 193 are used in language specifications
+in Languages-beta. The number of funcons used for each language is as follows:
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L]
 | :---: | :---:  | :---:    | :---: | :---: 
 | 29    | 62     | 70       | 71    | 161
 
-Currently, there are 385 funcons (including types, datatypes, and entities)
-and 75 aliases. Of these, 193 are explicitly used in the languages currently
-included in Languages-beta. 
+The definitions of some of the used funcons reference other funcons, which are
+not counted. The remaining funcons have either been used in previous language
+specifications, or are expected to be useful in future specifications.
 
-> __N.B. Some funcon definitions refer to other funcons (e.g., recursive
-> bindings are defined using links). The indirect use of the latter funcons
-> is not included in the tables.__
-
-Funcons that are neither directly nor indirectly used in Languages-beta
-may have been used in previous versions of those language specifications,
-or in language specifications not included in Languages-beta. Some funcons
-have not yet been used.
-
-The following tables show which languages specifications explicitly reuse each
-funcon.
+The following tables show which language specifications directly use each
+funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 
 ## Computations
 
@@ -384,13 +376,13 @@ funcon.
 |       |        |          |       |       | _Funcon_   | `unicode-point`                       | `unicode`
 |       |        |          |       |       | _Type_     | `basic-multilingual-plane-characters` | `bmp-chars`
 |       |        |          |       |       | _Type_     | `basic-multilingual-plane-points`
-|       |        |          |       |       | _Type_     | `iso-latin-`1-characters              | `latin-`1-chars
-|       |        |          |       |       | _Type_     | `iso-latin-`1-points
+|       |        |          |       |       | _Type_     | `iso-latin-1-characters`             | `latin-`1-chars
+|       |        |          |       |       | _Type_     | `iso-latin-1-points`
 |       |        |          |       |       | _Type_     | `ascii-characters`                    | `ascii-chars`
 |       |        |          |       |       | _Type_     | `ascii-points`
-|       |        |          |       |       | _Funcon_   | `utf-`8
-|       |        |          |       |       | _Funcon_   | `utf-`16
-|       |        |          |       |       | _Funcon_   | `utf-`32
+|       |        |          |       |       | _Funcon_   | `utf-8`
+|       |        |          |       |       | _Funcon_   | `utf-16`
+|       |        |          |       |       | _Funcon_   | `utf-32`
 |       |        |          |       | X     | _Funcon_   | `backspace`
 |       |        |          |       | X     | _Funcon_   | `horizontal-tab`
 |       |        |          |       | X     | _Funcon_   | `line-feed`
