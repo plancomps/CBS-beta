@@ -4,6 +4,9 @@ Beta-Release Changes
 This page lists significant additions and changes to the funcon definitions and
 language specifications included in the CBS beta-release.
 
+2018-08-17: [Downloads](Downloads.md)
+* added a page about downloading for offline browsing
+
 2018-08-14: [first-n](Funcons-beta/Values/Composite/Sequences/index.html#Name_first-n)
 * rule corrected
 
