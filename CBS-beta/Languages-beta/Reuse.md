@@ -1,13 +1,13 @@
 Funcon Reuse in Languages-beta
 ==============================
 
-Currently, Funcons-beta includes 385 funcons (including types, datatypes, and 
-entities, but not aliases). Of these, 193 are used in language specifications
+Currently, Funcons-beta includes 386 funcons (including types, datatypes, and 
+entities, but not aliases). Of these, 192 are used in language specifications
 in Languages-beta. The number of funcons used for each language is as follows:
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L]
 | :---: | :---:  | :---:    | :---: | :---: 
-| 29    | 62     | 70       | 71    | 161
+| 29    | 62     | 70       | 71    | 160
 
 The definitions of some of the used funcons reference other funcons, which are
 not counted. The remaining funcons have either been used in previous language
@@ -117,9 +117,10 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 | X     | X      | X        | X     | X     | _Funcon_   | `allocate-initialised-variable` | `alloc-init`
 | X     | X      | X        | X     | X     | _Funcon_   | `assign`
 | X     | X      | X        | X     | X     | _Funcon_   | `assigned`
+|       |        |          |       |       | _Funcon_   | `current-value`
 |       |        |          |       |       | _Funcon_   | `un-assign`
 |       |        |          |       |       | _Funcon_   | `structural-assign`
-|       |        |          |       | X     | _Funcon_   | `structural-assigned`           | `current-value`
+|       |        |          |       |       | _Funcon_   | `structural-assigned`
 
 
 #### Linking
