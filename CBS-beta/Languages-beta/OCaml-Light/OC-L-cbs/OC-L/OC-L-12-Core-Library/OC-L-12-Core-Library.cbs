@@ -464,8 +464,9 @@ Rule // Vectors
   ocaml-light-to-string(V:implemented-vectors) ~>
   	string-append(
   	  "[|",
-  	  intersperse("; ", interleave-map(ocaml-light-to-string(given), 
-  	    vector-elements(current-value(V)))),
+  	  intersperse("; ", interleave-map(
+  	    ocaml-light-to-string(assigned(given)), 
+  	    vector-elements(V))),
   	  "|]")
 Rule // Records
   ocaml-light-to-string(record(M:maps(_,_))) ~>

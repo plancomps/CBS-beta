@@ -87,9 +87,10 @@
   Funcon   allocate-initialised-variable Alias alloc-init
   Funcon   assign
   Funcon   assigned
+  Funcon   current-value
   Funcon   un-assign
   Funcon   structural-assign
-  Funcon   structural-assigned           Alias current-value
+  Funcon   structural-assigned
 ]
 
 ### Linking

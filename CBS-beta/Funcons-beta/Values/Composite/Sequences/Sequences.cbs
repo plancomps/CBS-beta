@@ -73,13 +73,13 @@ Funcon
   `index(N, V*)` gives the `N`th element of `V*`, if it exists, otherwise `( )`.
 */
 Rule
-  index(1, V:values, _*:values*) ~> V
+  index(1, V:values, V*:values*) ~> V
 Rule
   natural-predecessor(N) ~> N'
   -----------------------------------------------------------------
   index(N:positive-integers, _:values, V*:values*) ~> index(N', V*)
 Rule
-  index(0, _*:values*) ~> ( )
+  index(0, V*:values*) ~> ( )
 Rule
   index(_:positive-integers, ( )) ~> ( )
 
@@ -89,17 +89,17 @@ Rule
 Funcon 
   first(_:T, _:values*) : =>T
 Rule
-  first(V:T, _*:values*) ~> V
+  first(V:T, V*:values*) ~> V
 
 Funcon 
   second(_:values, _:T, _:values*) : =>T
 Rule
-  second(_:values, V:T, _*:values*) ~> V
+  second(_:values, V:T, V*:values*) ~> V
 
 Funcon 
   third(_:values, _:values, _:T, _:values*) : =>T
 Rule
-  third(_:values, _:values, V:T, _*:values*) ~> V
+  third(_:values, _:values, V:T, V*:values*) ~> V
 
 
 #### Homogeneous sequences
@@ -108,7 +108,7 @@ Rule
 Funcon
   first-n(_:natural-numbers, _:(T)*) : =>(T)*
 Rule
-  first-n(0, _*:(T)*) ~> ( )
+  first-n(0, V*:(T)*) ~> ( )
 Rule
   natural-predecessor(N) ~> N'
   -----------------------------------------------------------------

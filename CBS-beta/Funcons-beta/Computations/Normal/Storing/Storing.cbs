@@ -14,6 +14,7 @@
   Funcon   allocate-initialised-variable Alias alloc-init
   Funcon   assign
   Funcon   assigned
+  Funcon   current-value
   Funcon   un-assign
   Funcon   structural-assign
   Funcon   structural-assigned
@@ -97,6 +98,8 @@ Alias
 
   `variable(L, T)` constructs a simple variable for storing values of
   type `T` at location `L`. Variables at different locations are independent. 
+  
+  Note that `variables` is a subtype of `datatype-values`.
 */
 
 
@@ -204,7 +207,7 @@ Funcon
   failing if no value is currently assigned.
 */
 Rule
-  map-lookup(Sigma, L) ~> Val:values
+  map-lookup(Sigma, L) ~> (Val:values)
   ------------------------------------------------------------------
   < assigned(variable(L:locations, T:types)) , store(Sigma) >
     ---> < Val , store(Sigma) >
@@ -213,6 +216,20 @@ Rule
   ------------------------------------------------------------------
   < assigned(variable(L:locations, T:types)) , store(Sigma) >
     ---> < fail , store(Sigma) >
+
+
+Funcon
+  current-value(_:values) : =>values
+/*
+  `current-value(V)` gives the same result as `assigned(V)` when `V` is a
+  simple variable, and otherwise gives `V`. 
+  
+  It represents implicit dereferencing of a value that might be a variable.
+*/
+Rule
+  current-value(Var:variables) ~> assigned(Var)
+Rule
+  current-value(U:~variables) ~> U
 
 
 Funcon
@@ -239,11 +256,11 @@ Rule
   simple variables. Such component variables can be selected using the
   same funcons as for selecting components of structured values. 
 
-  Structured variables containing both variables and values correspond to
-  hybrid structures where particular components are mutable.
+  Structured variables containing both simple variables and values correspond
+  to hybrid structures where particular components are mutable.
   
   All datatypes (except for abstractions) can be used to form structured
-  variables. So can maps, but not sets or multisets.
+  variables. So can maps, but not sets or multisets. 
   
   Structural generalisations of `assign(Var, Val)` and 
   `assigned(Var)` access all the simple variables contained in a
@@ -265,16 +282,20 @@ Rule
   structural-assign(V1:variables, V2:values)
     ~> assign(V1, V2)
 Rule
-  I1 =/= "variable"
+  V1 : ~variables
+  V1 ~> datatype-value(I1:identifiers, V1*:values*)
+  V2 ~> datatype-value(I2:identifiers, V2*:values*)
   -----------------------------------------------------------------------
-  structural-assign(datatype-value(I1:identifiers, V1*:values*),
-                    datatype-value(I2:identifiers, V2*:values*))
+  structural-assign(V1:datatype-values, V2:datatype-values)
     ~> sequential(
          check-true(is-equal(I1, I2)),
          effect(tuple(interleave-map(
            structural-assign(tuple-elements(given)),
            tuple-zip(tuple(V1*), tuple(V2*))))),
          null-value)
+/*
+  Note that simple variables are datatype values.
+*/
 Rule
   dom(M1) == {}
   ------------------------------------------------------
@@ -288,7 +309,7 @@ Rule
          structural-assign(map-lookup(M1, K), map-lookup(M2, K)),
          structural-assign(map-delete(M1, {K}), map-delete(M2, {K})))
 Rule
-  V1 : ~(variables|maps(_, _))
+  V1 : ~(datatype-values|maps(_, _))
   ---------------------------------------------------------------
   structural-assign(V1:values,V2:values)
     ~> check-true(is-equal(V1, V2))
@@ -296,28 +317,30 @@ Rule
 
 Funcon
   structural-assigned(_:values) : =>values
-Alias
-  current-value = structural-assigned
 /*
   `structural-assigned(V)` takes a (potentially) structured variable `V`,
   and computes the value of `V` with all simple variables in `V` replaced by
   their assigned values, failing if any of them do not have assigned values.
   
-  The alias `current-value(V)` is used when `V` is not a structured variable,
-  but just a simple variable or a (possibly structured) value with no
-  component variables.
+  When `V` is just a simple variable or a (possibly structured) value with no
+  component variables, `structural-assigned(V)` gives the same result as
+  `current-value(V)`.
 */
 Rule
   structural-assigned(Var:variables) ~> assigned(Var)
 Rule
-  I =/= "variable"
+  V : ~variables
+  V ~> datatype-value(I:identifiers, V*:values*)
   ----------------------------------------------------------------------------
-  structural-assigned(datatype-value(I:identifiers, V*:values*))
+  structural-assigned(V:datatype-values)
     ~> datatype-value(I, interleave-map(structural-assigned(given), V*))
+/*
+  Note that simple variables are datatype values.
+*/
 Rule
   structural-assigned(M:maps(_, _))
     ~> map(interleave-map(structural-assigned(given), map-elements(M)))
 Rule
-  U : ~(variables|maps(_, _))
+  U : ~(datatype-values|maps(_, _))
   ------------------------------------------
   structural-assigned(U:values) ~> U

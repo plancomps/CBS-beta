@@ -2,12 +2,24 @@ Beta-Release Changes
 ====================
 
 This page lists significant additions and changes to the funcon definitions and
-language specifications included in the CBS beta-release.
+language specifications included in the CBS beta-release. 
 
+2018-08-22: [`current-value`](Funcons-beta/Computations/Normal/Storing/index.html#Name_current-value)
+* `current-value` was an alias for 
+  [`structural-assigned`](Funcons-beta/Computations/Normal/Storing/index.html#Name_structural-assigned), 
+  which returns the value of a simple or structured variable by replacing all
+  simple sub-variables in it by their assigned values; `current-value(V)` is
+  still equivalent to `structural-assigned(V)` when `V` is itself a _simple_
+  variable, but when `V` is a _structured_ variable, it now simply returns `V`.
+  
+  The only use of `current-value(V)` in `Languages-beta` was in the definition of
+  [`ocaml-light-to-string`](Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-12-Core-Library/index.html#Name_ocaml-light-to-string),
+  which has now been changed to use `assigned`.
+  
 2018-08-17: [Downloads](Downloads.md)
 * added a page about downloading for offline browsing
 
-2018-08-14: [first-n](Funcons-beta/Values/Composite/Sequences/index.html#Name_first-n)
+2018-08-14: [`first-n`](Funcons-beta/Values/Composite/Sequences/index.html#Name_first-n)
 * rule corrected
 
 2018-07-17: [MiniJava](Languages-beta/MiniJava/index.md)

@@ -115,7 +115,7 @@ Funcon
   recursively-bound values when references are not encapsulated in abstractions.
 */
 Rule 
-  lookup(Rho, I) ~> V:values
+  lookup(Rho, I) ~> (V:values)
   --------------------------------------------------------
   environment(Rho) |- bound-directly(I:identifiers) ---> V
 Rule 
