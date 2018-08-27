@@ -69,10 +69,10 @@ For pages in `Languages-beta/L`, it has also the following links:
 When a CBS web page is opened, all the rules, comments, and subsections are
 unfolded, as indicated by downward-pointing disclosure symbols (e.g.: &#9660;).
 
-Individual rules, comments, and subsections can be folded/unfolded by clicking
-on a character in the line containing the disclosure symbol. Note that printing
-the page omits the disclosure symbols, but does *not* show lines hidden by the
-current folding.
+Sequences of rules, individual comments, and subsections can be folded/unfolded
+by clicking on a character in the line containing the disclosure symbol.
+Note that printing the page omits the disclosure symbols, but does *not* show
+lines hidden by the current folding.
 
 The top right corner of each CBS web page has buttons for unfolding (&#9660;)
 or folding (&#9658;) all rules, comments, or subsections on the current page. 

@@ -102,8 +102,9 @@
 
 <i class="keyword">Funcon</i>
   <span class="name"><span id="Name_dereference" class="decl">dereference</span></span>(_:<span class="name"><a href="#Name_pointers" title="values -&gt; values">pointers</a></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>)) : =>(<span id="Variable_T" class="decl"><i class="var">T</i></span>)<sup class="sup">?</sup>
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre> <span class="name"><a href="#Name_dereference" title="values -&gt; values?">dereference</a></span>(<span class="name"><a href="#Name_reference" title="values -&gt; values">reference</a></span>(<span id="Variable_V" class="decl"><i class="var">V</i></span>:<i class="var">T</i>)) ~> <a href="#Variable_V"><i class="var">V</i></a></pre></details><pre>
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_dereference" title="values -&gt; values?">dereference</a></span>(<span class="name"><a href="#Name_pointer-null" title=" -&gt; values">pointer-null</a></span>) ~> ( )</pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre> <span class="name"><a href="#Name_dereference" title="values -&gt; values?">dereference</a></span>(<span class="name"><a href="#Name_reference" title="values -&gt; values">reference</a></span>(<span id="Variable_V" class="decl"><i class="var">V</i></span>:<i class="var">T</i>)) ~> <a href="#Variable_V"><i class="var">V</i></a>
+<span><i class="keyword">Rule</i></span>
+  <span class="name"><a href="#Name_dereference" title="values -&gt; values?">dereference</a></span>(<span class="name"><a href="#Name_pointer-null" title=" -&gt; values">pointer-null</a></span>) ~> ( )</pre></details><pre>
 </pre></details><pre>
 </pre>
 

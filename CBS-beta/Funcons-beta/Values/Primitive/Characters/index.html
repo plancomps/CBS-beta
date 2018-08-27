@@ -185,11 +185,13 @@
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_ascii-character" title="values -&gt; values?">ascii-character</a></span>"C"` takes a string. When it consists of a single ASCII
   character `<i class="var">C</i>` it gives the character, otherwise `( )`.
 </span></pre></details><pre>*/
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_ascii-character" title="values -&gt; values?">ascii-character</a></span>[<span id="Variable_C" class="decl"><i class="var">C</i></span>:<span class="name"><a href="#Name_ascii-characters" title=" -&gt; values">ascii-characters</a></span>] ~> <a href="#Variable_C"><i class="var">C</i></a></pre></details><pre>
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <a href="#Variable_C"><i class="var">C</i></a> : ~ <span class="name"><a href="#Name_ascii-characters" title=" -&gt; values">ascii-characters</a></span>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_ascii-character" title="values -&gt; values?">ascii-character</a></span>[<span id="Variable_C" class="decl"><i class="var">C</i></span>:<span class="name"><a href="#Name_ascii-characters" title=" -&gt; values">ascii-characters</a></span>] ~> <a href="#Variable_C"><i class="var">C</i></a>
+<span><i class="keyword">Rule</i></span>
+  <a href="#Variable_C"><i class="var">C</i></a> : ~ <span class="name"><a href="#Name_ascii-characters" title=" -&gt; values">ascii-characters</a></span>
   ------------------------------------
-  <span class="name"><a href="#Name_ascii-character" title="values -&gt; values?">ascii-character</a></span>[<span id="Variable_C" class="decl"><i class="var">C</i></span>:<span class="name"><a href="#Name_characters" title=" -&gt; values">characters</a></span>] ~> ( )</pre></details><pre>
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="../../Composite/Sequences/index.html#Name_length" title="values* -&gt; values">length</a></span>(<a href="#Variable_C*"><i class="var">C*</i></a>) =/= 1
+  <span class="name"><a href="#Name_ascii-character" title="values -&gt; values?">ascii-character</a></span>[<span id="Variable_C" class="decl"><i class="var">C</i></span>:<span class="name"><a href="#Name_characters" title=" -&gt; values">characters</a></span>] ~> ( )
+<span><i class="keyword">Rule</i></span>
+  <span class="name"><a href="../../Composite/Sequences/index.html#Name_length" title="values* -&gt; values">length</a></span>(<a href="#Variable_C*"><i class="var">C*</i></a>) =/= 1
   --------------------------------------
   <span class="name"><a href="#Name_ascii-character" title="values -&gt; values?">ascii-character</a></span>[<span id="Variable_C*" class="decl"><i class="var">C*</i></span>:<span class="name"><a href="#Name_characters" title=" -&gt; values">characters</a></span>*] ~> ( )</pre></details><pre>
 

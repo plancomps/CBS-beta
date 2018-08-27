@@ -4,6 +4,10 @@ Beta-Release Changes
 This page lists significant additions and changes to the funcon definitions and
 language specifications included in the CBS beta-release. 
 
+2018-08-26: [Folding](Guide/Browsing.html#folding)
+* folding now applies to sequences of rules, not individual rules
+* blank lines following a rule are now preserved when it is folded
+
 2018-08-22: [`current-value`](Funcons-beta/Computations/Normal/Storing/index.html#Name_current-value)
 * `current-value` was an alias for 
   [`structural-assigned`](Funcons-beta/Computations/Normal/Storing/index.html#Name_structural-assigned), 
