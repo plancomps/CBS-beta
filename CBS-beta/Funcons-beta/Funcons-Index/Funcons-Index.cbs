@@ -313,7 +313,7 @@
   Type     characters                          Alias chars
   Datatype unicode-characters                  Alias unicode-chars
   Type     unicode-points
-  Funcon   unicode-character                   Alias char
+  Funcon   unicode-character                   Alias unicode-char
   Funcon   unicode-point                       Alias unicode
   Type     basic-multilingual-plane-characters Alias bmp-chars
   Type     basic-multilingual-plane-points
@@ -321,6 +321,7 @@
   Type     iso-latin-1-points
   Type     ascii-characters                    Alias ascii-chars
   Type     ascii-points
+  Funcon   ascii-character                     Alias ascii-char
   Funcon   utf-8
   Funcon   utf-16
   Funcon   utf-32

@@ -4,7 +4,7 @@
   Type     characters                          Alias chars
   Datatype unicode-characters                  Alias unicode-chars
   Type     unicode-points
-  Funcon   unicode-character                   Alias char
+  Funcon   unicode-character                   Alias unicode-char
   Funcon   unicode-point                       Alias unicode
   Type     basic-multilingual-plane-characters Alias bmp-chars
   Type     basic-multilingual-plane-points
@@ -12,6 +12,7 @@
   Type     iso-latin-1-points
   Type     ascii-characters                    Alias ascii-chars
   Type     ascii-points
+  Funcon   ascii-character                     Alias ascii-char
   Funcon   utf-8
   Funcon   utf-16
   Funcon   utf-32
@@ -52,7 +53,7 @@ Built-in Type
 Built-in Funcon
   unicode-character(_:unicode-points) : unicode-characters
 Alias
-  char = unicode-character
+  unicode-char = unicode-character
 /*
   The values in `unicode-characters` are the values of
   `unicode-character(UP:unicode-points)`.
@@ -111,6 +112,8 @@ Type
 */
 Funcon
   ascii-character(_:strings) : =>ascii-characters?
+Alias
+  ascii-char = ascii-character
 /*
   `ascii-character"C"` takes a string. When it consists of a single ASCII
   character `C` it gives the character, otherwise `( )`.

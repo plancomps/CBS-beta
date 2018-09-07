@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>Controlling</title>
-  <link rel="stylesheet" type="text/css" href="../../.././cbs.css">
+  <link rel="stylesheet" type="text/css" href="../../../cbs.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>
 	$(document).ready(function(){
@@ -39,8 +39,8 @@
 
 <header>
   <div class="topic">
-    <a href="../../.././../index.html" title="CBS-BETA">CBS-beta</a> / 
-    <a href="../../.././index.html" title="FUNCONS-BETA">Funcons-beta</a>
+    <a href="../../../../index.html" title="CBS-BETA">CBS-beta</a> / 
+    <a href="../../../index.html" title="FUNCONS-BETA">Funcons-beta</a>
   </div>
   <div class="title">
     <a href="Controlling.cbs" title="CBS SOURCE FILE">Controlling</a>
@@ -69,9 +69,9 @@
   <div class="dropdown-content">
     
     
-    <a href="../../.././Funcons-Index/index.html" title="CURRENT FUNCON LIBRARY INDEX">Funcons-beta</a>
-    <a href="../../.././../Languages-beta/index.html" title="LANGUAGES-BETA">Languages-beta</a>
-    <a href="../../.././../index.html" title="CBS-BETA">CBS-beta</a>
+    <a href="../../../Funcons-Index/index.html" title="CURRENT FUNCON LIBRARY INDEX">Funcons-beta</a>
+    <a href="../../../../Languages-beta/index.html" title="LANGUAGES-BETA">Languages-beta</a>
+    <a href="../../../../index.html" title="CBS-BETA">CBS-beta</a>
   </div>
 </div>
 </nav>
@@ -80,81 +80,81 @@
 </pre><details open class="sectiondetails"><summary><pre>### <b class="title"><i>Controlling</i></b></pre></summary><pre>
 
 [
-  <i class="keyword">Datatype</i> <span class="name"><a href="#Name_continuations" title="values, values -&gt; values">continuations</a></span>
-  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_continuation" title="values -&gt; values">continuation</a></span>
-  <i class="keyword">Entity</i>   <span class="name"><a href="#Name_plug-signal" title=" -&gt; values">plug-signal</a></span>
-  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_hole" title=" -&gt; values">hole</a></span>
-  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_resume-continuation" title="values, values -&gt; values">resume-continuation</a></span>
-  <i class="keyword">Entity</i>   <span class="name"><a href="#Name_control-signal" title=" -&gt; values">control-signal</a></span>
-  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_control" title="values -&gt; values">control</a></span>
-  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_delimit-current-continuation" title="values -&gt; values">delimit-current-continuation</a></span>  <i class="keyword">Alias</i> <span class="name"><a href="#Name_delimit-cc" title="values -&gt; values">delimit-cc</a></span>
+  <i class="keyword">Datatype</i> <span class="name"><a href="#Name_continuations">continuations</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_continuation">continuation</a></span>
+  <i class="keyword">Entity</i>   <span class="name"><a href="#Name_plug-signal">plug-signal</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_hole">hole</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_resume-continuation">resume-continuation</a></span>
+  <i class="keyword">Entity</i>   <span class="name"><a href="#Name_control-signal">control-signal</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_control">control</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_delimit-current-continuation">delimit-current-continuation</a></span>  <i class="keyword">Alias</i> <span class="name"><a href="#Name_delimit-cc">delimit-cc</a></span>
 ]
 
 <i class="keyword">Meta-variables</i>
-  <span id="PartVariable_T" class="decl"><i class="var">T</i></span>, <span id="PartVariable_T1" class="decl"><i class="var">T<sub class="sub">1</sub></i></span>, <span id="PartVariable_T2" class="decl"><i class="var">T<sub class="sub">2</sub></i></span> <: <span class="name"><a href="../../../Values/Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>
+  <span id="PartVariable_T" class="decl"><i class="var">T</i></span>, <span id="PartVariable_T1" class="decl"><i class="var">T<sub class="sub">1</sub></i></span>, <span id="PartVariable_T2" class="decl"><i class="var">T<sub class="sub">2</sub></i></span> <: <span class="name"><a href="../../../Values/Value-Types/index.html#Name_values">values</a></span>
 
 <i class="keyword">Datatype</i>
-  <span class="name"><span id="Name_continuations" class="decl">continuations</span></span>(<span id="Variable_T1" class="decl"><i class="var">T<sub class="sub">1</sub></i></span>,<span id="Variable_T2" class="decl"><i class="var">T<sub class="sub">2</sub></i></span>) ::= <span id="Name_continuation" class="decl">continuation</span>(_:<span class="name"><a href="../../../Values/Abstraction/Generic/index.html#Name_abstractions" title="values -&gt; values">abstractions</a></span>(<span class="name"><a href="../../../Values/Primitive/Null/index.html#Name_null-type" title=" -&gt; values">null-type</a></span>=><span id="Variable_T2" class="decl"><i class="var">T<sub class="sub">2</sub></i></span>))
-</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_continuations" title="values, values -&gt; values">continuations</a></span>(<i class="var">T<sub class="sub">1</sub></i>, <i class="var">T<sub class="sub">2</sub></i>)` consists of abstractions whose bodies contain a `<span class="name"><a href="#Name_hole" title=" -&gt; values">hole</a></span>`,
-  and which will normally compute a value of type `<i class="var">T<sub class="sub">2</sub></i>` when the `<span class="name"><a href="#Name_hole" title=" -&gt; values">hole</a></span>` is plugged
+  <span class="name"><span id="Name_continuations" class="decl">continuations</span></span>(<span id="Variable77_T1" class="decl"><i class="var">T<sub class="sub">1</sub></i></span>,<span id="Variable84_T2" class="decl"><i class="var">T<sub class="sub">2</sub></i></span>) ::= <span id="Name_continuation" class="decl">continuation</span>(_:<span class="name"><a href="../../../Values/Abstraction/Generic/index.html#Name_abstractions">abstractions</a></span>(<span class="name"><a href="../../../Values/Primitive/Null/index.html#Name_null-type">null-type</a></span>=><span id="Variable106_T2" class="decl"><i class="var">T<sub class="sub">2</sub></i></span>))
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_continuations">continuations</a></span>(<i class="var">T<sub class="sub">1</sub></i>, <i class="var">T<sub class="sub">2</sub></i>)` consists of abstractions whose bodies contain a `<span class="name"><a href="#Name_hole">hole</a></span>`,
+  and which will normally compute a value of type `<i class="var">T<sub class="sub">2</sub></i>` when the `<span class="name"><a href="#Name_hole">hole</a></span>` is plugged
   with a value of type `<i class="var">T<sub class="sub">1</sub></i>`.
 </span></pre></details><pre>*/
 
 <i class="keyword">Entity</i>
-  _ --<span class="ent-name"><span id="Name_plug-signal" class="decl">plug-signal</span></span>(<i class="var">V<sup class="sup">?</sup></i>:<span class="name"><a href="../../../Values/Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span><sup class="sup">?</sup>)-> _
-</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">   A plug-signal contains the value to be filled into a `<span class="name"><a href="#Name_hole" title=" -&gt; values">hole</a></span>` in a continuation,
+  _ --<span class="ent-name"><span id="Name_plug-signal" class="decl">plug-signal</span></span>(<i class="var">V<sup class="sup">?</sup></i>:<span class="name"><a href="../../../Values/Value-Types/index.html#Name_values">values</a></span><sup class="sup">?</sup>)-> _
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">   A plug-signal contains the value to be filled into a `<span class="name"><a href="#Name_hole">hole</a></span>` in a continuation,
    thereby allowing a continuation to resume.
 </span></pre></details><pre>*/
 
  <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_hole" class="decl">hole</span></span> : =><span class="name"><a href="../../../Values/Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>
-</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  A `<span class="name"><a href="#Name_hole" title=" -&gt; values">hole</a></span>` in a term cannot proceed until it receives a plug-signal
+  <span class="name"><span id="Name_hole" class="decl">hole</span></span> : =><span class="name"><a href="../../../Values/Value-Types/index.html#Name_values">values</a></span>
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  A `<span class="name"><a href="#Name_hole">hole</a></span>` in a term cannot proceed until it receives a plug-signal
   containing a value to plug the hole.
 </span></pre></details><pre>*/
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre> <span class="name"><a href="#Name_hole" title=" -&gt; values">hole</a></span> --<span class="ent-name"><a href="#Name_plug-signal" title=" -&gt; values">plug-signal</a></span>(<i class="var">V</i>)-> <i class="var">V</i></pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre> <span class="name"><a href="#Name_hole">hole</a></span> --<span class="ent-name"><a href="#Name_plug-signal">plug-signal</a></span>(<i class="var">V</i>)-> <i class="var">V</i></pre></details><pre>
 
 <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_resume-continuation" class="decl">resume-continuation</span></span>(<span id="Variable_K" class="decl"><i class="var">K</i></span>:<span class="name"><a href="#Name_continuations" title="values, values -&gt; values">continuations</a></span>(<span id="Variable_T1" class="decl"><i class="var">T<sub class="sub">1</sub></i></span>, <span id="Variable_T2" class="decl"><i class="var">T<sub class="sub">2</sub></i></span>), <span id="Variable_V" class="decl"><i class="var">V</i></span>:<span id="Variable_T1" class="decl"><i class="var">T<sub class="sub">1</sub></i></span>) : =><span id="Variable_T2" class="decl"><i class="var">T<sub class="sub">2</sub></i></span>
-</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment"> `<span class="name"><a href="#Name_resume-continuation" title="values, values -&gt; values">resume-continuation</a></span>(<i class="var">K</i>, <i class="var">V</i>)` resumes a continuation `<i class="var">K</i>` by plugging the value
- `<i class="var">V</i>` into the `<span class="name"><a href="#Name_hole" title=" -&gt; values">hole</a></span>` in the continuation.
+  <span class="name"><span id="Name_resume-continuation" class="decl">resume-continuation</span></span>(<span id="Variable302_K" class="decl"><i class="var">K</i></span>:<span class="name"><a href="#Name_continuations">continuations</a></span>(<span id="Variable308_T1" class="decl"><i class="var">T<sub class="sub">1</sub></i></span>, <span id="Variable314_T2" class="decl"><i class="var">T<sub class="sub">2</sub></i></span>), <span id="Variable329_V" class="decl"><i class="var">V</i></span>:<span id="Variable334_T1" class="decl"><i class="var">T<sub class="sub">1</sub></i></span>) : =><span id="Variable350_T2" class="decl"><i class="var">T<sub class="sub">2</sub></i></span>
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment"> `<span class="name"><a href="#Name_resume-continuation">resume-continuation</a></span>(<i class="var">K</i>, <i class="var">V</i>)` resumes a continuation `<i class="var">K</i>` by plugging the value
+ `<i class="var">V</i>` into the `<span class="name"><a href="#Name_hole">hole</a></span>` in the continuation.
 </span></pre></details><pre>*/
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>                  <a href="#Variable_X"><i class="var">X</i></a> --<span class="ent-name"><a href="#Name_plug-signal" title=" -&gt; values">plug-signal</a></span>(<span id="Variable_V" class="decl"><i class="var">V</i></span>)-> <span id="Variable_X'" class="decl"><i class="var">X&prime;</i></span>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>                  <a href="#Variable467_X"><i class="var">X</i></a> --<span class="ent-name"><a href="#Name_plug-signal">plug-signal</a></span>(<span id="Variable435_V" class="decl"><i class="var">V</i></span>)-> <span id="Variable452_X'" class="decl"><i class="var">X&prime;</i></span>
  ---------------------------------------------------------------------------
- <span class="name"><a href="#Name_resume-continuation" title="values, values -&gt; values">resume-continuation</a></span>(<span class="name"><a href="#Name_continuation" title="values -&gt; values">continuation</a></span>(<span class="name"><a href="../../../Values/Abstraction/Generic/index.html#Name_abstraction" title="values -&gt; values">abstraction</a></span>(<span id="Variable_X" class="decl"><i class="var">X</i></span>)), <span id="Variable_V" class="decl"><i class="var">V</i></span>:<i class="var">T</i>) --<span class="ent-name"><a href="#Name_plug-signal" title=" -&gt; values">plug-signal</a></span>()-> <a href="#Variable_X'"><i class="var">X&prime;</i></a></pre></details><pre>
+ <span class="name"><a href="#Name_resume-continuation">resume-continuation</a></span>(<span class="name"><a href="#Name_continuation">continuation</a></span>(<span class="name"><a href="../../../Values/Abstraction/Generic/index.html#Name_abstraction">abstraction</a></span>(<span id="Variable467_X" class="decl"><i class="var">X</i></span>)), <span id="Variable484_V" class="decl"><i class="var">V</i></span>:<i class="var">T</i>) --<span class="ent-name"><a href="#Name_plug-signal">plug-signal</a></span>()-> <a href="#Variable452_X'"><i class="var">X&prime;</i></a></pre></details><pre>
 
 
 <i class="keyword">Entity</i>
-  _ --<span class="ent-name"><span id="Name_control-signal" class="decl">control-signal</span></span>(<i class="var">F<sup class="sup">?</sup></i>:(<span class="name"><a href="../../../Values/Abstraction/Functions/index.html#Name_functions" title="values, values -&gt; values">functions</a></span>(<span class="name"><a href="#Name_continuations" title="values, values -&gt; values">continuations</a></span>(<i class="var">T<sub class="sub">1</sub></i>, <i class="var">T<sub class="sub">2</sub></i>), <i class="var">T<sub class="sub">2</sub></i>))<sup class="sup">?</sup>)-> _
+  _ --<span class="ent-name"><span id="Name_control-signal" class="decl">control-signal</span></span>(<i class="var">F<sup class="sup">?</sup></i>:(<span class="name"><a href="../../../Values/Abstraction/Functions/index.html#Name_functions">functions</a></span>(<span class="name"><a href="#Name_continuations">continuations</a></span>(<i class="var">T<sub class="sub">1</sub></i>, <i class="var">T<sub class="sub">2</sub></i>), <i class="var">T<sub class="sub">2</sub></i>))<sup class="sup">?</sup>)-> _
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">   A control-signal contains the function to which control is about to be passed
-   by the enclosing `<span class="name"><a href="#Name_delimit-current-continuation" title="values -&gt; values">delimit-current-continuation</a></span>(<i class="var">X</i>)`.
+   by the enclosing `<span class="name"><a href="#Name_delimit-current-continuation">delimit-current-continuation</a></span>(<i class="var">X</i>)`.
 </span></pre></details><pre>*/
 
 <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_control" class="decl">control</span></span>(<span id="Variable_F" class="decl"><i class="var">F</i></span>:<span class="name"><a href="../../../Values/Abstraction/Functions/index.html#Name_functions" title="values, values -&gt; values">functions</a></span>(<span class="name"><a href="#Name_continuations" title="values, values -&gt; values">continuations</a></span>(<span id="Variable_T1" class="decl"><i class="var">T<sub class="sub">1</sub></i></span>, <span id="Variable_T2" class="decl"><i class="var">T<sub class="sub">2</sub></i></span>), <span id="Variable_T2" class="decl"><i class="var">T<sub class="sub">2</sub></i></span>)) : =><span id="Variable_T1" class="decl"><i class="var">T<sub class="sub">1</sub></i></span>
-</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_control" title="values -&gt; values">control</a></span>(<i class="var">F</i>)` emits a control-signal that, when handled by an enclosing
-  `<span class="name"><a href="#Name_delimit-current-continuation" title="values -&gt; values">delimit-current-continuation</a></span>(<i class="var">X</i>)`, will apply `<i class="var">F</i>` to the current continuation of
-  `<span class="name"><a href="#Name_control" title="values -&gt; values">control</a></span>(<i class="var">F</i>)`, (rather than proceeding with that current continuation).
+  <span class="name"><span id="Name_control" class="decl">control</span></span>(<span id="Variable604_F" class="decl"><i class="var">F</i></span>:<span class="name"><a href="../../../Values/Abstraction/Functions/index.html#Name_functions">functions</a></span>(<span class="name"><a href="#Name_continuations">continuations</a></span>(<span id="Variable611_T1" class="decl"><i class="var">T<sub class="sub">1</sub></i></span>, <span id="Variable617_T2" class="decl"><i class="var">T<sub class="sub">2</sub></i></span>), <span id="Variable630_T2" class="decl"><i class="var">T<sub class="sub">2</sub></i></span>)) : =><span id="Variable652_T1" class="decl"><i class="var">T<sub class="sub">1</sub></i></span>
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_control">control</a></span>(<i class="var">F</i>)` emits a control-signal that, when handled by an enclosing
+  `<span class="name"><a href="#Name_delimit-current-continuation">delimit-current-continuation</a></span>(<i class="var">X</i>)`, will apply `<i class="var">F</i>` to the current continuation of
+  `<span class="name"><a href="#Name_control">control</a></span>(<i class="var">F</i>)`, (rather than proceeding with that current continuation).
 </span></pre></details><pre>*/
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_control" title="values -&gt; values">control</a></span>(<span id="Variable_F" class="decl"><i class="var">F</i></span>:<span class="name"><a href="../../../Values/Abstraction/Functions/index.html#Name_functions" title="values, values -&gt; values">functions</a></span>(_,_)) --<span class="ent-name"><a href="#Name_control-signal" title=" -&gt; values">control-signal</a></span>(<a href="#Variable_F"><i class="var">F</i></a>)-> <span class="name"><a href="#Name_hole" title=" -&gt; values">hole</a></span></pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_control">control</a></span>(<span id="Variable741_F" class="decl"><i class="var">F</i></span>:<span class="name"><a href="../../../Values/Abstraction/Functions/index.html#Name_functions">functions</a></span>(_,_)) --<span class="ent-name"><a href="#Name_control-signal">control-signal</a></span>(<a href="#Variable741_F"><i class="var">F</i></a>)-> <span class="name"><a href="#Name_hole">hole</a></span></pre></details><pre>
 
 
 <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_delimit-current-continuation" class="decl">delimit-current-continuation</span></span>(<span id="Variable_X" class="decl"><i class="var">X</i></span>:=><span id="Variable_T" class="decl"><i class="var">T</i></span>) : =><span id="Variable_T" class="decl"><i class="var">T</i></span>
+  <span class="name"><span id="Name_delimit-current-continuation" class="decl">delimit-current-continuation</span></span>(<span id="Variable795_X" class="decl"><i class="var">X</i></span>:=><span id="Variable800_T" class="decl"><i class="var">T</i></span>) : =><span id="Variable815_T" class="decl"><i class="var">T</i></span>
 <i class="keyword">Alias</i>
-  <span class="name"><span id="Name_delimit-cc" class="decl">delimit-cc</span></span> = <span class="name"><a href="#Name_delimit-current-continuation" title="values -&gt; values">delimit-current-continuation</a></span>
-</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_delimit-current-continuation" title="values -&gt; values">delimit-current-continuation</a></span>(<i class="var">X</i>)` delimits the scope of captured continuations.
+  <span class="name"><span id="Name_delimit-cc" class="decl">delimit-cc</span></span> = <span class="name"><a href="#Name_delimit-current-continuation">delimit-current-continuation</a></span>
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_delimit-current-continuation">delimit-current-continuation</a></span>(<i class="var">X</i>)` delimits the scope of captured continuations.
 </span></pre></details><pre>*/
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_delimit-current-continuation" title="values -&gt; values">delimit-current-continuation</a></span>(<span id="Variable_V" class="decl"><i class="var">V</i></span>:<i class="var">T</i>) ~> <a href="#Variable_V"><i class="var">V</i></a>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_delimit-current-continuation">delimit-current-continuation</a></span>(<span id="Variable853_V" class="decl"><i class="var">V</i></span>:<i class="var">T</i>) ~> <a href="#Variable853_V"><i class="var">V</i></a>
 <span><i class="keyword">Rule</i></span>
-                         <a href="#Variable_X"><i class="var">X</i></a> --<span class="ent-name"><a href="#Name_control-signal" title=" -&gt; values">control-signal</a></span>( )-> <span id="Variable_X'" class="decl"><i class="var">X&prime;</i></span>
+                         <a href="#Variable911_X"><i class="var">X</i></a> --<span class="ent-name"><a href="#Name_control-signal">control-signal</a></span>( )-> <span id="Variable898_X'" class="decl"><i class="var">X&prime;</i></span>
   -----------------------------------------------------
-  <span class="name"><a href="#Name_delimit-current-continuation" title="values -&gt; values">delimit-current-continuation</a></span>(<span id="Variable_X" class="decl"><i class="var">X</i></span>) --<span class="ent-name"><a href="#Name_control-signal" title=" -&gt; values">control-signal</a></span>( )->
-    <span class="name"><a href="#Name_delimit-current-continuation" title="values -&gt; values">delimit-current-continuation</a></span>(<a href="#Variable_X'"><i class="var">X&prime;</i></a>)
+  <span class="name"><a href="#Name_delimit-current-continuation">delimit-current-continuation</a></span>(<span id="Variable911_X" class="decl"><i class="var">X</i></span>) --<span class="ent-name"><a href="#Name_control-signal">control-signal</a></span>( )->
+    <span class="name"><a href="#Name_delimit-current-continuation">delimit-current-continuation</a></span>(<a href="#Variable898_X'"><i class="var">X&prime;</i></a>)
 <span><i class="keyword">Rule</i></span>
-                         <a href="#Variable_X"><i class="var">X</i></a> --<span class="ent-name"><a href="#Name_control-signal" title=" -&gt; values">control-signal</a></span>(<span id="Variable_F" class="decl"><i class="var">F</i></span>)-> <span id="Variable_X'" class="decl"><i class="var">X&prime;</i></span>
+                         <a href="#Variable991_X"><i class="var">X</i></a> --<span class="ent-name"><a href="#Name_control-signal">control-signal</a></span>(<span id="Variable961_F" class="decl"><i class="var">F</i></span>)-> <span id="Variable978_X'" class="decl"><i class="var">X&prime;</i></span>
   ------------------------------------------------------------------
-  <span class="name"><a href="#Name_delimit-current-continuation" title="values -&gt; values">delimit-current-continuation</a></span>(<span id="Variable_X" class="decl"><i class="var">X</i></span>) --<span class="ent-name"><a href="#Name_control-signal" title=" -&gt; values">control-signal</a></span>( )->
-    <span class="name"><a href="#Name_delimit-current-continuation" title="values -&gt; values">delimit-current-continuation</a></span>(<span class="name"><a href="../../../Values/Abstraction/Functions/index.html#Name_apply" title="values, values -&gt; values">apply</a></span>(<a href="#Variable_F"><i class="var">F</i></a>, <span class="name"><a href="#Name_continuation" title="values -&gt; values">continuation</a></span> <span class="name"><a href="../../../Values/Abstraction/Generic/index.html#Name_closure" title="values -&gt; values">closure</a></span>(<a href="#Variable_X'"><i class="var">X&prime;</i></a>)))</pre></details><pre>
+  <span class="name"><a href="#Name_delimit-current-continuation">delimit-current-continuation</a></span>(<span id="Variable991_X" class="decl"><i class="var">X</i></span>) --<span class="ent-name"><a href="#Name_control-signal">control-signal</a></span>( )->
+    <span class="name"><a href="#Name_delimit-current-continuation">delimit-current-continuation</a></span>(<span class="name"><a href="../../../Values/Abstraction/Functions/index.html#Name_apply">apply</a></span>(<a href="#Variable961_F"><i class="var">F</i></a>, <span class="name"><a href="#Name_continuation">continuation</a></span> <span class="name"><a href="../../../Values/Abstraction/Generic/index.html#Name_closure">closure</a></span>(<a href="#Variable978_X'"><i class="var">X&prime;</i></a>)))</pre></details><pre>
 </pre></details><pre>
 </pre>
 

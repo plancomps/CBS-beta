@@ -373,14 +373,15 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 |       |        |          |       | X     | _Type_     | `characters`                          | `chars`
 |       |        |          |       |       | _Datatype_ | `unicode-characters`                  | `unicode-chars`
 |       |        |          |       |       | _Type_     | `unicode-points`
-|       |        |          |       | X     | _Funcon_   | `unicode-character`                   | `char`
+|       |        |          |       | X     | _Funcon_   | `unicode-character`                   | `unicode-char`
 |       |        |          |       |       | _Funcon_   | `unicode-point`                       | `unicode`
 |       |        |          |       |       | _Type_     | `basic-multilingual-plane-characters` | `bmp-chars`
 |       |        |          |       |       | _Type_     | `basic-multilingual-plane-points`
-|       |        |          |       |       | _Type_     | `iso-latin-1-characters`             | `latin-`1-chars
+|       |        |          |       |       | _Type_     | `iso-latin-1-characters`              | `latin-`1-chars
 |       |        |          |       |       | _Type_     | `iso-latin-1-points`
 |       |        |          |       |       | _Type_     | `ascii-characters`                    | `ascii-chars`
 |       |        |          |       |       | _Type_     | `ascii-points`
+|       |        |          |       | X     | _Type_     | `ascii-character`                     | `ascii-char`
 |       |        |          |       |       | _Funcon_   | `utf-8`
 |       |        |          |       |       | _Funcon_   | `utf-16`
 |       |        |          |       |       | _Funcon_   | `utf-32`

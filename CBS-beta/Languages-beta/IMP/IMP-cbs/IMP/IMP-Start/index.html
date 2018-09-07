@@ -89,15 +89,15 @@
 </pre><details open class="sectiondetails"><summary><pre># <b class="title"><i>Top level</i></b></pre></summary><pre>
 
 <i class="keyword">Syntax</i>
-  <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_START" class="decl">START</span></i>:</i> <span class="syn-name"><span id="SyntaxName_start" class="decl">start</span></span> ::= <span class="syn-name"><a href="../IMP-4/index.html#SyntaxName_pgm" title="'int' idlist ';' stmt">pgm</a></span>
+  <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_START" class="decl">START</span></i>:</i> <span class="syn-name"><span id="SyntaxName_start" class="decl">start</span></span> ::= <span class="syn-name"><a href="../IMP-4/index.html#SyntaxName_pgm">pgm</a></span>
 <i class="keyword">Semantics</i>
-  <i class="sem-name"><span id="SemanticsName_start" class="decl">start</span></i>[[_:<span class="syn-name"><a href="#SyntaxName_start" title="pgm">start</a></span>]] : =><span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Null/index.html#Name_null-type" title=" -&gt; values">null-type</a></span>
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_start" title="[[start]] -&gt; values">start</a></i>[[ <span id="Variable_Pgm" class="decl"><i class="var"><a href="../IMP-4/index.html#VariableStem_Pgm" title="pgm">Pgm</a></i></span> ]] = 
-    <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Binding/index.html#Name_initialise-binding" title="values -&gt; values">initialise-binding</a></span> 
-    <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_initialise-storing" title="values -&gt; values">initialise-storing</a></span> 
-    <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Giving/index.html#Name_initialise-giving" title="values -&gt; values">initialise-giving</a></span>
-    <span class="name"><a href="../../../../../Funcons-beta/Computations/Abnormal/Failing/index.html#Name_finalise-failing" title="values -&gt; values">finalise-failing</a></span>
-      <i class="sem-name"><a href="../IMP-4/index.html#SemanticsName_run" title="[[pgm]] -&gt; values">run</a></i>[[ <a href="#Variable_Pgm"><i class="var"><a href="../IMP-4/index.html#VariableStem_Pgm" title="pgm">Pgm</a></i></a> ]]</pre></details><pre>
+  <i class="sem-name"><span id="SemanticsName_start" class="decl">start</span></i>[[_:<span class="syn-name"><a href="#SyntaxName_start">start</a></span>]] : =><span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Null/index.html#Name_null-type">null-type</a></span>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <i class="sem-name"><a href="#SemanticsName_start">start</a></i>[[ <span id="Variable71_Pgm" class="decl"><i class="var"><a href="../IMP-4/index.html#VariableStem_Pgm">Pgm</a></i></span> ]] = 
+    <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Binding/index.html#Name_initialise-binding">initialise-binding</a></span> 
+    <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_initialise-storing">initialise-storing</a></span> 
+    <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Giving/index.html#Name_initialise-giving">initialise-giving</a></span>
+    <span class="name"><a href="../../../../../Funcons-beta/Computations/Abnormal/Failing/index.html#Name_finalise-failing">finalise-failing</a></span>
+      <i class="sem-name"><a href="../IMP-4/index.html#SemanticsName_run">run</a></i>[[ <a href="#Variable71_Pgm"><i class="var">Pgm</i></a> ]]</pre></details><pre>
 
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  Grigore Rosu gave a definition of [IMP in the K framework]. He wrote:
 

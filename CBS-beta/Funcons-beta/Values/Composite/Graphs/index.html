@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>Graphs</title>
-  <link rel="stylesheet" type="text/css" href="../../.././cbs.css">
+  <link rel="stylesheet" type="text/css" href="../../../cbs.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>
 	$(document).ready(function(){
@@ -39,8 +39,8 @@
 
 <header>
   <div class="topic">
-    <a href="../../.././../index.html" title="CBS-BETA">CBS-beta</a> / 
-    <a href="../../.././index.html" title="FUNCONS-BETA">Funcons-beta</a>
+    <a href="../../../../index.html" title="CBS-BETA">CBS-beta</a> / 
+    <a href="../../../index.html" title="FUNCONS-BETA">Funcons-beta</a>
   </div>
   <div class="title">
     <a href="Graphs.cbs" title="CBS SOURCE FILE">Graphs</a>
@@ -69,9 +69,9 @@
   <div class="dropdown-content">
     
     
-    <a href="../../.././Funcons-Index/index.html" title="CURRENT FUNCON LIBRARY INDEX">Funcons-beta</a>
-    <a href="../../.././../Languages-beta/index.html" title="LANGUAGES-BETA">Languages-beta</a>
-    <a href="../../.././../index.html" title="CBS-BETA">CBS-beta</a>
+    <a href="../../../Funcons-Index/index.html" title="CURRENT FUNCON LIBRARY INDEX">Funcons-beta</a>
+    <a href="../../../../Languages-beta/index.html" title="LANGUAGES-BETA">Languages-beta</a>
+    <a href="../../../../index.html" title="CBS-BETA">CBS-beta</a>
   </div>
 </div>
 </nav>
@@ -80,17 +80,17 @@
 </pre><details open class="sectiondetails"><summary><pre>### <b class="title"><i>Graphs</i></b></pre></summary><pre>
 
 [
-  <i class="keyword">Type</i>   <span class="name"><a href="#Name_directed-graphs" title="values -&gt; values">directed-graphs</a></span>
-  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_is-cyclic" title="values -&gt; values">is-cyclic</a></span>
-  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_topological-sort" title="values -&gt; values*">topological-sort</a></span>
+  <i class="keyword">Type</i>   <span class="name"><a href="#Name_directed-graphs">directed-graphs</a></span>
+  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_is-cyclic">is-cyclic</a></span>
+  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_topological-sort">topological-sort</a></span>
 ]
 
 <i class="keyword">Meta-variables</i>
-  <span id="PartVariable_GT" class="decl"><i class="var">GT</i></span> <: <span class="name"><a href="../../Value-Types/index.html#Name_ground-values" title=" -&gt; values">ground-values</a></span>
+  <span id="PartVariable_GT" class="decl"><i class="var">GT</i></span> <: <span class="name"><a href="../../Value-Types/index.html#Name_ground-values">ground-values</a></span>
 
 <i class="keyword">Type</i>
-  <span class="name"><span id="Name_directed-graphs" class="decl">directed-graphs</span></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>) ~> <span class="name"><a href="../Maps/index.html#Name_maps" title="values, values? -&gt; values">maps</a></span>(<a href="#Variable_GT"><i class="var">GT</i></a>, <span class="name"><a href="../Sets/index.html#Name_sets" title="values -&gt; values">sets</a></span>(<a href="#Variable_GT"><i class="var">GT</i></a>))
-</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_directed-graphs" title="values -&gt; values">directed-graphs</a></span>(<i class="var">GT</i>)` models directed graphs with vertices of type `<i class="var">GT</i>`,
+  <span class="name"><span id="Name_directed-graphs" class="decl">directed-graphs</span></span>(<span id="Variable40_GT" class="decl"><i class="var">GT</i></span>) ~> <span class="name"><a href="../Maps/index.html#Name_maps">maps</a></span>(<a href="#Variable40_GT"><i class="var">GT</i></a>, <span class="name"><a href="../Sets/index.html#Name_sets">sets</a></span>(<a href="#Variable40_GT"><i class="var">GT</i></a>))
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_directed-graphs">directed-graphs</a></span>(<i class="var">GT</i>)` models directed graphs with vertices of type `<i class="var">GT</i>`,
   represented as maps from vertices to the set of vertices to which the
   vertex has an edge.  E.g., the graph
 
@@ -100,11 +100,11 @@
 </span></pre></details><pre>*/
 
 <i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_is-cyclic" class="decl">is-cyclic</span></span>(_:<span class="name"><a href="#Name_directed-graphs" title="values -&gt; values">directed-graphs</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>)) : =><span class="name"><a href="../../Primitive/Booleans/index.html#Name_booleans" title=" -&gt; values">booleans</a></span>
+  <span class="name"><span id="Name_is-cyclic" class="decl">is-cyclic</span></span>(_:<span class="name"><a href="#Name_directed-graphs">directed-graphs</a></span>(<span id="Variable155_GT" class="decl"><i class="var">GT</i></span>)) : =><span class="name"><a href="../../Primitive/Booleans/index.html#Name_booleans">booleans</a></span>
 
 <i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_topological-sort" class="decl">topological-sort</span></span>(_:<span class="name"><a href="#Name_directed-graphs" title="values -&gt; values">directed-graphs</a></span>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>)) : =>(<span id="Variable_GT" class="decl"><i class="var">GT</i></span>)*
-</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_topological-sort" title="values -&gt; values*">topological-sort</a></span>(<i class="var">DG</i>)` returns a topological ordering of the vertices
+  <span class="name"><span id="Name_topological-sort" class="decl">topological-sort</span></span>(_:<span class="name"><a href="#Name_directed-graphs">directed-graphs</a></span>(<span id="Variable186_GT" class="decl"><i class="var">GT</i></span>)) : =>(<span id="Variable206_GT" class="decl"><i class="var">GT</i></span>)*
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_topological-sort">topological-sort</a></span>(<i class="var">DG</i>)` returns a topological ordering of the vertices
   of the graph `<i class="var">DG</i>`, as a sequence of vertices, provided that `<i class="var">DG</i>` is not
   cyclic.
 </span></pre></details><pre>*/

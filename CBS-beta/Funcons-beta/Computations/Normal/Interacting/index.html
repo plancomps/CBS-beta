@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>Interacting</title>
-  <link rel="stylesheet" type="text/css" href="../../.././cbs.css">
+  <link rel="stylesheet" type="text/css" href="../../../cbs.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>
 	$(document).ready(function(){
@@ -39,8 +39,8 @@
 
 <header>
   <div class="topic">
-    <a href="../../.././../index.html" title="CBS-BETA">CBS-beta</a> / 
-    <a href="../../.././index.html" title="FUNCONS-BETA">Funcons-beta</a>
+    <a href="../../../../index.html" title="CBS-BETA">CBS-beta</a> / 
+    <a href="../../../index.html" title="FUNCONS-BETA">Funcons-beta</a>
   </div>
   <div class="title">
     <a href="Interacting.cbs" title="CBS SOURCE FILE">Interacting</a>
@@ -69,9 +69,9 @@
   <div class="dropdown-content">
     
     
-    <a href="../../.././Funcons-Index/index.html" title="CURRENT FUNCON LIBRARY INDEX">Funcons-beta</a>
-    <a href="../../.././../Languages-beta/index.html" title="LANGUAGES-BETA">Languages-beta</a>
-    <a href="../../.././../index.html" title="CBS-BETA">CBS-beta</a>
+    <a href="../../../Funcons-Index/index.html" title="CURRENT FUNCON LIBRARY INDEX">Funcons-beta</a>
+    <a href="../../../../Languages-beta/index.html" title="LANGUAGES-BETA">Languages-beta</a>
+    <a href="../../../../index.html" title="CBS-BETA">CBS-beta</a>
   </div>
 </div>
 </nav>
@@ -82,13 +82,13 @@
 </pre><details open class="sectiondetails"><summary><pre>#### <b class="title"><i>Output</i></b></pre></summary><pre>
 
 [
-  <i class="keyword">Entity</i> <span class="name"><a href="#Name_standard-out" title=" -&gt; values">standard-out</a></span>
-  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_print" title="values* -&gt; values">print</a></span>
+  <i class="keyword">Entity</i> <span class="name"><a href="#Name_standard-out">standard-out</a></span>
+  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_print">print</a></span>
 ]
 
 
 <i class="keyword">Entity</i>
-  _ -- <span class="ent-name"><span id="Name_standard-out" class="decl">standard-out</span></span>!(_:<span class="name"><a href="../../../Values/Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*) -> _
+  _ -- <span class="ent-name"><span id="Name_standard-out" class="decl">standard-out</span></span>!(_:<span class="name"><a href="../../../Values/Value-Types/index.html#Name_values">values</a></span>*) -> _
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  This entity represents the sequence of values output by a particular
   transition, where the empty sequence `( )` represents the lack of output.
   Composition of transitions concatenates their output sequences.
@@ -96,40 +96,40 @@
 
 
 <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_print" class="decl">print</span></span>(_:<span class="name"><a href="../../../Values/Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*) : =><span class="name"><a href="../../../Values/Primitive/Null/index.html#Name_null-type" title=" -&gt; values">null-type</a></span>
-</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_print" title="values* -&gt; values">print</a></span>(<i class="var">X*</i>)` evaluates the arguments `<i class="var">X*</i>` and emits the resulting sequence of
-  values on the standard-out channel. `<span class="name"><a href="#Name_print" title="values* -&gt; values">print</a></span>( )` has no effect.
+  <span class="name"><span id="Name_print" class="decl">print</span></span>(_:<span class="name"><a href="../../../Values/Value-Types/index.html#Name_values">values</a></span>*) : =><span class="name"><a href="../../../Values/Primitive/Null/index.html#Name_null-type">null-type</a></span>
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_print">print</a></span>(<i class="var">X*</i>)` evaluates the arguments `<i class="var">X*</i>` and emits the resulting sequence of
+  values on the standard-out channel. `<span class="name"><a href="#Name_print">print</a></span>( )` has no effect.
 </span></pre></details><pre>*/
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_print" title="values* -&gt; values">print</a></span>(<span id="Variable_V*" class="decl"><i class="var">V*</i></span>:<span class="name"><a href="../../../Values/Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*) -- <span class="ent-name"><a href="#Name_standard-out" title=" -&gt; values">standard-out</a></span>!(<a href="#Variable_V*"><i class="var">V*</i></a>) -> <span class="name"><a href="../../../Values/Primitive/Null/index.html#Name_null-value" title=" -&gt; values">null-value</a></span></pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_print">print</a></span>(<span id="Variable137_V*" class="decl"><i class="var">V*</i></span>:<span class="name"><a href="../../../Values/Value-Types/index.html#Name_values">values</a></span>*) -- <span class="ent-name"><a href="#Name_standard-out">standard-out</a></span>!(<a href="#Variable137_V*"><i class="var">V*</i></a>) -> <span class="name"><a href="../../../Values/Primitive/Null/index.html#Name_null-value">null-value</a></span></pre></details><pre>
 
 
 </pre></details><pre></pre><details open class="sectiondetails"><summary><pre>#### <b class="title"><i>Input</i></b></pre></summary><pre>
 
 [
-  <i class="keyword">Entity</i> <span class="name"><a href="#Name_standard-in" title=" -&gt; values">standard-in</a></span>
-  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_read" title=" -&gt; values">read</a></span>
+  <i class="keyword">Entity</i> <span class="name"><a href="#Name_standard-in">standard-in</a></span>
+  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_read">read</a></span>
 ]
 
 <i class="keyword">Entity</i>
-  _ -- <span class="ent-name"><span id="Name_standard-in" class="decl">standard-in</span></span>?(_:<span class="name"><a href="../../../Values/Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*) -> _
+  _ -- <span class="ent-name"><span id="Name_standard-in" class="decl">standard-in</span></span>?(_:<span class="name"><a href="../../../Values/Value-Types/index.html#Name_values">values</a></span>*) -> _
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  This entity represents the sequence of values input by a particular
   transition, where the empty sequence `( )` represents that no values are
-  input. The value `<span class="name"><a href="../../../Values/Primitive/Null/index.html#Name_null-value" title=" -&gt; values">null-value</a></span>` represents the end of the input.
+  input. The value `<span class="name"><a href="../../../Values/Primitive/Null/index.html#Name_null-value">null-value</a></span>` represents the end of the input.
   
   Composition of transitions concatenates their input sequences, except that
-  when the first sequence ends with `<span class="name"><a href="../../../Values/Primitive/Null/index.html#Name_null-value" title=" -&gt; values">null-value</a></span>`, the second seqeunce has to be
-  just `<span class="name"><a href="../../../Values/Primitive/Null/index.html#Name_null-value" title=" -&gt; values">null-value</a></span>`.
+  when the first sequence ends with `<span class="name"><a href="../../../Values/Primitive/Null/index.html#Name_null-value">null-value</a></span>`, the second seqeunce has to be
+  just `<span class="name"><a href="../../../Values/Primitive/Null/index.html#Name_null-value">null-value</a></span>`.
 </span></pre></details><pre>*/
 
 
 <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_read" class="decl">read</span></span> : =><span class="name"><a href="../../../Values/Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>
-</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_read" title=" -&gt; values">read</a></span>` inputs a single value from the standard-in channel, and returns it.
-  If the end of the input has been reached, `<span class="name"><a href="#Name_read" title=" -&gt; values">read</a></span>` fails.
+  <span class="name"><span id="Name_read" class="decl">read</span></span> : =><span class="name"><a href="../../../Values/Value-Types/index.html#Name_values">values</a></span>
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_read">read</a></span>` inputs a single value from the standard-in channel, and returns it.
+  If the end of the input has been reached, `<span class="name"><a href="#Name_read">read</a></span>` fails.
 </span></pre></details><pre>*/
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_read" title=" -&gt; values">read</a></span> -- <span class="ent-name"><a href="#Name_standard-in" title=" -&gt; values">standard-in</a></span>?(<span id="Variable_V" class="decl"><i class="var">V</i></span>:~<span class="name"><a href="../../../Values/Primitive/Null/index.html#Name_null-type" title=" -&gt; values">null-type</a></span>) -> <a href="#Variable_V"><i class="var">V</i></a>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_read">read</a></span> -- <span class="ent-name"><a href="#Name_standard-in">standard-in</a></span>?(<span id="Variable309_V" class="decl"><i class="var">V</i></span>:~<span class="name"><a href="../../../Values/Primitive/Null/index.html#Name_null-type">null-type</a></span>) -> <a href="#Variable309_V"><i class="var">V</i></a>
 <span><i class="keyword">Rule</i></span>
-  <span class="name"><a href="#Name_read" title=" -&gt; values">read</a></span> -- <span class="ent-name"><a href="#Name_standard-in" title=" -&gt; values">standard-in</a></span>?(<span class="name"><a href="../../../Values/Primitive/Null/index.html#Name_null-value" title=" -&gt; values">null-value</a></span>) -> <span class="name"><a href="../../Abnormal/Failing/index.html#Name_fail" title=" -&gt; values">fail</a></span></pre></details><pre>
+  <span class="name"><a href="#Name_read">read</a></span> -- <span class="ent-name"><a href="#Name_standard-in">standard-in</a></span>?(<span class="name"><a href="../../../Values/Primitive/Null/index.html#Name_null-value">null-value</a></span>) -> <span class="name"><a href="../../Abnormal/Failing/index.html#Name_fail">fail</a></span></pre></details><pre>
 </pre></details><pre></pre></details><pre>
 </pre>
 

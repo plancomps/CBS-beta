@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>Datatypes</title>
-  <link rel="stylesheet" type="text/css" href="../../.././cbs.css">
+  <link rel="stylesheet" type="text/css" href="../../../cbs.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>
 	$(document).ready(function(){
@@ -39,8 +39,8 @@
 
 <header>
   <div class="topic">
-    <a href="../../.././../index.html" title="CBS-BETA">CBS-beta</a> / 
-    <a href="../../.././index.html" title="FUNCONS-BETA">Funcons-beta</a>
+    <a href="../../../../index.html" title="CBS-BETA">CBS-beta</a> / 
+    <a href="../../../index.html" title="FUNCONS-BETA">Funcons-beta</a>
   </div>
   <div class="title">
     <a href="Datatypes.cbs" title="CBS SOURCE FILE">Datatypes</a>
@@ -69,9 +69,9 @@
   <div class="dropdown-content">
     
     
-    <a href="../../.././Funcons-Index/index.html" title="CURRENT FUNCON LIBRARY INDEX">Funcons-beta</a>
-    <a href="../../.././../Languages-beta/index.html" title="LANGUAGES-BETA">Languages-beta</a>
-    <a href="../../.././../index.html" title="CBS-BETA">CBS-beta</a>
+    <a href="../../../Funcons-Index/index.html" title="CURRENT FUNCON LIBRARY INDEX">Funcons-beta</a>
+    <a href="../../../../Languages-beta/index.html" title="LANGUAGES-BETA">Languages-beta</a>
+    <a href="../../../../index.html" title="CBS-BETA">CBS-beta</a>
   </div>
 </div>
 </nav>
@@ -80,23 +80,23 @@
 </pre><details open class="sectiondetails"><summary><pre>### <b class="title"><i>Datatypes</i></b></pre></summary><pre>
 
 [
-  <i class="keyword">Type</i>   <span class="name"><a href="#Name_datatype-values" title=" -&gt; values">datatype-values</a></span>
-  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_datatype-value" title="values, values* -&gt; values">datatype-value</a></span>
-  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_datatype-value-id" title="values -&gt; values">datatype-value-id</a></span>
-  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_datatype-value-elements" title="values -&gt; values*">datatype-value-elements</a></span>
+  <i class="keyword">Type</i>   <span class="name"><a href="#Name_datatype-values">datatype-values</a></span>
+  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_datatype-value">datatype-value</a></span>
+  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_datatype-value-id">datatype-value-id</a></span>
+  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_datatype-value-elements">datatype-value-elements</a></span>
 ]
 
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  A datatype value consists of an identifier and a sequence of values.
 
   'Datatype T ::= ...' declares the type `<i class="var">T</i>` to refer to a fresh value
-  constructor in `<span class="name"><a href="../../Value-Types/index.html#Name_types" title=" -&gt; values">types</a></span>`, and asserts ``<i class="var">T</i> <: <span class="name"><a href="#Name_datatype-values" title=" -&gt; values">datatype-values</a></span>``. 
+  constructor in `<span class="name"><a href="../../Value-Types/index.html#Name_types">types</a></span>`, and asserts ``<i class="var">T</i> <: <span class="name"><a href="#Name_datatype-values">datatype-values</a></span>``. 
   
   Each constructor funcon 'F(_:T1,...,_:Tn)' of the datatype declaration
-  generates values in `<i class="var">T</i>` of the form `<span class="name"><a href="#Name_datatype-value" title="values, values* -&gt; values">datatype-value</a></span>("F", <i class="var">V<sub class="sub">1</sub></i>, ..., <i class="var">Vn</i>)` from
+  generates values in `<i class="var">T</i>` of the form `<span class="name"><a href="#Name_datatype-value">datatype-value</a></span>("F", <i class="var">V<sub class="sub">1</sub></i>, ..., <i class="var">Vn</i>)` from
   `<i class="var">V<sub class="sub">1</sub></i>:<i class="var">T<sub class="sub">1</sub></i>`, ..., `<i class="var">Vn</i>:<i class="var">Tn</i>`.
   
   Note that a computation `<i class="var">X</i>` cannot be directly included in datatype values:
-  it is necessary to encapsulate it in `<span class="name"><a href="../../Abstraction/Generic/index.html#Name_abstraction" title="values -&gt; values">abstraction</a></span>(<i class="var">X</i>)`.
+  it is necessary to encapsulate it in `<span class="name"><a href="../../Abstraction/Generic/index.html#Name_abstraction">abstraction</a></span>(<i class="var">X</i>)`.
   
   'Datatype T', followed by declarations of constructor funcons for 'T',
   allows specification of GADTs.
@@ -106,15 +106,15 @@
   <span class="name"><span id="Name_datatype-values" class="decl">datatype-values</span></span>
 
 <i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_datatype-value" class="decl">datatype-value</span></span>(_:<span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_identifiers" title=" -&gt; values">identifiers</a></span>, _:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*) : <span class="name"><a href="#Name_datatype-values" title=" -&gt; values">datatype-values</a></span>
+  <span class="name"><span id="Name_datatype-value" class="decl">datatype-value</span></span>(_:<span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_identifiers">identifiers</a></span>, _:<span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>*) : <span class="name"><a href="#Name_datatype-values">datatype-values</a></span>
 
 <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_datatype-value-id" class="decl">datatype-value-id</span></span>(_:<span class="name"><a href="#Name_datatype-values" title=" -&gt; values">datatype-values</a></span>) : =><span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_identifiers" title=" -&gt; values">identifiers</a></span>
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_datatype-value-id" title="values -&gt; values">datatype-value-id</a></span>(<span class="name"><a href="#Name_datatype-value" title="values, values* -&gt; values">datatype-value</a></span>(<span id="Variable_I" class="decl"><i class="var">I</i></span>:<span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_identifiers" title=" -&gt; values">identifiers</a></span>, _*:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*)) ~> <a href="#Variable_I"><i class="var">I</i></a></pre></details><pre>
+  <span class="name"><span id="Name_datatype-value-id" class="decl">datatype-value-id</span></span>(_:<span class="name"><a href="#Name_datatype-values">datatype-values</a></span>) : =><span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_identifiers">identifiers</a></span>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_datatype-value-id">datatype-value-id</a></span>(<span class="name"><a href="#Name_datatype-value">datatype-value</a></span>(<span id="Variable250_I" class="decl"><i class="var">I</i></span>:<span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_identifiers">identifiers</a></span>, _*:<span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>*)) ~> <a href="#Variable250_I"><i class="var">I</i></a></pre></details><pre>
 
 <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_datatype-value-elements" class="decl">datatype-value-elements</span></span>(_:<span class="name"><a href="#Name_datatype-values" title=" -&gt; values">datatype-values</a></span>) : =><span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_datatype-value-elements" title="values -&gt; values*">datatype-value-elements</a></span>(<span class="name"><a href="#Name_datatype-value" title="values, values* -&gt; values">datatype-value</a></span>(_:<span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_identifiers" title=" -&gt; values">identifiers</a></span>, <span id="Variable_V*" class="decl"><i class="var">V*</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*)) ~> <a href="#Variable_V*"><i class="var">V*</i></a></pre></details><pre>
+  <span class="name"><span id="Name_datatype-value-elements" class="decl">datatype-value-elements</span></span>(_:<span class="name"><a href="#Name_datatype-values">datatype-values</a></span>) : =><span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>*
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_datatype-value-elements">datatype-value-elements</a></span>(<span class="name"><a href="#Name_datatype-value">datatype-value</a></span>(_:<span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_identifiers">identifiers</a></span>, <span id="Variable321_V*" class="decl"><i class="var">V*</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>*)) ~> <a href="#Variable321_V*"><i class="var">V*</i></a></pre></details><pre>
 </pre></details><pre>
 </pre>
 

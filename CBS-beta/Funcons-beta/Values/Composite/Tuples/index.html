@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>Tuples</title>
-  <link rel="stylesheet" type="text/css" href="../../.././cbs.css">
+  <link rel="stylesheet" type="text/css" href="../../../cbs.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>
 	$(document).ready(function(){
@@ -39,8 +39,8 @@
 
 <header>
   <div class="topic">
-    <a href="../../.././../index.html" title="CBS-BETA">CBS-beta</a> / 
-    <a href="../../.././index.html" title="FUNCONS-BETA">Funcons-beta</a>
+    <a href="../../../../index.html" title="CBS-BETA">CBS-beta</a> / 
+    <a href="../../../index.html" title="FUNCONS-BETA">Funcons-beta</a>
   </div>
   <div class="title">
     <a href="Tuples.cbs" title="CBS SOURCE FILE">Tuples</a>
@@ -69,9 +69,9 @@
   <div class="dropdown-content">
     
     
-    <a href="../../.././Funcons-Index/index.html" title="CURRENT FUNCON LIBRARY INDEX">Funcons-beta</a>
-    <a href="../../.././../Languages-beta/index.html" title="LANGUAGES-BETA">Languages-beta</a>
-    <a href="../../.././../index.html" title="CBS-BETA">CBS-beta</a>
+    <a href="../../../Funcons-Index/index.html" title="CURRENT FUNCON LIBRARY INDEX">Funcons-beta</a>
+    <a href="../../../../Languages-beta/index.html" title="LANGUAGES-BETA">Languages-beta</a>
+    <a href="../../../../index.html" title="CBS-BETA">CBS-beta</a>
   </div>
 </div>
 </nav>
@@ -80,46 +80,46 @@
 </pre><details open class="sectiondetails"><summary><pre>### <b class="title"><i>Tuples</i></b></pre></summary><pre>
 
 [
-  <i class="keyword">Datatype</i> <span class="name"><a href="#Name_tuples" title="values* -&gt; values">tuples</a></span>
-  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_tuple-elements" title="values -&gt; values*">tuple-elements</a></span>
-  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_tuple-zip" title="values, values -&gt; values*">tuple-zip</a></span>
+  <i class="keyword">Datatype</i> <span class="name"><a href="#Name_tuples">tuples</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_tuple-elements">tuple-elements</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_tuple-zip">tuple-zip</a></span>
 ]
 
 
 <i class="keyword">Meta-variables</i>
-  <span id="PartVariable_T1" class="decl"><i class="var">T<sub class="sub">1</sub></i></span>, <span id="PartVariable_T2" class="decl"><i class="var">T<sub class="sub">2</sub></i></span> <: <span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>
-  <span id="PartVariable_T1+" class="decl"><i class="var">T<sub class="sub">1</sub><sup class="sup">+</sup></i></span>, <span id="PartVariable_T2+" class="decl"><i class="var">T<sub class="sub">2</sub><sup class="sup">+</sup></i></span> <: <span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span><sup class="sup">+</sup>
-  <span id="PartVariable_T*" class="decl"><i class="var">T*</i></span>, <span id="PartVariable_T1*" class="decl"><i class="var">T<sub class="sub">1</sub>*</i></span>, <span id="PartVariable_T2*" class="decl"><i class="var">T<sub class="sub">2</sub>*</i></span> <: <span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*
+  <span id="PartVariable_T1" class="decl"><i class="var">T<sub class="sub">1</sub></i></span>, <span id="PartVariable_T2" class="decl"><i class="var">T<sub class="sub">2</sub></i></span> <: <span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>
+  <span id="PartVariable_T1+" class="decl"><i class="var">T<sub class="sub">1</sub><sup class="sup">+</sup></i></span>, <span id="PartVariable_T2+" class="decl"><i class="var">T<sub class="sub">2</sub><sup class="sup">+</sup></i></span> <: <span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span><sup class="sup">+</sup>
+  <span id="PartVariable_T*" class="decl"><i class="var">T*</i></span>, <span id="PartVariable_T1*" class="decl"><i class="var">T<sub class="sub">1</sub>*</i></span>, <span id="PartVariable_T2*" class="decl"><i class="var">T<sub class="sub">2</sub>*</i></span> <: <span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>*
 
 
 <i class="keyword">Datatype</i> 
-  <span class="name"><span id="Name_tuples" class="decl">tuples</span></span>(<span id="Variable_T*" class="decl"><i class="var">T*</i></span>) ::= <span id="Name_tuple" class="decl">tuple</span>(_:<span id="Variable_T*" class="decl"><i class="var">T*</i></span>) 
-</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<i class="var">T*</i>` can be any sequence of types, including `( )` and `<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*`.
+  <span class="name"><span id="Name_tuples" class="decl">tuples</span></span>(<span id="Variable98_T*" class="decl"><i class="var">T*</i></span>) ::= <span id="Name_tuple" class="decl">tuple</span>(_:<span id="Variable115_T*" class="decl"><i class="var">T*</i></span>) 
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<i class="var">T*</i>` can be any sequence of types, including `( )` and `<span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>*`.
   
-  The values of type `<span class="name"><a href="#Name_tuples" title="values* -&gt; values">tuples</a></span>(<i class="var">T<sub class="sub">1</sub></i>, ..., <i class="var">Tn</i>)` are of the form `<span class="name"><a href="#Name_tuple" title="values* -&gt; values">tuple</a></span>(<i class="var">V<sub class="sub">1</sub></i>, ..., <i class="var">Vn</i>)`
+  The values of type `<span class="name"><a href="#Name_tuples">tuples</a></span>(<i class="var">T<sub class="sub">1</sub></i>, ..., <i class="var">Tn</i>)` are of the form `<span class="name"><a href="#Name_tuple">tuple</a></span>(<i class="var">V<sub class="sub">1</sub></i>, ..., <i class="var">Vn</i>)`
   with `<i class="var">V<sub class="sub">1</sub></i>:<i class="var">T<sub class="sub">1</sub></i>`, ..., `<i class="var">Vn</i>:<i class="var">Tn</i>`.
 </span></pre></details><pre>*/
 
 
 <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_tuple-elements" class="decl">tuple-elements</span></span>(_:<span class="name"><a href="#Name_tuples" title="values* -&gt; values">tuples</a></span>(<span id="Variable_T*" class="decl"><i class="var">T*</i></span>)) : =>(<span id="Variable_T*" class="decl"><i class="var">T*</i></span>)
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_tuple-elements" title="values -&gt; values*">tuple-elements</a></span>(<span class="name"><a href="#Name_tuple" title="values* -&gt; values">tuple</a></span>(<span id="Variable_V*" class="decl"><i class="var">V*</i></span>:<i class="var">T*</i>)) ~> <a href="#Variable_V*"><i class="var">V*</i></a></pre></details><pre>
+  <span class="name"><span id="Name_tuple-elements" class="decl">tuple-elements</span></span>(_:<span class="name"><a href="#Name_tuples">tuples</a></span>(<span id="Variable287_T*" class="decl"><i class="var">T*</i></span>)) : =>(<span id="Variable308_T*" class="decl"><i class="var">T*</i></span>)
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_tuple-elements">tuple-elements</a></span>(<span class="name"><a href="#Name_tuple">tuple</a></span>(<span id="Variable324_V*" class="decl"><i class="var">V*</i></span>:<i class="var">T*</i>)) ~> <a href="#Variable324_V*"><i class="var">V*</i></a></pre></details><pre>
 
 
 <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_tuple-zip" class="decl">tuple-zip</span></span>(_:<span class="name"><a href="#Name_tuples" title="values* -&gt; values">tuples</a></span>(<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*), _:<span class="name"><a href="#Name_tuples" title="values* -&gt; values">tuples</a></span>(<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*)) : =>(<span class="name"><a href="#Name_tuples" title="values* -&gt; values">tuples</a></span>(<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>,<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>))*
-</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_tuple-zip" title="values, values -&gt; values*">tuple-zip</a></span>(<i class="var">TV<sub class="sub">1</sub></i>, <i class="var">TV<sub class="sub">2</sub></i>)` takes two tuples, and returns the sequence of pairs of
+  <span class="name"><span id="Name_tuple-zip" class="decl">tuple-zip</span></span>(_:<span class="name"><a href="#Name_tuples">tuples</a></span>(<span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>*), _:<span class="name"><a href="#Name_tuples">tuples</a></span>(<span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>*)) : =>(<span class="name"><a href="#Name_tuples">tuples</a></span>(<span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>,<span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>))*
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_tuple-zip">tuple-zip</a></span>(<i class="var">TV<sub class="sub">1</sub></i>, <i class="var">TV<sub class="sub">2</sub></i>)` takes two tuples, and returns the sequence of pairs of
   their elements, provided that they have the same length. If they have
   different lengths, the last elements of the longer sequence are ignored.
 </span></pre></details><pre>*/
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_tuple-zip" title="values, values -&gt; values*">tuple-zip</a></span>(<span class="name"><a href="#Name_tuple" title="values* -&gt; values">tuple</a></span>(<span id="Variable_V1" class="decl"><i class="var">V<sub class="sub">1</sub></i></span>:<i class="var">T<sub class="sub">1</sub></i>, <span id="Variable_V1*" class="decl"><i class="var">V<sub class="sub">1</sub>*</i></span>:<i class="var">T<sub class="sub">1</sub>*</i>), <span class="name"><a href="#Name_tuple" title="values* -&gt; values">tuple</a></span>(<span id="Variable_V2" class="decl"><i class="var">V<sub class="sub">2</sub></i></span>:<i class="var">T<sub class="sub">2</sub></i>, <span id="Variable_V2*" class="decl"><i class="var">V<sub class="sub">2</sub>*</i></span>:<i class="var">T<sub class="sub">2</sub>*</i>))
-   ~> (<span class="name"><a href="#Name_tuple" title="values* -&gt; values">tuple</a></span>(<a href="#Variable_V1"><i class="var">V<sub class="sub">1</sub></i></a>, <a href="#Variable_V2"><i class="var">V<sub class="sub">2</sub></i></a>), <span class="name"><a href="#Name_tuple-zip" title="values, values -&gt; values*">tuple-zip</a></span>(<span class="name"><a href="#Name_tuple" title="values* -&gt; values">tuple</a></span>(<a href="#Variable_V1*"><i class="var">V<sub class="sub">1</sub>*</i></a>), <span class="name"><a href="#Name_tuple" title="values* -&gt; values">tuple</a></span>(<a href="#Variable_V2*"><i class="var">V<sub class="sub">2</sub>*</i></a>)))
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_tuple-zip">tuple-zip</a></span>(<span class="name"><a href="#Name_tuple">tuple</a></span>(<span id="Variable458_V1" class="decl"><i class="var">V<sub class="sub">1</sub></i></span>:<i class="var">T<sub class="sub">1</sub></i>, <span id="Variable472_V1*" class="decl"><i class="var">V<sub class="sub">1</sub>*</i></span>:<i class="var">T<sub class="sub">1</sub>*</i>), <span class="name"><a href="#Name_tuple">tuple</a></span>(<span id="Variable494_V2" class="decl"><i class="var">V<sub class="sub">2</sub></i></span>:<i class="var">T<sub class="sub">2</sub></i>, <span id="Variable508_V2*" class="decl"><i class="var">V<sub class="sub">2</sub>*</i></span>:<i class="var">T<sub class="sub">2</sub>*</i>))
+   ~> (<span class="name"><a href="#Name_tuple">tuple</a></span>(<a href="#Variable458_V1"><i class="var">V<sub class="sub">1</sub></i></a>, <a href="#Variable494_V2"><i class="var">V<sub class="sub">2</sub></i></a>), <span class="name"><a href="#Name_tuple-zip">tuple-zip</a></span>(<span class="name"><a href="#Name_tuple">tuple</a></span>(<a href="#Variable472_V1*"><i class="var">V<sub class="sub">1</sub>*</i></a>), <span class="name"><a href="#Name_tuple">tuple</a></span>(<a href="#Variable508_V2*"><i class="var">V<sub class="sub">2</sub>*</i></a>)))
 <span><i class="keyword">Rule</i></span>
-  <span class="name"><a href="#Name_tuple-zip" title="values, values -&gt; values*">tuple-zip</a></span>(<span class="name"><a href="#Name_tuple" title="values* -&gt; values">tuple</a></span>( ), <span class="name"><a href="#Name_tuple" title="values* -&gt; values">tuple</a></span>( )) ~> ( )
+  <span class="name"><a href="#Name_tuple-zip">tuple-zip</a></span>(<span class="name"><a href="#Name_tuple">tuple</a></span>( ), <span class="name"><a href="#Name_tuple">tuple</a></span>( )) ~> ( )
 <span><i class="keyword">Rule</i></span>
-  <span class="name"><a href="#Name_tuple-zip" title="values, values -&gt; values*">tuple-zip</a></span>(<span class="name"><a href="#Name_tuple" title="values* -&gt; values">tuple</a></span>(<span id="Variable_V1+" class="decl"><i class="var">V<sub class="sub">1</sub><sup class="sup">+</sup></i></span>:<i class="var">T<sub class="sub">1</sub><sup class="sup">+</sup></i>), <span class="name"><a href="#Name_tuple" title="values* -&gt; values">tuple</a></span>( )) ~> ( )
+  <span class="name"><a href="#Name_tuple-zip">tuple-zip</a></span>(<span class="name"><a href="#Name_tuple">tuple</a></span>(<span id="Variable631_V1+" class="decl"><i class="var">V<sub class="sub">1</sub><sup class="sup">+</sup></i></span>:<i class="var">T<sub class="sub">1</sub><sup class="sup">+</sup></i>), <span class="name"><a href="#Name_tuple">tuple</a></span>( )) ~> ( )
 <span><i class="keyword">Rule</i></span>
-  <span class="name"><a href="#Name_tuple-zip" title="values, values -&gt; values*">tuple-zip</a></span>(<span class="name"><a href="#Name_tuple" title="values* -&gt; values">tuple</a></span>( ), <span class="name"><a href="#Name_tuple" title="values* -&gt; values">tuple</a></span>(<span id="Variable_V2+" class="decl"><i class="var">V<sub class="sub">2</sub><sup class="sup">+</sup></i></span>:<i class="var">T<sub class="sub">2</sub><sup class="sup">+</sup></i>)) ~> ( )</pre></details><pre>
+  <span class="name"><a href="#Name_tuple-zip">tuple-zip</a></span>(<span class="name"><a href="#Name_tuple">tuple</a></span>( ), <span class="name"><a href="#Name_tuple">tuple</a></span>(<span id="Variable680_V2+" class="decl"><i class="var">V<sub class="sub">2</sub><sup class="sup">+</sup></i></span>:<i class="var">T<sub class="sub">2</sub><sup class="sup">+</sup></i>)) ~> ( )</pre></details><pre>
 </pre></details><pre>
 </pre>
 

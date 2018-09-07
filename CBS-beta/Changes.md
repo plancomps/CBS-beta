@@ -4,6 +4,17 @@ Beta-Release Changes
 This page lists significant additions and changes to the funcon definitions and
 language specifications included in the CBS beta-release. 
 
+2018-09-07: [Funcons-beta](Funcons-beta/index.md), [Languages-beta](Languages-beta/index.md):
+CBS web pages regenerated:
+* hyperlinks corrected (for variable references in rules)
+* confusing tooltips removed
+
+2018-09-07: [Characters](Funcons-beta/Values/Primitive/Characters/index.html)
+* `char` (alias for `unicode-character`) renamed to `unicode-char`.
+* `ascii-character` (alias `ascii-char`) added to 
+  [Funcons-Index](Funcons-beta/Funcons-Index/index.html) and
+  [funcon reuse overview](Languages-beta/Reuse.md)
+
 2018-08-26: [Folding](Guide/Browsing.html#folding)
 * folding now applies to sequences of rules, not individual rules
 * blank lines following a rule are now preserved when it is folded

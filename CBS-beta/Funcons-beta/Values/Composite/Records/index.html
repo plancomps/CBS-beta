@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>Records</title>
-  <link rel="stylesheet" type="text/css" href="../../.././cbs.css">
+  <link rel="stylesheet" type="text/css" href="../../../cbs.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>
 	$(document).ready(function(){
@@ -39,8 +39,8 @@
 
 <header>
   <div class="topic">
-    <a href="../../.././../index.html" title="CBS-BETA">CBS-beta</a> / 
-    <a href="../../.././index.html" title="FUNCONS-BETA">Funcons-beta</a>
+    <a href="../../../../index.html" title="CBS-BETA">CBS-beta</a> / 
+    <a href="../../../index.html" title="FUNCONS-BETA">Funcons-beta</a>
   </div>
   <div class="title">
     <a href="Records.cbs" title="CBS SOURCE FILE">Records</a>
@@ -69,9 +69,9 @@
   <div class="dropdown-content">
     
     
-    <a href="../../.././Funcons-Index/index.html" title="CURRENT FUNCON LIBRARY INDEX">Funcons-beta</a>
-    <a href="../../.././../Languages-beta/index.html" title="LANGUAGES-BETA">Languages-beta</a>
-    <a href="../../.././../index.html" title="CBS-BETA">CBS-beta</a>
+    <a href="../../../Funcons-Index/index.html" title="CURRENT FUNCON LIBRARY INDEX">Funcons-beta</a>
+    <a href="../../../../Languages-beta/index.html" title="LANGUAGES-BETA">Languages-beta</a>
+    <a href="../../../../index.html" title="CBS-BETA">CBS-beta</a>
   </div>
 </div>
 </nav>
@@ -80,30 +80,30 @@
 </pre><details open class="sectiondetails"><summary><pre>### <b class="title"><i>Records</i></b></pre></summary><pre>
 
 [
-  <i class="keyword">Datatype</i> <span class="name"><a href="#Name_records" title="values -&gt; values">records</a></span>
-  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_record" title="values -&gt; values">record</a></span>
-  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_record-map" title="values -&gt; values">record-map</a></span>
-  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_record-select" title="values, values -&gt; values?">record-select</a></span>
+  <i class="keyword">Datatype</i> <span class="name"><a href="#Name_records">records</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_record">record</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_record-map">record-map</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_record-select">record-select</a></span>
 ]
 
 
 <i class="keyword">Meta-variables</i>
-  <span id="PartVariable_T" class="decl"><i class="var">T</i></span> <: <span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>
+  <span id="PartVariable_T" class="decl"><i class="var">T</i></span> <: <span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>
 
 
 <i class="keyword">Datatype</i>
-  <span class="name"><span id="Name_records" class="decl">records</span></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>) ::= <span id="Name_record" class="decl">record</span>(_:<span class="name"><a href="../Maps/index.html#Name_maps" title="values, values? -&gt; values">maps</a></span>(<span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_identifiers" title=" -&gt; values">identifiers</a></span>,<span id="Variable_T" class="decl"><i class="var">T</i></span>))
-</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  A value of type `<span class="name"><a href="#Name_records" title="values -&gt; values">records</a></span>(<i class="var">T</i>)` contains a map from identifiers to values of
+  <span class="name"><span id="Name_records" class="decl">records</span></span>(<span id="Variable44_T" class="decl"><i class="var">T</i></span>) ::= <span id="Name_record" class="decl">record</span>(_:<span class="name"><a href="../Maps/index.html#Name_maps">maps</a></span>(<span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_identifiers">identifiers</a></span>,<span id="Variable63_T" class="decl"><i class="var">T</i></span>))
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  A value of type `<span class="name"><a href="#Name_records">records</a></span>(<i class="var">T</i>)` contains a map from identifiers to values of
   type `<i class="var">T</i>`.
 </span></pre></details><pre>*/
 
 
 <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_record-map" class="decl">record-map</span></span>(_:<span class="name"><a href="#Name_records" title="values -&gt; values">records</a></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>)) : =><span class="name"><a href="../Maps/index.html#Name_maps" title="values, values? -&gt; values">maps</a></span>(<span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_identifiers" title=" -&gt; values">identifiers</a></span>,<span id="Variable_T" class="decl"><i class="var">T</i></span>)
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_record-map" title="values -&gt; values">record-map</a></span>(<span class="name"><a href="#Name_record" title="values -&gt; values">record</a></span>(<span id="Variable_M" class="decl"><i class="var">M</i></span>:<span class="name"><a href="../Maps/index.html#Name_maps" title="values, values? -&gt; values">maps</a></span>(_,_))) ~> <a href="#Variable_M"><i class="var">M</i></a></pre></details><pre>
+  <span class="name"><span id="Name_record-map" class="decl">record-map</span></span>(_:<span class="name"><a href="#Name_records">records</a></span>(<span id="Variable134_T" class="decl"><i class="var">T</i></span>)) : =><span class="name"><a href="../Maps/index.html#Name_maps">maps</a></span>(<span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_identifiers">identifiers</a></span>,<span id="Variable157_T" class="decl"><i class="var">T</i></span>)
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_record-map">record-map</a></span>(<span class="name"><a href="#Name_record">record</a></span>(<span id="Variable174_M" class="decl"><i class="var">M</i></span>:<span class="name"><a href="../Maps/index.html#Name_maps">maps</a></span>(_,_))) ~> <a href="#Variable174_M"><i class="var">M</i></a></pre></details><pre>
 
 
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_record-select" class="decl">record-select</span></span>(<span id="Variable_R" class="decl"><i class="var">R</i></span>:<span class="name"><a href="#Name_records" title="values -&gt; values">records</a></span>(<span id="Variable_T" class="decl"><i class="var">T</i></span>), <span id="Variable_I" class="decl"><i class="var">I</i></span>:<span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_identifiers" title=" -&gt; values">identifiers</a></span>) : =><span id="Variable_T?" class="decl"><i class="var">T<sup class="sup">?</sup></i></span></span></pre></summary><pre>   ~> <span class="name"><a href="../Maps/index.html#Name_map-lookup" title="values, values -&gt; values?">map-lookup</a></span>(<span class="name"><a href="#Name_record-map" title="values -&gt; values">record-map</a></span>(<a href="#Variable_R"><i class="var">R</i></a>), <a href="#Variable_I"><i class="var">I</i></a>)</pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Funcon</i>  <span class="name"><span id="Name_record-select" class="decl">record-select</span></span>(<span id="Variable217_R" class="decl"><i class="var">R</i></span>:<span class="name"><a href="#Name_records">records</a></span>(<span id="Variable222_T" class="decl"><i class="var">T</i></span>), <span id="Variable236_I" class="decl"><i class="var">I</i></span>:<span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_identifiers">identifiers</a></span>) : =><span id="Variable253_T?" class="decl"><i class="var">T<sup class="sup">?</sup></i></span></span></pre></summary><pre>   ~> <span class="name"><a href="../Maps/index.html#Name_map-lookup">map-lookup</a></span>(<span class="name"><a href="#Name_record-map">record-map</a></span>(<a href="#Variable217_R"><i class="var">R</i></a>), <a href="#Variable236_I"><i class="var">I</i></a>)</pre></details><pre>
   </pre></details><pre>
 </pre>
 

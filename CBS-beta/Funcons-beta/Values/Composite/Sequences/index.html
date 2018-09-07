@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>Sequences</title>
-  <link rel="stylesheet" type="text/css" href="../../.././cbs.css">
+  <link rel="stylesheet" type="text/css" href="../../../cbs.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>
 	$(document).ready(function(){
@@ -39,8 +39,8 @@
 
 <header>
   <div class="topic">
-    <a href="../../.././../index.html" title="CBS-BETA">CBS-beta</a> / 
-    <a href="../../.././index.html" title="FUNCONS-BETA">Funcons-beta</a>
+    <a href="../../../../index.html" title="CBS-BETA">CBS-beta</a> / 
+    <a href="../../../index.html" title="FUNCONS-BETA">Funcons-beta</a>
   </div>
   <div class="title">
     <a href="Sequences.cbs" title="CBS SOURCE FILE">Sequences</a>
@@ -69,9 +69,9 @@
   <div class="dropdown-content">
     
     
-    <a href="../../.././Funcons-Index/index.html" title="CURRENT FUNCON LIBRARY INDEX">Funcons-beta</a>
-    <a href="../../.././../Languages-beta/index.html" title="LANGUAGES-BETA">Languages-beta</a>
-    <a href="../../.././../index.html" title="CBS-BETA">CBS-beta</a>
+    <a href="../../../Funcons-Index/index.html" title="CURRENT FUNCON LIBRARY INDEX">Funcons-beta</a>
+    <a href="../../../../Languages-beta/index.html" title="LANGUAGES-BETA">Languages-beta</a>
+    <a href="../../../../index.html" title="CBS-BETA">CBS-beta</a>
   </div>
 </div>
 </nav>
@@ -80,17 +80,17 @@
 </pre><details open class="sectiondetails"><summary><pre>### <b class="title"><i>Sequences of values</i></b></pre></summary><pre>
 
 [
-  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_length" title="values* -&gt; values">length</a></span>
-  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_index" title="values, values* -&gt; values?">index</a></span>
-  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_is-in" title="values, values* -&gt; values">is-in</a></span>
-  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_first" title="values, values* -&gt; values">first</a></span>
-  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_second" title="values, values, values* -&gt; values">second</a></span>
-  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_third" title="values, values, values, values* -&gt; values">third</a></span>
-  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_first-n" title="values, values* -&gt; values*">first-n</a></span>
-  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_drop-first-n" title="values, values* -&gt; values*">drop-first-n</a></span>
-  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_reverse" title="values* -&gt; values*">reverse</a></span>
-  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_n-of" title="values, values -&gt; values*">n-of</a></span>
-  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_intersperse" title="values, values* -&gt; values?">intersperse</a></span>
+  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_length">length</a></span>
+  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_index">index</a></span>
+  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_is-in">is-in</a></span>
+  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_first">first</a></span>
+  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_second">second</a></span>
+  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_third">third</a></span>
+  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_first-n">first-n</a></span>
+  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_drop-first-n">drop-first-n</a></span>
+  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_reverse">reverse</a></span>
+  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_n-of">n-of</a></span>
+  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_intersperse">intersperse</a></span>
 ]
 
 </pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  Sequences of two or more values are not themselves values, nor is the empty
@@ -116,110 +116,110 @@
   The parentheses around `<i class="var">T</i>` above can be omitted when they are not needed for
   disambiguation.
     
-  (Non-trivial) sequence types are not values, so not included in `<span class="name"><a href="../../Value-Types/index.html#Name_types" title=" -&gt; values">types</a></span>`.
+  (Non-trivial) sequence types are not values, so not included in `<span class="name"><a href="../../Value-Types/index.html#Name_types">types</a></span>`.
 </span></pre></details><pre>*/
 
 
 <i class="keyword">Meta-variables</i> 
-  <span id="PartVariable_T" class="decl"><i class="var">T</i></span>, <span id="PartVariable_T'" class="decl"><i class="var">T&prime;</i></span> <: <span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>
+  <span id="PartVariable_T" class="decl"><i class="var">T</i></span>, <span id="PartVariable_T'" class="decl"><i class="var">T&prime;</i></span> <: <span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>
 
 
 <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_length" class="decl">length</span></span>(_:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*) : =><span class="name"><a href="../../Primitive/Integers/index.html#Name_natural-numbers" title=" -&gt; values">natural-numbers</a></span>
-</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_length" title="values* -&gt; values">length</a></span>(<i class="var">V*</i>)` gives the number of elements in `<i class="var">V*</i>`.
+  <span class="name"><span id="Name_length" class="decl">length</span></span>(_:<span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>*) : =><span class="name"><a href="../../Primitive/Integers/index.html#Name_natural-numbers">natural-numbers</a></span>
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_length">length</a></span>(<i class="var">V*</i>)` gives the number of elements in `<i class="var">V*</i>`.
 </span></pre></details><pre>*/
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_length" title="values* -&gt; values">length</a></span>( ) ~> 0
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_length">length</a></span>( ) ~> 0
 <span><i class="keyword">Rule</i></span>
-  <span class="name"><a href="#Name_length" title="values* -&gt; values">length</a></span>(<span id="Variable_V" class="decl"><i class="var">V</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>, <span id="Variable_V*" class="decl"><i class="var">V*</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*) ~> <span class="name"><a href="../../Primitive/Integers/index.html#Name_natural-successor" title="values -&gt; values">natural-successor</a></span>(<span class="name"><a href="#Name_length" title="values* -&gt; values">length</a></span>(<a href="#Variable_V*"><i class="var">V*</i></a>))</pre></details><pre>
+  <span class="name"><a href="#Name_length">length</a></span>(<span id="Variable675_V" class="decl"><i class="var">V</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>, <span id="Variable684_V*" class="decl"><i class="var">V*</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>*) ~> <span class="name"><a href="../../Primitive/Integers/index.html#Name_natural-successor">natural-successor</a></span>(<span class="name"><a href="#Name_length">length</a></span>(<a href="#Variable684_V*"><i class="var">V*</i></a>))</pre></details><pre>
 
 
 <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_is-in" class="decl">is-in</span></span>(_:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>, _:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*) : =><span class="name"><a href="../../Primitive/Booleans/index.html#Name_booleans" title=" -&gt; values">booleans</a></span>
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_is-in" title="values, values* -&gt; values">is-in</a></span>(<span id="Variable_V" class="decl"><i class="var">V</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span> ,<span id="Variable_V'" class="decl"><i class="var">V&prime;</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>, <span id="Variable_V*" class="decl"><i class="var">V*</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*) ~> <span class="name"><a href="../../Primitive/Booleans/index.html#Name_or" title="values* -&gt; values">or</a></span>(<span class="name"><a href="../../Value-Types/index.html#Name_is-equal" title="values, values -&gt; values">is-equal</a></span>(<a href="#Variable_V"><i class="var">V</i></a>, <a href="#Variable_V'"><i class="var">V&prime;</i></a>), <span class="name"><a href="#Name_is-in" title="values, values* -&gt; values">is-in</a></span>(<a href="#Variable_V"><i class="var">V</i></a>, <a href="#Variable_V*"><i class="var">V*</i></a>))
+  <span class="name"><span id="Name_is-in" class="decl">is-in</span></span>(_:<span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>, _:<span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>*) : =><span class="name"><a href="../../Primitive/Booleans/index.html#Name_booleans">booleans</a></span>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_is-in">is-in</a></span>(<span id="Variable756_V" class="decl"><i class="var">V</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span> ,<span id="Variable765_V'" class="decl"><i class="var">V&prime;</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>, <span id="Variable774_V*" class="decl"><i class="var">V*</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>*) ~> <span class="name"><a href="../../Primitive/Booleans/index.html#Name_or">or</a></span>(<span class="name"><a href="../../Value-Types/index.html#Name_is-equal">is-equal</a></span>(<a href="#Variable756_V"><i class="var">V</i></a>, <a href="#Variable765_V'"><i class="var">V&prime;</i></a>), <span class="name"><a href="#Name_is-in">is-in</a></span>(<a href="#Variable756_V"><i class="var">V</i></a>, <a href="#Variable774_V*"><i class="var">V*</i></a>))
 <span><i class="keyword">Rule</i></span>
-  <span class="name"><a href="#Name_is-in" title="values, values* -&gt; values">is-in</a></span>(<span id="Variable_V" class="decl"><i class="var">V</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>, ( )) ~> <span class="name"><a href="../../Primitive/Booleans/index.html#Name_false" title=" -&gt; values">false</a></span></pre></details><pre>
+  <span class="name"><a href="#Name_is-in">is-in</a></span>(<span id="Variable842_V" class="decl"><i class="var">V</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>, ( )) ~> <span class="name"><a href="../../Primitive/Booleans/index.html#Name_false">false</a></span></pre></details><pre>
 
 
 </pre><details open class="sectiondetails"><summary><pre>#### <b class="title"><i>Sequence indexing</i></b></pre></summary><pre>
 
 <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_index" class="decl">index</span></span>(_:<span class="name"><a href="../../Primitive/Integers/index.html#Name_natural-numbers" title=" -&gt; values">natural-numbers</a></span>, _:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*) : =><span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span><sup class="sup">?</sup> 
-</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_index" title="values, values* -&gt; values?">index</a></span>(<i class="var">N</i>, <i class="var">V*</i>)` gives the `<i class="var">N</i>`th element of `<i class="var">V*</i>`, if it exists, otherwise `( )`.
+  <span class="name"><span id="Name_index" class="decl">index</span></span>(_:<span class="name"><a href="../../Primitive/Integers/index.html#Name_natural-numbers">natural-numbers</a></span>, _:<span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>*) : =><span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span><sup class="sup">?</sup> 
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_index">index</a></span>(<i class="var">N</i>, <i class="var">V*</i>)` gives the `<i class="var">N</i>`th element of `<i class="var">V*</i>`, if it exists, otherwise `( )`.
 </span></pre></details><pre>*/
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_index" title="values, values* -&gt; values?">index</a></span>(1, <span id="Variable_V" class="decl"><i class="var">V</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>, <span id="Variable_V*" class="decl"><i class="var">V*</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*) ~> <a href="#Variable_V"><i class="var">V</i></a>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_index">index</a></span>(1, <span id="Variable988_V" class="decl"><i class="var">V</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>, <span id="Variable997_V*" class="decl"><i class="var">V*</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>*) ~> <a href="#Variable988_V"><i class="var">V</i></a>
 <span><i class="keyword">Rule</i></span>
-  <span class="name"><a href="../../Primitive/Integers/index.html#Name_natural-predecessor" title="values -&gt; values?">natural-predecessor</a></span>(<a href="#Variable_N"><i class="var">N</i></a>) ~> <span id="Variable_N'" class="decl"><i class="var">N&prime;</i></span>
+  <span class="name"><a href="../../Primitive/Integers/index.html#Name_natural-predecessor">natural-predecessor</a></span>(<a href="#Variable1047_N"><i class="var">N</i></a>) ~> <span id="Variable1036_N'" class="decl"><i class="var">N&prime;</i></span>
   -----------------------------------------------------------------
-  <span class="name"><a href="#Name_index" title="values, values* -&gt; values?">index</a></span>(<span id="Variable_N" class="decl"><i class="var">N</i></span>:<span class="name"><a href="../../Primitive/Integers/index.html#Name_positive-integers" title=" -&gt; values">positive-integers</a></span>, _:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>, <span id="Variable_V*" class="decl"><i class="var">V*</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*) ~> <span class="name"><a href="#Name_index" title="values, values* -&gt; values?">index</a></span>(<a href="#Variable_N'"><i class="var">N&prime;</i></a>, <a href="#Variable_V*"><i class="var">V*</i></a>)
+  <span class="name"><a href="#Name_index">index</a></span>(<span id="Variable1047_N" class="decl"><i class="var">N</i></span>:<span class="name"><a href="../../Primitive/Integers/index.html#Name_positive-integers">positive-integers</a></span>, _:<span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>, <span id="Variable1063_V*" class="decl"><i class="var">V*</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>*) ~> <span class="name"><a href="#Name_index">index</a></span>(<a href="#Variable1036_N'"><i class="var">N&prime;</i></a>, <a href="#Variable1063_V*"><i class="var">V*</i></a>)
 <span><i class="keyword">Rule</i></span>
-  <span class="name"><a href="#Name_index" title="values, values* -&gt; values?">index</a></span>(0, <span id="Variable_V*" class="decl"><i class="var">V*</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*) ~> ( )
+  <span class="name"><a href="#Name_index">index</a></span>(0, <span id="Variable1108_V*" class="decl"><i class="var">V*</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>*) ~> ( )
 <span><i class="keyword">Rule</i></span>
-  <span class="name"><a href="#Name_index" title="values, values* -&gt; values?">index</a></span>(_:<span class="name"><a href="../../Primitive/Integers/index.html#Name_positive-integers" title=" -&gt; values">positive-integers</a></span>, ( )) ~> ( )</pre></details><pre>
+  <span class="name"><a href="#Name_index">index</a></span>(_:<span class="name"><a href="../../Primitive/Integers/index.html#Name_positive-integers">positive-integers</a></span>, ( )) ~> ( )</pre></details><pre>
 
 
 // Total indexing funcons:
 
 <i class="keyword">Funcon</i> 
-  <span class="name"><span id="Name_first" class="decl">first</span></span>(_:<span id="Variable_T" class="decl"><i class="var">T</i></span>, _:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*) : =><span id="Variable_T" class="decl"><i class="var">T</i></span>
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_first" title="values, values* -&gt; values">first</a></span>(<span id="Variable_V" class="decl"><i class="var">V</i></span>:<i class="var">T</i>, <span id="Variable_V*" class="decl"><i class="var">V*</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*) ~> <a href="#Variable_V"><i class="var">V</i></a></pre></details><pre>
+  <span class="name"><span id="Name_first" class="decl">first</span></span>(_:<span id="Variable1162_T" class="decl"><i class="var">T</i></span>, _:<span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>*) : =><span id="Variable1187_T" class="decl"><i class="var">T</i></span>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_first">first</a></span>(<span id="Variable1196_V" class="decl"><i class="var">V</i></span>:<i class="var">T</i>, <span id="Variable1208_V*" class="decl"><i class="var">V*</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>*) ~> <a href="#Variable1196_V"><i class="var">V</i></a></pre></details><pre>
 
 <i class="keyword">Funcon</i> 
-  <span class="name"><span id="Name_second" class="decl">second</span></span>(_:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>, _:<span id="Variable_T" class="decl"><i class="var">T</i></span>, _:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*) : =><span id="Variable_T" class="decl"><i class="var">T</i></span>
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_second" title="values, values, values* -&gt; values">second</a></span>(_:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>, <span id="Variable_V" class="decl"><i class="var">V</i></span>:<i class="var">T</i>, <span id="Variable_V*" class="decl"><i class="var">V*</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*) ~> <a href="#Variable_V"><i class="var">V</i></a></pre></details><pre>
+  <span class="name"><span id="Name_second" class="decl">second</span></span>(_:<span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>, _:<span id="Variable1245_T" class="decl"><i class="var">T</i></span>, _:<span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>*) : =><span id="Variable1271_T" class="decl"><i class="var">T</i></span>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_second">second</a></span>(_:<span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>, <span id="Variable1287_V" class="decl"><i class="var">V</i></span>:<i class="var">T</i>, <span id="Variable1299_V*" class="decl"><i class="var">V*</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>*) ~> <a href="#Variable1287_V"><i class="var">V</i></a></pre></details><pre>
 
 <i class="keyword">Funcon</i> 
-  <span class="name"><span id="Name_third" class="decl">third</span></span>(_:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>, _:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>, _:<span id="Variable_T" class="decl"><i class="var">T</i></span>, _:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*) : =><span id="Variable_T" class="decl"><i class="var">T</i></span>
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_third" title="values, values, values, values* -&gt; values">third</a></span>(_:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>, _:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>, <span id="Variable_V" class="decl"><i class="var">V</i></span>:<i class="var">T</i>, <span id="Variable_V*" class="decl"><i class="var">V*</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>*) ~> <a href="#Variable_V"><i class="var">V</i></a></pre></details><pre>
+  <span class="name"><span id="Name_third" class="decl">third</span></span>(_:<span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>, _:<span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>, _:<span id="Variable1345_T" class="decl"><i class="var">T</i></span>, _:<span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>*) : =><span id="Variable1372_T" class="decl"><i class="var">T</i></span>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_third">third</a></span>(_:<span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>, _:<span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>, <span id="Variable1395_V" class="decl"><i class="var">V</i></span>:<i class="var">T</i>, <span id="Variable1407_V*" class="decl"><i class="var">V*</i></span>:<span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>*) ~> <a href="#Variable1395_V"><i class="var">V</i></a></pre></details><pre>
 
 
 </pre></details><pre></pre><details open class="sectiondetails"><summary><pre>#### <b class="title"><i>Homogeneous sequences</i></b></pre></summary><pre>
 
 
 <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_first-n" class="decl">first-n</span></span>(_:<span class="name"><a href="../../Primitive/Integers/index.html#Name_natural-numbers" title=" -&gt; values">natural-numbers</a></span>, _:(<span id="Variable_T" class="decl"><i class="var">T</i></span>)*) : =>(<span id="Variable_T" class="decl"><i class="var">T</i></span>)*
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_first-n" title="values, values* -&gt; values*">first-n</a></span>(0, <span id="Variable_V*" class="decl"><i class="var">V*</i></span>:(<i class="var">T</i>)*) ~> ( )
+  <span class="name"><span id="Name_first-n" class="decl">first-n</span></span>(_:<span class="name"><a href="../../Primitive/Integers/index.html#Name_natural-numbers">natural-numbers</a></span>, _:(<span id="Variable1466_T" class="decl"><i class="var">T</i></span>)*) : =>(<span id="Variable1488_T" class="decl"><i class="var">T</i></span>)*
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_first-n">first-n</a></span>(0, <span id="Variable1507_V*" class="decl"><i class="var">V*</i></span>:(<i class="var">T</i>)*) ~> ( )
 <span><i class="keyword">Rule</i></span>
-  <span class="name"><a href="../../Primitive/Integers/index.html#Name_natural-predecessor" title="values -&gt; values?">natural-predecessor</a></span>(<a href="#Variable_N"><i class="var">N</i></a>) ~> <span id="Variable_N'" class="decl"><i class="var">N&prime;</i></span>
+  <span class="name"><a href="../../Primitive/Integers/index.html#Name_natural-predecessor">natural-predecessor</a></span>(<a href="#Variable1563_N"><i class="var">N</i></a>) ~> <span id="Variable1552_N'" class="decl"><i class="var">N&prime;</i></span>
   -----------------------------------------------------------------
-  <span class="name"><a href="#Name_first-n" title="values, values* -&gt; values*">first-n</a></span>(<span id="Variable_N" class="decl"><i class="var">N</i></span>:<span class="name"><a href="../../Primitive/Integers/index.html#Name_positive-integers" title=" -&gt; values">positive-integers</a></span>, <span id="Variable_V" class="decl"><i class="var">V</i></span>:<i class="var">T</i>, <span id="Variable_V*" class="decl"><i class="var">V*</i></span>:(<i class="var">T</i>)*) ~> (<a href="#Variable_V"><i class="var">V</i></a>,<span class="name"><a href="#Name_first-n" title="values, values* -&gt; values*">first-n</a></span>(<a href="#Variable_N'"><i class="var">N&prime;</i></a>, <a href="#Variable_V*"><i class="var">V*</i></a>))
+  <span class="name"><a href="#Name_first-n">first-n</a></span>(<span id="Variable1563_N" class="decl"><i class="var">N</i></span>:<span class="name"><a href="../../Primitive/Integers/index.html#Name_positive-integers">positive-integers</a></span>, <span id="Variable1571_V" class="decl"><i class="var">V</i></span>:<i class="var">T</i>, <span id="Variable1583_V*" class="decl"><i class="var">V*</i></span>:(<i class="var">T</i>)*) ~> (<a href="#Variable1571_V"><i class="var">V</i></a>,<span class="name"><a href="#Name_first-n">first-n</a></span>(<a href="#Variable1552_N'"><i class="var">N&prime;</i></a>, <a href="#Variable1583_V*"><i class="var">V*</i></a>))
 <span><i class="keyword">Rule</i></span>
-  <span class="name"><a href="#Name_first-n" title="values, values* -&gt; values*">first-n</a></span>(<span id="Variable_N" class="decl"><i class="var">N</i></span>:<span class="name"><a href="../../Primitive/Integers/index.html#Name_positive-integers" title=" -&gt; values">positive-integers</a></span>, ( )) ~> ( )</pre></details><pre>
+  <span class="name"><a href="#Name_first-n">first-n</a></span>(<span id="Variable1644_N" class="decl"><i class="var">N</i></span>:<span class="name"><a href="../../Primitive/Integers/index.html#Name_positive-integers">positive-integers</a></span>, ( )) ~> ( )</pre></details><pre>
 
 
 <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_drop-first-n" class="decl">drop-first-n</span></span>(_:<span class="name"><a href="../../Primitive/Integers/index.html#Name_natural-numbers" title=" -&gt; values">natural-numbers</a></span>, _:(<span id="Variable_T" class="decl"><i class="var">T</i></span>)*) : =>(<span id="Variable_T" class="decl"><i class="var">T</i></span>)*
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_drop-first-n" title="values, values* -&gt; values*">drop-first-n</a></span>(0, <span id="Variable_V*" class="decl"><i class="var">V*</i></span>:(<i class="var">T</i>)*) ~> <a href="#Variable_V*"><i class="var">V*</i></a>
+  <span class="name"><span id="Name_drop-first-n" class="decl">drop-first-n</span></span>(_:<span class="name"><a href="../../Primitive/Integers/index.html#Name_natural-numbers">natural-numbers</a></span>, _:(<span id="Variable1682_T" class="decl"><i class="var">T</i></span>)*) : =>(<span id="Variable1704_T" class="decl"><i class="var">T</i></span>)*
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_drop-first-n">drop-first-n</a></span>(0, <span id="Variable1723_V*" class="decl"><i class="var">V*</i></span>:(<i class="var">T</i>)*) ~> <a href="#Variable1723_V*"><i class="var">V*</i></a>
 <span><i class="keyword">Rule</i></span>
-  <span class="name"><a href="../../Primitive/Integers/index.html#Name_natural-predecessor" title="values -&gt; values?">natural-predecessor</a></span>(<a href="#Variable_N"><i class="var">N</i></a>) ~> <span id="Variable_N'" class="decl"><i class="var">N&prime;</i></span>
+  <span class="name"><a href="../../Primitive/Integers/index.html#Name_natural-predecessor">natural-predecessor</a></span>(<a href="#Variable1781_N"><i class="var">N</i></a>) ~> <span id="Variable1770_N'" class="decl"><i class="var">N&prime;</i></span>
   -----------------------------------------------------------------------
-  <span class="name"><a href="#Name_drop-first-n" title="values, values* -&gt; values*">drop-first-n</a></span>(<span id="Variable_N" class="decl"><i class="var">N</i></span>:<span class="name"><a href="../../Primitive/Integers/index.html#Name_positive-integers" title=" -&gt; values">positive-integers</a></span>, _:<i class="var">T</i>, <span id="Variable_V*" class="decl"><i class="var">V*</i></span>:(<i class="var">T</i>)*) ~> <span class="name"><a href="#Name_drop-first-n" title="values, values* -&gt; values*">drop-first-n</a></span>(<a href="#Variable_N'"><i class="var">N&prime;</i></a>, <a href="#Variable_V*"><i class="var">V*</i></a>)
+  <span class="name"><a href="#Name_drop-first-n">drop-first-n</a></span>(<span id="Variable1781_N" class="decl"><i class="var">N</i></span>:<span class="name"><a href="../../Primitive/Integers/index.html#Name_positive-integers">positive-integers</a></span>, _:<i class="var">T</i>, <span id="Variable1800_V*" class="decl"><i class="var">V*</i></span>:(<i class="var">T</i>)*) ~> <span class="name"><a href="#Name_drop-first-n">drop-first-n</a></span>(<a href="#Variable1770_N'"><i class="var">N&prime;</i></a>, <a href="#Variable1800_V*"><i class="var">V*</i></a>)
 <span><i class="keyword">Rule</i></span>
-  <span class="name"><a href="#Name_drop-first-n" title="values, values* -&gt; values*">drop-first-n</a></span>(<span id="Variable_N" class="decl"><i class="var">N</i></span>:<span class="name"><a href="../../Primitive/Integers/index.html#Name_positive-integers" title=" -&gt; values">positive-integers</a></span>, ( )) ~> ( )</pre></details><pre>
+  <span class="name"><a href="#Name_drop-first-n">drop-first-n</a></span>(<span id="Variable1850_N" class="decl"><i class="var">N</i></span>:<span class="name"><a href="../../Primitive/Integers/index.html#Name_positive-integers">positive-integers</a></span>, ( )) ~> ( )</pre></details><pre>
 
 
 <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_reverse" class="decl">reverse</span></span>(_:(<span id="Variable_T" class="decl"><i class="var">T</i></span>)*) : =>(<span id="Variable_T" class="decl"><i class="var">T</i></span>)*
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_reverse" title="values* -&gt; values*">reverse</a></span>( ) ~> ( )
+  <span class="name"><span id="Name_reverse" class="decl">reverse</span></span>(_:(<span id="Variable1880_T" class="decl"><i class="var">T</i></span>)*) : =>(<span id="Variable1901_T" class="decl"><i class="var">T</i></span>)*
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_reverse">reverse</a></span>( ) ~> ( )
 <span><i class="keyword">Rule</i></span>
-  <span class="name"><a href="#Name_reverse" title="values* -&gt; values*">reverse</a></span>(<span id="Variable_V" class="decl"><i class="var">V</i></span>:<i class="var">T</i>, <span id="Variable_V*" class="decl"><i class="var">V*</i></span>:(<i class="var">T</i>)*) ~> (<span class="name"><a href="#Name_reverse" title="values* -&gt; values*">reverse</a></span>(<a href="#Variable_V*"><i class="var">V*</i></a>), <a href="#Variable_V"><i class="var">V</i></a>)</pre></details><pre>
+  <span class="name"><a href="#Name_reverse">reverse</a></span>(<span id="Variable1930_V" class="decl"><i class="var">V</i></span>:<i class="var">T</i>, <span id="Variable1942_V*" class="decl"><i class="var">V*</i></span>:(<i class="var">T</i>)*) ~> (<span class="name"><a href="#Name_reverse">reverse</a></span>(<a href="#Variable1942_V*"><i class="var">V*</i></a>), <a href="#Variable1930_V"><i class="var">V</i></a>)</pre></details><pre>
 
 
 <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_n-of" class="decl">n-of</span></span>(<span id="Variable_N" class="decl"><i class="var">N</i></span>:<span class="name"><a href="../../Primitive/Integers/index.html#Name_natural-numbers" title=" -&gt; values">natural-numbers</a></span>, <span id="Variable_V" class="decl"><i class="var">V</i></span>:<span id="Variable_T" class="decl"><i class="var">T</i></span>) : =>(<span id="Variable_T" class="decl"><i class="var">T</i></span>)*
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_n-of" title="values, values -&gt; values*">n-of</a></span>(0, _:<i class="var">T</i>) ~> ( )
+  <span class="name"><span id="Name_n-of" class="decl">n-of</span></span>(<span id="Variable1995_N" class="decl"><i class="var">N</i></span>:<span class="name"><a href="../../Primitive/Integers/index.html#Name_natural-numbers">natural-numbers</a></span>, <span id="Variable2004_V" class="decl"><i class="var">V</i></span>:<span id="Variable2008_T" class="decl"><i class="var">T</i></span>) : =>(<span id="Variable2023_T" class="decl"><i class="var">T</i></span>)*
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_n-of">n-of</a></span>(0, _:<i class="var">T</i>) ~> ( )
 <span><i class="keyword">Rule</i></span>
-  <span class="name"><a href="../../Primitive/Integers/index.html#Name_natural-predecessor" title="values -&gt; values?">natural-predecessor</a></span>(<a href="#Variable_N"><i class="var">N</i></a>) ~> <span id="Variable_N'" class="decl"><i class="var">N&prime;</i></span>
+  <span class="name"><a href="../../Primitive/Integers/index.html#Name_natural-predecessor">natural-predecessor</a></span>(<a href="#Variable2089_N"><i class="var">N</i></a>) ~> <span id="Variable2078_N'" class="decl"><i class="var">N&prime;</i></span>
   --------------------------------------------------
-  <span class="name"><a href="#Name_n-of" title="values, values -&gt; values*">n-of</a></span>(<span id="Variable_N" class="decl"><i class="var">N</i></span>:<span class="name"><a href="../../Primitive/Integers/index.html#Name_positive-integers" title=" -&gt; values">positive-integers</a></span>, <span id="Variable_V" class="decl"><i class="var">V</i></span>:<i class="var">T</i>) ~> (<a href="#Variable_V"><i class="var">V</i></a>, <span class="name"><a href="#Name_n-of" title="values, values -&gt; values*">n-of</a></span>(<a href="#Variable_N'"><i class="var">N&prime;</i></a>, <a href="#Variable_V"><i class="var">V</i></a>))</pre></details><pre>
+  <span class="name"><a href="#Name_n-of">n-of</a></span>(<span id="Variable2089_N" class="decl"><i class="var">N</i></span>:<span class="name"><a href="../../Primitive/Integers/index.html#Name_positive-integers">positive-integers</a></span>, <span id="Variable2097_V" class="decl"><i class="var">V</i></span>:<i class="var">T</i>) ~> (<a href="#Variable2097_V"><i class="var">V</i></a>, <span class="name"><a href="#Name_n-of">n-of</a></span>(<a href="#Variable2078_N'"><i class="var">N&prime;</i></a>, <a href="#Variable2097_V"><i class="var">V</i></a>))</pre></details><pre>
 
 
 <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_intersperse" class="decl">intersperse</span></span>(_:<span id="Variable_T'" class="decl"><i class="var">T&prime;</i></span>, _:(<span id="Variable_T" class="decl"><i class="var">T</i></span>)*) : =>(<span id="Variable_T" class="decl"><i class="var">T</i></span>, (<span id="Variable_T'" class="decl"><i class="var">T&prime;</i></span>, <span id="Variable_T" class="decl"><i class="var">T</i></span>)*)<sup class="sup">?</sup>
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_intersperse" title="values, values* -&gt; values?">intersperse</a></span>(_:<i class="var">T&prime;</i>, ( )) ~> ( )
+  <span class="name"><span id="Name_intersperse" class="decl">intersperse</span></span>(_:<span id="Variable2153_T'" class="decl"><i class="var">T&prime;</i></span>, _:(<span id="Variable2164_T" class="decl"><i class="var">T</i></span>)*) : =>(<span id="Variable2186_T" class="decl"><i class="var">T</i></span>, (<span id="Variable2192_T'" class="decl"><i class="var">T&prime;</i></span>, <span id="Variable2197_T" class="decl"><i class="var">T</i></span>)*)<sup class="sup">?</sup>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_intersperse">intersperse</a></span>(_:<i class="var">T&prime;</i>, ( )) ~> ( )
 <span><i class="keyword">Rule</i></span>
-  <span class="name"><a href="#Name_intersperse" title="values, values* -&gt; values?">intersperse</a></span>(_:<i class="var">T&prime;</i>, <span id="Variable_V" class="decl"><i class="var">V</i></span>) ~> <a href="#Variable_V"><i class="var">V</i></a>
+  <span class="name"><a href="#Name_intersperse">intersperse</a></span>(_:<i class="var">T&prime;</i>, <span id="Variable2263_V" class="decl"><i class="var">V</i></span>) ~> <a href="#Variable2263_V"><i class="var">V</i></a>
 <span><i class="keyword">Rule</i></span>
-  <span class="name"><a href="#Name_intersperse" title="values, values* -&gt; values?">intersperse</a></span>(<span id="Variable_V'" class="decl"><i class="var">V&prime;</i></span>:<i class="var">T&prime;</i>, <span id="Variable_V1" class="decl"><i class="var">V<sub class="sub">1</sub></i></span>:<i class="var">T</i>, <span id="Variable_V2" class="decl"><i class="var">V<sub class="sub">2</sub></i></span>:<i class="var">T</i>, <span id="Variable_V*" class="decl"><i class="var">V*</i></span>:(<i class="var">T</i>)*) ~> (<a href="#Variable_V1"><i class="var">V<sub class="sub">1</sub></i></a>, <a href="#Variable_V'"><i class="var">V&prime;</i></a>, <span class="name"><a href="#Name_intersperse" title="values, values* -&gt; values?">intersperse</a></span>(<a href="#Variable_V'"><i class="var">V&prime;</i></a>, <a href="#Variable_V2"><i class="var">V<sub class="sub">2</sub></i></a>, <a href="#Variable_V*"><i class="var">V*</i></a>))</pre></details><pre>
+  <span class="name"><a href="#Name_intersperse">intersperse</a></span>(<span id="Variable2285_V'" class="decl"><i class="var">V&prime;</i></span>:<i class="var">T&prime;</i>, <span id="Variable2298_V1" class="decl"><i class="var">V<sub class="sub">1</sub></i></span>:<i class="var">T</i>, <span id="Variable2310_V2" class="decl"><i class="var">V<sub class="sub">2</sub></i></span>:<i class="var">T</i>, <span id="Variable2322_V*" class="decl"><i class="var">V*</i></span>:(<i class="var">T</i>)*) ~> (<a href="#Variable2298_V1"><i class="var">V<sub class="sub">1</sub></i></a>, <a href="#Variable2285_V'"><i class="var">V&prime;</i></a>, <span class="name"><a href="#Name_intersperse">intersperse</a></span>(<a href="#Variable2285_V'"><i class="var">V&prime;</i></a>, <a href="#Variable2310_V2"><i class="var">V<sub class="sub">2</sub></i></a>, <a href="#Variable2322_V*"><i class="var">V*</i></a>))</pre></details><pre>
 </pre></details><pre></pre></details><pre>
 </pre>
 

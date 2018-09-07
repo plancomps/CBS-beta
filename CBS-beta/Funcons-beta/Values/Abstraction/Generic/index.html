@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>Generic</title>
-  <link rel="stylesheet" type="text/css" href="../../.././cbs.css">
+  <link rel="stylesheet" type="text/css" href="../../../cbs.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>
 	$(document).ready(function(){
@@ -39,8 +39,8 @@
 
 <header>
   <div class="topic">
-    <a href="../../.././../index.html" title="CBS-BETA">CBS-beta</a> / 
-    <a href="../../.././index.html" title="FUNCONS-BETA">Funcons-beta</a>
+    <a href="../../../../index.html" title="CBS-BETA">CBS-beta</a> / 
+    <a href="../../../index.html" title="FUNCONS-BETA">Funcons-beta</a>
   </div>
   <div class="title">
     <a href="Generic.cbs" title="CBS SOURCE FILE">Generic</a>
@@ -69,9 +69,9 @@
   <div class="dropdown-content">
     
     
-    <a href="../../.././Funcons-Index/index.html" title="CURRENT FUNCON LIBRARY INDEX">Funcons-beta</a>
-    <a href="../../.././../Languages-beta/index.html" title="LANGUAGES-BETA">Languages-beta</a>
-    <a href="../../.././../index.html" title="CBS-BETA">CBS-beta</a>
+    <a href="../../../Funcons-Index/index.html" title="CURRENT FUNCON LIBRARY INDEX">Funcons-beta</a>
+    <a href="../../../../Languages-beta/index.html" title="LANGUAGES-BETA">Languages-beta</a>
+    <a href="../../../../index.html" title="CBS-BETA">CBS-beta</a>
   </div>
 </div>
 </nav>
@@ -80,47 +80,47 @@
 </pre><details open class="sectiondetails"><summary><pre>### <b class="title"><i>Generic abstractions</i></b></pre></summary><pre>
 
 [
-  <i class="keyword">Type</i>   <span class="name"><a href="#Name_abstractions" title="values -&gt; values">abstractions</a></span>
-  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_abstraction" title="values -&gt; values">abstraction</a></span>
-  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_closure" title="values -&gt; values">closure</a></span>
-  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_enact" title="values -&gt; values">enact</a></span>
+  <i class="keyword">Type</i>   <span class="name"><a href="#Name_abstractions">abstractions</a></span>
+  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_abstraction">abstraction</a></span>
+  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_closure">closure</a></span>
+  <i class="keyword">Funcon</i> <span class="name"><a href="#Name_enact">enact</a></span>
 ]
 
 
 <i class="keyword">Meta-variables</i>
-  <span id="PartVariable_T" class="decl"><i class="var">T</i></span> <: <span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span>
-  <span id="PartVariable_T?" class="decl"><i class="var">T<sup class="sup">?</sup></i></span> <: <span class="name"><a href="../../Value-Types/index.html#Name_values" title=" -&gt; values">values</a></span><sup class="sup">?</sup>
+  <span id="PartVariable_T" class="decl"><i class="var">T</i></span> <: <span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span>
+  <span id="PartVariable_T?" class="decl"><i class="var">T<sup class="sup">?</sup></i></span> <: <span class="name"><a href="../../Value-Types/index.html#Name_values">values</a></span><sup class="sup">?</sup>
 
 
 <i class="keyword">Type</i>
-  <span class="name"><span id="Name_abstractions" class="decl">abstractions</span></span>(_:<span class="name"><a href="../../../Computations/Computation-Types/index.html#Name_computation-types" title=" -&gt; values">computation-types</a></span>)
+  <span class="name"><span id="Name_abstractions" class="decl">abstractions</span></span>(_:<span class="name"><a href="../../../Computations/Computation-Types/index.html#Name_computation-types">computation-types</a></span>)
 
 
 <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_abstraction" class="decl">abstraction</span></span>(_:<span id="Variable_T?" class="decl"><i class="var">T<sup class="sup">?</sup></i></span>=><span id="Variable_T" class="decl"><i class="var">T</i></span>) : <span class="name"><a href="#Name_abstractions" title="values -&gt; values">abstractions</a></span>(<span id="Variable_T?" class="decl"><i class="var">T<sup class="sup">?</sup></i></span>=><span id="Variable_T" class="decl"><i class="var">T</i></span>)
-</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  The funcon `<span class="name"><a href="#Name_abstraction" title="values -&gt; values">abstraction</a></span>(<i class="var">X</i>)` forms abstraction values from computations.
+  <span class="name"><span id="Name_abstraction" class="decl">abstraction</span></span>(_:<span id="Variable80_T?" class="decl"><i class="var">T<sup class="sup">?</sup></i></span>=><span id="Variable86_T" class="decl"><i class="var">T</i></span>) : <span class="name"><a href="#Name_abstractions">abstractions</a></span>(<span id="Variable102_T?" class="decl"><i class="var">T<sup class="sup">?</sup></i></span>=><span id="Variable108_T" class="decl"><i class="var">T</i></span>)
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  The funcon `<span class="name"><a href="#Name_abstraction">abstraction</a></span>(<i class="var">X</i>)` forms abstraction values from computations.
   
   References to bindings of identifiers in `<i class="var">X</i>` are dynamic.
-  The funcon `<span class="name"><a href="#Name_closure" title="values -&gt; values">closure</a></span>(<i class="var">X</i>)` forms abstractions with static bindings.
+  The funcon `<span class="name"><a href="#Name_closure">closure</a></span>(<i class="var">X</i>)` forms abstractions with static bindings.
 </span></pre></details><pre>*/
 
 
 <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_closure" class="decl">closure</span></span>(_:<span id="Variable_T?" class="decl"><i class="var">T<sup class="sup">?</sup></i></span>=><span id="Variable_T" class="decl"><i class="var">T</i></span>) : =><span class="name"><a href="#Name_abstractions" title="values -&gt; values">abstractions</a></span>(<span id="Variable_T?" class="decl"><i class="var">T<sup class="sup">?</sup></i></span>=><span id="Variable_T" class="decl"><i class="var">T</i></span>)
-</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_closure" title="values -&gt; values">closure</a></span>(<i class="var">X</i>)` computes a closed abstraction from the computation `<i class="var">X</i>`.
-  In contrast to `<span class="name"><a href="#Name_abstraction" title="values -&gt; values">abstraction</a></span>(<i class="var">X</i>)`, references to bindings of identifiers
-  in `<i class="var">X</i>` are static. Moreover, `<span class="name"><a href="#Name_closure" title="values -&gt; values">closure</a></span>(<i class="var">X</i>)` is not a value constructor,
+  <span class="name"><span id="Name_closure" class="decl">closure</span></span>(_:<span id="Variable186_T?" class="decl"><i class="var">T<sup class="sup">?</sup></i></span>=><span id="Variable192_T" class="decl"><i class="var">T</i></span>) : =><span class="name"><a href="#Name_abstractions">abstractions</a></span>(<span id="Variable209_T?" class="decl"><i class="var">T<sup class="sup">?</sup></i></span>=><span id="Variable215_T" class="decl"><i class="var">T</i></span>)
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_closure">closure</a></span>(<i class="var">X</i>)` computes a closed abstraction from the computation `<i class="var">X</i>`.
+  In contrast to `<span class="name"><a href="#Name_abstraction">abstraction</a></span>(<i class="var">X</i>)`, references to bindings of identifiers
+  in `<i class="var">X</i>` are static. Moreover, `<span class="name"><a href="#Name_closure">closure</a></span>(<i class="var">X</i>)` is not a value constructor,
   so it cannot be used in pattern terms in rules.
 </span></pre></details><pre>*/
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="ent-name"><a href="../../../Computations/Normal/Binding/index.html#Name_environment" title=" -&gt; values">environment</a></span>(<span id="Variable_Rho" class="decl"><i class="var">Rho</i></span>) |- <span class="name"><a href="#Name_closure" title="values -&gt; values">closure</a></span>(<span id="Variable_X" class="decl"><i class="var">X</i></span>) ---> <span class="name"><a href="#Name_abstraction" title="values -&gt; values">abstraction</a></span>(<span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_closed" title="values -&gt; values">closed</a></span>(<span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_scope" title="values, values -&gt; values">scope</a></span>(<a href="#Variable_Rho"><i class="var">Rho</i></a>, <a href="#Variable_X"><i class="var">X</i></a>)))</pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="ent-name"><a href="../../../Computations/Normal/Binding/index.html#Name_environment">environment</a></span>(<span id="Variable323_Rho" class="decl"><i class="var">Rho</i></span>) |- <span class="name"><a href="#Name_closure">closure</a></span>(<span id="Variable340_X" class="decl"><i class="var">X</i></span>) ---> <span class="name"><a href="#Name_abstraction">abstraction</a></span>(<span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_closed">closed</a></span>(<span class="name"><a href="../../../Computations/Normal/Binding/index.html#Name_scope">scope</a></span>(<a href="#Variable323_Rho"><i class="var">Rho</i></a>, <a href="#Variable340_X"><i class="var">X</i></a>)))</pre></details><pre>
 
 
 <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_enact" class="decl">enact</span></span>(_:<span class="name"><a href="#Name_abstractions" title="values -&gt; values">abstractions</a></span>(<span id="Variable_T?" class="decl"><i class="var">T<sup class="sup">?</sup></i></span>=><span id="Variable_T" class="decl"><i class="var">T</i></span>)) : <span id="Variable_T?" class="decl"><i class="var">T<sup class="sup">?</sup></i></span>=><span id="Variable_T" class="decl"><i class="var">T</i></span>
-</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_enact" title="values -&gt; values">enact</a></span>(<i class="var">A</i>)` executes the computation of the abstraction `<i class="var">A</i>`,
+  <span class="name"><span id="Name_enact" class="decl">enact</span></span>(_:<span class="name"><a href="#Name_abstractions">abstractions</a></span>(<span id="Variable396_T?" class="decl"><i class="var">T<sup class="sup">?</sup></i></span>=><span id="Variable402_T" class="decl"><i class="var">T</i></span>)) : <span id="Variable423_T?" class="decl"><i class="var">T<sup class="sup">?</sup></i></span>=><span id="Variable429_T" class="decl"><i class="var">T</i></span>
+</pre><details open class="commentdetails"><summary><pre><span class="comment">/*</span></pre></summary><pre><span class="comment">  `<span class="name"><a href="#Name_enact">enact</a></span>(<i class="var">A</i>)` executes the computation of the abstraction `<i class="var">A</i>`,
   with access to all the current entities.
 </span></pre></details><pre>*/
-</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_enact" title="values -&gt; values">enact</a></span>(<span class="name"><a href="#Name_abstraction" title="values -&gt; values">abstraction</a></span>(<span id="Variable_X" class="decl"><i class="var">X</i></span>)) ~> <a href="#Variable_X"><i class="var">X</i></a></pre></details><pre>
+</pre><details open class="ruledetails"><summary><pre><span><i class="keyword">Rule</i></span></pre></summary><pre>  <span class="name"><a href="#Name_enact">enact</a></span>(<span class="name"><a href="#Name_abstraction">abstraction</a></span>(<span id="Variable478_X" class="decl"><i class="var">X</i></span>)) ~> <a href="#Variable478_X"><i class="var">X</i></a></pre></details><pre>
 </pre></details><pre>
 </pre>
 
