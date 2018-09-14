@@ -2,6 +2,7 @@
 
 [
   Funcon   left-to-right   Alias l-to-r
+  Funcon   right-to-left   Alias r-to-l
   Funcon   sequential      Alias seq
   Funcon   effect
   Funcon   choice
@@ -49,6 +50,25 @@ Rule
   left-to-right(V*:(T)*, Y, Z*) ---> left-to-right(V*, Y', Z*)
 Rule
   left-to-right(V*:(T)*) ~> V*
+
+
+Funcon
+  right-to-left(_:(=>(T)*)*) : =>(T)*
+Alias
+  r-to-l = right-to-left
+/*
+  `right-to-left(...)` computes its arguments sequentially, from right to left,
+  and gives the resulting sequence of values, provided all terminate normally.
+
+  Note that `right-to-left(X*)` and `reverse left-to-right reverse(X*)` are
+  not equivalent: `reverse(X*)` interleaves the evaluation of `X*`.
+*/
+Rule
+                              Y ---> Y'
+  ------------------------------------------------------------
+  right-to-left(X*, Y, V*:(T)*) ---> right-to-left(X*, Y', V*)
+Rule
+  right-to-left(V*:(T)*) ~> V*
 
 
 Funcon

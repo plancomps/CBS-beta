@@ -4,6 +4,9 @@ Beta-Release Changes
 This page lists significant additions and changes to the funcon definitions and
 language specifications included in the CBS beta-release. 
 
+2018-09-14: [`right-to-left`](Funcons-beta/Computations/Normal/Flowing/index.html#Name_right-to-left)
+* funcon added
+
 2018-09-07: [Funcons-beta](Funcons-beta/index.md), [Languages-beta](Languages-beta/index.md):
 CBS web pages regenerated:
 * hyperlinks corrected (for variable references in rules)

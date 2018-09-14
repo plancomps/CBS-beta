@@ -10,6 +10,7 @@
 ### Flowing
 [
   Funcon   left-to-right   Alias l-to-r
+  Funcon   right-to-left   Alias r-to-l
   Funcon   sequential      Alias seq
   Funcon   effect
   Funcon   choice

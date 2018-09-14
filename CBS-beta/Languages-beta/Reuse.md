@@ -1,7 +1,7 @@
 Funcon Reuse in Languages-beta
 ==============================
 
-Currently, Funcons-beta includes 386 funcons (including types, datatypes, and 
+Currently, Funcons-beta includes 387 funcons (including types, datatypes, and 
 entities, but not aliases). Of these, 192 are used in language specifications
 in Languages-beta. The number of funcons used for each language is as follows:
 
@@ -32,6 +32,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
 | :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
 |       |        |          |       |       | _Funcon_   | `left-to-right`   | `l-to-r`
+|       |        |          |       |       | _Funcon_   | `right-to-left`   | `r-to-l`
 | X     | X      | X        | X     | X     | _Funcon_   | `sequential`      | `seq`
 |       | X      |          | X     | X     | _Funcon_   | `effect`
 |       |        |          |       |       | _Funcon_   | `choice`
