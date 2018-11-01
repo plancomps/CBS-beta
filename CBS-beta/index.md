@@ -42,7 +42,7 @@ specifications. The aim of this beta-release of CBS and its initial library of
 funcons is to allow review of the current definitions, and subsequent adoption
 of suggestions for improvement, before their full release.
 
-**The beta-release review period is expected to end in October 2018.**
+**The beta-release review period has been extended to (early) 2019.**
 
 The current funcon definitions have been validated by empirical testing of
 generated interpreters for several programming languages, as well as by unit

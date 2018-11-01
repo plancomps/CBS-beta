@@ -4,6 +4,12 @@ Beta-Release Changes
 This page lists significant additions and changes to the funcon definitions and
 language specifications included in the CBS beta-release. 
 
+2018-11-01: [CBS-beta](index.md)
+* **The beta-release review period has been extended to (early) 2019.**
+  This is partly because funcons for threads and processes have not yet been
+  added to [Funcons-beta](Funcons-beta/index.md), partly because of pending
+  improvements to the tool support for use of CBS.
+
 2018-09-14: [`right-to-left`](Funcons-beta/Computations/Normal/Flowing/index.html#Name_right-to-left)
 * funcon added
 
