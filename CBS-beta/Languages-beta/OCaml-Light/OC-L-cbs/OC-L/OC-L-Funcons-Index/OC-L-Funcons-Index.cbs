@@ -38,7 +38,6 @@
   Funcon   allocate-initialised-variable Alias alloc-init
   Funcon   assign
   Funcon   assigned
-  Funcon   structural-assigned           Alias current-value
 ]
 
 ### Interacting
@@ -150,7 +149,8 @@
 ### Characters
 [
   Type     characters                          Alias chars
-  Funcon   unicode-character                   Alias char
+  Funcon   unicode-character                   Alias unicode-char
+  Funcon   ascii-character                     Alias ascii-char
   Funcon   backspace
   Funcon   horizontal-tab
   Funcon   line-feed
