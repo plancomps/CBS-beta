@@ -76,20 +76,20 @@ Syntax
   ::= ('e'|'E') _ ('+'|'-')? _ decimal-plus
 
 Rule
-  [[ DP1'.'DP2 ]] : non-negative-float-literal = [[ DP1'.'DP2'e''1' ]]
+  [[ DP1 '.' DP2 ]] : non-negative-float-literal = [[ DP1 '.' DP2 'e' '1' ]]
 Rule
-  [[ DP'.'     ]] : non-negative-float-literal = [[ DP'.''0''e''1' ]]
+  [[ DP '.'      ]] : non-negative-float-literal = [[ DP '.' '0' 'e' '1' ]]
 Rule
-  [[ DP'.'FE   ]] : non-negative-float-literal = [[ DP'.''0'FE  ]]
+  [[ DP '.' FE   ]] : non-negative-float-literal = [[ DP '.' '0' FE  ]]
 Rule
-  [[ DP   FE   ]] : non-negative-float-literal = [[ DP'.''0'FE  ]]
+  [[ DP   FE     ]] : non-negative-float-literal = [[ DP '.' '0' FE  ]]
 
 Rule
-  [[ 'e''+'DP ]] : float-exponent = [[ 'e'DP ]]
+  [[ 'e' '+' DP ]] : float-exponent = [[ 'e' DP ]]
 Rule
-  [[ 'E''+'DP ]] : float-exponent = [[ 'e'DP ]]
+  [[ 'E' '+' DP ]] : float-exponent = [[ 'e' DP ]]
 Rule
-  [[ 'E''-'DP ]] : float-exponent = [[ 'e''-'DP ]]
+  [[ 'E' '-' DP ]] : float-exponent = [[ 'e' '-' DP ]]
 
 Semantics
   float-value[[ _:float-literal ]] : =>implemented-floats
