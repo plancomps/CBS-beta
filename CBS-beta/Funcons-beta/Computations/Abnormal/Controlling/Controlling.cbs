@@ -15,7 +15,7 @@ Meta-variables
   T, T1, T2 <: values
 
 Datatype
-  continuations(T1,T2) ::= continuation(_:abstractions(null-type=>T2))
+  continuations(T1,T2) ::= continuation(_:abstractions(()=>T2))
 /*
   `continuations(T1, T2)` consists of abstractions whose bodies contain a `hole`,
   and which will normally compute a value of type `T2` when the `hole` is plugged
