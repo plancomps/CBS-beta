@@ -53,7 +53,7 @@ Rule
   - static semantics:  not specified
   - disambiguation:    incomplete, derived from [OCaml Manual]
 * Tests:
-  - 149 small programs
+  - 177 small programs
   - high coverage (to be verified)
 * Evolution:
   - supersedes [Reusable Components of Semantic Specifications]
