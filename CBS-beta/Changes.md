@@ -1,8 +1,27 @@
+---
+layout: default
+title: Changes
+nav_order: 6
+---
+
 Beta-Release Changes
 ====================
 
 This page lists significant additions and changes to the funcon definitions and
-language specifications included in the CBS beta-release. 
+language specifications included in the CBS beta-release.
+
+2019-06-09: [CBS-beta](index.md)
+* **The beta-release review period has been further extended.**
+  Funcons for threads have now been developed, and are soon to be added.
+  However, the tool support for using CBS still needs significant improvements,
+  and the current specifications will remain open for revision until the IDE for
+  CBS has been released.
+
+2019-06-09: [CBS-beta](index.md)
+* The Jekyll theme used on this website has been updated to
+  [Just-the-Docs](https://pmarsceill.github.io/just-the-docs/).
+  The navigation in the sidebar is now generated from the Markdown files.
+  The content of the web pages has not been changed.
 
 2018-11-01: [CBS-beta](index.md)
 * **The beta-release review period has been extended to (early) 2019.**
@@ -20,7 +39,7 @@ CBS web pages regenerated:
 
 2018-09-07: [Characters](Funcons-beta/Values/Primitive/Characters/index.html)
 * `char` (alias for `unicode-character`) renamed to `unicode-char`.
-* `ascii-character` (alias `ascii-char`) added to 
+* `ascii-character` (alias `ascii-char`) added to
   [Funcons-Index](Funcons-beta/Funcons-Index/index.html) and
   [funcon reuse overview](Languages-beta/Reuse.md)
 
@@ -29,17 +48,17 @@ CBS web pages regenerated:
 * blank lines following a rule are now preserved when it is folded
 
 2018-08-22: [`current-value`](Funcons-beta/Computations/Normal/Storing/index.html#Name_current-value)
-* `current-value` was an alias for 
-  [`structural-assigned`](Funcons-beta/Computations/Normal/Storing/index.html#Name_structural-assigned), 
+* `current-value` was an alias for
+  [`structural-assigned`](Funcons-beta/Computations/Normal/Storing/index.html#Name_structural-assigned),
   which returns the value of a simple or structured variable by replacing all
   simple sub-variables in it by their assigned values; `current-value(V)` is
   still equivalent to `structural-assigned(V)` when `V` is itself a _simple_
   variable, but when `V` is a _structured_ variable, it now simply returns `V`.
-  
+
   The only use of `current-value(V)` in `Languages-beta` was in the definition of
   [`ocaml-light-to-string`](Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-12-Core-Library/index.html#Name_ocaml-light-to-string),
   which has now been changed to use `assigned`.
-  
+
 2018-08-17: [Downloads](Downloads.md)
 * added a page about downloading for offline browsing
 

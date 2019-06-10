@@ -1,12 +1,19 @@
+---
+layout: default
+title: Funcon reuse
+parent: Languages-beta
+nav_order: 1
+---
+
 Funcon Reuse in Languages-beta
 ==============================
 
-Currently, Funcons-beta includes 387 funcons (including types, datatypes, and 
+Currently, Funcons-beta includes 387 funcons (including types, datatypes, and
 entities, but not aliases). Of these, 192 are used in language specifications
 in Languages-beta. The number of funcons used for each language is as follows:
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L]
-| :---: | :---:  | :---:    | :---: | :---: 
+| :---: | :---:  | :---:    | :---: | :---:
 | 29    | 62     | 70       | 71    | 160
 
 The definitions of some of the used funcons reference other funcons, which are
@@ -21,7 +28,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 ### Types of computation
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       |        |          |       |       | _Funcon_   | `computation-types`
 
 
@@ -30,7 +37,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Flowing
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       |        |          |       |       | _Funcon_   | `left-to-right`   | `l-to-r`
 |       |        |          |       |       | _Funcon_   | `right-to-left`   | `r-to-l`
 | X     | X      | X        | X     | X     | _Funcon_   | `sequential`      | `seq`
@@ -52,7 +59,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Giving
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       |        |          |       |       | _Entity_   | `given-value`
 | X     | X      | X        | X     | X     | _Funcon_   | `initialise-giving`
 |       | X      | X        | X     | X     | _Funcon_   | `give`
@@ -71,7 +78,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Binding
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 | X     | X      | X        | X     | X     | _Type_     | `environments`       | `envs`
 | X     | X      | X        | X     | X     | _Datatype_ | `identifiers`        | `ids`
 |       |        |          |       |       | _Funcon_   | `identifier-tagged`  | `id-tagged`
@@ -93,7 +100,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Generating
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       |        |          |       |       | _Type_     | `atoms`
 |       |        |          |       |       | _Entity_   | `used-atom-set`
 |       |        |          |       |       | _Funcon_   | `initialise-generating`
@@ -104,7 +111,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Storing
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       |        |          |       |       | _Datatype_ | `locations`                     | `locs`
 |       |        |          |       |       | _Type_     | `stores`
 |       |        |          |       |       | _Entity_   | `store`
@@ -127,7 +134,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Linking
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       |        |          |       |       | _Datatype_ | `links`
 |       |        |          |       |       | _Funcon_   | `initialise-linking`
 |       |        |          |       |       | _Funcon_   | `link`
@@ -142,7 +149,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 ##### Input
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       |        |          |       |       | _Entity_   | `standard-in`
 |       | X      |          | X     | X     | _Funcon_   | `read`
 
@@ -150,7 +157,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 ##### Output
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       |        |          |       |       | _Entity_   | `standard-out`
 |       | X      | X        | X     | X     | _Funcon_   | `print`
 
@@ -160,7 +167,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Terminating abruptly
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       |        |          |       |       | _Funcon_   | `stuck`
 |       |        |          |       |       | _Entity_   | `abrupted`
 |       |        |          | X     |       | _Funcon_   | `finalise-abrupting`
@@ -172,7 +179,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Failing
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       |        |          |       |       | _Datatype_ | `failing`
 |       |        |          |       |       | _Funcon_   | `failed`
 | X     | X      | X        |       | X     | _Funcon_   | `finalise-failing`
@@ -186,7 +193,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Throwing
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       |        |          |       |       | _Datatype_ | `throwing`
 |       |        |          |       |       | _Funcon_   | `thrown`
 |       | X      |          |       | X     | _Funcon_   | `finalise-throwing`
@@ -199,7 +206,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Returning
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       |        |          |       |       | _Datatype_ | `returning`
 |       |        |          |       |       | _Funcon_   | `returned`
 |       |        |          |       |       | _Funcon_   | `finalise-returning`
@@ -210,7 +217,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Breaking
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       |        |          |       |       | _Datatype_ | `breaking`
 |       |        |          |       |       | _Funcon_   | `broken`
 |       |        |          |       |       | _Funcon_   | `finalise-breaking`
@@ -221,7 +228,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Continuing
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       |        |          |       |       | _Datatype_ | `continuing`
 |       |        |          |       |       | _Funcon_   | `continued`
 |       |        |          |       |       | _Funcon_   | `finalise-continuing`
@@ -232,7 +239,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Controlling
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       |        |          |       |       | _Datatype_ | `continuations`
 |       |        |          |       |       | _Funcon_   | `continuation`
 |       |        |          |       |       | _Entity_   | `plug-signal`
@@ -247,9 +254,9 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 ## Values
 
 ### Value Types
- 
+
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       | X      |          | X     | X     | _Type_     | `values`           | `vals`
 |       |        | X        |       |       | _Type_     | `value-types`      | `types`
 |       |        |          |       |       | _Type_     | `empty-type`
@@ -266,7 +273,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Booleans
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 | X     |        | X        | X     | X     | _Datatype_ | `booleans`      | `bools`
 | X     | X      | X        | X     | X     | _Funcon_   | `true`
 | X     | X      | X        | X     | X     | _Funcon_   | `false`
@@ -280,7 +287,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Integers
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 | X     |        | X        | X     | X     | _Type_     | `integers`                     | `ints`
 |       |        |          |       |       | _Type_     | `integers-from`                | `from`
 |       |        |          |       |       | _Type_     | `integers-up-to`               | `up-to`
@@ -312,7 +319,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Floats
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       |        |          |       | X     | _Datatype_ | `float-formats`
 |       |        |          |       |       | _Funcon_   | `binary`32
 |       |        |          |       | X     | _Funcon_   | `binary`64
@@ -370,7 +377,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Characters
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       |        |          |       | X     | _Type_     | `characters`                          | `chars`
 |       |        |          |       |       | _Datatype_ | `unicode-characters`                  | `unicode-chars`
 |       |        |          |       |       | _Type_     | `unicode-points`
@@ -399,7 +406,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### The null value
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 | X     | X      | X        | X     | X     | _Datatype_ | `null-type`
 | X     | X      | X        | X     | X     | _Funcon_   | `null-value` | `null`
 
@@ -409,7 +416,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Sequences of values
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       | X      | X        |       | X     | _Funcon_   | `length`
 |       | X      | X        |       | X     | _Funcon_   | `index`
 |       |        |          |       |       | _Funcon_   | `is-in`
@@ -426,7 +433,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Datatypes
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       |        |          |       |       | _Funcon_   | `datatype-value`
 |       |        |          |       |       | _Funcon_   | `datatype-value-id`
 |       |        |          |       |       | _Funcon_   | `datatype-value-elements`
@@ -435,7 +442,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Tuples
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       | X      | X        |       | X     | _Datatype_ | `tuples`
 |       |        | X        |       | X     | _Funcon_   | `tuple-elements`
 |       |        |          |       |       | _Funcon_   | `tuple-zip`
@@ -444,7 +451,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Lists
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       |        |          | X     | X     | _Datatype_ | `lists`
 |       |        |          |       | X     | _Funcon_   | `list`
 |       |        |          |       | X     | _Funcon_   | `list-elements`
@@ -459,7 +466,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Strings
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       |        |          | X     | X     | _Type_     | `strings`
 |       |        |          |       |       | _Funcon_   | `string`
 |       |        |          | X     | X     | _Funcon_   | `string-append`
@@ -469,7 +476,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Vectors
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       | X      | X        |       | X     | _Datatype_ | `vectors`
 |       | X      | X        |       | X     | _Funcon_   | `vector`
 |       | X      | X        |       | X     | _Funcon_   | `vector-elements`
@@ -478,7 +485,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Bits and bit vectors
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       |        |          |       |       | _Type_     | `bits`
 |       |        |          |       | X     | _Datatype_ | `bit-vectors`
 |       |        |          |       |       | _Funcon_   | `bit-vector`
@@ -503,7 +510,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Sets
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       |        | X        |       |       | _Type_     | `sets`
 |       |        |          |       | X     | _Funcon_   | `set`
 |       |        |          |       | X     | _Funcon_   | `set-elements`
@@ -521,7 +528,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Maps
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       |        |          |       | X     | _Type_     | `maps`
 |       |        | X        | X     | X     | _Funcon_   | `map`
 |       |        |          |       | X     | _Funcon_   | `map-elements`
@@ -535,7 +542,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Multisets (bags)
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       |        |          |       |       | _Type_     | `multisets`
 |       |        |          |       |       | _Funcon_   | `multiset`
 |       |        |          |       |       | _Funcon_   | `multiset-elements`
@@ -548,7 +555,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Trees
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       |        |          |       |       | _Datatype_ | `trees`
 |       |        |          |       |       | _Funcon_   | `tree`
 |       |        |          |       |       | _Funcon_   | `tree-root-value`
@@ -562,7 +569,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Graphs
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       |        |          |       |       | _Type_     | `directed-graphs`
 |       |        |          |       |       | _Funcon_   | `is-cyclic`
 |       |        |          |       |       | _Funcon_   | `topological-sort`
@@ -571,7 +578,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### References and pointers
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       |        | X        |       |       | _Datatype_ | `references`
 |       |        | X        |       |       | _Funcon_   | `reference`
 |       |        | X        |       |       | _Type_     | `pointers`
@@ -581,7 +588,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Records
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       |        |          |       | X     | _Datatype_ | `records`
 |       |        |          |       | X     | _Funcon_   | `record`
 |       |        |          |       | X     | _Funcon_   | `record-map`
@@ -591,7 +598,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Variants
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       |        |          |       | X     | _Datatype_ | `variants`
 |       |        |          |       | X     | _Funcon_   | `variant`
 |       |        |          |       |       | _Funcon_   | `variant-id`
@@ -601,7 +608,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Classes
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       |        |          |       |       | _Datatype_ | `classes`
 |       |        | X        |       |       | _Funcon_   | `class`
 |       |        | X        |       |       | _Funcon_   | `class-instantiator`
@@ -615,7 +622,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Objects
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       |        | X        | X     |       | _Datatype_ | `objects`
 |       |        | X        | X     |       | _Funcon_   | `object`
 |       |        |          |       |       | _Funcon_   | `object-identity`
@@ -631,7 +638,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Generic abstractions
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       |        |          |       |       | _Type_     | `abstractions`
 |       |        | X        |       | X     | _Funcon_   | `abstraction`
 |       | X      | X        | X     | X     | _Funcon_   | `closure`
@@ -641,7 +648,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Thunks
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       |        |          |       |       | _Datatype_ | `thunks`
 |       |        | X        |       |       | _Funcon_   | `thunk`
 |       |        | X        |       |       | _Funcon_   | `force`
@@ -650,7 +657,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Functions
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       | X      | X        | X     | X     | _Datatype_ | `functions`
 |       | X      | X        | X     | X     | _Funcon_   | `function`
 |       | X      | X        | X     | X     | _Funcon_   | `apply`
@@ -664,7 +671,7 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 #### Patterns
 
 |[IMP]  |[SIMPLE]|[MiniJava]|[SL]   |[OC-L] | Kind       | Name | Alias
-| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :--- 
+| :---: | :---:  | :---:    | :---: | :---: | :---       | :--- | :---
 |       | X      | X        |       | X     | _Datatype_ | `patterns`
 |       | X      | X        |       | X     | _Funcon_   | `pattern`
 |       |        |          |       | X     | _Funcon_   | `pattern-any`

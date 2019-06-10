@@ -1,3 +1,10 @@
+---
+layout: default
+title: Values
+parent: Funcons-beta
+nav_order: 2
+---
+
 Values
 ======
 
@@ -10,7 +17,7 @@ Primitive values
 - [booleans]
 - [integers]
 - [floats]
-- [characters] 
+- [characters]
 - [null-type]
 
 Composite values
@@ -55,7 +62,7 @@ Funcons can take [sequences] of values as arguments, and compute sequences of
 values as results. The only sequences that are themselves values are trivial
 sequences of length one.
 
-The absence of a computed value is represented by the empty sequence `( )`. 
+The absence of a computed value is represented by the empty sequence `( )`.
 Funcons that may compute `( )` have result types of the form `T?`, and
 generally need to be preceded by `checked` when used as arguments of other
 funcons.

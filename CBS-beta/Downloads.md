@@ -1,21 +1,34 @@
+---
+layout: default
+title: Downloads
+nav_order: 7
+---
+
 Downloads
 =========
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+- TOC
+{:toc}
 
 Browsing specification pages offline
 ------------------------------------
 
 1.  Clone or download a zip of the current [plancomps project site on Github],
     or download a [zip of a recent snapshot].
-   
+
 2.  The start web page for a language `L` is:
 
     ```
     Languages-beta/L/L-cbs/L/L-Start/index.html
     ```
     For example:
-    
+
     [`Languages-beta/IMP/IMP-cbs/IMP/IMP-Start/index.html`].
-  
+
 3.  The start web page for Funcons-beta is:
 
     [`Funcons-beta/Funcons-index/index.html`].
@@ -33,7 +46,7 @@ __Using [Jekyll]:__
     or download a [zip of a recent snapshot].
 
 2.  Run the following command in a terminal from the unzipped folder:
-    
+
     ```
     bundle exec jekyll serve --port 4000 --host localhost
     ```
@@ -48,7 +61,7 @@ __Using Python:__
 1.  Download a [zip of a recent snapshot].
 
 2.  Run one of the following commands in a terminal from the `_site` sub-folder.
-    
+
     For [Python2]:
     ```
     python2 -m SimpleHTTPServer 8000

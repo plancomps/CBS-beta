@@ -1,11 +1,19 @@
+---
+layout: default
+title: Funcons-beta
+nav_order: 2
+has_children: true
+permalink: /CBS-beta/Funcons-beta
+---
+
 Funcons-beta
 ============
 
 This page provides access to the beta-release of an initial collection of
 so-called 'funcons' (fundamental programming constructs). Funcons are reusable
-components of programming language specifications: in the [CBS framework], 
+components of programming language specifications: in the [CBS framework],
 a language is specified by defining a translation from its constructs to
-funcon terms, reusing (by reference) the definitions of the required funcons. 
+funcon terms, reusing (by reference) the definitions of the required funcons.
 
 See [Languages-beta] for illustrative examples of language specifications in
 CBS.

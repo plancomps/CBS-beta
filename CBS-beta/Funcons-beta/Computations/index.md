@@ -1,3 +1,10 @@
+---
+layout: default
+title: Computations
+parent: Funcons-beta
+nav_order: 1
+---
+
 Computations
 ============
 
@@ -36,8 +43,8 @@ Abnormal computation
 Sequences of computations
 -------------------------
 
-Funcons can take sequences of values and computations as arguments, 
-whereas results can only be (sequences of) values. 
+Funcons can take sequences of values and computations as arguments,
+whereas results can only be (sequences of) values.
 
 
 [flowing]: Normal/Flowing/index.html

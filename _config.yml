@@ -1,4 +1,8 @@
-theme: jekyll-theme-minimal
+remote_theme: pmarsceill/just-the-docs
 title: CBS-beta
 description: Beta-release of the CBS framework
 repository: "plancomps/plancomps.github.io"
+# Aux links for the upper right navigation
+aux_links:
+  "CBS-beta on GitHub":
+    - "//github.com/plancomps/plancomps.github.io"

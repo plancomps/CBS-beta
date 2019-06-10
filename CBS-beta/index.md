@@ -1,8 +1,15 @@
+---
+layout: default
+title: CBS-beta
+nav_order: 1
+permalink: /CBS-beta
+---
+
 CBS-beta
 ========
 
 _CBS_ is a framework and meta-language for _component-based specification of
-programming languages_. The main idea is to translate languages to so-called 
+programming languages_. The main idea is to translate languages to so-called
 _'funcons'_ ([fundamental programming constructs]). The behaviour of the funcons
 has already been specified, so translating a language to funcons determines the
 behaviour of programs in that language.
@@ -11,7 +18,7 @@ Specifications of translations to funcons can be significantly _simpler_ -- both
 to read and to write -- than direct specifications of program behaviour. In fact
 CBS aims to make specification of language behaviour as easy as specification of
 context-free syntax! Specifications of translations to funcons are also
-_highly modular_, to support co-evolution of languages and their specifications. 
+_highly modular_, to support co-evolution of languages and their specifications.
 
 Funcons are _reusable_ components: the same funcon can be used, unchanged, in
 the specifications of many different languages. Funcons correspond closely to
@@ -36,8 +43,8 @@ language design.
 Beta-release
 ------------
 
-The funcons provided by the [CBS library] are to have *fixed* definitions, so 
-*no version control* will be needed for their safe reuse in CBS language 
+The funcons provided by the [CBS library] are to have *fixed* definitions, so
+*no version control* will be needed for their safe reuse in CBS language
 specifications. The aim of this beta-release of CBS and its initial library of
 funcons is to allow review of the current definitions, and subsequent adoption
 of suggestions for improvement, before their full release.
@@ -79,10 +86,10 @@ PLanCompS: Programming Language Components and Specifications
 
 CBS has been developed by the [PLanCompS] project. From 2011 to 2016, the
 research was funded by EPSRC in the UK. The PLanCompS project is now continuing
-as an open international collaboration, and welcomes new [contributors]. 
+as an open international collaboration, and welcomes new [contributors].
 
 If you would like to contribute to PLanCompS (e.g., by using CBS to define a new
-or existing language, or by suggesting new or improved funcons) please email 
+or existing language, or by suggesting new or improved funcons) please email
 plancomps@gmail.com.
 
 [Fundamental programming constructs]: Funcons-beta/index.md

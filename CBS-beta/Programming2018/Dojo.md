@@ -1,3 +1,9 @@
+---
+layout: default
+title: FunCons Dojo Agenda
+nav_exclude: true
+---
+
 FunCons Dojo Agenda
 ===================
 
@@ -26,7 +32,7 @@ FunCons Dojo Agenda
 
 _N.B. Not yet fully developed, nor efficient enough for general use..._
 
-### Open the Eclipse application `Funcons/Spoofax-Funcons` 
+### Open the Eclipse application `Funcons/Spoofax-Funcons`
 
 * Workspace: `Funcons/Workspace`
 
@@ -141,10 +147,10 @@ The generated funcon term appears in `HelloWorld.fct`
 * Press the __`Run`__ button.
 
 The result should appear in the Console, and correspond to
-`SL-2-Expressions/tests/HelloWorld.output` 
+`SL-2-Expressions/tests/HelloWorld.output`
 (apart from a `NullV()` at the end).
 
-For subsequent interpretation of funcon terms, just click the 
+For subsequent interpretation of funcon terms, just click the
 green `Run` button in the bar of icons.
 
 

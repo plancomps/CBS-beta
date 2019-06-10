@@ -1,3 +1,9 @@
+---
+layout: default
+title: FunCons USB Memory Stick
+nav_exclude: true
+---
+
 USB Memory Stick
 ================
 
@@ -17,7 +23,7 @@ Funcons-SL-Interpreter (Haskell cabal package)
 CBS-beta (folder)
 
 	CBS-Editor (Spoofax language editor)
-	
+
 	Funcons-beta
 		Computations
 			...

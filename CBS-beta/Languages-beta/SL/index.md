@@ -1,3 +1,10 @@
+---
+layout: default
+title: SL
+parent: Languages-beta
+nav_order: 5
+---
+
 SL
 ==
 
@@ -14,4 +21,3 @@ The start of the specification of SL in CBS is at [SL-Start].
 [SL in DynSem]: https://github.com/MetaBorgCube/metaborg-sl/
 
 [SL-Start]: SL-cbs/SL/SL-Start/index.html
-

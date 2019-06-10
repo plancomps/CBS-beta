@@ -1,10 +1,17 @@
+---
+layout: default
+title: OCaml-Light
+parent: Languages-beta
+nav_order: 6
+---
+
 OCaml Light
 ===========
 
-OCaml Light is a core sublanguage of [OCaml], corresponding closely to 
-[Caml Light] (an obsolete pedagogical functional programming language). 
+OCaml Light is a core sublanguage of [OCaml], corresponding closely to
+[Caml Light] (an obsolete pedagogical functional programming language).
 
-Its CBS illustrates scaling up to a medium-sized language. 
+Its CBS illustrates scaling up to a medium-sized language.
 The start of the specification of OCaml Light in CBS is at [OC-L-Start].
 
 

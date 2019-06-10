@@ -1,22 +1,23 @@
+---
+layout: default
+title: Browsing guide
+nav_order: 4
+---
+
 CBS-beta Browsing Guide
 =======================
+{: .no_toc }
 
-- [Navigation](#navigation)
-  - [Links](#links)
-  - [Folding](#folding)
-- [Languages](#languages)
-  - [Syntax](#syntax)
-  - [Semantics](#semantics)
-- [Funcons](#funcons)
-  - [Type definitions](#type-definitions)
-  - [Funcon definitions](#funcon-definitions)
-  - [Entities](#entities)
+## Table of contents
+{: .no_toc .text-delta }
 
+- TOC
+{:toc}
 
 Navigation
 ----------
 
-> **All references to names of funcons (etc.) in CBS specifications are 
+> **All references to names of funcons (etc.) in CBS specifications are
 > hyperlinks leading to their declarations.**
 
 These hyperlinks avoid the need to drill down through the hierarchy of folders
@@ -39,11 +40,11 @@ arguments.
 #### Menu
 
 The large button at the top right of each CBS page is a fixed drop-down menu.
-    
+
 For pages in `Funcons-beta`, it has the following links:
 
   - [Funcons-beta]\: the funcons index
-  - [Languages-beta]\: the languages overview 
+  - [Languages-beta]\: the languages overview
   - [CBS-beta]\: the CBS-beta overview
 
 For pages in `Languages-beta/L`, it has also the following links:
@@ -59,7 +60,7 @@ For pages in `Languages-beta/L`, it has also the following links:
   - In the middle: the CBS source file from which the web page was generated
 
 #### Footer
-  
+
   - [PLanCompS Project, 2018]\: the main PLanCompS project website
   - [CBS-beta issues...]\: the list of issues concerning CBS-beta and this website
   - [Suggest an improvement...]\: a template for an email to plancomps@gmail.com
@@ -75,7 +76,7 @@ Note that printing the page omits the disclosure symbols, but does *not* show
 lines hidden by the current folding.
 
 The top right corner of each CBS web page has buttons for unfolding (&#9660;)
-or folding (&#9658;) all rules, comments, or subsections on the current page. 
+or folding (&#9658;) all rules, comments, or subsections on the current page.
 (These buttons require Javascript, and are not shown when Javascript is off.)
 
 --------------------
@@ -99,10 +100,10 @@ __See the [CBS of IMP] for illustration of the following points.__
 
 ### Syntax
 
-*`Syntax`* introduces one or more grammar productions for the 
+*`Syntax`* introduces one or more grammar productions for the
 abstract (context-free) syntax of the language, together with meta-variables
 ranging over the associated sorts of ASTs.
-  
+
   - Nonterminals start with lowercase letters, and may include letters, digits,
     and dashes `-`.
   - The start symbol of the grammar is named `start`.
@@ -118,10 +119,10 @@ ranging over the associated sorts of ASTs.
     but it can be excluded between two symbols by inserting an underscore `_`,
     e.g., [`num ::= '-'?_decimal`].
 
-*`Lexis`* introduces one or more grammar productions for the 
+*`Lexis`* introduces one or more grammar productions for the
 lexical (regular or context-free) syntax of the language, together with
 meta-variables ranging over the specified *strings* of characters.
-  
+
   - The range of characters from `'c1'` to `'c2'` is specified by `'c1'-'c2'`.
     For example, [`decimal`] is defined as `('0'-'9')+`.
   - Layout (including comments) is implicitly *excluded* everywhere in *`Lexis`*.
@@ -136,7 +137,7 @@ specified separately, using notation from SDF, embedded in multi-line comments
 
 *`Semantics`* introduces a declaration of a translation function
   from ASTs (with strings as leaves) to funcon terms.
-  
+
   - A translation function takes a single AST (or string) as argument,
     enclosed in double brackets `[[...]]`.
   - The sort of the argument is specified by `_:...`.
@@ -146,7 +147,7 @@ specified separately, using notation from SDF, embedded in multi-line comments
 
 *`Rule`* introduces an equation defining the translation function
   on trees matching a specified pattern.
-  
+
   - The pattern in a rule usually corresponds to a single alternative of the
     argument sort.
   - Meta-variables of the same sort in a rule are distinguished by subscripted
@@ -157,10 +158,10 @@ specified separately, using notation from SDF, embedded in multi-line comments
   - Desugaring rules for ASTs are written `[[...]] : s = [[...]]`, where
     the patterns on both sides match the nonterminal symbol `s`. Note
     that desugaring rules do *not* refer to particular translation functions.
- 
+
 All funcons (etc.) defined in [Funcons-beta] can be used in all language
 definitions. Funcons defined in a language definition file must have fresh
-names, and cannot be reused in other language definitions \(except by 
+names, and cannot be reused in other language definitions \(except by
 copy-paste).
 
 ------------------
@@ -168,25 +169,25 @@ copy-paste).
 Funcons
 -------
 
-*Funcon names* start with lowercase letters, and may include letters, digits, 
+*Funcon names* start with lowercase letters, and may include letters, digits,
 and dashes `-`.
 
 *Variables* in funcon terms start with uppercase letters, and may be suffixed by
 digits and/or primes. Variables that stand for sequences of indefinite length
 are suffixed by `*`, `+`, or `?`. Variables whose values are not required may
-be replaced by underscores `_`. 
+be replaced by underscores `_`.
 
-A funcon term formed from a funcon `f` and argument sequence `s` is written in 
-prefix form: `f s`. When `f` has no arguments, it is written without 
+A funcon term formed from a funcon `f` and argument sequence `s` is written in
+prefix form: `f s`. When `f` has no arguments, it is written without
 parentheses: `f`; when it has 2 or more arguments `t1`, ..., `tn`, they are
 written in ordinary parentheses: `f(t1,...,tn)`. Parentheses are optional when
 there is a single argument term, so both `f t` and `f(t)` are allowed.
 
-- **N.B. Parentheses are also optional around composite argument terms: 
+- **N.B. Parentheses are also optional around composite argument terms:
   `f g t` is *always* grouped as `f(g(t))`!**
 
 Funcons are *not* higher-order, so implicit grouping of `f g t` as `(f g)(t)`
-would here be *completely useless*, as it would *never* give a well-formed term. 
+would here be *completely useless*, as it would *never* give a well-formed term.
 Grouping in funcon terms treats funcon names as prefix operations, such as the
 '`-`' in '`-sin(x)`'. (Readers accustomed to higher-order programming in Haskell
 may find it helpful to imagine `f g t` written as `f$g t`.)
@@ -194,11 +195,11 @@ may find it helpful to imagine `f g t` written as `f$g t`.)
 Some funcons can take argument sequences of varying lengths; funcons may also
 compute sequences of values. An example of a funcon that does both is
 `left-to-right`, which is used to ensure that arguments are evaluated in the
-specified order (the default is to allow interleaving). Composition with 
+specified order (the default is to allow interleaving). Composition with
 `left-to-right` provides sequential variants of all multi-argument funcons, e.g.:
 
-- `integer-add left-to-right(t1,t2)` (which abbreviates 
-  `integer-add(left-to-right(t1,t2))`) 
+- `integer-add left-to-right(t1,t2)` (which abbreviates
+  `integer-add(left-to-right(t1,t2))`)
 
 The following special forms of funcon terms are allowed:
 
@@ -215,7 +216,7 @@ The following special forms of funcon terms are allowed:
 
 The funcon definitions in [Funcons-beta] are language-independent.
 
-CBS specifications do not refer to the hierarchy of folders and files 
+CBS specifications do not refer to the hierarchy of folders and files
   used for [Funcons-beta].
 
 Files in [Funcons-beta] are generally divided into *unnumbered* subsections.
@@ -228,8 +229,8 @@ In CBS, types are values. They can be given as arguments to funcons, and
 computed by funcons.
 
 *`Type`* introduces a declaration of a fresh funcon name for a type, and lists
-any arguments. The type of values it computes is `types`. 
-  
+any arguments. The type of values it computes is `types`.
+
   - A type definition `Type t... ~> t1` combines a type declaration with a
     rewrite of the type to `t1`.
   - A type definition `Type t... <: t1` combines a type declaration with an
@@ -238,7 +239,7 @@ any arguments. The type of values it computes is `types`.
 *`Datatype`* introduces a definition of an *algebraic datatype*, written
   `t ::= f1(...) | ... | fn(...)`, which also declares the constructor funcons
   `fi(...):t` for its values.
-  
+
   - A datatype definition `Datatype t(...)` written without constructors allows
     separate declaration of constructors with different instantiations of the
     parameterised type `t(...)`, corresponding to a GADT.
@@ -250,8 +251,8 @@ any arguments. The type of values it computes is `types`.
 ### Funcon definitions
 
 *`Funcon`* introduces a declaration of a fresh funcon name,  together with
-its signature. 
-  
+its signature.
+
   - Funcon names start with lowercase letters, and may include letters, digits,
     and dashes `-`.
   - The signature of a funcon taking no arguments and computing values of type
@@ -287,13 +288,13 @@ its signature.
   as parameters of a collection of funcon definitions. They are generally
   reserved for types of values such as integers, sets, and maps, which are not
   amenable to specification using operational rules.
-  
-*`Auxiliary`* introduces a name that is not intended for direct use in 
-language definitions. 
+
+*`Auxiliary`* introduces a name that is not intended for direct use in
+language definitions.
 
 *`Rule`* introduces a formula or inference rule defining the
 operational behaviour of a funcon.
-  
+
   - `t1 ~> t2` is a *rewrite* from `t1` to `t2`.
   - `t1 ---> t2` is simple *transition* from `t1` to `t2`.
   - `e(v) |- t1 ---> t2` specifies dependence on a *contextual entity* named `e`.
@@ -321,7 +322,7 @@ operational behaviour of a funcon.
 ### Entities
 
 *`Entity`* introduces a declaration of a fresh auxiliary entity name.
-  
+
   - Entities are implicitly propagated in transition rules when not mentioned.
   - Rewrites are independent of entities.
   - The declaration of an entity specifies how the entity is written when used,
@@ -332,7 +333,7 @@ operational behaviour of a funcon.
     premises.
   - `<_,s(v1:t)> ---> <_,s(v2:t)>` declares a *mutable entity* `s` of type `t`,
     e.g., `< _ , store(_:stores) > ---> < _ , store(_:stores) >`. When a mutable
-    entity is omitted in an *axiom*, it is implicitly propagated unchanged. 
+    entity is omitted in an *axiom*, it is implicitly propagated unchanged.
     When it is omitted in a rule with a single premise, its value before the
     transition in the premise is the same as before the transition in the
     conclusion, and similarly for its value after the transitions. Changes to
@@ -341,7 +342,7 @@ operational behaviour of a funcon.
     `_ -- standard-in?(_:values*) -> _`. When an input entity is omitted in an
     *axiom*, it is implicitly required to be the empty sequence. When it is
     omitted in a rule with a single premise, the sequence of values in the
-    conclusion is implicitly the same as in the premise. The value sequences 
+    conclusion is implicitly the same as in the premise. The value sequences
     of an input entity are concatenated in sequences of transitions.
   - `_ --o?(v*:t*)-> _` declares an *output entity* `o` of type `t*`, e.g.,
     `_ -- standard-out!(_:values*) -> _`. When an output entity is omitted in
