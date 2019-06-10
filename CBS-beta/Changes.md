@@ -23,8 +23,11 @@ language specifications included in the CBS beta-release.
   The navigation in the sidebar is now generated from the Markdown files.
   The content of the web pages has not been changed.
 
+2018-07-14: [Publications](Publications.md)
+  * added
+
 2018-11-01: [CBS-beta](index.md)
-* **The beta-release review period has been extended to (early) 2019.**
+* **The beta-release review period has been extended to ~~(early)~~ 2019.**
   This is partly because funcons for threads and processes have not yet been
   added to [Funcons-beta](Funcons-beta/index.md), partly because of pending
   improvements to the tool support for use of CBS.

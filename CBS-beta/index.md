@@ -2,7 +2,6 @@
 layout: default
 title: CBS-beta
 nav_order: 1
-permalink: /CBS-beta
 ---
 
 CBS-beta
@@ -49,7 +48,7 @@ specifications. The aim of this beta-release of CBS and its initial library of
 funcons is to allow review of the current definitions, and subsequent adoption
 of suggestions for improvement, before their full release.
 
-**The beta-release review period has been extended to (early) 2019.**
+**The beta-release review period has been extended.**
 
 The current funcon definitions have been validated by empirical testing of
 generated interpreters for several programming languages, as well as by unit
@@ -78,7 +77,8 @@ as well as in the version history of this project site.
 Tool support for using CBS will be released as soon as it is sufficiently robust
 and well-documented. The CBS editor has been implemented as a [Spoofax] language
 project in Eclipse; generation of interpreters from funcon definitions has been
-implemented as a Haskell package [Funcon.Tools].
+implemented as a Haskell package [Funcon.Tools]. The CBS beta-release review
+period will remain open until the full toolchain has been released.
 
 
 PLanCompS: Programming Language Components and Specifications
