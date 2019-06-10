@@ -6,3 +6,5 @@ repository: "plancomps/plancomps.github.io"
 aux_links:
   "CBS-beta on GitHub":
     - "//github.com/plancomps/plancomps.github.io"
+plugins:
+    - jekyll-seo-tag
