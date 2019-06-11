@@ -14,13 +14,12 @@ Downloads
 - TOC
 {:toc}
 
+Clone or download a zip of the current [plancomps project site on Github].
+
 Browsing specification pages offline
 ------------------------------------
 
-1.  Clone or download a zip of the current [plancomps project site on Github],
-    or download a [zip of a recent snapshot].
-
-2.  The start web page for a language `L` is:
+1.  The start web page for a language `L` is:
 
     ```
     Languages-beta/L/L-cbs/L/L-Start/index.html
@@ -29,7 +28,7 @@ Browsing specification pages offline
 
     [`Languages-beta/IMP/IMP-cbs/IMP/IMP-Start/index.html`].
 
-3.  The start web page for Funcons-beta is:
+2.  The start web page for Funcons-beta is:
 
     [`Funcons-beta/Funcons-index/index.html`].
 
@@ -42,25 +41,20 @@ Browsing the complete CBS-beta site offline
 
 __Using [Jekyll]:__
 
-1.  Clone or download a zip of the current [plancomps project site on Github],
-    or download a [zip of a recent snapshot].
-
-2.  Run the following command in a terminal from the unzipped folder:
+1.  Run the following command in a terminal from the unzipped folder:
 
     ```
     bundle exec jekyll serve --port 4000 --host localhost
     ```
     `4000` and `localhost` are the defaults when not specified.
 
-3.  Open a web browser at `http://localhost:4000/CBS-beta/`.
+2.  Open a web browser at `http://localhost:4000/CBS-beta/`.
 
 Stop the local server with Control-C when no longer needed.
 
 __Using Python:__
 
-1.  Download a [zip of a recent snapshot].
-
-2.  Run one of the following commands in a terminal from the `_site` sub-folder.
+1.  Run one of the following commands in a terminal from the `_site` sub-folder.
 
     For [Python2]:
     ```
@@ -73,14 +67,12 @@ __Using Python:__
     `8000` and `localhost` are the defaults when not specified.
     (If neither `python2` nor `python3` is available, try `python`.)
 
-3.  Open a web browser at `http://localhost:8000/CBS-beta/`.
+2.  Open a web browser at `http://localhost:8000/CBS-beta/`.
 
 Stop the local server with Control-C when no longer needed.
 
 
 [plancomps project site on Github]: https://github.com/plancomps/plancomps.github.io
-
-[zip of a recent snapshot]: https://github.com/plancomps/plancomps.github.io/blob/master/downloads/CBS-beta-website.zip
 
 [`Languages-beta/IMP/IMP-cbs/IMP/IMP-Start/index.html`]: Languages-beta/IMP/IMP-cbs/IMP/IMP-Start/index.html
 

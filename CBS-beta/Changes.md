@@ -10,14 +10,17 @@ Beta-Release Changes
 This page lists significant additions and changes to the funcon definitions and
 language specifications included in the CBS beta-release.
 
-2019-06-09: [CBS-beta](index.md)
+2018-06-11: [Downloads](Downloads.md)
+* Removed the manually-created zip of the site.
+
+2019-06-10: [CBS-beta](index.md)
 * **The beta-release review period has been further extended.**
   Funcons for threads have now been developed, and are soon to be added.
   However, the tool support for using CBS still needs significant improvements,
   and the current specifications will remain open for revision until the IDE for
   CBS has been released.
 
-2019-06-09: [CBS-beta](index.md)
+2019-06-10: [CBS-beta](index.md)
 * The Jekyll theme used on this website has been updated to
   [Just-the-Docs](https://pmarsceill.github.io/just-the-docs/).
   The navigation in the sidebar is now generated from the Markdown files.
