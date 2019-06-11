@@ -10,7 +10,7 @@ Beta-Release Changes
 This page lists significant additions and changes to the funcon definitions and
 language specifications included in the CBS beta-release.
 
-2018-06-11: [Downloads](Downloads.md)
+2019-06-11: [Downloads](Downloads.md)
 * Removed the manually-created zip of the site.
 
 2019-06-10: [CBS-beta](index.md)
