@@ -30,16 +30,16 @@ CBS files in which the funcons are defined. The names are hyperlinked to their
 definitions; familiarity with the hierarchy is not required for navigating
 CBS specifications.
 
-Values
-------
-
-The [Values] page introduces the various kinds of values defined in the library.
-
 Computations
 ------------
 
 The [Computations] page introduces the various kinds of computations defined
 in the library.
+
+Values
+------
+
+The [Values] page introduces the various kinds of values defined in the library.
 
 
 [Funcons-Index]: Funcons-Index/index.html
