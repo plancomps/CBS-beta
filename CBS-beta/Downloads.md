@@ -76,7 +76,7 @@ Stop the local server with Control-C when no longer needed.
 
 [`Languages-beta/IMP/IMP-cbs/IMP/IMP-Start/index.html`]: Languages-beta/IMP/IMP-cbs/IMP/IMP-Start/index.html
 
-[`Funcons-beta/Funcons-index/index.html`]: Funcons-beta/Funcons-index/index.html
+[`Funcons-beta/Funcons-Index/index.html`]: Funcons-beta/Funcons-Index/index.html
 
 [Jekyll]: https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/
 
