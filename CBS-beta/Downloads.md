@@ -30,7 +30,7 @@ Browsing specification pages offline
 
 2.  The start web page for Funcons-beta is:
 
-    [`Funcons-beta/Funcons-index/index.html`].
+    [`Funcons-beta/Funcons-Index/index.html`].
 
 The links to non-CBS pages in the menu, headers, and footers do not work when
 browsing the cloned/downloaded files locally. However, the corresponding
