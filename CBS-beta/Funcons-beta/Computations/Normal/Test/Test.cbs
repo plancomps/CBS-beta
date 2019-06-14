@@ -1,0 +1,59 @@
+### Test
+
+#### Test Output
+
+[
+  Entity test-standard-out
+  Funcon test-print
+]
+
+
+Entity
+  _ -- test-standard-out!(_:values*) -> _
+/*
+  This entity represents the sequence of values output by a particular
+  transition, where the empty sequence `( )` represents the lack of output.
+  Composition of transitions concatenates their output sequences.
+*/
+
+
+Funcon
+  test-print(_:values*) : =>null-type
+/*
+  `test-print(X*)` evaluates the arguments `X*` and emits the resulting sequence of
+  values on the standard-out channel. `test-print( )` has no effect.
+*/
+Rule
+  test-print(V*:values*) -- test-standard-out!(V*) -> null-value
+
+
+#### Test Input
+
+[
+  Entity test-standard-in
+  Funcon test-read
+]
+
+Entity
+  _ -- test-standard-in?(_:values*) -> _
+/*
+  This entity represents the sequence of values input by a particular
+  transition, where the empty sequence `( )` represents that no values are
+  input. The value `null-value` represents the end of the input.
+
+  Composition of transitions concatenates their input sequences, except that
+  when the first sequence ends with `null-value`, the second seqeunce has to be
+  just `null-value`.
+*/
+
+
+Funcon
+  test-read : =>values
+/*
+  `test-read` inputs a single value from the standard-in channel, and returns it.
+  If the end of the input has been reached, `test-read` fails.
+*/
+Rule
+  test-read -- test-standard-in?(V:~null-type) -> V
+Rule
+  test-read -- test-standard-in?(null-value) -> fail
