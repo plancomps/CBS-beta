@@ -1,0 +1,36 @@
+@import "./support/support";
+
+i.keyword {
+    color: $grey-dk-000;
+    background-color: inherit;
+}
+
+span.name, span.name a, span.comment span.name a {
+    color: $red-300;
+    background-color: inherit;
+}
+
+span.ent-name, span.ent-name a, span.comment span.ent-name a {
+    color: $grey-dk-300;
+    background-color: inherit;
+}
+
+span.syn-name, span.syn-name a, span.comment span.syn-name a {
+    color: $green-200;
+    background-color: inherit;
+}
+
+i.sem-name, i.sem-name a, span.comment i.sem-name a {
+    color: $blue-200;
+    background-color: inherit;
+}
+
+i.var, i.var a, sub, sup {
+    color: $grey-dk-300;
+    background-color: inherit;
+}
+
+span.sectnumtitle a:link {
+    color: $grey-dk-300;
+    background-color: inherit;
+}
