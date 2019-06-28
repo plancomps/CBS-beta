@@ -2,6 +2,8 @@
 layout: default
 title: Computations
 parent: Funcons-beta
+has_children: true
+permalink: /CBS-beta/Funcons-beta/Computations
 nav_order: 1
 ---
 

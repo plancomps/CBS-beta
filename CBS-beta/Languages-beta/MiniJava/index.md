@@ -2,7 +2,7 @@
 layout: default
 title: MiniJava
 parent: Languages-beta
-nav_order: 4
+nav_order: 3
 ---
 
 MiniJava

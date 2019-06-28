@@ -2,7 +2,7 @@
 layout: default
 title: SIMPLE
 parent: Languages-beta
-nav_order: 3
+nav_order: 2
 ---
 
 SIMPLE

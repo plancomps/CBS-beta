@@ -2,7 +2,7 @@
 layout: default
 title: SL
 parent: Languages-beta
-nav_order: 5
+nav_order: 4
 ---
 
 SL

@@ -2,7 +2,7 @@
 layout: default
 title: Funcon reuse
 parent: Languages-beta
-nav_order: 1
+nav_order: 6
 ---
 
 Funcon Reuse in Languages-beta

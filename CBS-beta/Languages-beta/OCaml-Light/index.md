@@ -2,7 +2,7 @@
 layout: default
 title: OCaml-Light
 parent: Languages-beta
-nav_order: 6
+nav_order: 5
 ---
 
 OCaml Light
