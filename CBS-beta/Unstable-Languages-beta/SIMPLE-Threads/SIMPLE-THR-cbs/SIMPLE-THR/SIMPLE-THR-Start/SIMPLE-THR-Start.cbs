@@ -1,0 +1,25 @@
+Language "SIMPLE-THR"
+
+Syntax
+  START : start ::= pgm
+Semantics
+  start[[_:start]] : =>values
+Rule
+  start[[ Pgm ]] =
+    initialise-binding
+    initialise-storing
+    initialise-giving
+    initialise-memos
+    finalise-failing
+    finalise-throwing
+      multithread 
+        postpone-after-effect run[[ Pgm ]]
+
+[
+  #1 Lexical Syntax
+  #2 Expressions
+  #3 Statements
+  #4 Declarations
+  #5 Programs
+  #A Disambiguation
+]

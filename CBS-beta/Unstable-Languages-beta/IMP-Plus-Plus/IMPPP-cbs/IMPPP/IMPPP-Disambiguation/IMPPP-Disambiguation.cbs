@@ -1,0 +1,30 @@
+Language "IMPPP" 
+
+#A Disambiguation
+
+Lexis SDF
+/*
+lexical syntax 
+  ``id`` = ``keyword`` {reject}
+lexical restrictions
+  ``id`` -/- [A-Za-z0-9]
+*/
+
+Syntax SDF
+/*
+context-free syntax
+``aexp ::= aexp '+' aexp``  {assoc}
+``bexp ::= bexp '&&' bexp`` {assoc}
+
+context-free priorities
+``aexp ::= aexp '/' aexp``
+>
+``aexp ::= aexp '+' aexp``
+>
+``aexp ::= id '=' aexp``
+
+context-free priorities
+``bexp ::= '!' bexp``
+>
+``bexp ::= bexp '&&' bexp``
+*/

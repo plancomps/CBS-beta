@@ -1,0 +1,158 @@
+Language "LD"
+
+[
+#1 Lexical constructs
+#2 Call-by-value lambda-calculus
+#3 Arithmetic and Boolean expressions
+#4 References and imperatives
+#5 Multithreading
+#6 Programs
+#A Disambiguation
+]
+
+// Lexical syntax:
+
+Lexis  X:id  ::= ('a'-'z') ('a'-'z'|'0'-'9')*
+     
+       N:int ::= ('0'-'9')+
+       
+       keyword ::= 'do'  | 'else'  | 'fork'   | 'if'
+                 | 'in'  | 'join'  | 'lambda' | 'let'
+                 | 'ref' | 'spawn' | 'then'   | 'while'
+
+
+// Context-free syntax:
+
+Syntax E:exp ::= int
+               | id
+// Call-by-value lambda-calculus:
+               | 'lambda' id '.' exp
+               | exp exp
+               | 'let' id '=' exp 'in' exp
+               | '(' exp ')'
+// Arithmetic and Boolean expressions:
+               | exp '+' exp
+               | exp '*' exp
+               | exp '/' exp
+               | exp '<=' exp
+               | exp '&&' exp
+               | 'if' exp 'then' exp 'else' exp
+               | 'ref' exp
+               | exp ':=' exp
+               | '!' exp
+               | exp ';' exp
+               | '(' ')'
+               | 'while' exp 'do' exp
+// Multithreading:
+               | 'spawn' exp
+               | 'join' exp
+
+
+// Expression evaluation:
+
+Type ld-values ~> functions(values, values)
+                | integers
+                | booleans
+                | variables
+                | null-type
+                | thread-ids
+
+Semantics eval[[ _:exp ]] : => ld-values
+
+
+#1 Lexical constructs
+
+Rule eval[[ N ]] = decimal \"N\"
+
+Rule eval[[ X ]] = bound \"X\"
+
+
+#2 Call-by-value lambda-calculus
+
+Rule eval[[ 'lambda' X '.' E ]] =
+  function closure
+    scope( bind( \"X\", given ), 
+           eval[[ E ]] )
+
+Rule eval[[ E1 E2 ]] =
+  apply( eval[[ E1 ]], eval[[ E2 ]] )
+
+Rule eval[[ 'let' X '=' E1 'in' E2 ]] =
+    scope( bind( \"X\", eval[[ E1 ]] ), 
+           eval[[ E2 ]] )
+/*
+Desugaring (alternative to the above rule):
+```
+Rule [[ 'let' X '=' E1 'in' E2 ]] : exp =
+     [[ '(' 'lambda' X '.' E2 ')' '(' E1 ')' ]]
+```
+*/
+
+Rule eval[[ '(' E ')' ]] = eval[[ E ]]
+
+
+#3 Arithmetic and Boolean expressions
+
+Rule eval[[ E1 '+' E2 ]] =
+  int-add( eval[[ E1 ]], eval[[ E2 ]] )
+
+Rule eval[[ E1 '*' E2 ]] =
+  int-mul( eval[[ E1 ]], eval[[ E2 ]] )
+
+Rule eval[[ E1 '/' E2 ]] =
+  checked int-div ( eval[[ E1 ]], eval[[ E2 ]] )
+
+Rule eval[[ E1 '<=' E2 ]] =
+  is-less-or-equal l-to-r( eval[[ E1 ]], eval[[ E2 ]] )
+
+Rule eval[[ E1 '&&' E2 ]] =
+  if-true-else( eval[[ E1 ]], eval[[ E2 ]], false )
+
+Rule eval[[ 'if' E1 'then' E2 'else' E3 ]] =
+  if-true-else( eval[[ E1 ]], eval[[ E2 ]], eval[[ E3 ]] )
+
+
+#4 References and imperatives
+
+Rule eval[[ 'ref' E ]] =
+  allocate-initialised-variable( ld-values, eval[[ E ]] )
+
+Rule eval[[ E1 ':=' E2 ]] =
+  assign( eval[[ E1 ]], eval[[ E2 ]] )
+
+Rule eval[[ '!' E ]] = assigned( eval[[ E ]] )
+
+Rule eval[[ E1 ';' E2 ]] =
+  sequential( effect( eval[[ E1 ]] ), eval[[ E2 ]] )
+
+Rule eval[[ '(' ')' ]] = null-value
+
+Rule eval[[ 'while' E1 'do' E2 ]] =
+  while-true( eval[[ E1 ]], eval[[ E2 ]] )
+
+
+#5 Multithreading
+
+/*
+N.B. The funcons for multithreading have not yet been fully validated,
+so they are defined in Unstable-Funcons-beta instead of Funcons-beta.
+*/
+
+Rule eval[[ 'spawn' E ]] =
+  thread-activate thread-joinable thunk closure eval[[ E ]]
+  
+Rule eval[[ 'join' E ]] = thread-join( eval[[ E ]] )
+
+
+#6 Programs
+
+Syntax START:start ::= exp
+
+Semantics start[[ _:start ]] : =>values
+
+Rule start[[ E ]] =
+  initialise-binding 
+  initialise-storing
+  finalise-failing
+  multithread
+    eval[[ E ]]

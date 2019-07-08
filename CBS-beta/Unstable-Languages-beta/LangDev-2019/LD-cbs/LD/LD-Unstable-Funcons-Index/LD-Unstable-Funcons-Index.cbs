@@ -1,0 +1,25 @@
+/*
+Unstable Funcons, for use only in Unstable Languages
+*/
+
+# Computations
+
+## Threads
+
+### Multithreading
+[
+  Datatype thread-ids
+  Funcon   thread-joinable
+]
+
+#### Activation
+[
+  Funcon   multithread
+  Funcon   thread-activate
+]
+
+#### Termination
+[
+  Funcon   thread-join
+]
+

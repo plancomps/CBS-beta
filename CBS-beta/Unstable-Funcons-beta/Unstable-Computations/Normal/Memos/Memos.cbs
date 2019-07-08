@@ -1,0 +1,64 @@
+### Memos
+[
+  Entity   memo-map
+  Funcon   initialise-memos
+  Funcon   memo-value
+  Funcon   initialise-memo-value
+  Funcon   memo-value-recall
+]
+/*
+A memo is like a mutable variable, except that the memo is updated and
+accessed by a specified key, rather than by an allocated location. The
+collection of memos is represented by a mutable entity that maps keys
+to values.
+*/
+Entity 
+  < _ , memo-map(_:maps(ground-values, values)) > --->
+  < _ , memo-map(_:maps(ground-values, values)) >
+Funcon
+  initialise-memos(_:=>values) : =>values
+Rule
+  < initialise-memos(X) , memo-map(_) > ---> < X , memo-map(map( )) >
+/*
+When key `K` is associated with value `V`, the funcon `memo-value(K, X)`
+simply gives `V`, without evaluating `X`. When `K` is not currently
+associated with any value, it associates `K` with the value computed
+by `X`.
+*/
+Funcon
+  memo-value(K:ground-values, X:=>values) : =>values
+   ~> else(memo-value-recall(K),
+        give(X,
+          sequential(
+            else(initialise-memo-value(K, given), null-value),
+            memo-value-recall(K))))
+/*
+The initialisation could fail due to memoisation of a (potentially
+different) value for `K` during the computation `X`. In that case,
+the value computed by `X` is simply discarded; a resource-safe
+funcon would take an extra argument to roll back the effects of `X`.
+*/
+
+Funcon
+  initialise-memo-value(_:ground-values, _:values) : =>null-type
+Rule
+  map-unite(M, {K |-> V}) ~> M'
+  -----------------------------------------------------------------
+  < initialise-memo-value(K:ground-values, V:values), memo-map(M) >
+    ---> < null-value , memo-map(M') >
+Rule
+  map-unite(M, {K |-> V}) ~> ( )
+  -----------------------------------------------------------------
+  < initialise-memo-value(K:ground-values, V:values), memo-map(M) >
+    ---> < fail , memo-map(M) >
+
+Funcon
+  memo-value-recall(_:ground-values) : =>values
+Rule
+  lookup(M, K) ~> V
+  ----------------------------------------------------------------------------
+  < memo-value-recall(K:ground-values), memo-map(M) > ---> < V , memo-map(M) >
+Rule
+  lookup(M, K) ~> ( )
+  -------------------------------------------------------------------------------
+  < memo-value-recall(K:ground-values), memo-map(M) > ---> < fail , memo-map(M) >

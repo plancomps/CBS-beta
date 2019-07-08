@@ -1,0 +1,34 @@
+### Value indexing
+[
+  Entity   value-index
+  Funcon   initialise-index
+  Funcon   allocate-index
+  Funcon   lookup-index
+]
+/*
+The following funcons support indexing of values by natural numbers.
+They could be enhanced to ensure that each value has at most one index,
+and to allow finding the index of a value.
+*/
+Entity
+  < _ , value-index(_:ground-values*) > --->
+  < _ , value-index(_:ground-values*) >
+Funcon
+  initialise-index : =>null-type
+Rule
+  < initialise-index, value-index(_) > ---> < null-value, value-index( ) >
+
+Funcon
+  allocate-index(_:ground-values) : =>natural-numbers
+Rule
+  < allocate-index(V:ground-values), value-index(V*) > --->
+  < length(V*, V), value-index(V*, V) >
+
+Funcon
+  lookup-index(_:natural-numbers) : =>ground-values
+Rule
+  < lookup-index(N:natural-numbers), value-index(V*) > --->
+  < index(N, V*), value-index(V*) >
+
+Assert
+  lookup-index(allocate-index(V:ground-values)) ---> V

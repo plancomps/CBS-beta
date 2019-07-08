@@ -1,24 +1,5 @@
 Language "SIMPLE"
 
-/*
-  The SIMPLE language is described in the following publication:
-  	
-    K Overview and SIMPLE Case Study.
-    Grigore Rosu and Traian Florin Serbanuta.
-    K'11, ENTCS 304, pp 3-56, 2014.
-    http://dx.doi.org/10.1016/j.entcs.2014.05.002
-
-  Our CBS definition does not include the concurrency aspects of SIMPLE, as
-  fundamental constructs for concurrency are not yet available in the funcon
-  repository, but all other SIMPLE language constructs are specified.
-
-  Note that our defintion uses a more precise abstract syntax grammar than
-  presented in the above publication.  In particular, rather than allowing
-  arbitrary expressions as variable declarators and l-expressions, we introduce
-  specialised productions.  We also make use of "?" (optional) to avoid the
-  need for multiple productions for variations of the same syntactic construct.  
-*/
-
 Syntax
   START : start ::= pgm
 Semantics
@@ -37,25 +18,3 @@ Rule
   #5 Programs
   #A Disambiguation
 ]
-
-/* CBS-beta/Languages-beta/SIMPLE/SIMPLE-cbs released 2018-07-07
-
-* Status: 
-  - abstract syntax:   complete, derived from [K Overview and SIMPLE Case Study]
-  - dynamic semantics: complete except for concurrency constructs
-  - static semantics:  not specified
-  - disambiguation:    incomplete
-* Tests:
-  - 53 small programs
-  - high coverage (to be verified)
-* Evolution:
-  - initial version
-* References:
-  [K Overview and SIMPLE Case Study]: 
-    http://dx.doi.org/10.1016/j.entcs.2014.05.002
-* Keywords: 
-  - imperative, illustrative, simple, disambiguation, K framework
-* Main contributors:
-  - Thomas van Binsbergen, Peter Mosses, Neil Sculthorpe
-
-*/

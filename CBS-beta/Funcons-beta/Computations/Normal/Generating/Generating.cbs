@@ -22,7 +22,7 @@ Built-in Type
 
 
 Entity
-  < _ , used-atom-set(_:set(atoms)) > ---> < _ , used-atom-set(_:set(atoms)) >
+  < _ , used-atom-set(_:sets(atoms)) > ---> < _ , used-atom-set(_:sets(atoms)) >
 
 
 Built-in Funcon

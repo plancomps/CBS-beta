@@ -1,0 +1,39 @@
+/*
+Unstable Funcons, for use only in Unstable Languages
+*/
+
+# Computations
+
+## Normal computation
+
+### Value indexing
+[
+  Funcon   initialise-index
+  Funcon   allocate-index
+  Funcon   lookup-index
+]
+
+## Threads
+
+### Multithreading
+[
+  Funcon   thread-joinable
+]
+
+#### Activation
+[
+  Funcon   multithread
+  Funcon   thread-activate
+]
+
+#### Execution
+[
+  Funcon   current-thread 
+]
+
+#### Termination
+[
+  Funcon   thread-terminate
+  Funcon   thread-join
+]
+

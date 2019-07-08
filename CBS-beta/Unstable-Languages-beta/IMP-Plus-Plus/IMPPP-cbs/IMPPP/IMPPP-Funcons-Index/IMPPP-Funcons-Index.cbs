@@ -1,0 +1,199 @@
+# Computations
+
+## Normal computation
+
+### Flowing
+[
+  Funcon   left-to-right   Alias l-to-r
+  Funcon   sequential      Alias seq
+  Funcon   effect
+  Funcon   if-true-else    Alias if-else
+  Funcon   while-true      Alias while
+  Funcon   atomic
+]
+
+### Giving
+[
+  Entity   given-value
+  Funcon   give
+  Funcon   given
+  Funcon   no-given
+  Funcon   left-to-right-filter
+]
+
+### Binding
+[
+  Type     environments       Alias envs
+  Datatype identifiers        Alias ids
+  Funcon   initialise-binding
+  Funcon   bind-value         Alias bind
+  Funcon   bound-value        Alias bound
+  Funcon   scope
+  Funcon   collateral
+]
+
+### Generating
+[
+  Type     atoms
+  Funcon   fresh-atom
+]
+
+### Storing
+[
+  Entity   store
+  Funcon   initialise-storing
+  Funcon   allocate-variable             Alias alloc
+  Funcon   allocate-initialised-variable Alias alloc-init
+  Funcon   assign
+  Funcon   assigned
+  Funcon   un-assign
+]
+
+### Interacting
+
+#### Input
+[
+  Funcon   read
+]
+
+#### Output
+[
+  Funcon   print
+]
+
+## Abnormal computation
+
+### Terminating abruptly
+[
+  Entity   abrupted
+  Funcon   handle-abrupt
+]
+
+### Failing
+[
+  Funcon   finalise-failing
+  Funcon   fail
+  Funcon   else
+  Funcon   checked
+  Funcon   check-true
+]
+
+# Values
+
+## Value Types
+[
+  Type   values           Alias vals
+  Funcon is-value         Alias is-val
+  Funcon when-true        Alias when
+  Type   ground-values    Alias ground-vals
+  Funcon is-equal         Alias is-eq
+]
+
+## Primitive values
+
+### Booleans
+[
+  Datatype booleans      Alias bools
+  Funcon   true
+  Funcon   false
+  Funcon   not
+  Funcon   and
+]
+
+### Integers
+[
+  Type     integers                     Alias ints
+  Type     positive-integers            Alias pos-ints
+  Type     natural-numbers              Alias nats
+  Funcon   natural-successor            Alias nat-succ
+  Funcon   natural-predecessor          Alias nat-pred
+  Funcon   integer-add                  Alias int-add
+  Funcon   integer-divide               Alias int-div
+  Funcon   integer-negate               Alias int-neg
+  Funcon   integer-is-less-or-equal     Alias is-less-or-equal
+  Funcon   integer-is-greater           Alias is-greater
+  Funcon   decimal-natural              Alias decimal
+]
+
+### The null value
+
+[
+  Datatype null-type
+  Funcon   null-value Alias null
+]
+
+## Composite values
+
+### Sequences of values
+[
+  Funcon   length
+  Funcon   index
+  Funcon   first
+  Funcon   second
+]
+
+### Tuples
+[
+  Datatype tuples
+  Funcon   tuple-elements
+]
+
+### Lists
+[
+  Datatype lists
+  Funcon   list-elements
+  Funcon   list-cons      Alias cons
+  Funcon   list-head      Alias head
+  Funcon   list-tail      Alias tail
+  Funcon   list-append
+]
+
+### Strings
+[
+  Type     strings
+  Funcon   string-append
+]
+
+### Sets
+[
+  Type     sets
+  Funcon   is-in-set
+  Funcon   is-subset
+  Funcon   set-unite
+  Funcon   set-intersect
+  Funcon   set-difference
+  Funcon   some-element
+]
+
+### Maps
+[
+  Type     maps
+  Funcon   map
+  Funcon   map-lookup    Alias lookup
+  Funcon   map-domain    Alias dom
+  Funcon   map-override
+  Funcon   map-unite
+  Funcon   map-delete
+]
+
+## Abstraction values
+
+### Generic abstractions
+[
+  Type     abstractions
+  Funcon   abstraction
+  Funcon   closure
+]
+
+### Thunks
+[
+  Datatype thunks
+  Funcon   thunk
+]
+
+### Functions
+[
+  Funcon   apply
+  Funcon   supply
+]
+

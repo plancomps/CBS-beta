@@ -1,0 +1,678 @@
+### Multithreading
+[
+  Datatype thread-ids
+  Datatype threads
+  Funcon   thread-joinable
+  Funcon   thread-detached
+]
+
+#### Initialisation
+[
+  Funcon   initialise-multithreading
+]
+
+#### Activation
+[
+  Funcon   multithread
+  Funcon   thread-activate
+  Funcon   thread-detach
+]
+
+#### Execution
+[
+  Funcon   current-thread 
+  Funcon   thread-atomic
+  Funcon   thread-yield
+  Funcon   thread-spin
+  Funcon   thread-suspend
+  Funcon   thread-resume
+]
+
+#### Termination
+[
+  Funcon   thread-terminate
+  Funcon   is-thread-terminated
+  Funcon   thread-value
+  Funcon   thread-join
+  Funcon   thread-exterminate
+]
+
+#### Scheduling
+[
+  Funcon   update-thread-stepping
+  Funcon   update-thread-schedule
+  Funcon   current-thread-schedule
+  Funcon   is-thread-preemptible
+  Funcon   thread-preemptible
+  Funcon   thread-cooperative
+]
+/*
+A thread consists of code that can be executed concurrently with code
+of other threads. The progress of the execution of the threads may be
+determined cooperatively by threads themselves, or by a preemptive
+scheduler (or by both).
+
+Threads can be activated by the initial program or by other threads, 
+and share access to the same entities (in contrast to processes). 
+Synchronisation between threads can avoid interference (e.g., data
+races) arising from concurrent shared access. Synchronisation can also
+ensure *sequential consistency* of threads, where any concurrent
+execution corresponds to some (possibly unfair) interleaving of their
+separate execution steps. Synchronisation can be achieved by various
+kinds of locks and notifications.
+
+A thread is a value containing a thunk. When a thread has been activated,
+execution of the body of the thunk can be interleaved with that of other
+activated threads, possibly subject to scheduling and synchronisation.
+
+Activation of a thread generates a fresh thread-id for referring to it:
+*/
+Auxiliary Datatype
+  thread-ids ::= thread-id(_:atoms)
+/*
+A thread is called joinable when other threads can wait for its
+termination. A joinable thread contains a list of the threads that
+are currently waiting to join it. A non-joinable thread is called
+detached:
+*/
+Auxiliary Datatype
+  threads ::= thread(_:thunks(values), _:(lists thread-ids)?)
+Funcon
+  thread-joinable(TH:thunks(values)) : => threads
+   ~> thread(TH, [ ])
+ Funcon
+  thread-detached(TH:thunks(values)) : => threads
+   ~> thread(TH)
+/*
+In names of funcons and entities, and in informal explanations,
+a reference to a 'thread' generally concerns a thread-id, rather
+than a value of type `threads`. The only funcons that compute 
+`threads` are `thread-joinable(TH)` and `thread-detached(TH)`;
+`thread-activate(THR)` is the only funcon that takes an argument
+of type `threads`.
+
+The thunk contained in a thread can be formed directly from a
+computation `X` by `thunk closure X`. Alternatively, `supply(F, V)`
+forms a thunk by supplying an argument value `V` to a function `F`
+without executing `F` (in contrast to `apply(F, V)`, which forces
+the evaluation of the body of `F`).
+
+The current state of a thread is either active, suspended, terminated,
+or deleted.
+
+- Activation makes a thread active.
+- An active thread can be suspended, and subsequently resumed.
+- An active or suspended thread can be terminated.
+- A thread can be deleted.
+
+The following mutable entities represent the states of all activated
+threads.
+*/
+
+#### Entities
+/*
+The `thread-map` contains all active and suspended threads:
+*/
+Entity
+  < _ , thread-map(_:maps(thread-ids, threads)) > --->
+  < _ , thread-map(_:maps(thread-ids, threads)) >
+/*
+The `active-thread-set` distinguishes between active and suspended
+threads:
+*/
+Entity
+  < _ , active-thread-set(_:sets(thread-ids)) > --->
+  < _ , active-thread-set(_:sets(thread-ids)) >
+Funcon
+  is-some-thread-active : =>booleans
+Rule
+  < is-some-thread-active, active-thread-set(ATS) >
+    ---> not is-equal(ATS, {})
+Funcon
+  is-some-thread-suspended : =>booleans
+Rule
+  < is-some-thread-suspended, active-thread-set(ATS), thread-map(TM) >
+    ---> not is-equal(ATS, dom TM)
+/*
+The `thread-stepping` entity identifies the thread whose step is
+currently being executed. When defined, it identifies an active thread:
+*/
+Entity
+  < _ , thread-stepping(_:thread-ids?) > --->
+  < _ , thread-stepping(_:thread-ids?) >
+/*
+The `terminated-thread-map` contains the values computed by terminated
+joinable threads:
+*/
+Entity
+  < _ , terminated-thread-map(_:maps(thread-ids, values)) > --->
+  < _ , terminated-thread-map(_:maps(thread-ids, values)) >
+/*
+Deleted threads are not contained in any of the above entities.
+Terminated detached threads are always deleted.
+
+Scheduling information for each thread may affect the interleaving
+of thread steps:
+*/
+Entity // thread-scheduling
+  < _ , thread-schedule(_:sets(ground-values)) > --->
+  < _ , thread-schedule(_:sets(ground-values)) >
+/*
+Scheduling can change dynamically between preemptive and cooperative. 
+*/
+
+#### Initialisation
+/*
+The entities used to model multithreading need initialising:
+*/
+Funcon
+  initialise-multithreading : =>null-type ~>
+  sequential(
+    initialise-thread-map,
+    initialise-active-thread-set,
+    initialise-thread-stepping,
+    initialise-terminated-thread-map,
+    initialise-thread-schedule)
+/*
+The initial values are generally quite obvious:
+*/
+Auxiliary Funcon
+  initialise-thread-map : =>null-type
+Rule
+  initialise-thread-map
+    ---> < null-value, thread-map(map()) >
+Auxiliary Funcon
+  initialise-active-thread-set : =>null-type
+Rule
+  initialise-active-thread-set
+    ---> < null-value, active-thread-set{ } >
+Auxiliary Funcon
+  initialise-thread-stepping : =>null-type
+Rule
+  initialise-thread-stepping
+    ---> < null-value, thread-stepping( ) >
+Auxiliary Funcon
+  initialise-terminated-thread-map : =>null-type
+Rule
+  initialise-terminated-thread-map
+    ---> < null-value, terminated-thread-map(map()) >
+Auxiliary Funcon
+  initialise-thread-schedule : =>null-type
+Rule
+  initialise-thread-schedule
+    ---> < null-value, thread-schedule{ } >
+
+#### Activation
+/*
+Multithreading can start by activating a single thread, which can then
+activate further threads:
+*/
+Funcon
+  multithread(_:=>values) : =>values
+/*
+`multithread X` forms a joinable thread from `thunk closure X` and
+activates it. On normal termination of all threads, it gives the value
+computed by `X`. On abrupt termination (caused by a thread step, or by
+the failure of the check that all threads have terminated) the reason
+for it:
+*/
+Rule
+  multithread X ~>
+    sequential(
+      initialise-multithreading,
+      give(
+        thread-activate thread-joinable thunk closure X, // gives TI
+        handle-abrupt(
+          sequential(
+            while-true(is-some-thread-active,
+              sequential(update-thread-stepping, thread-step)),
+            check not is-some-thread-suspended, // deadlock
+            thread-value given), // given is TI
+          given) // given is the reason for abruption
+      ))
+/*
+The `update-thread-stepping` funcon determines the thread-id for the next step,
+which may depend on whether the previous step has yielded, on its
+preemptibility, and on the current scheduling.
+
+A thread can activate the execution of thread-activates:
+*/
+Funcon
+  thread-activate(_:threads) : =>thread-ids
+/*
+When a thread is activated, a fresh thread-id is generated, and the
+thread is included in the thread-map and the active-thread-set:
+*/
+Rule
+  thread-id(fresh-atom) ---> TI
+  map-unite({TI |-> THR}, TM) ~> TM'
+  set-unite({TI}, ATS) ~> ATS'
+  ------------------------------------------------------------------------
+  < thread-activate(THR:threads), thread-map(TM), active-thread-set(ATS) >
+    ---> < TI, thread-map(TM'), active-thread-set(ATS') >
+/*
+A joinable thread can be detached after its activation, discarding its
+list of joining threads:
+*/
+Funcon
+  thread-detach(_:thread-ids) : =>null-type
+/*
+When the thread has not yet terminated, it remains in the thread-map:
+*/
+Rule
+  map-lookup(TM, TI) ~> thread(TH, _)
+  map-override({TI |-> thread(TH)}, TM) ~> TM'
+  ------------------------------------------------
+  < thread-detach(TI:thread-ids), thread-map(TM) >
+    ---> < null-value, thread-map(TM') >
+/*
+When the thread has already terminated, detaching it deletes it from
+the terminated-thread-map:
+*/
+Rule
+  is-in-set(TI, dom TMV) == (true)
+  map-delete(TMV, {TI}) ~> TMV'
+  ------------------------------------------------------------
+  < thread-detach(TI:thread-ids), terminated-thread-map(TMV) >
+    ---> < null-value, terminated-thread-map(TMV') >
+/*
+(A funcon for making a detached thread joinable could be defined
+similarly.)
+*/
+
+#### Execution
+/*
+The thread-stepping is undefined only before multithreading starts,
+and when all non-terminated threads are suspended.
+*/
+Funcon
+  current-thread : =>thread-ids
+Rule
+  < current-thread, thread-stepping(TI) > ---> TI
+/*
+`current-thread` is only intended for use in threads:
+*/
+Rule
+  < current-thread, thread-stepping( ) > ---> fail
+
+##### Stepping
+/*
+The funcon `thread-step` executes a single step of the thread identified 
+by `thread-stepping`:
+*/
+Auxiliary Funcon
+  thread-step : =>null-type
+/*
+Whenever `THR` executes a step and `THR'` represents the remaining
+steps, the thread-map is updated to map `TI` to `THR'`.  
+
+If the body of the thread can make a step, so can `thread-step`:
+*/
+Rule
+  lookup(TM, TI) ~> thread(thunk abstraction(X), L?)
+  < X, thread-stepping(TI), thread-map(TM) > 
+    ---> < X', thread-stepping(TI?), thread-map(TM') >
+  if-true-else(
+    is-in-set(TI, dom TM'),
+    map-override({TI |-> thread(thunk abstraction(X'), L?)}, TM'), 
+    TM')
+    ~> TM''
+  ----------------------------------------------------------------
+  < thread-step, thread-stepping(TI), thread-map(TM) > 
+    ---> < null-value, thread-stepping(TI?), thread-map(TM'') >
+/*
+The only other case for a next step is when a thread has terminated
+normally, and is to be removed from the executing thread map.
+
+If it is detached, its computed value is discarded:
+*/
+Rule
+ lookup(TM, TI) ~> thread(thunk abstraction(X))
+ X ~> (V:values)
+ map-delete(TM, {TI}) ~> TM'
+ set-difference(ATS, {TI}) ~> ATS'
+ ----------------------------------------------------------------------------
+ < thread-step, active-thread-set(ATS), thread-stepping(TI), thread-map(TM) >
+ --->
+ < null-value, active-thread-set(ATS'), thread-stepping( ), thread-map(TM') >
+/*
+If the thread is joinable, all its joining threads are resumed, and its
+computed value is made available in the terminated-thread-map:
+*/
+Rule
+ lookup(TM, TI) ~> thread(thunk abstraction(X), [TI*])
+ X ~> (V:values)
+ map-delete(TM, {TI}) ~> TM'
+ set-unite(set-difference(ATS, {TI}), {TI*}) ~> ATS'
+ map-unite(TVM, {TI |-> V}) ~> TVM'
+ -----------------------------------------------------------
+ < thread-step, active-thread-set(ATS), thread-stepping(TI), 
+   thread-map(TM), terminated-thread-map(TVM) >
+ --->
+ < null-value, active-thread-set(ATS'), thread-stepping( ), 
+   thread-map(TM'), terminated-thread-map(TVM') >
+
+##### Sync atomicity
+/*
+`thread-atomic(X)` computes `X` in a single transition. Assuming that the
+potentially interfering effects of `X` may only be updates on the store,
+thread suspension and/or resumption, and abrupt termination, and that `X`
+always terminates, the outcome of `thread-atomic(X)` is the same as that of
+computing `X` without preemption.
+
+(The funcon `atomic(X)` generalises `thread-atomic(X)` to allow `X` with
+arbitrary effects. When the CBS notation "--->1 ; --->2" for composing
+transitions has been implemented by the interpreter generation tools,
+uses of `thread-atomic(X)` are to be replaced by `atomic(X)`.)
+*/
+Auxiliary Funcon
+  thread-atomic(_:=>values) : =>values
+Rule
+  < X, store(Sigma), active-thread-set(ATS), thread-stepping(TI) >
+    --abrupted( )-> 
+    < X', store(Sigma'), active-thread-set(ATS'), thread-stepping(TI') >
+  < thread-atomic(X'), store(Sigma'), active-thread-set(ATS'), thread-stepping(TI') >
+    --abrupted( )->
+    < V, store(Sigma''), active-thread-set(ATS''), thread-stepping(TI''?) >
+  ---------------------------------------------------------------------------------
+  < thread-atomic(X), store(Sigma), active-thread-set(ATS), thread-stepping(TI) >
+    --abrupted( )->
+    < V, store(Sigma''), active-thread-set(ATS''), thread-stepping(TI''?) >
+Rule
+  < X, store(Sigma), active-thread-set(ATS), thread-stepping(TI) >
+    --abrupted( )-> 
+    < X', store(Sigma'), active-thread-set(ATS'), thread-stepping(TI') >
+  < thread-atomic(X'), store(Sigma'), active-thread-set(ATS'), thread-stepping(TI') >
+    --abrupted(A)->
+    < V, store(Sigma''), active-thread-set(ATS''), thread-stepping(TI''?) >
+  ---------------------------------------------------------------------------------
+  < thread-atomic(X), store(Sigma), active-thread-set(ATS), thread-stepping(TI) >
+    --abrupted(A)->
+    < V, store(Sigma''), active-thread-set(ATS''), thread-stepping(TI''?) >
+Rule
+  X --abrupted(A)-> X'
+  ----------------------------------------------
+  thread-atomic(X) --abrupted(A)-> thread-atomic(X')
+Rule
+  X --abrupted( )-> (V:values)
+  --------------------------------
+  thread-atomic(X) --abrupted( )-> V
+Rule
+  X --abrupted(A)-> (V:values)
+  ---------------------------------------------
+  thread-atomic(X) --abrupted(A)-> thread-atomic(V)
+Rule
+  thread-atomic(V:values) ---> V
+/*
+Note that if the execution of `thread-atomic(X)` involves `thread-yield( )` or
+`thread-suspend( )`, this makes thread-stepping undefined, so it has to be the
+final step of `X`.
+*/
+
+##### Yielding
+/*
+A thread can yield execution:
+*/
+Funcon
+  thread-yield(_:thread-ids?) : =>null-type
+/*
+When the argument thread-id is omitted, the next thread to be executed
+is left undefined, to be determined by the scheduler:
+*/
+Rule
+  thread-yield( )
+    ---> < null-value, thread-stepping( ) >
+/*
+When the argument thread-id is `TI`, it has to be an active thread:
+*/
+Rule
+  is-in-set(TI, ATS) == (true)
+  -------------------------------------------------------
+  < thread-yield(TI:thread-ids), active-thread-set(ATS) >
+    ---> < null-value, thread-stepping(TI) >
+Rule
+  is-in-set(TI, ATS) == (false)
+  -------------------------------------------------------
+  < thread-yield(TI:thread-ids), active-thread-set(ATS) >
+    ---> fail
+/*
+`thread-spin(X)` repeatedly executes `X` while it fails, allowing interleaving
+with other threads.
+*/
+Funcon
+  thread-spin(X:=>values) : =>values
+   ~> else(X, 
+        sequential(thread-yield( ), thread-spin(X)))
+
+##### Suspension and resumption
+/*
+A thread may suspend one or more threads that are currently being
+executed:
+*/
+Funcon
+  thread-suspend(_:thread-ids+) : =>null-type
+Rule
+  is-in-set(TI, {TI+}) == (false)
+  is-subset({TI+}, ATS) == (true)
+  set-difference(ATS, {TI+}) ~> ATS'
+  --------------------------------------------------------------------------------
+  < thread-suspend(TI+:thread-ids+), thread-stepping(TI), active-thread-set(ATS) >
+    ---> < null-value, thread-stepping(TI), active-thread-set(ATS') >
+/*
+If `TI+` includes the current thread, suspension is accompanied by
+yielding:
+*/
+Rule
+  is-in-set(TI, {TI+}) == (true)
+  is-subset({TI+}, ATS) == (true)
+  set-difference(ATS, {TI+}) ~> ATS'
+  --------------------------------------------------------------------------------
+  < thread-suspend(TI+:thread-ids+), thread-stepping(TI), active-thread-set(ATS) >
+    ---> < null-value, thread-stepping( ), active-thread-set(ATS') >
+/*
+(Deadlock occurs if the last non-suspended thread suspends itself.)
+
+A thread may resume any number of suspended threads:
+*/
+Funcon
+  thread-resume(_:thread-ids*) : =>null-type
+Rule
+  is-in-set(TI, {TI*}) == (false)
+  set-intersect(ATS, {TI*}) == { }
+  set-unite(ATS, {TI*}) ~> ATS'
+  -------------------------------------------------------------------------------
+  < thread-resume(TI*:thread-ids*), thread-stepping(TI), active-thread-set(ATS) >
+    ---> < null-value, thread-stepping(TI), active-thread-set(ATS') >
+
+#### Termination
+
+/*
+If the thread-map becomes empty, and there are no suspended threads,
+the entire multithread computation terminates normally. If it becomes
+empty while suspended threads remain to be executed, this is regarded
+as deadlock, and the computation fails.
+
+If the execution of an individual thread terminates normally, the body
+of its thunk gives its computed value. The thread is removed from the
+thread-map, and the computed value is added to the terminated-thread-map.
+
+Abrupt termination of a thread body causes immediate abrupt termination
+of the entire multithread computation. This can be avoided by wrapping
+the bodies of all threads in appropriate handlers for abrupt termination.
+
+A thread can terminate itself or another thread, optionally specifying
+its computed value:
+*/
+Funcon
+  thread-terminate(_:thread-ids, _:values?) : =>null-type
+/*
+When the thread is detached, no value is specified:
+*/
+Rule
+  lookup(TM, TI') ~> thread(thunk abstraction X)
+  map-delete(TM, {TI'}) ~> TM'
+  set-difference(ATS, {TI'}) ~> ATS'
+  when-true(not is-equal(TI, TI'), TI) ~> TI?
+  --------------------------------------------------------
+  < thread-terminate(TI':thread-ids), thread-stepping(TI), 
+    thread-map(TM), active-thread-set(ATS) >
+  ---> < null-value, thread-stepping(TI?), 
+         thread-map(TM'), active-thread-set(ATS') >
+/*
+When the thread is joinable, its value has to be specified:
+*/
+Rule
+  lookup(TM, TI') ~> thread((thunk abstraction X), [TI*])
+  map-delete(TM, {TI'}) ~> TM'
+  set-unite(set-difference(ATS, {TI'}), {TI*}) ~> ATS'
+  map-unite(TVM, {TI' |-> V}) ~> TVM'
+  when-true(not is-equal(TI, TI'), TI) ~> TI?
+ ----------------------------------------------------------------------------
+  < thread-terminate(TI':thread-ids, V:values), thread-stepping(TI), 
+    thread-map(TM), terminated-thread-map(TVM), active-thread-set(ATS) >
+    ---> < null-value, thread-stepping(TI?), 
+           thread-map(TM'), terminated-thread-map(TVM'), active-thread-set(ATS') >
+/*
+A thread can test whether a joinable thread has terminated:
+*/
+Funcon
+  is-thread-terminated(_:thread-ids) : =>booleans
+Rule
+  < is-thread-terminated(TI:thread-ids), terminated-thread-map(TVM) >
+    ---> is-value(map-lookup(TVM, TI))
+/*
+If so, it can get the computed value:
+*/
+Funcon
+  thread-value(_:thread-ids) : =>values
+Rule
+  < thread-value(TI:thread-ids), terminated-thread-map(TVM) >
+    ---> checked map-lookup(TVM, TI)
+/*
+Joining a thread may cause suspension:
+*/
+Funcon
+  thread-join(_:thread-ids) : =>null-type
+Rule
+  lookup(TM, TI') ~> thread(TH, [TI*])
+  map-override({TI' |-> thread(TH, [TI*, TI])}, TM) ~> TM'
+  set-difference(ATS, {TI}) ~> ATS'
+  -------------------------------------------------------------------
+  < thread-join(TI':thread-ids), thread-map(TM), thread-stepping(TI),
+    active-thread-set(ATS) >
+    ---> < null-value, thread-map(TM'), 
+           thread-stepping( ), active-thread-set(ATS') >
+/*
+If a joinable thread has already terminated, the `terminated-thread-map`
+holds its value:
+*/
+Rule
+  is-value(lookup(TVM, TI')) == true
+  -----------------------------------------------------------
+  < thread-join(TI':thread-ids), terminated-thread-map(TVM) >
+    ---> null-value
+/*
+Trying to join a detached thread fails:
+*/
+Rule
+  lookup(TM, TI') ~> thread(TH)
+  -----------------------------------------------
+  < thread-join(TI':thread-ids), thread-map(TM) >
+    ---> fail
+Rule
+  lookup(TM, TI') == ( )
+  lookup(TVM, TI') == ( )
+  ---------------------------------------------------------------------------
+  < thread-join(TI':thread-ids), thread-map(TM), terminated-thread-map(TVM) >
+    ---> fail
+/*
+Extermination of a thread both terminates it and prevents its subsequent
+inspection.
+*/
+Funcon
+  thread-exterminate(_:thread-ids) : =>null-type
+Rule
+  TI' =/= TI
+  map-delete(TM, {TI'}) ~> TM'
+  map-delete(TVM, {TI'}) ~> TVM'
+  set-difference(ATS, {TI'}) ~> ATS'
+  --------------------------------------------------------------------------
+  < thread-exterminate(TI':thread-ids), thread-map(TM), thread-stepping(TI), 
+    terminated-thread-map(TVM), active-thread-set(ATS) >
+    --->
+    < null-value, thread-map(TM'), thread-stepping(TI),
+      terminated-thread-map(TVM'), active-thread-set(ATS') >
+
+#### Scheduling
+
+/*
+A scheduler determines the interleaving of thread execution, based on
+mutable information regarding features such as preemptibility, priority,
+and time-sharing.
+
+The next thread scheduled for execution is an active thread, or
+undefined when there are no active threads. It may be the same thread
+that last made a step.
+
+(The following definitions allow `update-thread-stepping` to update
+`thread-stepping` to any valid thread. They are to be replaced by
+declarations of built-in funcons, allowing exploration of different
+interleavings using oracles.)
+*/
+Funcon
+  update-thread-stepping : =>null-type
+/*
+When `thread-stepping` is `TI` and that thread is not preemptible,
+`update-thread-stepping` has no effect:
+*/
+Rule
+  is-thread-preemptible(TI) ---> false
+  ---------------------------------------------------------------
+  < update-thread-stepping, thread-stepping(TI) > ---> null-value
+/*
+When  `thread-stepping` is `TI` and that thread is preemptible, or when
+`thread-stepping` is undefined, `update-thread-stepping` may set it to any
+active `TI'`:
+*/
+Rule
+  is-thread-preemptible(TI) ---> (true)
+  some-element(ATS) ~> TI'
+  -----------------------------------------------------------------------
+  < update-thread-stepping, thread-stepping(TI), active-thread-set(ATS) >
+    ---> < null-value, thread-stepping(TI') >
+Rule
+  some-element(ATS) ~> TI'
+  ----------------------------------------------------------------------
+  < update-thread-stepping, thread-stepping( ), active-thread-set(ATS) >
+    ---> < null-value, thread-stepping(TI') >
+/*
+When there are no active threads, `update-thread-stepping` ensures that
+`thread-stepping` is undefined:
+*/
+Rule
+  < update-thread-stepping, thread-stepping(TI?), active-thread-set{ } >
+    ---> < null-value, thread-stepping( ) >
+/*
+Scheduling information for each thread can be inspected and updated:
+*/
+Funcon
+  update-thread-schedule(_:sets(ground-values)) : =>null-type
+Rule
+   update-thread-schedule(VS:sets(ground-values))
+     ---> < null-value, thread-schedule(VS) >
+Funcon
+  current-thread-schedule : =>sets(ground-values)
+Rule
+  < current-thread-schedule, thread-schedule(VS) > ---> VS
+
+Datatype
+  thread-preemtibilities ::= thread-preemptible | thread-cooperative
+Funcon
+  is-thread-preemptible(_:thread-ids) : =>booleans
+    ~> not is-in-set(thread-cooperative, current-thread-schedule)
+/*
+For now, all threads are preemptible unless the scheduling includes cooperative.
+
+The representation of scheduling information is left open here, together with
+the details of how it affects the result of `update-thread-stepping`.
+*/

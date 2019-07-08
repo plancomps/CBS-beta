@@ -13,9 +13,9 @@ Rule
     initialise-giving
     finalise-failing
       run[[P]]
-
-// Contents:
-
+/*
+Contents:
+*/
 [
 #1 Programs
 #2 Declarations
@@ -24,43 +24,6 @@ Rule
 #5 Lexemes
 #6 Disambiguation
 ]
-
-// The section numbers above are links into other files.
-
 /*
-  Joao Cangussu, Jens Palsberg and Vidyut Samanta gave a BNF grammar for a very 
-  simple subset of Java in the [MiniJava project]. They wrote:
-
-> MiniJava is a subset of Java. The meaning of a MiniJava program is given by 
-> its meaning as a Java program. Overloading is not allowed in MiniJava. [...]
-
-  The CBS of MiniJava is useful for illustrating funcons for classes and objects.
-
-  [MiniJava project]: http://www.cambridge.org/us/features/052182060X/
-*/
-
-/* CBS-beta/Languages-beta/MiniJava/MiniJava-cbs released 2018-07-07
-
-* Status: 
-  - abstract syntax:   complete, derived from [BNF for MiniJava]
-  - dynamic semantics: complete
-  - static semantics:  not specified
-  - disambiguation:    complete
-* Tests:
-  - 8 small-to-medium-size programs from the [MiniJava Project]
-  - 65 small unit tests, high coverage
-* Evolution:
-  - first version
-* References:
-  [MiniJava Project]: 
-    http://www.cambridge.org/us/features/052182060X/
-  [Java Manual]:
-    https://docs.oracle.com/javase/specs
-  [BNF for MiniJava]:
-    http://www.cambridge.org/us/features/052182060X/grammar.html
-* Keywords: 
-  - Java, object-oriented
-* Main contributors:
-  - Peter Mosses
-
+The section numbers above are links into other files.
 */

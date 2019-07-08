@@ -1,0 +1,49 @@
+Language "SIMPLE-THR"
+
+#1 Lexical Syntax
+
+Syntax
+  V : value ::= bool | int | string
+
+      bool ::= 'false' | 'true'
+Lexis
+  Z : int ::= ('0'-'9')+
+Syntax
+      string ::= '"'_string-chars_'"'
+Lexis
+  S : string-chars ::= (~'"')*
+
+Semantics
+  val[[ _:value ]] : =>values
+
+## 1.1 Booleans
+
+Rule
+  val[[ 'false' ]] = false
+Rule
+  val[[ 'true' ]] = true
+
+## 1.2 Integers
+
+Rule
+  val[[ Z ]] = decimal-natural(\"Z\")
+
+## 1.3 Strings
+
+Rule
+  val[[ '"' S '"' ]] = \"S\"
+
+## 1.4 Identifiers
+
+Lexis
+  Id : id ::= ('A'-'Z'|'a'-'z'|'_') ('0'-'9'|'A'-'Z'|'a'-'z'|'_')*
+Semantics
+  id[[ _:id ]] : =>ids
+Rule
+  id[[ Id ]] = \"Id\"
+
+Lexis
+  keyword ::= 'false' | 'true' | 'var' | 'function' | 'sizeOf' | 'read'
+           | 'spawn' |  'if' | 'else' | 'while' | 'for' | 'print' | 'return'
+           | 'try' | 'catch' | 'throw' | 'join' | 'acquire' | 'release'
+           | 'rendezvous'

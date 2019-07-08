@@ -1,0 +1,25 @@
+Language "IMPPP"
+
+[
+  #1 Values
+  #2 Value expressions
+  #3 Boolean expressions
+  #4 Statements and blocks
+  #A Disambiguation
+]
+
+/* 
+See also [Unstable-Funcons-beta]
+*/
+
+Syntax
+  START: start ::= stmt*
+Semantics
+  start[[_:start]] : =>null-type
+Rule
+  start[[ Stmt* ]] = 
+    initialise-binding 
+    initialise-storing
+    finalise-failing
+    sequential(initialise-index,
+      multithread execute[[ Stmt* ]])

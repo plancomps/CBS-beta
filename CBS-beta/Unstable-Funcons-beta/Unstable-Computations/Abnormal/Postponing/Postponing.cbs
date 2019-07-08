@@ -1,0 +1,63 @@
+### Postponing
+[
+  Entity   postponing
+  Funcon   postpone
+  Funcon   postpone-after-effect
+  Funcon   after-effect
+]
+/*
+A funcon term can extend itself (e.g., with code to release the resources
+allocated to it) using general funcons for postponed execution. When a step
+from `X` to `X'` executes `postpone(Y)` (which computes `null`),
+the corresponding step of  `postpone-after-effect(X)` gives
+`postpone-after-effect(after-effect(X', Y))`, so that normal termination
+of `X'` is followed by the effect of `Y`.
+
+The control entity `postponing(A)` signals that the execution of the body
+of the abstraction `A` is postponed:
+*/
+Entity
+  _ --postponing(_:(abstractions(=>null-type))?)-> _
+
+/*
+The funcon `postpone(X)` forms a closure from `X` and signals that its
+execution is postponed:
+*/
+Funcon
+  postpone(_:=>values) : =>null-type
+Rule
+  given-value(V) |- closure give(V, X) --postponing( )-> A
+  ----------------------------------------------------------
+  given-value(V) |- postpone(X) --postponing(A)-> null-value
+Rule
+  given-value( ) |- closure no-given X --postponing( )-> A
+  ----------------------------------------------------------
+  given-value( ) |- postpone(X) --postponing(A)-> null-value
+
+/*
+The funcon `postpone-after-effect(X)` handles each signal `postponing(A)`
+by adding it as an after-effect of `X`:
+*/
+Funcon
+  postpone-after-effect(_:=>T) : =>T
+Rule
+  X --postponing( )-> X'
+  ------------------------------------------
+  postpone-after-effect(X) --postponing( )->
+    postpone-after-effect(X')
+Rule
+  X --postponing(A)-> X'
+  A ~> abstraction Y
+  --------------------------------------------
+  postpone-after-effect(X) --postponing( )->
+    postpone-after-effect(after-effect(X', Y))
+Rule
+  postpone-after-effect(V:values) ~> V
+
+/*
+The funcon `after-effect(X, Y)` first executes `X`. If `X` computes a value `V`,
+it then executes `Y`, and computes `V`:
+*/
+Funcon
+  after-effect(X:=>T, Y:=>null-type) : =>T
+   ~> give(X, sequential(Y, given))

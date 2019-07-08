@@ -1,0 +1,29 @@
+## Threads
+[
+### Multithreading
+### Synchronising
+#### Locks
+#### Notifications
+]
+/*
+The funcons for threads are tentative. They have not yet been rigorously
+unit-tested, nor used significantly in language definitions.
+
+The [multithreading] funcons involve multiple mutable entities, and are
+generally specified by inference rules with premises involving the values of
+those entities before and after a transition.
+
+The [synchronising] funcons only involve the `store` entity, and wrap
+compound funcon terms in `thread-atomic(_)` to inhibit preemption.
+
+Some of the unit tests are based on examples in an [IBM threads] guide.
+
+[Multithreading]: Multithreading
+  "Multithreading funcons"
+
+[Synchronising]: Synchronising
+  "Synchronising funcons"
+
+[IBM threads]: https://www.ibm.com/support/knowledgecenter/ssw_aix_72/com.ibm.aix.genprogc/chapter12.htm
+  "IBM Knowledge Centre"
+*/

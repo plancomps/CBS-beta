@@ -1,0 +1,41 @@
+Language "IMPPP"
+
+#1 Values
+
+## Integers
+
+Syntax
+  N : int ::= '-'?_decimal
+Lexis
+  D : decimal ::= ('0'-'9')+
+Semantics
+  int-val[[ _:int ]] : =>integers
+Rule
+  int-val[[ D ]] = decimal-natural(\"D\")
+Rule
+  int-val[[ '-' D ]] = integer-negate(int-val[[ D ]])
+
+## Strings
+
+Syntax
+  S : string ::= '"'_string-chars_'"'
+Lexis
+  SCS : string-chars ::= (~'"')*
+
+Semantics
+  string-val[[ _:string ]] : =>strings
+Rule
+  string-val[[ '"' SCS '"' ]] = \"SCS\"
+
+## Identifiers
+
+Lexis
+  I : id ::= ('A'-'Z'|'a'-'z'|'_') ('0'-'9'|'A'-'Z'|'a'-'z'|'_')*
+Semantics
+  id[[ _:id ]] : =>ids
+Rule
+  id[[ I ]] = \"I\"
+
+Lexis
+  keyword ::= 'else'  | 'false' | 'if'    | 'halt' | 'join' 
+            | 'print' | 'read'  | 'spawn' | 'true' | 'while'
