@@ -51,10 +51,11 @@ Main contributors:
 
 - [Peter Mosses], Neil Sculthorpe
 
-[IMP++]: IMPPP-cbs/IMPPP/IMPPP-Start
+
+[IMP++]: /CBS-beta/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-Start
 [IMP]: /CBS-beta/docs/Languages-beta/IMP
-[IMPPP-Unstable-Funcons-Index]: IMPPP-cbs/IMPPP/IMPPP-Funcons-Index
-[IMPPP-Unstable-Funcons-Index]: IMPPP-cbs/IMPPP/IMPPP-Unstable-Funcons-Index
+[IMPPP-Funcons-Index]: /CBS-beta/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-Funcons-Index
+[IMPPP-Unstable-Funcons-Index]: /CBS-beta/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-Unstable-Funcons-Index
 [IMP++ in K]: http://www.kframework.org/language-pdfs/new/imppp.pdf
   "OUTDATED"
 [Rosu2017KSF]:  http://fslweb.cs.illinois.edu/FSL/papers/2017/rosu-2017-marktoberdorf/rosu-2017-marktoberdorf-public.pdf
