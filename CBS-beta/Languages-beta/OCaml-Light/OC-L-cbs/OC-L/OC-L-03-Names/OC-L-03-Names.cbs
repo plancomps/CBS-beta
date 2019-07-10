@@ -7,7 +7,7 @@ Language "OCaml Light"
 Syntax
   VN : value-name
   ::= lowercase-ident  
- 	| '(' operator-name ')'
+    | '(' operator-name ')'
   
   ON : operator-name ::= prefix-op | infix-op  
   
@@ -16,15 +16,15 @@ Syntax
 //  infix-op
 //  ::= infix-symbol 
 //    | '*' | '+' | '-' | '-.' | '=' | '<' | '>' | '||' | '&' | '&&' 
-// 	  | '!=' | 'or' | ':=' | 'mod' 
-// 	  | 'land' | 'lor' | 'lxor' | 'lsl' | 'lsr' | 'asr'  
+//    | '!=' | 'or' | ':=' | 'mod' 
+//    | 'land' | 'lor' | 'lxor' | 'lsl' | 'lsr' | 'asr'  
 
 ### Infix operator precedence
 
 Syntax
   IO : infix-op
   ::= infix-op-1 | infix-op-2 | infix-op-3 | infix-op-4
-	| infix-op-5 | infix-op-6 | infix-op-7 | infix-op-8
+    | infix-op-5 | infix-op-6 | infix-op-7 | infix-op-8
 Lexis
   IO-1 : infix-op-1
   ::= '**' operator-char* | 'lsl' | 'lsr' | 'asr'

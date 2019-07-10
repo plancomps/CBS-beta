@@ -19,18 +19,18 @@ Semantics
   execute[[ _:stmt ]] : =>null-type
 Rule
   execute[[ I '=' AExp ';' ]] = 
-	assign(bound(id[[ I ]]), eval-arith[[ AExp ]])
+    assign(bound(id[[ I ]]), eval-arith[[ AExp ]])
 Rule
   execute[[ 'if' '(' BExp ')' Block1 'else' Block2 ]] =
-	if-true-else(eval-bool[[ BExp ]], 
-	             execute[[ Block1 ]],
-	             execute[[ Block2 ]])
+    if-true-else(eval-bool[[ BExp ]], 
+                 execute[[ Block1 ]],
+                 execute[[ Block2 ]])
 Rule
   execute[[ 'while' '(' BExp ')' Block ]] =
-	while-true(eval-bool[[ BExp ]], execute[[ Block ]])
+    while-true(eval-bool[[ BExp ]], execute[[ Block ]])
 Rule
   execute[[ Stmt1 Stmt2 ]] = 
-	sequential(execute[[ Stmt1 ]], execute[[ Stmt2 ]])
+    sequential(execute[[ Stmt1 ]], execute[[ Stmt2 ]])
 Rule
   execute[[ '{' '}' ]] = null
 Rule

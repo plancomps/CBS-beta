@@ -9,8 +9,8 @@ Semantics
   run[[ _:pgm ]] : =>null-type
 Rule
   run[[ 'int' IL ';' Stmt ]] = 
-	scope( collateral(declare-int-vars[[ IL ]]), 
-	       execute[[ Stmt ]] )
+    scope( collateral(declare-int-vars[[ IL ]]), 
+           execute[[ Stmt ]] )
 
 Syntax
   IL : idlist ::= id (',' idlist)?
@@ -22,4 +22,4 @@ Rule
     bind(id[[ I ]], allocate-initialised-variable(integers, 0))
 Rule
   declare-int-vars[[ I ',' IL ]] = 
-  	declare-int-vars[[ I ]], declare-int-vars[[ IL ]]
+    declare-int-vars[[ I ]], declare-int-vars[[ IL ]]

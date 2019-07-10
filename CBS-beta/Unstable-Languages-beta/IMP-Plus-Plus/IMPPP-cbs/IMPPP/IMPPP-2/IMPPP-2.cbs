@@ -27,7 +27,7 @@ Rule
   integer-add-or-string-append(S1:strings, S2:strings) ~>
     string-append(S1, S2)
 
-Semantics		
+Semantics       
   eval-arith[[ _:aexp ]] : =>aexp-values
 Rule
   eval-arith[[ N ]] = int-val[[ N ]]
@@ -37,10 +37,10 @@ Rule
   eval-arith[[ I ]] = assigned(bound(id[[ I ]]))
 Rule
   eval-arith[[ AExp1 '+' AExp2 ]] = 
-	integer-add-or-string-append(eval-arith[[ AExp1 ]], eval-arith[[ AExp2 ]])
+    integer-add-or-string-append(eval-arith[[ AExp1 ]], eval-arith[[ AExp2 ]])
 Rule
   eval-arith[[ AExp1 '/' AExp2 ]] = 
-	checked integer-divide(eval-arith[[ AExp1 ]], eval-arith[[ AExp2 ]])
+    checked integer-divide(eval-arith[[ AExp1 ]], eval-arith[[ AExp2 ]])
 Rule
   eval-arith[[ '(' AExp ')' ]] = eval-arith[[ AExp ]]
 Rule

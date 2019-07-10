@@ -270,9 +270,9 @@ Rule
     collateral(define-values-nonrec[[ LB1 ]], define-values-nonrec[[ LB2 ALB* ]])
 Rule
   define-values-nonrec[[ P '=' E ]] =
-  	else(
-  	  match(evaluate[[ E ]], evaluate-pattern[[ P ]]), 
-  	  throw(ocaml-light-match-failure))
+    else(
+      match(evaluate[[ E ]], evaluate-pattern[[ P ]]), 
+      throw(ocaml-light-match-failure))
 
 Semantics
   bound-ids-sequence[[ _:(let-binding and-let-binding*) ]] : ids+

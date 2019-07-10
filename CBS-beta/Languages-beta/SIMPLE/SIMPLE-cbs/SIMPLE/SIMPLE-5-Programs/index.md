@@ -17,10 +17,10 @@ nav_exclude: true
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Semantics</i>
   <i class="sem-name"><span id="SemanticsName_run">run</span></i>[[ <span id="Variable25_Decls"><i class="var"><a href="#VariableStem_Decls">Decls</a></i></span>:<span class="syn-name"><a href="#SyntaxName_pgm">pgm</a></span> ]] : =><span class="name"><a href="../../../../../Funcons-beta/Values/Value-Types/index.html#Name_values">values</a></span>
     = <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Binding/index.html#Name_scope">scope</a></span>(
-    	<span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Binding/index.html#Name_collateral">collateral</a></span>(<i class="sem-name"><a href="#SemanticsName_declarations">declarations</a></i>[[ <a href="#Variable25_Decls"><i class="var">Decls</i></a> ]]),
-    	<span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Flowing/index.html#Name_sequential">sequential</a></span>(
-    	  <i class="sem-name"><a href="#SemanticsName_initialisations">initialisations</a></i>[[ <a href="#Variable25_Decls"><i class="var">Decls</i></a> ]],
-    	  <span class="name"><a href="../../../../../Funcons-beta/Values/Abstraction/Functions/index.html#Name_apply">apply</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_assigned">assigned</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Binding/index.html#Name_bound">bound</a></span>("main")), <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Tuples/index.html#Name_tuple">tuple</a></span>( ))))</code></pre></div>
+        <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Binding/index.html#Name_collateral">collateral</a></span>(<i class="sem-name"><a href="#SemanticsName_declarations">declarations</a></i>[[ <a href="#Variable25_Decls"><i class="var">Decls</i></a> ]]),
+        <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Flowing/index.html#Name_sequential">sequential</a></span>(
+          <i class="sem-name"><a href="#SemanticsName_initialisations">initialisations</a></i>[[ <a href="#Variable25_Decls"><i class="var">Decls</i></a> ]],
+          <span class="name"><a href="../../../../../Funcons-beta/Values/Abstraction/Functions/index.html#Name_apply">apply</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_assigned">assigned</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Binding/index.html#Name_bound">bound</a></span>("main")), <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Tuples/index.html#Name_tuple">tuple</a></span>( ))))</code></pre></div>
 
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Syntax</i>
@@ -39,7 +39,7 @@ nav_exclude: true
   <i class="sem-name"><a href="#SemanticsName_initialisations">initialisations</a></i>[[ <span id="Variable254_Decl"><i class="var"><a href="../SIMPLE-4-Declarations/index.html#VariableStem_Decl">Decl</a></i></span> ]] = <i class="sem-name"><a href="../SIMPLE-4-Declarations/index.html#SemanticsName_initialise">initialise</a></i>[[ <a href="#Variable254_Decl"><i class="var">Decl</i></a> ]]
 <i class="keyword">Rule</i>
   <i class="sem-name"><a href="#SemanticsName_initialisations">initialisations</a></i>[[ <span id="Variable283_Decl"><i class="var"><a href="../SIMPLE-4-Declarations/index.html#VariableStem_Decl">Decl</a></i></span> <span id="Variable288_Decls"><i class="var"><a href="#VariableStem_Decls">Decls</a></i></span> ]] =
-  	<i class="sem-name"><a href="../SIMPLE-4-Declarations/index.html#SemanticsName_initialise">initialise</a></i>[[ <a href="#Variable283_Decl"><i class="var">Decl</i></a> ]], <i class="sem-name"><a href="#SemanticsName_initialisations">initialisations</a></i>[[ <a href="#Variable288_Decls"><i class="var">Decls</i></a> ]]</code></pre></div>
+    <i class="sem-name"><a href="../SIMPLE-4-Declarations/index.html#SemanticsName_initialise">initialise</a></i>[[ <a href="#Variable283_Decl"><i class="var">Decl</i></a> ]], <i class="sem-name"><a href="#SemanticsName_initialisations">initialisations</a></i>[[ <a href="#Variable288_Decls"><i class="var">Decls</i></a> ]]</code></pre></div>
 
 
 ____

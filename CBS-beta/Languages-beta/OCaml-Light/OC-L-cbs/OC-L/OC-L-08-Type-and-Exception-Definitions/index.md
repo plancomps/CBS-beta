@@ -33,7 +33,7 @@ nav_exclude: true
 
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_TPS">TPS</span></i> :</i> <span class="syn-name"><span id="SyntaxName_type-params">type-params</span></span>
   ::= <span class="syn-name"><a href="#SyntaxName_type-param">type-param</a></span>
-	| <b class="atom">'('</b> <span class="syn-name"><a href="#SyntaxName_type-param">type-param</a></span> (<b class="atom">','</b> <span class="syn-name"><a href="#SyntaxName_type-param">type-param</a></span>)<sup class="sup">*</sup> <b class="atom">')'</b>
+    | <b class="atom">'('</b> <span class="syn-name"><a href="#SyntaxName_type-param">type-param</a></span> (<b class="atom">','</b> <span class="syn-name"><a href="#SyntaxName_type-param">type-param</a></span>)<sup class="sup">*</sup> <b class="atom">')'</b>
 
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_TP">TP</span></i> :</i> <span class="syn-name"><span id="SyntaxName_type-param">type-param</span></span> 
   ::= <span class="syn-name"><a href="#SyntaxName_variance">variance</a></span><sup class="sup">?</sup> <b class="atom">'\''</b> <span class="syn-name"><a href="../OC-L-01-Lexical-Conventions/index.html#SyntaxName_ident">ident</a></span>

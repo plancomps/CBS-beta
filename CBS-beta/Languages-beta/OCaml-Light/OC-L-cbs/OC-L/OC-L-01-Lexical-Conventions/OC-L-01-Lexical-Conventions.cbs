@@ -38,9 +38,9 @@ Syntax
 
   NL : natural-literal
   ::= decimal-plus 
-	| ('0x'|'0X') hexadecimal-plus
-	| ('0o'|'0O') octal-plus
-	| ('0b'|'0B') binary-plus
+    | ('0x'|'0X') hexadecimal-plus
+    | ('0o'|'0O') octal-plus
+    | ('0b'|'0B') binary-plus
 Lexis
   DP : decimal-plus ::= decimal+
   
@@ -67,10 +67,10 @@ Syntax
 
   NNFL : non-negative-float-literal
   ::= decimal-plus _ '.' _ decimal-plus
-  	| decimal-plus _ '.'
-  	| decimal-plus _ '.' _ decimal-plus _ float-exponent
-  	| decimal-plus _ '.' _ float-exponent
-  	| decimal-plus _ float-exponent
+    | decimal-plus _ '.'
+    | decimal-plus _ '.' _ decimal-plus _ float-exponent
+    | decimal-plus _ '.' _ float-exponent
+    | decimal-plus _ float-exponent
 
   FE : float-exponent
   ::= ('e'|'E') _ ('+'|'-')? _ decimal-plus
@@ -119,7 +119,7 @@ Syntax
 
   ES : escape-sequence 
   ::= '\\' _ escaped-char
-	| '\\' _ escaped-char-code
+    | '\\' _ escaped-char-code
 Lexis
   RC : regular-char 
   ::= ~ ( '\'' | '\\' )
@@ -164,12 +164,12 @@ Syntax
 
   SCS : string-character-star
   ::= string-character _ string-character-star
-	| ( )
+    | ( )
   
   SC : string-character
   ::= regular-string-char
-	| escape-sequence
-//	| '\\' _ '\n' _ (' '|'\t')*
+    | escape-sequence
+//  | '\\' _ '\n' _ (' '|'\t')*
 Lexis
   RSC : regular-string-char
   ::= ~ ('"' | '\\')
@@ -202,9 +202,9 @@ Lexis
 //  ::= ( '=' | '<' | '>' | '@' | '^' | '|'
 //      | '&' | '+' | '-' | '*' | '/' | '$' | '%' ) operator-char*
  
-  PS : prefix-symbol	
+  PS : prefix-symbol    
   ::= '!'       operator-char*
- 	| ('?'|'~') operator-char+  
+    | ('?'|'~') operator-char+  
  
   operator-char
   ::= '!' | '$' | '%' | '&' | '*' | '+' | '-' | '.' | '/'
@@ -230,10 +230,10 @@ Lexis
   ::= 'and'        | 'as'       | 'assert' | 'asr'     | 'begin'   | 'class'
     | 'constraint' | 'do'       | 'done'   | 'downto'  | 'else'    | 'end'
     | 'exception'  | 'external' | 'false'  | 'for'     | 'fun'     | 'function'
-	| 'functor'    | 'if'       | 'in'     | 'include' | 'inherit' | 'initializer'
-	| 'land'       | 'lazy'     | 'let'    | 'lor'     | 'lsl'     | 'lsr'
-	| 'lxor'       | 'match'    | 'method' | 'mod'     | 'module'  | 'mutable' 
-	| 'new'        | 'nonrec'   | 'object' | 'of'      | 'open'    | 'or'	  
-	| 'private'    | 'rec'      | 'sig'    | 'struct'  | 'then'    | 'to'
-	| 'true'       | 'try'      | 'type'   | 'val'     | 'virtual' | 'when' 
-	| 'while'      | 'with'
+    | 'functor'    | 'if'       | 'in'     | 'include' | 'inherit' | 'initializer'
+    | 'land'       | 'lazy'     | 'let'    | 'lor'     | 'lsl'     | 'lsr'
+    | 'lxor'       | 'match'    | 'method' | 'mod'     | 'module'  | 'mutable' 
+    | 'new'        | 'nonrec'   | 'object' | 'of'      | 'open'    | 'or'     
+    | 'private'    | 'rec'      | 'sig'    | 'struct'  | 'then'    | 'to'
+    | 'true'       | 'try'      | 'type'   | 'val'     | 'virtual' | 'when' 
+    | 'while'      | 'with'

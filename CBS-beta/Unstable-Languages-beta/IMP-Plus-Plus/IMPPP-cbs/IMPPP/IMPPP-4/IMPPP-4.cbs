@@ -20,25 +20,25 @@ Rule
   execute[[ ]] = null
 Rule
   execute[[ 'int' IL ';' Stmt* ]] =
-  	scope(collateral(declare-int-vars[[ IL ]]), 
-	      execute[[ Stmt* ]])
+    scope(collateral(declare-int-vars[[ IL ]]), 
+          execute[[ Stmt* ]])
 Otherwise
   execute[[ Stmt Stmt+ ]] =
-  	sequential(execute[[ Stmt ]], execute[[ Stmt+ ]])
+    sequential(execute[[ Stmt ]], execute[[ Stmt+ ]])
 Rule
   execute[[ AExp ';' ]] = 
-	effect(eval-arith[[ AExp ]])
+    effect(eval-arith[[ AExp ]])
 Rule
   execute[[ 'if' '(' BExp ')' Block1 'else' Block2 ]] =
-	if-true-else(eval-bool[[ BExp ]], 
-	             execute[[ Block1 ]],
-	             execute[[ Block2 ]])
+    if-true-else(eval-bool[[ BExp ]], 
+                 execute[[ Block1 ]],
+                 execute[[ Block2 ]])
 Rule
   execute[[ 'while' '(' BExp ')' Block ]] =
-	while-true(eval-bool[[ BExp ]], execute[[ Block ]])
+    while-true(eval-bool[[ BExp ]], execute[[ Block ]])
 Rule
   execute[[ 'print' '(' AExp ')' ';' ]] =
-  	print(eval-arith[[ AExp ]])
+    print(eval-arith[[ AExp ]])
 Rule
   [[ 'print' '(' AExp ',' AExps ')' ';' ]] : stmt+ =
   [[ 'print' '(' AExp ')' ';' 'print' '(' AExps ')' ';' ]]
@@ -62,5 +62,5 @@ Rule
     bind(id[[ I ]], allocate-initialised-variable(integers, 0))
 Rule
   declare-int-vars[[ I ',' IL ]] = 
-  	declare-int-vars[[ I ]], declare-int-vars[[ IL ]]
+    declare-int-vars[[ I ]], declare-int-vars[[ IL ]]
 

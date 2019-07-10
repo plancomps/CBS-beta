@@ -9,7 +9,7 @@ Syntax
                |  aexp '/' aexp
                |  '(' aexp ')'
 
-Semantics		
+Semantics       
   eval-arith[[ _:aexp ]] : =>integers
 Rule
   eval-arith[[ N ]] = int-val[[ N ]]
@@ -17,10 +17,10 @@ Rule
   eval-arith[[ I ]] = assigned(bound(id[[ I ]]))
 Rule
   eval-arith[[ AExp1 '+' AExp2 ]] = 
-	integer-add(eval-arith[[ AExp1 ]], eval-arith[[ AExp2 ]])
+    integer-add(eval-arith[[ AExp1 ]], eval-arith[[ AExp2 ]])
 Rule
   eval-arith[[ AExp1 '/' AExp2 ]] = 
-	checked integer-divide(eval-arith[[ AExp1 ]], eval-arith[[ AExp2 ]])
+    checked integer-divide(eval-arith[[ AExp1 ]], eval-arith[[ AExp2 ]])
 Rule
   eval-arith[[ '(' AExp ')' ]] = eval-arith[[ AExp ]]
 

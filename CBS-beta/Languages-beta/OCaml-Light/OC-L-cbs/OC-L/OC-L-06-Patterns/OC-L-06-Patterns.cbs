@@ -5,17 +5,17 @@ Language "OCaml Light"
 Syntax
   P : pattern 
   ::= value-name 
-	|  '_'
-	| constant
-	| pattern 'as' value-name
-	| '(' pattern ')'
-	| '(' pattern ':' typexpr ')'
-	| pattern '|' pattern
-	| constr pattern
-	| pattern comma-pattern+
-	| '{' field '=' pattern semic-field-pattern* ';'? '}'
-	| '[' pattern semic-pattern* ';'? ']'
-	| pattern '::' pattern
+    |  '_'
+    | constant
+    | pattern 'as' value-name
+    | '(' pattern ')'
+    | '(' pattern ':' typexpr ')'
+    | pattern '|' pattern
+    | constr pattern
+    | pattern comma-pattern+
+    | '{' field '=' pattern semic-field-pattern* ';'? '}'
+    | '[' pattern semic-pattern* ';'? ']'
+    | pattern '::' pattern
 
   CP : comma-pattern ::= ',' pattern
   
@@ -58,7 +58,7 @@ Rule
   evaluate-pattern[[ '{' F '=' P SFP* '}' ]] =
     pattern closure(match-loosely(
       given,
-	  record(map-unite(evaluate-field-pattern-sequence[[ F '=' P SFP* ]]))))
+      record(map-unite(evaluate-field-pattern-sequence[[ F '=' P SFP* ]]))))
 Rule
   evaluate-pattern[[ '[' P SP* ']' ]] =
     [ evaluate-semic-pattern-sequence[[ P SP* ]] ]

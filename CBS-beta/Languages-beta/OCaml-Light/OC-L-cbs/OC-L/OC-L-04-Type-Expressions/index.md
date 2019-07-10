@@ -13,13 +13,13 @@ nav_exclude: true
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Syntax</i>
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_T">T</span></i> :</i> <span class="syn-name"><span id="SyntaxName_typexpr">typexpr</span></span>
   ::= <b class="atom">'\''</b> <span class="syn-name"><a href="../OC-L-01-Lexical-Conventions/index.html#SyntaxName_ident">ident</a></span>
-	| <b class="atom">'_'</b>
-	| <b class="atom">'('</b> <span class="syn-name"><a href="#SyntaxName_typexpr">typexpr</a></span> <b class="atom">')'</b>
-	| <span class="syn-name"><a href="#SyntaxName_typexpr">typexpr</a></span> <b class="atom">'->'</b> <span class="syn-name"><a href="#SyntaxName_typexpr">typexpr</a></span>
-	| <span class="syn-name"><a href="#SyntaxName_typexpr">typexpr</a></span> <span class="syn-name"><a href="#SyntaxName_star-typexpr">star-typexpr</a></span><sup class="sup">+</sup>
-	| <span class="syn-name"><a href="../OC-L-03-Names/index.html#SyntaxName_typeconstr">typeconstr</a></span>
-	| <span class="syn-name"><a href="#SyntaxName_typexpr">typexpr</a></span> <span class="syn-name"><a href="../OC-L-03-Names/index.html#SyntaxName_typeconstr">typeconstr</a></span>
-	| <b class="atom">'('</b> <span class="syn-name"><a href="#SyntaxName_typexpr">typexpr</a></span> <span class="syn-name"><a href="#SyntaxName_comma-typexpr">comma-typexpr</a></span><sup class="sup">+</sup> <b class="atom">')'</b> <span class="syn-name"><a href="../OC-L-03-Names/index.html#SyntaxName_typeconstr">typeconstr</a></span>
+    | <b class="atom">'_'</b>
+    | <b class="atom">'('</b> <span class="syn-name"><a href="#SyntaxName_typexpr">typexpr</a></span> <b class="atom">')'</b>
+    | <span class="syn-name"><a href="#SyntaxName_typexpr">typexpr</a></span> <b class="atom">'->'</b> <span class="syn-name"><a href="#SyntaxName_typexpr">typexpr</a></span>
+    | <span class="syn-name"><a href="#SyntaxName_typexpr">typexpr</a></span> <span class="syn-name"><a href="#SyntaxName_star-typexpr">star-typexpr</a></span><sup class="sup">+</sup>
+    | <span class="syn-name"><a href="../OC-L-03-Names/index.html#SyntaxName_typeconstr">typeconstr</a></span>
+    | <span class="syn-name"><a href="#SyntaxName_typexpr">typexpr</a></span> <span class="syn-name"><a href="../OC-L-03-Names/index.html#SyntaxName_typeconstr">typeconstr</a></span>
+    | <b class="atom">'('</b> <span class="syn-name"><a href="#SyntaxName_typexpr">typexpr</a></span> <span class="syn-name"><a href="#SyntaxName_comma-typexpr">comma-typexpr</a></span><sup class="sup">+</sup> <b class="atom">')'</b> <span class="syn-name"><a href="../OC-L-03-Names/index.html#SyntaxName_typeconstr">typeconstr</a></span>
 
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_ST">ST</span></i> :</i> <span class="syn-name"><span id="SyntaxName_star-typexpr">star-typexpr</span></span> ::= <b class="atom">'*'</b> <span class="syn-name"><a href="#SyntaxName_typexpr">typexpr</a></span>
 

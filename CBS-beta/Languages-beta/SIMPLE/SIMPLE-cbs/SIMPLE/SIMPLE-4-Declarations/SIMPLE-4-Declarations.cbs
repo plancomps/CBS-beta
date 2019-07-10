@@ -37,10 +37,10 @@ Rule
   var-declare[[ Id ]] = bind(id[[ Id ]], allocate-variable(values))
 Rule
   var-declare[[ Id '=' Exp ]] =
-  	bind(id[[ Id ]], allocate-initialised-variable(values, rval[[ Exp ]]))
+    bind(id[[ Id ]], allocate-initialised-variable(values, rval[[ Exp ]]))
 Rule
   var-declare[[ Id Ranks ]] =
-  	bind(id[[ Id ]], allocate-nested-vectors(ranks[[ Ranks ]]))
+    bind(id[[ Id ]], allocate-nested-vectors(ranks[[ Ranks ]]))
 
 
 ## 4.2 Arrays
@@ -63,12 +63,12 @@ Funcon
   allocate-nested-vectors(_:nats+) : =>variables
 Rule
   allocate-nested-vectors(N:nats) ~>
-  	allocate-initialised-variable(vectors(variables),
-  	  vector(left-to-right-repeat(allocate-variable(values),1,N)))
+    allocate-initialised-variable(vectors(variables),
+      vector(left-to-right-repeat(allocate-variable(values),1,N)))
 Rule
   allocate-nested-vectors(N:nats,N+:nats+) ~>
-  	allocate-initialised-variable(vectors(variables),
-  	  vector(left-to-right-repeat(allocate-nested-vectors(N+),1,N)))
+    allocate-initialised-variable(vectors(variables),
+      vector(left-to-right-repeat(allocate-nested-vectors(N+),1,N)))
 
 
 ## 4.3 Function Declarations
@@ -87,11 +87,11 @@ Rule
   initialise[[ 'var' Declarators ';' ]] = null
 Rule
   initialise[[ 'function' Id '(' Ids? ')' Block ]] =
-  	assign(
-  	  bound(id[[ Id ]]),
-  	  function closure(
-  	    scope(
-  	  	  match(given,tuple(patts[[ Ids? ]])),
+    assign(
+      bound(id[[ Id ]]),
+      function closure(
+        scope(
+          match(given,tuple(patts[[ Ids? ]])),
           handle-return(exec[[ Block ]]))))
 
 Syntax
@@ -103,8 +103,8 @@ Rule
   patts[[ ]] = ( )
 Rule
   patts[[ Id ]] = 
- 	pattern closure(bind(id[[ Id ]], 
-  	                  allocate-initialised-variable(values, given)))
+    pattern closure(bind(id[[ Id ]], 
+                      allocate-initialised-variable(values, given)))
 Rule
   patts[[ Id ',' Ids ]] =
     patts[[ Id ]] , patts[[ Ids ]]

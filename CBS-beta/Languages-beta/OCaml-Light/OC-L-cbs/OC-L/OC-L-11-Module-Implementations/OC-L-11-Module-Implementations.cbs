@@ -17,8 +17,8 @@ Syntax
 
   D : definition
   ::= let-definition
-	| type-definition
-	| exception-definition
+    | type-definition
+    | exception-definition
 Lexis
   SCP : semicolon-pair ::= ';;'
 
@@ -29,9 +29,9 @@ Rule
 Rule
   interpret[[ SCP1* MIS SCP2* ]] = 
     handle-thrown(
-	  scope(
-	    ocaml-light-core-library,
-	  	accumulate(define-or-evaluate-items[[ MIS ]])),
+      scope(
+        ocaml-light-core-library,
+        accumulate(define-or-evaluate-items[[ MIS ]])),
       sequential(
         print ("Uncaught exception: ", ocaml-light-to-string given, "\n"),
         map()))

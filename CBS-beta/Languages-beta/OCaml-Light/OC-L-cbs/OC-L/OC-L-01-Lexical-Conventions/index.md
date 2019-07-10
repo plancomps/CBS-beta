@@ -47,9 +47,9 @@ nav_exclude: true
 
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_NL">NL</span></i> :</i> <span class="syn-name"><span id="SyntaxName_natural-literal">natural-literal</span></span>
   ::= <span class="syn-name"><a href="#SyntaxName_decimal-plus">decimal-plus</a></span> 
-	| (<b class="atom">'0x'</b>|<b class="atom">'0X'</b>) <span class="syn-name"><a href="#SyntaxName_hexadecimal-plus">hexadecimal-plus</a></span>
-	| (<b class="atom">'0o'</b>|<b class="atom">'0O'</b>) <span class="syn-name"><a href="#SyntaxName_octal-plus">octal-plus</a></span>
-	| (<b class="atom">'0b'</b>|<b class="atom">'0B'</b>) <span class="syn-name"><a href="#SyntaxName_binary-plus">binary-plus</a></span>
+    | (<b class="atom">'0x'</b>|<b class="atom">'0X'</b>) <span class="syn-name"><a href="#SyntaxName_hexadecimal-plus">hexadecimal-plus</a></span>
+    | (<b class="atom">'0o'</b>|<b class="atom">'0O'</b>) <span class="syn-name"><a href="#SyntaxName_octal-plus">octal-plus</a></span>
+    | (<b class="atom">'0b'</b>|<b class="atom">'0B'</b>) <span class="syn-name"><a href="#SyntaxName_binary-plus">binary-plus</a></span>
 <i class="keyword">Lexis</i>
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_DP">DP</span></i> :</i> <span class="syn-name"><span id="SyntaxName_decimal-plus">decimal-plus</span></span> ::= <span class="syn-name"><a href="#SyntaxName_decimal">decimal</a></span><sup class="sup">+</sup>
   
@@ -76,10 +76,10 @@ nav_exclude: true
 
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_NNFL">NNFL</span></i> :</i> <span class="syn-name"><span id="SyntaxName_non-negative-float-literal">non-negative-float-literal</span></span>
   ::= <span class="syn-name"><a href="#SyntaxName_decimal-plus">decimal-plus</a></span> _ <b class="atom">'.'</b> _ <span class="syn-name"><a href="#SyntaxName_decimal-plus">decimal-plus</a></span>
-  	| <span class="syn-name"><a href="#SyntaxName_decimal-plus">decimal-plus</a></span> _ <b class="atom">'.'</b>
-  	| <span class="syn-name"><a href="#SyntaxName_decimal-plus">decimal-plus</a></span> _ <b class="atom">'.'</b> _ <span class="syn-name"><a href="#SyntaxName_decimal-plus">decimal-plus</a></span> _ <span class="syn-name"><a href="#SyntaxName_float-exponent">float-exponent</a></span>
-  	| <span class="syn-name"><a href="#SyntaxName_decimal-plus">decimal-plus</a></span> _ <b class="atom">'.'</b> _ <span class="syn-name"><a href="#SyntaxName_float-exponent">float-exponent</a></span>
-  	| <span class="syn-name"><a href="#SyntaxName_decimal-plus">decimal-plus</a></span> _ <span class="syn-name"><a href="#SyntaxName_float-exponent">float-exponent</a></span>
+    | <span class="syn-name"><a href="#SyntaxName_decimal-plus">decimal-plus</a></span> _ <b class="atom">'.'</b>
+    | <span class="syn-name"><a href="#SyntaxName_decimal-plus">decimal-plus</a></span> _ <b class="atom">'.'</b> _ <span class="syn-name"><a href="#SyntaxName_decimal-plus">decimal-plus</a></span> _ <span class="syn-name"><a href="#SyntaxName_float-exponent">float-exponent</a></span>
+    | <span class="syn-name"><a href="#SyntaxName_decimal-plus">decimal-plus</a></span> _ <b class="atom">'.'</b> _ <span class="syn-name"><a href="#SyntaxName_float-exponent">float-exponent</a></span>
+    | <span class="syn-name"><a href="#SyntaxName_decimal-plus">decimal-plus</a></span> _ <span class="syn-name"><a href="#SyntaxName_float-exponent">float-exponent</a></span>
 
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_FE">FE</span></i> :</i> <span class="syn-name"><span id="SyntaxName_float-exponent">float-exponent</span></span>
   ::= (<b class="atom">'e'</b>|<b class="atom">'E'</b>) _ (<b class="atom">'+'</b>|<b class="atom">'-'</b>)<sup class="sup">?</sup> _ <span class="syn-name"><a href="#SyntaxName_decimal-plus">decimal-plus</a></span></code></pre></div>
@@ -130,7 +130,7 @@ nav_exclude: true
 
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_ES">ES</span></i> :</i> <span class="syn-name"><span id="SyntaxName_escape-sequence">escape-sequence</span></span> 
   ::= <b class="atom">'\\'</b> _ <span class="syn-name"><a href="#SyntaxName_escaped-char">escaped-char</a></span>
-	| <b class="atom">'\\'</b> _ <span class="syn-name"><a href="#SyntaxName_escaped-char-code">escaped-char-code</a></span>
+    | <b class="atom">'\\'</b> _ <span class="syn-name"><a href="#SyntaxName_escaped-char-code">escaped-char-code</a></span>
 <i class="keyword">Lexis</i>
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_RC">RC</span></i> :</i> <span class="syn-name"><span id="SyntaxName_regular-char">regular-char</span></span> 
   ::= ~ ( <b class="atom">'\''</b> | <b class="atom">'\\'</b> )
@@ -177,11 +177,11 @@ nav_exclude: true
 
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_SCS">SCS</span></i> :</i> <span class="syn-name"><span id="SyntaxName_string-character-star">string-character-star</span></span>
   ::= <span class="syn-name"><a href="#SyntaxName_string-character">string-character</a></span> _ <span class="syn-name"><a href="#SyntaxName_string-character-star">string-character-star</a></span>
-	| ( )
+    | ( )
   
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_SC">SC</span></i> :</i> <span class="syn-name"><span id="SyntaxName_string-character">string-character</span></span>
   ::= <span class="syn-name"><a href="#SyntaxName_regular-string-char">regular-string-char</a></span>
-	| <span class="syn-name"><a href="#SyntaxName_escape-sequence">escape-sequence</a></span>//	| '\\' _ '\n' _ (' '|'\t')*
+    | <span class="syn-name"><a href="#SyntaxName_escape-sequence">escape-sequence</a></span>// | '\\' _ '\n' _ (' '|'\t')*
 <i class="keyword">Lexis</i>
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_RSC">RSC</span></i> :</i> <span class="syn-name"><span id="SyntaxName_regular-string-char">regular-string-char</span></span>
   ::= ~ (<b class="atom">'"'</b> | <b class="atom">'\\'</b>)</code></pre></div>
@@ -212,9 +212,9 @@ nav_exclude: true
 //  ::= ( '=' | '<' | '>' | '@' | '^' | '|'
 //      | '&' | '+' | '-' | '*' | '/' | '$' | '%' ) operator-char*
  
-  <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_PS">PS</span></i> :</i> <span class="syn-name"><span id="SyntaxName_prefix-symbol">prefix-symbol</span></span>	
+  <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_PS">PS</span></i> :</i> <span class="syn-name"><span id="SyntaxName_prefix-symbol">prefix-symbol</span></span>    
   ::= <b class="atom">'!'</b>       <span class="syn-name"><a href="#SyntaxName_operator-char">operator-char</a></span><sup class="sup">*</sup>
- 	| (<b class="atom">'?'</b>|<b class="atom">'~'</b>) <span class="syn-name"><a href="#SyntaxName_operator-char">operator-char</a></span><sup class="sup">+</sup>  
+    | (<b class="atom">'?'</b>|<b class="atom">'~'</b>) <span class="syn-name"><a href="#SyntaxName_operator-char">operator-char</a></span><sup class="sup">+</sup>  
  
   <i class="keyword"></i><i class="var"></i><span class="syn-name"><span id="SyntaxName_operator-char">operator-char</span></span>
   ::= <b class="atom">'!'</b> | <b class="atom">'$'</b> | <b class="atom">'%'</b> | <b class="atom">'&'</b> | <b class="atom">'*'</b> | <b class="atom">'+'</b> | <b class="atom">'-'</b> | <b class="atom">'.'</b> | <b class="atom">'/'</b>
@@ -241,13 +241,13 @@ nav_exclude: true
   ::= <b class="atom">'and'</b>        | <b class="atom">'as'</b>       | <b class="atom">'assert'</b> | <b class="atom">'asr'</b>     | <b class="atom">'begin'</b>   | <b class="atom">'class'</b>
     | <b class="atom">'constraint'</b> | <b class="atom">'do'</b>       | <b class="atom">'done'</b>   | <b class="atom">'downto'</b>  | <b class="atom">'else'</b>    | <b class="atom">'end'</b>
     | <b class="atom">'exception'</b>  | <b class="atom">'external'</b> | <b class="atom">'false'</b>  | <b class="atom">'for'</b>     | <b class="atom">'fun'</b>     | <b class="atom">'function'</b>
-	| <b class="atom">'functor'</b>    | <b class="atom">'if'</b>       | <b class="atom">'in'</b>     | <b class="atom">'include'</b> | <b class="atom">'inherit'</b> | <b class="atom">'initializer'</b>
-	| <b class="atom">'land'</b>       | <b class="atom">'lazy'</b>     | <b class="atom">'let'</b>    | <b class="atom">'lor'</b>     | <b class="atom">'lsl'</b>     | <b class="atom">'lsr'</b>
-	| <b class="atom">'lxor'</b>       | <b class="atom">'match'</b>    | <b class="atom">'method'</b> | <b class="atom">'mod'</b>     | <b class="atom">'module'</b>  | <b class="atom">'mutable'</b> 
-	| <b class="atom">'new'</b>        | <b class="atom">'nonrec'</b>   | <b class="atom">'object'</b> | <b class="atom">'of'</b>      | <b class="atom">'open'</b>    | <b class="atom">'or'</b>	  
-	| <b class="atom">'private'</b>    | <b class="atom">'rec'</b>      | <b class="atom">'sig'</b>    | <b class="atom">'struct'</b>  | <b class="atom">'then'</b>    | <b class="atom">'to'</b>
-	| <b class="atom">'true'</b>       | <b class="atom">'try'</b>      | <b class="atom">'type'</b>   | <b class="atom">'val'</b>     | <b class="atom">'virtual'</b> | <b class="atom">'when'</b> 
-	| <b class="atom">'while'</b>      | <b class="atom">'with'</b></code></pre></div>
+    | <b class="atom">'functor'</b>    | <b class="atom">'if'</b>       | <b class="atom">'in'</b>     | <b class="atom">'include'</b> | <b class="atom">'inherit'</b> | <b class="atom">'initializer'</b>
+    | <b class="atom">'land'</b>       | <b class="atom">'lazy'</b>     | <b class="atom">'let'</b>    | <b class="atom">'lor'</b>     | <b class="atom">'lsl'</b>     | <b class="atom">'lsr'</b>
+    | <b class="atom">'lxor'</b>       | <b class="atom">'match'</b>    | <b class="atom">'method'</b> | <b class="atom">'mod'</b>     | <b class="atom">'module'</b>  | <b class="atom">'mutable'</b> 
+    | <b class="atom">'new'</b>        | <b class="atom">'nonrec'</b>   | <b class="atom">'object'</b> | <b class="atom">'of'</b>      | <b class="atom">'open'</b>    | <b class="atom">'or'</b>     
+    | <b class="atom">'private'</b>    | <b class="atom">'rec'</b>      | <b class="atom">'sig'</b>    | <b class="atom">'struct'</b>  | <b class="atom">'then'</b>    | <b class="atom">'to'</b>
+    | <b class="atom">'true'</b>       | <b class="atom">'try'</b>      | <b class="atom">'type'</b>   | <b class="atom">'val'</b>     | <b class="atom">'virtual'</b> | <b class="atom">'when'</b> 
+    | <b class="atom">'while'</b>      | <b class="atom">'with'</b></code></pre></div>
 
 
 

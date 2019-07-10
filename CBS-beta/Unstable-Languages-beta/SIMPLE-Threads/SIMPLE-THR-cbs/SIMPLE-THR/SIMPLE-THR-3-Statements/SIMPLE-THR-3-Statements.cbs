@@ -52,7 +52,7 @@ Rule
   exec[[ Exp ';' ]] = effect(rval[[ Exp ]])
 Rule
   exec[[ 'if' '(' Exp ')' Block1 'else' Block2 ]] =
-  	if-else(rval[[ Exp ]], exec[[ Block1 ]], exec[[ Block2 ]])
+    if-else(rval[[ Exp ]], exec[[ Block1 ]], exec[[ Block2 ]])
 Rule
   exec[[ 'while' '(' Exp ')' Block ]] = while(rval[[ Exp ]], exec[[ Block ]])
 Rule
@@ -63,11 +63,11 @@ Rule
   exec[[ 'return' ';' ]] = return(null)
 Rule
   exec[[ 'try' Block1 'catch' '(' Id ')' Block2 ]] =
-  	handle-thrown(
-  	  exec[[ Block1 ]],
-  	  scope(
-  	    bind(id[[ Id ]], allocate-initialised-variable(values,given)),
-  	    exec[[ Block2 ]]))
+    handle-thrown(
+      exec[[ Block1 ]],
+      scope(
+        bind(id[[ Id ]], allocate-initialised-variable(values,given)),
+        exec[[ Block2 ]]))
 Rule
   exec[[ 'throw' Exp ';' ]] = throw(rval[[ Exp ]])
 /*

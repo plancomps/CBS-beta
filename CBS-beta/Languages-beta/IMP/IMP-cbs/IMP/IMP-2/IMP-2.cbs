@@ -18,12 +18,12 @@ Rule
   eval-bool[[ 'true' ]] = true 
 Rule
   eval-bool[[ AExp1 '<=' AExp2 ]] = 
-	is-less-or-equal(eval-arith[[ AExp1 ]], eval-arith[[ AExp2 ]])
+    is-less-or-equal(eval-arith[[ AExp1 ]], eval-arith[[ AExp2 ]])
 Rule
   eval-bool[[ '!' BExp ]] = not(eval-bool[[ BExp ]])
 Rule
   eval-bool[[ BExp1 '&&' BExp2 ]] = 
-	if-true-else(eval-bool[[ BExp1 ]], eval-bool[[ BExp2 ]], false)
+    if-true-else(eval-bool[[ BExp1 ]], eval-bool[[ BExp2 ]], false)
 Rule
   eval-bool[[ '(' BExp ')' ]] = eval-bool[[ BExp ]]
   

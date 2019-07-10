@@ -15,7 +15,7 @@ nav_exclude: true
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Syntax</i>
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_VN">VN</span></i> :</i> <span class="syn-name"><span id="SyntaxName_value-name">value-name</span></span>
   ::= <span class="syn-name"><a href="../OC-L-01-Lexical-Conventions/index.html#SyntaxName_lowercase-ident">lowercase-ident</a></span>  
- 	| <b class="atom">'('</b> <span class="syn-name"><a href="#SyntaxName_operator-name">operator-name</a></span> <b class="atom">')'</b>
+    | <b class="atom">'('</b> <span class="syn-name"><a href="#SyntaxName_operator-name">operator-name</a></span> <b class="atom">')'</b>
   
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_ON">ON</span></i> :</i> <span class="syn-name"><span id="SyntaxName_operator-name">operator-name</span></span> ::= <span class="syn-name"><a href="#SyntaxName_prefix-op">prefix-op</a></span> | <span class="syn-name"><a href="#SyntaxName_infix-op">infix-op</a></span>  
   
@@ -25,8 +25,8 @@ nav_exclude: true
 //  infix-op
 //  ::= infix-symbol 
 //    | '*' | '+' | '-' | '-.' | '=' | '<' | '>' | '||' | '&' | '&&' 
-// 	  | '!=' | 'or' | ':=' | 'mod' 
-// 	  | 'land' | 'lor' | 'lxor' | 'lsl' | 'lsr' | 'asr'  
+//    | '!=' | 'or' | ':=' | 'mod' 
+//    | 'land' | 'lor' | 'lxor' | 'lsl' | 'lsr' | 'asr'  
 
 ### Infix operator precedence
 
@@ -34,7 +34,7 @@ nav_exclude: true
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Syntax</i>
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_IO">IO</span></i> :</i> <span class="syn-name"><span id="SyntaxName_infix-op">infix-op</span></span>
   ::= <span class="syn-name"><a href="#SyntaxName_infix-op-1">infix-op-1</a></span> | <span class="syn-name"><a href="#SyntaxName_infix-op-2">infix-op-2</a></span> | <span class="syn-name"><a href="#SyntaxName_infix-op-3">infix-op-3</a></span> | <span class="syn-name"><a href="#SyntaxName_infix-op-4">infix-op-4</a></span>
-	| <span class="syn-name"><a href="#SyntaxName_infix-op-5">infix-op-5</a></span> | <span class="syn-name"><a href="#SyntaxName_infix-op-6">infix-op-6</a></span> | <span class="syn-name"><a href="#SyntaxName_infix-op-7">infix-op-7</a></span> | <span class="syn-name"><a href="#SyntaxName_infix-op-8">infix-op-8</a></span>
+    | <span class="syn-name"><a href="#SyntaxName_infix-op-5">infix-op-5</a></span> | <span class="syn-name"><a href="#SyntaxName_infix-op-6">infix-op-6</a></span> | <span class="syn-name"><a href="#SyntaxName_infix-op-7">infix-op-7</a></span> | <span class="syn-name"><a href="#SyntaxName_infix-op-8">infix-op-8</a></span>
 <i class="keyword">Lexis</i>
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_IO-1">IO-1</span></i> :</i> <span class="syn-name"><span id="SyntaxName_infix-op-1">infix-op-1</span></span>
   ::= <b class="atom">'**'</b> <span class="syn-name"><a href="../OC-L-01-Lexical-Conventions/index.html#SyntaxName_operator-char">operator-char</a></span><sup class="sup">*</sup> | <b class="atom">'lsl'</b> | <b class="atom">'lsr'</b> | <b class="atom">'asr'</b>

@@ -26,8 +26,8 @@ nav_exclude: true
 
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_D">D</span></i> :</i> <span class="syn-name"><span id="SyntaxName_definition">definition</span></span>
   ::= <span class="syn-name"><a href="../OC-L-07-Expressions/index.html#SyntaxName_let-definition">let-definition</a></span>
-	| <span class="syn-name"><a href="../OC-L-08-Type-and-Exception-Definitions/index.html#SyntaxName_type-definition">type-definition</a></span>
-	| <span class="syn-name"><a href="../OC-L-08-Type-and-Exception-Definitions/index.html#SyntaxName_exception-definition">exception-definition</a></span>
+    | <span class="syn-name"><a href="../OC-L-08-Type-and-Exception-Definitions/index.html#SyntaxName_type-definition">type-definition</a></span>
+    | <span class="syn-name"><a href="../OC-L-08-Type-and-Exception-Definitions/index.html#SyntaxName_exception-definition">exception-definition</a></span>
 <i class="keyword">Lexis</i>
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_SCP">SCP</span></i> :</i> <span class="syn-name"><span id="SyntaxName_semicolon-pair">semicolon-pair</span></span> ::= <b class="atom">';;'</b></code></pre></div>
 
@@ -38,9 +38,9 @@ nav_exclude: true
 <i class="keyword">Rule</i>
   <i class="sem-name"><a href="#SemanticsName_interpret">interpret</a></i>[[ <span id="Variable149_SCP1*"><i class="var"><a href="#VariableStem_SCP">SCP</a><sub class="sub">1</sub><sup class="sup">*</sup></i></span> <span id="Variable154_MIS"><i class="var"><a href="#VariableStem_MIS">MIS</a></i></span> <span id="Variable161_SCP2*"><i class="var"><a href="#VariableStem_SCP">SCP</a><sub class="sub">2</sub><sup class="sup">*</sup></i></span> ]] = 
     <span class="name"><a href="../../../../../Funcons-beta/Computations/Abnormal/Throwing/index.html#Name_handle-thrown">handle-thrown</a></span>(
-	  <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Binding/index.html#Name_scope">scope</a></span>(
-	    <span class="name"><a href="../OC-L-12-Core-Library/index.html#Name_ocaml-light-core-library">ocaml-light-core-library</a></span>,
-	  	<span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Binding/index.html#Name_accumulate">accumulate</a></span>(<i class="sem-name"><a href="#SemanticsName_define-or-evaluate-items">define-or-evaluate-items</a></i>[[ <a href="#Variable154_MIS"><i class="var">MIS</i></a> ]])),
+      <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Binding/index.html#Name_scope">scope</a></span>(
+        <span class="name"><a href="../OC-L-12-Core-Library/index.html#Name_ocaml-light-core-library">ocaml-light-core-library</a></span>,
+        <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Binding/index.html#Name_accumulate">accumulate</a></span>(<i class="sem-name"><a href="#SemanticsName_define-or-evaluate-items">define-or-evaluate-items</a></i>[[ <a href="#Variable154_MIS"><i class="var">MIS</i></a> ]])),
       <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Flowing/index.html#Name_sequential">sequential</a></span>(
         <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Interacting/index.html#Name_print">print</a></span> ("Uncaught exception: ", <span class="name"><a href="../OC-L-12-Core-Library/index.html#Name_ocaml-light-to-string">ocaml-light-to-string</a></span> <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Giving/index.html#Name_given">given</a></span>, "\n"),
         <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Maps/index.html#Name_map">map</a></span>()))</code></pre></div>

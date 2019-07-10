@@ -5,13 +5,13 @@ Language "OCaml Light"
 Syntax
   T : typexpr
   ::= '\'' ident
-	| '_'
-	| '(' typexpr ')'
-	| typexpr '->' typexpr
-	| typexpr star-typexpr+
-	| typeconstr
-	| typexpr typeconstr
-	| '(' typexpr comma-typexpr+ ')' typeconstr
+    | '_'
+    | '(' typexpr ')'
+    | typexpr '->' typexpr
+    | typexpr star-typexpr+
+    | typeconstr
+    | typexpr typeconstr
+    | '(' typexpr comma-typexpr+ ')' typeconstr
 
   ST : star-typexpr ::= '*' typexpr
 
