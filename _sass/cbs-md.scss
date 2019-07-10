@@ -1,5 +1,9 @@
 @import "./support/support";
 
+pre{
+    tab-size: 4;
+}
+
 i.keyword {
     color: $grey-dk-000;
     background-color: inherit;
