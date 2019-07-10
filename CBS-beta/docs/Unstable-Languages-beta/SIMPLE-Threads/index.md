@@ -50,8 +50,8 @@ Evolution:
 - extension of [SIMPLE]
 
 Reuse of funcons:
-- [SIMPLE-THR-Funcons-Index]
-- [SIMPLE-THR-Unstable-Funcons-Index]
+- [SIMPLE-Threads-Funcons-Index]
+- [SIMPLE-Threads-Unstable-Funcons-Index]
 
 Keywords:
 - imperative, concurrent, illustrative, simple, disambiguation, K framework
@@ -66,5 +66,5 @@ Main contributors:
 [Languages-beta]: /CBS-beta/docs/Languages-beta "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/docs/Unstable-Languages-beta "UNSTABLE-LANGUAGES-BETA"
 [SIMPLE-Threads]: /CBS-beta/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-Start
-[SIMPLE-THR-Funcons-Index]: /CBS-beta/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-Funcons-Index
-[SIMPLE-THR-Unstable-Funcons-Index]: /CBS-beta/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-Unstable-Funcons-Index
+[SIMPLE-Threads-Funcons-Index]: /CBS-beta/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-Funcons-Index
+[SIMPLE-Threads-Unstable-Funcons-Index]: /CBS-beta/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-Unstable-Funcons-Index

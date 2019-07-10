@@ -41,6 +41,9 @@ Tests:
 Evolution:
   - supersedes [Reusable Components of Semantic Specifications]
 
+Reuse of funcons:
+  - [OCaml-Light-Funcons-Index]
+
 References:
   - [OCaml Implementation]
   - [OCaml Manual]
@@ -63,3 +66,4 @@ Main contributors:
 [Reusable Components of Semantic Specifications]: http://plancomps.org/taosd2015
 [Ott framework]: https://www.cl.cam.ac.uk/~pes20/ott/
 [OCaml-Light]: /CBS-beta/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-Start
+[OCaml-Light-Funcons-Index]: /CBS-beta/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-Funcons-Index

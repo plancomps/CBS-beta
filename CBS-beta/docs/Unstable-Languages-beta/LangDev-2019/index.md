@@ -28,6 +28,10 @@ Tests:
 Evolution:
 - first version
 
+Reuse of funcons:
+- [LangDev-2019-Funcons-Index]
+- [LangDev-2019-Unstable-Funcons-Index]
+
 References:
 - LangDev'19 presentation:
     [Slides PDF](https://pdmosses.github.io/meetings/LangDev-2019/LangDev-2019-slides.pdf)
@@ -50,3 +54,6 @@ Main contributors:
 [LD-2019-demo]: /CBS-beta/docs/LangDev-2019/LD-2019-demo
 
 [Demonstration]: LD-demo
+
+[LangDev-2019-Funcons-Index]: /CBS-beta/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Funcons-Index
+[LangDev-2019-Unstable-Funcons-Index]: /CBS-beta/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Unstable-Funcons-Index

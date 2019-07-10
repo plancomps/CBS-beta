@@ -37,6 +37,9 @@ Tests:
 Evolution:
   - supersedes CBS of IMP in all previously published papers
 
+Reuse of funcons:
+  - [IMP-Funcons-Index]
+
 References:
   - [IMP in the K framework]
 
@@ -49,5 +52,6 @@ Main contributors:
 [IMP in the K framework]: http://www.kframework.org/language-pdfs/new/imp.pdf
 
 [IMP]: /CBS-beta/Languages-beta/IMP/IMP-cbs/IMP/IMP-Start
+[IMP-Funcons-Index]: /CBS-beta/Languages-beta/IMP/IMP-cbs/IMP/IMP-Funcons-Index
 
 [Browsing Guide]: https://plancomps.github.io/CBS-beta/Guide/Browsing

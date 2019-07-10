@@ -40,6 +40,9 @@ Tests:
 Evolution:
   - initial version
 
+Reuse of funcons:
+  - [SIMPLE-Funcons-Index]
+
 References:
   - [K Overview and SIMPLE Case Study]
 
@@ -54,5 +57,6 @@ Main contributors:
 [SIMPLE in the K framework]: http://fsl.cs.illinois.edu/index.php/K_Overview_and_SIMPLE_Case_Study
 
 [SIMPLE]: /CBS-beta/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-Start
+[SIMPLE-Funcons-Index]: /CBS-beta/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-Funcons-Index
 
 [SIMPLE-Threads]: /CBS-beta/docs/Unstable-Languages-beta/SIMPLE-Threads

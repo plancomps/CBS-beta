@@ -10,6 +10,8 @@ Beta-release changes
 This page lists significant additions and changes to the funcon definitions and
 language specifications included in the CBS beta-release.
 
+2019-07-10: [Languages-beta](Languages-beta), [Unstable-Languages-beta](Unstable-Languages-beta)
+* Missing links to local funcons reuse indexes added in overview pages.
 
 2019-07-08: [Unstable-Funcons-beta](Unstable-Funcons-beta)
 * __Tentative funcons for multithreading and synchronisation added.__

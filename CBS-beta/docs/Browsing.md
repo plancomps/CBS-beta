@@ -30,9 +30,6 @@ The global [Funcons-Index] page lists the names of all current funcons, grouped
 according to their types. The local Funcons-Index page for a particular language
 lists only the names of the funcons actually used in its specification.
 
-> Links to local Funcons-Index pages are to be added to the language overview
-> pages.
-
 The [Funcon Reuse] page shows which of the languages in [Languages-beta] reference
 each funcon.
 

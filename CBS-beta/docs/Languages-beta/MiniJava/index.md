@@ -34,6 +34,9 @@ Tests:
 Evolution:
   - first version
 
+Reuse of funcons:
+  - [MiniJava-Funcons-Index]
+
 References:
   - [MiniJava Project]
   - [Java Manual]
@@ -49,3 +52,4 @@ Main contributors:
 [Java Manual]: https://docs.oracle.com/javase/specs
 [BNF for MiniJava]: http://www.cambridge.org/us/features/052182060X/grammar.html
 [MiniJava]: /CBS-beta/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Start
+[MiniJava-Funcons-Index]: /CBS-beta/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Funcons-Index

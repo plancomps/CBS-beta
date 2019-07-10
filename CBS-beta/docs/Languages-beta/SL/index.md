@@ -34,6 +34,9 @@ Tests:
 Evolution:
   - first version
 
+Reuse of funcons:
+  - [SL-Funcons-Index]
+
 References:
   - [SL in DynSem]
 
@@ -49,3 +52,4 @@ Main contributors:
 [SL in SDF3]: https://github.com/MetaBorgCube/metaborg-sl/blob/master/org.metaborg.lang.sl/syntax/SL.sdf3
 [Funcons Tools]: https://hackage.haskell.org/package/funcons-tools
 [SL]: /CBS-beta/Languages-beta/SL/SL-cbs/SL/SL-Start
+[SL-Funcons-Index]: /CBS-beta/Languages-beta/SL/SL-cbs/SL/SL-Funcons-Index
