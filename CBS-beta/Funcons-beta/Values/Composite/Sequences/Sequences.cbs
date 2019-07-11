@@ -84,7 +84,7 @@ Rule
   index(_:positive-integers, ( )) ~> ( )
 
 
-// Total indexing funcons:
+/* Total indexing funcons: */
 
 Funcon 
   first(_:T, _:values*) : =>T

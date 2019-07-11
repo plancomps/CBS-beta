@@ -13,11 +13,14 @@ Syntax
   
   PO : prefix-op ::= prefix-symbol // added
  
-//  infix-op
-//  ::= infix-symbol 
-//    | '*' | '+' | '-' | '-.' | '=' | '<' | '>' | '||' | '&' | '&&' 
-//    | '!=' | 'or' | ':=' | 'mod' 
+/*
+//  infix-op  
+//  ::= infix-symbol  
+//    | '*' | '+' | '-' | '-.' | '=' | '<' | '>' | '||' | '&' | '&&'  
+//    | '!=' | 'or' | ':=' | 'mod'  
 //    | 'land' | 'lor' | 'lxor' | 'lsl' | 'lsr' | 'asr'  
+*/
+
 
 ### Infix operator precedence
 

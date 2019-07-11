@@ -90,9 +90,10 @@ Rule
   eval[[ 'readln' '(' ')' ]] = [ read-line ]
 Rule
   eval[[ 'defineFunction' '(' Expr ')' ]] = fail
+//  
 //    give(str eval[[Expr]],  
-//      override-global-bindings(declare[[given]]))
-//  //Dynamic parsing and translation to funcons not yet implemented
+//      override-global-bindings(declare[[given]]))  
+//  // Dynamic parsing and translation to funcons not yet implemented
 Rule
   eval[[ 'nanoTime' '(' ')' ]] = fail
 Rule

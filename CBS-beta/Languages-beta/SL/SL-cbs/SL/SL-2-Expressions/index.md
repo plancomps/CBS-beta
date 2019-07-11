@@ -99,9 +99,10 @@ nav_exclude: true
 <i class="keyword">Rule</i>
   <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <b class="atom">'readln'</b> <b class="atom">'('</b> <b class="atom">')'</b> ]] = [ <span class="name"><a href="../SL-Funcons/index.html#Name_read-line">read-line</a></span> ]
 <i class="keyword">Rule</i>
-  <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <b class="atom">'defineFunction'</b> <b class="atom">'('</b> <span id="Variable1320_Expr"><i class="var"><a href="#VariableStem_Expr">Expr</a></i></span> <b class="atom">')'</b> ]] = <span class="name"><a href="../../../../../Funcons-beta/Computations/Abnormal/Failing/index.html#Name_fail">fail</a></span>//    give(str eval[[Expr]],  
-//      override-global-bindings(declare[[given]]))
-//  //Dynamic parsing and translation to funcons not yet implemented
+  <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <b class="atom">'defineFunction'</b> <b class="atom">'('</b> <span id="Variable1320_Expr"><i class="var"><a href="#VariableStem_Expr">Expr</a></i></span> <b class="atom">')'</b> ]] = <span class="name"><a href="../../../../../Funcons-beta/Computations/Abnormal/Failing/index.html#Name_fail">fail</a></span>//  
+//    give(str eval[[Expr]],  
+//      override-global-bindings(declare[[given]]))  
+//  // Dynamic parsing and translation to funcons not yet implemented
 <i class="keyword">Rule</i>
   <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <b class="atom">'nanoTime'</b> <b class="atom">'('</b> <b class="atom">')'</b> ]] = <span class="name"><a href="../../../../../Funcons-beta/Computations/Abnormal/Failing/index.html#Name_fail">fail</a></span>
 <i class="keyword">Rule</i>

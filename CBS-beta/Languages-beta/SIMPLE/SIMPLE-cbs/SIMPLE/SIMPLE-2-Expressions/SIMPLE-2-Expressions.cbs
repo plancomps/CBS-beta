@@ -26,7 +26,6 @@ Syntax
              |  '!' exp
              |  exp '&&' exp
              |  exp '||' exp
-//           |  'spawn' block
 Rule
   [[ '(' Exp ')' ]] : exp = [[ Exp ]]
 
@@ -84,11 +83,6 @@ Rule
   rval[[ Exp1 '&&' Exp2 ]] = if-else(rval[[ Exp1 ]],rval[[ Exp2 ]],false)
 Rule
   rval[[ Exp1 '||' Exp2 ]] = if-else(rval[[ Exp1 ]],true,rval[[ Exp2 ]])
-/*
-  Funcons for concurrency are not yet available.
-Rule
-  exp [[ 'spawn' Block ]] = fail // FIX-ME
-*/
 
 
 Syntax

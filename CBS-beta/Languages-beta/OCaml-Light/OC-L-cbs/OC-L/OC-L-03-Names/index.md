@@ -22,11 +22,14 @@ nav_exclude: true
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_PO">PO</span></i> :</i> <span class="syn-name"><span id="SyntaxName_prefix-op">prefix-op</span></span> ::= <span class="syn-name"><a href="../OC-L-01-Lexical-Conventions/index.html#SyntaxName_prefix-symbol">prefix-symbol</a></span></code></pre></div>
  // added
  
-//  infix-op
-//  ::= infix-symbol 
-//    | '*' | '+' | '-' | '-.' | '=' | '<' | '>' | '||' | '&' | '&&' 
-//    | '!=' | 'or' | ':=' | 'mod' 
+
+//  infix-op  
+//  ::= infix-symbol  
+//    | '*' | '+' | '-' | '-.' | '=' | '<' | '>' | '||' | '&' | '&&'  
+//    | '!=' | 'or' | ':=' | 'mod'  
 //    | 'land' | 'lor' | 'lxor' | 'lsl' | 'lsr' | 'asr'  
+
+
 
 ### Infix operator precedence
 
@@ -92,40 +95,40 @@ nav_exclude: true
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Semantics</i>
   <i class="sem-name"><span id="SemanticsName_value-name">value-name</span></i>[[ _:<span class="syn-name"><a href="#SyntaxName_value-path">value-path</a></span> ]] : =><span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Binding/index.html#Name_ids">ids</a></span>
 <i class="keyword">Rule</i>
-  <i class="sem-name"><a href="#SemanticsName_value-name">value-name</a></i>[[ <span id="Variable474_LI"><i class="var"><a href="../OC-L-01-Lexical-Conventions/index.html#VariableStem_LI">LI</a></i></span> ]] = \"<a href="#Variable474_LI"><i class="var">LI</i></a>\"
+  <i class="sem-name"><a href="#SemanticsName_value-name">value-name</a></i>[[ <span id="Variable487_LI"><i class="var"><a href="../OC-L-01-Lexical-Conventions/index.html#VariableStem_LI">LI</a></i></span> ]] = \"<a href="#Variable487_LI"><i class="var">LI</i></a>\"
 <i class="keyword">Rule</i>
-  <i class="sem-name"><a href="#SemanticsName_value-name">value-name</a></i>[[ <b class="atom">'('</b> <span id="Variable499_PS"><i class="var"><a href="../OC-L-01-Lexical-Conventions/index.html#VariableStem_PS">PS</a></i></span> <b class="atom">')'</b> ]] = <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_string-append">string-append</a></span>("(", \"<a href="#Variable499_PS"><i class="var">PS</i></a>\", ")")
+  <i class="sem-name"><a href="#SemanticsName_value-name">value-name</a></i>[[ <b class="atom">'('</b> <span id="Variable512_PS"><i class="var"><a href="../OC-L-01-Lexical-Conventions/index.html#VariableStem_PS">PS</a></i></span> <b class="atom">')'</b> ]] = <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_string-append">string-append</a></span>("(", \"<a href="#Variable512_PS"><i class="var">PS</i></a>\", ")")
 <i class="keyword">Rule</i>
-  <i class="sem-name"><a href="#SemanticsName_value-name">value-name</a></i>[[ <b class="atom">'('</b> <span id="Variable541_IO-1"><i class="var"><a href="#VariableStem_IO-1">IO-1</a></i></span> <b class="atom">')'</b> ]] = <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_string-append">string-append</a></span>("(", \"<a href="#Variable541_IO-1"><i class="var">IO-1</i></a>\", ")")
+  <i class="sem-name"><a href="#SemanticsName_value-name">value-name</a></i>[[ <b class="atom">'('</b> <span id="Variable554_IO-1"><i class="var"><a href="#VariableStem_IO-1">IO-1</a></i></span> <b class="atom">')'</b> ]] = <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_string-append">string-append</a></span>("(", \"<a href="#Variable554_IO-1"><i class="var">IO-1</i></a>\", ")")
 <i class="keyword">Rule</i>
-  <i class="sem-name"><a href="#SemanticsName_value-name">value-name</a></i>[[ <b class="atom">'('</b> <span id="Variable583_IO-2"><i class="var"><a href="#VariableStem_IO-2">IO-2</a></i></span> <b class="atom">')'</b> ]] = <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_string-append">string-append</a></span>("(", \"<a href="#Variable583_IO-2"><i class="var">IO-2</i></a>\", ")")
+  <i class="sem-name"><a href="#SemanticsName_value-name">value-name</a></i>[[ <b class="atom">'('</b> <span id="Variable596_IO-2"><i class="var"><a href="#VariableStem_IO-2">IO-2</a></i></span> <b class="atom">')'</b> ]] = <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_string-append">string-append</a></span>("(", \"<a href="#Variable596_IO-2"><i class="var">IO-2</i></a>\", ")")
 <i class="keyword">Rule</i>
-  <i class="sem-name"><a href="#SemanticsName_value-name">value-name</a></i>[[ <b class="atom">'('</b> <span id="Variable625_IO-3"><i class="var"><a href="#VariableStem_IO-3">IO-3</a></i></span> <b class="atom">')'</b> ]] = <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_string-append">string-append</a></span>("(", \"<a href="#Variable625_IO-3"><i class="var">IO-3</i></a>\", ")")
+  <i class="sem-name"><a href="#SemanticsName_value-name">value-name</a></i>[[ <b class="atom">'('</b> <span id="Variable638_IO-3"><i class="var"><a href="#VariableStem_IO-3">IO-3</a></i></span> <b class="atom">')'</b> ]] = <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_string-append">string-append</a></span>("(", \"<a href="#Variable638_IO-3"><i class="var">IO-3</i></a>\", ")")
 <i class="keyword">Rule</i>
-  <i class="sem-name"><a href="#SemanticsName_value-name">value-name</a></i>[[ <b class="atom">'('</b> <span id="Variable667_IO-4"><i class="var"><a href="#VariableStem_IO-4">IO-4</a></i></span> <b class="atom">')'</b> ]] = <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_string-append">string-append</a></span>("(", \"<a href="#Variable667_IO-4"><i class="var">IO-4</i></a>\", ")")
+  <i class="sem-name"><a href="#SemanticsName_value-name">value-name</a></i>[[ <b class="atom">'('</b> <span id="Variable680_IO-4"><i class="var"><a href="#VariableStem_IO-4">IO-4</a></i></span> <b class="atom">')'</b> ]] = <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_string-append">string-append</a></span>("(", \"<a href="#Variable680_IO-4"><i class="var">IO-4</i></a>\", ")")
 <i class="keyword">Rule</i>
-  <i class="sem-name"><a href="#SemanticsName_value-name">value-name</a></i>[[ <b class="atom">'('</b> <span id="Variable709_IO-5"><i class="var"><a href="#VariableStem_IO-5">IO-5</a></i></span> <b class="atom">')'</b> ]] = <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_string-append">string-append</a></span>("(", \"<a href="#Variable709_IO-5"><i class="var">IO-5</i></a>\", ")")
+  <i class="sem-name"><a href="#SemanticsName_value-name">value-name</a></i>[[ <b class="atom">'('</b> <span id="Variable722_IO-5"><i class="var"><a href="#VariableStem_IO-5">IO-5</a></i></span> <b class="atom">')'</b> ]] = <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_string-append">string-append</a></span>("(", \"<a href="#Variable722_IO-5"><i class="var">IO-5</i></a>\", ")")
 <i class="keyword">Rule</i>
-  <i class="sem-name"><a href="#SemanticsName_value-name">value-name</a></i>[[ <b class="atom">'('</b> <span id="Variable751_IO-6"><i class="var"><a href="#VariableStem_IO-6">IO-6</a></i></span> <b class="atom">')'</b> ]] = <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_string-append">string-append</a></span>("(", \"<a href="#Variable751_IO-6"><i class="var">IO-6</i></a>\", ")")
+  <i class="sem-name"><a href="#SemanticsName_value-name">value-name</a></i>[[ <b class="atom">'('</b> <span id="Variable764_IO-6"><i class="var"><a href="#VariableStem_IO-6">IO-6</a></i></span> <b class="atom">')'</b> ]] = <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_string-append">string-append</a></span>("(", \"<a href="#Variable764_IO-6"><i class="var">IO-6</i></a>\", ")")
 <i class="keyword">Rule</i>
-  <i class="sem-name"><a href="#SemanticsName_value-name">value-name</a></i>[[ <b class="atom">'('</b> <span id="Variable793_IO-7"><i class="var"><a href="#VariableStem_IO-7">IO-7</a></i></span> <b class="atom">')'</b> ]] = <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_string-append">string-append</a></span>("(", \"<a href="#Variable793_IO-7"><i class="var">IO-7</i></a>\", ")")
+  <i class="sem-name"><a href="#SemanticsName_value-name">value-name</a></i>[[ <b class="atom">'('</b> <span id="Variable806_IO-7"><i class="var"><a href="#VariableStem_IO-7">IO-7</a></i></span> <b class="atom">')'</b> ]] = <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_string-append">string-append</a></span>("(", \"<a href="#Variable806_IO-7"><i class="var">IO-7</i></a>\", ")")
 <i class="keyword">Rule</i>
-  <i class="sem-name"><a href="#SemanticsName_value-name">value-name</a></i>[[ <b class="atom">'('</b> <span id="Variable835_IO-8"><i class="var"><a href="#VariableStem_IO-8">IO-8</a></i></span> <b class="atom">')'</b> ]] = <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_string-append">string-append</a></span>("(", \"<a href="#Variable835_IO-8"><i class="var">IO-8</i></a>\", ")")</code></pre></div>
+  <i class="sem-name"><a href="#SemanticsName_value-name">value-name</a></i>[[ <b class="atom">'('</b> <span id="Variable848_IO-8"><i class="var"><a href="#VariableStem_IO-8">IO-8</a></i></span> <b class="atom">')'</b> ]] = <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_string-append">string-append</a></span>("(", \"<a href="#Variable848_IO-8"><i class="var">IO-8</i></a>\", ")")</code></pre></div>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Semantics</i>
   <i class="sem-name"><span id="SemanticsName_constr-name">constr-name</span></i>[[ _:<span class="syn-name"><a href="#SyntaxName_constr">constr</a></span> ]] : =><span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Binding/index.html#Name_ids">ids</a></span>
 <i class="keyword">Rule</i>
-  <i class="sem-name"><a href="#SemanticsName_constr-name">constr-name</a></i>[[ <span id="Variable888_CN"><i class="var"><a href="#VariableStem_CN">CN</a></i></span> ]] = \"<a href="#Variable888_CN"><i class="var">CN</i></a>\"</code></pre></div>
+  <i class="sem-name"><a href="#SemanticsName_constr-name">constr-name</a></i>[[ <span id="Variable901_CN"><i class="var"><a href="#VariableStem_CN">CN</a></i></span> ]] = \"<a href="#Variable901_CN"><i class="var">CN</i></a>\"</code></pre></div>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Semantics</i>
   <i class="sem-name"><span id="SemanticsName_typeconstr-name">typeconstr-name</span></i>[[ _:<span class="syn-name"><a href="#SyntaxName_typeconstr">typeconstr</a></span> ]] : =><span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Binding/index.html#Name_ids">ids</a></span>
 <i class="keyword">Rule</i>
-  <i class="sem-name"><a href="#SemanticsName_typeconstr-name">typeconstr-name</a></i>[[ <span id="Variable924_TCN"><i class="var"><a href="#VariableStem_TCN">TCN</a></i></span> ]] = \"<a href="#Variable924_TCN"><i class="var">TCN</i></a>\"</code></pre></div>
+  <i class="sem-name"><a href="#SemanticsName_typeconstr-name">typeconstr-name</a></i>[[ <span id="Variable937_TCN"><i class="var"><a href="#VariableStem_TCN">TCN</a></i></span> ]] = \"<a href="#Variable937_TCN"><i class="var">TCN</i></a>\"</code></pre></div>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Semantics</i>
   <i class="sem-name"><span id="SemanticsName_field-name">field-name</span></i>[[ _:<span class="syn-name"><a href="#SyntaxName_field">field</a></span> ]] : =><span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Binding/index.html#Name_ids">ids</a></span>
 <i class="keyword">Rule</i>
-  <i class="sem-name"><a href="#SemanticsName_field-name">field-name</a></i>[[ <span id="Variable960_FN"><i class="var"><a href="#VariableStem_FN">FN</a></i></span> ]] = \"<a href="#Variable960_FN"><i class="var">FN</i></a>\"</code></pre></div>
+  <i class="sem-name"><a href="#SemanticsName_field-name">field-name</a></i>[[ <span id="Variable973_FN"><i class="var"><a href="#VariableStem_FN">FN</a></i></span> ]] = \"<a href="#Variable973_FN"><i class="var">FN</i></a>\"</code></pre></div>
 
 
 

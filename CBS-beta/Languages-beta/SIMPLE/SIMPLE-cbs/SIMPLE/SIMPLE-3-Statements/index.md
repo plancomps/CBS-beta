@@ -26,10 +26,7 @@ nav_exclude: true
                |  <b class="atom">'return'</b> <span class="syn-name"><a href="../SIMPLE-2-Expressions/index.html#SyntaxName_exp">exp</a></span><sup class="sup">?</sup> <b class="atom">';'</b>
                |  <b class="atom">'try'</b> <span class="syn-name"><a href="#SyntaxName_block">block</a></span> <b class="atom">'catch'</b> <b class="atom">'('</b> <span class="syn-name"><a href="../SIMPLE-1-Lexical/index.html#SyntaxName_id">id</a></span> <b class="atom">')'</b> <span class="syn-name"><a href="#SyntaxName_block">block</a></span>
                |  <b class="atom">'throw'</b> <span class="syn-name"><a href="../SIMPLE-2-Expressions/index.html#SyntaxName_exp">exp</a></span> <b class="atom">';'</b></code></pre></div>
-//             |  'join' exp ';'
-//             |  'acquire' exp ';'
-//             |  'release' exp ';'
-//             |  'rendezvous' exp ';'
+
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Rule</i>
   [[ <b class="atom">'if'</b> <b class="atom">'('</b> <span id="Variable206_Exp"><i class="var"><a href="../SIMPLE-2-Expressions/index.html#VariableStem_Exp">Exp</a></i></span> <b class="atom">')'</b> <span id="Variable213_Block"><i class="var"><a href="#VariableStem_Block">Block</a></i></span> ]] : <span class="syn-name"><a href="#SyntaxName_stmt">stmt</a></span> =
   [[ <b class="atom">'if'</b> <b class="atom">'('</b> <a href="#Variable206_Exp"><i class="var">Exp</i></a> <b class="atom">')'</b> <a href="#Variable213_Block"><i class="var">Block</i></a> <b class="atom">'else'</b> <b class="atom">'{'</b> <b class="atom">'}'</b> ]]
@@ -77,17 +74,6 @@ nav_exclude: true
         <i class="sem-name"><a href="#SemanticsName_exec">exec</a></i>[[ <a href="#Variable916_Block2"><i class="var">Block<sub class="sub">2</sub></i></a> ]]))
 <i class="keyword">Rule</i>
   <i class="sem-name"><a href="#SemanticsName_exec">exec</a></i>[[ <b class="atom">'throw'</b> <span id="Variable1015_Exp"><i class="var"><a href="../SIMPLE-2-Expressions/index.html#VariableStem_Exp">Exp</a></i></span> <b class="atom">';'</b> ]] = <span class="name"><a href="../../../../../Funcons-beta/Computations/Abnormal/Throwing/index.html#Name_throw">throw</a></span>(<i class="sem-name"><a href="../SIMPLE-2-Expressions/index.html#SemanticsName_rval">rval</a></i>[[ <a href="#Variable1015_Exp"><i class="var">Exp</i></a> ]])</code></pre></div>
-
-
-  Funcons for concurrency are not yet available.
-Rule
-  exec[[ 'join' Exp ';' ]] = fail // FIX-ME
-Rule
-  exec[[ 'acquire' Exp ';' ]] = fail // FIX-ME
-Rule
-  exec[[ 'release' Exp ';' ]] = fail // FIX-ME
-Rule
-  exec[[ 'rendezvous' Exp ';' ]] = fail // FIX-ME
 
 
 

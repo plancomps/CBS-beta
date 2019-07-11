@@ -339,29 +339,29 @@ Funcon
   It is equality on primitive values, and defined inductively on composite values.
 */
 
-// Unit Type
+/* Unit Type */
 Rule
   ocaml-light-is-structurally-equal(null-value, null-value) ~> true
-// Booleans
+/* Booleans */
 Rule
   ocaml-light-is-structurally-equal(B1:booleans, B2:booleans) ~> is-equal(B1,B2)
-// Integers
+/* Integers */
 Rule
   ocaml-light-is-structurally-equal(I1:implemented-integers, I2:implemented-integers) ~>
     is-equal(I1,I2)
-// Floats
+/* Floats */
 Rule
   ocaml-light-is-structurally-equal(F1:implemented-floats, F2:implemented-floats) ~>
     is-equal(F1,F2)
-// Characters
+/* Characters */
 Rule
   ocaml-light-is-structurally-equal(C1:implemented-characters, C2:implemented-characters) ~>
     is-equal(C1,C2)
-// Strings
+/* Strings */
 Rule
   ocaml-light-is-structurally-equal(S1:implemented-strings, S2:implemented-strings) ~>
     is-equal(S1,S2)
-// Tuples
+/* Tuples */
 Rule
   ocaml-light-is-structurally-equal(tuple(), tuple()) ~> true
 Rule
@@ -371,7 +371,7 @@ Rule
 Rule
   ocaml-light-is-structurally-equal(tuple(V, V*), tuple(W, W*)) ~>
     and(ocaml-light-is-structurally-equal(V, W), ocaml-light-is-structurally-equal(tuple(V*), tuple(W*)))
-// Lists
+/* Lists */
 Rule
   ocaml-light-is-structurally-equal([], []) ~> true
 Rule
@@ -381,7 +381,7 @@ Rule
 Rule
   ocaml-light-is-structurally-equal([V,V*], [W,W*]) ~>
     and(ocaml-light-is-structurally-equal(V,W), ocaml-light-is-structurally-equal([V*], [W*]))
-// Records
+/* Records */
 Rule
                        dom(Map1) == dom(Map2)
   ----------------------------------------------------------------------
@@ -392,15 +392,15 @@ Rule
              checked lookup(Map1, given), 
              checked lookup(Map2, given)),
            set-elements(dom(Map1))))))
-// References
+/* References */
 Rule
   ocaml-light-is-structurally-equal(V1:variables, V2:variables) ~>
     ocaml-light-is-structurally-equal(assigned(V1), assigned(V2))
-// Vectors
+/* Vectors */
 Rule
   ocaml-light-is-structurally-equal(Vec1:vectors(values), Vec2:vectors(values)) ~>
     ocaml-light-is-structurally-equal([vector-elements(Vec1)], [vector-elements(Vec2)])
-// Variants
+/* Variants */
 Rule
   ocaml-light-is-structurally-equal(variant(Con1,V1), variant(Con2,V2)) ~>
     if-true-else(
@@ -410,7 +410,7 @@ Rule
         and(is-equal(tuple( ), V1), is-equal(tuple( ), V2)),
         ocaml-light-is-structurally-equal(V1, V2)),
       false)
-// Functions
+/* Functions */
 Rule
   ocaml-light-is-structurally-equal(_:functions(_,_), _:functions(_,_)) ~>
     throw(variant("Invalid_argument", "equal: functional value"))

@@ -51,7 +51,8 @@ Rule
   [[ '[' Exp ',' Exps ']' Ranks?     ]] : ranks =
   [[ '[' Exp ']' '[' Exps ']' Ranks? ]]
 
-// Compare this with p28 of the K version. 
+/* Compare this with p28 of the K version. */
+
 Semantics
   ranks[[ _:ranks ]] : (=>nats)+
 Rule

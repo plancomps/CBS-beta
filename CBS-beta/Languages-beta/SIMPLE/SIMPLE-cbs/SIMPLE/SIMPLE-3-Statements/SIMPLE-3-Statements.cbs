@@ -18,10 +18,6 @@ Syntax
                |  'return' exp? ';'
                |  'try' block 'catch' '(' id ')' block
                |  'throw' exp ';'
-//             |  'join' exp ';'
-//             |  'acquire' exp ';'
-//             |  'release' exp ';'
-//             |  'rendezvous' exp ';'
 
 Rule
   [[ 'if' '(' Exp ')' Block ]] : stmt =
@@ -70,15 +66,4 @@ Rule
         exec[[ Block2 ]]))
 Rule
   exec[[ 'throw' Exp ';' ]] = throw(rval[[ Exp ]])
-/*
-  Funcons for concurrency are not yet available.
-Rule
-  exec[[ 'join' Exp ';' ]] = fail // FIX-ME
-Rule
-  exec[[ 'acquire' Exp ';' ]] = fail // FIX-ME
-Rule
-  exec[[ 'release' Exp ';' ]] = fail // FIX-ME
-Rule
-  exec[[ 'rendezvous' Exp ';' ]] = fail // FIX-ME
-*/
 
