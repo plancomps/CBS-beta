@@ -107,15 +107,15 @@ nav_exclude: true
     //Comparisons
     "(=)" |->
       <span class="name"><a href="#Name_op-2">op-2</a></span>(<span class="name"><a href="#Name_ocaml-light-is-structurally-equal">ocaml-light-is-structurally-equal</a></span>(<span class="name"><a href="#Name_arg-1">arg-1</a></span>, <span class="name"><a href="#Name_arg-2">arg-2</a></span>)),
-    "(<>)" |->
+    "(&lt;&gt;)" |->
       <span class="name"><a href="#Name_op-2">op-2</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Booleans/index.html#Name_not">not</a></span>(<span class="name"><a href="#Name_ocaml-light-is-structurally-equal">ocaml-light-is-structurally-equal</a></span>(<span class="name"><a href="#Name_arg-1">arg-1</a></span>, <span class="name"><a href="#Name_arg-2">arg-2</a></span>))),
-    "(<)" |->
+    "(&lt;)" |->
       <span class="name"><a href="#Name_op-2">op-2</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Integers/index.html#Name_is-less">is-less</a></span>(<span class="name"><a href="#Name_arg-1">arg-1</a></span>, <span class="name"><a href="#Name_arg-2">arg-2</a></span>)),
-    "(>)" |->
+    "(&gt;)" |->
       <span class="name"><a href="#Name_op-2">op-2</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Integers/index.html#Name_is-greater">is-greater</a></span>(<span class="name"><a href="#Name_arg-1">arg-1</a></span>, <span class="name"><a href="#Name_arg-2">arg-2</a></span>)),
-    "(<=)" |->
+    "(&lt;=)" |->
       <span class="name"><a href="#Name_op-2">op-2</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Integers/index.html#Name_is-less-or-equal">is-less-or-equal</a></span>(<span class="name"><a href="#Name_arg-1">arg-1</a></span>, <span class="name"><a href="#Name_arg-2">arg-2</a></span>)),
-    "(>=)" |->
+    "(&gt;=)" |->
       <span class="name"><a href="#Name_op-2">op-2</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Integers/index.html#Name_is-greater-or-equal">is-greater-or-equal</a></span>(<span class="name"><a href="#Name_arg-1">arg-1</a></span>, <span class="name"><a href="#Name_arg-2">arg-2</a></span>)),
     "min" |->
       <span class="name"><a href="#Name_op-2">op-2</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Flowing/index.html#Name_if-true-else">if-true-else</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Integers/index.html#Name_is-less">is-less</a></span>(<span class="name"><a href="#Name_arg-1">arg-1</a></span>, <span class="name"><a href="#Name_arg-2">arg-2</a></span>), <span class="name"><a href="#Name_arg-1">arg-1</a></span>, <span class="name"><a href="#Name_arg-2">arg-2</a></span>)),
@@ -473,7 +473,7 @@ nav_exclude: true
   ----------------------------------------------------------------
   <span class="name"><a href="#Name_ocaml-light-to-string">ocaml-light-to-string</a></span>(<span id="Variable5231_S"><i class="var">S</i></span>:<span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-strings">implemented-strings</a></span>) ~> <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_string-append">string-append</a></span>("\"", <a href="#Variable5231_S"><i class="var">S</i></a>, "\"")
 <i class="keyword">Rule</i> // Functions
-  <span class="name"><a href="#Name_ocaml-light-to-string">ocaml-light-to-string</a></span>(_:<span class="name"><a href="../../../../../Funcons-beta/Values/Abstraction/Functions/index.html#Name_functions">functions</a></span>(_,_)) ~> "<fun>"
+  <span class="name"><a href="#Name_ocaml-light-to-string">ocaml-light-to-string</a></span>(_:<span class="name"><a href="../../../../../Funcons-beta/Values/Abstraction/Functions/index.html#Name_functions">functions</a></span>(_,_)) ~> "&lt;fun&gt;"
 <i class="keyword">Rule</i> // References
   <span class="name"><a href="#Name_ocaml-light-to-string">ocaml-light-to-string</a></span>(<span id="Variable5300_V"><i class="var">V</i></span>:<span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_variables">variables</a></span>) ~>
     <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_string-append">string-append</a></span>("ref ", <span class="name"><a href="#Name_ocaml-light-to-string">ocaml-light-to-string</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_assigned">assigned</a></span>(<a href="#Variable5300_V"><i class="var">V</i></a>)))
