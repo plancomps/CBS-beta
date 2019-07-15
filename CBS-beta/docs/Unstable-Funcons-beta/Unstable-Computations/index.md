@@ -51,14 +51,14 @@ connection with languages that include threads.
 
 - [Postponing]\: adding after-effects to an enclosing term
 
-[Multithreading]: /CBS-beta/Unstable-Funcons-beta/Unstable-Computations/Threads/Multithreading
-[Synchronising]:  /CBS-beta/Unstable-Funcons-beta/Unstable-Computations/Threads/Synchronising
-[Locks]:          /CBS-beta/Unstable-Funcons-beta/Unstable-Computations/Threads/Synchronising/Locks
-[Notifications]:  /CBS-beta/Unstable-Funcons-beta/Unstable-Computations/Threads/Synchronising/Notifications
+[Multithreading]: /CBS-beta/Unstable-Funcons-beta/Unstable-Computations/Threads/Multithreading/
+[Synchronising]:  /CBS-beta/Unstable-Funcons-beta/Unstable-Computations/Threads/Synchronising/
+[Locks]:          /CBS-beta/Unstable-Funcons-beta/Unstable-Computations/Threads/Synchronising/Locks/
+[Notifications]:  /CBS-beta/Unstable-Funcons-beta/Unstable-Computations/Threads/Synchronising/Notifications/
 
-[Indexing]:       /CBS-beta/Unstable-Funcons-beta/Unstable-Computations/Normal/Indexing
-[Memos]:          /CBS-beta/Unstable-Funcons-beta/Unstable-Computations/Normal/Memos
+[Indexing]:       /CBS-beta/Unstable-Funcons-beta/Unstable-Computations/Normal/Indexing/
+[Memos]:          /CBS-beta/Unstable-Funcons-beta/Unstable-Computations/Normal/Memos/
 
-[Postponing]:     /CBS-beta/Unstable-Funcons-beta/Unstable-Computations/Abnormal/Postponing
+[Postponing]:     /CBS-beta/Unstable-Funcons-beta/Unstable-Computations/Abnormal/Postponing/
 
 [Unstable-Languages-beta]: /CBS-beta/docs/Unstable-Languages-beta

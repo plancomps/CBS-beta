@@ -85,7 +85,7 @@ language specifications included in the CBS beta-release.
   [Funcons-Index](/CBS-beta/Funcons-beta/Funcons-Index/) and
   [funcon reuse overview](Languages-beta/Reuse).
 
-2018-08-26: [Folding](Browsing.html#folding)
+~~2018-08-26: [Browsing](Browsing)~~
 * ~~folding now applies to sequences of rules, not individual rules.~~
 * ~~blank lines following a rule are now preserved when it is folded.~~
 

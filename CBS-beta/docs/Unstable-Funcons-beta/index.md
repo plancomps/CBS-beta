@@ -31,8 +31,8 @@ The [Unstable-Computations] page introduces the various kinds of computations de
 in the library.
 
 
-[Unstable-Funcons-Index]: /CBS-beta/Unstable-Funcons-beta/Unstable-Funcons-Index
+[Unstable-Funcons-Index]: /CBS-beta/Unstable-Funcons-beta/Unstable-Funcons-Index/
 
 [Unstable-Languages-beta]: /CBS-beta/docs/Unstable-Languages-beta
 
-[Unstable-Computations]: Unstable-Computations
+[Unstable-Computations]: /CBS-beta/Unstable-Funcons-beta/Unstable-Computations

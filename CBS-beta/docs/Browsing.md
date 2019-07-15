@@ -344,7 +344,7 @@ operational behaviour of a funcon.
     except that a transition with a non-empty control entity value cannot be
     followed by a further transition (before being handled).
 
-[Browsing Guide]: .
+[Browsing Guide]: Browsing
 
 [Publications]: Publications
 
@@ -356,7 +356,7 @@ operational behaviour of a funcon.
 
 [Unstable-Funcons-beta]: Unstable-Funcons-beta
 
-[Funcons-Index]: /CBS-beta/Funcons-beta/Funcons-Index
+[Funcons-Index]: /CBS-beta/Funcons-beta/Funcons-Index/
 
 [Unstable-Funcons-Index]: /CBS-beta/Unstable-Funcons-beta/Unstable-Funcons-Index
 
@@ -366,7 +366,7 @@ operational behaviour of a funcon.
 
 [Unstable-Languages-beta]: Unstable-Languages-beta
 
-[CBS-beta]: /CBS-beta
+[CBS-beta]: /CBS-beta/
 
 [PLanCompS Project]: http://plancomps.org
 
@@ -374,11 +374,11 @@ operational behaviour of a funcon.
 
 [Suggest an improvement...]: mailto:plancomps@gmail.com
 
-[CBS of IMP]: /CBS-beta/Languages-beta/IMP/IMP-cbs/IMP/IMP-Start
+[CBS of IMP]: /CBS-beta/Languages-beta/IMP/IMP-cbs/IMP/IMP-Start/
 
-[Values]: Funcons-beta/Values
+[Values]: /CBS-beta/Funcons-beta/Values
 
-[Computations]: Funcons-beta/Computations
+[Computations]: /CBS-beta/Funcons-beta/Computations
 
 [`num ::= '-'?_decimal`]: /CBS-beta/Languages-beta/IMP/IMP-cbs/IMP/IMP-1/#SyntaxName_num
 

@@ -47,14 +47,14 @@ LangDev-2019
 This is a language used for demonstrating extensibility of CBS specifications,
 presented at [LangDev Meetup 2019]. See [LangDev-2019] for further details.
 
-[Funcons-beta]:           /CBS-beta/docs/Funcons-beta
-[Languages-beta]:         /CBS-beta/docs/Languages-beta
-[Unstable-Funcons-beta]:  /CBS-beta/docs/Unstable-Funcons-beta
-[Unstable-Languages-beta]: .
+[Funcons-beta]:            /CBS-beta/docs/Funcons-beta
+[Languages-beta]:          /CBS-beta/docs/Languages-beta
+[Unstable-Funcons-beta]:   /CBS-beta/docs/Unstable-Funcons-beta
+[Unstable-Languages-beta]: /CBS-beta/docs/Unstable-Languages-beta
 
 [IMP]:            /CBS-beta/Languages-beta/IMP
 [SIMPLE]:         /CBS-beta/Languages-beta/SIMPLE
-[IMP++]:          /CBS-beta/Unstable-Languages-beta/IMP-PLus-Plus
+[IMP++]:          /CBS-beta/Unstable-Languages-beta/IMP-Plus-Plus
 [SIMPLE-Threads]: /CBS-beta/Unstable-Languages-beta/SIMPLE-Threads
 [LangDev-2019]:   /CBS-beta/Unstable-Languages-beta/LangDev-2019
 [LangDev Meetup 2019]: http://langdevcon.org "HOME PAGE"

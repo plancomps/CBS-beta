@@ -41,10 +41,10 @@ Values
 
 The [Values] page introduces the various kinds of values defined in the library.
 
-[CBS framework]:  /CBS-beta
+[CBS framework]:  /CBS-beta/
 [Browsing guide]: /CBS-beta/docs/Browsing
 [Languages-beta]: /CBS-beta/docs/Languages-beta
 
-[Funcons-Index]:  /CBS-beta/Funcons-beta/Funcons-Index
+[Funcons-Index]:  /CBS-beta/Funcons-beta/Funcons-Index/
 [Values]:         /CBS-beta/Funcons-beta/Values
 [Computations]:   /CBS-beta/Funcons-beta/Computations

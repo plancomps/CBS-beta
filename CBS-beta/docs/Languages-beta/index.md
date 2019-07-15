@@ -75,12 +75,12 @@ The [reuse] page shows how may funcons are directly reused in the different
 language specifications.
 
 
-[CBS framework]: /CBS-beta
+[CBS framework]: /CBS-beta/
 
 [Browsing guide]: /CBS-beta/docs/Browsing
 [Funcons-beta]:   /CBS-beta/docs/Funcons-beta
 
-[Reuse]: Reuse
+[Reuse]: /CBS-beta/docs/Languages-beta/Reuse
 
 [IMP in CBS]:         /CBS-beta/Languages-beta/IMP
 [SIMPLE in CBS]:      /CBS-beta/Languages-beta/SIMPLE
