@@ -37,16 +37,17 @@ language specifications included in the CBS beta-release.
   Extensive comments have yet to be added to the CBS specifications of funcons
   and languages in the rest of the website.
 
-2019-07-08: [CBS-beta](/CBS-beta)
+2019-07-08: [CBS-beta](/CBS-beta/)
 * Website structure: documentation moved to a new `docs` folder.
 
-2019-06-30: [Computations](Funcons-beta/Computations), [Values](Funcons-beta/Values)
+2019-06-30: [Computations](/CBS-beta/Funcons-beta/Computations),
+[Values](/CBS-beta/Funcons-beta/Values)
 * Overview clarified.
 
 2019-06-11: [Downloads](Downloads)
 * Removed the manually-created zip of the site.
 
-2019-06-10: [CBS-beta](/CBS-beta)
+2019-06-10: [CBS-beta](/CBS-beta/)
 * __The beta-release review period has been further extended.__
 
   Funcons for threads have now been developed, and are soon to be added.
@@ -54,7 +55,7 @@ language specifications included in the CBS beta-release.
   and the current specifications will remain open for revision until the IDE for
   CBS has been released.
 
-2019-06-10: [CBS-beta](/CBS-beta)
+2019-06-10: [CBS-beta](/CBS-beta/)
 * __The Jekyll theme used on this website has been updated to
   [Just-the-Docs](https://pmarsceill.github.io/just-the-docs/).__
 
@@ -64,7 +65,7 @@ language specifications included in the CBS beta-release.
 2018-07-14: [Publications](Publications)
 * added.
 
-2018-11-01: [CBS-beta](/CBS-beta)
+2018-11-01: [CBS-beta](/CBS-beta/)
 * The beta-release review period has been extended to ~~(early)~~ 2019.
 
   This is partly because funcons for threads and processes have not yet been
@@ -78,13 +79,13 @@ language specifications included in the CBS beta-release.
 * CBS web pages regenerated:
   hyperlinks corrected (for variable references in rules), confusing tooltips removed.
 
-2018-09-07: [Characters](/CBS-beta/Funcons-beta/Values/Primitive/Characters)
+2018-09-07: [Characters](/CBS-beta/Funcons-beta/Values/Primitive/Characters/)
 * `char` (alias for `unicode-character`) renamed to `unicode-char`.
 * `ascii-character` (alias `ascii-char`) added to
-  [Funcons-Index](/CBS-beta/Funcons-beta/Funcons-Index) and
+  [Funcons-Index](/CBS-beta/Funcons-beta/Funcons-Index/) and
   [funcon reuse overview](Languages-beta/Reuse).
 
-2018-08-26: [Folding](Guide/Browsing.html#folding)
+2018-08-26: [Folding](Browsing.html#folding)
 * ~~folding now applies to sequences of rules, not individual rules.~~
 * ~~blank lines following a rule are now preserved when it is folded.~~
 
@@ -126,6 +127,6 @@ language specifications included in the CBS beta-release.
 * [added an overview of funcon reuse](Languages-beta/Reuse).
 
 2018-07-09: [OCaml Light](/CBS-beta/Languages-beta/OCaml-Light)
-* [added `expr ::= 'assert' expr`](/CBS-beta/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-07-Expressions).
-* [added disambiguation rules for `'{' expr 'with' ... '}'`](/CBS-beta/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-A-Disambiguation).
-* [corrected the rule defining `implemented-vector`](/CBS-beta/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-02-Values).
+* [added `expr ::= 'assert' expr`](/CBS-beta/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-07-Expressions/).
+* [added disambiguation rules for `'{' expr 'with' ... '}'`](/CBS-beta/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-A-Disambiguation/).
+* [corrected the rule defining `implemented-vector`](/CBS-beta/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-02-Values/).
