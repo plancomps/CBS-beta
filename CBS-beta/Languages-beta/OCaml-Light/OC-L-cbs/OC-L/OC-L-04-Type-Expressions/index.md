@@ -1,7 +1,9 @@
 ---
 layout: default
-title: OC-L-04-Type-Expressions
-nav_exclude: true
+title: "OC-L-04-Type-Expressions"
+parent: OC-L
+grand_parent: Languages-beta
+nav_order: OC-L-04-Type-Expressions
 ---
 
 [Languages-beta] : [OC-L-04-Type-Expressions.cbs]

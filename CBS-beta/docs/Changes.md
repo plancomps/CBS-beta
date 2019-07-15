@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Changes
-nav_order: 8
+nav_order: "8"
 ---
 
 Beta-release changes
@@ -9,6 +9,11 @@ Beta-release changes
 
 This page lists significant additions and changes to the funcon definitions and
 language specifications included in the CBS beta-release.
+
+2019-07-15: [Funcons-beta](Funcons-beta), [Languages-beta](Languages-beta),
+[Unstable-Funcons-beta](Unstable-Funcons-beta),
+[Unstable-Languages-beta](Unstable-Languages-beta)
+* Nested sidebar navigation links and further breadcrumbs added to many pages.
 
 2019-07-10: [Languages-beta](Languages-beta), [Unstable-Languages-beta](Unstable-Languages-beta)
 * Missing links to local funcons reuse indexes added in overview pages.
@@ -101,7 +106,7 @@ language specifications included in the CBS beta-release.
 2018-08-14: [`first-n`](/CBS-beta/Funcons-beta/Values/Composite/Sequences/#Name_first-n)
 * rule corrected.
 
-2018-07-17: [MiniJava](Languages-beta/MiniJava)
+2018-07-17: [MiniJava](/CBS-beta/Languages-beta/MiniJava)
 * syntax disambiguation completed.
 * semantics tested with 65 unit tests.
 
@@ -120,7 +125,7 @@ language specifications included in the CBS beta-release.
 2018-07-12: [Languages-beta](Languages-beta)
 * [added an overview of funcon reuse](Languages-beta/Reuse).
 
-2018-07-09: [OCaml Light](Languages-beta/OCaml-Light)
+2018-07-09: [OCaml Light](/CBS-beta/Languages-beta/OCaml-Light)
 * [added `expr ::= 'assert' expr`](/CBS-beta/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-07-Expressions).
 * [added disambiguation rules for `'{' expr 'with' ... '}'`](/CBS-beta/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-A-Disambiguation).
 * [corrected the rule defining `implemented-vector`](/CBS-beta/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-02-Values).

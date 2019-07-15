@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Sequences
-nav_exclude: true
+title: "Sequences"
+parent: Values
+grand_parent: Funcons-beta
+nav_order: "Sequences"
 ---
 
 [Funcons-beta] : [Sequences.cbs]

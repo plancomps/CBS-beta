@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Synchronising
-nav_exclude: true
+title: "Synchronising"
+parent: Unstable-Computations
+grand_parent: Unstable-Funcons-beta
+nav_order: "Synchronising"
 ---
 
 [Unstable-Funcons-beta] : [Synchronising.cbs]

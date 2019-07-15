@@ -2,7 +2,9 @@
 layout: default
 title: Unstable-Computations
 parent: Unstable-Funcons-beta
-nav_order: 1
+has_children: true
+permalink: /CBS-beta/Unstable-Funcons-beta/Unstable-Computations
+nav_order: "1"
 ---
 
 Unstable-Computations

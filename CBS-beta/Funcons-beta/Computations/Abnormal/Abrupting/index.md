@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Abrupting
-nav_exclude: true
+title: "Abrupting"
+parent: Computations
+grand_parent: Funcons-beta
+nav_order: "Abrupting"
 ---
 
 [Funcons-beta] : [Abrupting.cbs]

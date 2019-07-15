@@ -1,7 +1,9 @@
 ---
 layout: default
-title: SIMPLE-Funcons-Index
-nav_exclude: true
+title: "SIMPLE-Funcons-Index"
+parent: SIMPLE
+grand_parent: Languages-beta
+nav_order: SIMPLE-Funcons-Index
 ---
 
 [Languages-beta] : [SIMPLE-Funcons-Index.cbs]

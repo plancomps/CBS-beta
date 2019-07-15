@@ -1,7 +1,9 @@
 ---
 layout: default
-title: SIMPLE-THR-3-Statements
-nav_exclude: true
+title: "SIMPLE-THR-3-Statements"
+parent: SIMPLE-THR
+grand_parent: Unstable-Languages-beta
+nav_order: SIMPLE-THR-3-Statements
 ---
 
 [Unstable-Languages-beta] : [SIMPLE-THR-3-Statements.cbs]

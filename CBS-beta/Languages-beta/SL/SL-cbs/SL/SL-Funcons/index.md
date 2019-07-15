@@ -1,7 +1,9 @@
 ---
 layout: default
-title: SL-Funcons
-nav_exclude: true
+title: "SL-Funcons"
+parent: SL
+grand_parent: Languages-beta
+nav_order: SL-Funcons
 ---
 
 [Languages-beta] : [SL-Funcons.cbs]

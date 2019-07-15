@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Throwing
-nav_exclude: true
+title: "Throwing"
+parent: Computations
+grand_parent: Funcons-beta
+nav_order: "Throwing"
 ---
 
 [Funcons-beta] : [Throwing.cbs]

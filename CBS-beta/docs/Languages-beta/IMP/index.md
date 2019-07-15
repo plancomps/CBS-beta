@@ -2,7 +2,9 @@
 layout: default
 title: IMP
 parent: Languages-beta
-nav_order: 1
+has_children: true
+permalink: /CBS-beta/Languages-beta/IMP
+nav_order: "1"
 ---
 
 [IMP]
@@ -51,7 +53,5 @@ Main contributors:
 
 [IMP in the K framework]: http://www.kframework.org/language-pdfs/new/imp.pdf
 
-[IMP]: /CBS-beta/Languages-beta/IMP/IMP-cbs/IMP/IMP-Start
+[IMP]:               /CBS-beta/Languages-beta/IMP/IMP-cbs/IMP/IMP-Start
 [IMP-Funcons-Index]: /CBS-beta/Languages-beta/IMP/IMP-cbs/IMP/IMP-Funcons-Index
-
-[Browsing Guide]: https://plancomps.github.io/CBS-beta/Guide/Browsing

@@ -1,7 +1,9 @@
 ---
 layout: default
-title: IMP-Funcons-Index
-nav_exclude: true
+title: "IMP-Funcons-Index"
+parent: IMP
+grand_parent: Languages-beta
+nav_order: IMP-Funcons-Index
 ---
 
 [Languages-beta] : [IMP-Funcons-Index.cbs]

@@ -1,7 +1,9 @@
 ---
 layout: default
-title: IMP-3
-nav_exclude: true
+title: "IMP-3"
+parent: IMP
+grand_parent: Languages-beta
+nav_order: IMP-3
 ---
 
 [Languages-beta] : [IMP-3.cbs]

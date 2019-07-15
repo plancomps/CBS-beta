@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Objects
-nav_exclude: true
+title: "Objects"
+parent: Values
+grand_parent: Funcons-beta
+nav_order: "Objects"
 ---
 
 [Funcons-beta] : [Objects.cbs]

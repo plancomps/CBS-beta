@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Controlling
-nav_exclude: true
+title: "Controlling"
+parent: Computations
+grand_parent: Funcons-beta
+nav_order: "Controlling"
 ---
 
 [Funcons-beta] : [Controlling.cbs]

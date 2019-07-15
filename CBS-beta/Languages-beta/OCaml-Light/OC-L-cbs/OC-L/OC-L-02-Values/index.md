@@ -1,7 +1,9 @@
 ---
 layout: default
-title: OC-L-02-Values
-nav_exclude: true
+title: "OC-L-02-Values"
+parent: OC-L
+grand_parent: Languages-beta
+nav_order: OC-L-02-Values
 ---
 
 [Languages-beta] : [OC-L-02-Values.cbs]

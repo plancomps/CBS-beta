@@ -1,7 +1,9 @@
 ---
 layout: default
-title: OC-L-Funcons-Index
-nav_exclude: true
+title: "OC-L-Funcons-Index"
+parent: OC-L
+grand_parent: Languages-beta
+nav_order: OC-L-Funcons-Index
 ---
 
 [Languages-beta] : [OC-L-Funcons-Index.cbs]

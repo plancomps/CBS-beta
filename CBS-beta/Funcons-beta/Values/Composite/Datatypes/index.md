@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Datatypes
-nav_exclude: true
+title: "Datatypes"
+parent: Values
+grand_parent: Funcons-beta
+nav_order: "Datatypes"
 ---
 
 [Funcons-beta] : [Datatypes.cbs]

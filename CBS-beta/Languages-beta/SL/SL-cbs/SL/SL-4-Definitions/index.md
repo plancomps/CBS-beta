@@ -1,7 +1,9 @@
 ---
 layout: default
-title: SL-4-Definitions
-nav_exclude: true
+title: "SL-4-Definitions"
+parent: SL
+grand_parent: Languages-beta
+nav_order: SL-4-Definitions
 ---
 
 [Languages-beta] : [SL-4-Definitions.cbs]

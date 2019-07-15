@@ -1,7 +1,9 @@
 ---
 layout: default
-title: SIMPLE-5-Programs
-nav_exclude: true
+title: "SIMPLE-5-Programs"
+parent: SIMPLE
+grand_parent: Languages-beta
+nav_order: SIMPLE-5-Programs
 ---
 
 [Languages-beta] : [SIMPLE-5-Programs.cbs]

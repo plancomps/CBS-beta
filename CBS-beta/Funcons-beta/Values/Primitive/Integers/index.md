@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Integers
-nav_exclude: true
+title: "Integers"
+parent: Values
+grand_parent: Funcons-beta
+nav_order: "Integers"
 ---
 
 [Funcons-beta] : [Integers.cbs]

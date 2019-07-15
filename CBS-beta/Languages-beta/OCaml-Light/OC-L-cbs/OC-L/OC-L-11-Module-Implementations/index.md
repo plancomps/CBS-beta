@@ -1,7 +1,9 @@
 ---
 layout: default
-title: OC-L-11-Module-Implementations
-nav_exclude: true
+title: "OC-L-11-Module-Implementations"
+parent: OC-L
+grand_parent: Languages-beta
+nav_order: OC-L-11-Module-Implementations
 ---
 
 [Languages-beta] : [OC-L-11-Module-Implementations.cbs]

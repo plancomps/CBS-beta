@@ -1,7 +1,9 @@
 ---
 layout: default
-title: OC-L-07-Expressions
-nav_exclude: true
+title: "OC-L-07-Expressions"
+parent: OC-L
+grand_parent: Languages-beta
+nav_order: OC-L-07-Expressions
 ---
 
 [Languages-beta] : [OC-L-07-Expressions.cbs]

@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Funcons-Index
-nav_exclude: true
+title: "Funcons-Index"
+parent: Funcons-beta
+
+nav_order: "Funcons-Index"
 ---
 
 [Funcons-beta] : [Funcons-Index.cbs]

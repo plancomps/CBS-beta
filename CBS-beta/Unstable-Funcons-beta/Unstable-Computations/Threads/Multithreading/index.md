@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Multithreading
-nav_exclude: true
+title: "Multithreading"
+parent: Unstable-Computations
+grand_parent: Unstable-Funcons-beta
+nav_order: "Multithreading"
 ---
 
 [Unstable-Funcons-beta] : [Multithreading.cbs]

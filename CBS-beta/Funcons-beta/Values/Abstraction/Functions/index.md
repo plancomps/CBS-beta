@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Functions
-nav_exclude: true
+title: "Functions"
+parent: Values
+grand_parent: Funcons-beta
+nav_order: "Functions"
 ---
 
 [Funcons-beta] : [Functions.cbs]

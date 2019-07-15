@@ -1,7 +1,9 @@
 ---
 layout: default
-title: LD-Funcons-Index
-nav_exclude: true
+title: "LD-Funcons-Index"
+parent: LD
+grand_parent: Unstable-Languages-beta
+nav_order: LD-Funcons-Index
 ---
 
 [Unstable-Languages-beta] : [LD-Funcons-Index.cbs]

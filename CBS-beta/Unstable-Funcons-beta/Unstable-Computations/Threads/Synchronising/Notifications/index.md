@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Notifications
-nav_exclude: true
+title: "Notifications"
+parent: Unstable-Computations
+grand_parent: Unstable-Funcons-beta
+nav_order: "Notifications"
 ---
 
 [Unstable-Funcons-beta] : [Notifications.cbs]

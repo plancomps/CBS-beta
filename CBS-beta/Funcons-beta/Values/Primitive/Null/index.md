@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Null
-nav_exclude: true
+title: "Null"
+parent: Values
+grand_parent: Funcons-beta
+nav_order: "Null"
 ---
 
 [Funcons-beta] : [Null.cbs]

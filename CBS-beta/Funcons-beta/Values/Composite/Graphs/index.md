@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Graphs
-nav_exclude: true
+title: "Graphs"
+parent: Values
+grand_parent: Funcons-beta
+nav_order: "Graphs"
 ---
 
 [Funcons-beta] : [Graphs.cbs]

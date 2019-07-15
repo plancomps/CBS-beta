@@ -1,7 +1,9 @@
 ---
 layout: default
-title: OC-L-A-Disambiguation
-nav_exclude: true
+title: "OC-L-A-Disambiguation"
+parent: OC-L
+grand_parent: Languages-beta
+nav_order: OC-L-A-Disambiguation
 ---
 
 [Languages-beta] : [OC-L-A-Disambiguation.cbs]

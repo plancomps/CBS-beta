@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Storing
-nav_exclude: true
+title: "Storing"
+parent: Computations
+grand_parent: Funcons-beta
+nav_order: "Storing"
 ---
 
 [Funcons-beta] : [Storing.cbs]

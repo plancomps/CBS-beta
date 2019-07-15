@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Linking
-nav_exclude: true
+title: "Linking"
+parent: Computations
+grand_parent: Funcons-beta
+nav_order: "Linking"
 ---
 
 [Funcons-beta] : [Linking.cbs]

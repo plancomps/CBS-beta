@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Records
-nav_exclude: true
+title: "Records"
+parent: Values
+grand_parent: Funcons-beta
+nav_order: "Records"
 ---
 
 [Funcons-beta] : [Records.cbs]

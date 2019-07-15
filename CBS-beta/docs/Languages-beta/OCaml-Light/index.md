@@ -1,8 +1,10 @@
 ---
 layout: default
-title: OCaml-Light
+title: OC-L
 parent: Languages-beta
-nav_order: 5
+has_children: true
+permalink: /CBS-beta/Languages-beta/OCaml-Light
+nav_order: "5"
 ---
 
 [OCaml-Light]
@@ -58,12 +60,13 @@ Main contributors:
   - previous: Martin Churchill, Paolo Torrini
 
 
-[Caml-Light]: https://caml.inria.fr/caml-light/
-[OCaml]: https://ocaml.org
-[OCaml Implementation]: https://ocaml.org/docs/install.html
+[Caml-Light]:   https://caml.inria.fr/caml-light/
 [OCaml Manual]: https://caml.inria.fr/pub/docs/manual-ocaml-4.08
+[OCaml]:        https://ocaml.org
+[OCaml Implementation]: https://ocaml.org/docs/install.html
 [A formal specification for OCaml: the Core Language]: https://github.com/ott-lang/ott/tree/master/examples/ocaml_light
 [Reusable Components of Semantic Specifications]: http://plancomps.org/taosd2015
 [Ott framework]: https://www.cl.cam.ac.uk/~pes20/ott/
-[OCaml-Light]: /CBS-beta/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-Start
+
+[OCaml-Light]:               /CBS-beta/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-Start
 [OCaml-Light-Funcons-Index]: /CBS-beta/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-Funcons-Index

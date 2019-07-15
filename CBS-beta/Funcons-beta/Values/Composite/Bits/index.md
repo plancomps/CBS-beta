@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Bits
-nav_exclude: true
+title: "Bits"
+parent: Values
+grand_parent: Funcons-beta
+nav_order: "Bits"
 ---
 
 [Funcons-beta] : [Bits.cbs]

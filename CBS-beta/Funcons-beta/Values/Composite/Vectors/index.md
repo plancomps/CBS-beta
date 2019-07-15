@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Vectors
-nav_exclude: true
+title: "Vectors"
+parent: Values
+grand_parent: Funcons-beta
+nav_order: "Vectors"
 ---
 
 [Funcons-beta] : [Vectors.cbs]

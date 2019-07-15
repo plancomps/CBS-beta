@@ -1,7 +1,9 @@
 ---
 layout: default
-title: IMPPP-Start
-nav_exclude: true
+title: "IMPPP-Start"
+parent: IMPPP
+grand_parent: Unstable-Languages-beta
+
 ---
 
 [Unstable-Languages-beta] : [IMPPP-Start.cbs]

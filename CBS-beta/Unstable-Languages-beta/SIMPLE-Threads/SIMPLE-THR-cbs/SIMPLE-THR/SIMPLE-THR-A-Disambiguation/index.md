@@ -1,7 +1,9 @@
 ---
 layout: default
-title: SIMPLE-THR-A-Disambiguation
-nav_exclude: true
+title: "SIMPLE-THR-A-Disambiguation"
+parent: SIMPLE-THR
+grand_parent: Unstable-Languages-beta
+nav_order: SIMPLE-THR-A-Disambiguation
 ---
 
 [Unstable-Languages-beta] : [SIMPLE-THR-A-Disambiguation.cbs]

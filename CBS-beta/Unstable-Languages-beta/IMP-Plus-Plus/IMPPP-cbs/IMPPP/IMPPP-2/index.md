@@ -1,7 +1,9 @@
 ---
 layout: default
-title: IMPPP-2
-nav_exclude: true
+title: "IMPPP-2"
+parent: IMPPP
+grand_parent: Unstable-Languages-beta
+nav_order: IMPPP-2
 ---
 
 [Unstable-Languages-beta] : [IMPPP-2.cbs]
@@ -36,7 +38,7 @@ nav_exclude: true
   <span class="name"><a href="#Name_integer-add-or-string-append">integer-add-or-string-append</a></span>(<span id="Variable180_S1"><i class="var">S<sub class="sub">1</sub></i></span>:<span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_strings">strings</a></span>, <span id="Variable189_S2"><i class="var">S<sub class="sub">2</sub></i></span>:<span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_strings">strings</a></span>) ~>
     <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_string-append">string-append</a></span>(<a href="#Variable180_S1"><i class="var">S<sub class="sub">1</sub></i></a>, <a href="#Variable189_S2"><i class="var">S<sub class="sub">2</sub></i></a>)</code></pre></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Semantics</i>        
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Semantics</i>       
   <i class="sem-name"><span id="SemanticsName_eval-arith">eval-arith</span></i>[[ _:<span class="syn-name"><a href="#SyntaxName_aexp">aexp</a></span> ]] : =><span class="name"><a href="#Name_aexp-values">aexp-values</a></span>
 <i class="keyword">Rule</i>
   <i class="sem-name"><a href="#SemanticsName_eval-arith">eval-arith</a></i>[[ <span id="Variable241_N"><i class="var"><a href="../IMPPP-1/index.html#VariableStem_N">N</a></i></span> ]] = <i class="sem-name"><a href="../IMPPP-1/index.html#SemanticsName_int-val">int-val</a></i>[[ <a href="#Variable241_N"><i class="var">N</i></a> ]]

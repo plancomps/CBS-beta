@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Indexing
-nav_exclude: true
+title: "Indexing"
+parent: Unstable-Computations
+grand_parent: Unstable-Funcons-beta
+nav_order: "Indexing"
 ---
 
 [Unstable-Funcons-beta] : [Indexing.cbs]

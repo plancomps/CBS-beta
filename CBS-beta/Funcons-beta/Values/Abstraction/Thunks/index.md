@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Thunks
-nav_exclude: true
+title: "Thunks"
+parent: Values
+grand_parent: Funcons-beta
+nav_order: "Thunks"
 ---
 
 [Funcons-beta] : [Thunks.cbs]

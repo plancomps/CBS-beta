@@ -1,7 +1,9 @@
 ---
 layout: default
-title: SL-Disambiguation
-nav_exclude: true
+title: "SL-Disambiguation"
+parent: SL
+grand_parent: Languages-beta
+nav_order: SL-Disambiguation
 ---
 
 [Languages-beta] : [SL-Disambiguation.cbs]

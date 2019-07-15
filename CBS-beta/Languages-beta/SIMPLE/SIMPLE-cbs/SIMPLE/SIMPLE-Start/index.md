@@ -1,7 +1,9 @@
 ---
 layout: default
-title: SIMPLE-Start
-nav_exclude: true
+title: "SIMPLE-Start"
+parent: SIMPLE
+grand_parent: Languages-beta
+
 ---
 
 [Languages-beta] : [SIMPLE-Start.cbs]

@@ -1,8 +1,10 @@
 ---
 layout: default
-title: IMP++
+title: IMPPP
 parent: Unstable-Languages-beta
-nav_order: 1
+has_children: true
+permalink: /CBS-beta/Unstable-Languages-beta/IMP-Plus-Plus
+nav_order: "1"
 ---
 
 [IMP++]

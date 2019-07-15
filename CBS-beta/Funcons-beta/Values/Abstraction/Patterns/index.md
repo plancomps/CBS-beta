@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Patterns
-nav_exclude: true
+title: "Patterns"
+parent: Values
+grand_parent: Funcons-beta
+nav_order: "Patterns"
 ---
 
 [Funcons-beta] : [Patterns.cbs]

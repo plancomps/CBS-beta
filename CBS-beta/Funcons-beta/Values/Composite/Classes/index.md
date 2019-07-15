@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Classes
-nav_exclude: true
+title: "Classes"
+parent: Values
+grand_parent: Funcons-beta
+nav_order: "Classes"
 ---
 
 [Funcons-beta] : [Classes.cbs]

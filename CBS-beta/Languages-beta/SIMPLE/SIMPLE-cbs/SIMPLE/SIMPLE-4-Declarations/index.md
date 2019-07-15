@@ -1,7 +1,9 @@
 ---
 layout: default
-title: SIMPLE-4-Declarations
-nav_exclude: true
+title: "SIMPLE-4-Declarations"
+parent: SIMPLE
+grand_parent: Languages-beta
+nav_order: SIMPLE-4-Declarations
 ---
 
 [Languages-beta] : [SIMPLE-4-Declarations.cbs]

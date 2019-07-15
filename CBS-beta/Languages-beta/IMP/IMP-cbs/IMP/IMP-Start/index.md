@@ -1,7 +1,9 @@
 ---
 layout: default
-title: IMP-Start
-nav_exclude: true
+title: "IMP-Start"
+parent: IMP
+grand_parent: Languages-beta
+
 ---
 
 [Languages-beta] : [IMP-Start.cbs]

@@ -2,7 +2,9 @@
 layout: default
 title: SL
 parent: Languages-beta
-nav_order: 4
+has_children: true
+permalink: /CBS-beta/Languages-beta/SL
+nav_order: "4"
 ---
 
 [SL]
@@ -49,7 +51,8 @@ Main contributors:
 
 [Truffle for the GraalVM]: https://github.com/graalvm/simplelanguage
 [SL in DynSem]: https://github.com/MetaBorgCube/metaborg-sl/
-[SL in SDF3]: https://github.com/MetaBorgCube/metaborg-sl/blob/master/org.metaborg.lang.sl/syntax/SL.sdf3
+[SL in SDF3]:   https://github.com/MetaBorgCube/metaborg-sl/blob/master/org.metaborg.lang.sl/syntax/SL.sdf3
 [Funcons Tools]: https://hackage.haskell.org/package/funcons-tools
-[SL]: /CBS-beta/Languages-beta/SL/SL-cbs/SL/SL-Start
+
+[SL]:               /CBS-beta/Languages-beta/SL/SL-cbs/SL/SL-Start
 [SL-Funcons-Index]: /CBS-beta/Languages-beta/SL/SL-cbs/SL/SL-Funcons-Index

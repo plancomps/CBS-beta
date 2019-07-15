@@ -1,7 +1,9 @@
 ---
 layout: default
-title: OC-L-12-Core-Library
-nav_exclude: true
+title: "OC-L-12-Core-Library"
+parent: OC-L
+grand_parent: Languages-beta
+nav_order: OC-L-12-Core-Library
 ---
 
 [Languages-beta] : [OC-L-12-Core-Library.cbs]

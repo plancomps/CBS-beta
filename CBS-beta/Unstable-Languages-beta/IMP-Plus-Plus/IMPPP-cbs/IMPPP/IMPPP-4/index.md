@@ -1,7 +1,9 @@
 ---
 layout: default
-title: IMPPP-4
-nav_exclude: true
+title: "IMPPP-4"
+parent: IMPPP
+grand_parent: Unstable-Languages-beta
+nav_order: IMPPP-4
 ---
 
 [Unstable-Languages-beta] : [IMPPP-4.cbs]

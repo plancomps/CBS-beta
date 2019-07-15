@@ -1,7 +1,9 @@
 ---
 layout: default
-title: MiniJava-Syntax
-nav_exclude: true
+title: "MiniJava-Syntax"
+parent: MiniJava
+grand_parent: Languages-beta
+nav_order: MiniJava-Syntax
 ---
 
 [Languages-beta] : [MiniJava-Syntax.cbs]

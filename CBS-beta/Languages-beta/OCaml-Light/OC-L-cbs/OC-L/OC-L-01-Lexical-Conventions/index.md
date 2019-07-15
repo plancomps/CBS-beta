@@ -1,7 +1,9 @@
 ---
 layout: default
-title: OC-L-01-Lexical-Conventions
-nav_exclude: true
+title: "OC-L-01-Lexical-Conventions"
+parent: OC-L
+grand_parent: Languages-beta
+nav_order: OC-L-01-Lexical-Conventions
 ---
 
 [Languages-beta] : [OC-L-01-Lexical-Conventions.cbs]
@@ -181,7 +183,7 @@ nav_exclude: true
   
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_SC">SC</span></i> :</i> <span class="syn-name"><span id="SyntaxName_string-character">string-character</span></span>
   ::= <span class="syn-name"><a href="#SyntaxName_regular-string-char">regular-string-char</a></span>
-    | <span class="syn-name"><a href="#SyntaxName_escape-sequence">escape-sequence</a></span>// | '\\' _ '\n' _ (' '|'\t')*
+    | <span class="syn-name"><a href="#SyntaxName_escape-sequence">escape-sequence</a></span>//  | '\\' _ '\n' _ (' '|'\t')*
 <i class="keyword">Lexis</i>
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_RSC">RSC</span></i> :</i> <span class="syn-name"><span id="SyntaxName_regular-string-char">regular-string-char</span></span>
   ::= ~ (<b class="atom">'"'</b> | <b class="atom">'\\'</b>)</code></pre></div>

@@ -1,7 +1,9 @@
 ---
 layout: default
-title: MiniJava-Start
-nav_exclude: true
+title: "MiniJava-Start"
+parent: MiniJava
+grand_parent: Languages-beta
+
 ---
 
 [Languages-beta] : [MiniJava-Start.cbs]

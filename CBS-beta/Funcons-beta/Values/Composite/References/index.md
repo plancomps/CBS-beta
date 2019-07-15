@@ -1,7 +1,9 @@
 ---
 layout: default
-title: References
-nav_exclude: true
+title: "References"
+parent: Values
+grand_parent: Funcons-beta
+nav_order: "References"
 ---
 
 [Funcons-beta] : [References.cbs]

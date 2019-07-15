@@ -1,7 +1,9 @@
 ---
 layout: default
-title: SL-1-Lexemes
-nav_exclude: true
+title: "SL-1-Lexemes"
+parent: SL
+grand_parent: Languages-beta
+nav_order: SL-1-Lexemes
 ---
 
 [Languages-beta] : [SL-1-Lexemes.cbs]

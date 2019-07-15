@@ -1,7 +1,9 @@
 ---
 layout: default
-title: OC-L-08-Type-and-Exception-Definitions
-nav_exclude: true
+title: "OC-L-08-Type-and-Exception-Definitions"
+parent: OC-L
+grand_parent: Languages-beta
+nav_order: OC-L-08-Type-and-Exception-Definitions
 ---
 
 [Languages-beta] : [OC-L-08-Type-and-Exception-Definitions.cbs]

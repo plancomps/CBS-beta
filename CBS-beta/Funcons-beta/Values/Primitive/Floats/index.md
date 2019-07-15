@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Floats
-nav_exclude: true
+title: "Floats"
+parent: Values
+grand_parent: Funcons-beta
+nav_order: "Floats"
 ---
 
 [Funcons-beta] : [Floats.cbs]

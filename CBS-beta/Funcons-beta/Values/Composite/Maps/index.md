@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Maps
-nav_exclude: true
+title: "Maps"
+parent: Values
+grand_parent: Funcons-beta
+nav_order: "Maps"
 ---
 
 [Funcons-beta] : [Maps.cbs]

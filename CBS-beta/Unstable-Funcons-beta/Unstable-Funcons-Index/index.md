@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Unstable-Funcons-Index
-nav_exclude: true
+title: "Unstable-Funcons-Index"
+parent: Unstable-Funcons-beta
+
+nav_order: "Unstable-Funcons-Index"
 ---
 
 [Unstable-Funcons-beta] : [Unstable-Funcons-Index.cbs]

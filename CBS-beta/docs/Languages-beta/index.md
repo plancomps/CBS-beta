@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Languages-beta
-nav_order: 3
+nav_order: "3"
 has_children: true
 permalink: /CBS-beta/docs/Languages-beta
 ---
@@ -78,23 +78,15 @@ language specifications.
 [CBS framework]: /CBS-beta
 
 [Browsing guide]: /CBS-beta/docs/Browsing
-
-[Funcons-beta]: /CBS-beta/docs/Funcons-beta
+[Funcons-beta]:   /CBS-beta/docs/Funcons-beta
 
 [Reuse]: Reuse
 
-[IMP in CBS]: IMP
-
-[SIMPLE in CBS]: SIMPLE
-
-[MiniJava in CBS]: MiniJava
-
-[SL in CBS]: SL
-
-[OCaml Light in CBS]: OCaml-Light
+[IMP in CBS]:         /CBS-beta/Languages-beta/IMP
+[SIMPLE in CBS]:      /CBS-beta/Languages-beta/SIMPLE
+[MiniJava in CBS]:    /CBS-beta/Languages-beta/MiniJava
+[SL in CBS]:          /CBS-beta/Languages-beta/SL
+[OCaml Light in CBS]: /CBS-beta/Languages-beta/OCaml-Light
 
 [Caml Light]: https://caml.inria.fr/caml-light/
-
-[Published specification of Caml Light]: http://plancomps.org/taosd2015/
-
-[OCaml]: http://ocaml.org
+[OCaml]: https://ocaml.org

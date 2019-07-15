@@ -1,7 +1,9 @@
 ---
 layout: default
-title: OC-L-03-Names
-nav_exclude: true
+title: "OC-L-03-Names"
+parent: OC-L
+grand_parent: Languages-beta
+nav_order: OC-L-03-Names
 ---
 
 [Languages-beta] : [OC-L-03-Names.cbs]

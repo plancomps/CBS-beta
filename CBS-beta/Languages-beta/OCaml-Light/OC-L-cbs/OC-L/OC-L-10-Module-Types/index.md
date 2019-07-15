@@ -1,7 +1,9 @@
 ---
 layout: default
-title: OC-L-10-Module-Types
-nav_exclude: true
+title: "OC-L-10-Module-Types"
+parent: OC-L
+grand_parent: Languages-beta
+nav_order: OC-L-10-Module-Types
 ---
 
 [Languages-beta] : [OC-L-10-Module-Types.cbs]

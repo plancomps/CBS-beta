@@ -1,8 +1,10 @@
 ---
 layout: default
-title: SIMPLE-Threads
+title: SIMPLE-THR
 parent: Unstable-Languages-beta
-nav_order: 2
+has_children: true
+permalink: /CBS-beta/Unstable-Languages-beta/SIMPLE-Threads
+nav_order: "2"
 ---
 
 [SIMPLE-Threads]

@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Continuing
-nav_exclude: true
+title: "Continuing"
+parent: Computations
+grand_parent: Funcons-beta
+nav_order: "Continuing"
 ---
 
 [Funcons-beta] : [Continuing.cbs]

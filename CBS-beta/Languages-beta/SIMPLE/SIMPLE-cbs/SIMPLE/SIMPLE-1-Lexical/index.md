@@ -1,7 +1,9 @@
 ---
 layout: default
-title: SIMPLE-1-Lexical
-nav_exclude: true
+title: "SIMPLE-1-Lexical"
+parent: SIMPLE
+grand_parent: Languages-beta
+nav_order: SIMPLE-1-Lexical
 ---
 
 [Languages-beta] : [SIMPLE-1-Lexical.cbs]

@@ -1,7 +1,9 @@
 ---
 layout: default
-title: MiniJava-Dynamics
-nav_exclude: true
+title: "MiniJava-Dynamics"
+parent: MiniJava
+grand_parent: Languages-beta
+nav_order: MiniJava-Dynamics
 ---
 
 [Languages-beta] : [MiniJava-Dynamics.cbs]

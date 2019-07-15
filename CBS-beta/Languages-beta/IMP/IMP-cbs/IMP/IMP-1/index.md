@@ -1,7 +1,9 @@
 ---
 layout: default
-title: IMP-1
-nav_exclude: true
+title: "IMP-1"
+parent: IMP
+grand_parent: Languages-beta
+nav_order: IMP-1
 ---
 
 [Languages-beta] : [IMP-1.cbs]
@@ -17,7 +19,7 @@ nav_exclude: true
                |  <span class="syn-name"><a href="#SyntaxName_aexp">aexp</a></span> <b class="atom">'/'</b> <span class="syn-name"><a href="#SyntaxName_aexp">aexp</a></span>
                |  <b class="atom">'('</b> <span class="syn-name"><a href="#SyntaxName_aexp">aexp</a></span> <b class="atom">')'</b></code></pre></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Semantics</i>        
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Semantics</i>       
   <i class="sem-name"><span id="SemanticsName_eval-arith">eval-arith</span></i>[[ _:<span class="syn-name"><a href="#SyntaxName_aexp">aexp</a></span> ]] : =><span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Integers/index.html#Name_integers">integers</a></span>
 <i class="keyword">Rule</i>
   <i class="sem-name"><a href="#SemanticsName_eval-arith">eval-arith</a></i>[[ <span id="Variable68_N"><i class="var"><a href="#VariableStem_N">N</a></i></span> ]] = <i class="sem-name"><a href="#SemanticsName_int-val">int-val</a></i>[[ <a href="#Variable68_N"><i class="var">N</i></a> ]]

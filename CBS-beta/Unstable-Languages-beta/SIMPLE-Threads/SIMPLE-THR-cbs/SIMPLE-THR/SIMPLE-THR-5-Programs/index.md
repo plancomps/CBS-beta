@@ -1,7 +1,9 @@
 ---
 layout: default
-title: SIMPLE-THR-5-Programs
-nav_exclude: true
+title: "SIMPLE-THR-5-Programs"
+parent: SIMPLE-THR
+grand_parent: Unstable-Languages-beta
+nav_order: SIMPLE-THR-5-Programs
 ---
 
 [Unstable-Languages-beta] : [SIMPLE-THR-5-Programs.cbs]

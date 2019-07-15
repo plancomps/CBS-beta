@@ -1,7 +1,9 @@
 ---
 layout: default
-title: SIMPLE-THR-2-Expressions
-nav_exclude: true
+title: "SIMPLE-THR-2-Expressions"
+parent: SIMPLE-THR
+grand_parent: Unstable-Languages-beta
+nav_order: SIMPLE-THR-2-Expressions
 ---
 
 [Unstable-Languages-beta] : [SIMPLE-THR-2-Expressions.cbs]

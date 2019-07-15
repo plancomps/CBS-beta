@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Giving
-nav_exclude: true
+title: "Giving"
+parent: Computations
+grand_parent: Funcons-beta
+nav_order: "Giving"
 ---
 
 [Funcons-beta] : [Giving.cbs]

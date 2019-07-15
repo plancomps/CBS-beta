@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Sets
-nav_exclude: true
+title: "Sets"
+parent: Values
+grand_parent: Funcons-beta
+nav_order: "Sets"
 ---
 
 [Funcons-beta] : [Sets.cbs]

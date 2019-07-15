@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Characters
-nav_exclude: true
+title: "Characters"
+parent: Values
+grand_parent: Funcons-beta
+nav_order: "Characters"
 ---
 
 [Funcons-beta] : [Characters.cbs]

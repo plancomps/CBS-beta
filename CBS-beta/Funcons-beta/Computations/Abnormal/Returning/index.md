@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Returning
-nav_exclude: true
+title: "Returning"
+parent: Computations
+grand_parent: Funcons-beta
+nav_order: "Returning"
 ---
 
 [Funcons-beta] : [Returning.cbs]

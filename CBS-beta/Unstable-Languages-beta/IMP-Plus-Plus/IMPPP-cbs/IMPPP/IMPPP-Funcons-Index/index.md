@@ -1,7 +1,9 @@
 ---
 layout: default
-title: IMPPP-Funcons-Index
-nav_exclude: true
+title: "IMPPP-Funcons-Index"
+parent: IMPPP
+grand_parent: Unstable-Languages-beta
+nav_order: IMPPP-Funcons-Index
 ---
 
 [Unstable-Languages-beta] : [IMPPP-Funcons-Index.cbs]

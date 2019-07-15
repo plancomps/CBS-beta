@@ -1,7 +1,9 @@
 ---
 layout: default
-title: OC-L-05-Constants
-nav_exclude: true
+title: "OC-L-05-Constants"
+parent: OC-L
+grand_parent: Languages-beta
+nav_order: OC-L-05-Constants
 ---
 
 [Languages-beta] : [OC-L-05-Constants.cbs]

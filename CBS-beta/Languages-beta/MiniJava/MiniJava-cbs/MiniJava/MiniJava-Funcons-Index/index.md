@@ -1,7 +1,9 @@
 ---
 layout: default
-title: MiniJava-Funcons-Index
-nav_exclude: true
+title: "MiniJava-Funcons-Index"
+parent: MiniJava
+grand_parent: Languages-beta
+nav_order: MiniJava-Funcons-Index
 ---
 
 [Languages-beta] : [MiniJava-Funcons-Index.cbs]

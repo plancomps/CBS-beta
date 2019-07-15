@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Trees
-nav_exclude: true
+title: "Trees"
+parent: Values
+grand_parent: Funcons-beta
+nav_order: "Trees"
 ---
 
 [Funcons-beta] : [Trees.cbs]

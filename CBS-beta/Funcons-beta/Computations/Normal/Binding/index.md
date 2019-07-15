@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Binding
-nav_exclude: true
+title: "Binding"
+parent: Computations
+grand_parent: Funcons-beta
+nav_order: "Binding"
 ---
 
 [Funcons-beta] : [Binding.cbs]

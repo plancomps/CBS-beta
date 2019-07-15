@@ -1,7 +1,9 @@
 ---
 layout: default
-title: SIMPLE-THR-4-Declarations
-nav_exclude: true
+title: "SIMPLE-THR-4-Declarations"
+parent: SIMPLE-THR
+grand_parent: Unstable-Languages-beta
+nav_order: SIMPLE-THR-4-Declarations
 ---
 
 [Unstable-Languages-beta] : [SIMPLE-THR-4-Declarations.cbs]

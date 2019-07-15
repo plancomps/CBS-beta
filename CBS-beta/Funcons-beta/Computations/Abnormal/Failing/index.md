@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Failing
-nav_exclude: true
+title: "Failing"
+parent: Computations
+grand_parent: Funcons-beta
+nav_order: "Failing"
 ---
 
 [Funcons-beta] : [Failing.cbs]

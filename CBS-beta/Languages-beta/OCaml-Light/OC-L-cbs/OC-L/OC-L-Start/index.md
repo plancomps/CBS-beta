@@ -1,7 +1,9 @@
 ---
 layout: default
-title: OC-L-Start
-nav_exclude: true
+title: "OC-L-Start"
+parent: OC-L
+grand_parent: Languages-beta
+
 ---
 
 [Languages-beta] : [OC-L-Start.cbs]

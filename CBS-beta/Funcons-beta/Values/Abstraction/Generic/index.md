@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Generic
-nav_exclude: true
+title: "Generic"
+parent: Values
+grand_parent: Funcons-beta
+nav_order: "Generic"
 ---
 
 [Funcons-beta] : [Generic.cbs]

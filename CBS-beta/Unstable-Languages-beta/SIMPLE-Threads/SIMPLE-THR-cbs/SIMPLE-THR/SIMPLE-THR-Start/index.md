@@ -1,7 +1,9 @@
 ---
 layout: default
-title: SIMPLE-THR-Start
-nav_exclude: true
+title: "SIMPLE-THR-Start"
+parent: SIMPLE-THR
+grand_parent: Unstable-Languages-beta
+
 ---
 
 [Unstable-Languages-beta] : [SIMPLE-THR-Start.cbs]

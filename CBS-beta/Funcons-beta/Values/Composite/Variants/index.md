@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Variants
-nav_exclude: true
+title: "Variants"
+parent: Values
+grand_parent: Funcons-beta
+nav_order: "Variants"
 ---
 
 [Funcons-beta] : [Variants.cbs]

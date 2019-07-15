@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Breaking
-nav_exclude: true
+title: "Breaking"
+parent: Computations
+grand_parent: Funcons-beta
+nav_order: "Breaking"
 ---
 
 [Funcons-beta] : [Breaking.cbs]

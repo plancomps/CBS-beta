@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Interacting
-nav_exclude: true
+title: "Interacting"
+parent: Computations
+grand_parent: Funcons-beta
+nav_order: "Interacting"
 ---
 
 [Funcons-beta] : [Interacting.cbs]

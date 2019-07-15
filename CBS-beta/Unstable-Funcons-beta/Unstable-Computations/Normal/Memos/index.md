@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Memos
-nav_exclude: true
+title: "Memos"
+parent: Unstable-Computations
+grand_parent: Unstable-Funcons-beta
+nav_order: "Memos"
 ---
 
 [Unstable-Funcons-beta] : [Memos.cbs]

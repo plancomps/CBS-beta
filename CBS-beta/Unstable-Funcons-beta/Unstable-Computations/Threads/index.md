@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Threads
-nav_exclude: true
+title: "Threads"
+parent: Unstable-Computations
+grand_parent: Unstable-Funcons-beta
+nav_order: "Threads"
 ---
 
 [Unstable-Funcons-beta] : [Threads.cbs]

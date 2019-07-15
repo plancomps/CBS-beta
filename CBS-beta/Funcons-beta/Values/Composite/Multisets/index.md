@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Multisets
-nav_exclude: true
+title: "Multisets"
+parent: Values
+grand_parent: Funcons-beta
+nav_order: "Multisets"
 ---
 
 [Funcons-beta] : [Multisets.cbs]

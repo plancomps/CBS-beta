@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Lists
-nav_exclude: true
+title: "Lists"
+parent: Values
+grand_parent: Funcons-beta
+nav_order: "Lists"
 ---
 
 [Funcons-beta] : [Lists.cbs]

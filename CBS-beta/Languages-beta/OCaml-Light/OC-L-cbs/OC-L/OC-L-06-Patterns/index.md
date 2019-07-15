@@ -1,7 +1,9 @@
 ---
 layout: default
-title: OC-L-06-Patterns
-nav_exclude: true
+title: "OC-L-06-Patterns"
+parent: OC-L
+grand_parent: Languages-beta
+nav_order: OC-L-06-Patterns
 ---
 
 [Languages-beta] : [OC-L-06-Patterns.cbs]

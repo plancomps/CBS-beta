@@ -1,7 +1,9 @@
 ---
 layout: default
-title: SL-2-Expressions
-nav_exclude: true
+title: "SL-2-Expressions"
+parent: SL
+grand_parent: Languages-beta
+nav_order: SL-2-Expressions
 ---
 
 [Languages-beta] : [SL-2-Expressions.cbs]

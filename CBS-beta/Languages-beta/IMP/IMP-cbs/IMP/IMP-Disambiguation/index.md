@@ -1,7 +1,9 @@
 ---
 layout: default
-title: IMP-Disambiguation
-nav_exclude: true
+title: "IMP-Disambiguation"
+parent: IMP
+grand_parent: Languages-beta
+nav_order: IMP-Disambiguation
 ---
 
 [Languages-beta] : [IMP-Disambiguation.cbs]

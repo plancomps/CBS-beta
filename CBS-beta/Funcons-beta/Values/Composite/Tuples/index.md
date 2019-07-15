@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Tuples
-nav_exclude: true
+title: "Tuples"
+parent: Values
+grand_parent: Funcons-beta
+nav_order: "Tuples"
 ---
 
 [Funcons-beta] : [Tuples.cbs]

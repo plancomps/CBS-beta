@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Strings
-nav_exclude: true
+title: "Strings"
+parent: Values
+grand_parent: Funcons-beta
+nav_order: "Strings"
 ---
 
 [Funcons-beta] : [Strings.cbs]

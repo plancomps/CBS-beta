@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Funcons-beta
-nav_order: 2
+nav_order: "2"
 has_children: true
 permalink: /CBS-beta/docs/Funcons-beta
 ---
@@ -41,15 +41,10 @@ Values
 
 The [Values] page introduces the various kinds of values defined in the library.
 
-
-[Funcons-Index]: /CBS-beta/Funcons-beta/Funcons-Index
-
+[CBS framework]:  /CBS-beta
 [Browsing guide]: /CBS-beta/docs/Browsing
-
-[CBS framework]: /CBS-beta
-
 [Languages-beta]: /CBS-beta/docs/Languages-beta
 
-[Values]: Values
-
-[Computations]: Computations
+[Funcons-Index]:  /CBS-beta/Funcons-beta/Funcons-Index
+[Values]:         /CBS-beta/Funcons-beta/Values
+[Computations]:   /CBS-beta/Funcons-beta/Computations

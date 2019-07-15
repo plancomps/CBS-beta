@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Computation-Types
-nav_exclude: true
+title: "Computation-Types"
+parent: Computations
+grand_parent: Funcons-beta
+nav_order: "Computation-Types"
 ---
 
 [Funcons-beta] : [Computation-Types.cbs]

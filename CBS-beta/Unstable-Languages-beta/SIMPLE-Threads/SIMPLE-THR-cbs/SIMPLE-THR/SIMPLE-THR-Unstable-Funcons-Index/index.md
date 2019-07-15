@@ -1,7 +1,9 @@
 ---
 layout: default
-title: SIMPLE-THR-Unstable-Funcons-Index
-nav_exclude: true
+title: "SIMPLE-THR-Unstable-Funcons-Index"
+parent: SIMPLE-THR
+grand_parent: Unstable-Languages-beta
+nav_order: SIMPLE-THR-Unstable-Funcons-Index
 ---
 
 [Unstable-Languages-beta] : [SIMPLE-THR-Unstable-Funcons-Index.cbs]

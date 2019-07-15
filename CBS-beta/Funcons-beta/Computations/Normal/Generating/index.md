@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Generating
-nav_exclude: true
+title: "Generating"
+parent: Computations
+grand_parent: Funcons-beta
+nav_order: "Generating"
 ---
 
 [Funcons-beta] : [Generating.cbs]

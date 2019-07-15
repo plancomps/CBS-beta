@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Value-Types
-nav_exclude: true
+title: "Value-Types"
+parent: Values
+grand_parent: Funcons-beta
+nav_order: "Value-Types"
 ---
 
 [Funcons-beta] : [Value-Types.cbs]
@@ -132,7 +134,7 @@ nav_exclude: true
   --------------------------------------
   <span class="name"><a href="#Name_is-in-type">is-in-type</a></span>(<span id="Variable1024_V"><i class="var">V</i></span>:<span class="name"><a href="#Name_values">values</a></span>, <span id="Variable1032_T"><i class="var">T</i></span>:<span class="name"><a href="#Name_types">types</a></span>) ~> <span class="name"><a href="../Primitive/Booleans/index.html#Name_false">false</a></span></code></pre></div>
 
-		
+
 
 ### Option types
 

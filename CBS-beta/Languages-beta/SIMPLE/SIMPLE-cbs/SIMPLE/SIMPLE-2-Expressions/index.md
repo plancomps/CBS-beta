@@ -1,7 +1,9 @@
 ---
 layout: default
-title: SIMPLE-2-Expressions
-nav_exclude: true
+title: "SIMPLE-2-Expressions"
+parent: SIMPLE
+grand_parent: Languages-beta
+nav_order: SIMPLE-2-Expressions
 ---
 
 [Languages-beta] : [SIMPLE-2-Expressions.cbs]

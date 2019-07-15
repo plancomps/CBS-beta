@@ -1,8 +1,10 @@
 ---
 layout: default
-title: LangDev-2019
+title: LD
 parent: Unstable-Languages-beta
-nav_order: 3
+has_children: true
+permalink: /CBS-beta/Unstable-Languages-beta/LangDev-2019
+nav_order: "3"
 ---
 
 [LangDev-2019]
@@ -47,13 +49,11 @@ Keywords:
 Main contributors:
 - Peter Mosses
 
-[LangDev-2019]: /CBS-beta/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Start "CBS"
-
+[LD-2019-demo]: /CBS-beta/docs/LangDev-2019/LD-2019-demo
 [LangDev Meetup 2019]: http://langdevcon.org "HOME PAGE"
 
-[LD-2019-demo]: /CBS-beta/docs/LangDev-2019/LD-2019-demo
+[Demonstration]: /CBS-beta/docs/Unstable-Languages-beta/LangDev-2019/LD-Demo
 
-[Demonstration]: LD-demo
-
-[LangDev-2019-Funcons-Index]: /CBS-beta/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Funcons-Index
+[LangDev-2019]:                        /CBS-beta/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Start "CBS"
+[LangDev-2019-Funcons-Index]:          /CBS-beta/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Funcons-Index
 [LangDev-2019-Unstable-Funcons-Index]: /CBS-beta/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Unstable-Funcons-Index

@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Postponing
-nav_exclude: true
+title: "Postponing"
+parent: Unstable-Computations
+grand_parent: Unstable-Funcons-beta
+nav_order: "Postponing"
 ---
 
 [Unstable-Funcons-beta] : [Postponing.cbs]

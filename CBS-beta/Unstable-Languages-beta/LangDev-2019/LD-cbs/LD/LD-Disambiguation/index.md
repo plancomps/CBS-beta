@@ -1,7 +1,9 @@
 ---
 layout: default
-title: LD-Disambiguation
-nav_exclude: true
+title: "LD-Disambiguation"
+parent: LD
+grand_parent: Unstable-Languages-beta
+nav_order: LD-Disambiguation
 ---
 
 [Unstable-Languages-beta] : [LD-Disambiguation.cbs]

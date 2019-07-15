@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Locks
-nav_exclude: true
+title: "Locks"
+parent: Unstable-Computations
+grand_parent: Unstable-Funcons-beta
+nav_order: "Locks"
 ---
 
 [Unstable-Funcons-beta] : [Locks.cbs]

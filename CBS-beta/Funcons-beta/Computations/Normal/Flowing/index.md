@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Flowing
-nav_exclude: true
+title: "Flowing"
+parent: Computations
+grand_parent: Funcons-beta
+nav_order: "Flowing"
 ---
 
 [Funcons-beta] : [Flowing.cbs]

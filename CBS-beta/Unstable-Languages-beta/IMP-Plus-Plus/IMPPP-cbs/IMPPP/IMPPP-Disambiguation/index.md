@@ -1,7 +1,9 @@
 ---
 layout: default
-title: IMPPP-Disambiguation
-nav_exclude: true
+title: "IMPPP-Disambiguation"
+parent: IMPPP
+grand_parent: Unstable-Languages-beta
+nav_order: IMPPP-Disambiguation
 ---
 
 [Unstable-Languages-beta] : [IMPPP-Disambiguation.cbs]

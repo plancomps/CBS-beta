@@ -1,7 +1,9 @@
 ---
 layout: default
-title: LD-demo
-nav_exclude: true
+title: LD-Demo
+parent: LD
+grand_parent: Unstable-Languages-beta
+nav_order: "LD-Demo"
 ---
 
 Demonstration of incremental language specification

@@ -1,7 +1,9 @@
 ---
 layout: default
-title: Booleans
-nav_exclude: true
+title: "Booleans"
+parent: Values
+grand_parent: Funcons-beta
+nav_order: "Booleans"
 ---
 
 [Funcons-beta] : [Booleans.cbs]

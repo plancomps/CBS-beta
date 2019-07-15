@@ -1,7 +1,9 @@
 ---
 layout: default
-title: SL-Start
-nav_exclude: true
+title: "SL-Start"
+parent: SL
+grand_parent: Languages-beta
+
 ---
 
 [Languages-beta] : [SL-Start.cbs]
