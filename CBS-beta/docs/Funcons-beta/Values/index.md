@@ -105,5 +105,5 @@ funcons.
 [patterns]:     /CBS-beta/Funcons-beta/Values/Abstraction/Patterns/
 
 [value-types]:  /CBS-beta/Funcons-beta/Values/Value-Types/
-[computations]: /CBS-beta/Funcons-beta/Computations/
+[computations]: /CBS-beta/Funcons-beta/Computations
 [sequences]:    /CBS-beta/Funcons-beta/Values/Composite/Sequences/
