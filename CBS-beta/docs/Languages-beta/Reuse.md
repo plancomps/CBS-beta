@@ -687,12 +687,8 @@ funcon, thereby exhibiting the degree of funcon reuse in Languages-beta.
 
 
 
-[IMP]: IMP/IMP-cbs/IMP/IMP-Funcons-Index/index.html
-
-[SIMPLE]: SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-Funcons-Index/index.html
-
-[MiniJava]: MiniJava/MiniJava-cbs/MiniJava/MiniJava-Funcons-Index/index.html
-
-[SL]: SL/SL-cbs/SL/SL-Funcons-Index/index.html
-
-[OC-L]: OCaml-Light/OC-L-cbs/OC-L/OC-L-Funcons-Index/index.html
+[IMP]:      /CBS-beta/Languages-beta/IMP/IMP-cbs/IMP/IMP-Funcons-Index/
+[SIMPLE]:   /CBS-beta/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-Funcons-Index/
+[MiniJava]: /CBS-beta/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Funcons-Index/
+[SL]:       /CBS-beta/Languages-beta/SL/SL-cbs/SL/SL-Funcons-Index/
+[OC-L]:     /CBS-beta/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-Funcons-Index/

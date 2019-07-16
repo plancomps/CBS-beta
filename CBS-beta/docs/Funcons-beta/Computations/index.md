@@ -53,20 +53,20 @@ Funcons can take sequences of values and computations as arguments,
 whereas results can only be (sequences of) values.
 
 
-[flowing]:     /CBS-beta/Funcons-beta/Computations/Normal/Flowing
-[giving]:      /CBS-beta/Funcons-beta/Computations/Normal/Giving
-[binding]:     /CBS-beta/Funcons-beta/Computations/Normal/Binding
-[generating]:  /CBS-beta/Funcons-beta/Computations/Normal/Generating
-[storing]:     /CBS-beta/Funcons-beta/Computations/Normal/Storing
-[linking]:     /CBS-beta/Funcons-beta/Computations/Normal/Linking
-[interacting]: /CBS-beta/Funcons-beta/Computations/Normal/Interacting
+[flowing]:     /CBS-beta/Funcons-beta/Computations/Normal/Flowing/
+[giving]:      /CBS-beta/Funcons-beta/Computations/Normal/Giving/
+[binding]:     /CBS-beta/Funcons-beta/Computations/Normal/Binding/
+[generating]:  /CBS-beta/Funcons-beta/Computations/Normal/Generating/
+[storing]:     /CBS-beta/Funcons-beta/Computations/Normal/Storing/
+[linking]:     /CBS-beta/Funcons-beta/Computations/Normal/Linking/
+[interacting]: /CBS-beta/Funcons-beta/Computations/Normal/Interacting/
 
-[abrupting]:   /CBS-beta/Funcons-beta/Computations/Abnormal/Abrupting
-[failing]:     /CBS-beta/Funcons-beta/Computations/Abnormal/Failing
-[throwing]:    /CBS-beta/Funcons-beta/Computations/Abnormal/Throwing
-[returning]:   /CBS-beta/Funcons-beta/Computations/Abnormal/Returning
-[breaking]:    /CBS-beta/Funcons-beta/Computations/Abnormal/Breaking
-[continuing]:  /CBS-beta/Funcons-beta/Computations/Abnormal/Continuing
-[controlling]: /CBS-beta/Funcons-beta/Computations/Abnormal/Controlling
+[abrupting]:   /CBS-beta/Funcons-beta/Computations/Abnormal/Abrupting/
+[failing]:     /CBS-beta/Funcons-beta/Computations/Abnormal/Failing/
+[throwing]:    /CBS-beta/Funcons-beta/Computations/Abnormal/Throwing/
+[returning]:   /CBS-beta/Funcons-beta/Computations/Abnormal/Returning/
+[breaking]:    /CBS-beta/Funcons-beta/Computations/Abnormal/Breaking/
+[continuing]:  /CBS-beta/Funcons-beta/Computations/Abnormal/Continuing/
+[controlling]: /CBS-beta/Funcons-beta/Computations/Abnormal/Controlling/
 
 [Unstable-Funcons-beta]: /CBS-beta/docs/Unstable-Funcons-beta
