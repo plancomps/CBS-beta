@@ -51,7 +51,7 @@ Stop the local server with Control-C when no longer needed.
 
 [`Funcons-beta/Funcons-Index/index.html`]: /CBS-beta/Funcons-beta/Funcons-Index/index.html
 
-[Jekyll]: https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll
+[Jekyll]: https://help.github.com/en/articles/setting-up-your-github-pages-site-locally-with-jekyll
 
 [Python3]: https://docs.python.org/3/library/http.server.html
 
