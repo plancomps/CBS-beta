@@ -10,6 +10,9 @@ Beta-release changes
 This page lists significant additions and changes to the funcon definitions and
 language specifications included in the CBS beta-release.
 
+2019-08-03: [Funcons-Reuse](Languages-beta/Reuse)
+* Layout changed, table of contents added.
+
 2019-07-15: [Funcons-beta](Funcons-beta), [Languages-beta](Languages-beta),
 [Unstable-Funcons-beta](Unstable-Funcons-beta),
 [Unstable-Languages-beta](Unstable-Languages-beta)

@@ -1,8 +1,12 @@
 @import "./support/support";
 
+/* In case of accidental use of TAB: */
+
 pre{
     tab-size: 4;
 }
+
+/* CBS syntax highlighting: */
 
 i.keyword {
     color: $grey-dk-000;
@@ -37,4 +41,47 @@ i.var, i.var a, sub, sup {
 span.sectnumtitle a:link {
     color: $grey-dk-300;
     background-color: inherit;
+}
+
+/* Customised tables for Funcons-Reuse: */
+
+table.cbs-reuse {
+  table-layout: fixed;
+  width: 100%;
+}
+// Highlighting table rows:
+table.cbs-reuse tbody tr:hover td {
+  background-color: $grey-lt-200;
+}
+// Kind:
+table.cbs-reuse thead th:nth-child(1) {
+  width: 11%;
+}
+// Name:
+table.cbs-reuse thead th:nth-child(2) {
+  width: 33%;
+}
+// Alias:
+table.cbs-reuse thead th:nth-child(3) {
+  width: 21%;
+}
+// IMP:
+table.cbs-reuse thead th:nth-child(4) {
+  width: 7%;
+}
+// SMP:
+table.cbs-reuse thead th:nth-child(5) {
+  width: 7%;
+}
+// MiniJ:
+table.cbs-reuse thead th:nth-child(6) {
+  width: 8%;
+}
+// SL:
+table.cbs-reuse thead th:nth-child(7) {
+  width: 5%;
+}
+// OC-L:
+table.cbs-reuse thead th:nth-child(8) {
+  width: 8%;
 }
