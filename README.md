@@ -1,9 +1,3 @@
----
-layout: default
-title: PLanCompS
-nav_exclude: true
----
-
 PLanCompS: Programming Language Components and Specifications
 =============================================================
 
