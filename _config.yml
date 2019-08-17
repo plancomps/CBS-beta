@@ -8,3 +8,5 @@ aux_links:
     - "//github.com/plancomps/plancomps.github.io"
 plugins:
     - jekyll-seo-tag
+compress_html:
+  blanklines: true
