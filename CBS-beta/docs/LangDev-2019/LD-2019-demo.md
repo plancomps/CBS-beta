@@ -2,8 +2,9 @@
 layout: default
 title: LD-2019-demo
 nav_exclude: true
-
+search_exclude: true
 ---
+
 # LangDev-2019 demonstration of CBS
 
 ## Browsing
