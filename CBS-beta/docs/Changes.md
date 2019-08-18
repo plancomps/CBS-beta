@@ -10,6 +10,9 @@ Beta-release changes
 This page lists significant additions and changes to the funcon definitions and
 language specifications included in the CBS beta-release.
 
+2019-08-18: [CBS-beta](/CBS-beta/)
+* Global search for funcon names with hyphens now supported.
+
 2019-08-16: [CBS-beta](/CBS-beta/)
 * [Just the Docs](https://pmarsceill.github.io/just-the-docs/) updated to 0.2.6.
 * Global search (e.g., for funcon names) now supported.
