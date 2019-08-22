@@ -1,4 +1,4 @@
-remote_theme: pmarsceill/just-the-docs
+remote_theme: pmarsceill/just-the-docs@0.2.6
 title: PLanCompS
 description: Beta-release of the CBS framework
 repository: "plancomps/plancomps.github.io"
