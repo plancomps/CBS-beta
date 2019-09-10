@@ -10,3 +10,5 @@ plugins:
     - jekyll-seo-tag
 compress_html:
   blanklines: true
+# Set the search token separator
+search_tokenizer_separator: /[\s/]+/
