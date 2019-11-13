@@ -10,7 +10,9 @@ Language "LD"
 #A Disambiguation
 ]
 
-// Lexical syntax:
+/* 
+  Lexical syntax: 
+*/
 
 Lexis  X:id  ::= ('a'-'z') ('a'-'z'|'0'-'9')*
      
@@ -20,8 +22,9 @@ Lexis  X:id  ::= ('a'-'z') ('a'-'z'|'0'-'9')*
                  | 'in'  | 'join'  | 'lambda' | 'let'
                  | 'ref' | 'spawn' | 'then'   | 'while'
 
-
-// Context-free syntax:
+/*
+  Context-free syntax:
+*/
 
 Syntax E:exp ::= int
                | id
@@ -49,7 +52,9 @@ Syntax E:exp ::= int
                | 'join' exp
 
 
-// Expression evaluation:
+/*
+  Expression evaluation:
+*/
 
 Type ld-values ~> functions(values, values)
                 | integers
