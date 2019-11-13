@@ -37,6 +37,7 @@ Syntax E:exp ::= int
                | exp '<=' exp
                | exp '&&' exp
                | 'if' exp 'then' exp 'else' exp
+// References and imperatives:
                | 'ref' exp
                | exp ':=' exp
                | '!' exp
@@ -128,7 +129,7 @@ Rule eval[[ E1 ';' E2 ]] =
 Rule eval[[ '(' ')' ]] = null-value
 
 Rule eval[[ 'while' E1 'do' E2 ]] =
-  while-true( eval[[ E1 ]], eval[[ E2 ]] )
+  while-true( eval[[ E1 ]], effect( eval[[ E2 ]] ) )
 
 
 #5 Multithreading

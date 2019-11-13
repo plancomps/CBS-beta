@@ -45,6 +45,7 @@ grand_parent: Unstable-Languages-beta
                | <span class="syn-name"><a href="#SyntaxName_exp">exp</a></span> <b class="atom">'<='</b> <span class="syn-name"><a href="#SyntaxName_exp">exp</a></span>
                | <span class="syn-name"><a href="#SyntaxName_exp">exp</a></span> <b class="atom">'&&'</b> <span class="syn-name"><a href="#SyntaxName_exp">exp</a></span>
                | <b class="atom">'if'</b> <span class="syn-name"><a href="#SyntaxName_exp">exp</a></span> <b class="atom">'then'</b> <span class="syn-name"><a href="#SyntaxName_exp">exp</a></span> <b class="atom">'else'</b> <span class="syn-name"><a href="#SyntaxName_exp">exp</a></span>
+// References and imperatives:
                | <b class="atom">'ref'</b> <span class="syn-name"><a href="#SyntaxName_exp">exp</a></span>
                | <span class="syn-name"><a href="#SyntaxName_exp">exp</a></span> <b class="atom">':='</b> <span class="syn-name"><a href="#SyntaxName_exp">exp</a></span>
                | <b class="atom">'!'</b> <span class="syn-name"><a href="#SyntaxName_exp">exp</a></span>
@@ -129,7 +130,7 @@ Desugaring (alternative to the above rule):
   <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Flowing/index.html#Name_sequential">sequential</a></span>( <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Flowing/index.html#Name_effect">effect</a></span>( <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <a href="#Variable1357_E1"><i class="var">E<sub class="sub">1</sub></i></a> ]] ), <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <a href="#Variable1365_E2"><i class="var">E<sub class="sub">2</sub></i></a> ]] )
 <i class="keyword">Rule</i> <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <b class="atom">'('</b> <b class="atom">')'</b> ]] = <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Null/index.html#Name_null-value">null-value</a></span>
 <i class="keyword">Rule</i> <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <b class="atom">'while'</b> <span id="Variable1447_E1"><i class="var"><a href="#VariableStem_E">E</a><sub class="sub">1</sub></i></span> <b class="atom">'do'</b> <span id="Variable1455_E2"><i class="var"><a href="#VariableStem_E">E</a><sub class="sub">2</sub></i></span> ]] =
-  <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Flowing/index.html#Name_while-true">while-true</a></span>( <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <a href="#Variable1447_E1"><i class="var">E<sub class="sub">1</sub></i></a> ]], <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <a href="#Variable1455_E2"><i class="var">E<sub class="sub">2</sub></i></a> ]] )</code></pre></div>
+  <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Flowing/index.html#Name_while-true">while-true</a></span>( <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <a href="#Variable1447_E1"><i class="var">E<sub class="sub">1</sub></i></a> ]], <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Flowing/index.html#Name_effect">effect</a></span>( <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <a href="#Variable1455_E2"><i class="var">E<sub class="sub">2</sub></i></a> ]] ) )</code></pre></div>
 
 
 
@@ -139,9 +140,9 @@ Desugaring (alternative to the above rule):
 N.B. The funcons for multithreading have not yet been fully validated,
 so they are defined in Unstable-Funcons-beta instead of Funcons-beta.
 
-<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Rule</i> <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <b class="atom">'spawn'</b> <span id="Variable1532_E"><i class="var"><a href="#VariableStem_E">E</a></i></span> ]] =
-  <span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Threads/Multithreading/index.html#Name_thread-activate">thread-activate</a></span> <span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Threads/Multithreading/index.html#Name_thread-joinable">thread-joinable</a></span> <span class="name"><a href="../../../../../Funcons-beta/Values/Abstraction/Thunks/index.html#Name_thunk">thunk</a></span> <span class="name"><a href="../../../../../Funcons-beta/Values/Abstraction/Generic/index.html#Name_closure">closure</a></span> <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <a href="#Variable1532_E"><i class="var">E</i></a> ]]
-<i class="keyword">Rule</i> <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <b class="atom">'join'</b> <span id="Variable1572_E"><i class="var"><a href="#VariableStem_E">E</a></i></span> ]] = <span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Threads/Multithreading/index.html#Name_thread-join">thread-join</a></span>( <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <a href="#Variable1572_E"><i class="var">E</i></a> ]] )</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Rule</i> <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <b class="atom">'spawn'</b> <span id="Variable1539_E"><i class="var"><a href="#VariableStem_E">E</a></i></span> ]] =
+  <span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Threads/Multithreading/index.html#Name_thread-activate">thread-activate</a></span> <span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Threads/Multithreading/index.html#Name_thread-joinable">thread-joinable</a></span> <span class="name"><a href="../../../../../Funcons-beta/Values/Abstraction/Thunks/index.html#Name_thunk">thunk</a></span> <span class="name"><a href="../../../../../Funcons-beta/Values/Abstraction/Generic/index.html#Name_closure">closure</a></span> <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <a href="#Variable1539_E"><i class="var">E</i></a> ]]
+<i class="keyword">Rule</i> <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <b class="atom">'join'</b> <span id="Variable1579_E"><i class="var"><a href="#VariableStem_E">E</a></i></span> ]] = <span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Threads/Multithreading/index.html#Name_thread-join">thread-join</a></span>( <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <a href="#Variable1579_E"><i class="var">E</i></a> ]] )</code></pre></div>
 
 
 
@@ -150,12 +151,12 @@ so they are defined in Unstable-Funcons-beta instead of Funcons-beta.
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Syntax</i> <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_START">START</span></i>:</i><span class="syn-name"><span id="SyntaxName_start">start</span></span> ::= <span class="syn-name"><a href="#SyntaxName_exp">exp</a></span></code></pre></div>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Semantics</i> <i class="sem-name"><span id="SemanticsName_start">start</span></i>[[ _:<span class="syn-name"><a href="#SyntaxName_start">start</a></span> ]] : =><span class="name"><a href="../../../../../Funcons-beta/Values/Value-Types/index.html#Name_values">values</a></span>
-<i class="keyword">Rule</i> <i class="sem-name"><a href="#SemanticsName_start">start</a></i>[[ <span id="Variable1649_E"><i class="var"><a href="#VariableStem_E">E</a></i></span> ]] =
+<i class="keyword">Rule</i> <i class="sem-name"><a href="#SemanticsName_start">start</a></i>[[ <span id="Variable1656_E"><i class="var"><a href="#VariableStem_E">E</a></i></span> ]] =
   <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Binding/index.html#Name_initialise-binding">initialise-binding</a></span> 
   <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_initialise-storing">initialise-storing</a></span>
   <span class="name"><a href="../../../../../Funcons-beta/Computations/Abnormal/Failing/index.html#Name_finalise-failing">finalise-failing</a></span>
   <span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Threads/Multithreading/index.html#Name_multithread">multithread</a></span>
-    <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <a href="#Variable1649_E"><i class="var">E</i></a> ]]</code></pre></div>
+    <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <a href="#Variable1656_E"><i class="var">E</i></a> ]]</code></pre></div>
 
 
 ____
