@@ -30,6 +30,7 @@ Language <span id="Language_MiniJava">"MiniJava"</span></code></pre></div>
 <a href="../MiniJava-Dynamics/index.html#SectionNumber_#1">#1</a> Programs
 
 Syntax
+<div class="highlighter-rouge"><pre class="highlight">
 <code><i class="keyword"></i><i class="var"><i class="var">START</i>:</i>
   <span class="syn-name"><a href="../MiniJava-Start/index.html#SyntaxName_start">start</a></span> ::= <span class="syn-name"><a href="../MiniJava-Dynamics/index.html#SyntaxName_program">program</a></span>
 <i class="keyword"></i><i class="var"><i class="var">P</i>:</i>  
@@ -41,7 +42,10 @@ Syntax
         <span class="syn-name"><a href="../MiniJava-Dynamics/index.html#SyntaxName_statement">statement</a></span>
       <b class="atom">'}'</b> 
     <b class="atom">'}'</b></code>
+</pre></div>
+
 <a href="../MiniJava-Dynamics/index.html#SectionNumber_#2">#2</a> Declarations
+<div class="highlighter-rouge"><pre class="highlight">
 <code><i class="keyword"></i><i class="var"><i class="var">CD</i>:</i>
   <span class="syn-name"><a href="../MiniJava-Dynamics/index.html#SyntaxName_class-declaration">class-declaration</a></span> ::=
     <b class="atom">'class'</b> <span class="syn-name"><a href="../MiniJava-Dynamics/index.html#SyntaxName_identifier">identifier</a></span> ( <b class="atom">'extends'</b> <span class="syn-name"><a href="../MiniJava-Dynamics/index.html#SyntaxName_identifier">identifier</a></span> )<sup class="sup">?</sup> <b class="atom">'{'</b> 
@@ -65,7 +69,10 @@ Syntax
 <i class="keyword"></i><i class="var"><i class="var">FL</i>:</i>
   <span class="syn-name"><a href="../MiniJava-Dynamics/index.html#SyntaxName_formal-list">formal-list</a></span> ::= 
     <span class="syn-name"><a href="../MiniJava-Dynamics/index.html#SyntaxName_type">type</a></span> <span class="syn-name"><a href="../MiniJava-Dynamics/index.html#SyntaxName_identifier">identifier</a></span> ( <b class="atom">','</b> <span class="syn-name"><a href="../MiniJava-Dynamics/index.html#SyntaxName_formal-list">formal-list</a></span> )<sup class="sup">?</sup></code>
+</pre></div>
+
 <a href="../MiniJava-Dynamics/index.html#SectionNumber_#3">#3</a> Statements
+<div class="highlighter-rouge"><pre class="highlight">
 <code><i class="keyword"></i><i class="var"><i class="var">S</i>:</i>
   <span class="syn-name"><a href="../MiniJava-Dynamics/index.html#SyntaxName_statement">statement</a></span> ::= <b class="atom">'{'</b> <span class="syn-name"><a href="../MiniJava-Dynamics/index.html#SyntaxName_statement">statement</a></span><sup class="sup">*</sup> <b class="atom">'}'</b>
               | <b class="atom">'if'</b> <b class="atom">'('</b> <span class="syn-name"><a href="../MiniJava-Dynamics/index.html#SyntaxName_expression">expression</a></span> <b class="atom">')'</b> <span class="syn-name"><a href="../MiniJava-Dynamics/index.html#SyntaxName_statement">statement</a></span> <b class="atom">'else'</b> <span class="syn-name"><a href="../MiniJava-Dynamics/index.html#SyntaxName_statement">statement</a></span>
@@ -73,7 +80,10 @@ Syntax
               | <b class="atom">'System'</b><b class="atom">'.'</b><b class="atom">'out'</b><b class="atom">'.'</b><b class="atom">'println'</b> <b class="atom">'('</b> <span class="syn-name"><a href="../MiniJava-Dynamics/index.html#SyntaxName_expression">expression</a></span> <b class="atom">')'</b> <b class="atom">';'</b>
               | <span class="syn-name"><a href="../MiniJava-Dynamics/index.html#SyntaxName_identifier">identifier</a></span> <b class="atom">'='</b> <span class="syn-name"><a href="../MiniJava-Dynamics/index.html#SyntaxName_expression">expression</a></span> <b class="atom">';'</b>
               | <span class="syn-name"><a href="../MiniJava-Dynamics/index.html#SyntaxName_identifier">identifier</a></span> <b class="atom">'['</b> <span class="syn-name"><a href="../MiniJava-Dynamics/index.html#SyntaxName_expression">expression</a></span> <b class="atom">']'</b> <b class="atom">'='</b> <span class="syn-name"><a href="../MiniJava-Dynamics/index.html#SyntaxName_expression">expression</a></span> <b class="atom">';'</b></code>
+</pre></div>
+
 <a href="../MiniJava-Dynamics/index.html#SectionNumber_#4">#4</a> Expressions
+<div class="highlighter-rouge"><pre class="highlight">
 <code><i class="keyword"></i><i class="var"><i class="var">E</i>:</i>
   <span class="syn-name"><a href="../MiniJava-Dynamics/index.html#SyntaxName_expression">expression</a></span> ::= <span class="syn-name"><a href="../MiniJava-Dynamics/index.html#SyntaxName_expression">expression</a></span> <b class="atom">'&&'</b> <span class="syn-name"><a href="../MiniJava-Dynamics/index.html#SyntaxName_expression">expression</a></span>
                | <span class="syn-name"><a href="../MiniJava-Dynamics/index.html#SyntaxName_expression">expression</a></span> <b class="atom">'<'</b> <span class="syn-name"><a href="../MiniJava-Dynamics/index.html#SyntaxName_expression">expression</a></span>
@@ -95,9 +105,12 @@ Syntax
 <i class="keyword"></i><i class="var"><i class="var">EL</i>:</i>
   <span class="syn-name"><a href="../MiniJava-Dynamics/index.html#SyntaxName_expression-list">expression-list</a></span> ::=
     <span class="syn-name"><a href="../MiniJava-Dynamics/index.html#SyntaxName_expression">expression</a></span> ( <b class="atom">','</b> <span class="syn-name"><a href="../MiniJava-Dynamics/index.html#SyntaxName_expression-list">expression-list</a></span> )<sup class="sup">?</sup></code>
+</pre></div>
+
 <a href="../MiniJava-Dynamics/index.html#SectionNumber_#5">#5</a> Lexemes
 
 Lexis
+<div class="highlighter-rouge"><pre class="highlight">
 <code><i class="keyword"></i><i class="var"><i class="var">ID</i>:</i>
   <span class="syn-name"><a href="../MiniJava-Dynamics/index.html#SyntaxName_identifier">identifier</a></span> ::= <span class="syn-name"><a href="../MiniJava-Dynamics/index.html#SyntaxName_letter">letter</a></span> ( <span class="syn-name"><a href="../MiniJava-Dynamics/index.html#SyntaxName_letter">letter</a></span> | <span class="syn-name"><a href="../MiniJava-Dynamics/index.html#SyntaxName_digit">digit</a></span> | <b class="atom">'_'</b> )<sup class="sup">*</sup>
 <i class="keyword"></i><i class="var"><i class="var">IL</i>:</i>
@@ -106,6 +119,7 @@ Lexis
   <i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../MiniJava-Dynamics/index.html#SyntaxName_letter">letter</a></span> ::= <b class="atom">'a'</b>-<b class="atom">'z'</b> | <b class="atom">'A'</b>-<b class="atom">'Z'</b>
   
   <i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../MiniJava-Dynamics/index.html#SyntaxName_digit">digit</a></span> ::= <b class="atom">'0'</b>-<b class="atom">'9'</b></code>
+</pre></div>
 
 
 # <span id="SectionNumber_6">6</span> Disambiguation
