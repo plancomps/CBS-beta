@@ -3,7 +3,7 @@ layout: default
 title: SIMPLE-THR
 parent: Unstable-Languages-beta
 has_children: true
-permalink: /CBS-beta/Unstable-Languages-beta/SIMPLE-Threads
+permalink: /CBS-beta/docs/Unstable-Languages-beta/SIMPLE-Threads
 nav_order: "2"
 ---
 

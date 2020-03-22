@@ -3,7 +3,7 @@ layout: default
 title: OC-L
 parent: Languages-beta
 has_children: true
-permalink: /CBS-beta/Languages-beta/OCaml-Light
+permalink: /CBS-beta/docs/Languages-beta/OCaml-Light
 nav_order: "5"
 ---
 

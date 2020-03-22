@@ -376,9 +376,9 @@ operational behaviour of a funcon.
 
 [CBS of IMP]: /CBS-beta/Languages-beta/IMP/IMP-cbs/IMP/IMP-Start/
 
-[Values]: /CBS-beta/Funcons-beta/Values
+[Values]: /CBS-beta/docs/Funcons-beta/Values
 
-[Computations]: /CBS-beta/Funcons-beta/Computations
+[Computations]: /CBS-beta/docs/Funcons-beta/Computations
 
 [`num ::= '-'?_decimal`]: /CBS-beta/Languages-beta/IMP/IMP-cbs/IMP/IMP-1/#SyntaxName_num
 

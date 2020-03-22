@@ -35,4 +35,4 @@ in the library.
 
 [Unstable-Languages-beta]: /CBS-beta/docs/Unstable-Languages-beta
 
-[Unstable-Computations]: /CBS-beta/Unstable-Funcons-beta/Unstable-Computations
+[Unstable-Computations]: /CBS-beta/docs/Unstable-Funcons-beta/Unstable-Computations

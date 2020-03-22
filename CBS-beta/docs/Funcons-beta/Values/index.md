@@ -3,7 +3,7 @@ layout: default
 title: Values
 parent: Funcons-beta
 has_children: true
-permalink: /CBS-beta/Funcons-beta/Values
+permalink: /CBS-beta/docs/Funcons-beta/Values
 nav_order: "2"
 ---
 
@@ -105,5 +105,6 @@ funcons.
 [patterns]:     /CBS-beta/Funcons-beta/Values/Abstraction/Patterns/
 
 [value-types]:  /CBS-beta/Funcons-beta/Values/Value-Types/
-[computations]: /CBS-beta/Funcons-beta/Computations
 [sequences]:    /CBS-beta/Funcons-beta/Values/Composite/Sequences/
+
+[computations]: /CBS-beta/docs/Funcons-beta/Computations

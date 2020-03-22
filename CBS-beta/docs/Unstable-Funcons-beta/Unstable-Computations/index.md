@@ -3,7 +3,7 @@ layout: default
 title: Unstable-Computations
 parent: Unstable-Funcons-beta
 has_children: true
-permalink: /CBS-beta/Unstable-Funcons-beta/Unstable-Computations
+permalink: /CBS-beta/docs/Unstable-Funcons-beta/Unstable-Computations
 nav_order: "1"
 ---
 

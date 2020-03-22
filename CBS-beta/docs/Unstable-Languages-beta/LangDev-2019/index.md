@@ -3,7 +3,7 @@ layout: default
 title: LD
 parent: Unstable-Languages-beta
 has_children: true
-permalink: /CBS-beta/Unstable-Languages-beta/LangDev-2019
+permalink: /CBS-beta/docs/Unstable-Languages-beta/LangDev-2019
 nav_order: "3"
 ---
 

@@ -3,7 +3,7 @@ layout: default
 title: MiniJava
 parent: Languages-beta
 has_children: true
-permalink: /CBS-beta/Languages-beta/MiniJava
+permalink: /CBS-beta/docs/Languages-beta/MiniJava
 nav_order: "3"
 ---
 

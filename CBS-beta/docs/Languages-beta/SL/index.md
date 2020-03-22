@@ -3,7 +3,7 @@ layout: default
 title: SL
 parent: Languages-beta
 has_children: true
-permalink: /CBS-beta/Languages-beta/SL
+permalink: /CBS-beta/docs/Languages-beta/SL
 nav_order: "4"
 ---
 

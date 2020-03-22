@@ -75,18 +75,18 @@ The [reuse] page shows how may funcons are directly reused in the different
 language specifications.
 
 
-[CBS framework]: /CBS-beta/
+[CBS framework]: /CBS-beta/docs/
 
 [Browsing guide]: /CBS-beta/docs/Browsing
 [Funcons-beta]:   /CBS-beta/docs/Funcons-beta
 
 [Reuse]: /CBS-beta/docs/Languages-beta/Reuse
 
-[IMP in CBS]:         /CBS-beta/Languages-beta/IMP
-[SIMPLE in CBS]:      /CBS-beta/Languages-beta/SIMPLE
-[MiniJava in CBS]:    /CBS-beta/Languages-beta/MiniJava
-[SL in CBS]:          /CBS-beta/Languages-beta/SL
-[OCaml Light in CBS]: /CBS-beta/Languages-beta/OCaml-Light
+[IMP in CBS]:         /CBS-beta/docs/Languages-beta/IMP
+[SIMPLE in CBS]:      /CBS-beta/docs/Languages-beta/SIMPLE
+[MiniJava in CBS]:    /CBS-beta/docs/Languages-beta/MiniJava
+[SL in CBS]:          /CBS-beta/docs/Languages-beta/SL
+[OCaml Light in CBS]: /CBS-beta/docs/Languages-beta/OCaml-Light
 
 [Caml Light]: https://caml.inria.fr/caml-light/
 [OCaml]: https://ocaml.org

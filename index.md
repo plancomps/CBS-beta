@@ -2,7 +2,7 @@
 layout: default
 title: CBS-beta
 # nav_order: "1"
-nav-exclude: true
+nav_exclude: true
 ---
 
 CBS-beta
@@ -113,15 +113,15 @@ If you would like to contribute to PLanCompS (e.g., by using CBS to define a new
 or existing language, or by suggesting new or improved funcons) please email
 plancomps@gmail.com.
 
-[Fundamental programming constructs]: docs/Funcons-beta
+[Fundamental programming constructs]: /CBS-beta/docs/Funcons-beta
 
-[Funcons-beta]: docs/Funcons-beta
+[Funcons-beta]: /CBS-beta/docs/Funcons-beta
 
-[Languages-beta]: docs/Languages-beta
+[Languages-beta]: /CBS-beta/docs/Languages-beta
 
-[Unstable-Funcons-beta]: docs/Unstable-Funcons-beta
+[Unstable-Funcons-beta]: /CBS-beta/docs/Unstable-Funcons-beta
 
-[Unstable-Languages-beta]: docs/Unstable-Languages-beta
+[Unstable-Languages-beta]: /CBS-beta/docs/Unstable-Languages-beta
 
 [Beta-release change log]: docs/Changes.md
 

@@ -52,9 +52,9 @@ presented at [LangDev Meetup 2019]. See [LangDev-2019] for further details.
 [Unstable-Funcons-beta]:   /CBS-beta/docs/Unstable-Funcons-beta
 [Unstable-Languages-beta]: /CBS-beta/docs/Unstable-Languages-beta
 
-[IMP]:            /CBS-beta/Languages-beta/IMP
-[SIMPLE]:         /CBS-beta/Languages-beta/SIMPLE
-[IMP++]:          /CBS-beta/Unstable-Languages-beta/IMP-Plus-Plus
-[SIMPLE-Threads]: /CBS-beta/Unstable-Languages-beta/SIMPLE-Threads
-[LangDev-2019]:   /CBS-beta/Unstable-Languages-beta/LangDev-2019
+[IMP]:            /CBS-beta/docs/Languages-beta/IMP
+[SIMPLE]:         /CBS-beta/docs/Languages-beta/SIMPLE
+[IMP++]:          /CBS-beta/docs/Unstable-Languages-beta/IMP-Plus-Plus
+[SIMPLE-Threads]: /CBS-beta/docs/Unstable-Languages-beta/SIMPLE-Threads
+[LangDev-2019]:   /CBS-beta/docs/Unstable-Languages-beta/LangDev-2019
 [LangDev Meetup 2019]: http://langdevcon.org "HOME PAGE"
