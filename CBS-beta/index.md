@@ -1,7 +1,8 @@
 ---
 layout: default
 title: CBS-beta
-nav_order: "1"
+# nav_order: "1"
+nav-exclude: true
 ---
 
 CBS-beta
