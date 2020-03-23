@@ -18,9 +18,9 @@ __Using [Jekyll]:__
 
     ```
     bundle install
-    bundle exec jekyll serve --port 4000 --host localhost
+    bundle exec jekyll serve --baseurl '/CBS-beta' --port 4000 --host localhost
     ```
-    (`4000` and `localhost` are the defaults when not be specified.)
+    (`port` and `host` need only be specified if different values are required.)
 
 2.  Open a web browser at `http://localhost:4000/`.
 
