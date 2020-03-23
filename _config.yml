@@ -2,7 +2,7 @@ remote_theme: pmarsceill/just-the-docs
 title: CBS-beta
 description: Beta-release of the CBS framework
 repository: "plancomps-new/CBS-beta"
-# baseurl: "/CBS-beta"
+baseurl: "/CBS-beta"
 # Aux links for the upper right navigation
 aux_links:
   "CBS-beta on GitHub":
