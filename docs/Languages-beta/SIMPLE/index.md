@@ -3,7 +3,7 @@ layout: default
 title: SIMPLE
 parent: Languages-beta
 has_children: true
-permalink: /CBS-beta/docs/Languages-beta/SIMPLE
+permalink: /docs/Languages-beta/SIMPLE
 nav_order: "2"
 ---
 

@@ -3,7 +3,7 @@ layout: default
 title: Languages-beta
 nav_order: "3"
 has_children: true
-permalink: /CBS-beta/docs/Languages-beta
+permalink: /docs/Languages-beta
 ---
 
 Languages-beta

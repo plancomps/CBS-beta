@@ -3,7 +3,7 @@ layout: default
 title: IMPPP
 parent: Unstable-Languages-beta
 has_children: true
-permalink: /CBS-beta/docs/Unstable-Languages-beta/IMP-Plus-Plus
+permalink: /docs/Unstable-Languages-beta/IMP-Plus-Plus
 nav_order: "1"
 ---
 

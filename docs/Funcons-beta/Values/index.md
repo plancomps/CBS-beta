@@ -3,7 +3,7 @@ layout: default
 title: Values
 parent: Funcons-beta
 has_children: true
-permalink: /CBS-beta/docs/Funcons-beta/Values
+permalink: /docs/Funcons-beta/Values
 nav_order: "2"
 ---
 

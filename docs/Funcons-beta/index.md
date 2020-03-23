@@ -3,7 +3,7 @@ layout: default
 title: Funcons-beta
 nav_order: "2"
 has_children: true
-permalink: /CBS-beta/docs/Funcons-beta
+permalink: /docs/Funcons-beta
 ---
 
 Funcons-beta

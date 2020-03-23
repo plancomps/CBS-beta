@@ -3,7 +3,7 @@ layout: default
 title: Unstable-Funcons-beta
 nav_order: "4"
 has_children: true
-permalink: /CBS-beta/docs/Unstable-Funcons-beta
+permalink: /docs/Unstable-Funcons-beta
 ---
 
 Unstable-Funcons-beta

@@ -3,7 +3,7 @@ layout: default
 title: IMP
 parent: Languages-beta
 has_children: true
-permalink: /CBS-beta/docs/Languages-beta/IMP
+permalink: /docs/Languages-beta/IMP
 nav_order: "1"
 ---
 

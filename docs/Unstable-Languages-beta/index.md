@@ -3,7 +3,7 @@ layout: default
 title: Unstable-Languages-beta
 nav_order: "5"
 has_children: true
-permalink: /CBS-beta/docs/Unstable-Languages-beta
+permalink: /docs/Unstable-Languages-beta
 ---
 
 Unstable-Languages-beta
