@@ -3,7 +3,7 @@ layout: default
 title: Unstable-Computations
 parent: Unstable-Funcons-beta
 has_children: true
-permalink: /docs/Unstable-Funcons-beta/Unstable-Computations
+permalink: /CBS-beta/docs/Unstable-Funcons-beta/Unstable-Computations
 nav_order: "1"
 ---
 
@@ -51,14 +51,14 @@ connection with languages that include threads.
 
 - [Postponing]\: adding after-effects to an enclosing term
 
-[Multithreading]: /Unstable-Funcons-beta/Unstable-Computations/Threads/Multithreading/
-[Synchronising]:  /Unstable-Funcons-beta/Unstable-Computations/Threads/Synchronising/
-[Locks]:          /Unstable-Funcons-beta/Unstable-Computations/Threads/Synchronising/Locks/
-[Notifications]:  /Unstable-Funcons-beta/Unstable-Computations/Threads/Synchronising/Notifications/
+[Multithreading]: /CBS-beta/Unstable-Funcons-beta/Unstable-Computations/Threads/Multithreading/
+[Synchronising]:  /CBS-beta/Unstable-Funcons-beta/Unstable-Computations/Threads/Synchronising/
+[Locks]:          /CBS-beta/Unstable-Funcons-beta/Unstable-Computations/Threads/Synchronising/Locks/
+[Notifications]:  /CBS-beta/Unstable-Funcons-beta/Unstable-Computations/Threads/Synchronising/Notifications/
 
-[Indexing]:       /Unstable-Funcons-beta/Unstable-Computations/Normal/Indexing/
-[Memos]:          /Unstable-Funcons-beta/Unstable-Computations/Normal/Memos/
+[Indexing]:       /CBS-beta/Unstable-Funcons-beta/Unstable-Computations/Normal/Indexing/
+[Memos]:          /CBS-beta/Unstable-Funcons-beta/Unstable-Computations/Normal/Memos/
 
-[Postponing]:     /Unstable-Funcons-beta/Unstable-Computations/Abnormal/Postponing/
+[Postponing]:     /CBS-beta/Unstable-Funcons-beta/Unstable-Computations/Abnormal/Postponing/
 
-[Unstable-Languages-beta]: /docs/Unstable-Languages-beta
+[Unstable-Languages-beta]: /CBS-beta/docs/Unstable-Languages-beta

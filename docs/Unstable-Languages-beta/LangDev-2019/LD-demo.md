@@ -60,9 +60,9 @@ Multithreading language
 * Spoofax: Run funcons of test programs
   - `runfct-LD --config LD-3.config LD-Tests/5-Threads/spawn-sync.fct`
 
-[§4]:           /Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Start/#4-references-and-imperatives
-[§A.4]:         /Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Disambiguation/#a4-references-and-imperatives
-[§5]:           /Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Start/#5-multithreading
-[§A.5]:         /Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Disambiguation/#a5-multithreading
-[§6]:           /Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Start/#6-programs
-[`ld-values`]:  /Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Start/#Name_ld-values
+[§4]:           /CBS-beta/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Start/#4-references-and-imperatives
+[§A.4]:         /CBS-beta/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Disambiguation/#a4-references-and-imperatives
+[§5]:           /CBS-beta/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Start/#5-multithreading
+[§A.5]:         /CBS-beta/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Disambiguation/#a5-multithreading
+[§6]:           /CBS-beta/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Start/#6-programs
+[`ld-values`]:  /CBS-beta/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Start/#Name_ld-values

@@ -3,7 +3,7 @@ layout: default
 title: Unstable-Funcons-beta
 nav_order: "4"
 has_children: true
-permalink: /docs/Unstable-Funcons-beta
+permalink: /CBS-beta/docs/Unstable-Funcons-beta
 ---
 
 Unstable-Funcons-beta
@@ -31,8 +31,8 @@ The [Unstable-Computations] page introduces the various kinds of computations de
 in the library.
 
 
-[Unstable-Funcons-Index]: /Unstable-Funcons-beta/Unstable-Funcons-Index/
+[Unstable-Funcons-Index]: /CBS-beta/Unstable-Funcons-beta/Unstable-Funcons-Index/
 
-[Unstable-Languages-beta]: /docs/Unstable-Languages-beta
+[Unstable-Languages-beta]: /CBS-beta/docs/Unstable-Languages-beta
 
-[Unstable-Computations]: /docs/Unstable-Funcons-beta/Unstable-Computations
+[Unstable-Computations]: /CBS-beta/docs/Unstable-Funcons-beta/Unstable-Computations

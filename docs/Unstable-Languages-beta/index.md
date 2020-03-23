@@ -3,7 +3,7 @@ layout: default
 title: Unstable-Languages-beta
 nav_order: "5"
 has_children: true
-permalink: /docs/Unstable-Languages-beta
+permalink: /CBS-beta/docs/Unstable-Languages-beta
 ---
 
 Unstable-Languages-beta
@@ -47,14 +47,14 @@ LangDev-2019
 This is a language used for demonstrating extensibility of CBS specifications,
 presented at [LangDev Meetup 2019]. See [LangDev-2019] for further details.
 
-[Funcons-beta]:            /docs/Funcons-beta
-[Languages-beta]:          /docs/Languages-beta
-[Unstable-Funcons-beta]:   /docs/Unstable-Funcons-beta
-[Unstable-Languages-beta]: /docs/Unstable-Languages-beta
+[Funcons-beta]:            /CBS-beta/docs/Funcons-beta
+[Languages-beta]:          /CBS-beta/docs/Languages-beta
+[Unstable-Funcons-beta]:   /CBS-beta/docs/Unstable-Funcons-beta
+[Unstable-Languages-beta]: /CBS-beta/docs/Unstable-Languages-beta
 
-[IMP]:            /docs/Languages-beta/IMP
-[SIMPLE]:         /docs/Languages-beta/SIMPLE
-[IMP++]:          /docs/Unstable-Languages-beta/IMP-Plus-Plus
-[SIMPLE-Threads]: /docs/Unstable-Languages-beta/SIMPLE-Threads
-[LangDev-2019]:   /docs/Unstable-Languages-beta/LangDev-2019
+[IMP]:            /CBS-beta/docs/Languages-beta/IMP
+[SIMPLE]:         /CBS-beta/docs/Languages-beta/SIMPLE
+[IMP++]:          /CBS-beta/docs/Unstable-Languages-beta/IMP-Plus-Plus
+[SIMPLE-Threads]: /CBS-beta/docs/Unstable-Languages-beta/SIMPLE-Threads
+[LangDev-2019]:   /CBS-beta/docs/Unstable-Languages-beta/LangDev-2019
 [LangDev Meetup 2019]: http://langdevcon.org "HOME PAGE"

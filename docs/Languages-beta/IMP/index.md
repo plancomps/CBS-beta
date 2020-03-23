@@ -3,7 +3,7 @@ layout: default
 title: IMP
 parent: Languages-beta
 has_children: true
-permalink: /docs/Languages-beta/IMP
+permalink: /CBS-beta/docs/Languages-beta/IMP
 nav_order: "1"
 ---
 
@@ -53,5 +53,5 @@ Main contributors:
 
 [IMP in the K framework]: http://www.kframework.org/language-pdfs/new/imp.pdf
 
-[IMP]:               /Languages-beta/IMP/IMP-cbs/IMP/IMP-Start/
-[IMP-Funcons-Index]: /Languages-beta/IMP/IMP-cbs/IMP/IMP-Funcons-Index/
+[IMP]:               /CBS-beta/Languages-beta/IMP/IMP-cbs/IMP/IMP-Start/
+[IMP-Funcons-Index]: /CBS-beta/Languages-beta/IMP/IMP-cbs/IMP/IMP-Funcons-Index/

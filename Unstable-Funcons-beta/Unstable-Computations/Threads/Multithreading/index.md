@@ -181,7 +181,7 @@ Terminated detached threads are always deleted.
 Scheduling information for each thread may affect the interleaving
 of thread steps:
 
-<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Entity</i> // thread-scheduling
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Entity</i> /CBS-beta// thread-scheduling
   < _ , <span class="ent-name"><span id="Name_thread-schedule">thread-schedule</span></span>(_:<span class="name"><a href="../../../../../../Funcons-beta/Values/Composite/Sets/index.html#Name_sets">sets</a></span>(<span class="name"><a href="../../../../../../Funcons-beta/Values/Value-Types/index.html#Name_ground-values">ground-values</a></span>)) > --->
   < _ , <span class="ent-name">thread-schedule</span>(_:<span class="name">sets</span>(<span class="name">ground-values</span>)) ></code></pre></div>
 
@@ -255,14 +255,14 @@ for it:
     <span class="name"><a href="../../../../../../Funcons-beta/Computations/Normal/Flowing/index.html#Name_sequential">sequential</a></span>(
       <span class="name"><a href="#Name_initialise-multithreading">initialise-multithreading</a></span>,
       <span class="name"><a href="../../../../../../Funcons-beta/Computations/Normal/Giving/index.html#Name_give">give</a></span>(
-        <span class="name"><a href="#Name_thread-activate">thread-activate</a></span> <span class="name"><a href="#Name_thread-joinable">thread-joinable</a></span> <span class="name"><a href="../../../../../../Funcons-beta/Values/Abstraction/Thunks/index.html#Name_thunk">thunk</a></span> <span class="name"><a href="../../../../../../Funcons-beta/Values/Abstraction/Generic/index.html#Name_closure">closure</a></span> <a href="#Variable1300_X"><i class="var">X</i></a>, // gives TI
+        <span class="name"><a href="#Name_thread-activate">thread-activate</a></span> <span class="name"><a href="#Name_thread-joinable">thread-joinable</a></span> <span class="name"><a href="../../../../../../Funcons-beta/Values/Abstraction/Thunks/index.html#Name_thunk">thunk</a></span> <span class="name"><a href="../../../../../../Funcons-beta/Values/Abstraction/Generic/index.html#Name_closure">closure</a></span> <a href="#Variable1300_X"><i class="var">X</i></a>, /CBS-beta// gives TI
         <span class="name"><a href="../../../../../../Funcons-beta/Computations/Abnormal/Abrupting/index.html#Name_handle-abrupt">handle-abrupt</a></span>(
           <span class="name"><a href="../../../../../../Funcons-beta/Computations/Normal/Flowing/index.html#Name_sequential">sequential</a></span>(
             <span class="name"><a href="../../../../../../Funcons-beta/Computations/Normal/Flowing/index.html#Name_while-true">while-true</a></span>(<span class="name"><a href="#Name_is-some-thread-active">is-some-thread-active</a></span>,
               <span class="name"><a href="../../../../../../Funcons-beta/Computations/Normal/Flowing/index.html#Name_sequential">sequential</a></span>(<span class="name"><a href="#Name_update-thread-stepping">update-thread-stepping</a></span>, <span class="name"><a href="#Name_thread-step">thread-step</a></span>)),
-            <span class="name"><a href="../../../../../../Funcons-beta/Computations/Abnormal/Failing/index.html#Name_check">check</a></span> <span class="name"><a href="../../../../../../Funcons-beta/Values/Primitive/Booleans/index.html#Name_not">not</a></span> <span class="name"><a href="#Name_is-some-thread-suspended">is-some-thread-suspended</a></span>, // deadlock
-            <span class="name"><a href="#Name_thread-value">thread-value</a></span> <span class="name"><a href="../../../../../../Funcons-beta/Computations/Normal/Giving/index.html#Name_given">given</a></span>), // given is TI
-          <span class="name"><a href="../../../../../../Funcons-beta/Computations/Normal/Giving/index.html#Name_given">given</a></span>) // given is the reason for abruption
+            <span class="name"><a href="../../../../../../Funcons-beta/Computations/Abnormal/Failing/index.html#Name_check">check</a></span> <span class="name"><a href="../../../../../../Funcons-beta/Values/Primitive/Booleans/index.html#Name_not">not</a></span> <span class="name"><a href="#Name_is-some-thread-suspended">is-some-thread-suspended</a></span>, /CBS-beta// deadlock
+            <span class="name"><a href="#Name_thread-value">thread-value</a></span> <span class="name"><a href="../../../../../../Funcons-beta/Computations/Normal/Giving/index.html#Name_given">given</a></span>), /CBS-beta// given is TI
+          <span class="name"><a href="../../../../../../Funcons-beta/Computations/Normal/Giving/index.html#Name_given">given</a></span>) /CBS-beta// given is the reason for abruption
       ))</code></pre></div>
 
 
@@ -749,13 +749,13 @@ From the [PLanCompS Project], 2019 | [CBS-beta issues...] | [Suggest an improvem
 
 [Multithreading.cbs]: Multithreading.cbs 
   "CBS SOURCE FILE"
-[Funcons-beta]: /docs/Funcons-beta
+[Funcons-beta]: /CBS-beta/docs/Funcons-beta
  "FUNCONS-BETA"
-[Unstable-Funcons-beta]: /docs/Unstable-Funcons-beta
+[Unstable-Funcons-beta]: /CBS-beta/docs/Unstable-Funcons-beta
   "UNSTABLE-FUNCONS-BETA"
-[Languages-beta]: /docs/Languages-beta
+[Languages-beta]: /CBS-beta/docs/Languages-beta
   "LANGUAGES-BETA"
-[Unstable-Languages-beta]: /docs/Unstable-Languages-beta
+[Unstable-Languages-beta]: /CBS-beta/docs/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
 [CBS-beta]:  "CBS-BETA"
 [PLanCompS Project]: http://plancomps.org

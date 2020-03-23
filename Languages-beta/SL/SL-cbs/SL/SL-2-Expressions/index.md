@@ -104,7 +104,7 @@ nav_order: SL-2-Expressions
   <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <b class="atom">'defineFunction'</b> <b class="atom">'('</b> <span id="Variable1320_Expr"><i class="var"><a href="#VariableStem_Expr">Expr</a></i></span> <b class="atom">')'</b> ]] = <span class="name"><a href="../../../../../Funcons-beta/Computations/Abnormal/Failing/index.html#Name_fail">fail</a></span>//  
 //    give(str eval[[Expr]],  
 //      override-global-bindings(declare[[given]]))  
-//  // Dynamic parsing and translation to funcons not yet implemented
+//  /CBS-beta// Dynamic parsing and translation to funcons not yet implemented
 <i class="keyword">Rule</i>
   <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <b class="atom">'nanoTime'</b> <b class="atom">'('</b> <b class="atom">')'</b> ]] = <span class="name"><a href="../../../../../Funcons-beta/Computations/Abnormal/Failing/index.html#Name_fail">fail</a></span>
 <i class="keyword">Rule</i>
@@ -157,13 +157,13 @@ From the [PLanCompS Project], 2019 | [CBS-beta issues...] | [Suggest an improvem
 
 [SL-2-Expressions.cbs]: SL-2-Expressions.cbs 
   "CBS SOURCE FILE"
-[Funcons-beta]: /docs/Funcons-beta
+[Funcons-beta]: /CBS-beta/docs/Funcons-beta
  "FUNCONS-BETA"
-[Unstable-Funcons-beta]: /docs/Unstable-Funcons-beta
+[Unstable-Funcons-beta]: /CBS-beta/docs/Unstable-Funcons-beta
   "UNSTABLE-FUNCONS-BETA"
-[Languages-beta]: /docs/Languages-beta
+[Languages-beta]: /CBS-beta/docs/Languages-beta
   "LANGUAGES-BETA"
-[Unstable-Languages-beta]: /docs/Unstable-Languages-beta
+[Unstable-Languages-beta]: /CBS-beta/docs/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
 [CBS-beta]:  "CBS-BETA"
 [PLanCompS Project]: http://plancomps.org

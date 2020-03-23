@@ -698,8 +698,8 @@ ____
 {: .cbs-reuse }
 
 
-[IMP]:      /Languages-beta/IMP/IMP-cbs/IMP/IMP-Funcons-Index/
-[SMP]:   /Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-Funcons-Index/
-[MiniJ]: /Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Funcons-Index/
-[SL]:       /Languages-beta/SL/SL-cbs/SL/SL-Funcons-Index/
-[OC-L]:     /Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-Funcons-Index/
+[IMP]:      /CBS-beta/Languages-beta/IMP/IMP-cbs/IMP/IMP-Funcons-Index/
+[SMP]:   /CBS-beta/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-Funcons-Index/
+[MiniJ]: /CBS-beta/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Funcons-Index/
+[SL]:       /CBS-beta/Languages-beta/SL/SL-cbs/SL/SL-Funcons-Index/
+[OC-L]:     /CBS-beta/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-Funcons-Index/

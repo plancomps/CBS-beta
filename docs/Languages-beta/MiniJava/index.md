@@ -3,7 +3,7 @@ layout: default
 title: MiniJava
 parent: Languages-beta
 has_children: true
-permalink: /docs/Languages-beta/MiniJava
+permalink: /CBS-beta/docs/Languages-beta/MiniJava
 nav_order: "3"
 ---
 
@@ -54,5 +54,5 @@ Main contributors:
 [Java Manual]: https://docs.oracle.com/javase/specs
 [BNF for MiniJava]: http://www.cambridge.org/us/features/052182060X/grammar.html
 
-[MiniJava]:               /Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Start/
-[MiniJava-Funcons-Index]: /Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Funcons-Index/
+[MiniJava]:               /CBS-beta/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Start/
+[MiniJava-Funcons-Index]: /CBS-beta/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Funcons-Index/

@@ -3,7 +3,7 @@ layout: default
 title: IMPPP
 parent: Unstable-Languages-beta
 has_children: true
-permalink: /docs/Unstable-Languages-beta/IMP-Plus-Plus
+permalink: /CBS-beta/docs/Unstable-Languages-beta/IMP-Plus-Plus
 nav_order: "1"
 ---
 
@@ -54,10 +54,10 @@ Main contributors:
 - [Peter Mosses], Neil Sculthorpe
 
 
-[IMP++]: /Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-Start
-[IMP]: /docs/Languages-beta/IMP
-[IMPPP-Funcons-Index]: /Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-Funcons-Index
-[IMPPP-Unstable-Funcons-Index]: /Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-Unstable-Funcons-Index
+[IMP++]: /CBS-beta/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-Start
+[IMP]: /CBS-beta/docs/Languages-beta/IMP
+[IMPPP-Funcons-Index]: /CBS-beta/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-Funcons-Index
+[IMPPP-Unstable-Funcons-Index]: /CBS-beta/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-Unstable-Funcons-Index
 [IMP++ in K]: http://www.kframework.org/language-pdfs/new/imppp.pdf
   "OUTDATED"
 [Rosu2017KSF]:  http://fslweb.cs.illinois.edu/FSL/papers/2017/rosu-2017-marktoberdorf/rosu-2017-marktoberdorf-public.pdf

@@ -3,7 +3,7 @@ layout: default
 title: SIMPLE
 parent: Languages-beta
 has_children: true
-permalink: /docs/Languages-beta/SIMPLE
+permalink: /CBS-beta/docs/Languages-beta/SIMPLE
 nav_order: "2"
 ---
 
@@ -57,7 +57,7 @@ Main contributors:
 [K Overview and SIMPLE Case Study]:  http://dx.doi.org/10.1016/j.entcs.2014.05.002
 [SIMPLE in the K framework]: http://fsl.cs.illinois.edu/index.php/K_Overview_and_SIMPLE_Case_Study
 
-[SIMPLE]:               /Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-Start/
-[SIMPLE-Funcons-Index]: /Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-Funcons-Index/
+[SIMPLE]:               /CBS-beta/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-Start/
+[SIMPLE-Funcons-Index]: /CBS-beta/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-Funcons-Index/
 
-[SIMPLE-Threads]: /docs/Unstable-Languages-beta/SIMPLE-Threads
+[SIMPLE-Threads]: /CBS-beta/docs/Unstable-Languages-beta/SIMPLE-Threads

@@ -11,34 +11,34 @@ nav_order: SL-Funcons
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Language</i> <span id="Language_SL">"SL"</span></code></pre></div>
 <div class="highlighter-rouge"><pre class="highlight"><code>[
-  // SL-specific funcons
+  /CBS-beta// SL-specific funcons
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_sl-to-string">sl-to-string</a></span>
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_integer-add-else-string-append">integer-add-else-string-append</a></span>
   
-  // Abbreviations
+  /CBS-beta// Abbreviations
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_int">int</a></span>
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_bool">bool</a></span>
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_str">str</a></span>
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_obj">obj</a></span>
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_fun">fun</a></span>
   
-  // Further funcons
+  /CBS-beta// Further funcons
   
-  //   Binding
+  /CBS-beta//   Binding
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_scope-closed">scope-closed</a></span>
   
-  //   Local variables
+  /CBS-beta//   Local variables
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_initialise-local-variables">initialise-local-variables</a></span>
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_local-variable">local-variable</a></span>
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_local-variable-initialise">local-variable-initialise</a></span>
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_local-variable-assign">local-variable-assign</a></span>
   
-  //   Global bindings
+  /CBS-beta//   Global bindings
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_initialise-global-bindings">initialise-global-bindings</a></span>
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_override-global-bindings">override-global-bindings</a></span>
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_global-bound">global-bound</a></span>
   
-  //   Composite input and output
+  /CBS-beta//   Composite input and output
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_read-line">read-line</a></span>
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_print-line">print-line</a></span>
 ]</code></pre></div>
@@ -196,13 +196,13 @@ From the [PLanCompS Project], 2019 | [CBS-beta issues...] | [Suggest an improvem
 
 [SL-Funcons.cbs]: SL-Funcons.cbs 
   "CBS SOURCE FILE"
-[Funcons-beta]: /docs/Funcons-beta
+[Funcons-beta]: /CBS-beta/docs/Funcons-beta
  "FUNCONS-BETA"
-[Unstable-Funcons-beta]: /docs/Unstable-Funcons-beta
+[Unstable-Funcons-beta]: /CBS-beta/docs/Unstable-Funcons-beta
   "UNSTABLE-FUNCONS-BETA"
-[Languages-beta]: /docs/Languages-beta
+[Languages-beta]: /CBS-beta/docs/Languages-beta
   "LANGUAGES-BETA"
-[Unstable-Languages-beta]: /docs/Unstable-Languages-beta
+[Unstable-Languages-beta]: /CBS-beta/docs/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
 [CBS-beta]:  "CBS-BETA"
 [PLanCompS Project]: http://plancomps.org

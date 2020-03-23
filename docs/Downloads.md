@@ -47,9 +47,9 @@ Stop the local server with Control-C when no longer needed.
 
 [plancomps project site on Github]: https://github.com/plancomps/plancomps.github.io
 
-[`Languages-beta/IMP/IMP-cbs/IMP/IMP-Start/index.html`]: /Languages-beta/IMP/IMP-cbs/IMP/IMP-Start/index.html
+[`Languages-beta/IMP/IMP-cbs/IMP/IMP-Start/index.html`]: /CBS-beta/Languages-beta/IMP/IMP-cbs/IMP/IMP-Start/index.html
 
-[`Funcons-beta/Funcons-Index/index.html`]: /Funcons-beta/Funcons-Index/index.html
+[`Funcons-beta/Funcons-Index/index.html`]: /CBS-beta/Funcons-beta/Funcons-Index/index.html
 
 [Jekyll]: https://help.github.com/en/articles/setting-up-your-github-pages-site-locally-with-jekyll
 

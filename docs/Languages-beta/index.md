@@ -3,7 +3,7 @@ layout: default
 title: Languages-beta
 nav_order: "3"
 has_children: true
-permalink: /docs/Languages-beta
+permalink: /CBS-beta/docs/Languages-beta
 ---
 
 Languages-beta
@@ -75,18 +75,18 @@ The [reuse] page shows how may funcons are directly reused in the different
 language specifications.
 
 
-[CBS framework]: /docs/
+[CBS framework]: /CBS-beta/docs/
 
-[Browsing guide]: /docs/Browsing
-[Funcons-beta]:   /docs/Funcons-beta
+[Browsing guide]: /CBS-beta/docs/Browsing
+[Funcons-beta]:   /CBS-beta/docs/Funcons-beta
 
-[Reuse]: /docs/Languages-beta/Reuse
+[Reuse]: /CBS-beta/docs/Languages-beta/Reuse
 
-[IMP in CBS]:         /docs/Languages-beta/IMP
-[SIMPLE in CBS]:      /docs/Languages-beta/SIMPLE
-[MiniJava in CBS]:    /docs/Languages-beta/MiniJava
-[SL in CBS]:          /docs/Languages-beta/SL
-[OCaml Light in CBS]: /docs/Languages-beta/OCaml-Light
+[IMP in CBS]:         /CBS-beta/docs/Languages-beta/IMP
+[SIMPLE in CBS]:      /CBS-beta/docs/Languages-beta/SIMPLE
+[MiniJava in CBS]:    /CBS-beta/docs/Languages-beta/MiniJava
+[SL in CBS]:          /CBS-beta/docs/Languages-beta/SL
+[OCaml Light in CBS]: /CBS-beta/docs/Languages-beta/OCaml-Light
 
 [Caml Light]: https://caml.inria.fr/caml-light/
 [OCaml]: https://ocaml.org

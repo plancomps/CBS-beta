@@ -25,7 +25,7 @@ nav_order: OC-L-01-Lexical-Conventions
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_LI">LI</span></i> :</i> <span class="syn-name"><span id="SyntaxName_lowercase-ident">lowercase-ident</span></span> 
   ::= <span class="syn-name"><a href="#SyntaxName_lowercase">lowercase</a></span> ( <span class="syn-name"><a href="#SyntaxName_uppercase">uppercase</a></span> | <span class="syn-name"><a href="#SyntaxName_lowercase">lowercase</a></span> | <span class="syn-name"><a href="#SyntaxName_decimal">decimal</a></span> | <b class="atom">'_'</b> | <b class="atom">'\''</b> )<sup class="sup">*</sup>
     | <b class="atom">'_'</b>       ( <span class="syn-name"><a href="#SyntaxName_uppercase">uppercase</a></span> | <span class="syn-name"><a href="#SyntaxName_lowercase">lowercase</a></span> | <span class="syn-name"><a href="#SyntaxName_decimal">decimal</a></span> | <b class="atom">'_'</b> | <b class="atom">'\''</b> )<sup class="sup">+</sup>
-    // restricted to exclude the keyword '_' used in patterns
+    /CBS-beta// restricted to exclude the keyword '_' used in patterns
   
   <i class="keyword"></i><i class="var"></i><span class="syn-name"><span id="SyntaxName_uppercase">uppercase</span></span> ::= <b class="atom">'A'</b>-<b class="atom">'Z'</b>
 
@@ -259,13 +259,13 @@ From the [PLanCompS Project], 2019 | [CBS-beta issues...] | [Suggest an improvem
 
 [OC-L-01-Lexical-Conventions.cbs]: OC-L-01-Lexical-Conventions.cbs 
   "CBS SOURCE FILE"
-[Funcons-beta]: /docs/Funcons-beta
+[Funcons-beta]: /CBS-beta/docs/Funcons-beta
  "FUNCONS-BETA"
-[Unstable-Funcons-beta]: /docs/Unstable-Funcons-beta
+[Unstable-Funcons-beta]: /CBS-beta/docs/Unstable-Funcons-beta
   "UNSTABLE-FUNCONS-BETA"
-[Languages-beta]: /docs/Languages-beta
+[Languages-beta]: /CBS-beta/docs/Languages-beta
   "LANGUAGES-BETA"
-[Unstable-Languages-beta]: /docs/Unstable-Languages-beta
+[Unstable-Languages-beta]: /CBS-beta/docs/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
 [CBS-beta]:  "CBS-BETA"
 [PLanCompS Project]: http://plancomps.org

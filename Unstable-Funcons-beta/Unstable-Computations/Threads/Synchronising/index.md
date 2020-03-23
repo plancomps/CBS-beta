@@ -87,10 +87,10 @@ notifications.
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Datatype</i>
   <span class="name"><span id="Name_sync-features">sync-features</span></span> ::=
-    <span id="Name_sync-waiting-list">sync-waiting-list</span> |  // allows suspending requests
-    <span id="Name_sync-held">sync-held</span> |          // allows exclusive locks
-    <span id="Name_sync-holder">sync-holder</span> |        // allows mutex ownership
-    <span id="Name_sync-count">sync-count</span>           // allows reentrance, sharing, etc.</code></pre></div>
+    <span id="Name_sync-waiting-list">sync-waiting-list</span> |  /CBS-beta// allows suspending requests
+    <span id="Name_sync-held">sync-held</span> |          /CBS-beta// allows exclusive locks
+    <span id="Name_sync-holder">sync-holder</span> |        /CBS-beta// allows mutex ownership
+    <span id="Name_sync-count">sync-count</span>           /CBS-beta// allows reentrance, sharing, etc.</code></pre></div>
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Auxiliary</i> <i class="keyword">Type</i>
   <span class="name"><span id="Name_sync-feature-maps">sync-feature-maps</span></span> ~> <span class="name"><a href="../../../../../../Funcons-beta/Values/Composite/Maps/index.html#Name_maps">maps</a></span>(<span class="name"><a href="#Name_sync-features">sync-features</a></span>, <span class="name"><a href="../../../../../../Funcons-beta/Values/Value-Types/index.html#Name_values">values</a></span>)</code></pre></div>
 
@@ -172,13 +172,13 @@ From the [PLanCompS Project], 2019 | [CBS-beta issues...] | [Suggest an improvem
 
 [Synchronising.cbs]: Synchronising.cbs 
   "CBS SOURCE FILE"
-[Funcons-beta]: /docs/Funcons-beta
+[Funcons-beta]: /CBS-beta/docs/Funcons-beta
  "FUNCONS-BETA"
-[Unstable-Funcons-beta]: /docs/Unstable-Funcons-beta
+[Unstable-Funcons-beta]: /CBS-beta/docs/Unstable-Funcons-beta
   "UNSTABLE-FUNCONS-BETA"
-[Languages-beta]: /docs/Languages-beta
+[Languages-beta]: /CBS-beta/docs/Languages-beta
   "LANGUAGES-BETA"
-[Unstable-Languages-beta]: /docs/Unstable-Languages-beta
+[Unstable-Languages-beta]: /CBS-beta/docs/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
 [CBS-beta]:  "CBS-BETA"
 [PLanCompS Project]: http://plancomps.org

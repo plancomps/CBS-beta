@@ -3,7 +3,7 @@ layout: default
 title: SIMPLE-THR
 parent: Unstable-Languages-beta
 has_children: true
-permalink: /docs/Unstable-Languages-beta/SIMPLE-Threads
+permalink: /CBS-beta/docs/Unstable-Languages-beta/SIMPLE-Threads
 nav_order: "2"
 ---
 
@@ -62,11 +62,11 @@ Main contributors:
 - Thomas van Binsbergen, Peter Mosses, Neil Sculthorpe
 
 [K-framework]: http://kframework.org "HOME PAGE"
-[SIMPLE]: /docs/Languages-beta/SIMPLE
-[Funcons-beta]: /docs/Funcons-beta "FUNCONS-BETA"
-[Unstable-Funcons-beta]: /docs/Unstable-Funcons-beta "FUNCONS-BETA"
-[Languages-beta]: /docs/Languages-beta "LANGUAGES-BETA"
-[Unstable-Languages-beta]: /docs/Unstable-Languages-beta "UNSTABLE-LANGUAGES-BETA"
-[SIMPLE-Threads]: /Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-Start
-[SIMPLE-Threads-Funcons-Index]: /Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-Funcons-Index
-[SIMPLE-Threads-Unstable-Funcons-Index]: /Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-Unstable-Funcons-Index
+[SIMPLE]: /CBS-beta/docs/Languages-beta/SIMPLE
+[Funcons-beta]: /CBS-beta/docs/Funcons-beta "FUNCONS-BETA"
+[Unstable-Funcons-beta]: /CBS-beta/docs/Unstable-Funcons-beta "FUNCONS-BETA"
+[Languages-beta]: /CBS-beta/docs/Languages-beta "LANGUAGES-BETA"
+[Unstable-Languages-beta]: /CBS-beta/docs/Unstable-Languages-beta "UNSTABLE-LANGUAGES-BETA"
+[SIMPLE-Threads]: /CBS-beta/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-Start
+[SIMPLE-Threads-Funcons-Index]: /CBS-beta/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-Funcons-Index
+[SIMPLE-Threads-Unstable-Funcons-Index]: /CBS-beta/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-Unstable-Funcons-Index

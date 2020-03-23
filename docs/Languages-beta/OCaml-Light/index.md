@@ -3,7 +3,7 @@ layout: default
 title: OC-L
 parent: Languages-beta
 has_children: true
-permalink: /docs/Languages-beta/OCaml-Light
+permalink: /CBS-beta/docs/Languages-beta/OCaml-Light
 nav_order: "5"
 ---
 
@@ -68,5 +68,5 @@ Main contributors:
 [Reusable Components of Semantic Specifications]: http://plancomps.org/taosd2015
 [Ott framework]: https://www.cl.cam.ac.uk/~pes20/ott/
 
-[OCaml-Light]:               /Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-Start/
-[OCaml-Light-Funcons-Index]: /Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-Funcons-Index/
+[OCaml-Light]:               /CBS-beta/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-Start/
+[OCaml-Light-Funcons-Index]: /CBS-beta/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-Funcons-Index/

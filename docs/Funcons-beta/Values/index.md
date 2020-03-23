@@ -3,7 +3,7 @@ layout: default
 title: Values
 parent: Funcons-beta
 has_children: true
-permalink: /docs/Funcons-beta/Values
+permalink: /CBS-beta/docs/Funcons-beta/Values
 nav_order: "2"
 ---
 
@@ -73,38 +73,38 @@ Funcons that may compute `( )` have result types of the form `T?`, and
 generally need to be preceded by `checked` when used as arguments of other
 funcons.
 
-[values]:       /Funcons-beta/Values/Value-Types/
+[values]:       /CBS-beta/Funcons-beta/Values/Value-Types/
 
-[booleans]:     /Funcons-beta/Values/Primitive/Booleans/
-[integers]:     /Funcons-beta/Values/Primitive/Integers/
-[floats]:       /Funcons-beta/Values/Primitive/Floats/
-[characters]:   /Funcons-beta/Values/Primitive/Characters/
-[null-type]:    /Funcons-beta/Values/Primitive/Null/
-[pointer-null]: /Funcons-beta/Values/Composite/References/
+[booleans]:     /CBS-beta/Funcons-beta/Values/Primitive/Booleans/
+[integers]:     /CBS-beta/Funcons-beta/Values/Primitive/Integers/
+[floats]:       /CBS-beta/Funcons-beta/Values/Primitive/Floats/
+[characters]:   /CBS-beta/Funcons-beta/Values/Primitive/Characters/
+[null-type]:    /CBS-beta/Funcons-beta/Values/Primitive/Null/
+[pointer-null]: /CBS-beta/Funcons-beta/Values/Composite/References/
 
-[datatypes]:    /Funcons-beta/Values/Composite/Datatypes/
-[tuples]:       /Funcons-beta/Values/Composite/Tuples/
-[lists]:        /Funcons-beta/Values/Composite/Lists/
-[vectors]:      /Funcons-beta/Values/Composite/Vectors/
-[trees]:        /Funcons-beta/Values/Composite/Trees/
-[references]:   /Funcons-beta/Values/Composite/References/
-[pointer-null]: /Funcons-beta/Values/Composite/References/
-[records]:      /Funcons-beta/Values/Composite/Records/
-[variants]:     /Funcons-beta/Values/Composite/Variants/
-[classes]:      /Funcons-beta/Values/Composite/Classes/
-[objects]:      /Funcons-beta/Values/Composite/Objects/
-[bit-vectors]:  /Funcons-beta/Values/Composite/Bits/
-[sets]:         /Funcons-beta/Values/Composite/Sets/
-[maps]:         /Funcons-beta/Values/Composite/Maps/
-[multisets]:    /Funcons-beta/Values/Composite/Multisets/
-[graphs]:       /Funcons-beta/Values/Composite/Graphs/
+[datatypes]:    /CBS-beta/Funcons-beta/Values/Composite/Datatypes/
+[tuples]:       /CBS-beta/Funcons-beta/Values/Composite/Tuples/
+[lists]:        /CBS-beta/Funcons-beta/Values/Composite/Lists/
+[vectors]:      /CBS-beta/Funcons-beta/Values/Composite/Vectors/
+[trees]:        /CBS-beta/Funcons-beta/Values/Composite/Trees/
+[references]:   /CBS-beta/Funcons-beta/Values/Composite/References/
+[pointer-null]: /CBS-beta/Funcons-beta/Values/Composite/References/
+[records]:      /CBS-beta/Funcons-beta/Values/Composite/Records/
+[variants]:     /CBS-beta/Funcons-beta/Values/Composite/Variants/
+[classes]:      /CBS-beta/Funcons-beta/Values/Composite/Classes/
+[objects]:      /CBS-beta/Funcons-beta/Values/Composite/Objects/
+[bit-vectors]:  /CBS-beta/Funcons-beta/Values/Composite/Bits/
+[sets]:         /CBS-beta/Funcons-beta/Values/Composite/Sets/
+[maps]:         /CBS-beta/Funcons-beta/Values/Composite/Maps/
+[multisets]:    /CBS-beta/Funcons-beta/Values/Composite/Multisets/
+[graphs]:       /CBS-beta/Funcons-beta/Values/Composite/Graphs/
 
-[abstractions]: /Funcons-beta/Values/Abstraction/Generic/
-[thunks]:       /Funcons-beta/Values/Abstraction/Thunks/
-[functions]:    /Funcons-beta/Values/Abstraction/Functions/
-[patterns]:     /Funcons-beta/Values/Abstraction/Patterns/
+[abstractions]: /CBS-beta/Funcons-beta/Values/Abstraction/Generic/
+[thunks]:       /CBS-beta/Funcons-beta/Values/Abstraction/Thunks/
+[functions]:    /CBS-beta/Funcons-beta/Values/Abstraction/Functions/
+[patterns]:     /CBS-beta/Funcons-beta/Values/Abstraction/Patterns/
 
-[value-types]:  /Funcons-beta/Values/Value-Types/
-[sequences]:    /Funcons-beta/Values/Composite/Sequences/
+[value-types]:  /CBS-beta/Funcons-beta/Values/Value-Types/
+[sequences]:    /CBS-beta/Funcons-beta/Values/Composite/Sequences/
 
-[computations]: /docs/Funcons-beta/Computations
+[computations]: /CBS-beta/docs/Funcons-beta/Computations
