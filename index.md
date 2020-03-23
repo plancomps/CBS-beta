@@ -123,7 +123,7 @@ plancomps@gmail.com.
 
 [Unstable-Languages-beta]: /CBS-beta/docs/Unstable-Languages-beta
 
-[Beta-release change log]: docs/Changes.md
+[Beta-release change log]: /CBS-beta/docs/Changes
 
 [Spoofax]: http://www.metaborg.org
 
@@ -131,4 +131,4 @@ plancomps@gmail.com.
 
 [PLanCompS]: http://plancomps.org
 
-[Contributors]: docs/Contributors.md
+[Contributors]: /CBS-beta/docs/Contributors

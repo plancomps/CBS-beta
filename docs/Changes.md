@@ -50,8 +50,8 @@ language specifications included in the CBS beta-release.
 2019-07-08: [CBS-beta](/CBS-beta/)
 * Website structure: documentation moved to a new `docs` folder.
 
-2019-06-30: [Computations](/CBS-beta/Funcons-beta/Computations),
-[Values](/CBS-beta/Funcons-beta/Values)
+2019-06-30: [Computations](Funcons-beta/Computations),
+[Values](Funcons-beta/Values)
 * Overview clarified.
 
 2019-06-11: [Downloads](Downloads)
@@ -117,7 +117,7 @@ language specifications included in the CBS beta-release.
 2018-08-14: [`first-n`](/CBS-beta/Funcons-beta/Values/Composite/Sequences/#Name_first-n)
 * rule corrected.
 
-2018-07-17: [MiniJava](/CBS-beta/Languages-beta/MiniJava)
+2018-07-17: [MiniJava](Languages-beta/MiniJava)
 * syntax disambiguation completed.
 * semantics tested with 65 unit tests.
 
@@ -136,7 +136,7 @@ language specifications included in the CBS beta-release.
 2018-07-12: [Languages-beta](Languages-beta)
 * [added an overview of funcon reuse](Languages-beta/Reuse).
 
-2018-07-09: [OCaml Light](/CBS-beta/Languages-beta/OCaml-Light)
+2018-07-09: [OCaml Light](Languages-beta/OCaml-Light)
 * [added `expr ::= 'assert' expr`](/CBS-beta/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-07-Expressions/).
 * [added disambiguation rules for `'{' expr 'with' ... '}'`](/CBS-beta/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-A-Disambiguation/).
 * [corrected the rule defining `implemented-vector`](/CBS-beta/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-02-Values/).
