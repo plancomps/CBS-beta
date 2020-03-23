@@ -7,7 +7,7 @@ nav_order: "9"
 Downloads
 =========
 
-Clone or download a zip of the current [plancomps project site on Github].
+Clone or download a zip of the current [CBS-beta project site on Github].
 
 Browsing CBS-beta offline
 -------------------------
@@ -17,9 +17,10 @@ __Using [Jekyll]:__
 1.  Run the following command in a terminal from the unzipped folder:
 
     ```
+    bundle install
     bundle exec jekyll serve --port 4000 --host localhost
     ```
-    (`4000` and `localhost` are the defaults, and need not be specified.)
+    (`4000` and `localhost` are the defaults when not be specified.)
 
 2.  Open a web browser at `http://localhost:4000/`.
 
@@ -45,7 +46,7 @@ __Using Python:__
 Stop the local server with Control-C when no longer needed.
 
 
-[plancomps project site on Github]: https://github.com/plancomps/plancomps.github.io
+[CBS-beta project site on Github]: https://github.com/plancomps/CBS-beta
 
 [`Languages-beta/IMP/IMP-cbs/IMP/IMP-Start/index.html`]: /CBS-beta/Languages-beta/IMP/IMP-cbs/IMP/IMP-Start/index.html
 
