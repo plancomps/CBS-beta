@@ -41,7 +41,7 @@ Values
 
 The [Values] page introduces the various kinds of values defined in the library.
 
-[CBS framework]:  /CBS-beta/docs/
+[CBS framework]:  /CBS-beta/
 [Browsing guide]: /CBS-beta/docs/Browsing
 [Languages-beta]: /CBS-beta/docs/Languages-beta
 

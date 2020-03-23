@@ -11,7 +11,7 @@ nav_order: "3"
 ==============
 
 [Demonstration] of co-evolution of a language specification in CBS
-([LangDev-2019], [LD-2019-demo])
+([LangDev-2019])
 
 Colophon
 --------
@@ -49,7 +49,6 @@ Keywords:
 Main contributors:
 - Peter Mosses
 
-[LD-2019-demo]: /CBS-beta/docs/LangDev-2019/LD-2019-demo
 [LangDev Meetup 2019]: http://langdevcon.org "HOME PAGE"
 
 [Demonstration]: /CBS-beta/docs/Unstable-Languages-beta/LangDev-2019/LD-Demo

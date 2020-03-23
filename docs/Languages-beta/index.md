@@ -75,7 +75,7 @@ The [reuse] page shows how may funcons are directly reused in the different
 language specifications.
 
 
-[CBS framework]: /CBS-beta/docs/
+[CBS framework]: /CBS-beta/
 
 [Browsing guide]: /CBS-beta/docs/Browsing
 [Funcons-beta]:   /CBS-beta/docs/Funcons-beta
