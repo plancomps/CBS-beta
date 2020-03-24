@@ -10,6 +10,14 @@ Beta-release changes
 This page lists significant additions and changes to the funcon definitions and
 language specifications included in the CBS beta-release.
 
+2020-03-23: [CBS-beta](/CBS-beta/), [Downloads](Downloads)
+* [PLanCompS](https://plancomps.github.io) GitHub repository converted to an organisation
+* CBS-beta now a GitHub project (instead of a folder in the PLanCompS project)
+* Downloading guidelines updated
+
+2020-03-17: [MiniJava-Syntax](/CBS-beta/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Syntax/)
+* Layout corrected
+
 2019-08-18: [CBS-beta](/CBS-beta/)
 * Global search for funcon names with hyphens now supported.
 
