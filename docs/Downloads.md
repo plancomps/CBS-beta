@@ -12,36 +12,23 @@ Clone or download a zip of the current [CBS-beta project site on Github].
 Browsing CBS-beta offline
 -------------------------
 
-__Using [Jekyll]:__
+1.  Requirements:
 
-1.  Run the following command in a terminal from the unzipped folder:
+    [Ruby]\: 2.6.5 (Ruby 2.7.0 works, but emits tedious warnings about deprecated code)
+    
+    [Jekyll]\: 3.8.5 (Jekyll 4 does _not_ work with the theme currently used by CBS-beta)
+
+2.  Run the following command in a terminal from the unzipped folder:
 
     ```
     bundle install
     bundle exec jekyll serve --baseurl '/CBS-beta' --port 4000 --host localhost
     ```
-    (`port` and `host` need only be specified if different values are required.)
+    (`port` and `host` need only be specified if different values are required)
+    
+    [Jekyll log] -- ignore the warning `Invalid theme folder: _sass`
 
-2.  Open a web browser at `http://localhost:4000/`.
-
-Stop the local server with Control-C when no longer needed.
-
-__Using Python:__
-
-1.  Run one of the following commands in a terminal from the `_site` sub-folder.
-
-    For [Python2]:
-    ```
-    python2 -m SimpleHTTPServer 8000
-    ```
-    For [Python3]:
-    ```
-    python3 -m http.server 8000 --bind localhost
-    ```
-    `8000` and `localhost` are the defaults when not specified.
-    (If neither `python2` nor `python3` is available, try `python`.)
-
-2.  Open a web browser at `http://localhost:8000/`.
+3.  Open a web browser at `http://localhost:4000/CBS-beta/` (the final `/` is required)
 
 Stop the local server with Control-C when no longer needed.
 
@@ -52,7 +39,11 @@ Stop the local server with Control-C when no longer needed.
 
 [`Funcons-beta/Funcons-Index/index.html`]: /CBS-beta/Funcons-beta/Funcons-Index/index.html
 
+[Ruby]: https://www.ruby-lang.org/
+
 [Jekyll]: https://help.github.com/en/articles/setting-up-your-github-pages-site-locally-with-jekyll
+
+[Jekyll log]: /CBS-beta/assets/images/Jekyll-localhost.png
 
 [Python3]: https://docs.python.org/3/library/http.server.html
 
