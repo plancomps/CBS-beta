@@ -1,7 +1,7 @@
 ---
 
-CBS-beta
-========
+[CBS-beta]
+==========
 
 _CBS_ is a framework and meta-language for _component-based specification of
 programming languages_. The main idea is to translate languages to so-called
@@ -23,8 +23,10 @@ and [new participants] are welcome!
 
 [PLanCompS]: https://plancomps.github.io
 
-[New participants]: /CBS-beta/docs/Contributors
+[CBS-beta]: https://plancomps.github.io/CBS-beta
 
-[Fundamental programming constructs]: /CBS-beta/docs/Funcons-beta
+[New participants]: https://plancomps.github.io/CBS-beta/docs/Contributors
 
-[Language specifications]: /CBS-beta/docs/Languages-beta
+[Fundamental programming constructs]: https://plancomps.github.io/CBS-beta/docs/Funcons-beta
+
+[Language specifications]: https://plancomps.github.io/CBS-beta/docs/Languages-beta
