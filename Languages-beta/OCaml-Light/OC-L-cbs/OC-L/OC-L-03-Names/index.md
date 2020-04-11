@@ -22,7 +22,7 @@ nav_order: OC-L-03-Names
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_ON">ON</span></i> :</i> <span class="syn-name"><span id="SyntaxName_operator-name">operator-name</span></span> ::= <span class="syn-name"><a href="#SyntaxName_prefix-op">prefix-op</a></span> | <span class="syn-name"><a href="#SyntaxName_infix-op">infix-op</a></span>  
   
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_PO">PO</span></i> :</i> <span class="syn-name"><span id="SyntaxName_prefix-op">prefix-op</span></span> ::= <span class="syn-name"><a href="../OC-L-01-Lexical-Conventions/index.html#SyntaxName_prefix-symbol">prefix-symbol</a></span></code></pre></div>
- /CBS-beta// added
+ // added
  
 
 //  infix-op  

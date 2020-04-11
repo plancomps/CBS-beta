@@ -20,7 +20,7 @@ nav_order: OC-L-07-Expressions
    | <b class="atom">'begin'</b> <span class="syn-name"><a href="#SyntaxName_expr">expr</a></span> <b class="atom">'end'</b>
    | <b class="atom">'('</b> <span class="syn-name"><a href="#SyntaxName_expr">expr</a></span> <b class="atom">':'</b> <span class="syn-name"><a href="../OC-L-04-Type-Expressions/index.html#SyntaxName_typexpr">typexpr</a></span> <b class="atom">')'</b>
    | <span class="syn-name"><a href="#SyntaxName_expr">expr</a></span> <span class="syn-name"><a href="#SyntaxName_comma-expr">comma-expr</a></span><sup class="sup">+</sup>
-// | constr expr /CBS-beta// ambiguous!
+// | constr expr // ambiguous!
    | <span class="syn-name"><a href="#SyntaxName_expr">expr</a></span> <b class="atom">'::'</b> <span class="syn-name"><a href="#SyntaxName_expr">expr</a></span>
    | <b class="atom">'['</b> <span class="syn-name"><a href="#SyntaxName_expr">expr</a></span> <span class="syn-name"><a href="#SyntaxName_semic-expr">semic-expr</a></span><sup class="sup">*</sup> <b class="atom">']'</b>
    | <b class="atom">'['</b> <span class="syn-name"><a href="#SyntaxName_expr">expr</a></span> <span class="syn-name"><a href="#SyntaxName_semic-expr">semic-expr</a></span><sup class="sup">*</sup> <b class="atom">';'</b> <b class="atom">']'</b>
@@ -66,7 +66,7 @@ nav_order: OC-L-07-Expressions
 
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_LB">LB</span></i> :</i> <span class="syn-name"><span id="SyntaxName_let-binding">let-binding</span></span> 
   ::= <span class="syn-name"><a href="../OC-L-06-Patterns/index.html#SyntaxName_pattern">pattern</a></span> <b class="atom">'='</b> <span class="syn-name"><a href="#SyntaxName_expr">expr</a></span>
-    | <span class="syn-name"><a href="../OC-L-03-Names/index.html#SyntaxName_value-name">value-name</a></span> <span class="syn-name"><a href="../OC-L-06-Patterns/index.html#SyntaxName_pattern">pattern</a></span><sup class="sup">+</sup> <b class="atom">'='</b> <span class="syn-name"><a href="#SyntaxName_expr">expr</a></span> /CBS-beta// using pattern* was ambiguous!
+    | <span class="syn-name"><a href="../OC-L-03-Names/index.html#SyntaxName_value-name">value-name</a></span> <span class="syn-name"><a href="../OC-L-06-Patterns/index.html#SyntaxName_pattern">pattern</a></span><sup class="sup">+</sup> <b class="atom">'='</b> <span class="syn-name"><a href="#SyntaxName_expr">expr</a></span> // using pattern* was ambiguous!
     | <span class="syn-name"><a href="../OC-L-03-Names/index.html#SyntaxName_value-name">value-name</a></span> <b class="atom">':'</b> <span class="syn-name"><a href="../OC-L-04-Type-Expressions/index.html#SyntaxName_poly-typexpr">poly-typexpr</a></span> <b class="atom">'='</b> <span class="syn-name"><a href="#SyntaxName_expr">expr</a></span>
   
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_ALB">ALB</span></i> :</i> <span class="syn-name"><span id="SyntaxName_and-let-binding">and-let-binding</span></span> ::= <b class="atom">'and'</b> <span class="syn-name"><a href="#SyntaxName_let-binding">let-binding</a></span>
@@ -86,7 +86,7 @@ nav_order: OC-L-07-Expressions
 <i class="keyword">Rule</i>
   [[ <b class="atom">'('</b> <span id="Variable782_E"><i class="var"><a href="#VariableStem_E">E</a></i></span> <b class="atom">':'</b> <span id="Variable789_T"><i class="var"><a href="../OC-L-04-Type-Expressions/index.html#VariableStem_T">T</a></i></span> <b class="atom">')'</b> ]] : <span class="syn-name"><a href="#SyntaxName_expr">expr</a></span> = [[ <a href="#Variable782_E"><i class="var">E</i></a> ]]
 <i class="keyword">Rule</i>
-  [[ <span id="Variable818_E1"><i class="var"><a href="#VariableStem_E">E</a><sub class="sub">1</sub></i></span> <span id="Variable824_E2"><i class="var"><a href="#VariableStem_E">E</a><sub class="sub">2</sub></i></span> <span id="Variable829_A"><i class="var"><a href="#VariableStem_A">A</a></i></span> <span id="Variable835_A*"><i class="var"><a href="#VariableStem_A">A</a><sup class="sup">*</sup></i></span> ]] : <span class="syn-name"><a href="#SyntaxName_expr">expr</a></span> = [[ ( <b class="atom">'('</b> <a href="#Variable818_E1"><i class="var">E<sub class="sub">1</sub></i></a> <a href="#Variable824_E2"><i class="var">E<sub class="sub">2</sub></i></a> <b class="atom">')'</b> ) <a href="#Variable829_A"><i class="var">A</i></a> <a href="#Variable835_A*"><i class="var">A<sup class="sup">*</sup></i></a> ]]  /CBS-beta// FIX-ME: "... E+" not yet supported 
+  [[ <span id="Variable818_E1"><i class="var"><a href="#VariableStem_E">E</a><sub class="sub">1</sub></i></span> <span id="Variable824_E2"><i class="var"><a href="#VariableStem_E">E</a><sub class="sub">2</sub></i></span> <span id="Variable829_A"><i class="var"><a href="#VariableStem_A">A</a></i></span> <span id="Variable835_A*"><i class="var"><a href="#VariableStem_A">A</a><sup class="sup">*</sup></i></span> ]] : <span class="syn-name"><a href="#SyntaxName_expr">expr</a></span> = [[ ( <b class="atom">'('</b> <a href="#Variable818_E1"><i class="var">E<sub class="sub">1</sub></i></a> <a href="#Variable824_E2"><i class="var">E<sub class="sub">2</sub></i></a> <b class="atom">')'</b> ) <a href="#Variable829_A"><i class="var">A</i></a> <a href="#Variable835_A*"><i class="var">A<sup class="sup">*</sup></i></a> ]]  // FIX-ME: "... E+" not yet supported 
 <i class="keyword">Rule</i>
   [[ <span id="Variable891_PS"><i class="var"><a href="../OC-L-01-Lexical-Conventions/index.html#VariableStem_PS">PS</a></i></span> <span id="Variable896_E"><i class="var"><a href="#VariableStem_E">E</a></i></span> ]] : <span class="syn-name"><a href="#SyntaxName_expr">expr</a></span>   = [[ ( <b class="atom">'('</b> <a href="#Variable891_PS"><i class="var">PS</i></a> <b class="atom">')'</b> ) <a href="#Variable896_E"><i class="var">E</i></a> ]]
 <i class="keyword">Rule</i>
@@ -300,7 +300,7 @@ nav_order: OC-L-07-Expressions
   <i class="sem-name"><a href="#SemanticsName_bound-id">bound-id</a></i>[[ <span id="Variable5107_VN"><i class="var"><a href="../OC-L-03-Names/index.html#VariableStem_VN">VN</a></i></span> <b class="atom">'='</b> <span id="Variable5114_E"><i class="var"><a href="#VariableStem_E">E</a></i></span> ]] = <i class="sem-name"><a href="../OC-L-03-Names/index.html#SemanticsName_value-name">value-name</a></i>[[ <a href="#Variable5107_VN"><i class="var">VN</i></a> ]]
 <i class="keyword">Otherwise</i>
   <i class="sem-name"><a href="#SemanticsName_bound-id">bound-id</a></i>[[ <span id="Variable5145_LB"><i class="var"><a href="#VariableStem_LB">LB</a></i></span> ]] = <span class="name"><a href="../../../../../Funcons-beta/Computations/Abnormal/Failing/index.html#Name_fail">fail</a></span></code></pre></div>
- /CBS-beta// implementation-dependent
+ // implementation-dependent
 
 
 ____

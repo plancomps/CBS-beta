@@ -102,11 +102,11 @@ nav_order: OC-L-12-Core-Library
     "Division_by_zero" |->
       <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Variants/index.html#Name_variant">variant</a></span>("Division_by_zero", <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Tuples/index.html#Name_tuple">tuple</a></span>( )),
 
-    /CBS-beta// Exceptions   
+    // Exceptions   
     "raise" |->
       <span class="name"><a href="#Name_op-1">op-1</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Computations/Abnormal/Throwing/index.html#Name_throw">throw</a></span>(<span class="name"><a href="#Name_arg">arg</a></span>)),
 
-    /CBS-beta//Comparisons
+    //Comparisons
     "(=)" |->
       <span class="name"><a href="#Name_op-2">op-2</a></span>(<span class="name"><a href="#Name_ocaml-light-is-structurally-equal">ocaml-light-is-structurally-equal</a></span>(<span class="name"><a href="#Name_arg-1">arg-1</a></span>, <span class="name"><a href="#Name_arg-2">arg-2</a></span>)),
     "(&lt;&gt;)" |->
@@ -134,11 +134,11 @@ nav_order: OC-L-12-Core-Library
         <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Booleans/index.html#Name_not">not</a></span> <span class="name"><a href="../../../../../Funcons-beta/Values/Value-Types/index.html#Name_is-equal">is-equal</a></span>(<span class="name"><a href="#Name_arg-1">arg-1</a></span>, <span class="name"><a href="#Name_arg-2">arg-2</a></span>),
         <span class="name"><a href="../../../../../Funcons-beta/Computations/Abnormal/Throwing/index.html#Name_throw">throw</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Variants/index.html#Name_variant">variant</a></span>("Invalid_argument", "equal: functional value")))),
  
-    /CBS-beta// Boolean operations (excluding lazy conditionals)
+    // Boolean operations (excluding lazy conditionals)
     "not" |->
       <span class="name"><a href="#Name_op-1">op-1</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Booleans/index.html#Name_not">not</a></span>(<span class="name"><a href="#Name_arg">arg</a></span>)),
 
-    /CBS-beta// Integer arithmetic
+    // Integer arithmetic
     "(~-)" |->
       <span class="name"><a href="#Name_op-1">op-1</a></span>(<span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-integer">implemented-integer</a></span> <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Integers/index.html#Name_integer-negate">integer-negate</a></span>(<span class="name"><a href="#Name_arg">arg</a></span>)),
     "(~+)" |->
@@ -166,7 +166,7 @@ nav_order: OC-L-12-Core-Library
     "min_int" |->
       <span class="name"><a href="#Name_op-1">op-1</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Bits/index.html#Name_signed-bit-vector-minimum">signed-bit-vector-minimum</a></span>(<span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-integers-width">implemented-integers-width</a></span>)),
 
-    /CBS-beta// Bitwise operations
+    // Bitwise operations
     "(land)" |->
       <span class="name"><a href="#Name_op-2">op-2</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Bits/index.html#Name_bit-vector-to-integer">bit-vector-to-integer</a></span>
         <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Bits/index.html#Name_bit-vector-and">bit-vector-and</a></span>(<span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-bit-vector">implemented-bit-vector</a></span> <span class="name"><a href="#Name_arg-1">arg-1</a></span>, 
@@ -192,7 +192,7 @@ nav_order: OC-L-12-Core-Library
       <span class="name"><a href="#Name_op-2">op-2</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Bits/index.html#Name_bit-vector-to-integer">bit-vector-to-integer</a></span>
         <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Bits/index.html#Name_bit-vector-arithmetic-shift-right">bit-vector-arithmetic-shift-right</a></span>(<span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-bit-vector">implemented-bit-vector</a></span> <span class="name"><a href="#Name_arg-1">arg-1</a></span>, <span class="name"><a href="#Name_arg-2">arg-2</a></span>)),
 
-    /CBS-beta// Floating-point arithmetic
+    // Floating-point arithmetic
     "(~-.)" |->
       <span class="name"><a href="#Name_op-1">op-1</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Floats/index.html#Name_float-negate">float-negate</a></span>(<span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-floats-format">implemented-floats-format</a></span>, <span class="name"><a href="#Name_arg">arg</a></span>)),
     "(~+.)" |->
@@ -248,11 +248,11 @@ nav_order: OC-L-12-Core-Library
     "float_of_int" |->
       <span class="name"><a href="#Name_op-1">op-1</a></span>(<span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-float-literal">implemented-float-literal</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_string-append">string-append</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_to-string">to-string</a></span>(<span class="name"><a href="#Name_arg">arg</a></span>), ".0"))),
 
-    /CBS-beta// String operations
+    // String operations
     "(^)" |->
       <span class="name"><a href="#Name_op-2">op-2</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_string-append">string-append</a></span>(<span class="name"><a href="#Name_arg-1">arg-1</a></span>, <span class="name"><a href="#Name_arg-2">arg-2</a></span>)),
 
-    /CBS-beta// String conversion operations
+    // String conversion operations
     "string_of_int" |->
       <span class="name"><a href="#Name_op-1">op-1</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_to-string">to-string</a></span>(<span class="name"><a href="#Name_arg">arg</a></span>)),
     "int_of_string" |->
@@ -262,12 +262,12 @@ nav_order: OC-L-12-Core-Library
     "float_of_string" |->
       <span class="name"><a href="#Name_op-1">op-1</a></span>(<span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-float-literal">implemented-float-literal</a></span>(<span class="name"><a href="#Name_arg">arg</a></span>)), 
 
-    /CBS-beta// List operations
+    // List operations
     "(@)" |->
       <span class="name"><a href="#Name_op-2">op-2</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Lists/index.html#Name_list-append">list-append</a></span>(<span class="name"><a href="#Name_arg-1">arg-1</a></span>, <span class="name"><a href="#Name_arg-2">arg-2</a></span>)),
 
-    /CBS-beta// Input/output
-    /CBS-beta//   Output functions on standard output
+    // Input/output
+    //   Output functions on standard output
     "print_char" |->
       <span class="name"><a href="#Name_op-1">op-1</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Interacting/index.html#Name_print">print</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_to-string">to-string</a></span>(<span class="name"><a href="#Name_arg">arg</a></span>))),
     "print_string" |->
@@ -278,7 +278,7 @@ nav_order: OC-L-12-Core-Library
       <span class="name"><a href="#Name_op-1">op-1</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Interacting/index.html#Name_print">print</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_to-string">to-string</a></span>(<span class="name"><a href="#Name_arg">arg</a></span>))),
     "print_newline" |->
       <span class="name"><a href="#Name_op-1">op-1</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Interacting/index.html#Name_print">print</a></span> "\n"),
-    /CBS-beta//   Input functions on standard input
+    //   Input functions on standard input
     "read_line" |->
       <span class="name"><a href="#Name_op-1">op-1</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Interacting/index.html#Name_read">read</a></span>),
     "read_int" |->
@@ -286,7 +286,7 @@ nav_order: OC-L-12-Core-Library
     "read_float" |->
       <span class="name"><a href="#Name_op-1">op-1</a></span>(<span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-float-literal">implemented-float-literal</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Interacting/index.html#Name_read">read</a></span>)),
 
-    /CBS-beta// References (not represented as mutable records)
+    // References (not represented as mutable records)
     "ref" |->
       <span class="name"><a href="#Name_op-1">op-1</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_allocate-initialised-variable">allocate-initialised-variable</a></span>(<span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-values">implemented-values</a></span>, <span class="name"><a href="#Name_arg">arg</a></span>)),
     "(!)" |->
@@ -294,7 +294,7 @@ nav_order: OC-L-12-Core-Library
     "(:=)" |->
       <span class="name"><a href="#Name_op-2">op-2</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_assign">assign</a></span>(<span class="name"><a href="#Name_arg-1">arg-1</a></span>, <span class="name"><a href="#Name_arg-2">arg-2</a></span>)),
 
-    /CBS-beta// Module List
+    // Module List
     "length" |->
       <span class="name"><a href="#Name_op-1">op-1</a></span>(<span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-integer">implemented-integer</a></span> <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Lists/index.html#Name_list-length">list-length</a></span>(<span class="name"><a href="#Name_arg">arg</a></span>)),
     "cons" |->
@@ -306,7 +306,7 @@ nav_order: OC-L-12-Core-Library
     "rev" |->
       <span class="name"><a href="#Name_op-1">op-1</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Lists/index.html#Name_list">list</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Sequences/index.html#Name_reverse">reverse</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Lists/index.html#Name_list-elements">list-elements</a></span>(<span class="name"><a href="#Name_arg">arg</a></span>)))),
     
-    /CBS-beta// Module Array
+    // Module Array
     "array_length" |->
       <span class="name"><a href="#Name_op-1">op-1</a></span>(<span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-integer">implemented-integer</a></span> <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Sequences/index.html#Name_length">length</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Vectors/index.html#Name_vector-elements">vector-elements</a></span>(<span class="name"><a href="#Name_arg">arg</a></span>))),
     "array_make" |->
@@ -459,43 +459,43 @@ nav_order: OC-L-12-Core-Library
   <code><span class="name"><a href="#Name_ocaml-light-to-string">ocaml-light-to-string</a></span>(<i class="var">V</i>)</code> gives the string represention of OCaml Light values
   as implemented by the ocaml interpreter.
 
-<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Rule</i> /CBS-beta// Unit
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Rule</i> // Unit
   <span class="name"><a href="#Name_ocaml-light-to-string">ocaml-light-to-string</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Null/index.html#Name_null-value">null-value</a></span>) ~> "()"
-<i class="keyword">Rule</i> /CBS-beta// Booleans
+<i class="keyword">Rule</i> // Booleans
   <span class="name"><a href="#Name_ocaml-light-to-string">ocaml-light-to-string</a></span>(<span id="Variable5084_B"><i class="var">B</i></span>:<span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Booleans/index.html#Name_booleans">booleans</a></span>) ~> <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_to-string">to-string</a></span>(<a href="#Variable5084_B"><i class="var">B</i></a>)
-<i class="keyword">Rule</i> /CBS-beta// Integers
+<i class="keyword">Rule</i> // Integers
   <span class="name"><a href="#Name_ocaml-light-to-string">ocaml-light-to-string</a></span>(<span id="Variable5114_I"><i class="var">I</i></span>:<span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Integers/index.html#Name_integers">integers</a></span>) ~> <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_to-string">to-string</a></span>(<a href="#Variable5114_I"><i class="var">I</i></a>)
-<i class="keyword">Rule</i> /CBS-beta// Floats
+<i class="keyword">Rule</i> // Floats
   <span class="name"><a href="#Name_ocaml-light-to-string">ocaml-light-to-string</a></span>(<span id="Variable5144_F"><i class="var">F</i></span>:<span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-floats">implemented-floats</a></span>) ~> <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_to-string">to-string</a></span>(<a href="#Variable5144_F"><i class="var">F</i></a>)
-<i class="keyword">Rule</i> /CBS-beta// Characters
+<i class="keyword">Rule</i> // Characters
   <span class="name"><a href="#Name_ocaml-light-to-string">ocaml-light-to-string</a></span>(<span id="Variable5174_C"><i class="var">C</i></span>:<span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-characters">implemented-characters</a></span>) ~>
     <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_string-append">string-append</a></span>("'", <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_to-string">to-string</a></span>(<a href="#Variable5174_C"><i class="var">C</i></a>), "'")
-<i class="keyword">Rule</i> /CBS-beta// Strings
+<i class="keyword">Rule</i> // Strings
   <a href="#Variable5231_S"><i class="var">S</i></a> =/= []
   ----------------------------------------------------------------
   <span class="name"><a href="#Name_ocaml-light-to-string">ocaml-light-to-string</a></span>(<span id="Variable5231_S"><i class="var">S</i></span>:<span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-strings">implemented-strings</a></span>) ~> <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_string-append">string-append</a></span>("\"", <a href="#Variable5231_S"><i class="var">S</i></a>, "\"")
-<i class="keyword">Rule</i> /CBS-beta// Functions
+<i class="keyword">Rule</i> // Functions
   <span class="name"><a href="#Name_ocaml-light-to-string">ocaml-light-to-string</a></span>(_:<span class="name"><a href="../../../../../Funcons-beta/Values/Abstraction/Functions/index.html#Name_functions">functions</a></span>(_,_)) ~> "&lt;fun&gt;"
-<i class="keyword">Rule</i> /CBS-beta// References
+<i class="keyword">Rule</i> // References
   <span class="name"><a href="#Name_ocaml-light-to-string">ocaml-light-to-string</a></span>(<span id="Variable5300_V"><i class="var">V</i></span>:<span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_variables">variables</a></span>) ~>
     <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_string-append">string-append</a></span>("ref ", <span class="name"><a href="#Name_ocaml-light-to-string">ocaml-light-to-string</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_assigned">assigned</a></span>(<a href="#Variable5300_V"><i class="var">V</i></a>)))
-<i class="keyword">Rule</i> /CBS-beta// Variants
+<i class="keyword">Rule</i> // Variants
   <span class="name"><a href="#Name_ocaml-light-to-string">ocaml-light-to-string</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Variants/index.html#Name_variant">variant</a></span>(<span id="Variable5348_Con"><i class="var">Con</i></span>,<span id="Variable5353_Arg"><i class="var">Arg</i></span>)) ~>
     <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Flowing/index.html#Name_if-true-else">if-true-else</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Values/Value-Types/index.html#Name_is-equal">is-equal</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Tuples/index.html#Name_tuple">tuple</a></span>( ),<a href="#Variable5353_Arg"><i class="var">Arg</i></a>), <a href="#Variable5348_Con"><i class="var">Con</i></a>,
       <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_string-append">string-append</a></span>(<a href="#Variable5348_Con"><i class="var">Con</i></a>, " ", <span class="name"><a href="#Name_ocaml-light-to-string">ocaml-light-to-string</a></span>(<a href="#Variable5353_Arg"><i class="var">Arg</i></a>)))
-<i class="keyword">Rule</i> /CBS-beta// Tuples
+<i class="keyword">Rule</i> // Tuples
   <span class="name"><a href="#Name_ocaml-light-to-string">ocaml-light-to-string</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Tuples/index.html#Name_tuple">tuple</a></span>(<span id="Variable5437_V"><i class="var">V</i></span>:<span class="name"><a href="../../../../../Funcons-beta/Values/Value-Types/index.html#Name_values">values</a></span>, <span id="Variable5446_V+"><i class="var">V<sup class="sup">+</sup></i></span>:<span class="name"><a href="../../../../../Funcons-beta/Values/Value-Types/index.html#Name_values">values</a></span><sup class="sup">+</sup>)) ~>
     <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_string-append">string-append</a></span>(
       "(",
       <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Sequences/index.html#Name_intersperse">intersperse</a></span>(", ", <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Giving/index.html#Name_interleave-map">interleave-map</a></span>(<span class="name"><a href="#Name_ocaml-light-to-string">ocaml-light-to-string</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Giving/index.html#Name_given">given</a></span>), <a href="#Variable5437_V"><i class="var">V</i></a>, <a href="#Variable5446_V+"><i class="var">V<sup class="sup">+</sup></i></a>)),
       ")")
-<i class="keyword">Rule</i> /CBS-beta// Lists
+<i class="keyword">Rule</i> // Lists
   <span class="name"><a href="#Name_ocaml-light-to-string">ocaml-light-to-string</a></span>([<span id="Variable5526_V*"><i class="var">V<sup class="sup">*</sup></i></span>:<span class="name"><a href="../../../../../Funcons-beta/Values/Value-Types/index.html#Name_values">values</a></span><sup class="sup">*</sup>]) ~>
     <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_string-append">string-append</a></span>(
       "[",
       <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Sequences/index.html#Name_intersperse">intersperse</a></span>("; ", <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Giving/index.html#Name_interleave-map">interleave-map</a></span>(<span class="name"><a href="#Name_ocaml-light-to-string">ocaml-light-to-string</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Giving/index.html#Name_given">given</a></span>), <a href="#Variable5526_V*"><i class="var">V<sup class="sup">*</sup></i></a>)),
       "]")
-<i class="keyword">Rule</i> /CBS-beta// Vectors
+<i class="keyword">Rule</i> // Vectors
   <span class="name"><a href="#Name_ocaml-light-to-string">ocaml-light-to-string</a></span>(<span id="Variable5597_V"><i class="var">V</i></span>:<span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-vectors">implemented-vectors</a></span>) ~>
     <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_string-append">string-append</a></span>(
       "[|",
@@ -503,7 +503,7 @@ nav_order: OC-L-12-Core-Library
         <span class="name"><a href="#Name_ocaml-light-to-string">ocaml-light-to-string</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_assigned">assigned</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Giving/index.html#Name_given">given</a></span>)), 
         <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Vectors/index.html#Name_vector-elements">vector-elements</a></span>(<a href="#Variable5597_V"><i class="var">V</i></a>))),
       "|]")
-<i class="keyword">Rule</i> /CBS-beta// Records
+<i class="keyword">Rule</i> // Records
   <span class="name"><a href="#Name_ocaml-light-to-string">ocaml-light-to-string</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Records/index.html#Name_record">record</a></span>(<span id="Variable5675_M"><i class="var">M</i></span>:<span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Maps/index.html#Name_maps">maps</a></span>(_,_))) ~>
     <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Strings/index.html#Name_string-append">string-append</a></span>(
       "{",

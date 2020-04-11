@@ -25,7 +25,7 @@ nav_order: OC-L-01-Lexical-Conventions
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_LI">LI</span></i> :</i> <span class="syn-name"><span id="SyntaxName_lowercase-ident">lowercase-ident</span></span> 
   ::= <span class="syn-name"><a href="#SyntaxName_lowercase">lowercase</a></span> ( <span class="syn-name"><a href="#SyntaxName_uppercase">uppercase</a></span> | <span class="syn-name"><a href="#SyntaxName_lowercase">lowercase</a></span> | <span class="syn-name"><a href="#SyntaxName_decimal">decimal</a></span> | <b class="atom">'_'</b> | <b class="atom">'\''</b> )<sup class="sup">*</sup>
     | <b class="atom">'_'</b>       ( <span class="syn-name"><a href="#SyntaxName_uppercase">uppercase</a></span> | <span class="syn-name"><a href="#SyntaxName_lowercase">lowercase</a></span> | <span class="syn-name"><a href="#SyntaxName_decimal">decimal</a></span> | <b class="atom">'_'</b> | <b class="atom">'\''</b> )<sup class="sup">+</sup>
-    /CBS-beta// restricted to exclude the keyword '_' used in patterns
+    // restricted to exclude the keyword '_' used in patterns
   
   <i class="keyword"></i><i class="var"></i><span class="syn-name"><span id="SyntaxName_uppercase">uppercase</span></span> ::= <b class="atom">'A'</b>-<b class="atom">'Z'</b>
 

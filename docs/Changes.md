@@ -10,6 +10,10 @@ Beta-release changes
 This page lists significant additions and changes to the funcon definitions and
 language specifications included in the CBS beta-release.
 
+2020-04-11: [Languages-beta](Languages-beta),
+[Unstable-Languages-beta](Unstable-Languages-beta)
+* Superfluous `/CBS-beta` before end-of-line comments in generated web pages removed
+
 2020-03-23: [CBS-beta](/CBS-beta/), [Downloads](Downloads)
 * [PLanCompS](https://plancomps.github.io) GitHub repository converted to an organisation
 * CBS-beta now a GitHub project (instead of a folder in the PLanCompS project)

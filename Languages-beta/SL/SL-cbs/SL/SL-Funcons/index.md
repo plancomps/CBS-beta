@@ -11,34 +11,34 @@ nav_order: SL-Funcons
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Language</i> <span id="Language_SL">"SL"</span></code></pre></div>
 <div class="highlighter-rouge"><pre class="highlight"><code>[
-  /CBS-beta// SL-specific funcons
+  // SL-specific funcons
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_sl-to-string">sl-to-string</a></span>
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_integer-add-else-string-append">integer-add-else-string-append</a></span>
   
-  /CBS-beta// Abbreviations
+  // Abbreviations
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_int">int</a></span>
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_bool">bool</a></span>
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_str">str</a></span>
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_obj">obj</a></span>
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_fun">fun</a></span>
   
-  /CBS-beta// Further funcons
+  // Further funcons
   
-  /CBS-beta//   Binding
+  //   Binding
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_scope-closed">scope-closed</a></span>
   
-  /CBS-beta//   Local variables
+  //   Local variables
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_initialise-local-variables">initialise-local-variables</a></span>
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_local-variable">local-variable</a></span>
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_local-variable-initialise">local-variable-initialise</a></span>
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_local-variable-assign">local-variable-assign</a></span>
   
-  /CBS-beta//   Global bindings
+  //   Global bindings
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_initialise-global-bindings">initialise-global-bindings</a></span>
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_override-global-bindings">override-global-bindings</a></span>
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_global-bound">global-bound</a></span>
   
-  /CBS-beta//   Composite input and output
+  //   Composite input and output
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_read-line">read-line</a></span>
   <i class="keyword">Funcon</i> <span class="name"><a href="#Name_print-line">print-line</a></span>
 ]</code></pre></div>
