@@ -10,6 +10,10 @@ Beta-release changes
 This page lists significant additions and changes to the funcon definitions and
 language specifications included in the CBS beta-release.
 
+2020-04-14: [Funcons-beta](Funcons-beta),
+[Unstable-Funcons-beta](Unstable-Funcons-beta)
+* Navigation hierarchy improved
+
 2020-04-11: [Languages-beta](Languages-beta),
 [Unstable-Languages-beta](Unstable-Languages-beta)
 * Superfluous `/CBS-beta` before end-of-line comments in generated web pages removed

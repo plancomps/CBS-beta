@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Breaking"
-parent: Computations
+parent: Abnormal
 grand_parent: Funcons-beta
 nav_order: "Breaking"
 ---

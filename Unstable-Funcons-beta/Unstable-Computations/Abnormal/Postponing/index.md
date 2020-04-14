@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Postponing"
-parent: Unstable-Computations
+parent: Unstable-Abnormal
 grand_parent: Unstable-Funcons-beta
 nav_order: "Postponing"
 ---

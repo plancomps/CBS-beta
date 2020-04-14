@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Sets"
-parent: Values
+parent: Composite
 grand_parent: Funcons-beta
 nav_order: "Sets"
 ---

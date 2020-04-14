@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Thunks"
-parent: Values
+parent: Abstraction
 grand_parent: Funcons-beta
 nav_order: "Thunks"
 ---

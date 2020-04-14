@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Graphs"
-parent: Values
+parent: Composite
 grand_parent: Funcons-beta
 nav_order: "Graphs"
 ---

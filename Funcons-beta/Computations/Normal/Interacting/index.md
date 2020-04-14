@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Interacting"
-parent: Computations
+parent: Normal
 grand_parent: Funcons-beta
 nav_order: "Interacting"
 ---

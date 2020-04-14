@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Lists"
-parent: Values
+parent: Composite
 grand_parent: Funcons-beta
 nav_order: "Lists"
 ---

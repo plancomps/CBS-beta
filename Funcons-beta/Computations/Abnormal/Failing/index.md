@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Failing"
-parent: Computations
+parent: Abnormal
 grand_parent: Funcons-beta
 nav_order: "Failing"
 ---

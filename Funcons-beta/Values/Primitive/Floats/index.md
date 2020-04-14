@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Floats"
-parent: Values
+parent: Primitive
 grand_parent: Funcons-beta
 nav_order: "Floats"
 ---

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Notifications"
-parent: Unstable-Computations
+parent: Unstable-Threads
 grand_parent: Unstable-Funcons-beta
 nav_order: "Notifications"
 ---

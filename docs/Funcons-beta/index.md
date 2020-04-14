@@ -2,7 +2,6 @@
 layout: default
 title: Funcons-beta
 nav_order: "2"
-has_children: true
 permalink: /docs/Funcons-beta
 ---
 

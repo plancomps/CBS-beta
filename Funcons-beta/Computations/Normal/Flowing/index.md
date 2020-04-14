@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Flowing"
-parent: Computations
+parent: Normal
 grand_parent: Funcons-beta
 nav_order: "Flowing"
 ---

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Objects"
-parent: Values
+parent: Composite
 grand_parent: Funcons-beta
 nav_order: "Objects"
 ---

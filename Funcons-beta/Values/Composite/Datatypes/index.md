@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Datatypes"
-parent: Values
+parent: Composite
 grand_parent: Funcons-beta
 nav_order: "Datatypes"
 ---

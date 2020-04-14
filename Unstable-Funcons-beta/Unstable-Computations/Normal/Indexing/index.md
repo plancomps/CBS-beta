@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Indexing"
-parent: Unstable-Computations
+parent: Unstable-Normal
 grand_parent: Unstable-Funcons-beta
 nav_order: "Indexing"
 ---

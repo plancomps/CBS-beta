@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Linking"
-parent: Computations
+parent: Normal
 grand_parent: Funcons-beta
 nav_order: "Linking"
 ---

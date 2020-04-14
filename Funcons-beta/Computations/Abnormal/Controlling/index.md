@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Controlling"
-parent: Computations
+parent: Abnormal
 grand_parent: Funcons-beta
 nav_order: "Controlling"
 ---

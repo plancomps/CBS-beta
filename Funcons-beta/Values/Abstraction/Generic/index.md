@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Generic"
-parent: Values
+parent: Abstraction
 grand_parent: Funcons-beta
 nav_order: "Generic"
 ---

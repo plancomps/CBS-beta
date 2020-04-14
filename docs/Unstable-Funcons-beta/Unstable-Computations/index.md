@@ -2,7 +2,6 @@
 layout: default
 title: Unstable-Computations
 parent: Unstable-Funcons-beta
-has_children: true
 permalink: /docs/Unstable-Funcons-beta/Unstable-Computations
 nav_order: "1"
 ---
@@ -17,48 +16,29 @@ they are listed separately.
 See [Unstable-Languages-beta] for illustrative examples of language
 specifications using the unstable funcons.
 
-Threads
--------
+[Threads]
+---------
 
 Multithreading funcons have effects on mutable entities that represent the
 collection of threads, the set of active threads, the thread being executed,
 the values computed by terminated threads, and scheduling information.
 
-- [Multithreading]\: thread spawning, execution, yielding and preemption,
-  suspension and resumption, termination, joining, scheduling
-
-Synchronising funcons allow threads to be blocked and resumed.
-
-- [Synchronising]\: sync structures and features
-  - [Locks]\: spin locks, exclusive locks, reentrant locks, semaphores,
-      shared-exclusive locks
-  - [Notifications]\: barriers, conditions, rendezvous
-
-Normal computation
-------------------
-
-These funcons are potentially of general use, but first defined for use in
-connection with languages that include threads.
-
-- [Indexing]\: allocating indexes for values
-- [Memos]\: associating keys with fixed values
-
-Abnormal computation
+[Normal computation]
 --------------------
 
 These funcons are potentially of general use, but first defined for use in
 connection with languages that include threads.
 
-- [Postponing]\: adding after-effects to an enclosing term
+[Abnormal computation]
+----------------------
 
-[Multithreading]: /CBS-beta/Unstable-Funcons-beta/Unstable-Computations/Threads/Multithreading/
-[Synchronising]:  /CBS-beta/Unstable-Funcons-beta/Unstable-Computations/Threads/Synchronising/
-[Locks]:          /CBS-beta/Unstable-Funcons-beta/Unstable-Computations/Threads/Synchronising/Locks/
-[Notifications]:  /CBS-beta/Unstable-Funcons-beta/Unstable-Computations/Threads/Synchronising/Notifications/
+These funcons are potentially of general use, but first defined for use in
+connection with languages that include threads.
 
-[Indexing]:       /CBS-beta/Unstable-Funcons-beta/Unstable-Computations/Normal/Indexing/
-[Memos]:          /CBS-beta/Unstable-Funcons-beta/Unstable-Computations/Normal/Memos/
+[Threads]:              /CBS-beta/docs/Unstable-Funcons-beta/Unstable-Computations/Threads
 
-[Postponing]:     /CBS-beta/Unstable-Funcons-beta/Unstable-Computations/Abnormal/Postponing/
+[Normal computation]:   /CBS-beta/docs/Unstable-Funcons-beta/Unstable-Computations/Normal
+
+[Abnormal computation]: /CBS-beta/docs/Unstable-Funcons-beta/Unstable-Computations/Abnormal
 
 [Unstable-Languages-beta]: /CBS-beta/docs/Unstable-Languages-beta
