@@ -2,7 +2,7 @@
 layout: default
 title: "OC-L-02-Values"
 parent: OC-L
-grand_parent: Languages-beta
+# grand_parent: Languages-beta
 nav_order: OC-L-02-Values
 ---
 

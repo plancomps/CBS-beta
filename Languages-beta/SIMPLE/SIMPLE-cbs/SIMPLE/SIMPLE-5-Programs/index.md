@@ -2,7 +2,7 @@
 layout: default
 title: "SIMPLE-5-Programs"
 parent: SIMPLE
-grand_parent: Languages-beta
+# grand_parent: Languages-beta
 nav_order: SIMPLE-5-Programs
 ---
 

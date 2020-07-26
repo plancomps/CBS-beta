@@ -2,7 +2,7 @@
 layout: default
 title: "Memos"
 parent: Unstable-Normal
-grand_parent: Unstable-Funcons-beta
+# grand_parent: Unstable-Funcons-beta
 nav_order: "Memos"
 ---
 

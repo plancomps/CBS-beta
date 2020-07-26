@@ -2,7 +2,7 @@
 layout: default
 title: "OC-L-06-Patterns"
 parent: OC-L
-grand_parent: Languages-beta
+# grand_parent: Languages-beta
 nav_order: OC-L-06-Patterns
 ---
 

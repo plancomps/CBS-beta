@@ -2,7 +2,7 @@
 layout: default
 title: "SIMPLE-3-Statements"
 parent: SIMPLE
-grand_parent: Languages-beta
+# grand_parent: Languages-beta
 nav_order: SIMPLE-3-Statements
 ---
 

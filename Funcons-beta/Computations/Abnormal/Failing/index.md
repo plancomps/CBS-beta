@@ -2,7 +2,7 @@
 layout: default
 title: "Failing"
 parent: Abnormal
-grand_parent: Funcons-beta
+# grand_parent: Funcons-beta
 nav_order: "Failing"
 ---
 

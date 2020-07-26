@@ -2,7 +2,7 @@
 layout: default
 title: "SIMPLE-THR-A-Disambiguation"
 parent: SIMPLE-THR
-grand_parent: Unstable-Languages-beta
+# grand_parent: Unstable-Languages-beta
 nav_order: SIMPLE-THR-A-Disambiguation
 ---
 

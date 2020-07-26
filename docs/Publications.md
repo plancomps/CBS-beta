@@ -14,8 +14,13 @@ considerably; future publications should be consistent with the final
 release of CBS.
 
 - P. D. Mosses,
+  __A component-based formal language workbench__,
+  in: *Proceedings F-IDE 2019*, EPTCS 310, 2019, pp. 29-34
+  [doi:10.4204/EPTCS.310.4](https://doi.org/10.4204/EPTCS.310.4)
+  
+- P. D. Mosses,
   __Software meta-language engineering and CBS__,
-  *Journal of Computer Languages* 50 (2019) pp. 39–48.
+  *Journal of Computer Languages* 50 (2019) pp. 39–48.
   [doi:10.1016/j.jvlc.2018.11.003](https://doi.org/10.1016/j.jvlc.2018.11.003)
 
 - L. T. van Binsbergen, N. Sculthorpe, P. D. Mosses,

@@ -2,7 +2,7 @@
 layout: default
 title: "OC-L-Start"
 parent: OC-L
-grand_parent: Languages-beta
+# grand_parent: Languages-beta
 
 ---
 

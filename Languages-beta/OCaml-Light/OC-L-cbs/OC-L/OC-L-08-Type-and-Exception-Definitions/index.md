@@ -2,7 +2,7 @@
 layout: default
 title: "OC-L-08-Type-and-Exception-Definitions"
 parent: OC-L
-grand_parent: Languages-beta
+# grand_parent: Languages-beta
 nav_order: OC-L-08-Type-and-Exception-Definitions
 ---
 

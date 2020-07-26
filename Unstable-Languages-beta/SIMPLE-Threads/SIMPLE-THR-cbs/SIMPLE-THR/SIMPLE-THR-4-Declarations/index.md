@@ -2,7 +2,7 @@
 layout: default
 title: "SIMPLE-THR-4-Declarations"
 parent: SIMPLE-THR
-grand_parent: Unstable-Languages-beta
+# grand_parent: Unstable-Languages-beta
 nav_order: SIMPLE-THR-4-Declarations
 ---
 

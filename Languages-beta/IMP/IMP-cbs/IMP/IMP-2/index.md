@@ -2,7 +2,7 @@
 layout: default
 title: "IMP-2"
 parent: IMP
-grand_parent: Languages-beta
+# grand_parent: Languages-beta
 nav_order: IMP-2
 ---
 

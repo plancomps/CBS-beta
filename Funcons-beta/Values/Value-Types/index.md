@@ -2,7 +2,7 @@
 layout: default
 title: "Value-Types"
 parent: Values
-grand_parent: Funcons-beta
+# grand_parent: Funcons-beta
 nav_order: "Value-Types"
 ---
 

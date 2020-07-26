@@ -2,7 +2,7 @@
 layout: default
 title: "SL-3-Statements"
 parent: SL
-grand_parent: Languages-beta
+# grand_parent: Languages-beta
 nav_order: SL-3-Statements
 ---
 

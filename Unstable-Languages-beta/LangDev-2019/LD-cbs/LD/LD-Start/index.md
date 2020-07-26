@@ -2,7 +2,7 @@
 layout: default
 title: "LD-Start"
 parent: LD
-grand_parent: Unstable-Languages-beta
+# grand_parent: Unstable-Languages-beta
 
 ---
 

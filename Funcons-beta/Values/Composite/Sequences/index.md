@@ -2,7 +2,7 @@
 layout: default
 title: "Sequences"
 parent: Composite
-grand_parent: Funcons-beta
+# grand_parent: Funcons-beta
 nav_order: "Sequences"
 ---
 

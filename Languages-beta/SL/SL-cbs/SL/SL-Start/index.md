@@ -2,7 +2,7 @@
 layout: default
 title: "SL-Start"
 parent: SL
-grand_parent: Languages-beta
+# grand_parent: Languages-beta
 
 ---
 

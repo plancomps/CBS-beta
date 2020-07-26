@@ -2,7 +2,7 @@
 layout: default
 title: "SIMPLE-Funcons-Index"
 parent: SIMPLE
-grand_parent: Languages-beta
+# grand_parent: Languages-beta
 nav_order: SIMPLE-Funcons-Index
 ---
 

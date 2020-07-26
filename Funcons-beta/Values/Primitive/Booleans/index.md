@@ -2,7 +2,7 @@
 layout: default
 title: "Booleans"
 parent: Primitive
-grand_parent: Funcons-beta
+# grand_parent: Funcons-beta
 nav_order: "Booleans"
 ---
 

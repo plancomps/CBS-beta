@@ -2,7 +2,7 @@
 layout: default
 title: "Computation-Types"
 parent: Computations
-grand_parent: Funcons-beta
+# grand_parent: Funcons-beta
 nav_order: "Computation-Types"
 ---
 

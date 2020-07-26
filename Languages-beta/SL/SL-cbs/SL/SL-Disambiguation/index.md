@@ -2,7 +2,7 @@
 layout: default
 title: "SL-Disambiguation"
 parent: SL
-grand_parent: Languages-beta
+# grand_parent: Languages-beta
 nav_order: SL-Disambiguation
 ---
 

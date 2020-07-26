@@ -2,7 +2,7 @@
 layout: default
 title: "Functions"
 parent: Abstraction
-grand_parent: Funcons-beta
+# grand_parent: Funcons-beta
 nav_order: "Functions"
 ---
 

@@ -2,7 +2,7 @@
 layout: default
 title: "SL-4-Definitions"
 parent: SL
-grand_parent: Languages-beta
+# grand_parent: Languages-beta
 nav_order: SL-4-Definitions
 ---
 

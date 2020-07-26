@@ -2,7 +2,7 @@
 layout: default
 title: LD-Demo
 parent: LD
-grand_parent: Unstable-Languages-beta
+# grand_parent: Unstable-Languages-beta
 nav_order: "LD-Demo"
 ---
 

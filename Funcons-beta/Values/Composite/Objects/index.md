@@ -2,7 +2,7 @@
 layout: default
 title: "Objects"
 parent: Composite
-grand_parent: Funcons-beta
+# grand_parent: Funcons-beta
 nav_order: "Objects"
 ---
 

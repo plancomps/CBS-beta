@@ -10,6 +10,18 @@ Beta-release changes
 This page lists significant additions and changes to the funcon definitions and
 language specifications included in the CBS beta-release.
 
+2020-07-26: [Publications](Publications)
+* Added a missing 2019 paper
+
+2020-07-26: [CBS-beta](/CBS-beta/)
+* GitHub Pages theme for recursive navigation from 
+  [pdmosses/just-the-docs@rec-nav](https://github.com/pdmosses/just-the-docs/tree/rec-nav)
+* Navigation and search features from
+  [pmarsceill/just-the-docs@0.3.1](https://github.com/pmarsceill/just-the-docs/releases/tag/v0.3.1-r)
+
+2020-07-26: [Downloads](Downloads)
+* Guidelines for browsing CBS-beta offline updated 
+
 2020-04-14: [Funcons-beta](Funcons-beta),
 [Unstable-Funcons-beta](Unstable-Funcons-beta)
 * Navigation hierarchy improved

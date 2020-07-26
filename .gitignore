@@ -1,6 +1,7 @@
 _site
 Gemfile.lock
 .jekyll-metadata
+.jekyll-cache
 
 # Compiled source #
 ###################

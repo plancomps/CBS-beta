@@ -2,7 +2,7 @@
 layout: default
 title: "IMP-Funcons-Index"
 parent: IMP
-grand_parent: Languages-beta
+# grand_parent: Languages-beta
 nav_order: IMP-Funcons-Index
 ---
 

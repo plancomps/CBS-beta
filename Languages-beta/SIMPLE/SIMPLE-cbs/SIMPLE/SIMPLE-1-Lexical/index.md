@@ -2,7 +2,7 @@
 layout: default
 title: "SIMPLE-1-Lexical"
 parent: SIMPLE
-grand_parent: Languages-beta
+# grand_parent: Languages-beta
 nav_order: SIMPLE-1-Lexical
 ---
 

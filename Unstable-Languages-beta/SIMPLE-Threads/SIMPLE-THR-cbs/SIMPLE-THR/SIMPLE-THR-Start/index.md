@@ -2,7 +2,7 @@
 layout: default
 title: "SIMPLE-THR-Start"
 parent: SIMPLE-THR
-grand_parent: Unstable-Languages-beta
+# grand_parent: Unstable-Languages-beta
 
 ---
 

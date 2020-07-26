@@ -2,7 +2,7 @@
 layout: default
 title: "SIMPLE-Start"
 parent: SIMPLE
-grand_parent: Languages-beta
+# grand_parent: Languages-beta
 
 ---
 

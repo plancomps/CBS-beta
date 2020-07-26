@@ -2,7 +2,7 @@
 layout: default
 title: "Strings"
 parent: Composite
-grand_parent: Funcons-beta
+# grand_parent: Funcons-beta
 nav_order: "Strings"
 ---
 

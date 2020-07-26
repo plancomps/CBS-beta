@@ -2,7 +2,7 @@
 layout: default
 title: "LD-Unstable-Funcons-Index"
 parent: LD
-grand_parent: Unstable-Languages-beta
+# grand_parent: Unstable-Languages-beta
 nav_order: LD-Unstable-Funcons-Index
 ---
 

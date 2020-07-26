@@ -16,17 +16,17 @@ Browsing CBS-beta offline
 
     [Ruby]\: 2.6.5 (Ruby 2.7.0 works, but emits tedious warnings about deprecated code)
     
-    [Jekyll]\: 3.8.5 (Jekyll 4 does _not_ work with the theme currently used by CBS-beta)
+    [Jekyll]\: 3.8.7 or 4.x ([jekyll-remote-theme] supports use of Jekyll 4 on GitHub Pages)
 
-2.  Run the following command in a terminal from the unzipped folder:
+2.  Run the following command in a terminal from the root directory of the project:
 
     ```
     bundle install
-    bundle exec jekyll serve --baseurl '/CBS-beta' --port 4000 --host localhost
+    bundle exec jekyll serve --port 4000 --host localhost
     ```
     (`port` and `host` need only be specified if different values are required)
     
-    [Jekyll log] -- ignore the warning `Invalid theme folder: _sass`
+    [Log](Log)
 
 3.  Open a web browser at `http://localhost:4000/CBS-beta/` (the final `/` is required)
 
@@ -43,7 +43,7 @@ Stop the local server with Control-C when no longer needed.
 
 [Jekyll]: https://help.github.com/en/articles/setting-up-your-github-pages-site-locally-with-jekyll
 
-[Jekyll log]: /CBS-beta/assets/images/Jekyll-localhost.png
+[jekyll-remote-theme]: https://github.com/benbalter/jekyll-remote-theme
 
 [Python3]: https://docs.python.org/3/library/http.server.html
 

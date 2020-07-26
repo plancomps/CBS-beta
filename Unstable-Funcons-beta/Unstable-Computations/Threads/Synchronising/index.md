@@ -2,7 +2,7 @@
 layout: default
 title: "Synchronising"
 parent: Unstable-Threads
-grand_parent: Unstable-Funcons-beta
+# grand_parent: Unstable-Funcons-beta
 nav_order: "Synchronising"
 ---
 

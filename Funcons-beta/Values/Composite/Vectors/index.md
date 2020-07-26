@@ -2,7 +2,7 @@
 layout: default
 title: "Vectors"
 parent: Composite
-grand_parent: Funcons-beta
+# grand_parent: Funcons-beta
 nav_order: "Vectors"
 ---
 

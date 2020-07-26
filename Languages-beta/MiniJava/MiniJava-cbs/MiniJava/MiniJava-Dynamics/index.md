@@ -2,7 +2,7 @@
 layout: default
 title: "MiniJava-Dynamics"
 parent: MiniJava
-grand_parent: Languages-beta
+# grand_parent: Languages-beta
 nav_order: MiniJava-Dynamics
 ---
 

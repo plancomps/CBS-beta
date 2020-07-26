@@ -2,7 +2,7 @@
 layout: default
 title: "Generating"
 parent: Normal
-grand_parent: Funcons-beta
+# # grand_parent: Funcons-beta
 nav_order: "Generating"
 ---
 

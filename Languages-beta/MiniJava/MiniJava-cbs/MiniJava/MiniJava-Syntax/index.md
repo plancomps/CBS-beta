@@ -2,7 +2,7 @@
 layout: default
 title: "MiniJava-Syntax"
 parent: MiniJava
-grand_parent: Languages-beta
+# grand_parent: Languages-beta
 nav_order: MiniJava-Syntax
 ---
 

@@ -2,7 +2,7 @@
 layout: default
 title: "SIMPLE-THR-5-Programs"
 parent: SIMPLE-THR
-grand_parent: Unstable-Languages-beta
+# grand_parent: Unstable-Languages-beta
 nav_order: SIMPLE-THR-5-Programs
 ---
 

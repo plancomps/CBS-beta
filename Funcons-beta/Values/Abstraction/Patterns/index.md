@@ -2,7 +2,7 @@
 layout: default
 title: "Patterns"
 parent: Abstraction
-grand_parent: Funcons-beta
+# grand_parent: Funcons-beta
 nav_order: "Patterns"
 ---
 

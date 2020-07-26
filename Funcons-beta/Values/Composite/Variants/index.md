@@ -2,7 +2,7 @@
 layout: default
 title: "Variants"
 parent: Composite
-grand_parent: Funcons-beta
+# grand_parent: Funcons-beta
 nav_order: "Variants"
 ---
 

@@ -2,7 +2,7 @@
 layout: default
 title: "Linking"
 parent: Normal
-grand_parent: Funcons-beta
+# # grand_parent: Funcons-beta
 nav_order: "Linking"
 ---
 
