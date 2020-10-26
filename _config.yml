@@ -1,4 +1,4 @@
-remote_theme: pdmosses/just-the-docs@rec-nav
+remote_theme: pdmosses/just-the-docs@rec-nav-2
 # remote_theme: pmarsceill/just-the-docs
 title: CBS-beta
 description: Beta-release of the CBS framework
@@ -56,9 +56,6 @@ search:
 # nav_sort: case_insensitive # N.B. numbers are sorted lexicographically
 nav_sort: case_sensitive # Capital letters sorted before lowercase, numbers by value
 
-# Display navigation expanders
-nav_expanders: true
-
 # Footer content
 # appears at the bottom of every page's main content
 
@@ -90,6 +87,7 @@ footer_content: ""
 
 plugins:
   - jekyll-remote-theme
+  - jekyll-include-cache
 #   - jekyll-seo-tag
 
 # compress_html:

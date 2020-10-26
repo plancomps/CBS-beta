@@ -2,6 +2,7 @@ _site
 Gemfile.lock
 .jekyll-metadata
 .jekyll-cache
+.sass-cache
 
 # Compiled source #
 ###################

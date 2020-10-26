@@ -4,39 +4,35 @@ title: Computations
 parent: Funcons-beta
 permalink: /docs/Funcons-beta/Computations
 nav_order: "1"
+has_toc: false
 ---
 
 Computations
 ============
 
 The CBS library provides funcons for expressing and composing various kinds of
-computations. The following classification of funcons reflects whether they
-are concerned with normal or abnormal flow of control, and the kinds of
-entities generally required by their computations.
+computations.
+A funcon takes a sequence of [values] and/or computations as arguments, and may compute a sequence of values.
 
-[Normal computation]
+A *value argument* is the result of a previous computation, and can be inspected; a *computation argument*, in contrast, can only be executed or ignored.
+
+A computation may terminate *normally* or *abnormally*, or never terminate. 
+Values (and sequences of values) correspond to immediately terminating computations.
+
+[Normal computations]
 --------------------
 
-Funcons compute (sequences) of values on normal termination.
+Funcons for expressing normal computations compute (sequences of) values on normal termination.
+They propagate abnormal termination of their arguments.
 
-[Unstable-Funcons-beta] specifies tentative funcons for threads.
-Funcons for distributed processes, and low level memory have not yet
-been developed.
-
-[Abnormal computation]
+[Abnormal computations]
 ----------------------
 
-When a funcon terminates abruptly, it generally signals the reason for it.
-
-Sequences of computations
--------------------------
-
-Funcons can take sequences of values and computations as arguments,
-whereas results can only be (sequences of) values.
+Funcons for expressing abnormal computations may terminate abruptly without computing values; they also include handlers for abnormal termination.
 
 
-[Normal computation]:     /CBS-beta/docs/Funcons-beta/Computations/Normal
+[Normal computations]:     /CBS-beta/docs/Funcons-beta/Computations/Normal
 
-[Abnormal computation]:     /CBS-beta/docs/Funcons-beta/Computations/Abnormal
+[Abnormal computations]:     /CBS-beta/docs/Funcons-beta/Computations/Abnormal
 
-[Unstable-Funcons-beta]: /CBS-beta/docs/Unstable-Funcons-beta
+[Values]: /CBS-beta/docs/Funcons-beta/Values
