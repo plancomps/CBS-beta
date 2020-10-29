@@ -15,6 +15,11 @@ aux_links:
 # permalink: pretty
 exclude:
   - "profiles/"
+  - "Languages-beta/IMP/IMP-cbs/Funcons-beta/"
+  - "Languages-beta/MiniJava/MiniJava-cbs/Funcons-beta/"
+  - "Languages-beta/SIMPLE/SIMPLE-cbs/Funcons-beta/"
+  - "Languages-beta/SL/SL-cbs/Funcons-beta/"
+  - "Languages-beta/OCaml-Light/OC-L-cbs/Funcons-beta/"
 
 # Set the search token separator
 # search_tokenizer_separator: /[\s/]+/

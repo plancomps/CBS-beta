@@ -22,8 +22,10 @@ Browsing CBS-beta offline
 
     ```
     bundle install
-    bundle exec jekyll serve --port 4000 --host localhost
+    bundle exec jekyll serve --no-watch --port 4000 --host localhost
     ```
+    The `no-watch` option suppresses spurious error reports from `listen` about `directory is already being watched`.
+    
     (`port` and `host` need only be specified if different values are required)
     
     [Log](Log)

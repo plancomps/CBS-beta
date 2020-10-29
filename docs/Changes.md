@@ -10,6 +10,12 @@ Beta-release changes
 This page lists significant additions and changes to the funcon definitions and
 language specifications included in the CBS beta-release.
 
+2020-10-29: [Funcons-beta](Funcons-beta), [Languages-beta](Languages-beta)
+* Added symlinks from language `*-cbs` project folders to `/Funcons-beta` project folder, and `.gitignre` files
+
+2020-10-29: [Downloads](Downloads)
+* Guidelines for browsing CBS-beta offline updated 
+
 2020-10-26: [Funcons-beta](Funcons-beta)
 * Major revision of the overview (no changes to the formal specifications)
 
