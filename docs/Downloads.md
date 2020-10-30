@@ -20,13 +20,16 @@ Browsing CBS-beta offline
 
 2.  Run the following command in a terminal from the root directory of the project:
 
-    ```
+    ```bash
     bundle install
     bundle exec jekyll serve --no-watch --port 4000 --host localhost
     ```
-    The `no-watch` option suppresses spurious error reports from `listen` about `directory is already being watched`.
     
-    (`port` and `host` need only be specified if different values are required)
+    - The `no-watch` option suppresses spurious error reports from `listen` about 
+      `directory is already being watched`, but also disables automatic building
+      when page sources change.
+      
+    - The `port` and `host` options default to the values shown above.
     
     [Log](Log)
 

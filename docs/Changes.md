@@ -10,8 +10,15 @@ Beta-release changes
 This page lists significant additions and changes to the funcon definitions and
 language specifications included in the CBS beta-release.
 
+2020-10-30: [Funcons-beta](Funcons-beta), [Languages-beta](Languages-beta)
+* Regenerated CBS web page sources, eliminating `grand_parent` and `nav_order` fields
+
+2020-10-30: [Storing](/CBS-beta/Funcons-beta/Computations/Normal/Storing/)
+* Added parentheses for premise disambiguation (twice)
+
 2020-10-29: [Funcons-beta](Funcons-beta), [Languages-beta](Languages-beta)
-* Added symlinks from language `*-cbs` project folders to `/Funcons-beta` project folder, and `.gitignre` files
+* Added symlinks from language `*-cbs` project folders to `/Funcons-beta`
+* Added `.gitignore` files to support sub-projects of `CBS-beta`
 
 2020-10-29: [Downloads](Downloads)
 * Guidelines for browsing CBS-beta offline updated 

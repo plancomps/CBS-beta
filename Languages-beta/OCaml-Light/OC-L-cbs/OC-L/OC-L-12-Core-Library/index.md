@@ -2,8 +2,7 @@
 layout: default
 title: "OC-L-12-Core-Library"
 parent: OC-L
-# grand_parent: Languages-beta
-nav_order: OC-L-12-Core-Library
+
 ---
 
 [Languages-beta] : [OC-L-12-Core-Library.cbs]
@@ -153,7 +152,7 @@ nav_order: OC-L-12-Core-Library
       <span class="name"><a href="#Name_op-2">op-2</a></span>(<span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-integer">implemented-integer</a></span> <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Integers/index.html#Name_integer-subtract">integer-subtract</a></span>(<span class="name"><a href="#Name_arg-1">arg-1</a></span>, <span class="name"><a href="#Name_arg-2">arg-2</a></span>)),
     "(*)" |->
       <span class="name"><a href="#Name_op-2">op-2</a></span>(<span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-integer">implemented-integer</a></span> <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Integers/index.html#Name_integer-multiply">integer-multiply</a></span>(<span class="name"><a href="#Name_arg-1">arg-1</a></span>, <span class="name"><a href="#Name_arg-2">arg-2</a></span>)),
-    "(/CBS-beta/)" |->
+    "(/)" |->
       <span class="name"><a href="#Name_op-2">op-2</a></span>(<span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-integer">implemented-integer</a></span> <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Flowing/index.html#Name_if-true-else">if-true-else</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Values/Value-Types/index.html#Name_is-equal">is-equal</a></span>(<span class="name"><a href="#Name_arg-2">arg-2</a></span>, 0),
                     <span class="name"><a href="../../../../../Funcons-beta/Computations/Abnormal/Throwing/index.html#Name_throw">throw</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Variants/index.html#Name_variant">variant</a></span>("Division_by_zero", <span class="name"><a href="../../../../../Funcons-beta/Values/Composite/Tuples/index.html#Name_tuple">tuple</a></span>( ))),
                     <span class="name"><a href="../../../../../Funcons-beta/Computations/Abnormal/Failing/index.html#Name_checked">checked</a></span> <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Integers/index.html#Name_integer-divide">integer-divide</a></span>(<span class="name"><a href="#Name_arg-1">arg-1</a></span>, <span class="name"><a href="#Name_arg-2">arg-2</a></span>))),
@@ -203,7 +202,7 @@ nav_order: OC-L-12-Core-Library
       <span class="name"><a href="#Name_op-2">op-2</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Floats/index.html#Name_float-subtract">float-subtract</a></span>(<span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-floats-format">implemented-floats-format</a></span>, <span class="name"><a href="#Name_arg-1">arg-1</a></span>, <span class="name"><a href="#Name_arg-2">arg-2</a></span>)),
     "(*.)" |->
       <span class="name"><a href="#Name_op-2">op-2</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Floats/index.html#Name_float-multiply">float-multiply</a></span>(<span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-floats-format">implemented-floats-format</a></span>, <span class="name"><a href="#Name_arg-1">arg-1</a></span>, <span class="name"><a href="#Name_arg-2">arg-2</a></span>)),
-    "(/CBS-beta/.)" |->
+    "(/.)" |->
       <span class="name"><a href="#Name_op-2">op-2</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Floats/index.html#Name_float-divide">float-divide</a></span>(<span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-floats-format">implemented-floats-format</a></span>, <span class="name"><a href="#Name_arg-1">arg-1</a></span>, <span class="name"><a href="#Name_arg-2">arg-2</a></span>)),
     "(**)" |->
       <span class="name"><a href="#Name_op-2">op-2</a></span>(<span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Floats/index.html#Name_float-float-power">float-float-power</a></span>(<span class="name"><a href="../OC-L-02-Values/index.html#Name_implemented-floats-format">implemented-floats-format</a></span>, <span class="name"><a href="#Name_arg-1">arg-1</a></span>, <span class="name"><a href="#Name_arg-2">arg-2</a></span>)),
@@ -532,22 +531,22 @@ nav_order: OC-L-12-Core-Library
 
 ____
 
-From the [PLanCompS Project], 2019 | [CBS-beta issues...] | [Suggest an improvement...]
+From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [OC-L-12-Core-Library.cbs]: OC-L-12-Core-Library.cbs 
   "CBS SOURCE FILE"
 [Funcons-beta]: /CBS-beta/docs/Funcons-beta
- "FUNCONS-BETA"
+  "FUNCONS-BETA"
 [Unstable-Funcons-beta]: /CBS-beta/docs/Unstable-Funcons-beta
   "UNSTABLE-FUNCONS-BETA"
 [Languages-beta]: /CBS-beta/docs/Languages-beta
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/docs/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]:  "CBS-BETA"
-[PLanCompS Project]: http://plancomps.org
+[CBS-beta]: /CBS-beta "CBS-BETA"
+[PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
-[CBS-beta issues...]: https://github.com/plancomps/plancomps.github.io/issues
+[CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues
   "CBS-BETA ISSUE REPORTS ON GITHUB"
 [Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20OC-L/OC-L-12-Core-Library/OC-L-12-Core-Library.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A 
   "GENERATE AN EMAIL TEMPLATE"

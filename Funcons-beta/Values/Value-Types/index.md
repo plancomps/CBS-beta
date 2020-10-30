@@ -2,8 +2,7 @@
 layout: default
 title: "Value-Types"
 parent: Values
-# grand_parent: Funcons-beta
-nav_order: "Value-Types"
+
 ---
 
 [Funcons-beta] : [Value-Types.cbs]
@@ -134,7 +133,7 @@ nav_order: "Value-Types"
   --------------------------------------
   <span class="name"><a href="#Name_is-in-type">is-in-type</a></span>(<span id="Variable1024_V"><i class="var">V</i></span>:<span class="name"><a href="#Name_values">values</a></span>, <span id="Variable1032_T"><i class="var">T</i></span>:<span class="name"><a href="#Name_types">types</a></span>) ~> <span class="name"><a href="../Primitive/Booleans/index.html#Name_false">false</a></span></code></pre></div>
 
-
+		
 
 ### Option types
 
@@ -237,22 +236,22 @@ nav_order: "Value-Types"
 
 ____
 
-From the [PLanCompS Project], 2019 | [CBS-beta issues...] | [Suggest an improvement...]
+From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [Value-Types.cbs]: Value-Types.cbs 
   "CBS SOURCE FILE"
 [Funcons-beta]: /CBS-beta/docs/Funcons-beta
- "FUNCONS-BETA"
+  "FUNCONS-BETA"
 [Unstable-Funcons-beta]: /CBS-beta/docs/Unstable-Funcons-beta
   "UNSTABLE-FUNCONS-BETA"
 [Languages-beta]: /CBS-beta/docs/Languages-beta
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/docs/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]:  "CBS-BETA"
-[PLanCompS Project]: http://plancomps.org
+[CBS-beta]: /CBS-beta "CBS-BETA"
+[PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
-[CBS-beta issues...]: https://github.com/plancomps/plancomps.github.io/issues
+[CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues
   "CBS-BETA ISSUE REPORTS ON GITHUB"
 [Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20Values/Value-Types/Value-Types.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A 
   "GENERATE AN EMAIL TEMPLATE"

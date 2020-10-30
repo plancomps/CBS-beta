@@ -282,7 +282,7 @@ Rule
   structural-assign(V1:variables, V2:values)
     ~> assign(V1, V2)
 Rule
-  V1 : ~variables
+  V1 : ~(variables)
   V1 ~> datatype-value(I1:identifiers, V1*:values*)
   V2 ~> datatype-value(I2:identifiers, V2*:values*)
   -----------------------------------------------------------------------
@@ -329,7 +329,7 @@ Funcon
 Rule
   structural-assigned(Var:variables) ~> assigned(Var)
 Rule
-  V : ~variables
+  V : ~(variables)
   V ~> datatype-value(I:identifiers, V*:values*)
   ----------------------------------------------------------------------------
   structural-assigned(V:datatype-values)

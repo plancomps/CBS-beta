@@ -2,8 +2,7 @@
 layout: default
 title: "Storing"
 parent: Normal
-# # grand_parent: Funcons-beta
-nav_order: "Storing"
+
 ---
 
 [Funcons-beta] : [Storing.cbs]
@@ -301,38 +300,38 @@ nav_order: "Storing"
   <span class="name"><a href="#Name_structural-assign">structural-assign</a></span>(<span id="Variable3274_V1"><i class="var">V<sub class="sub">1</sub></i></span>:<span class="name"><a href="#Name_variables">variables</a></span>, <span id="Variable3283_V2"><i class="var">V<sub class="sub">2</sub></i></span>:<span class="name"><a href="../../../Values/Value-Types/index.html#Name_values">values</a></span>)
     ~> <span class="name"><a href="#Name_assign">assign</a></span>(<a href="#Variable3274_V1"><i class="var">V<sub class="sub">1</sub></i></a>, <a href="#Variable3283_V2"><i class="var">V<sub class="sub">2</sub></i></a>)
 <i class="keyword">Rule</i>
-  <a href="#Variable3413_V1"><i class="var">V<sub class="sub">1</sub></i></a> : ~<span class="name"><a href="#Name_variables">variables</a></span>
-  <a href="#Variable3413_V1"><i class="var">V<sub class="sub">1</sub></i></a> ~> <span class="name"><a href="../../../Values/Composite/Datatypes/index.html#Name_datatype-value">datatype-value</a></span>(<span id="Variable3341_I1"><i class="var">I<sub class="sub">1</sub></i></span>:<span class="name"><a href="../Binding/index.html#Name_identifiers">identifiers</a></span>, <span id="Variable3351_V1*"><i class="var">V<sub class="sub">1</sub><sup class="sup">*</sup></i></span>:<span class="name"><a href="../../../Values/Value-Types/index.html#Name_values">values</a></span><sup class="sup">*</sup>)
-  <a href="#Variable3422_V2"><i class="var">V<sub class="sub">2</sub></i></a> ~> <span class="name"><a href="../../../Values/Composite/Datatypes/index.html#Name_datatype-value">datatype-value</a></span>(<span id="Variable3377_I2"><i class="var">I<sub class="sub">2</sub></i></span>:<span class="name"><a href="../Binding/index.html#Name_identifiers">identifiers</a></span>, <span id="Variable3387_V2*"><i class="var">V<sub class="sub">2</sub><sup class="sup">*</sup></i></span>:<span class="name"><a href="../../../Values/Value-Types/index.html#Name_values">values</a></span><sup class="sup">*</sup>)
+  <a href="#Variable3418_V1"><i class="var">V<sub class="sub">1</sub></i></a> : ~(<span class="name"><a href="#Name_variables">variables</a></span>)
+  <a href="#Variable3418_V1"><i class="var">V<sub class="sub">1</sub></i></a> ~> <span class="name"><a href="../../../Values/Composite/Datatypes/index.html#Name_datatype-value">datatype-value</a></span>(<span id="Variable3346_I1"><i class="var">I<sub class="sub">1</sub></i></span>:<span class="name"><a href="../Binding/index.html#Name_identifiers">identifiers</a></span>, <span id="Variable3356_V1*"><i class="var">V<sub class="sub">1</sub><sup class="sup">*</sup></i></span>:<span class="name"><a href="../../../Values/Value-Types/index.html#Name_values">values</a></span><sup class="sup">*</sup>)
+  <a href="#Variable3427_V2"><i class="var">V<sub class="sub">2</sub></i></a> ~> <span class="name"><a href="../../../Values/Composite/Datatypes/index.html#Name_datatype-value">datatype-value</a></span>(<span id="Variable3382_I2"><i class="var">I<sub class="sub">2</sub></i></span>:<span class="name"><a href="../Binding/index.html#Name_identifiers">identifiers</a></span>, <span id="Variable3392_V2*"><i class="var">V<sub class="sub">2</sub><sup class="sup">*</sup></i></span>:<span class="name"><a href="../../../Values/Value-Types/index.html#Name_values">values</a></span><sup class="sup">*</sup>)
   -----------------------------------------------------------------------
-  <span class="name"><a href="#Name_structural-assign">structural-assign</a></span>(<span id="Variable3413_V1"><i class="var">V<sub class="sub">1</sub></i></span>:<span class="name"><a href="../../../Values/Composite/Datatypes/index.html#Name_datatype-values">datatype-values</a></span>, <span id="Variable3422_V2"><i class="var">V<sub class="sub">2</sub></i></span>:<span class="name"><a href="../../../Values/Composite/Datatypes/index.html#Name_datatype-values">datatype-values</a></span>)
+  <span class="name"><a href="#Name_structural-assign">structural-assign</a></span>(<span id="Variable3418_V1"><i class="var">V<sub class="sub">1</sub></i></span>:<span class="name"><a href="../../../Values/Composite/Datatypes/index.html#Name_datatype-values">datatype-values</a></span>, <span id="Variable3427_V2"><i class="var">V<sub class="sub">2</sub></i></span>:<span class="name"><a href="../../../Values/Composite/Datatypes/index.html#Name_datatype-values">datatype-values</a></span>)
     ~> <span class="name"><a href="../Flowing/index.html#Name_sequential">sequential</a></span>(
-         <span class="name"><a href="../../Abnormal/Failing/index.html#Name_check-true">check-true</a></span>(<span class="name"><a href="../../../Values/Value-Types/index.html#Name_is-equal">is-equal</a></span>(<a href="#Variable3341_I1"><i class="var">I<sub class="sub">1</sub></i></a>, <a href="#Variable3377_I2"><i class="var">I<sub class="sub">2</sub></i></a>)),
+         <span class="name"><a href="../../Abnormal/Failing/index.html#Name_check-true">check-true</a></span>(<span class="name"><a href="../../../Values/Value-Types/index.html#Name_is-equal">is-equal</a></span>(<a href="#Variable3346_I1"><i class="var">I<sub class="sub">1</sub></i></a>, <a href="#Variable3382_I2"><i class="var">I<sub class="sub">2</sub></i></a>)),
          <span class="name"><a href="../Flowing/index.html#Name_effect">effect</a></span>(<span class="name"><a href="../../../Values/Composite/Tuples/index.html#Name_tuple">tuple</a></span>(<span class="name"><a href="../Giving/index.html#Name_interleave-map">interleave-map</a></span>(
            <span class="name"><a href="#Name_structural-assign">structural-assign</a></span>(<span class="name"><a href="../../../Values/Composite/Tuples/index.html#Name_tuple-elements">tuple-elements</a></span>(<span class="name"><a href="../Giving/index.html#Name_given">given</a></span>)),
-           <span class="name"><a href="../../../Values/Composite/Tuples/index.html#Name_tuple-zip">tuple-zip</a></span>(<span class="name"><a href="../../../Values/Composite/Tuples/index.html#Name_tuple">tuple</a></span>(<a href="#Variable3351_V1*"><i class="var">V<sub class="sub">1</sub><sup class="sup">*</sup></i></a>), <span class="name"><a href="../../../Values/Composite/Tuples/index.html#Name_tuple">tuple</a></span>(<a href="#Variable3387_V2*"><i class="var">V<sub class="sub">2</sub><sup class="sup">*</sup></i></a>))))),
+           <span class="name"><a href="../../../Values/Composite/Tuples/index.html#Name_tuple-zip">tuple-zip</a></span>(<span class="name"><a href="../../../Values/Composite/Tuples/index.html#Name_tuple">tuple</a></span>(<a href="#Variable3356_V1*"><i class="var">V<sub class="sub">1</sub><sup class="sup">*</sup></i></a>), <span class="name"><a href="../../../Values/Composite/Tuples/index.html#Name_tuple">tuple</a></span>(<a href="#Variable3392_V2*"><i class="var">V<sub class="sub">2</sub><sup class="sup">*</sup></i></a>))))),
          <span class="name"><a href="../../../Values/Primitive/Null/index.html#Name_null-value">null-value</a></span>)</code></pre></div>
 
 
   Note that simple variables are datatype values.
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Rule</i>
-  <span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_dom">dom</a></span>(<a href="#Variable3582_M1"><i class="var">M<sub class="sub">1</sub></i></a>) == {}
+  <span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_dom">dom</a></span>(<a href="#Variable3587_M1"><i class="var">M<sub class="sub">1</sub></i></a>) == {}
   ------------------------------------------------------
-  <span class="name"><a href="#Name_structural-assign">structural-assign</a></span>(<span id="Variable3582_M1"><i class="var">M<sub class="sub">1</sub></i></span>:<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_maps">maps</a></span>(_,_), <span id="Variable3605_M2"><i class="var">M<sub class="sub">2</sub></i></span>:<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_maps">maps</a></span>(_,_))
-    ~> <span class="name"><a href="../../Abnormal/Failing/index.html#Name_check-true">check-true</a></span>(<span class="name"><a href="../../../Values/Value-Types/index.html#Name_is-equal">is-equal</a></span>(<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_dom">dom</a></span>(<a href="#Variable3605_M2"><i class="var">M<sub class="sub">2</sub></i></a>), { }))
+  <span class="name"><a href="#Name_structural-assign">structural-assign</a></span>(<span id="Variable3587_M1"><i class="var">M<sub class="sub">1</sub></i></span>:<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_maps">maps</a></span>(_,_), <span id="Variable3610_M2"><i class="var">M<sub class="sub">2</sub></i></span>:<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_maps">maps</a></span>(_,_))
+    ~> <span class="name"><a href="../../Abnormal/Failing/index.html#Name_check-true">check-true</a></span>(<span class="name"><a href="../../../Values/Value-Types/index.html#Name_is-equal">is-equal</a></span>(<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_dom">dom</a></span>(<a href="#Variable3610_M2"><i class="var">M<sub class="sub">2</sub></i></a>), { }))
 <i class="keyword">Rule</i>
-  <span class="name"><a href="../../../Values/Composite/Sets/index.html#Name_some-element">some-element</a></span>(<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_dom">dom</a></span>(<a href="#Variable3701_M1"><i class="var">M<sub class="sub">1</sub></i></a>)) ~> <span id="Variable3689_K"><i class="var">K</i></span>
+  <span class="name"><a href="../../../Values/Composite/Sets/index.html#Name_some-element">some-element</a></span>(<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_dom">dom</a></span>(<a href="#Variable3706_M1"><i class="var">M<sub class="sub">1</sub></i></a>)) ~> <span id="Variable3694_K"><i class="var">K</i></span>
   ----------------------------------------------------------------------------
-  <span class="name"><a href="#Name_structural-assign">structural-assign</a></span>(<span id="Variable3701_M1"><i class="var">M<sub class="sub">1</sub></i></span>:<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_maps">maps</a></span>(_, _), <span id="Variable3724_M2"><i class="var">M<sub class="sub">2</sub></i></span>:<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_maps">maps</a></span>(_, _))
-    ~> <span class="name"><a href="../Flowing/index.html#Name_sequential">sequential</a></span>(<span class="name"><a href="../../Abnormal/Failing/index.html#Name_check-true">check-true</a></span>(<span class="name"><a href="../../../Values/Composite/Sets/index.html#Name_is-in-set">is-in-set</a></span>(<a href="#Variable3689_K"><i class="var">K</i></a>, <span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_dom">dom</a></span>(<a href="#Variable3724_M2"><i class="var">M<sub class="sub">2</sub></i></a>))),
-         <span class="name"><a href="#Name_structural-assign">structural-assign</a></span>(<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_map-lookup">map-lookup</a></span>(<a href="#Variable3701_M1"><i class="var">M<sub class="sub">1</sub></i></a>, <a href="#Variable3689_K"><i class="var">K</i></a>), <span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_map-lookup">map-lookup</a></span>(<a href="#Variable3724_M2"><i class="var">M<sub class="sub">2</sub></i></a>, <a href="#Variable3689_K"><i class="var">K</i></a>)),
-         <span class="name"><a href="#Name_structural-assign">structural-assign</a></span>(<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_map-delete">map-delete</a></span>(<a href="#Variable3701_M1"><i class="var">M<sub class="sub">1</sub></i></a>, {<a href="#Variable3689_K"><i class="var">K</i></a>}), <span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_map-delete">map-delete</a></span>(<a href="#Variable3724_M2"><i class="var">M<sub class="sub">2</sub></i></a>, {<a href="#Variable3689_K"><i class="var">K</i></a>})))
+  <span class="name"><a href="#Name_structural-assign">structural-assign</a></span>(<span id="Variable3706_M1"><i class="var">M<sub class="sub">1</sub></i></span>:<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_maps">maps</a></span>(_, _), <span id="Variable3729_M2"><i class="var">M<sub class="sub">2</sub></i></span>:<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_maps">maps</a></span>(_, _))
+    ~> <span class="name"><a href="../Flowing/index.html#Name_sequential">sequential</a></span>(<span class="name"><a href="../../Abnormal/Failing/index.html#Name_check-true">check-true</a></span>(<span class="name"><a href="../../../Values/Composite/Sets/index.html#Name_is-in-set">is-in-set</a></span>(<a href="#Variable3694_K"><i class="var">K</i></a>, <span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_dom">dom</a></span>(<a href="#Variable3729_M2"><i class="var">M<sub class="sub">2</sub></i></a>))),
+         <span class="name"><a href="#Name_structural-assign">structural-assign</a></span>(<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_map-lookup">map-lookup</a></span>(<a href="#Variable3706_M1"><i class="var">M<sub class="sub">1</sub></i></a>, <a href="#Variable3694_K"><i class="var">K</i></a>), <span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_map-lookup">map-lookup</a></span>(<a href="#Variable3729_M2"><i class="var">M<sub class="sub">2</sub></i></a>, <a href="#Variable3694_K"><i class="var">K</i></a>)),
+         <span class="name"><a href="#Name_structural-assign">structural-assign</a></span>(<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_map-delete">map-delete</a></span>(<a href="#Variable3706_M1"><i class="var">M<sub class="sub">1</sub></i></a>, {<a href="#Variable3694_K"><i class="var">K</i></a>}), <span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_map-delete">map-delete</a></span>(<a href="#Variable3729_M2"><i class="var">M<sub class="sub">2</sub></i></a>, {<a href="#Variable3694_K"><i class="var">K</i></a>})))
 <i class="keyword">Rule</i>
-  <a href="#Variable3940_V1"><i class="var">V<sub class="sub">1</sub></i></a> : ~(<span class="name"><a href="../../../Values/Composite/Datatypes/index.html#Name_datatype-values">datatype-values</a></span>|<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_maps">maps</a></span>(_, _))
+  <a href="#Variable3945_V1"><i class="var">V<sub class="sub">1</sub></i></a> : ~(<span class="name"><a href="../../../Values/Composite/Datatypes/index.html#Name_datatype-values">datatype-values</a></span>|<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_maps">maps</a></span>(_, _))
   ---------------------------------------------------------------
-  <span class="name"><a href="#Name_structural-assign">structural-assign</a></span>(<span id="Variable3940_V1"><i class="var">V<sub class="sub">1</sub></i></span>:<span class="name"><a href="../../../Values/Value-Types/index.html#Name_values">values</a></span>,<span id="Variable3949_V2"><i class="var">V<sub class="sub">2</sub></i></span>:<span class="name"><a href="../../../Values/Value-Types/index.html#Name_values">values</a></span>)
-    ~> <span class="name"><a href="../../Abnormal/Failing/index.html#Name_check-true">check-true</a></span>(<span class="name"><a href="../../../Values/Value-Types/index.html#Name_is-equal">is-equal</a></span>(<a href="#Variable3940_V1"><i class="var">V<sub class="sub">1</sub></i></a>, <a href="#Variable3949_V2"><i class="var">V<sub class="sub">2</sub></i></a>))</code></pre></div>
+  <span class="name"><a href="#Name_structural-assign">structural-assign</a></span>(<span id="Variable3945_V1"><i class="var">V<sub class="sub">1</sub></i></span>:<span class="name"><a href="../../../Values/Value-Types/index.html#Name_values">values</a></span>,<span id="Variable3954_V2"><i class="var">V<sub class="sub">2</sub></i></span>:<span class="name"><a href="../../../Values/Value-Types/index.html#Name_values">values</a></span>)
+    ~> <span class="name"><a href="../../Abnormal/Failing/index.html#Name_check-true">check-true</a></span>(<span class="name"><a href="../../../Values/Value-Types/index.html#Name_is-equal">is-equal</a></span>(<a href="#Variable3945_V1"><i class="var">V<sub class="sub">1</sub></i></a>, <a href="#Variable3954_V2"><i class="var">V<sub class="sub">2</sub></i></a>))</code></pre></div>
 
 
 
@@ -348,45 +347,45 @@ nav_order: "Storing"
   <code><span class="name"><a href="#Name_current-value">current-value</a></span>(<i class="var">V</i>)</code>.
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Rule</i>
-  <span class="name"><a href="#Name_structural-assigned">structural-assigned</a></span>(<span id="Variable4133_Var"><i class="var">Var</i></span>:<span class="name"><a href="#Name_variables">variables</a></span>) ~> <span class="name"><a href="#Name_assigned">assigned</a></span>(<a href="#Variable4133_Var"><i class="var">Var</i></a>)
+  <span class="name"><a href="#Name_structural-assigned">structural-assigned</a></span>(<span id="Variable4138_Var"><i class="var">Var</i></span>:<span class="name"><a href="#Name_variables">variables</a></span>) ~> <span class="name"><a href="#Name_assigned">assigned</a></span>(<a href="#Variable4138_Var"><i class="var">Var</i></a>)
 <i class="keyword">Rule</i>
-  <a href="#Variable4212_V"><i class="var">V</i></a> : ~<span class="name"><a href="#Name_variables">variables</a></span>
-  <a href="#Variable4212_V"><i class="var">V</i></a> ~> <span class="name"><a href="../../../Values/Composite/Datatypes/index.html#Name_datatype-value">datatype-value</a></span>(<span id="Variable4179_I"><i class="var">I</i></span>:<span class="name"><a href="../Binding/index.html#Name_identifiers">identifiers</a></span>, <span id="Variable4188_V*"><i class="var">V<sup class="sup">*</sup></i></span>:<span class="name"><a href="../../../Values/Value-Types/index.html#Name_values">values</a></span><sup class="sup">*</sup>)
+  <a href="#Variable4222_V"><i class="var">V</i></a> : ~(<span class="name"><a href="#Name_variables">variables</a></span>)
+  <a href="#Variable4222_V"><i class="var">V</i></a> ~> <span class="name"><a href="../../../Values/Composite/Datatypes/index.html#Name_datatype-value">datatype-value</a></span>(<span id="Variable4189_I"><i class="var">I</i></span>:<span class="name"><a href="../Binding/index.html#Name_identifiers">identifiers</a></span>, <span id="Variable4198_V*"><i class="var">V<sup class="sup">*</sup></i></span>:<span class="name"><a href="../../../Values/Value-Types/index.html#Name_values">values</a></span><sup class="sup">*</sup>)
   ----------------------------------------------------------------------------
-  <span class="name"><a href="#Name_structural-assigned">structural-assigned</a></span>(<span id="Variable4212_V"><i class="var">V</i></span>:<span class="name"><a href="../../../Values/Composite/Datatypes/index.html#Name_datatype-values">datatype-values</a></span>)
-    ~> <span class="name"><a href="../../../Values/Composite/Datatypes/index.html#Name_datatype-value">datatype-value</a></span>(<a href="#Variable4179_I"><i class="var">I</i></a>, <span class="name"><a href="../Giving/index.html#Name_interleave-map">interleave-map</a></span>(<span class="name"><a href="#Name_structural-assigned">structural-assigned</a></span>(<span class="name"><a href="../Giving/index.html#Name_given">given</a></span>), <a href="#Variable4188_V*"><i class="var">V<sup class="sup">*</sup></i></a>))</code></pre></div>
+  <span class="name"><a href="#Name_structural-assigned">structural-assigned</a></span>(<span id="Variable4222_V"><i class="var">V</i></span>:<span class="name"><a href="../../../Values/Composite/Datatypes/index.html#Name_datatype-values">datatype-values</a></span>)
+    ~> <span class="name"><a href="../../../Values/Composite/Datatypes/index.html#Name_datatype-value">datatype-value</a></span>(<a href="#Variable4189_I"><i class="var">I</i></a>, <span class="name"><a href="../Giving/index.html#Name_interleave-map">interleave-map</a></span>(<span class="name"><a href="#Name_structural-assigned">structural-assigned</a></span>(<span class="name"><a href="../Giving/index.html#Name_given">given</a></span>), <a href="#Variable4198_V*"><i class="var">V<sup class="sup">*</sup></i></a>))</code></pre></div>
 
 
   Note that simple variables are datatype values.
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Rule</i>
-  <span class="name"><a href="#Name_structural-assigned">structural-assigned</a></span>(<span id="Variable4272_M"><i class="var">M</i></span>:<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_maps">maps</a></span>(_, _))
-    ~> <span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_map">map</a></span>(<span class="name"><a href="../Giving/index.html#Name_interleave-map">interleave-map</a></span>(<span class="name"><a href="#Name_structural-assigned">structural-assigned</a></span>(<span class="name"><a href="../Giving/index.html#Name_given">given</a></span>), <span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_map-elements">map-elements</a></span>(<a href="#Variable4272_M"><i class="var">M</i></a>)))
+  <span class="name"><a href="#Name_structural-assigned">structural-assigned</a></span>(<span id="Variable4282_M"><i class="var">M</i></span>:<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_maps">maps</a></span>(_, _))
+    ~> <span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_map">map</a></span>(<span class="name"><a href="../Giving/index.html#Name_interleave-map">interleave-map</a></span>(<span class="name"><a href="#Name_structural-assigned">structural-assigned</a></span>(<span class="name"><a href="../Giving/index.html#Name_given">given</a></span>), <span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_map-elements">map-elements</a></span>(<a href="#Variable4282_M"><i class="var">M</i></a>)))
 <i class="keyword">Rule</i>
-  <a href="#Variable4377_U"><i class="var">U</i></a> : ~(<span class="name"><a href="../../../Values/Composite/Datatypes/index.html#Name_datatype-values">datatype-values</a></span>|<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_maps">maps</a></span>(_, _))
+  <a href="#Variable4387_U"><i class="var">U</i></a> : ~(<span class="name"><a href="../../../Values/Composite/Datatypes/index.html#Name_datatype-values">datatype-values</a></span>|<span class="name"><a href="../../../Values/Composite/Maps/index.html#Name_maps">maps</a></span>(_, _))
   ------------------------------------------
-  <span class="name"><a href="#Name_structural-assigned">structural-assigned</a></span>(<span id="Variable4377_U"><i class="var">U</i></span>:<span class="name"><a href="../../../Values/Value-Types/index.html#Name_values">values</a></span>) ~> <a href="#Variable4377_U"><i class="var">U</i></a></code></pre></div>
+  <span class="name"><a href="#Name_structural-assigned">structural-assigned</a></span>(<span id="Variable4387_U"><i class="var">U</i></span>:<span class="name"><a href="../../../Values/Value-Types/index.html#Name_values">values</a></span>) ~> <a href="#Variable4387_U"><i class="var">U</i></a></code></pre></div>
 
 
 
 ____
 
-From the [PLanCompS Project], 2019 | [CBS-beta issues...] | [Suggest an improvement...]
+From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [Storing.cbs]: Storing.cbs 
   "CBS SOURCE FILE"
 [Funcons-beta]: /CBS-beta/docs/Funcons-beta
- "FUNCONS-BETA"
+  "FUNCONS-BETA"
 [Unstable-Funcons-beta]: /CBS-beta/docs/Unstable-Funcons-beta
   "UNSTABLE-FUNCONS-BETA"
 [Languages-beta]: /CBS-beta/docs/Languages-beta
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/docs/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]:  "CBS-BETA"
-[PLanCompS Project]: http://plancomps.org
+[CBS-beta]: /CBS-beta "CBS-BETA"
+[PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
-[CBS-beta issues...]: https://github.com/plancomps/plancomps.github.io/issues
+[CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues
   "CBS-BETA ISSUE REPORTS ON GITHUB"
 [Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20Computations/Normal/Storing/Storing.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A 
   "GENERATE AN EMAIL TEMPLATE"
