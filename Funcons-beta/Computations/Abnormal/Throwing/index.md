@@ -2,6 +2,7 @@
 layout: default
 title: "Throwing"
 parent: Abnormal
+ancestor: Funcons-beta
 
 ---
 

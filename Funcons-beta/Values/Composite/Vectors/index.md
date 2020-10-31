@@ -2,6 +2,7 @@
 layout: default
 title: "Vectors"
 parent: Composite
+ancestor: Funcons-beta
 
 ---
 

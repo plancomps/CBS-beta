@@ -2,6 +2,7 @@
 layout: default
 title: "Objects"
 parent: Composite
+ancestor: Funcons-beta
 
 ---
 

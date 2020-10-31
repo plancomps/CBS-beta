@@ -2,6 +2,7 @@
 layout: default
 title: "Characters"
 parent: Primitive
+ancestor: Funcons-beta
 
 ---
 

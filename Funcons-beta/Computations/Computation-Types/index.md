@@ -2,6 +2,7 @@
 layout: default
 title: "Computation-Types"
 parent: Computations
+ancestor: Funcons-beta
 
 ---
 

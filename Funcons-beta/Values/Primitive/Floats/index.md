@@ -2,6 +2,7 @@
 layout: default
 title: "Floats"
 parent: Primitive
+ancestor: Funcons-beta
 
 ---
 

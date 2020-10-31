@@ -2,6 +2,7 @@
 layout: default
 title: "Booleans"
 parent: Primitive
+ancestor: Funcons-beta
 
 ---
 

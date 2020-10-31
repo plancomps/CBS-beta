@@ -2,6 +2,7 @@
 layout: default
 title: "Thunks"
 parent: Abstraction
+ancestor: Funcons-beta
 
 ---
 

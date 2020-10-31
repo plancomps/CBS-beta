@@ -2,6 +2,7 @@
 layout: default
 title: "Storing"
 parent: Normal
+ancestor: Funcons-beta
 
 ---
 

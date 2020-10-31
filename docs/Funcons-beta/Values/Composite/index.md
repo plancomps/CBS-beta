@@ -2,6 +2,7 @@
 layout: default
 title: Composite
 parent: Values
+ancestor: Funcons-beta
 permalink: /docs/Funcons-beta/Values/Composite
 nav_order: "6"
 has_toc: false

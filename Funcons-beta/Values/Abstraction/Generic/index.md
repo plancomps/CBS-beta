@@ -2,6 +2,7 @@
 layout: default
 title: "Generic"
 parent: Abstraction
+ancestor: Funcons-beta
 
 ---
 

@@ -2,6 +2,7 @@
 layout: default
 title: Normal
 parent: Computations
+ancestor: Funcons-beta
 permalink: /docs/Funcons-beta/Computations/Normal
 nav_order: "2"
 has_toc: false

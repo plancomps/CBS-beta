@@ -2,6 +2,7 @@
 layout: default
 title: "Datatypes"
 parent: Composite
+ancestor: Funcons-beta
 
 ---
 

@@ -2,6 +2,7 @@
 layout: default
 title: "Abrupting"
 parent: Abnormal
+ancestor: Funcons-beta
 
 ---
 

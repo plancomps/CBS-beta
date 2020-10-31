@@ -2,6 +2,7 @@
 layout: default
 title: "Failing"
 parent: Abnormal
+ancestor: Funcons-beta
 
 ---
 

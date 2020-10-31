@@ -2,6 +2,7 @@
 layout: default
 title: "Null"
 parent: Primitive
+ancestor: Funcons-beta
 
 ---
 

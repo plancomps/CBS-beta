@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Unstable-Computations
+title: Computations
 parent: Unstable-Funcons-beta
-permalink: /docs/Unstable-Funcons-beta/Unstable-Computations
+permalink: /docs/Unstable-Funcons-beta/Computations
 nav_order: "1"
 ---
 
-Unstable-Computations
+Computations
 =====================
 
 New funcons are introduced here. Compared to the funcons in [Funcons-beta],
@@ -35,10 +35,10 @@ connection with languages that include threads.
 These funcons are potentially of general use, but first defined for use in
 connection with languages that include threads.
 
-[Threads]:              /CBS-beta/docs/Unstable-Funcons-beta/Unstable-Computations/Threads
+[Threads]:              /CBS-beta/docs/Unstable-Funcons-beta/Computations/Threads
 
-[Normal computation]:   /CBS-beta/docs/Unstable-Funcons-beta/Unstable-Computations/Normal
+[Normal computation]:   /CBS-beta/docs/Unstable-Funcons-beta/Computations/Normal
 
-[Abnormal computation]: /CBS-beta/docs/Unstable-Funcons-beta/Unstable-Computations/Abnormal
+[Abnormal computation]: /CBS-beta/docs/Unstable-Funcons-beta/Computations/Abnormal
 
 [Unstable-Languages-beta]: /CBS-beta/docs/Unstable-Languages-beta

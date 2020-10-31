@@ -2,6 +2,7 @@
 layout: default
 title: "Strings"
 parent: Composite
+ancestor: Funcons-beta
 
 ---
 

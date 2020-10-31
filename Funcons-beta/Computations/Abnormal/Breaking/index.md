@@ -2,6 +2,7 @@
 layout: default
 title: "Breaking"
 parent: Abnormal
+ancestor: Funcons-beta
 
 ---
 

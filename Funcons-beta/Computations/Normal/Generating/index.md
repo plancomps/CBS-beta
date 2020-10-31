@@ -2,6 +2,7 @@
 layout: default
 title: "Generating"
 parent: Normal
+ancestor: Funcons-beta
 
 ---
 

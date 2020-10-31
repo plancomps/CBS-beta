@@ -2,6 +2,7 @@
 layout: default
 title: "Linking"
 parent: Normal
+ancestor: Funcons-beta
 
 ---
 

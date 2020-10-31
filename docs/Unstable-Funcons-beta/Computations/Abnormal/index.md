@@ -1,8 +1,9 @@
 ---
 layout: default
-title: Unstable-Abnormal
-parent: Unstable-Computations
-permalink: /docs/Unstable-Funcons-beta/Unstable-Computations/Abnormal
+title: Abnormal
+parent: Computations
+ancestor: Unstable-Funcons-beta
+permalink: /docs/Unstable-Funcons-beta/Computations/Abnormal
 nav_order: "2"
 ---
 
@@ -14,6 +15,6 @@ connection with languages that include threads.
 
 - [Postponing]\: adding after-effects to an enclosing term
 
-[Postponing]:     /CBS-beta/Unstable-Funcons-beta/Unstable-Computations/Abnormal/Postponing/
+[Postponing]:     /CBS-beta/Unstable-Funcons-beta/Computations/Abnormal/Postponing/
 
 [Unstable-Languages-beta]: /CBS-beta/docs/Unstable-Languages-beta

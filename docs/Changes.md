@@ -10,6 +10,16 @@ Beta-release changes
 This page lists significant additions and changes to the funcon definitions and
 language specifications included in the CBS beta-release.
 
+2020-10-30: [Funcons-beta](Funcons-beta), [Unstable-Funcons-beta](Unstable-Funcons-beta)
+* Regenerated CBS web page sources, adding `ancestor` fields
+
+2020-10-31: [Unstable-Funcons-beta](Unstable-Funcons-beta)
+* Added symlink to `/Funcons-beta`
+* Updated folder names and web page titles to be consistent with [Funcons-beta](Funcons-beta)
+
+2020-10-31: [Threads](Unstable-Funcons-beta/Computations/Threads)
+* Merged explanations
+
 2020-10-30: [Funcons-beta](Funcons-beta), [Languages-beta](Languages-beta)
 * Regenerated CBS web page sources, eliminating `grand_parent` and `nav_order` fields
 

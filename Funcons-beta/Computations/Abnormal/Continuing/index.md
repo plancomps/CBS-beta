@@ -2,6 +2,7 @@
 layout: default
 title: "Continuing"
 parent: Abnormal
+ancestor: Funcons-beta
 
 ---
 

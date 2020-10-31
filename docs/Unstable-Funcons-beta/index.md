@@ -24,10 +24,10 @@ The list is grouped in the same way as the hierarchy of CBS files in which the
 funcons are defined. The names are hyperlinked to their definitions; familiarity
 with the hierarchy is not required for navigating CBS specifications.
 
-Unstable-Computations
+Computations
 ----------------------
 
-The [Unstable-Computations] page introduces the various kinds of computations defined
+The [Computations] page introduces the various kinds of computations defined
 in the library.
 
 
@@ -35,4 +35,4 @@ in the library.
 
 [Unstable-Languages-beta]: /CBS-beta/docs/Unstable-Languages-beta
 
-[Unstable-Computations]: /CBS-beta/docs/Unstable-Funcons-beta/Unstable-Computations
+[Computations]: /CBS-beta/docs/Unstable-Funcons-beta/Computations

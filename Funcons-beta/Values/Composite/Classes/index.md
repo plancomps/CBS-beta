@@ -2,6 +2,7 @@
 layout: default
 title: "Classes"
 parent: Composite
+ancestor: Funcons-beta
 
 ---
 

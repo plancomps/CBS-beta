@@ -2,6 +2,7 @@
 layout: default
 title: "Bits"
 parent: Composite
+ancestor: Funcons-beta
 
 ---
 

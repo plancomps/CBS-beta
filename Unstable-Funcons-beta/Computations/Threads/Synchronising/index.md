@@ -1,9 +1,9 @@
 ---
 layout: default
 title: "Synchronising"
-parent: Unstable-Threads
-# grand_parent: Unstable-Funcons-beta
-nav_order: "Synchronising"
+parent: Threads
+ancestor: Unstable-Funcons-beta
+
 ---
 
 [Unstable-Funcons-beta] : [Synchronising.cbs]
@@ -59,25 +59,25 @@ also check required feature constraints.)
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Funcon</i>
   <span class="name"><span id="Name_sync-create">sync-create</span></span>(<span id="Variable144_M+"><i class="var">M<sup class="sup">+</sup></i></span>:<span class="name"><a href="#Name_sync-feature-maps">sync-feature-maps</a></span><sup class="sup">+</sup>) : =><span class="name"><a href="#Name_syncs">syncs</a></span>
-   ~> <span class="name"><a href="#Name_sync">sync</a></span> <span class="name"><a href="../../../../../../Funcons-beta/Computations/Abnormal/Failing/index.html#Name_checked">checked</a></span> <span class="name"><a href="../../../../../../Funcons-beta/Values/Composite/Maps/index.html#Name_map-unite">map-unite</a></span> <a href="#Variable144_M+"><i class="var">M<sup class="sup">+</sup></i></a></code></pre></div>
+   ~> <span class="name"><a href="#Name_sync">sync</a></span> <span class="name"><a href="../../../../Funcons-beta/Computations/Abnormal/Failing/index.html#Name_checked">checked</a></span> <span class="name"><a href="../../../../Funcons-beta/Values/Composite/Maps/index.html#Name_map-unite">map-unite</a></span> <a href="#Variable144_M+"><i class="var">M<sup class="sup">+</sup></i></a></code></pre></div>
 
 
 <code><span class="name"><a href="#Name_sync-feature">sync-feature</a></span>(<i class="var">SY</i>, <i class="var">SF</i>)</code> selects the feature <code><i class="var">SF</i></code> from <code><i class="var">SY</i></code>:
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_sync-feature">sync-feature</span></span>(_:<span class="name"><a href="#Name_syncs">syncs</a></span>, _:<span class="name"><a href="#Name_sync-features">sync-features</a></span>) : =><span class="name"><a href="../../../../../../Funcons-beta/Values/Value-Types/index.html#Name_values">values</a></span>
+  <span class="name"><span id="Name_sync-feature">sync-feature</span></span>(_:<span class="name"><a href="#Name_syncs">syncs</a></span>, _:<span class="name"><a href="#Name_sync-features">sync-features</a></span>) : =><span class="name"><a href="../../../../Funcons-beta/Values/Value-Types/index.html#Name_values">values</a></span>
 <i class="keyword">Rule</i>
   <span class="name"><a href="#Name_sync-feature">sync-feature</a></span>(<span class="name"><a href="#Name_sync">sync</a></span>(<span id="Variable268_SFM"><i class="var">SFM</i></span>:<span class="name"><a href="#Name_sync-feature-maps">sync-feature-maps</a></span>), <span id="Variable282_SF"><i class="var">SF</i></span>:<span class="name"><a href="#Name_sync-features">sync-features</a></span>)
-   ~> <span class="name"><a href="../../../../../../Funcons-beta/Computations/Abnormal/Failing/index.html#Name_checked">checked</a></span> <span class="name"><a href="../../../../../../Funcons-beta/Values/Composite/Maps/index.html#Name_map-lookup">map-lookup</a></span>(<a href="#Variable268_SFM"><i class="var">SFM</i></a>, <a href="#Variable282_SF"><i class="var">SF</i></a>)</code></pre></div>
+   ~> <span class="name"><a href="../../../../Funcons-beta/Computations/Abnormal/Failing/index.html#Name_checked">checked</a></span> <span class="name"><a href="../../../../Funcons-beta/Values/Composite/Maps/index.html#Name_map-lookup">map-lookup</a></span>(<a href="#Variable268_SFM"><i class="var">SFM</i></a>, <a href="#Variable282_SF"><i class="var">SF</i></a>)</code></pre></div>
 
 
 <code><span class="name"><a href="#Name_is-sync-feature">is-sync-feature</a></span>(<i class="var">SY</i>, <i class="var">SF</i>)</code> tests whether <code><i class="var">SY</i></code> has the feature <code><i class="var">SF</i></code>:
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_is-sync-feature">is-sync-feature</span></span>(_:<span class="name"><a href="#Name_syncs">syncs</a></span>, _:<span class="name"><a href="#Name_sync-features">sync-features</a></span>) : =><span class="name"><a href="../../../../../../Funcons-beta/Values/Value-Types/index.html#Name_values">values</a></span>
+  <span class="name"><span id="Name_is-sync-feature">is-sync-feature</span></span>(_:<span class="name"><a href="#Name_syncs">syncs</a></span>, _:<span class="name"><a href="#Name_sync-features">sync-features</a></span>) : =><span class="name"><a href="../../../../Funcons-beta/Values/Value-Types/index.html#Name_values">values</a></span>
 <i class="keyword">Rule</i>
   <span class="name"><a href="#Name_is-sync-feature">is-sync-feature</a></span>(<span class="name"><a href="#Name_sync">sync</a></span>(<span id="Variable409_SFM"><i class="var">SFM</i></span>:<span class="name"><a href="#Name_sync-feature-maps">sync-feature-maps</a></span>), <span id="Variable423_SF"><i class="var">SF</i></span>:<span class="name"><a href="#Name_sync-features">sync-features</a></span>)
-   ~> <span class="name"><a href="../../../../../../Funcons-beta/Values/Composite/Sets/index.html#Name_is-in-set">is-in-set</a></span>(<a href="#Variable423_SF"><i class="var">SF</i></a>, <span class="name"><a href="../../../../../../Funcons-beta/Values/Composite/Maps/index.html#Name_dom">dom</a></span> <a href="#Variable409_SFM"><i class="var">SFM</i></a>)</code></pre></div>
+   ~> <span class="name"><a href="../../../../Funcons-beta/Values/Composite/Sets/index.html#Name_is-in-set">is-in-set</a></span>(<a href="#Variable423_SF"><i class="var">SF</i></a>, <span class="name"><a href="../../../../Funcons-beta/Values/Composite/Maps/index.html#Name_dom">dom</a></span> <a href="#Variable409_SFM"><i class="var">SFM</i></a>)</code></pre></div>
 
 
 #### Sync features
@@ -92,7 +92,7 @@ notifications.
     <span id="Name_sync-holder">sync-holder</span> |        // allows mutex ownership
     <span id="Name_sync-count">sync-count</span>           // allows reentrance, sharing, etc.</code></pre></div>
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Auxiliary</i> <i class="keyword">Type</i>
-  <span class="name"><span id="Name_sync-feature-maps">sync-feature-maps</span></span> ~> <span class="name"><a href="../../../../../../Funcons-beta/Values/Composite/Maps/index.html#Name_maps">maps</a></span>(<span class="name"><a href="#Name_sync-features">sync-features</a></span>, <span class="name"><a href="../../../../../../Funcons-beta/Values/Value-Types/index.html#Name_values">values</a></span>)</code></pre></div>
+  <span class="name"><span id="Name_sync-feature-maps">sync-feature-maps</span></span> ~> <span class="name"><a href="../../../../Funcons-beta/Values/Composite/Maps/index.html#Name_maps">maps</a></span>(<span class="name"><a href="#Name_sync-features">sync-features</a></span>, <span class="name"><a href="../../../../Funcons-beta/Values/Value-Types/index.html#Name_values">values</a></span>)</code></pre></div>
 
 
 A field for each feature is created independently:
@@ -106,7 +106,7 @@ with the requesting thread-ids:
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Rule</i>
   <span class="name"><a href="#Name_sync-feature-create">sync-feature-create</a></span> <span class="name"><a href="#Name_sync-waiting-list">sync-waiting-list</a></span> ~>
     { <span class="name"><a href="#Name_sync-waiting-list">sync-waiting-list</a></span> |-> 
-       <span class="name"><a href="../../../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_allocate-initialised-variable">allocate-initialised-variable</a></span>(<span class="name"><a href="../../../../../../Funcons-beta/Values/Composite/Lists/index.html#Name_lists">lists</a></span>(<span class="name"><a href="../../../../../../Funcons-beta/Values/Value-Types/index.html#Name_values">values</a></span>), [ ]) }</code></pre></div>
+       <span class="name"><a href="../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_allocate-initialised-variable">allocate-initialised-variable</a></span>(<span class="name"><a href="../../../../Funcons-beta/Values/Composite/Lists/index.html#Name_lists">lists</a></span>(<span class="name"><a href="../../../../Funcons-beta/Values/Value-Types/index.html#Name_values">values</a></span>), [ ]) }</code></pre></div>
 
 
 <code><span class="name"><a href="#Name_sync-held">sync-held</a></span></code> stores whether a lock is currently held:
@@ -114,7 +114,7 @@ with the requesting thread-ids:
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Rule</i>
   <span class="name"><a href="#Name_sync-feature-create">sync-feature-create</a></span> <span class="name"><a href="#Name_sync-held">sync-held</a></span> ~>
     { <span class="name"><a href="#Name_sync-held">sync-held</a></span> |-> 
-       <span class="name"><a href="../../../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_allocate-initialised-variable">allocate-initialised-variable</a></span>(<span class="name"><a href="../../../../../../Funcons-beta/Values/Primitive/Booleans/index.html#Name_booleans">booleans</a></span>, <span class="name"><a href="../../../../../../Funcons-beta/Values/Primitive/Booleans/index.html#Name_false">false</a></span>) }</code></pre></div>
+       <span class="name"><a href="../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_allocate-initialised-variable">allocate-initialised-variable</a></span>(<span class="name"><a href="../../../../Funcons-beta/Values/Primitive/Booleans/index.html#Name_booleans">booleans</a></span>, <span class="name"><a href="../../../../Funcons-beta/Values/Primitive/Booleans/index.html#Name_false">false</a></span>) }</code></pre></div>
 
 
 <code><span class="name"><a href="#Name_sync-holder">sync-holder</a></span></code> stores the current holder of a lock, if any:
@@ -122,7 +122,7 @@ with the requesting thread-ids:
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Rule</i>
   <span class="name"><a href="#Name_sync-feature-create">sync-feature-create</a></span> <span class="name"><a href="#Name_sync-holder">sync-holder</a></span> ~>
     { <span class="name"><a href="#Name_sync-holder">sync-holder</a></span> |->
-       <span class="name"><a href="../../../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_allocate-variable">allocate-variable</a></span>(<span class="name"><a href="../Multithreading/index.html#Name_thread-ids">thread-ids</a></span>) }</code></pre></div>
+       <span class="name"><a href="../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_allocate-variable">allocate-variable</a></span>(<span class="name"><a href="../Multithreading/index.html#Name_thread-ids">thread-ids</a></span>) }</code></pre></div>
 
 
 <code><span class="name"><a href="#Name_sync-count">sync-count</a></span></code> stores a counter. Different kinds of locks and notifications use
@@ -132,29 +132,29 @@ threads currently holding the lock:
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Rule</i>
   <span class="name"><a href="#Name_sync-feature-create">sync-feature-create</a></span> <span class="name"><a href="#Name_sync-count">sync-count</a></span> ~>
     { <span class="name"><a href="#Name_sync-count">sync-count</a></span> |->
-       <span class="name"><a href="../../../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_allocate-initialised-variable">allocate-initialised-variable</a></span>(<span class="name"><a href="../../../../../../Funcons-beta/Values/Primitive/Integers/index.html#Name_nats">nats</a></span>, 0) }</code></pre></div>
+       <span class="name"><a href="../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_allocate-initialised-variable">allocate-initialised-variable</a></span>(<span class="name"><a href="../../../../Funcons-beta/Values/Primitive/Integers/index.html#Name_nats">nats</a></span>, 0) }</code></pre></div>
 
 
 
 <code><span class="name"><a href="#Name_sync-waiting-list-add">sync-waiting-list-add</a></span>(<i class="var">SY</i>, <i class="var">V</i>)</code> adds <code><i class="var">V</i></code> to the waiting-list of <code><i class="var">SY</i></code>:
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Auxiliary</i> <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_sync-waiting-list-add">sync-waiting-list-add</span></span>(<span id="Variable789_SY"><i class="var">SY</i></span>:<span class="name"><a href="#Name_syncs">syncs</a></span>, <span id="Variable798_V"><i class="var">V</i></span>:<span class="name"><a href="../../../../../../Funcons-beta/Values/Value-Types/index.html#Name_values">values</a></span>) : =><span class="name"><a href="../../../../../../Funcons-beta/Values/Primitive/Null/index.html#Name_null-type">null-type</a></span>
-   ~> <span class="name"><a href="../../../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_assign">assign</a></span>(<span class="name"><a href="#Name_sync-feature">sync-feature</a></span>(<a href="#Variable789_SY"><i class="var">SY</i></a>, <span class="name"><a href="#Name_sync-waiting-list">sync-waiting-list</a></span>), 
-        <span class="name"><a href="../../../../../../Funcons-beta/Values/Composite/Lists/index.html#Name_list-append">list-append</a></span>(<span class="name"><a href="../../../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_assigned">assigned</a></span> <span class="name"><a href="#Name_sync-feature">sync-feature</a></span>(<a href="#Variable789_SY"><i class="var">SY</i></a>, <span class="name"><a href="#Name_sync-waiting-list">sync-waiting-list</a></span>), [<a href="#Variable798_V"><i class="var">V</i></a>]))</code></pre></div>
+  <span class="name"><span id="Name_sync-waiting-list-add">sync-waiting-list-add</span></span>(<span id="Variable789_SY"><i class="var">SY</i></span>:<span class="name"><a href="#Name_syncs">syncs</a></span>, <span id="Variable798_V"><i class="var">V</i></span>:<span class="name"><a href="../../../../Funcons-beta/Values/Value-Types/index.html#Name_values">values</a></span>) : =><span class="name"><a href="../../../../Funcons-beta/Values/Primitive/Null/index.html#Name_null-type">null-type</a></span>
+   ~> <span class="name"><a href="../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_assign">assign</a></span>(<span class="name"><a href="#Name_sync-feature">sync-feature</a></span>(<a href="#Variable789_SY"><i class="var">SY</i></a>, <span class="name"><a href="#Name_sync-waiting-list">sync-waiting-list</a></span>), 
+        <span class="name"><a href="../../../../Funcons-beta/Values/Composite/Lists/index.html#Name_list-append">list-append</a></span>(<span class="name"><a href="../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_assigned">assigned</a></span> <span class="name"><a href="#Name_sync-feature">sync-feature</a></span>(<a href="#Variable789_SY"><i class="var">SY</i></a>, <span class="name"><a href="#Name_sync-waiting-list">sync-waiting-list</a></span>), [<a href="#Variable798_V"><i class="var">V</i></a>]))</code></pre></div>
 
 
 <code><span class="name"><a href="#Name_sync-waiting-list-head-remove">sync-waiting-list-head-remove</a></span>(<i class="var">SY</i>)</code> removes the first value from the 
 waiting-list of <code><i class="var">SY</i></code>:
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Auxiliary</i> <i class="keyword">Funcon</i>
-  <span class="name"><span id="Name_sync-waiting-list-head-remove">sync-waiting-list-head-remove</span></span>(<span id="Variable919_SY"><i class="var">SY</i></span>:<span class="name"><a href="#Name_syncs">syncs</a></span>) : =><span class="name"><a href="../../../../../../Funcons-beta/Values/Value-Types/index.html#Name_values">values</a></span>
-   ~> <span class="name"><a href="../../../../../../Funcons-beta/Computations/Normal/Giving/index.html#Name_give">give</a></span>(
-        <span class="name"><a href="../../../../../../Funcons-beta/Computations/Abnormal/Failing/index.html#Name_checked">checked</a></span> <span class="name"><a href="../../../../../../Funcons-beta/Values/Composite/Lists/index.html#Name_list-head">list-head</a></span> <span class="name"><a href="../../../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_assigned">assigned</a></span> <span class="name"><a href="#Name_sync-feature">sync-feature</a></span>(<a href="#Variable919_SY"><i class="var">SY</i></a>, <span class="name"><a href="#Name_sync-waiting-list">sync-waiting-list</a></span>),
-        <span class="name"><a href="../../../../../../Funcons-beta/Computations/Normal/Flowing/index.html#Name_sequential">sequential</a></span>(
-          <span class="name"><a href="../../../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_assign">assign</a></span>(<span class="name"><a href="#Name_sync-feature">sync-feature</a></span>(<a href="#Variable919_SY"><i class="var">SY</i></a>, <span class="name"><a href="#Name_sync-waiting-list">sync-waiting-list</a></span>),
-            <span class="name"><a href="../../../../../../Funcons-beta/Computations/Abnormal/Failing/index.html#Name_checked">checked</a></span> <span class="name"><a href="../../../../../../Funcons-beta/Values/Composite/Lists/index.html#Name_list-tail">list-tail</a></span> <span class="name"><a href="../../../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_assigned">assigned</a></span> <span class="name"><a href="#Name_sync-feature">sync-feature</a></span>(<a href="#Variable919_SY"><i class="var">SY</i></a>, <span class="name"><a href="#Name_sync-waiting-list">sync-waiting-list</a></span>)),
-          <span class="name"><a href="../../../../../../Funcons-beta/Computations/Normal/Giving/index.html#Name_given">given</a></span>))</code></pre></div>
+  <span class="name"><span id="Name_sync-waiting-list-head-remove">sync-waiting-list-head-remove</span></span>(<span id="Variable919_SY"><i class="var">SY</i></span>:<span class="name"><a href="#Name_syncs">syncs</a></span>) : =><span class="name"><a href="../../../../Funcons-beta/Values/Value-Types/index.html#Name_values">values</a></span>
+   ~> <span class="name"><a href="../../../../Funcons-beta/Computations/Normal/Giving/index.html#Name_give">give</a></span>(
+        <span class="name"><a href="../../../../Funcons-beta/Computations/Abnormal/Failing/index.html#Name_checked">checked</a></span> <span class="name"><a href="../../../../Funcons-beta/Values/Composite/Lists/index.html#Name_list-head">list-head</a></span> <span class="name"><a href="../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_assigned">assigned</a></span> <span class="name"><a href="#Name_sync-feature">sync-feature</a></span>(<a href="#Variable919_SY"><i class="var">SY</i></a>, <span class="name"><a href="#Name_sync-waiting-list">sync-waiting-list</a></span>),
+        <span class="name"><a href="../../../../Funcons-beta/Computations/Normal/Flowing/index.html#Name_sequential">sequential</a></span>(
+          <span class="name"><a href="../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_assign">assign</a></span>(<span class="name"><a href="#Name_sync-feature">sync-feature</a></span>(<a href="#Variable919_SY"><i class="var">SY</i></a>, <span class="name"><a href="#Name_sync-waiting-list">sync-waiting-list</a></span>),
+            <span class="name"><a href="../../../../Funcons-beta/Computations/Abnormal/Failing/index.html#Name_checked">checked</a></span> <span class="name"><a href="../../../../Funcons-beta/Values/Composite/Lists/index.html#Name_list-tail">list-tail</a></span> <span class="name"><a href="../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_assigned">assigned</a></span> <span class="name"><a href="#Name_sync-feature">sync-feature</a></span>(<a href="#Variable919_SY"><i class="var">SY</i></a>, <span class="name"><a href="#Name_sync-waiting-list">sync-waiting-list</a></span>)),
+          <span class="name"><a href="../../../../Funcons-beta/Computations/Normal/Giving/index.html#Name_given">given</a></span>))</code></pre></div>
 
 
 Various kinds of locks and notifications are represented by sync feature maps,
@@ -168,22 +168,22 @@ together with funcons that (atomically) inspect and update them accordngly.
 
 ____
 
-From the [PLanCompS Project], 2019 | [CBS-beta issues...] | [Suggest an improvement...]
+From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [Synchronising.cbs]: Synchronising.cbs 
   "CBS SOURCE FILE"
 [Funcons-beta]: /CBS-beta/docs/Funcons-beta
- "FUNCONS-BETA"
+  "FUNCONS-BETA"
 [Unstable-Funcons-beta]: /CBS-beta/docs/Unstable-Funcons-beta
   "UNSTABLE-FUNCONS-BETA"
 [Languages-beta]: /CBS-beta/docs/Languages-beta
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/docs/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]:  "CBS-BETA"
-[PLanCompS Project]: http://plancomps.org
+[CBS-beta]: /CBS-beta "CBS-BETA"
+[PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
-[CBS-beta issues...]: https://github.com/plancomps/plancomps.github.io/issues
+[CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues
   "CBS-BETA ISSUE REPORTS ON GITHUB"
-[Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20Unstable-Computations/Threads/Synchronising/Synchronising.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A 
+[Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20Computations/Threads/Synchronising/Synchronising.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A 
   "GENERATE AN EMAIL TEMPLATE"

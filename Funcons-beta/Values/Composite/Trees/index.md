@@ -2,6 +2,7 @@
 layout: default
 title: "Trees"
 parent: Composite
+ancestor: Funcons-beta
 
 ---
 

@@ -2,6 +2,7 @@
 layout: default
 title: "Value-Types"
 parent: Values
+ancestor: Funcons-beta
 
 ---
 

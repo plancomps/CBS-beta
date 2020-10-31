@@ -2,6 +2,7 @@
 layout: default
 title: "Giving"
 parent: Normal
+ancestor: Funcons-beta
 
 ---
 

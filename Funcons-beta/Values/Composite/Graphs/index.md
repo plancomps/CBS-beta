@@ -2,6 +2,7 @@
 layout: default
 title: "Graphs"
 parent: Composite
+ancestor: Funcons-beta
 
 ---
 

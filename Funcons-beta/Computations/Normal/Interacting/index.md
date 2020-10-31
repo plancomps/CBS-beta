@@ -2,6 +2,7 @@
 layout: default
 title: "Interacting"
 parent: Normal
+ancestor: Funcons-beta
 
 ---
 

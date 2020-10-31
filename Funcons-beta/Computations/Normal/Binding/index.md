@@ -2,6 +2,7 @@
 layout: default
 title: "Binding"
 parent: Normal
+ancestor: Funcons-beta
 
 ---
 

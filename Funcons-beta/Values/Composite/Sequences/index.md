@@ -2,6 +2,7 @@
 layout: default
 title: "Sequences"
 parent: Composite
+ancestor: Funcons-beta
 
 ---
 

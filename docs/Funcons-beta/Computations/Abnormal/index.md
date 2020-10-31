@@ -2,6 +2,7 @@
 layout: default
 title: Abnormal
 parent: Computations
+ancestor: Funcons-beta
 permalink: /docs/Funcons-beta/Computations/Abnormal
 nav_order: "3"
 has_toc: false

@@ -2,6 +2,7 @@
 layout: default
 title: "Variants"
 parent: Composite
+ancestor: Funcons-beta
 
 ---
 

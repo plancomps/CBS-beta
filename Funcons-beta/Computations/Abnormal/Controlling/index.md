@@ -2,6 +2,7 @@
 layout: default
 title: "Controlling"
 parent: Abnormal
+ancestor: Funcons-beta
 
 ---
 

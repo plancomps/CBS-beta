@@ -2,6 +2,7 @@
 layout: default
 title: Abstraction
 parent: Values
+ancestor: Funcons-beta
 permalink: /docs/Funcons-beta/Values/Abstraction
 nav_order: "7"
 ---

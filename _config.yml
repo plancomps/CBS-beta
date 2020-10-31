@@ -20,6 +20,7 @@ exclude:
   - "Languages-beta/SIMPLE/SIMPLE-cbs/Funcons-beta/"
   - "Languages-beta/SL/SL-cbs/Funcons-beta/"
   - "Languages-beta/OCaml-Light/OC-L-cbs/Funcons-beta/"
+  - "Unstable-Funcons-beta/Funcons-beta/"
 
 # Set the search token separator
 # search_tokenizer_separator: /[\s/]+/

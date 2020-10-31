@@ -2,6 +2,7 @@
 layout: default
 title: "Sets"
 parent: Composite
+ancestor: Funcons-beta
 
 ---
 

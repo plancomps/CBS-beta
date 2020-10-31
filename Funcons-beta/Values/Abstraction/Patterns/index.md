@@ -2,6 +2,7 @@
 layout: default
 title: "Patterns"
 parent: Abstraction
+ancestor: Funcons-beta
 
 ---
 

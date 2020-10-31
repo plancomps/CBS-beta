@@ -2,6 +2,7 @@
 layout: default
 title: "Functions"
 parent: Abstraction
+ancestor: Funcons-beta
 
 ---
 
