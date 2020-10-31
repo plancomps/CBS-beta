@@ -2,8 +2,8 @@
 layout: default
 title: "IMPPP-4"
 parent: IMPPP
-# grand_parent: Unstable-Languages-beta
-nav_order: IMPPP-4
+ancestor: Unstable-Languages-beta
+
 ---
 
 [Unstable-Languages-beta] : [IMPPP-4.cbs]
@@ -53,10 +53,10 @@ nav_order: IMPPP-4
   [[ <b class="atom">'print'</b> <b class="atom">'('</b> <span id="Variable525_AExp"><i class="var"><a href="../IMPPP-2/index.html#VariableStem_AExp">AExp</a></i></span> <b class="atom">','</b> <span id="Variable532_AExps"><i class="var"><a href="../IMPPP-2/index.html#VariableStem_AExps">AExps</a></i></span> <b class="atom">')'</b> <b class="atom">';'</b> ]] : <span class="syn-name"><a href="#SyntaxName_stmt">stmt</a></span><sup class="sup">+</sup> =
   [[ <b class="atom">'print'</b> <b class="atom">'('</b> <a href="#Variable525_AExp"><i class="var">AExp</i></a> <b class="atom">')'</b> <b class="atom">';'</b> <b class="atom">'print'</b> <b class="atom">'('</b> <a href="#Variable532_AExps"><i class="var">AExps</i></a> <b class="atom">')'</b> <b class="atom">';'</b> ]]
 <i class="keyword">Rule</i>
-  <i class="sem-name"><a href="#SemanticsName_execute">execute</a></i>[[ <b class="atom">'halt'</b> <b class="atom">';'</b> ]] = <span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Threads/Multithreading/index.html#Name_thread-terminate">thread-terminate</a></span>(<span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Threads/Multithreading/index.html#Name_current-thread">current-thread</a></span>)
+  <i class="sem-name"><a href="#SemanticsName_execute">execute</a></i>[[ <b class="atom">'halt'</b> <b class="atom">';'</b> ]] = <span class="name"><a href="../../../../../Unstable-Funcons-beta/Computations/Threads/Multithreading/index.html#Name_thread-terminate">thread-terminate</a></span>(<span class="name"><a href="../../../../../Unstable-Funcons-beta/Computations/Threads/Multithreading/index.html#Name_current-thread">current-thread</a></span>)
 <i class="keyword">Rule</i>
   <i class="sem-name"><a href="#SemanticsName_execute">execute</a></i>[[ <b class="atom">'join'</b> <span id="Variable625_AExp"><i class="var"><a href="../IMPPP-2/index.html#VariableStem_AExp">AExp</a></i></span> <b class="atom">';'</b> ]] =
-    <span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Threads/Multithreading/index.html#Name_thread-join">thread-join</a></span>(<span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Normal/Indexing/index.html#Name_lookup-index">lookup-index</a></span>(<i class="sem-name"><a href="../IMPPP-2/index.html#SemanticsName_eval-arith">eval-arith</a></i>[[ <a href="#Variable625_AExp"><i class="var">AExp</i></a> ]]))
+    <span class="name"><a href="../../../../../Unstable-Funcons-beta/Computations/Threads/Multithreading/index.html#Name_thread-join">thread-join</a></span>(<span class="name"><a href="../../../../../Unstable-Funcons-beta/Computations/Normal/Indexing/index.html#Name_lookup-index">lookup-index</a></span>(<i class="sem-name"><a href="../IMPPP-2/index.html#SemanticsName_eval-arith">eval-arith</a></i>[[ <a href="#Variable625_AExp"><i class="var">AExp</i></a> ]]))
 <i class="keyword">Rule</i>
   <i class="sem-name"><a href="#SemanticsName_execute">execute</a></i>[[ <b class="atom">'{'</b> <span id="Variable675_Stmt*"><i class="var"><a href="#VariableStem_Stmt">Stmt</a><sup class="sup">*</sup></i></span> <b class="atom">'}'</b> ]] = <i class="sem-name"><a href="#SemanticsName_execute">execute</a></i>[[ <a href="#Variable675_Stmt*"><i class="var">Stmt<sup class="sup">*</sup></i></a> ]]</code></pre></div>
 ## Variable declarations
@@ -76,22 +76,22 @@ nav_order: IMPPP-4
 
 ____
 
-From the [PLanCompS Project], 2019 | [CBS-beta issues...] | [Suggest an improvement...]
+From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [IMPPP-4.cbs]: IMPPP-4.cbs 
   "CBS SOURCE FILE"
 [Funcons-beta]: /CBS-beta/docs/Funcons-beta
- "FUNCONS-BETA"
+  "FUNCONS-BETA"
 [Unstable-Funcons-beta]: /CBS-beta/docs/Unstable-Funcons-beta
   "UNSTABLE-FUNCONS-BETA"
 [Languages-beta]: /CBS-beta/docs/Languages-beta
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/docs/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]:  "CBS-BETA"
-[PLanCompS Project]: http://plancomps.org
+[CBS-beta]: /CBS-beta "CBS-BETA"
+[PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
-[CBS-beta issues...]: https://github.com/plancomps/plancomps.github.io/issues
+[CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues
   "CBS-BETA ISSUE REPORTS ON GITHUB"
 [Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20IMPPP/IMPPP-4/IMPPP-4.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A 
   "GENERATE AN EMAIL TEMPLATE"

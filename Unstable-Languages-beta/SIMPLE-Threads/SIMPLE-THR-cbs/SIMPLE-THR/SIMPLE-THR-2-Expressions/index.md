@@ -2,8 +2,8 @@
 layout: default
 title: "SIMPLE-THR-2-Expressions"
 parent: SIMPLE-THR
-# grand_parent: Unstable-Languages-beta
-nav_order: SIMPLE-THR-2-Expressions
+ancestor: Unstable-Languages-beta
+
 ---
 
 [Unstable-Languages-beta] : [SIMPLE-THR-2-Expressions.cbs]
@@ -97,17 +97,17 @@ nav_order: SIMPLE-THR-2-Expressions
   <i class="sem-name"><a href="#SemanticsName_rval">rval</a></i>[[ <span id="Variable1473_Exp1"><i class="var"><a href="#VariableStem_Exp">Exp</a><sub class="sub">1</sub></i></span> <b class="atom">'||'</b> <span id="Variable1481_Exp2"><i class="var"><a href="#VariableStem_Exp">Exp</a><sub class="sub">2</sub></i></span> ]] = <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Flowing/index.html#Name_if-else">if-else</a></span>(<i class="sem-name"><a href="#SemanticsName_rval">rval</a></i>[[ <a href="#Variable1473_Exp1"><i class="var">Exp<sub class="sub">1</sub></i></a> ]],<span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Booleans/index.html#Name_true">true</a></span>,<i class="sem-name"><a href="#SemanticsName_rval">rval</a></i>[[ <a href="#Variable1481_Exp2"><i class="var">Exp<sub class="sub">2</sub></i></a> ]])</code></pre></div>
 
 
-SIMPLE uses natural numbers to identify threads; the use of <code><span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Normal/Indexing/index.html#Name_allocate-index">allocate-index</a></span>(_)</code>
+SIMPLE uses natural numbers to identify threads; the use of <code><span class="name"><a href="../../../../../Unstable-Funcons-beta/Computations/Normal/Indexing/index.html#Name_allocate-index">allocate-index</a></span>(_)</code>
 below associates a natural number with the thread-id given by thread-activate. 
-The use of <code><span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Abnormal/Postponing/index.html#Name_postpone-after-effect">postpone-after-effect</a></span>(_)</code> supports automatic release of locks
+The use of <code><span class="name"><a href="../../../../../Unstable-Funcons-beta/Computations/Abnormal/Postponing/index.html#Name_postpone-after-effect">postpone-after-effect</a></span>(_)</code> supports automatic release of locks
 when threads terminate.
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Rule</i>
   <i class="sem-name"><a href="#SemanticsName_rval">rval</a></i>[[ <b class="atom">'spawn'</b> <span id="Variable1583_Block"><i class="var"><a href="../SIMPLE-THR-3-Statements/index.html#VariableStem_Block">Block</a></i></span> ]] =
-    <span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Normal/Indexing/index.html#Name_allocate-index">allocate-index</a></span>
-      <span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Threads/Multithreading/index.html#Name_thread-activate">thread-activate</a></span> <span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Threads/Multithreading/index.html#Name_thread-joinable">thread-joinable</a></span>
+    <span class="name"><a href="../../../../../Unstable-Funcons-beta/Computations/Normal/Indexing/index.html#Name_allocate-index">allocate-index</a></span>
+      <span class="name"><a href="../../../../../Unstable-Funcons-beta/Computations/Threads/Multithreading/index.html#Name_thread-activate">thread-activate</a></span> <span class="name"><a href="../../../../../Unstable-Funcons-beta/Computations/Threads/Multithreading/index.html#Name_thread-joinable">thread-joinable</a></span>
         <span class="name"><a href="../../../../../Funcons-beta/Values/Abstraction/Thunks/index.html#Name_thunk">thunk</a></span> <span class="name"><a href="../../../../../Funcons-beta/Values/Abstraction/Generic/index.html#Name_closure">closure</a></span>
-          <span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Abnormal/Postponing/index.html#Name_postpone-after-effect">postpone-after-effect</a></span>
+          <span class="name"><a href="../../../../../Unstable-Funcons-beta/Computations/Abnormal/Postponing/index.html#Name_postpone-after-effect">postpone-after-effect</a></span>
             <i class="sem-name"><a href="../SIMPLE-THR-3-Statements/index.html#SemanticsName_exec">exec</a></i>[[ <a href="#Variable1583_Block"><i class="var">Block</i></a> ]]</code></pre></div>
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Syntax</i>
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_Exps">Exps</span></i> :</i> <span class="syn-name"><span id="SyntaxName_exps">exps</span></span> ::= <span class="syn-name"><a href="#SyntaxName_exp">exp</a></span> (<b class="atom">','</b> <span class="syn-name"><a href="#SyntaxName_exps">exps</a></span>)<sup class="sup">?</sup></code></pre></div>
@@ -139,22 +139,22 @@ when threads terminate.
 
 ____
 
-From the [PLanCompS Project], 2019 | [CBS-beta issues...] | [Suggest an improvement...]
+From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [SIMPLE-THR-2-Expressions.cbs]: SIMPLE-THR-2-Expressions.cbs 
   "CBS SOURCE FILE"
 [Funcons-beta]: /CBS-beta/docs/Funcons-beta
- "FUNCONS-BETA"
+  "FUNCONS-BETA"
 [Unstable-Funcons-beta]: /CBS-beta/docs/Unstable-Funcons-beta
   "UNSTABLE-FUNCONS-BETA"
 [Languages-beta]: /CBS-beta/docs/Languages-beta
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/docs/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]:  "CBS-BETA"
-[PLanCompS Project]: http://plancomps.org
+[CBS-beta]: /CBS-beta "CBS-BETA"
+[PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
-[CBS-beta issues...]: https://github.com/plancomps/plancomps.github.io/issues
+[CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues
   "CBS-BETA ISSUE REPORTS ON GITHUB"
 [Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20SIMPLE-THR/SIMPLE-THR-2-Expressions/SIMPLE-THR-2-Expressions.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A 
   "GENERATE AN EMAIL TEMPLATE"

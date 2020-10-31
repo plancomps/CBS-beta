@@ -2,8 +2,8 @@
 layout: default
 title: "SIMPLE-THR-3-Statements"
 parent: SIMPLE-THR
-# grand_parent: Unstable-Languages-beta
-nav_order: SIMPLE-THR-3-Statements
+ancestor: Unstable-Languages-beta
+
 ---
 
 [Unstable-Languages-beta] : [SIMPLE-THR-3-Statements.cbs]
@@ -82,47 +82,47 @@ nav_order: SIMPLE-THR-3-Statements
   <i class="sem-name"><a href="#SemanticsName_exec">exec</a></i>[[ <b class="atom">'throw'</b> <span id="Variable1051_Exp"><i class="var"><a href="../SIMPLE-THR-2-Expressions/index.html#VariableStem_Exp">Exp</a></i></span> <b class="atom">';'</b> ]] = <span class="name"><a href="../../../../../Funcons-beta/Computations/Abnormal/Throwing/index.html#Name_throw">throw</a></span>(<i class="sem-name"><a href="../SIMPLE-THR-2-Expressions/index.html#SemanticsName_rval">rval</a></i>[[ <a href="#Variable1051_Exp"><i class="var">Exp</i></a> ]])</code></pre></div>
 
 
-SIMPLE uses natural numbers to identify threads; the use of <code><span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Normal/Indexing/index.html#Name_lookup-index">lookup-index</a></span>(_)</code>
+SIMPLE uses natural numbers to identify threads; the use of <code><span class="name"><a href="../../../../../Unstable-Funcons-beta/Computations/Normal/Indexing/index.html#Name_lookup-index">lookup-index</a></span>(_)</code>
 below converts a natural number to the associated thread-id. 
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Rule</i>
   <i class="sem-name"><a href="#SemanticsName_exec">exec</a></i>[[ <b class="atom">'join'</b> <span id="Variable1118_Exp"><i class="var"><a href="../SIMPLE-THR-2-Expressions/index.html#VariableStem_Exp">Exp</a></i></span> <b class="atom">';'</b> ]] =
-    <span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Threads/Multithreading/index.html#Name_thread-join">thread-join</a></span> <span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Normal/Indexing/index.html#Name_lookup-index">lookup-index</a></span>(<i class="sem-name"><a href="../SIMPLE-THR-2-Expressions/index.html#SemanticsName_rval">rval</a></i>[[ <a href="#Variable1118_Exp"><i class="var">Exp</i></a> ]])</code></pre></div>
+    <span class="name"><a href="../../../../../Unstable-Funcons-beta/Computations/Threads/Multithreading/index.html#Name_thread-join">thread-join</a></span> <span class="name"><a href="../../../../../Unstable-Funcons-beta/Computations/Normal/Indexing/index.html#Name_lookup-index">lookup-index</a></span>(<i class="sem-name"><a href="../SIMPLE-THR-2-Expressions/index.html#SemanticsName_rval">rval</a></i>[[ <a href="#Variable1118_Exp"><i class="var">Exp</i></a> ]])</code></pre></div>
 
 
-The use of <code><span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Normal/Memos/index.html#Name_memo-value">memo-value</a></span>(<i class="var">V</i>, <i class="var">SY</i>)</code> below associates <code><i class="var">V</i></code> with a lock.
+The use of <code><span class="name"><a href="../../../../../Unstable-Funcons-beta/Computations/Normal/Memos/index.html#Name_memo-value">memo-value</a></span>(<i class="var">V</i>, <i class="var">SY</i>)</code> below associates <code><i class="var">V</i></code> with a lock.
 When a thread requests a lock already held by another thread,
 the requesting thread is suspended until the request is granted.
-The use of <code><span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Abnormal/Postponing/index.html#Name_postpone">postpone</a></span>(_)</code> below automatically releases held locks
+The use of <code><span class="name"><a href="../../../../../Unstable-Funcons-beta/Computations/Abnormal/Postponing/index.html#Name_postpone">postpone</a></span>(_)</code> below automatically releases held locks
 when the current thread terminates.
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Rule</i>
   <i class="sem-name"><a href="#SemanticsName_exec">exec</a></i>[[ <b class="atom">'acquire'</b> <span id="Variable1226_Exp"><i class="var"><a href="../SIMPLE-THR-2-Expressions/index.html#VariableStem_Exp">Exp</a></i></span> <b class="atom">';'</b> ]] =
     <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Giving/index.html#Name_give">give</a></span>(
-      <span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Normal/Memos/index.html#Name_memo-value">memo-value</a></span>(<i class="sem-name"><a href="../SIMPLE-THR-2-Expressions/index.html#SemanticsName_rval">rval</a></i>[[ <a href="#Variable1226_Exp"><i class="var">Exp</i></a> ]], <span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Threads/Synchronising/Locks/index.html#Name_reentrant-lock-create">reentrant-lock-create</a></span>),
+      <span class="name"><a href="../../../../../Unstable-Funcons-beta/Computations/Normal/Memos/index.html#Name_memo-value">memo-value</a></span>(<i class="sem-name"><a href="../SIMPLE-THR-2-Expressions/index.html#SemanticsName_rval">rval</a></i>[[ <a href="#Variable1226_Exp"><i class="var">Exp</i></a> ]], <span class="name"><a href="../../../../../Unstable-Funcons-beta/Computations/Threads/Synchronising/Locks/index.html#Name_reentrant-lock-create">reentrant-lock-create</a></span>),
       <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Flowing/index.html#Name_sequential">sequential</a></span>(
-        <span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Abnormal/Postponing/index.html#Name_postpone">postpone</a></span> 
-          <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Flowing/index.html#Name_if-true-else">if-true-else</a></span>(<span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Threads/Synchronising/Locks/index.html#Name_is-exclusive-lock-holder">is-exclusive-lock-holder</a></span> <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Giving/index.html#Name_given">given</a></span>,
-            <span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Threads/Synchronising/Locks/index.html#Name_reentrant-lock-release">reentrant-lock-release</a></span> <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Giving/index.html#Name_given">given</a></span>,
+        <span class="name"><a href="../../../../../Unstable-Funcons-beta/Computations/Abnormal/Postponing/index.html#Name_postpone">postpone</a></span> 
+          <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Flowing/index.html#Name_if-true-else">if-true-else</a></span>(<span class="name"><a href="../../../../../Unstable-Funcons-beta/Computations/Threads/Synchronising/Locks/index.html#Name_is-exclusive-lock-holder">is-exclusive-lock-holder</a></span> <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Giving/index.html#Name_given">given</a></span>,
+            <span class="name"><a href="../../../../../Unstable-Funcons-beta/Computations/Threads/Synchronising/Locks/index.html#Name_reentrant-lock-release">reentrant-lock-release</a></span> <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Giving/index.html#Name_given">given</a></span>,
             <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Null/index.html#Name_null-value">null-value</a></span>),
-        <span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Threads/Synchronising/Locks/index.html#Name_reentrant-lock-sync-else-wait">reentrant-lock-sync-else-wait</a></span> <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Giving/index.html#Name_given">given</a></span>))</code></pre></div>
+        <span class="name"><a href="../../../../../Unstable-Funcons-beta/Computations/Threads/Synchronising/Locks/index.html#Name_reentrant-lock-sync-else-wait">reentrant-lock-sync-else-wait</a></span> <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Giving/index.html#Name_given">given</a></span>))</code></pre></div>
 
 
-The use of <code><span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Normal/Memos/index.html#Name_memo-value-recall">memo-value-recall</a></span>(<i class="var">V</i>)</code> below gives the lock associated with <code><i class="var">V</i></code>.
+The use of <code><span class="name"><a href="../../../../../Unstable-Funcons-beta/Computations/Normal/Memos/index.html#Name_memo-value-recall">memo-value-recall</a></span>(<i class="var">V</i>)</code> below gives the lock associated with <code><i class="var">V</i></code>.
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Rule</i>
   <i class="sem-name"><a href="#SemanticsName_exec">exec</a></i>[[ <b class="atom">'release'</b> <span id="Variable1351_Exp"><i class="var"><a href="../SIMPLE-THR-2-Expressions/index.html#VariableStem_Exp">Exp</a></i></span> <b class="atom">';'</b> ]] =
-    <span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Threads/Synchronising/Locks/index.html#Name_reentrant-lock-exit">reentrant-lock-exit</a></span> <span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Normal/Memos/index.html#Name_memo-value-recall">memo-value-recall</a></span> <i class="sem-name"><a href="../SIMPLE-THR-2-Expressions/index.html#SemanticsName_rval">rval</a></i>[[ <a href="#Variable1351_Exp"><i class="var">Exp</i></a> ]]</code></pre></div>
+    <span class="name"><a href="../../../../../Unstable-Funcons-beta/Computations/Threads/Synchronising/Locks/index.html#Name_reentrant-lock-exit">reentrant-lock-exit</a></span> <span class="name"><a href="../../../../../Unstable-Funcons-beta/Computations/Normal/Memos/index.html#Name_memo-value-recall">memo-value-recall</a></span> <i class="sem-name"><a href="../SIMPLE-THR-2-Expressions/index.html#SemanticsName_rval">rval</a></i>[[ <a href="#Variable1351_Exp"><i class="var">Exp</i></a> ]]</code></pre></div>
 
-The use of <code><span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Normal/Memos/index.html#Name_memo-value">memo-value</a></span>(<i class="var">V</i>, <i class="var">SY</i>)</code> below associates <code><i class="var">V</i></code> with a rendezvous.
+The use of <code><span class="name"><a href="../../../../../Unstable-Funcons-beta/Computations/Normal/Memos/index.html#Name_memo-value">memo-value</a></span>(<i class="var">V</i>, <i class="var">SY</i>)</code> below associates <code><i class="var">V</i></code> with a rendezvous.
 When a thread requests a rendezvous on a particular value, and there
 is no previous uncompleted request for a rendezvous on the same value,
 the requesting thread is suspended until the request is granted.
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Rule</i>
   <i class="sem-name"><a href="#SemanticsName_exec">exec</a></i>[[ <b class="atom">'rendezvous'</b> <span id="Variable1435_Exp"><i class="var"><a href="../SIMPLE-THR-2-Expressions/index.html#VariableStem_Exp">Exp</a></i></span> <b class="atom">';'</b> ]] =
-    <span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Threads/Synchronising/Notifications/index.html#Name_rendezvous-sync-else-wait">rendezvous-sync-else-wait</a></span>(
-      <span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Normal/Memos/index.html#Name_memo-value">memo-value</a></span>("rendezvous", <span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Threads/Synchronising/Notifications/index.html#Name_rendezvous-create">rendezvous-create</a></span>(2)),
+    <span class="name"><a href="../../../../../Unstable-Funcons-beta/Computations/Threads/Synchronising/Notifications/index.html#Name_rendezvous-sync-else-wait">rendezvous-sync-else-wait</a></span>(
+      <span class="name"><a href="../../../../../Unstable-Funcons-beta/Computations/Normal/Memos/index.html#Name_memo-value">memo-value</a></span>("rendezvous", <span class="name"><a href="../../../../../Unstable-Funcons-beta/Computations/Threads/Synchronising/Notifications/index.html#Name_rendezvous-create">rendezvous-create</a></span>(2)),
       <i class="sem-name"><a href="../SIMPLE-THR-2-Expressions/index.html#SemanticsName_rval">rval</a></i>[[ <a href="#Variable1435_Exp"><i class="var">Exp</i></a> ]])</code></pre></div>
 
                 
@@ -130,22 +130,22 @@ the requesting thread is suspended until the request is granted.
 
 ____
 
-From the [PLanCompS Project], 2019 | [CBS-beta issues...] | [Suggest an improvement...]
+From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [SIMPLE-THR-3-Statements.cbs]: SIMPLE-THR-3-Statements.cbs 
   "CBS SOURCE FILE"
 [Funcons-beta]: /CBS-beta/docs/Funcons-beta
- "FUNCONS-BETA"
+  "FUNCONS-BETA"
 [Unstable-Funcons-beta]: /CBS-beta/docs/Unstable-Funcons-beta
   "UNSTABLE-FUNCONS-BETA"
 [Languages-beta]: /CBS-beta/docs/Languages-beta
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/docs/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]:  "CBS-BETA"
-[PLanCompS Project]: http://plancomps.org
+[CBS-beta]: /CBS-beta "CBS-BETA"
+[PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
-[CBS-beta issues...]: https://github.com/plancomps/plancomps.github.io/issues
+[CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues
   "CBS-BETA ISSUE REPORTS ON GITHUB"
 [Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20SIMPLE-THR/SIMPLE-THR-3-Statements/SIMPLE-THR-3-Statements.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A 
   "GENERATE AN EMAIL TEMPLATE"

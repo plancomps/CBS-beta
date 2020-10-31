@@ -2,8 +2,8 @@
 layout: default
 title: "LD-Start"
 parent: LD
-# grand_parent: Unstable-Languages-beta
-
+ancestor: Unstable-Languages-beta
+nav_order: LD
 ---
 
 [Unstable-Languages-beta] : [LD-Start.cbs]
@@ -74,7 +74,7 @@ parent: LD
                 | <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Booleans/index.html#Name_booleans">booleans</a></span>
                 | <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_variables">variables</a></span>
                 | <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Null/index.html#Name_null-type">null-type</a></span>
-                | <span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Threads/Multithreading/index.html#Name_thread-ids">thread-ids</a></span></code></pre></div>
+                | <span class="name"><a href="../../../../../Unstable-Funcons-beta/Computations/Threads/Multithreading/index.html#Name_thread-ids">thread-ids</a></span></code></pre></div>
 
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Semantics</i> <i class="sem-name"><span id="SemanticsName_eval">eval</span></i>[[ _:<span class="syn-name"><a href="#SyntaxName_exp">exp</a></span> ]] : => <span class="name"><a href="#Name_ld-values">ld-values</a></span></code></pre></div>
@@ -150,8 +150,8 @@ N.B. The funcons for multithreading have not yet been fully validated,
 so they are defined in Unstable-Funcons-beta instead of Funcons-beta.
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Rule</i> <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <b class="atom">'spawn'</b> <span id="Variable1560_E"><i class="var"><a href="#VariableStem_E">E</a></i></span> ]] =
-  <span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Threads/Multithreading/index.html#Name_thread-activate">thread-activate</a></span> <span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Threads/Multithreading/index.html#Name_thread-joinable">thread-joinable</a></span> <span class="name"><a href="../../../../../Funcons-beta/Values/Abstraction/Thunks/index.html#Name_thunk">thunk</a></span> <span class="name"><a href="../../../../../Funcons-beta/Values/Abstraction/Generic/index.html#Name_closure">closure</a></span> <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <a href="#Variable1560_E"><i class="var">E</i></a> ]]
-<i class="keyword">Rule</i> <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <b class="atom">'join'</b> <span id="Variable1600_E"><i class="var"><a href="#VariableStem_E">E</a></i></span> ]] = <span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Threads/Multithreading/index.html#Name_thread-join">thread-join</a></span>( <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <a href="#Variable1600_E"><i class="var">E</i></a> ]] )</code></pre></div>
+  <span class="name"><a href="../../../../../Unstable-Funcons-beta/Computations/Threads/Multithreading/index.html#Name_thread-activate">thread-activate</a></span> <span class="name"><a href="../../../../../Unstable-Funcons-beta/Computations/Threads/Multithreading/index.html#Name_thread-joinable">thread-joinable</a></span> <span class="name"><a href="../../../../../Funcons-beta/Values/Abstraction/Thunks/index.html#Name_thunk">thunk</a></span> <span class="name"><a href="../../../../../Funcons-beta/Values/Abstraction/Generic/index.html#Name_closure">closure</a></span> <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <a href="#Variable1560_E"><i class="var">E</i></a> ]]
+<i class="keyword">Rule</i> <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <b class="atom">'join'</b> <span id="Variable1600_E"><i class="var"><a href="#VariableStem_E">E</a></i></span> ]] = <span class="name"><a href="../../../../../Unstable-Funcons-beta/Computations/Threads/Multithreading/index.html#Name_thread-join">thread-join</a></span>( <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <a href="#Variable1600_E"><i class="var">E</i></a> ]] )</code></pre></div>
 
 
 
@@ -164,28 +164,28 @@ so they are defined in Unstable-Funcons-beta instead of Funcons-beta.
   <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Binding/index.html#Name_initialise-binding">initialise-binding</a></span> 
   <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_initialise-storing">initialise-storing</a></span>
   <span class="name"><a href="../../../../../Funcons-beta/Computations/Abnormal/Failing/index.html#Name_finalise-failing">finalise-failing</a></span>
-  <span class="name"><a href="../../../../../Unstable-Funcons-beta/Unstable-Computations/Threads/Multithreading/index.html#Name_multithread">multithread</a></span>
+  <span class="name"><a href="../../../../../Unstable-Funcons-beta/Computations/Threads/Multithreading/index.html#Name_multithread">multithread</a></span>
     <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <a href="#Variable1677_E"><i class="var">E</i></a> ]]</code></pre></div>
 
 
 ____
 
-From the [PLanCompS Project], 2019 | [CBS-beta issues...] | [Suggest an improvement...]
+From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [LD-Start.cbs]: LD-Start.cbs 
   "CBS SOURCE FILE"
 [Funcons-beta]: /CBS-beta/docs/Funcons-beta
- "FUNCONS-BETA"
+  "FUNCONS-BETA"
 [Unstable-Funcons-beta]: /CBS-beta/docs/Unstable-Funcons-beta
   "UNSTABLE-FUNCONS-BETA"
 [Languages-beta]: /CBS-beta/docs/Languages-beta
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/docs/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]:  "CBS-BETA"
-[PLanCompS Project]: http://plancomps.org
+[CBS-beta]: /CBS-beta "CBS-BETA"
+[PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
-[CBS-beta issues...]: https://github.com/plancomps/plancomps.github.io/issues
+[CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues
   "CBS-BETA ISSUE REPORTS ON GITHUB"
 [Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20LD/LD-Start/LD-Start.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A 
   "GENERATE AN EMAIL TEMPLATE"
