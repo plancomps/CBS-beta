@@ -16,11 +16,22 @@ aux_links:
 exclude:
   - "profiles/"
   - "Languages-beta/IMP/IMP-cbs/Funcons-beta/"
+  - "Languages-beta/IMP/IMP-cbs/target/"
   - "Languages-beta/MiniJava/MiniJava-cbs/Funcons-beta/"
+  - "Languages-beta/MiniJava/MiniJava-cbs/target/"
   - "Languages-beta/SIMPLE/SIMPLE-cbs/Funcons-beta/"
+  - "Languages-beta/SIMPLE/SIMPLE-cbs/target/"
   - "Languages-beta/SL/SL-cbs/Funcons-beta/"
+  - "Languages-beta/SL/SL-cbs/target/"
   - "Languages-beta/OCaml-Light/OC-L-cbs/Funcons-beta/"
+  - "Languages-beta/OCaml-Light/OC-L-cbs/target/"
   - "Unstable-Funcons-beta/Funcons-beta/"
+  - "Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/Unstable-Funcons-beta/"
+  - "Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/target/"
+  - "Unstable-Languages-beta/LangDev-2019/LD-cbs/Unstable-Funcons-beta/"
+  - "Unstable-Languages-beta/LangDev-2019/LD-cbs/target/"
+  - "Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/Unstable-Funcons-beta/"
+  - "Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/target/"
 
 # Set the search token separator
 # search_tokenizer_separator: /[\s/]+/
