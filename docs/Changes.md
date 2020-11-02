@@ -10,6 +10,9 @@ Beta-release changes
 This page lists significant additions and changes to the funcon definitions and
 language specifications included in the CBS beta-release.
 
+2020-11-02: [MiniJava-Syntax](/CBS-beta/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Syntax/)
+* Layout corrected
+
 2020-10-31: [Languages-beta](Languages-beta), [Unstable-Languages-beta](Unstable-Languages-beta)
 * Regenerated CBS web page sources, adding `ancestor` fields
 
