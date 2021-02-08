@@ -16,24 +16,24 @@ Lexis
 Semantics
   val[[ _:value ]] : =>values
 
-## 1.1 Booleans
+#1.1 Booleans
 
 Rule
   val[[ 'false' ]] = false
 Rule
   val[[ 'true' ]] = true
 
-## 1.2 Integers
+#1.2 Integers
 
 Rule
   val[[ Z ]] = decimal-natural(\"Z\")
 
-## 1.3 Strings
+#1.3 Strings
 
 Rule
   val[[ '"' S '"' ]] = \"S\"
 
-## 1.4 Identifiers
+#1.4 Identifiers
 
 Lexis
   Id : id ::= ('A'-'Z'|'a'-'z'|'_') ('0'-'9'|'A'-'Z'|'a'-'z'|'_')*
