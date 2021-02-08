@@ -3,3 +3,9 @@
 
 /.project
 /.settings
+
+.DS_Store
+*.aux
+*.log
+*.out
+*.synctex.gz
