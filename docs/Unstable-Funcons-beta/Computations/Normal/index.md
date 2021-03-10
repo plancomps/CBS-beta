@@ -4,7 +4,7 @@ title: Normal
 parent: Computations
 ancestor: Unstable-Funcons-beta
 permalink: /docs/Unstable-Funcons-beta/Computations/Normal
-nav_order: "1"
+nav_order: "2"
 ---
 
 Normal computation

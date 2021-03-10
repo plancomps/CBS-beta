@@ -118,3 +118,149 @@ plugins:
 nav_next_prev: true
 
 # nav_cache: false
+
+# Navigation order for generated funcons files
+
+defaults:
+  -
+    scope: {path: docs, type: pages}
+    values: {layout: default}
+
+# Funcons-beta
+
+  # Computations
+
+  # Normal
+  - 
+    scope: {path: Funcons-beta/Computations/Normal/Flowing}
+    values: {nav_order: 1}
+  - 
+    scope: {path: Funcons-beta/Computations/Normal/Giving}
+    values: {nav_order: 2}
+  - 
+    scope: {path: Funcons-beta/Computations/Normal/Binding}
+    values: {nav_order: 3}
+  - 
+    scope: {path: Funcons-beta/Computations/Normal/Generating}
+    values: {nav_order: 4}
+  - 
+    scope: {path: Funcons-beta/Computations/Normal/Storing}
+    values: {nav_order: 5}
+  - 
+    scope: {path: Funcons-beta/Computations/Normal/Linking}
+    values: {nav_order: 6}
+  - 
+    scope: {path: Funcons-beta/Computations/Normal/Interacting}
+    values: {nav_order: 7}
+
+  # Abnormal
+  - 
+    scope: {path: Funcons-beta/Computations/Abnormal/Abrupting}
+    values: {nav_order: 1}
+  - 
+    scope: {path: Funcons-beta/Computations/Abnormal/Failing}
+    values: {nav_order: 2}
+  - 
+    scope: {path: Funcons-beta/Computations/Abnormal/Throwing}
+    values: {nav_order: 3}
+  - 
+    scope: {path: Funcons-beta/Computations/Abnormal/Returning}
+    values: {nav_order: 4}
+  - 
+    scope: {path: Funcons-beta/Computations/Abnormal/Breaking}
+    values: {nav_order: 5}
+  - 
+    scope: {path: Funcons-beta/Computations/Abnormal/Continuing}
+    values: {nav_order: 6}
+  - 
+    scope: {path: Funcons-beta/Computations/Abnormal/Controlling}
+    values: {nav_order: 7}
+
+  # Values
+
+  # Primitive
+  - 
+    scope: {path: Funcons-beta/Values/Primitive/Booleans}
+    values: {nav_order: 1}
+  - 
+    scope: {path: Funcons-beta/Values/Primitive/Integers}
+    values: {nav_order: 2}
+  - 
+    scope: {path: Funcons-beta/Values/Primitive/Floats}
+    values: {nav_order: 3}
+  - 
+    scope: {path: Funcons-beta/Values/Primitive/Characters}
+    values: {nav_order: 4}
+  - 
+    scope: {path: Funcons-beta/Values/Primitive/Null}
+    values: {nav_order: 5}
+
+  # Composite
+
+  - 
+    scope: {path: Funcons-beta/Values/Composite/Sequences}
+    values: {nav_order: 1}
+  
+  - # Datatypes
+    scope: {path: Funcons-beta/Values/Composite/Datatypes}
+    values: {nav_order: 2}
+  - 
+    scope: {path: Funcons-beta/Values/Composite/Tuples}
+    values: {nav_order: 3}
+  - 
+    scope: {path: Funcons-beta/Values/Composite/Lists}
+    values: {nav_order: 4}
+  - 
+    scope: {path: Funcons-beta/Values/Composite/Strings}
+    values: {nav_order: 5}
+  - 
+    scope: {path: Funcons-beta/Values/Composite/Vectors}
+    values: {nav_order: 6}
+  - 
+    scope: {path: Funcons-beta/Values/Composite/Trees}
+    values: {nav_order: 7}
+  - 
+    scope: {path: Funcons-beta/Values/Composite/References}
+    values: {nav_order: 8}
+  - 
+    scope: {path: Funcons-beta/Values/Composite/Records}
+    values: {nav_order: 9}
+  - 
+    scope: {path: Funcons-beta/Values/Composite/Variants}
+    values: {nav_order: 10}
+  - 
+    scope: {path: Funcons-beta/Values/Composite/Classes}
+    values: {nav_order: 11}
+  - 
+    scope: {path: Funcons-beta/Values/Composite/Objects}
+    values: {nav_order: 12}
+  - 
+    scope: {path: Funcons-beta/Values/Composite/Bits}
+    values: {nav_order: 13}
+  - # Built-in
+    scope: {path: Funcons-beta/Values/Composite/Sets}
+    values: {nav_order: 14}
+  - 
+    scope: {path: Funcons-beta/Values/Composite/Maps}
+    values: {nav_order: 15}
+  - 
+    scope: {path: Funcons-beta/Values/Composite/Multisets}
+    values: {nav_order: 16}
+  - 
+    scope: {path: Funcons-beta/Values/Composite/Graphs}
+    values: {nav_order: 17}
+
+  # Abstraction
+  
+  - 
+    scope: {path: Funcons-beta/Values/Abstraction/Generic}
+    values: {nav_order: 1}
+  - 
+    scope: {path: Funcons-beta/Values/Abstraction/Thunks}
+    values: {nav_order: 2}
+  - 
+    scope: {path: Funcons-beta/Values/Abstraction/Functions}
+    values: {nav_order: 3}
+  - 
+    scope: {path: Funcons-beta/Values/Abstraction/Patterns}
+    values: {nav_order: 4}

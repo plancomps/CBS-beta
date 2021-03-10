@@ -4,7 +4,7 @@ title: Abnormal
 parent: Computations
 ancestor: Unstable-Funcons-beta
 permalink: /docs/Unstable-Funcons-beta/Computations/Abnormal
-nav_order: "2"
+nav_order: "3"
 ---
 
 Abnormal computation

@@ -4,7 +4,7 @@ title: Composite
 parent: Values
 ancestor: Funcons-beta
 permalink: /docs/Funcons-beta/Values/Composite
-nav_order: "6"
+nav_order: "2"
 has_toc: false
 ---
 

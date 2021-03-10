@@ -4,7 +4,7 @@ title: Primitive
 parent: Values
 ancestor: Funcons-beta
 permalink: /docs/Funcons-beta/Values/Primitive
-nav_order: "5"
+nav_order: "3"
 has_toc: false
 ---
 
