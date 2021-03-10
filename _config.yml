@@ -1,4 +1,4 @@
-remote_theme: pdmosses/just-the-docs@rec-nav-2
+remote_theme: pdmosses/just-the-docs@combination-rec-nav
 # remote_theme: pmarsceill/just-the-docs
 title: CBS-beta
 description: Beta-release of the CBS framework
@@ -114,3 +114,7 @@ plugins:
 #   startings: []
 #   blanklines: false
 #   profile: false
+
+nav_next_prev: true
+
+# nav_cache: false
