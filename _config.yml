@@ -141,7 +141,7 @@ nav_next_prev: true
 
 defaults:
   -
-    scope: {path: docs, type: pages}
+    scope: {path: "*/docs, type: pages"}
     values: {layout: default}
 
 # Funcons-beta
@@ -150,135 +150,135 @@ defaults:
 
   # Normal
   - 
-    scope: {path: Funcons-beta/Computations/Normal/Flowing}
+    scope: {path: "*/Funcons-beta/Computations/Normal/Flowing"}
     values: {nav_order: 1}
   - 
-    scope: {path: Funcons-beta/Computations/Normal/Giving}
+    scope: {path: "*/Funcons-beta/Computations/Normal/Giving"}
     values: {nav_order: 2}
   - 
-    scope: {path: Funcons-beta/Computations/Normal/Binding}
+    scope: {path: "*/Funcons-beta/Computations/Normal/Binding"}
     values: {nav_order: 3}
   - 
-    scope: {path: Funcons-beta/Computations/Normal/Generating}
+    scope: {path: "*/Funcons-beta/Computations/Normal/Generating"}
     values: {nav_order: 4}
   - 
-    scope: {path: Funcons-beta/Computations/Normal/Storing}
+    scope: {path: "*/Funcons-beta/Computations/Normal/Storing"}
     values: {nav_order: 5}
   - 
-    scope: {path: Funcons-beta/Computations/Normal/Linking}
+    scope: {path: "*/Funcons-beta/Computations/Normal/Linking"}
     values: {nav_order: 6}
   - 
-    scope: {path: Funcons-beta/Computations/Normal/Interacting}
+    scope: {path: "*/Funcons-beta/Computations/Normal/Interacting"}
     values: {nav_order: 7}
 
   # Abnormal
   - 
-    scope: {path: Funcons-beta/Computations/Abnormal/Abrupting}
+    scope: {path: "*/Funcons-beta/Computations/Abnormal/Abrupting"}
     values: {nav_order: 1}
   - 
-    scope: {path: Funcons-beta/Computations/Abnormal/Failing}
+    scope: {path: "*/Funcons-beta/Computations/Abnormal/Failing"}
     values: {nav_order: 2}
   - 
-    scope: {path: Funcons-beta/Computations/Abnormal/Throwing}
+    scope: {path: "*/Funcons-beta/Computations/Abnormal/Throwing"}
     values: {nav_order: 3}
   - 
-    scope: {path: Funcons-beta/Computations/Abnormal/Returning}
+    scope: {path: "*/Funcons-beta/Computations/Abnormal/Returning"}
     values: {nav_order: 4}
   - 
-    scope: {path: Funcons-beta/Computations/Abnormal/Breaking}
+    scope: {path: "*/Funcons-beta/Computations/Abnormal/Breaking"}
     values: {nav_order: 5}
   - 
-    scope: {path: Funcons-beta/Computations/Abnormal/Continuing}
+    scope: {path: "*/Funcons-beta/Computations/Abnormal/Continuing"}
     values: {nav_order: 6}
   - 
-    scope: {path: Funcons-beta/Computations/Abnormal/Controlling}
+    scope: {path: "*/Funcons-beta/Computations/Abnormal/Controlling"}
     values: {nav_order: 7}
 
   # Values
 
   # Primitive
   - 
-    scope: {path: Funcons-beta/Values/Primitive/Booleans}
+    scope: {path: "*/Funcons-beta/Values/Primitive/Booleans"}
     values: {nav_order: 1}
   - 
-    scope: {path: Funcons-beta/Values/Primitive/Integers}
+    scope: {path: "*/Funcons-beta/Values/Primitive/Integers"}
     values: {nav_order: 2}
   - 
-    scope: {path: Funcons-beta/Values/Primitive/Floats}
+    scope: {path: "*/Funcons-beta/Values/Primitive/Floats"}
     values: {nav_order: 3}
   - 
-    scope: {path: Funcons-beta/Values/Primitive/Characters}
+    scope: {path: "*/Funcons-beta/Values/Primitive/Characters"}
     values: {nav_order: 4}
   - 
-    scope: {path: Funcons-beta/Values/Primitive/Null}
+    scope: {path: "*/Funcons-beta/Values/Primitive/Null"}
     values: {nav_order: 5}
 
   # Composite
 
   - 
-    scope: {path: Funcons-beta/Values/Composite/Sequences}
+    scope: {path: "*/Funcons-beta/Values/Composite/Sequences"}
     values: {nav_order: 1}
   
   - # Datatypes
-    scope: {path: Funcons-beta/Values/Composite/Datatypes}
+    scope: {path: "*/Funcons-beta/Values/Composite/Datatypes"}
     values: {nav_order: 2}
   - 
-    scope: {path: Funcons-beta/Values/Composite/Tuples}
+    scope: {path: "*/Funcons-beta/Values/Composite/Tuples"}
     values: {nav_order: 3}
   - 
-    scope: {path: Funcons-beta/Values/Composite/Lists}
+    scope: {path: "*/Funcons-beta/Values/Composite/Lists"}
     values: {nav_order: 4}
   - 
-    scope: {path: Funcons-beta/Values/Composite/Strings}
+    scope: {path: "*/Funcons-beta/Values/Composite/Strings"}
     values: {nav_order: 5}
   - 
-    scope: {path: Funcons-beta/Values/Composite/Vectors}
+    scope: {path: "*/Funcons-beta/Values/Composite/Vectors"}
     values: {nav_order: 6}
   - 
-    scope: {path: Funcons-beta/Values/Composite/Trees}
+    scope: {path: "*/Funcons-beta/Values/Composite/Trees"}
     values: {nav_order: 7}
   - 
-    scope: {path: Funcons-beta/Values/Composite/References}
+    scope: {path: "*/Funcons-beta/Values/Composite/References"}
     values: {nav_order: 8}
   - 
-    scope: {path: Funcons-beta/Values/Composite/Records}
+    scope: {path: "*/Funcons-beta/Values/Composite/Records"}
     values: {nav_order: 9}
   - 
-    scope: {path: Funcons-beta/Values/Composite/Variants}
+    scope: {path: "*/Funcons-beta/Values/Composite/Variants"}
     values: {nav_order: 10}
   - 
-    scope: {path: Funcons-beta/Values/Composite/Classes}
+    scope: {path: "*/Funcons-beta/Values/Composite/Classes"}
     values: {nav_order: 11}
   - 
-    scope: {path: Funcons-beta/Values/Composite/Objects}
+    scope: {path: "*/Funcons-beta/Values/Composite/Objects"}
     values: {nav_order: 12}
   - 
-    scope: {path: Funcons-beta/Values/Composite/Bits}
+    scope: {path: "*/Funcons-beta/Values/Composite/Bits"}
     values: {nav_order: 13}
   - # Built-in
-    scope: {path: Funcons-beta/Values/Composite/Sets}
+    scope: {path: "*/Funcons-beta/Values/Composite/Sets"}
     values: {nav_order: 14}
   - 
-    scope: {path: Funcons-beta/Values/Composite/Maps}
+    scope: {path: "*/Funcons-beta/Values/Composite/Maps"}
     values: {nav_order: 15}
   - 
-    scope: {path: Funcons-beta/Values/Composite/Multisets}
+    scope: {path: "*/Funcons-beta/Values/Composite/Multisets"}
     values: {nav_order: 16}
   - 
-    scope: {path: Funcons-beta/Values/Composite/Graphs}
+    scope: {path: "*/Funcons-beta/Values/Composite/Graphs"}
     values: {nav_order: 17}
 
   # Abstraction
   
   - 
-    scope: {path: Funcons-beta/Values/Abstraction/Generic}
+    scope: {path: "*/Funcons-beta/Values/Abstraction/Generic"}
     values: {nav_order: 1}
   - 
-    scope: {path: Funcons-beta/Values/Abstraction/Thunks}
+    scope: {path: "*/Funcons-beta/Values/Abstraction/Thunks"}
     values: {nav_order: 2}
   - 
-    scope: {path: Funcons-beta/Values/Abstraction/Functions}
+    scope: {path: "*/Funcons-beta/Values/Abstraction/Functions"}
     values: {nav_order: 3}
   - 
-    scope: {path: Funcons-beta/Values/Abstraction/Patterns}
+    scope: {path: "*/Funcons-beta/Values/Abstraction/Patterns"}
     values: {nav_order: 4}
