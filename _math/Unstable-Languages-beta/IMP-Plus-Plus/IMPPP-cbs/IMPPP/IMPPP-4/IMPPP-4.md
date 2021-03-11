@@ -1,0 +1,127 @@
+$$\KEY{Language} \STRING{IMPPP}$$
+
+# $$\SECT{4}$$ Statements and blocks
+           
+
+
+$$\relax\begin{aligned}\relax
+  \KEY{Syntax} ~ 
+    \VARDECL{Stmt} : \SYNDECL{stmt}
+      ~ ::= ~ &
+      \SYNREF{block} \\
+      ~ \mid ~ &  \LEX{int} ~ \SYNREF{ids} ~ \LEX{;{}} \\
+      ~ \mid ~ &  \SYNHYPER{../.}{IMPPP-2}{aexp} ~ \LEX{;{}} \\
+      ~ \mid ~ &  \LEX{if} ~ \LEX{(} ~ \SYNHYPER{../.}{IMPPP-3}{bexp} ~ \LEX{)} ~ \SYNREF{block} ~ \LEX{else} ~ \SYNREF{block} \\
+      ~ \mid ~ &  \LEX{while} ~ \LEX{(} ~ \SYNHYPER{../.}{IMPPP-3}{bexp} ~ \LEX{)} ~ \SYNREF{block} \\
+      ~ \mid ~ &  \LEX{print} ~ \LEX{(} ~ \SYNHYPER{../.}{IMPPP-2}{aexps} ~ \LEX{)} ~ \LEX{;{}} \\
+      ~ \mid ~ &  \LEX{halt} ~ \LEX{;{}} \\
+      ~ \mid ~ &  \LEX{join} ~ \SYNHYPER{../.}{IMPPP-2}{aexp} ~ \LEX{;{}}
+    \\
+    \VARDECL{Block} : \SYN{block}
+      ~ ::= ~ & \LEX{\LEFTBRACE } ~ \SYNREF{stmt}\STAR ~ \LEX{\RIGHTBRACE }
+\end{aligned}$$
+
+$$\relax\begin{aligned}\relax
+  \KEY{Semantics} ~ 
+  & \SEMDECL{execute} \LEFTPHRASE ~ \_ : \SYNREF{stmt}\STAR ~ \RIGHTPHRASE  :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
+\\
+  \KEY{Rule} ~ 
+    & \SEMREF{execute} \LEFTPHRASE ~  ~ \RIGHTPHRASE  = \\&\quad
+      \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null}
+\\
+  \KEY{Rule} ~ 
+    & \SEMREF{execute} \LEFTPHRASE ~ \LEX{int} ~ \VARREF{IL} ~ \LEX{;{}} ~ \VARREF{Stmt}\STAR ~ \RIGHTPHRASE  = \\&\quad
+      \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{scope}
+        (\NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{collateral}
+           (\SEMREF{declare-int-vars} \LEFTPHRASE ~ \VAR{IL} ~ \RIGHTPHRASE ), \\&\quad \quad 
+         \SEMREF{execute} \LEFTPHRASE ~ \VAR{Stmt}\STAR ~ \RIGHTPHRASE )
+\\
+  \KEY{Otherwise} ~ 
+    & \SEMREF{execute} \LEFTPHRASE ~ \VARREF{Stmt} ~ \VARREF{Stmt}\PLUS ~ \RIGHTPHRASE  = \\&\quad
+      \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
+        (\SEMREF{execute} \LEFTPHRASE ~ \VAR{Stmt} ~ \RIGHTPHRASE , \\&\quad \quad 
+         \SEMREF{execute} \LEFTPHRASE ~ \VAR{Stmt}\PLUS ~ \RIGHTPHRASE )
+\\
+  \KEY{Rule} ~ 
+    & \SEMREF{execute} \LEFTPHRASE ~ \VARHYPER{../.}{IMPPP-2}{AExp} ~ \LEX{;{}} ~ \RIGHTPHRASE  = \\&\quad
+      \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{effect}
+        (\SEMHYPER{../.}{IMPPP-2}{eval-arith} \LEFTPHRASE ~ \VAR{AExp} ~ \RIGHTPHRASE )
+\\
+  \KEY{Rule} ~ 
+    & \SEMREF{execute} \LEFTPHRASE ~ \LEX{if} ~ \LEX{(} ~ \VARHYPER{../.}{IMPPP-3}{BExp} ~ \LEX{)} ~ \VARREF{Block}\SUB{1} ~ \LEX{else} ~ \VARREF{Block}\SUB{2} ~ \RIGHTPHRASE  = \\&\quad
+      \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{if-true-else}
+        (\SEMHYPER{../.}{IMPPP-3}{eval-bool} \LEFTPHRASE ~ \VAR{BExp} ~ \RIGHTPHRASE , \\&\quad \quad 
+         \SEMREF{execute} \LEFTPHRASE ~ \VAR{Block}\SUB{1} ~ \RIGHTPHRASE , \\&\quad \quad 
+         \SEMREF{execute} \LEFTPHRASE ~ \VAR{Block}\SUB{2} ~ \RIGHTPHRASE )
+\\
+  \KEY{Rule} ~ 
+    & \SEMREF{execute} \LEFTPHRASE ~ \LEX{while} ~ \LEX{(} ~ \VARHYPER{../.}{IMPPP-3}{BExp} ~ \LEX{)} ~ \VARREF{Block} ~ \RIGHTPHRASE  = \\&\quad
+      \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{while-true}
+        (\SEMHYPER{../.}{IMPPP-3}{eval-bool} \LEFTPHRASE ~ \VAR{BExp} ~ \RIGHTPHRASE , \\&\quad \quad 
+         \SEMREF{execute} \LEFTPHRASE ~ \VAR{Block} ~ \RIGHTPHRASE )
+\\
+  \KEY{Rule} ~ 
+    & \SEMREF{execute} \LEFTPHRASE ~ \LEX{print} ~ \LEX{(} ~ \VARHYPER{../.}{IMPPP-2}{AExp} ~ \LEX{)} ~ \LEX{;{}} ~ \RIGHTPHRASE  = \\&\quad
+      \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Interacting}{print}
+        (\SEMHYPER{../.}{IMPPP-2}{eval-arith} \LEFTPHRASE ~ \VAR{AExp} ~ \RIGHTPHRASE )
+\\
+  \KEY{Rule} ~ 
+    & \LEFTPHRASE ~ \LEX{print} ~ \LEX{(} ~ \VARHYPER{../.}{IMPPP-2}{AExp} ~ \LEX{,{}} ~ \VARHYPER{../.}{IMPPP-2}{AExps} ~ \LEX{)} ~ \LEX{;{}} ~ \RIGHTPHRASE : \SYNREF{stmt}\PLUS = \\
+    & \LEFTPHRASE ~ \LEX{print} ~ \LEX{(} ~ \VAR{AExp} ~ \LEX{)} ~ \LEX{;{}} ~ \LEX{print} ~ \LEX{(} ~ \VAR{AExps} ~ \LEX{)} ~ \LEX{;{}} ~ \RIGHTPHRASE
+\\
+  \KEY{Rule} ~ 
+    & \SEMREF{execute} \LEFTPHRASE ~ \LEX{halt} ~ \LEX{;{}} ~ \RIGHTPHRASE  = \\&\quad
+      \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads}{Multithreading}{thread-terminate}
+        (\NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads}{Multithreading}{current-thread})
+\\
+  \KEY{Rule} ~ 
+    & \SEMREF{execute} \LEFTPHRASE ~ \LEX{join} ~ \VARHYPER{../.}{IMPPP-2}{AExp} ~ \LEX{;{}} ~ \RIGHTPHRASE  = \\&\quad
+      \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads}{Multithreading}{thread-join}
+        (\NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Normal}{Indexing}{lookup-index}
+           (\SEMHYPER{../.}{IMPPP-2}{eval-arith} \LEFTPHRASE ~ \VAR{AExp} ~ \RIGHTPHRASE ))
+\\
+  \KEY{Rule} ~ 
+    & \SEMREF{execute} \LEFTPHRASE ~ \LEX{\LEFTBRACE } ~ \VARREF{Stmt}\STAR ~ \LEX{\RIGHTBRACE } ~ \RIGHTPHRASE  = \\&\quad
+      \SEMREF{execute} \LEFTPHRASE ~ \VAR{Stmt}\STAR ~ \RIGHTPHRASE 
+\end{aligned}$$
+
+## Variable declarations
+               
+
+
+$$\relax\begin{aligned}\relax
+  \KEY{Syntax} ~ 
+    \VARDECL{IL} : \SYN{ids}
+      ~ ::= ~ & \SYNHYPER{../.}{IMPPP-1}{id} ~ \LEFTGROUP \LEX{,{}} ~ \SYNREF{ids} \RIGHTGROUP\QUERY
+\end{aligned}$$
+
+$$\relax\begin{aligned}\relax
+  \KEY{Semantics} ~ 
+  & \SEMDECL{declare-int-vars} \LEFTPHRASE ~ \_ : \SYNREF{ids} ~ \RIGHTPHRASE  : ( \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{environments})\PLUS 
+\\
+  \KEY{Rule} ~ 
+    & \SEMREF{declare-int-vars} \LEFTPHRASE ~ \VARHYPER{../.}{IMPPP-1}{I} ~ \RIGHTPHRASE  = \\&\quad
+      \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{bind}
+        (\SEMHYPER{../.}{IMPPP-1}{id} \LEFTPHRASE ~ \VAR{I} ~ \RIGHTPHRASE , \\&\quad \quad 
+         \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{allocate-initialised-variable}
+           (\NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integers}, \\&\quad \quad \quad 
+            0))
+\\
+  \KEY{Rule} ~ 
+    & \SEMREF{declare-int-vars} \LEFTPHRASE ~ \VARHYPER{../.}{IMPPP-1}{I} ~ \LEX{,{}} ~ \VARREF{IL} ~ \RIGHTPHRASE  = \\&\quad
+      \SEMREF{declare-int-vars} \LEFTPHRASE ~ \VAR{I} ~ \RIGHTPHRASE , \\&\quad 
+      \SEMREF{declare-int-vars} \LEFTPHRASE ~ \VAR{IL} ~ \RIGHTPHRASE 
+\end{aligned}$$
+
+
+
+[Funcons-beta]: /CBS-beta/math/Funcons-beta
+  "FUNCONS-BETA"
+[Unstable-Funcons-beta]: /CBS-beta/math/Unstable-Funcons-beta
+  "UNSTABLE-FUNCONS-BETA"
+[Languages-beta]: /CBS-beta/math/Languages-beta
+  "LANGUAGES-BETA"
+[Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
+  "UNSTABLE-LANGUAGES-BETA"
+[CBS-beta]: /CBS-beta 
+  "CBS-BETA"

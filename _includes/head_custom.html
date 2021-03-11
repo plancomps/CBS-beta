@@ -5,3 +5,14 @@
 <link rel="mask-icon" href="/CBS-beta/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
+
+{%- comment -%}
+  Math rendering
+{%- endcomment -%}
+
+{% case page.math %}
+  {% when "katex" %}
+    {% include katex.html %}
+  {% when "mathjax3" %}
+    {% include mathjax3.html %}
+{% endcase %}

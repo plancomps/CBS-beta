@@ -1,0 +1,559 @@
+---
+layout: default
+title: "Patterns"
+math: katex
+parent: Abstraction
+ancestor: Funcons-beta
+
+---
+
+[Funcons-beta] : [Patterns.cbs]
+
+### Patterns
+               
+
+
+$$\relax\begin{aligned}\relax
+  [ ~ 
+  \KEY{Datatype} ~ & \NAMEREF{patterns} \\
+  \KEY{Funcon} ~ & \NAMEREF{pattern} \\
+  \KEY{Funcon} ~ & \NAMEREF{pattern-any} \\
+  \KEY{Funcon} ~ & \NAMEREF{pattern-bind} \\
+  \KEY{Funcon} ~ & \NAMEREF{pattern-type} \\
+  \KEY{Funcon} ~ & \NAMEREF{pattern-else} \\
+  \KEY{Funcon} ~ & \NAMEREF{pattern-unite} \\
+  \KEY{Funcon} ~ & \NAMEREF{match} \\
+  \KEY{Funcon} ~ & \NAMEREF{match-loosely} \\
+  \KEY{Funcon} ~ & \NAMEREF{case-match} \\
+  \KEY{Funcon} ~ & \NAMEREF{case-match-loosely} \\
+  \KEY{Funcon} ~ & \NAMEREF{case-variant-value}
+  ~ ]
+\end{aligned}$$
+
+
+  General patterns are simple patterns or structured patterns.
+  Matching a pattern to a value either computes an environment or fails.
+
+  Simple patterns are constructed from abstractions whose bodies depend on 
+  a given value, and whose executions either compute environments or fail.
+
+  Structured patterns are composite values whose components may include
+  simple patterns as well as other values.
+
+  Matching a structured value to a structured pattern is similar to assigning 
+  a structured value to a structured variable, with simple pattern components 
+  matching component values analogously to simple variable components assigned
+  component values.
+  
+  Note that patterns match only values, not (empty or proper) sequences.
+
+
+$$\relax\begin{aligned}\relax
+  \KEY{Meta-variables} ~ 
+  & \VAR{T}, \VAR{T}' <: \NAMEHYPER{../..}{Value-Types}{values}
+\end{aligned}$$
+
+#### Simple patterns
+               
+
+
+$$\relax\begin{aligned}\relax
+  \KEY{Datatype} ~ 
+  \NAMEDECL{patterns}  
+  ~ ::= ~ & \NAMEDECL{pattern} (\_ : \NAMEHYPER{../.}{Generic}{abstractions}
+                                         ( \NAMEHYPER{../..}{Value-Types}{values} \TO \NAMEHYPER{../../../Computations/Normal}{Binding}{environments} ))
+\end{aligned}$$
+
+  
+  $$\SHADE{\NAMEREF{patterns}}$$ is the type of simple patterns that can match values of a
+  particular type.
+   
+  $$\SHADE{\NAMEREF{pattern}
+           ( \NAMEHYPER{../.}{Generic}{abstraction}
+               ( \VAR{X} ) )}$$ constructs a pattern with dynamic bindings, and
+  $$\SHADE{\NAMEREF{pattern}
+           ( \NAMEHYPER{../.}{Generic}{closure}
+               ( \VAR{X} ) )}$$ computes a pattern with static bindings. However,
+  there is no difference between dynamic and static bindings when the pattern
+  is matched in the same scope where it is constructed.
+
+
+$$\relax\begin{aligned}\relax
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{pattern-any} :  \TO \NAMEREF{patterns} \\
+  & \quad \leadsto \NAMEREF{pattern}
+                     ( \NAMEHYPER{../.}{Generic}{abstraction}
+                         ( \NAMEHYPER{../../Composite}{Maps}{map}
+                             (  ~  ) ) )
+\end{aligned}$$
+
+
+  $$\SHADE{\NAMEREF{pattern-any}}$$ matches any value, computing the empty environment.
+
+
+$$\relax\begin{aligned}\relax
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{pattern-bind}(\VAR{I} : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}) :  \TO \NAMEREF{patterns} \\
+  & \quad \leadsto \NAMEREF{pattern}
+                     ( \NAMEHYPER{../.}{Generic}{abstraction}
+                         ( \NAMEHYPER{../../../Computations/Normal}{Binding}{bind-value}
+                             ( \VAR{I}, \\&\quad \quad \quad \quad \quad \quad 
+                               \NAMEHYPER{../../../Computations/Normal}{Giving}{given} ) ) )
+\end{aligned}$$
+
+
+  $$\SHADE{\NAMEREF{pattern-bind}
+           ( \VAR{I} )}$$ matches any value, computing the environment binding $$\SHADE{\VAR{I}}$$
+  to that value.
+
+
+$$\relax\begin{aligned}\relax
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{pattern-type}(\VAR{T} ) :  \TO \NAMEREF{patterns} \\
+  & \quad \leadsto \NAMEREF{pattern}
+                     ( \NAMEHYPER{../.}{Generic}{abstraction}
+                         ( \NAMEHYPER{../../../Computations/Normal}{Flowing}{if-true-else}
+                             ( \NAMEHYPER{../..}{Value-Types}{is-in-type}
+                                 ( \NAMEHYPER{../../../Computations/Normal}{Giving}{given}, \\&\quad \quad \quad \quad \quad \quad \quad 
+                                   \VAR{T} ), \\&\quad \quad \quad \quad \quad \quad 
+                               \NAMEHYPER{../../Composite}{Maps}{map}
+                                 (  ~  ), \\&\quad \quad \quad \quad \quad \quad 
+                               \NAMEHYPER{../../../Computations/Abnormal}{Failing}{fail} ) ) )
+\end{aligned}$$
+
+
+  $$\SHADE{\NAMEREF{pattern-type}
+           ( \VAR{T} )}$$ matches any value of type $$\SHADE{\VAR{T}}$$, computing the empty
+  environment.
+
+
+$$\relax\begin{aligned}\relax
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{pattern-else}(\_ : \NAMEHYPER{../..}{Value-Types}{values}, \_ : \NAMEHYPER{../..}{Value-Types}{values}) :  \TO \NAMEREF{patterns}
+\\
+  \KEY{Rule} ~ 
+    & \NAMEREF{pattern-else}
+        ( \VAR{P}\SUB{1} : \NAMEHYPER{../..}{Value-Types}{values},   
+          \VAR{P}\SUB{2} : \NAMEHYPER{../..}{Value-Types}{values} ) \leadsto
+        \NAMEREF{pattern}
+          ( \NAMEHYPER{../.}{Generic}{abstraction}
+              ( \NAMEHYPER{../../../Computations/Abnormal}{Failing}{else}
+                  ( \NAMEREF{match}
+                      ( \NAMEHYPER{../../../Computations/Normal}{Giving}{given},      
+                        \VAR{P}\SUB{1} ),     
+                    \NAMEREF{match}
+                      ( \NAMEHYPER{../../../Computations/Normal}{Giving}{given},      
+                        \VAR{P}\SUB{2} ) ) ) )
+\end{aligned}$$
+
+
+  $$\SHADE{\NAMEREF{pattern-else}
+           ( \VAR{P}\SUB{1},   
+             \VAR{P}\SUB{2} )}$$ matches all values matched by $$\SHADE{\VAR{P}\SUB{1}}$$ or by $$\SHADE{\VAR{P}\SUB{2}}$$.
+  If a value matches $$\SHADE{\VAR{P}\SUB{1}}$$, that match gives the computed environment;
+  if a value does not match $$\SHADE{\VAR{P}\SUB{1}}$$ but matches $$\SHADE{\VAR{P}\SUB{2}}$$, that match gives 
+  the computed environment; otherwise the match fails.
+
+
+$$\relax\begin{aligned}\relax
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{pattern-unite}(\_ : \NAMEHYPER{../..}{Value-Types}{values}, \_ : \NAMEHYPER{../..}{Value-Types}{values}) :  \TO \NAMEREF{patterns}
+\\
+  \KEY{Rule} ~ 
+    & \NAMEREF{pattern-unite}
+        ( \VAR{P}\SUB{1} : \NAMEHYPER{../..}{Value-Types}{values},   
+          \VAR{P}\SUB{2} : \NAMEHYPER{../..}{Value-Types}{values} ) \leadsto
+        \NAMEREF{pattern}
+          ( \NAMEHYPER{../.}{Generic}{abstraction}
+              ( \NAMEHYPER{../../../Computations/Normal}{Binding}{collateral}
+                  ( \NAMEREF{match}
+                      ( \NAMEHYPER{../../../Computations/Normal}{Giving}{given},      
+                        \VAR{P}\SUB{1} ),     
+                    \NAMEREF{match}
+                      ( \NAMEHYPER{../../../Computations/Normal}{Giving}{given},      
+                        \VAR{P}\SUB{2} ) ) ) )
+\end{aligned}$$
+
+
+  $$\SHADE{\NAMEREF{pattern-unite}
+           ( \VAR{P}\SUB{1},   
+             \VAR{P}\SUB{2} )}$$ matches all values matched by both $$\SHADE{\VAR{P}\SUB{1}}$$ and $$\SHADE{\VAR{P}\SUB{2}}$$,
+  then uniting the computed environments, which fails if the domains of the
+  environments overlap.
+
+
+#### Pattern matching
+               
+
+
+$$\relax\begin{aligned}\relax
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{match}(\_ : \NAMEHYPER{../..}{Value-Types}{values}, \_ : \NAMEHYPER{../..}{Value-Types}{values}) :  \TO \NAMEHYPER{../../../Computations/Normal}{Binding}{environments}
+\end{aligned}$$
+
+
+  $$\SHADE{\NAMEREF{match}
+           ( \VAR{V},   
+             \VAR{P} )}$$ takes a (potentially structured) value $$\SHADE{\VAR{V}}$$ and a
+  (potentially structured) pattern $$\SHADE{\VAR{P}}$$. Provided that the structure and all
+  components of $$\SHADE{\VAR{P}}$$ exactly match the structure and corresponding components
+  of $$\SHADE{\VAR{V}}$$, the environments computed by the simple pattern matches are united.
+
+
+$$\relax\begin{aligned}\relax
+  \KEY{Rule} ~ 
+    & \NAMEREF{match}
+        ( \VAR{V} : \NAMEHYPER{../..}{Value-Types}{values},   
+          \NAMEREF{pattern}
+            ( \NAMEHYPER{../.}{Generic}{abstraction}
+                ( \VAR{X} ) ) ) \leadsto
+        \NAMEHYPER{../../../Computations/Normal}{Giving}{give}
+          ( \VAR{V},   
+            \VAR{X} )
+\\
+  \KEY{Rule} ~ 
+    & \RULE{
+      & \VAR{I}\SUB{2} \neq \STRING{pattern}
+      }{
+      & \NAMEREF{match}
+          ( \NAMEHYPER{../../Composite}{Datatypes}{datatype-value}
+              ( \VAR{I}\SUB{1} : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers},    
+                \VAR{V}\SUB{1}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ),   
+            \NAMEHYPER{../../Composite}{Datatypes}{datatype-value}
+              ( \VAR{I}\SUB{2} : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers},    
+                \VAR{V}\SUB{2}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ) ) \leadsto
+          \NAMEHYPER{../../../Computations/Normal}{Flowing}{sequential}
+            ( \NAMEHYPER{../../../Computations/Abnormal}{Failing}{check-true}
+                ( \NAMEHYPER{../..}{Value-Types}{is-equal}
+                    ( \VAR{I}\SUB{1},     
+                      \VAR{I}\SUB{2} ) ),   
+              \NAMEHYPER{../../../Computations/Abnormal}{Failing}{check-true}
+                ( \NAMEHYPER{../..}{Value-Types}{is-equal}
+                    ( \NAMEHYPER{../../Composite}{Sequences}{length} ~
+                        \VAR{V}\SUB{1}\STAR,     
+                      \NAMEHYPER{../../Composite}{Sequences}{length} ~
+                        \VAR{V}\SUB{2}\STAR ) ),   
+              \NAMEHYPER{../../../Computations/Normal}{Binding}{collateral}
+                ( \NAMEHYPER{../../../Computations/Normal}{Giving}{interleave-map}
+                    ( \NAMEREF{match}
+                        ( \NAMEHYPER{../../Composite}{Tuples}{tuple-elements}
+                            ( \NAMEHYPER{../../../Computations/Normal}{Giving}{given} ) ),     
+                      \NAMEHYPER{../../Composite}{Tuples}{tuple-zip}
+                        ( \NAMEHYPER{../../Composite}{Tuples}{tuple}
+                            ( \VAR{V}\SUB{1}\STAR ),      
+                          \NAMEHYPER{../../Composite}{Tuples}{tuple}
+                            ( \VAR{V}\SUB{2}\STAR ) ) ) ) )
+      }
+\\
+  \KEY{Rule} ~ 
+    & \RULE{
+      & \NAMEHYPER{../../Composite}{Maps}{dom}
+          ( \VAR{M}\SUB{2} ) == 
+          \{  ~  \}
+      }{
+      & \NAMEREF{match}
+          ( \VAR{M}\SUB{1} : \NAMEHYPER{../../Composite}{Maps}{maps}
+                        ( \_,    
+                          \_ ),   
+            \VAR{M}\SUB{2} : \NAMEHYPER{../../Composite}{Maps}{maps}
+                        ( \_,    
+                          \_ ) ) \leadsto
+          \NAMEHYPER{../../../Computations/Normal}{Flowing}{if-true-else}
+            ( \NAMEHYPER{../..}{Value-Types}{is-equal}
+                ( \NAMEHYPER{../../Composite}{Maps}{dom}
+                    ( \VAR{M}\SUB{1} ),    
+                  \{  ~  \} ),   
+              \NAMEHYPER{../../Composite}{Maps}{map}
+                (  ~  ),   
+              \NAMEHYPER{../../../Computations/Abnormal}{Failing}{fail} )
+      }
+\\
+  \KEY{Rule} ~ 
+    & \RULE{
+      & \NAMEHYPER{../../Composite}{Maps}{dom}
+          ( \VAR{M}\SUB{2} ) \neq \{  ~  \}\\
+        &\NAMEHYPER{../../Composite}{Sets}{some-element}
+          ( \NAMEHYPER{../../Composite}{Maps}{dom}
+              ( \VAR{M}\SUB{2} ) ) \leadsto
+          \VAR{K}
+      }{
+      & \NAMEREF{match}
+          ( \VAR{M}\SUB{1} : \NAMEHYPER{../../Composite}{Maps}{maps}
+                        ( \_,    
+                          \_ ),   
+            \VAR{M}\SUB{2} : \NAMEHYPER{../../Composite}{Maps}{maps}
+                        ( \_,    
+                          \_ ) ) \leadsto
+          \NAMEHYPER{../../../Computations/Normal}{Flowing}{if-true-else}
+            ( \NAMEHYPER{../../Composite}{Sets}{is-in-set}
+                ( \VAR{K},    
+                  \NAMEHYPER{../../Composite}{Maps}{dom}
+                    ( \VAR{M}\SUB{1} ) ),   
+              \NAMEHYPER{../../../Computations/Normal}{Binding}{collateral}
+                ( \NAMEREF{match}
+                    ( \NAMEHYPER{../../Composite}{Maps}{map-lookup}
+                        ( \VAR{M}\SUB{1},      
+                          \VAR{K} ),     
+                      \NAMEHYPER{../../Composite}{Maps}{map-lookup}
+                        ( \VAR{M}\SUB{2},      
+                          \VAR{K} ) ),    
+                  \NAMEREF{match}
+                    ( \NAMEHYPER{../../Composite}{Maps}{map-delete}
+                        ( \VAR{M}\SUB{1},      
+                          \{ \VAR{K} \} ),     
+                      \NAMEHYPER{../../Composite}{Maps}{map-delete}
+                        ( \VAR{M}\SUB{2},      
+                          \{ \VAR{K} \} ) ) ),   
+              \NAMEHYPER{../../../Computations/Abnormal}{Failing}{fail} )
+      }
+\\
+  \KEY{Rule} ~ 
+    & \RULE{
+      &  \VAR{P} : \mathop{\sim} ( \NAMEHYPER{../../Composite}{Datatypes}{datatype-values} \mid \NAMEHYPER{../../Composite}{Maps}{maps}
+                                                             ( \_,   
+                                                               \_ ) )
+      }{
+      & \NAMEREF{match}
+          ( \VAR{V} : \NAMEHYPER{../..}{Value-Types}{values},   
+            \VAR{P} : \NAMEHYPER{../..}{Value-Types}{values} ) \leadsto
+          \NAMEHYPER{../../../Computations/Normal}{Flowing}{if-true-else}
+            ( \NAMEHYPER{../..}{Value-Types}{is-equal}
+                ( \VAR{V},    
+                  \VAR{P} ),   
+              \NAMEHYPER{../../Composite}{Maps}{map}
+                (  ~  ),   
+              \NAMEHYPER{../../../Computations/Abnormal}{Failing}{fail} )
+      }
+\end{aligned}$$
+
+$$\relax\begin{aligned}\relax
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{match-loosely}(\_ : \NAMEHYPER{../..}{Value-Types}{values}, \_ : \NAMEHYPER{../..}{Value-Types}{values}) :  \TO \NAMEHYPER{../../../Computations/Normal}{Binding}{environments}
+\end{aligned}$$
+
+
+  $$\SHADE{\NAMEREF{match-loosely}
+           ( \VAR{V},   
+             \VAR{P} )}$$ takes a (potentially structured) value $$\SHADE{\VAR{V}}$$ and a
+  (potentially structured) pattern $$\SHADE{\VAR{P}}$$. Provided that the structure and all
+  components of $$\SHADE{\VAR{P}}$$ loosely match the structure and corresponding components
+  of $$\SHADE{\VAR{V}}$$, the environments computed by the simple pattern matches are united.
+
+
+$$\relax\begin{aligned}\relax
+  \KEY{Rule} ~ 
+    & \NAMEREF{match-loosely}
+        ( \VAR{V} : \NAMEHYPER{../..}{Value-Types}{values},   
+          \NAMEREF{pattern}
+            ( \NAMEHYPER{../.}{Generic}{abstraction}
+                ( \VAR{X} ) ) ) \leadsto
+        \NAMEHYPER{../../../Computations/Normal}{Giving}{give}
+          ( \VAR{V},   
+            \VAR{X} )
+\\
+  \KEY{Rule} ~ 
+    & \RULE{
+      & \VAR{I}\SUB{2} \neq \STRING{pattern}
+      }{
+      & \NAMEREF{match-loosely}
+          ( \NAMEHYPER{../../Composite}{Datatypes}{datatype-value}
+              ( \VAR{I}\SUB{1} : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers},    
+                \VAR{V}\SUB{1}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ),   
+            \NAMEHYPER{../../Composite}{Datatypes}{datatype-value}
+              ( \VAR{I}\SUB{2} : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers},    
+                \VAR{V}\SUB{2}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ) ) \leadsto
+          \NAMEHYPER{../../../Computations/Normal}{Flowing}{sequential}
+            ( \NAMEHYPER{../../../Computations/Abnormal}{Failing}{check-true}
+                ( \NAMEHYPER{../..}{Value-Types}{is-equal}
+                    ( \VAR{I}\SUB{1},     
+                      \VAR{I}\SUB{2} ) ),   
+              \NAMEHYPER{../../../Computations/Abnormal}{Failing}{check-true}
+                ( \NAMEHYPER{../..}{Value-Types}{is-equal}
+                    ( \NAMEHYPER{../../Composite}{Sequences}{length} ~
+                        \VAR{V}\SUB{1}\STAR,     
+                      \NAMEHYPER{../../Composite}{Sequences}{length} ~
+                        \VAR{V}\SUB{2}\STAR ) ),   
+              \NAMEHYPER{../../../Computations/Normal}{Binding}{collateral}
+                ( \NAMEHYPER{../../../Computations/Normal}{Giving}{interleave-map}
+                    ( \NAMEREF{match-loosely}
+                        ( \NAMEHYPER{../../Composite}{Tuples}{tuple-elements}
+                            ( \NAMEHYPER{../../../Computations/Normal}{Giving}{given} ) ),     
+                      \NAMEHYPER{../../Composite}{Tuples}{tuple-zip}
+                        ( \NAMEHYPER{../../Composite}{Tuples}{tuple}
+                            ( \VAR{V}\SUB{1}\STAR ),      
+                          \NAMEHYPER{../../Composite}{Tuples}{tuple}
+                            ( \VAR{V}\SUB{2}\STAR ) ) ) ) )
+      }
+\\
+  \KEY{Rule} ~ 
+    & \RULE{
+      & \NAMEHYPER{../../Composite}{Maps}{dom}
+          ( \VAR{M}\SUB{2} ) == 
+          \{  ~  \}
+      }{
+      & \NAMEREF{match-loosely}
+          ( \VAR{M}\SUB{1} : \NAMEHYPER{../../Composite}{Maps}{maps}
+                        ( \_,    
+                          \_ ),   
+            \VAR{M}\SUB{2} : \NAMEHYPER{../../Composite}{Maps}{maps}
+                        ( \_,    
+                          \_ ) ) \leadsto
+          \NAMEHYPER{../../Composite}{Maps}{map}
+            (  ~  )
+      }
+\\
+  \KEY{Rule} ~ 
+    & \RULE{
+      & \NAMEHYPER{../../Composite}{Maps}{dom}
+          ( \VAR{M}\SUB{2} ) \neq \{  ~  \}\\
+        &\NAMEHYPER{../../Composite}{Sets}{some-element}
+          ( \NAMEHYPER{../../Composite}{Maps}{dom}
+              ( \VAR{M}\SUB{2} ) ) \leadsto
+          \VAR{K}
+      }{
+      & \NAMEREF{match-loosely}
+          ( \VAR{M}\SUB{1} : \NAMEHYPER{../../Composite}{Maps}{maps}
+                        ( \_,    
+                          \_ ),   
+            \VAR{M}\SUB{2} : \NAMEHYPER{../../Composite}{Maps}{maps}
+                        ( \_,    
+                          \_ ) ) \leadsto
+          \NAMEHYPER{../../../Computations/Normal}{Flowing}{if-true-else}
+            ( \NAMEHYPER{../../Composite}{Sets}{is-in-set}
+                ( \VAR{K},    
+                  \NAMEHYPER{../../Composite}{Maps}{dom}
+                    ( \VAR{M}\SUB{1} ) ),   
+              \NAMEHYPER{../../../Computations/Normal}{Binding}{collateral}
+                ( \NAMEREF{match-loosely}
+                    ( \NAMEHYPER{../../Composite}{Maps}{map-lookup}
+                        ( \VAR{M}\SUB{1},      
+                          \VAR{K} ),     
+                      \NAMEHYPER{../../Composite}{Maps}{map-lookup}
+                        ( \VAR{M}\SUB{2},      
+                          \VAR{K} ) ),    
+                  \NAMEREF{match-loosely}
+                    ( \NAMEHYPER{../../Composite}{Maps}{map-delete}
+                        ( \VAR{M}\SUB{1},      
+                          \{ \VAR{K} \} ),     
+                      \NAMEHYPER{../../Composite}{Maps}{map-delete}
+                        ( \VAR{M}\SUB{2},      
+                          \{ \VAR{K} \} ) ) ),   
+              \NAMEHYPER{../../../Computations/Abnormal}{Failing}{fail} )
+      }
+\\
+  \KEY{Rule} ~ 
+    & \RULE{
+      &  \VAR{P} : \mathop{\sim} ( \NAMEHYPER{../../Composite}{Datatypes}{datatype-values} \mid \NAMEHYPER{../../Composite}{Maps}{maps}
+                                                             ( \_,   
+                                                               \_ ) )
+      }{
+      & \NAMEREF{match-loosely}
+          ( \VAR{DV} : \NAMEHYPER{../..}{Value-Types}{values},   
+            \VAR{P} : \NAMEHYPER{../..}{Value-Types}{values} ) \leadsto
+          \NAMEHYPER{../../../Computations/Normal}{Flowing}{if-true-else}
+            ( \NAMEHYPER{../..}{Value-Types}{is-equal}
+                ( \VAR{DV},    
+                  \VAR{P} ),   
+              \NAMEHYPER{../../Composite}{Maps}{map}
+                (  ~  ),   
+              \NAMEHYPER{../../../Computations/Abnormal}{Failing}{fail} )
+      }
+\end{aligned}$$
+
+$$\relax\begin{aligned}\relax
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{case-match}(\_ : \NAMEHYPER{../..}{Value-Types}{values}, \_ :  \TO \VAR{T}') :  \TO \VAR{T}'
+\end{aligned}$$
+
+
+  $$\SHADE{\NAMEREF{case-match}
+           ( \VAR{P},   
+             \VAR{X} )}$$ matches $$\SHADE{\VAR{P}}$$ exactly to the given value.
+  If the match succeeds, the computed bindings have scope $$\SHADE{\VAR{X}}$$.
+
+
+$$\relax\begin{aligned}\relax
+  \KEY{Rule} ~ 
+    & \NAMEREF{case-match}
+        ( \VAR{P} : \NAMEHYPER{../..}{Value-Types}{values},   
+          \VAR{X} ) \leadsto
+        \NAMEHYPER{../../../Computations/Normal}{Binding}{scope}
+          ( \NAMEREF{match}
+              ( \NAMEHYPER{../../../Computations/Normal}{Giving}{given},    
+                \VAR{P} ),   
+            \VAR{X} )
+\end{aligned}$$
+
+$$\relax\begin{aligned}\relax
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{case-match-loosely}(\_ : \NAMEHYPER{../..}{Value-Types}{values}, \_ :  \TO \VAR{T}') :  \TO \VAR{T}'
+\end{aligned}$$
+
+
+  $$\SHADE{\NAMEREF{case-match}
+           ( \VAR{P},   
+             \VAR{X} )}$$ matches $$\SHADE{\VAR{P}}$$ loosely to the given value. 
+  If the match succeeds, the computed bindings have scope $$\SHADE{\VAR{X}}$$.
+
+
+$$\relax\begin{aligned}\relax
+  \KEY{Rule} ~ 
+    & \NAMEREF{case-match-loosely}
+        ( \VAR{P} : \NAMEHYPER{../..}{Value-Types}{values},   
+          \VAR{X} ) \leadsto
+        \NAMEHYPER{../../../Computations/Normal}{Binding}{scope}
+          ( \NAMEREF{match-loosely}
+              ( \NAMEHYPER{../../../Computations/Normal}{Giving}{given},    
+                \VAR{P} ),   
+            \VAR{X} )
+\end{aligned}$$
+
+$$\relax\begin{aligned}\relax
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{case-variant-value}(\_ : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}) :  \TO \NAMEHYPER{../..}{Value-Types}{values}
+\end{aligned}$$
+
+
+  $$\SHADE{\NAMEREF{case-variant-value}
+           ( \VAR{I} )}$$ matches values of variant $$\SHADE{\VAR{I}}$$, then
+  giving the value contained in the variant.
+
+
+$$\relax\begin{aligned}\relax
+  \KEY{Rule} ~ 
+    & \NAMEREF{case-variant-value}
+        ( \VAR{I} : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers} ) \leadsto
+        \NAMEREF{case-match}
+          ( \NAMEHYPER{../../Composite}{Variants}{variant}
+              ( \VAR{I},    
+                \NAMEREF{pattern-any} ),   
+            \NAMEHYPER{../../Composite}{Variants}{variant-value}
+              ( \NAMEHYPER{../../../Computations/Normal}{Giving}{given} ) )
+\end{aligned}$$
+
+
+
+[Funcons-beta]: /CBS-beta/math/Funcons-beta
+  "FUNCONS-BETA"
+[Unstable-Funcons-beta]: /CBS-beta/math/Unstable-Funcons-beta
+  "UNSTABLE-FUNCONS-BETA"
+[Languages-beta]: /CBS-beta/math/Languages-beta
+  "LANGUAGES-BETA"
+[Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
+  "UNSTABLE-LANGUAGES-BETA"
+[CBS-beta]: /CBS-beta 
+  "CBS-BETA"
+
+
+____
+
+From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
+
+[Patterns.cbs]: /CBS-beta/Funcons-beta/Values/Abstraction/Patterns/Patterns.cbs
+  "CBS SOURCE FILE"
+[PLanCompS Project]: https://plancomps.github.io
+  "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
+[CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues
+  "CBS-BETA ISSUE REPORTS ON GITHUB"
+[Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20Values/Abstraction/Patterns/Patterns.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A 
+  "GENERATE AN EMAIL TEMPLATE"

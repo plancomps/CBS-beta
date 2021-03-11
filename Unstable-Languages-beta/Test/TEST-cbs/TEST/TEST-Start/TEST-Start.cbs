@@ -1,0 +1,4 @@
+Language "Test"
+
+Syntax
+  b ::= 'test'

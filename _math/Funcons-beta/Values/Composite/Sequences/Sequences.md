@@ -1,0 +1,349 @@
+### Sequences of values
+               
+
+
+$$\relax\begin{aligned}\relax
+  [ ~ 
+  \KEY{Funcon} ~ & \NAMEREF{length} \\
+  \KEY{Funcon} ~ & \NAMEREF{index} \\
+  \KEY{Funcon} ~ & \NAMEREF{is-in} \\
+  \KEY{Funcon} ~ & \NAMEREF{first} \\
+  \KEY{Funcon} ~ & \NAMEREF{second} \\
+  \KEY{Funcon} ~ & \NAMEREF{third} \\
+  \KEY{Funcon} ~ & \NAMEREF{first-n} \\
+  \KEY{Funcon} ~ & \NAMEREF{drop-first-n} \\
+  \KEY{Funcon} ~ & \NAMEREF{reverse} \\
+  \KEY{Funcon} ~ & \NAMEREF{n-of} \\
+  \KEY{Funcon} ~ & \NAMEREF{intersperse}
+  ~ ]
+\end{aligned}$$
+
+
+  Sequences of two or more values are not themselves values, nor is the empty
+  sequence a value. However, sequences can be provided to funcons as arguments,
+  and returned as results. Many operations on composite values can be expressed
+  by extracting their components as sequences, operating on the sequences, then
+  forming the required composite values from the resulting sequences.
+  
+  A sequence with elements $$\SHADE{\VAR{X}\SUB{1}}$$, ..., $$\SHADE{\VAR{Xn}}$$ is written $$\SHADE{\VAR{X}\SUB{1}\cdots\VAR{Xn}}$$.
+  A sequence with a single element $$\SHADE{\VAR{X}}$$ is identified with (and written) $$\SHADE{\VAR{X}}$$.
+  An empty sequence is indicated by the absence of a term.
+  Any sequence $$\SHADE{\VAR{X}\STAR}$$ can be enclosed in parentheses $$\SHADE{( \VAR{X}\STAR )}$$, e.g.:
+  $$\SHADE{(  ~  )}$$, $$\SHADE{( 1 )}$$, $$\SHADE{( 1,  
+           2,  
+           3 )}$$. Superfluous commas are ignored.
+  
+  The elements of a type sequence $$\SHADE{\VAR{T}\SUB{1}\cdots\VAR{Tn}}$$ are the value sequences $$\SHADE{\VAR{V}\SUB{1}\cdots\VAR{Vn}}$$
+  where $$\SHADE{\VAR{V}\SUB{1} : \VAR{T}\SUB{1}}$$, ..., $$\SHADE{\VAR{Vn} : \VAR{Tn}}$$. The only element of the empty type sequence $$\SHADE{(  ~  )}$$
+  is the empty value sequence $$\SHADE{(  ~  )}$$.
+  
+  $$\SHADE{( \VAR{T} )^{\VAR{N}}}$$ is equivalent to $$\SHADE{\VAR{T}\cdots\VAR{T}}$$ with $$\SHADE{\VAR{N}}$$ occurrences of $$\SHADE{\VAR{T}}$$.
+  $$\SHADE{( \VAR{T} )\STAR}$$ is equivalent to the union of all $$\SHADE{( \VAR{T} )^{\VAR{N}}}$$ for $$\SHADE{\VAR{N}}$$>=0,
+  $$\SHADE{( \VAR{T} )\PLUS}$$ is equivalent to the union of all $$\SHADE{( \VAR{T} )^{\VAR{N}}}$$ for $$\SHADE{\VAR{N}}$$>=1, and
+  $$\SHADE{( \VAR{T} )\QUERY}$$ is equivalent to $$\SHADE{\VAR{T} \mid (  ~  )}$$.
+  The parentheses around $$\SHADE{\VAR{T}}$$ above can be omitted when they are not needed for
+  disambiguation.
+    
+  (Non-trivial) sequence types are not values, so not included in $$\SHADE{\NAMEHYPER{../..}{Value-Types}{types}}$$.
+
+
+$$\relax\begin{aligned}\relax
+  \KEY{Meta-variables} ~ 
+  & \VAR{T}, \VAR{T}' <: \NAMEHYPER{../..}{Value-Types}{values}
+\end{aligned}$$
+
+$$\relax\begin{aligned}\relax
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{length}(\_ : \NAMEHYPER{../..}{Value-Types}{values}\STAR) :  \TO \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}
+\end{aligned}$$
+
+
+  $$\SHADE{\NAMEREF{length}
+           ( \VAR{V}\STAR )}$$ gives the number of elements in $$\SHADE{\VAR{V}\STAR}$$.
+
+
+$$\relax\begin{aligned}\relax
+  \KEY{Rule} ~ 
+    & \NAMEREF{length}
+        (  ~  ) \leadsto
+        0
+\\
+  \KEY{Rule} ~ 
+    & \NAMEREF{length}
+        ( \VAR{V} : \NAMEHYPER{../..}{Value-Types}{values},   
+          \VAR{V}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ) \leadsto
+        \NAMEHYPER{../../Primitive}{Integers}{natural-successor}
+          ( \NAMEREF{length}
+              ( \VAR{V}\STAR ) )
+\end{aligned}$$
+
+$$\relax\begin{aligned}\relax
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{is-in}(\_ : \NAMEHYPER{../..}{Value-Types}{values}, \_ : \NAMEHYPER{../..}{Value-Types}{values}\STAR) :  \TO \NAMEHYPER{../../Primitive}{Booleans}{booleans}
+\\
+  \KEY{Rule} ~ 
+    & \NAMEREF{is-in}
+        ( \VAR{V} : \NAMEHYPER{../..}{Value-Types}{values},   
+          \VAR{V}' : \NAMEHYPER{../..}{Value-Types}{values},   
+          \VAR{V}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ) \leadsto
+        \NAMEHYPER{../../Primitive}{Booleans}{or}
+          ( \NAMEHYPER{../..}{Value-Types}{is-equal}
+              ( \VAR{V},    
+                \VAR{V}' ),   
+            \NAMEREF{is-in}
+              ( \VAR{V},    
+                \VAR{V}\STAR ) )
+\\
+  \KEY{Rule} ~ 
+    & \NAMEREF{is-in}
+        ( \VAR{V} : \NAMEHYPER{../..}{Value-Types}{values},   
+          (  ~  ) ) \leadsto
+        \NAMEHYPER{../../Primitive}{Booleans}{false}
+\end{aligned}$$
+
+#### Sequence indexing
+               
+
+
+$$\relax\begin{aligned}\relax
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{index}(\_ : \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}, \_ : \NAMEHYPER{../..}{Value-Types}{values}\STAR) :  \TO \NAMEHYPER{../..}{Value-Types}{values}\QUERY
+\end{aligned}$$
+
+
+  $$\SHADE{\NAMEREF{index}
+           ( \VAR{N},   
+             \VAR{V}\STAR )}$$ gives the $$\SHADE{\VAR{N}}$$th element of $$\SHADE{\VAR{V}\STAR}$$, if it exists, otherwise $$\SHADE{(  ~  )}$$.
+
+
+$$\relax\begin{aligned}\relax
+  \KEY{Rule} ~ 
+    & \NAMEREF{index}
+        ( 1,   
+          \VAR{V} : \NAMEHYPER{../..}{Value-Types}{values},   
+          \VAR{V}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ) \leadsto
+        \VAR{V}
+\\
+  \KEY{Rule} ~ 
+    & \RULE{
+      & \NAMEHYPER{../../Primitive}{Integers}{natural-predecessor}
+          ( \VAR{N} ) \leadsto
+          \VAR{N}'
+      }{
+      & \NAMEREF{index}
+          ( \VAR{N} : \NAMEHYPER{../../Primitive}{Integers}{positive-integers},   
+            \_ : \NAMEHYPER{../..}{Value-Types}{values},   
+            \VAR{V}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ) \leadsto
+          \NAMEREF{index}
+            ( \VAR{N}',   
+              \VAR{V}\STAR )
+      }
+\\
+  \KEY{Rule} ~ 
+    & \NAMEREF{index}
+        ( 0,   
+          \VAR{V}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ) \leadsto
+        (  ~  )
+\\
+  \KEY{Rule} ~ 
+    & \NAMEREF{index}
+        ( \_ : \NAMEHYPER{../../Primitive}{Integers}{positive-integers},   
+          (  ~  ) ) \leadsto
+        (  ~  )
+\end{aligned}$$
+
+ Total indexing funcons: 
+
+$$\relax\begin{aligned}\relax
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{first}(\_ : \VAR{T}, \_ : \NAMEHYPER{../..}{Value-Types}{values}\STAR) :  \TO \VAR{T}
+\\
+  \KEY{Rule} ~ 
+    & \NAMEREF{first}
+        ( \VAR{V} : \VAR{T},   
+          \VAR{V}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ) \leadsto
+        \VAR{V}
+\end{aligned}$$
+
+$$\relax\begin{aligned}\relax
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{second}(\_ : \NAMEHYPER{../..}{Value-Types}{values}, \_ : \VAR{T}, \_ : \NAMEHYPER{../..}{Value-Types}{values}\STAR) :  \TO \VAR{T}
+\\
+  \KEY{Rule} ~ 
+    & \NAMEREF{second}
+        ( \_ : \NAMEHYPER{../..}{Value-Types}{values},   
+          \VAR{V} : \VAR{T},   
+          \VAR{V}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ) \leadsto
+        \VAR{V}
+\end{aligned}$$
+
+$$\relax\begin{aligned}\relax
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{third}(\_ : \NAMEHYPER{../..}{Value-Types}{values}, \_ : \NAMEHYPER{../..}{Value-Types}{values}, \_ : \VAR{T}, \_ : \NAMEHYPER{../..}{Value-Types}{values}\STAR) :  \TO \VAR{T}
+\\
+  \KEY{Rule} ~ 
+    & \NAMEREF{third}
+        ( \_ : \NAMEHYPER{../..}{Value-Types}{values},   
+          \_ : \NAMEHYPER{../..}{Value-Types}{values},   
+          \VAR{V} : \VAR{T},   
+          \VAR{V}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ) \leadsto
+        \VAR{V}
+\end{aligned}$$
+
+#### Homogeneous sequences
+               
+
+
+$$\relax\begin{aligned}\relax
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{first-n}(\_ : \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}, \_ : ( \VAR{T} )\STAR) :  \TO ( \VAR{T} )\STAR
+\\
+  \KEY{Rule} ~ 
+    & \NAMEREF{first-n}
+        ( 0,   
+          \VAR{V}\STAR : ( \VAR{T} )\STAR ) \leadsto
+        (  ~  )
+\\
+  \KEY{Rule} ~ 
+    & \RULE{
+      & \NAMEHYPER{../../Primitive}{Integers}{natural-predecessor}
+          ( \VAR{N} ) \leadsto
+          \VAR{N}'
+      }{
+      & \NAMEREF{first-n}
+          ( \VAR{N} : \NAMEHYPER{../../Primitive}{Integers}{positive-integers},   
+            \VAR{V} : \VAR{T},   
+            \VAR{V}\STAR : ( \VAR{T} )\STAR ) \leadsto
+          ( \VAR{V},  
+            \NAMEREF{first-n}
+              ( \VAR{N}',   
+                \VAR{V}\STAR ) )
+      }
+\\
+  \KEY{Rule} ~ 
+    & \NAMEREF{first-n}
+        ( \VAR{N} : \NAMEHYPER{../../Primitive}{Integers}{positive-integers},   
+          (  ~  ) ) \leadsto
+        (  ~  )
+\end{aligned}$$
+
+$$\relax\begin{aligned}\relax
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{drop-first-n}(\_ : \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}, \_ : ( \VAR{T} )\STAR) :  \TO ( \VAR{T} )\STAR
+\\
+  \KEY{Rule} ~ 
+    & \NAMEREF{drop-first-n}
+        ( 0,   
+          \VAR{V}\STAR : ( \VAR{T} )\STAR ) \leadsto
+        \VAR{V}\STAR
+\\
+  \KEY{Rule} ~ 
+    & \RULE{
+      & \NAMEHYPER{../../Primitive}{Integers}{natural-predecessor}
+          ( \VAR{N} ) \leadsto
+          \VAR{N}'
+      }{
+      & \NAMEREF{drop-first-n}
+          ( \VAR{N} : \NAMEHYPER{../../Primitive}{Integers}{positive-integers},   
+            \_ : \VAR{T},   
+            \VAR{V}\STAR : ( \VAR{T} )\STAR ) \leadsto
+          \NAMEREF{drop-first-n}
+            ( \VAR{N}',   
+              \VAR{V}\STAR )
+      }
+\\
+  \KEY{Rule} ~ 
+    & \NAMEREF{drop-first-n}
+        ( \VAR{N} : \NAMEHYPER{../../Primitive}{Integers}{positive-integers},   
+          (  ~  ) ) \leadsto
+        (  ~  )
+\end{aligned}$$
+
+$$\relax\begin{aligned}\relax
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{reverse}(\_ : ( \VAR{T} )\STAR) :  \TO ( \VAR{T} )\STAR
+\\
+  \KEY{Rule} ~ 
+    & \NAMEREF{reverse}
+        (  ~  ) \leadsto
+        (  ~  )
+\\
+  \KEY{Rule} ~ 
+    & \NAMEREF{reverse}
+        ( \VAR{V} : \VAR{T},   
+          \VAR{V}\STAR : ( \VAR{T} )\STAR ) \leadsto
+        ( \NAMEREF{reverse}
+            ( \VAR{V}\STAR ),  
+          \VAR{V} )
+\end{aligned}$$
+
+$$\relax\begin{aligned}\relax
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{n-of}(\VAR{N} : \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}, \VAR{V} : \VAR{T}) :  \TO ( \VAR{T} )\STAR
+\\
+  \KEY{Rule} ~ 
+    & \NAMEREF{n-of}
+        ( 0,   
+          \_ : \VAR{T} ) \leadsto
+        (  ~  )
+\\
+  \KEY{Rule} ~ 
+    & \RULE{
+      & \NAMEHYPER{../../Primitive}{Integers}{natural-predecessor}
+          ( \VAR{N} ) \leadsto
+          \VAR{N}'
+      }{
+      & \NAMEREF{n-of}
+          ( \VAR{N} : \NAMEHYPER{../../Primitive}{Integers}{positive-integers},   
+            \VAR{V} : \VAR{T} ) \leadsto
+          ( \VAR{V},  
+            \NAMEREF{n-of}
+              ( \VAR{N}',   
+                \VAR{V} ) )
+      }
+\end{aligned}$$
+
+$$\relax\begin{aligned}\relax
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{intersperse}(\_ : \VAR{T}', \_ : ( \VAR{T} )\STAR) :  \TO ( \VAR{T},  
+                                                                         ( \VAR{T}',  
+                                                                           \VAR{T} )\STAR )\QUERY
+\\
+  \KEY{Rule} ~ 
+    & \NAMEREF{intersperse}
+        ( \_ : \VAR{T}',   
+          (  ~  ) ) \leadsto
+        (  ~  )
+\\
+  \KEY{Rule} ~ 
+    & \NAMEREF{intersperse}
+        ( \_ : \VAR{T}',   
+          \VAR{V} ) \leadsto
+        \VAR{V}
+\\
+  \KEY{Rule} ~ 
+    & \NAMEREF{intersperse}
+        ( \VAR{V}' : \VAR{T}',   
+          \VAR{V}\SUB{1} : \VAR{T},   
+          \VAR{V}\SUB{2} : \VAR{T},   
+          \VAR{V}\STAR : ( \VAR{T} )\STAR ) \leadsto
+        ( \VAR{V}\SUB{1},  
+          \VAR{V}',  
+          \NAMEREF{intersperse}
+            ( \VAR{V}',   
+              \VAR{V}\SUB{2},   
+              \VAR{V}\STAR ) )
+\end{aligned}$$
+
+
+
+[Funcons-beta]: /CBS-beta/math/Funcons-beta
+  "FUNCONS-BETA"
+[Unstable-Funcons-beta]: /CBS-beta/math/Unstable-Funcons-beta
+  "UNSTABLE-FUNCONS-BETA"
+[Languages-beta]: /CBS-beta/math/Languages-beta
+  "LANGUAGES-BETA"
+[Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
+  "UNSTABLE-LANGUAGES-BETA"
+[CBS-beta]: /CBS-beta 
+  "CBS-BETA"

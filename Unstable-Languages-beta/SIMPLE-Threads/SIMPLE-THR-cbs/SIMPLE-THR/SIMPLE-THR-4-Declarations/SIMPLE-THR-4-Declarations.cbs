@@ -9,7 +9,7 @@ Semantics
   declare[[ _:decl ]] : =>environments
 
 
-## 4.1 Variable Declarations
+#4.1 Variable Declarations
 
 Syntax
   VarsDecl : vars-decl ::= 'var' declarators ';'
@@ -43,7 +43,7 @@ Rule
     bind(id[[ Id ]], allocate-nested-vectors(ranks[[ Ranks ]]))
 
 
-## 4.2 Arrays
+#4.2 Arrays
 
 Syntax
   Ranks : ranks ::= '[' exps ']' ranks?
@@ -71,7 +71,7 @@ Rule
       vector(left-to-right-repeat(allocate-nested-vectors(N+),1,N)))
 
 
-## 4.3 Function Declarations
+#4.3 Function Declarations
 
 Syntax
   FuncDecl : func-decl ::= 'function' id '(' ids? ')' block

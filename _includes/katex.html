@@ -1,0 +1,95 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" integrity="sha384-t5CR+zwDAROtph0PXGte6ia8heboACF9R5l/DiY+WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous">
+
+
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8+w2LAIftJEULZABrF9PPFv+tVkH" crossorigin="anonymous"></script>
+
+<!-- Copy-tex extension https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex -->
+<link href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/copy-tex.css" rel="stylesheet" type="text/css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/copy-tex.min.js" integrity="sha384-Ep9Es0VCjVn9dFeaN2uQxgGcGmG+pfZ4eBaHxUpxXDORrrVACZVOpywyzvFRGbmv" crossorigin="anonymous"></script>
+
+<!-- Override the KaTeX 0.13.0 default of font-size: 1.21em -->
+<style>
+	.katex { 
+		font-size: 1em; 
+	}
+</style>
+
+<!-- Workaround for KaTeX 0.13.0 bug https://github.com/KaTeX/KaTeX/issues/2815 -->
+<style>
+	.katex .vlist-r {
+		display: table-cell;
+	}
+</style>
+
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js" integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB+w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v" crossorigin="anonymous"
+		onload="renderMathInElement(document.body, {
+      fleqn: true,
+      globalGroup: true,
+      trust: true,
+      strict: false,
+      throwOnError: false,
+      macros: {
+        '\\SHADE': '#1',
+
+        '\\KEY': '\\textsf{\\textit{\\htmlClass{cbs-Key}{#1}}} ~',
+        '\\STRING': '\\textsf{\\textquotedblleft\\texttt{#1}\\textquotedblright}',
+        '\\ATOM': '\\textsf{\\textquoteleft\\texttt{#1}\\textquoteright}',
+        '\\LEX': '\\texttt{#1}',
+        
+        '\\HASH': '\\#',
+        '\\DOLLAR': '\\textdollar',
+        '\\PERCENT': '\\%',
+        '\\AMPERSAND': '\\&',
+        '\\APOSTROPHE': '\\textquoteright',
+        '\\BACKSLASH': '\\textbackslash',
+        '\\CARET': '\\textasciicircum',
+        '\\UNDERSCORE': '\\textunderscore',
+        '\\GRAVE': '`',
+        '\\LEFTBRACE': '\\textbraceleft',
+        '\\RIGHTBRACE': '\\textbraceright',
+        '\\TILDE': '\\textasciitilde',
+
+				'\\SUB': '_{\\mskip{-2mu}\\textsf{#1}}',
+
+        '\\VAR': '\\htmlClass{cbs-PartVariable}{\\textit{#1}\\mskip{2mu}}',
+        '\\NAME': '\\htmlClass{cbs-Name}{\\textsf{#1}}',
+        '\\SYN': '\\htmlClass{cbs-SyntaxName}{\\textsf{#1}}',
+        '\\SEM': '\\htmlClass{cbs-SemanticsName}{\\textsf{#1}}',
+        '\\SECT': '\\htmlClass{cbs-SectionNumber}{\\textsf{#1}}',
+
+        '\\VARDECL': '\\htmlId{PartVariable:#1}{\\VAR{#1}}',
+        '\\NAMEDECL': '\\htmlId{Name:#1}{\\NAME{#1}}',
+        '\\SYNDECL': '\\htmlId{SyntaxName:#1}{\\SYN{#1}}',
+        '\\SEMDECL': '\\htmlId{SemanticsName:#1}{\\SEM{#1}}',
+        '\\SECTDECL': '\\htmlId{SectionNumber:#1}{\\SECT{#1}}',
+
+        '\\VARREF': '\\href{##PartVariable:#1}{\\VAR{#1}}',
+        '\\NAMEREF': '\\href{##Name:#1}{\\NAME{#1}}',
+        '\\SYNREF': '\\href{##SyntaxName:#1}{\\SYN{#1}}',
+        '\\SEMREF': '\\href{##SemanticsName:#1}{\\SEM{#1}}',
+        '\\SECTREF': '\\href{##SectionNumber:#1}{\\SECT{#1}}',
+
+        '\\VARHYPER': '\\href{http://#1/#2/index.html##PartVariable:#3}{\\VAR{#3}}',
+        '\\NAMEHYPER': '\\href{#1/#2/index.html##Name:#3}{\\NAME{#3}}',
+        '\\SYNHYPER': '\\href{#1/#2/index.html##SyntaxName:#3}{\\SYN{#3}}',
+        '\\SEMHYPER': '\\href{#1/#2/index.html##SemanticsName:#3}{\\SEM{#3}}',
+        '\\SECTHYPER': '\\href{#1/#2/index.html##SectionNumber:#3}{\\SECT{#3}}',
+
+        '\\LEFTPHRASE': '\\llbracket',
+        '\\RIGHTPHRASE': '\\rrbracket',
+        '\\LEFTGROUP': '{\\htmlClass{cbs-Key}{(}}',
+        '\\RIGHTGROUP': '{\\htmlClass{cbs-Key}{)}}',
+        '\\PLUS': '^{\\smash{\\text{\\bf+}}}',
+        '\\STAR': '^{\\smash{\\boldsymbol{\\ast}}}',
+        '\\QUERY': '^{\\smash{\\text{\\bf?}}}',
+
+        '\\RULE': '\\frac{\\begin{gathered}#1\\end{gathered}}{\\begin{aligned}#2\\end{aligned}}',
+        '\\AXIOM': '\\begin{aligned}#1\\end{aligned}',
+        '\\TO': '\\mathop{\\Rightarrow}',
+        '\\TRANS': '\\longrightarrow',
+        
+        '\\LATEX': '\\mathsf{\\LaTeX}'
+      }
+    });"></script>

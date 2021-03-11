@@ -41,6 +41,56 @@ span.sectnumtitle a:link {
     background-color: inherit;
 }
 
+/* Math */
+
+.MathJax, .katex {
+  padding: $sp-3;
+  margin-top: 0;
+  margin-bottom: $sp-3;
+  background-color: $code-background-color;
+  border-radius: $border-radius;
+  box-shadow: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+p, li, a, dt, dd, td, th, h1, h2, h3, h4, h5, h6 {
+  > .MathJax, .katex {
+    padding: 0.2em 0.15em;
+    margin: 0;
+  }
+}
+
+.MathJax a, .katex a {
+  color: $body-text-color;
+  background-image: none;
+}
+
+mjx-container[jax="SVG"] > svg a[href] {
+  fill: $body-text-color;
+  stroke: $body-text-color;
+}
+      
+.MathJax, .katex {
+  .cbs-Key {
+    color: Gray;
+  }
+  .cbs-Name {
+    color: DarkRed;
+  }
+  .cbs-SyntaxName {
+    color: MediumSeaGreen;
+  }
+  .cbs-SemanticsName {
+    color: DarkBlue;
+  }
+  .cbs-PartVariable {
+    color: $body-text-color;
+  }
+  .cbs-SectionNumber {
+    color: $body-text-color;
+  }
+}
+
 /* Customised tables for Funcons-Reuse: */
 
 table.cbs-reuse {

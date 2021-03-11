@@ -1,4 +1,4 @@
-remote_theme: pdmosses/just-the-docs@rec-nav-2
+remote_theme: pdmosses/just-the-docs@combination-rec-nav
 # remote_theme: pmarsceill/just-the-docs
 title: CBS-beta
 description: Beta-release of the CBS framework
@@ -13,8 +13,21 @@ aux_links:
 # logo: "/assets/images/PLanCompS-150.png"
 
 # permalink: pretty
+
+collections:
+  math:
+    output: true
+
+just_the_docs:
+  collections:
+    math:
+      name: Math
+      nav_fold: true
+
 exclude:
   - "profiles/"
+  - makefile
+  - sunshine2.jar
   - "Languages-beta/IMP/IMP-cbs/Funcons-beta/"
   - "Languages-beta/IMP/IMP-cbs/target/"
   - "Languages-beta/MiniJava/MiniJava-cbs/Funcons-beta/"
@@ -83,6 +96,11 @@ back_to_top_text: "Back to top"
 # footer_content: "Copyright &copy; 2017-2020 Patrick Marsceill. Distributed by an <a href=\"https://github.com/pmarsceill/just-the-docs/tree/master/LICENSE.txt\">MIT license.</a>"
 footer_content: ""
 
+nav_next_prev: true
+# nav_prev_text: "&#8678;"
+# nav_up_text:   "&#8679;"
+# nav_next_text: "&#8680;"
+
 # Footer last edited timestamp
 # last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
 # last_edit_time_format: "%b %e %Y at %I:%M %p" # uses ruby's time format: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
@@ -95,7 +113,7 @@ footer_content: ""
 # gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
 
 # Color scheme currently only supports "dark", "light"/nil (default), or a custom scheme that you define
-# color_scheme: nil
+# color_scheme: dark
 
 # Google Analytics Tracking (optional)
 # e.g, UA-1234567-89
@@ -107,10 +125,10 @@ plugins:
   - jekyll-include-cache
 #   - jekyll-seo-tag
 
-# compress_html:
+compress_html:
 #   clippings: all
 #   comments: all
 #   endings: all
 #   startings: []
-#   blanklines: false
+  blanklines: false
 #   profile: false

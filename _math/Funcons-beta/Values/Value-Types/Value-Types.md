@@ -1,0 +1,361 @@
+## Value Types
+               
+
+
+$$\relax\begin{aligned}\relax
+  [ ~ 
+  \KEY{Type} ~ & \NAMEREF{values} \\
+  \KEY{Alias} ~ & \NAMEREF{vals} \\
+  \KEY{Type} ~ & \NAMEREF{value-types} \\
+  \KEY{Alias} ~ & \NAMEREF{types} \\
+  \KEY{Type} ~ & \NAMEREF{empty-type} \\
+  \KEY{Funcon} ~ & \NAMEREF{is-in-type} \\
+  \KEY{Alias} ~ & \NAMEREF{is} \\
+  \KEY{Funcon} ~ & \NAMEREF{is-value} \\
+  \KEY{Alias} ~ & \NAMEREF{is-val} \\
+  \KEY{Funcon} ~ & \NAMEREF{when-true} \\
+  \KEY{Alias} ~ & \NAMEREF{when} \\
+  \KEY{Type} ~ & \NAMEREF{cast-to-type} \\
+  \KEY{Alias} ~ & \NAMEREF{cast} \\
+  \KEY{Type} ~ & \NAMEREF{ground-values} \\
+  \KEY{Alias} ~ & \NAMEREF{ground-vals} \\
+  \KEY{Funcon} ~ & \NAMEREF{is-equal} \\
+  \KEY{Alias} ~ & \NAMEREF{is-eq}
+  ~ ]
+\end{aligned}$$
+
+### Values
+               
+
+
+$$\relax\begin{aligned}\relax
+  \KEY{Built-in Type} ~  
+  & \NAMEDECL{values}  
+  
+\\
+  \KEY{Alias} ~ 
+  & \NAMEDECL{vals} = \NAMEREF{values}
+\end{aligned}$$
+
+ 
+  The type $$\SHADE{\NAMEREF{values}}$$ includes all values provided by CBS.
+  
+  Some funcons are declared as value constructors. Values are constructed by
+  applying value constructor funcons to the required arguments.
+  
+  Values are immutable and context-independent. Their structure can be
+  inspected using patterns formed from value constructors and variables.
+  Computations can be extracted from values and executed, but the structure
+  of computations cannot be inspected.
+  
+  Some types of values and their funcons are declared as built-in, and not
+  further specified in CBS. New types of built-in values can be added to CBS
+  by its developers.
+ 
+  New algebraic datatypes may be declared by users of CBS. Their values are
+  disjoint from built-in values.
+
+
+$$\relax\begin{aligned}\relax
+  \KEY{Meta-variables} ~ 
+  & \VAR{T}, \VAR{T}\SUB{1}, \VAR{T}\SUB{2} <: \NAMEREF{values}
+\end{aligned}$$
+
+### Types
+               
+
+
+$$\relax\begin{aligned}\relax
+  \KEY{Built-in Type} ~  
+  & \NAMEDECL{value-types}  
+  
+\\
+  \KEY{Alias} ~ 
+  & \NAMEDECL{types} = \NAMEREF{value-types}
+\end{aligned}$$
+
+$$\relax\begin{aligned}\relax
+  \KEY{Built-in Type} ~  
+  & \NAMEDECL{empty-type}  
+  
+\end{aligned}$$
+
+ 
+  A type $$\SHADE{\VAR{T}}$$ is a value that represents a set of values. 
+
+  The values of type $$\SHADE{\NAMEREF{types}}$$ are all the types, including $$\SHADE{\NAMEREF{types}}$$ itself.
+
+  The formula $$\SHADE{ \VAR{V} : \VAR{T}}$$ holds when $$\SHADE{\VAR{V}}$$ is a value of type $$\SHADE{\VAR{T}}$$, i.e., $$\SHADE{\VAR{V}}$$ is in
+  the set represented by the type $$\SHADE{\VAR{T}}$$.
+
+  The formula $$\SHADE{\VAR{T}\SUB{1} <: \VAR{T}\SUB{2}}$$ holds when $$\SHADE{\VAR{T}\SUB{1}}$$ is a subtype of $$\SHADE{\VAR{T}\SUB{2}}$$, i.e., the set
+  represented by $$\SHADE{\VAR{T}\SUB{1}}$$ is a subset of the set represented by $$\SHADE{\VAR{T}\SUB{2}}$$.
+
+  The set of types forms a Boolean algebra with the following operations and
+  constants:
+    * $$\SHADE{\VAR{T}\SUB{1} \ \VAR{T}\SUB{2}}$$    (meet/intersection)
+    * $$\SHADE{\VAR{T}\SUB{1} \mid \VAR{T}\SUB{2}}$$    (join/union)
+    * $$\SHADE{\mathop{\sim} \VAR{T}}$$        (complement)
+    * $$\SHADE{\NAMEREF{values}}$$     (top)
+    * $$\SHADE{\NAMEREF{empty-type}}$$ (bottom)
+  
+  Subtyping: $$\SHADE{\VAR{T}\SUB{1} <: \VAR{T}\SUB{2}}$$ is the partial order defined by the algebra. 
+
+  Subsumption: If $$\SHADE{ \VAR{V} : \VAR{T}\SUB{1}}$$ and $$\SHADE{\VAR{T}\SUB{1} <: \VAR{T}\SUB{2}}$$ both hold, so does $$\SHADE{ \VAR{V} : \VAR{T}\SUB{2}}$$.
+
+  Indivisibility: For each value $$\SHADE{\VAR{V}}$$ and type $$\SHADE{\VAR{T}}$$, either $$\SHADE{ \VAR{V} : \VAR{T}}$$ or
+  $$\SHADE{ \VAR{V} : \mathop{\sim} \VAR{T}}$$ holds.
+
+  Universality: $$\SHADE{ \VAR{V} : \NAMEREF{values}}$$ holds for all values $$\SHADE{\VAR{V}}$$.
+
+  Emptiness: $$\SHADE{ \VAR{V} : \NAMEREF{empty-type}}$$ holds for no value $$\SHADE{\VAR{V}}$$.
+
+  'Type N' declares the name 'N' to refer to a fresh value constructor
+  and includes it as an element of $$\SHADE{\NAMEREF{types}}$$. 
+  
+  'Type N ~> T' moreover specifies 'Rule N ~> T', so that 'N' can be used as
+  an abbreviation for the type term 'T'.
+  
+  'Type N <: T' declares the name 'N' to refer to a fresh value constructor
+  in $$\SHADE{\NAMEREF{types}}$$, and asserts 'N <: T'. 
+  
+  Parametrised type declarations introduce generic (possibly dependent) types, 
+  i.e., families of individual types, indexed by types (and by other values). 
+  For example, $$\SHADE{\NAMEHYPER{../Composite}{Lists}{lists}
+           ( \VAR{T} )}$$ is parameterised by the type of list elements $$\SHADE{\VAR{T}}$$.
+  Replacing a parameter by $$\SHADE{\_}$$ denotes the union over all instances of that
+  parameter, e.g., $$\SHADE{\NAMEHYPER{../Composite}{Lists}{lists}
+           ( \_ )}$$ is the union of all types $$\SHADE{\NAMEHYPER{../Composite}{Lists}{lists}
+           ( \VAR{T} )}$$ with $$\SHADE{\VAR{T} : \NAMEREF{types}}$$.
+  
+  Qualified variables $$\SHADE{\VAR{V} : \VAR{T}}$$ in terms range over values of type $$\SHADE{\VAR{T}}$$.
+  Qualified variables $$\SHADE{\VAR{T}\SUB{1} <: \VAR{T}\SUB{2}}$$ in terms range over subtypes $$\SHADE{\VAR{T}\SUB{1}}$$ of $$\SHADE{\VAR{T}\SUB{2}}$$.
+
+
+$$\relax\begin{aligned}\relax
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{is-in-type}(\VAR{V} : \NAMEREF{values}, \VAR{T} : \NAMEREF{types}) :  \TO \NAMEHYPER{../Primitive}{Booleans}{booleans}
+\\
+  \KEY{Alias} ~ 
+  & \NAMEDECL{is} = \NAMEREF{is-in-type}
+\end{aligned}$$
+
+
+  $$\SHADE{\NAMEREF{is-in-type}
+           ( \VAR{V},   
+             \VAR{T} )}$$ tests whether $$\SHADE{ \VAR{V} : \VAR{T}}$$ holds. The value $$\SHADE{\VAR{V}}$$ need not be a
+  ground value, but $$\SHADE{\VAR{T}}$$ should not require testing any computation types.
+
+
+$$\relax\begin{aligned}\relax
+  \KEY{Rule} ~ 
+    & \RULE{
+      &  \VAR{V} : \VAR{T}
+      }{
+      & \NAMEREF{is-in-type}
+          ( \VAR{V} : \NAMEREF{values},   
+            \VAR{T} : \NAMEREF{types} ) \leadsto
+          \NAMEHYPER{../Primitive}{Booleans}{true}
+      }
+\\
+  \KEY{Rule} ~ 
+    & \RULE{
+      &  \VAR{V} : \mathop{\sim} \VAR{T}
+      }{
+      & \NAMEREF{is-in-type}
+          ( \VAR{V} : \NAMEREF{values},   
+            \VAR{T} : \NAMEREF{types} ) \leadsto
+          \NAMEHYPER{../Primitive}{Booleans}{false}
+      }
+\end{aligned}$$
+
+### Option types
+               
+
+
+
+  For any value type $$\SHADE{\VAR{T}}$$, the elements of the option type $$\SHADE{( \VAR{T} )\QUERY}$$ are the
+  elements of $$\SHADE{\VAR{T}}$$ together with the empty sequence $$\SHADE{(  ~  )}$$, which represents
+  the absence of a value. Option types are a special case of sequence types.
+  
+  A funcon whose result type is an option type $$\SHADE{( \VAR{T} )\QUERY}$$ may compute a value of
+  type $$\SHADE{\VAR{T}}$$ or the empty sequence $$\SHADE{(  ~  )}$$; the latter represents undefined results
+  of partial operations.
+
+  The parentheses in $$\SHADE{( \VAR{T} )\QUERY}$$ and $$\SHADE{(  ~  )}$$ can be omitted when this does not give
+  rise to grouoing ambiguity. Note however that $$\SHADE{\VAR{T}\QUERY}$$ is a meta-variable ranging
+  over option types, whereas $$\SHADE{( \VAR{T} )\QUERY}$$ is the option type for the value type $$\SHADE{\VAR{T}}$$.
+
+
+$$\relax\begin{aligned}\relax
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{is-value}(\_ : \NAMEREF{values}\QUERY) :  \TO \NAMEHYPER{../Primitive}{Booleans}{booleans}
+\\
+  \KEY{Alias} ~ 
+  & \NAMEDECL{is-val} = \NAMEREF{is-value}
+\end{aligned}$$
+
+
+  $$\SHADE{\NAMEREF{is-value}
+           ( \VAR{V}\QUERY )}$$ tests whether the optional value $$\SHADE{\VAR{V}\QUERY}$$ is a value or absent.
+
+
+$$\relax\begin{aligned}\relax
+  \KEY{Rule} ~ 
+    & \NAMEREF{is-value}
+        ( \_ : \NAMEREF{values} ) \leadsto
+        \NAMEHYPER{../Primitive}{Booleans}{true}
+\\
+  \KEY{Rule} ~ 
+    & \NAMEREF{is-value}
+        (  ~  ) \leadsto
+        \NAMEHYPER{../Primitive}{Booleans}{false}
+\end{aligned}$$
+
+$$\relax\begin{aligned}\relax
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{when-true}(\_ : \NAMEHYPER{../Primitive}{Booleans}{booleans}, \_ : \VAR{T}) :  \TO ( \VAR{T} )\QUERY
+\\
+  \KEY{Alias} ~ 
+  & \NAMEDECL{when} = \NAMEREF{when-true}
+\end{aligned}$$
+
+
+  $$\SHADE{\NAMEREF{when-true}
+           ( \VAR{B},   
+             \VAR{V} )}$$ gives $$\SHADE{\VAR{V}}$$ when $$\SHADE{\VAR{B}}$$ is $$\SHADE{\NAMEHYPER{../Primitive}{Booleans}{true}}$$, and $$\SHADE{(  ~  )}$$ when $$\SHADE{\VAR{B}}$$ is $$\SHADE{\NAMEHYPER{../Primitive}{Booleans}{false}}$$.
+
+
+$$\relax\begin{aligned}\relax
+  \KEY{Rule} ~ 
+    & \NAMEREF{when-true}
+        ( \NAMEHYPER{../Primitive}{Booleans}{true},   
+          \VAR{V} : \NAMEREF{values} ) \leadsto
+        \VAR{V}
+\\
+  \KEY{Rule} ~ 
+    & \NAMEREF{when-true}
+        ( \NAMEHYPER{../Primitive}{Booleans}{false},   
+          \VAR{V} : \NAMEREF{values} ) \leadsto
+        (  ~  )
+\end{aligned}$$
+
+$$\relax\begin{aligned}\relax
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{cast-to-type}(\VAR{V} : \NAMEREF{values}, \VAR{T} : \NAMEREF{types}) :  \TO ( \VAR{T} )\QUERY
+\\
+  \KEY{Alias} ~ 
+  & \NAMEDECL{cast} = \NAMEREF{cast-to-type}
+\end{aligned}$$
+
+
+  $$\SHADE{\NAMEREF{cast-to-type}
+           ( \VAR{V},   
+             \VAR{T} )}$$ gives $$\SHADE{\VAR{V}}$$ if it is in $$\SHADE{\VAR{T}}$$, otherwise $$\SHADE{(  ~  )}$$.
+
+
+$$\relax\begin{aligned}\relax
+  \KEY{Rule} ~ 
+    & \RULE{
+      &  \VAR{V} : \VAR{T}
+      }{
+      & \NAMEREF{cast-to-type}
+          ( \VAR{V} : \NAMEREF{values},   
+            \VAR{T} : \NAMEREF{types} ) \leadsto
+          \VAR{V}
+      }
+\\
+  \KEY{Rule} ~ 
+    & \RULE{
+      &  \VAR{V} : \mathop{\sim} \VAR{T}
+      }{
+      & \NAMEREF{cast-to-type}
+          ( \VAR{V} : \NAMEREF{values},   
+            \VAR{T} : \NAMEREF{types} ) \leadsto
+          (  ~  )
+      }
+\end{aligned}$$
+
+### Ground values
+               
+
+
+$$\relax\begin{aligned}\relax
+  \KEY{Built-in Type} ~  
+  & \NAMEDECL{ground-values}  
+  
+\\
+  \KEY{Alias} ~ 
+  & \NAMEDECL{ground-vals} = \NAMEREF{ground-values}
+\end{aligned}$$
+
+
+  The elements of $$\SHADE{\NAMEREF{ground-values}}$$ are all values that are formed entirely
+  from value-constructors, and thus do not involve computations. 
+  
+  A type is a subtype of $$\SHADE{\NAMEREF{ground-values}}$$ if and only if all its elements are
+  included in $$\SHADE{\NAMEREF{ground-values}}$$.
+
+
+$$\relax\begin{aligned}\relax
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{is-equal}(\VAR{V} : \NAMEREF{values}, \VAR{W} : \NAMEREF{values}) :  \TO \NAMEHYPER{../Primitive}{Booleans}{booleans}
+\\
+  \KEY{Alias} ~ 
+  & \NAMEDECL{is-eq} = \NAMEREF{is-equal}
+\end{aligned}$$
+
+
+  $$\SHADE{\NAMEREF{is-equal}
+           ( \VAR{V},   
+             \VAR{W} )}$$ returns $$\SHADE{\NAMEHYPER{../Primitive}{Booleans}{true}}$$ when $$\SHADE{\VAR{V}}$$ and $$\SHADE{\VAR{W}}$$ are identical ground values,
+  otherwise $$\SHADE{\NAMEHYPER{../Primitive}{Booleans}{false}}$$.
+
+
+$$\relax\begin{aligned}\relax
+  \KEY{Rule} ~ 
+    & \RULE{
+      & \VAR{V} == 
+          \VAR{W}
+      }{
+      & \NAMEREF{is-equal}
+          ( \VAR{V} : \NAMEREF{ground-values},   
+            \VAR{W} : \NAMEREF{ground-values} ) \leadsto
+          \NAMEHYPER{../Primitive}{Booleans}{true}
+      }
+\\
+  \KEY{Rule} ~ 
+    & \RULE{
+      & \VAR{V} \neq \VAR{W}
+      }{
+      & \NAMEREF{is-equal}
+          ( \VAR{V} : \NAMEREF{ground-values},   
+            \VAR{W} : \NAMEREF{ground-values} ) \leadsto
+          \NAMEHYPER{../Primitive}{Booleans}{false}
+      }
+\\
+  \KEY{Rule} ~ 
+    & \NAMEREF{is-equal}
+        ( \VAR{V} : \mathop{\sim} \NAMEREF{ground-values},   
+          \VAR{W} : \NAMEREF{values} ) \leadsto
+        \NAMEHYPER{../Primitive}{Booleans}{false}
+\\
+  \KEY{Rule} ~ 
+    & \NAMEREF{is-equal}
+        ( \VAR{V} : \NAMEREF{values},   
+          \VAR{W} : \mathop{\sim} \NAMEREF{ground-values} ) \leadsto
+        \NAMEHYPER{../Primitive}{Booleans}{false}
+\end{aligned}$$
+
+
+
+[Funcons-beta]: /CBS-beta/math/Funcons-beta
+  "FUNCONS-BETA"
+[Unstable-Funcons-beta]: /CBS-beta/math/Unstable-Funcons-beta
+  "UNSTABLE-FUNCONS-BETA"
+[Languages-beta]: /CBS-beta/math/Languages-beta
+  "LANGUAGES-BETA"
+[Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
+  "UNSTABLE-LANGUAGES-BETA"
+[CBS-beta]: /CBS-beta 
+  "CBS-BETA"
