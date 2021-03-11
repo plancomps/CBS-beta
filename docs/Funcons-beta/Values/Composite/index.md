@@ -3,7 +3,8 @@ layout: default
 title: Composite
 parent: Values
 ancestor: Funcons-beta
-nav_order: "6"
+permalink: /docs/Funcons-beta/Values/Composite
+nav_order: "2"
 has_toc: false
 ---
 
@@ -77,26 +78,28 @@ The funcons used to compute such values are not regarded as constructors, as the
 [Graphs]
 : directed, possibly cyclic, graphs
 
-[datatypes]:    Datatypes
-[tuples]:       Tuples
-[lists]:        Lists
-[vectors]:      Vectors
-[trees]:        Trees
-[references]:   References
-[pointer-null]: References
-[records]:      Records
-[variants]:     Variants
-[classes]:      Classes
-[objects]:      Objects
-[bit-vectors]:  Bits
-[sets]:         Sets
-[maps]:         Maps
-[multisets]:    Multisets
-[graphs]:       Graphs
-[sequences]:    Sequences/
+[values]:       /CBS-beta/Funcons-beta/Values/Value-Types/
 
-[value-types]:  ../Value-Types
+[datatypes]:    /CBS-beta/Funcons-beta/Values/Composite/Datatypes/
+[tuples]:       /CBS-beta/Funcons-beta/Values/Composite/Tuples/
+[lists]:        /CBS-beta/Funcons-beta/Values/Composite/Lists/
+[vectors]:      /CBS-beta/Funcons-beta/Values/Composite/Vectors/
+[trees]:        /CBS-beta/Funcons-beta/Values/Composite/Trees/
+[references]:   /CBS-beta/Funcons-beta/Values/Composite/References/
+[pointer-null]: /CBS-beta/Funcons-beta/Values/Composite/References/
+[records]:      /CBS-beta/Funcons-beta/Values/Composite/Records/
+[variants]:     /CBS-beta/Funcons-beta/Values/Composite/Variants/
+[classes]:      /CBS-beta/Funcons-beta/Values/Composite/Classes/
+[objects]:      /CBS-beta/Funcons-beta/Values/Composite/Objects/
+[bit-vectors]:  /CBS-beta/Funcons-beta/Values/Composite/Bits/
+[sets]:         /CBS-beta/Funcons-beta/Values/Composite/Sets/
+[maps]:         /CBS-beta/Funcons-beta/Values/Composite/Maps/
+[multisets]:    /CBS-beta/Funcons-beta/Values/Composite/Multisets/
+[graphs]:       /CBS-beta/Funcons-beta/Values/Composite/Graphs/
 
-[computations]: ../../Computations
+[value-types]:  /CBS-beta/Funcons-beta/Values/Value-Types/
+[sequences]:    /CBS-beta/Funcons-beta/Values/Composite/Sequences/
 
-[ground values]: ../Values#ground-values
+[computations]: /CBS-beta/docs/Funcons-beta/Computations
+
+[ground values]: /CBS-beta/docs/Funcons-beta/Values#ground-values

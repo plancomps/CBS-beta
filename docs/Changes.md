@@ -10,6 +10,14 @@ Beta-release changes
 This page lists significant additions and changes to the funcon definitions and
 language specifications included in the CBS beta-release.
 
+2020-10-31: [Funcons-beta](Funcons-beta), [Unstable-Funcons-beta](Unstable-Funcons-beta)
+* Adjusted navigation order
+* Added links to sibling (← →) and parent (↑) pages
+
+2021-03-10: [CBS-beta](/CBS-beta/)
+* GitHub Pages theme updated to
+  [pdmosses/just-the-docs@combination-rec-nav](https://github.com/pdmosses/just-the-docs/tree/combination-rec-nav)
+
 2020-11-02: [MiniJava-Syntax](/CBS-beta/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Syntax/)
 * Layout corrected
 

@@ -3,7 +3,8 @@ layout: default
 title: Threads
 parent: Computations
 ancestor: Unstable-Funcons-beta
-nav_order: "3"
+permalink: /docs/Unstable-Funcons-beta/Computations/Threads
+nav_order: "1"
 ---
 
 Threads
@@ -44,9 +45,9 @@ Synchronising funcons allow threads to be blocked and resumed.
 [IBM threads]: https://www.ibm.com/support/knowledgecenter/ssw_aix_72/com.ibm.aix.genprogc/chapter12.htm
   "IBM Knowledge Centre"
 
-[Multithreading]: Multithreading
-[Synchronising]:  Synchronising
-[Locks]:          Synchronising/Locks
-[Notifications]:  Synchronising/Notifications
+[Multithreading]: /CBS-beta/Unstable-Funcons-beta/Computations/Threads/Multithreading/
+[Synchronising]:  /CBS-beta/Unstable-Funcons-beta/Computations/Threads/Synchronising/
+[Locks]:          /CBS-beta/Unstable-Funcons-beta/Computations/Threads/Synchronising/Locks/
+[Notifications]:  /CBS-beta/Unstable-Funcons-beta/Computations/Threads/Synchronising/Notifications/
 
-[Unstable-Languages-beta]: ../../../Unstable-Languages-beta
+[Unstable-Languages-beta]: /CBS-beta/docs/Unstable-Languages-beta

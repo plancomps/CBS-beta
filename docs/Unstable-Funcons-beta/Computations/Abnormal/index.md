@@ -3,7 +3,8 @@ layout: default
 title: Abnormal
 parent: Computations
 ancestor: Unstable-Funcons-beta
-nav_order: "2"
+permalink: /docs/Unstable-Funcons-beta/Computations/Abnormal
+nav_order: "3"
 ---
 
 Abnormal computation
@@ -14,6 +15,6 @@ connection with languages that include threads.
 
 - [Postponing]\: adding after-effects to an enclosing term
 
-[Postponing]:     Postponing
+[Postponing]:     /CBS-beta/Unstable-Funcons-beta/Computations/Abnormal/Postponing/
 
-[Unstable-Languages-beta]: ../../../Unstable-Languages-beta
+[Unstable-Languages-beta]: /CBS-beta/docs/Unstable-Languages-beta

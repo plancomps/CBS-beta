@@ -1,0 +1,4 @@
+nav_debug: ""
+
+# For local debugging including the test pages, use the option
+# --config _config.yml,_config_dev.yml,_config_test.yml,_config_debug.yml

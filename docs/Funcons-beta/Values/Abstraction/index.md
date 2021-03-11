@@ -3,7 +3,8 @@ layout: default
 title: Abstraction
 parent: Values
 ancestor: Funcons-beta
-nav_order: "7"
+permalink: /docs/Funcons-beta/Values/Abstraction
+nav_order: "1"
 ---
 
 Abstraction
@@ -33,11 +34,11 @@ However, they are not ground values, and cannot be tested for equality.
 [Patterns]
 : values formed from abstractions matching a single given value
 
-[values]:       ../Value-Types
+[values]:       /CBS-beta/Funcons-beta/Values/Value-Types/
 
-[abstractions]: Generic
-[thunks]:       Thunks
-[functions]:    Functions
-[patterns]:     Patterns
+[abstractions]: /CBS-beta/Funcons-beta/Values/Abstraction/Generic/
+[thunks]:       /CBS-beta/Funcons-beta/Values/Abstraction/Thunks/
+[functions]:    /CBS-beta/Funcons-beta/Values/Abstraction/Functions/
+[patterns]:     /CBS-beta/Funcons-beta/Values/Abstraction/Patterns/
 
-[computations]: ../../Computations
+[computations]: /CBS-beta/docs/Funcons-beta/Computations

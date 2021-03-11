@@ -3,7 +3,8 @@ layout: default
 title: Normal
 parent: Computations
 ancestor: Unstable-Funcons-beta
-nav_order: "1"
+permalink: /docs/Unstable-Funcons-beta/Computations/Normal
+nav_order: "2"
 ---
 
 Normal computation
@@ -15,7 +16,9 @@ for use in connection with languages that include threads.
 - [Indexing]\: allocating indexes for values
 - [Memos]\: associating keys with fixed values
 
-[Indexing]:       Indexing
-[Memos]:          Memos
+[Indexing]:       /CBS-beta/Unstable-Funcons-beta/Computations/Normal/Indexing/
+[Memos]:          /CBS-beta/Unstable-Funcons-beta/Computations/Normal/Memos/
 
-[Unstable-Languages-beta]: ../../../Unstable-Languages-beta
+[Postponing]:     /CBS-beta/Unstable-Funcons-beta/Computations/Abnormal/Postponing/
+
+[Unstable-Languages-beta]: /CBS-beta/docs/Unstable-Languages-beta
