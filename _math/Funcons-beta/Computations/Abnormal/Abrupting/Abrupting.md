@@ -98,8 +98,8 @@ $$\relax\begin{aligned}\relax
 $$\relax\begin{aligned}\relax
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{X} \xrightarrow{\NAMEREF{abrupted}(  ~  )}_{} 
-          \VAR{X}'
+       \VAR{X} \xrightarrow{\NAMEREF{abrupted}(  ~  )}_{} 
+        \VAR{X}'
       }{
       &  \NAMEREF{handle-abrupt}
                       ( \VAR{X},   
@@ -111,8 +111,8 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{X} \xrightarrow{\NAMEREF{abrupted}( \VAR{V} : \VAR{T}'' )}_{} 
-          \VAR{X}'
+       \VAR{X} \xrightarrow{\NAMEREF{abrupted}( \VAR{V} : \VAR{T}'' )}_{} 
+        \VAR{X}'
       }{
       &  \NAMEREF{handle-abrupt}
                       ( \VAR{X},   
@@ -146,8 +146,8 @@ $$\relax\begin{aligned}\relax
 $$\relax\begin{aligned}\relax
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{X} \xrightarrow{\NAMEREF{abrupted}(  ~  )}_{} 
-          \VAR{X}'
+       \VAR{X} \xrightarrow{\NAMEREF{abrupted}(  ~  )}_{} 
+        \VAR{X}'
       }{
       &  \NAMEREF{finally}
                       ( \VAR{X},   
@@ -159,8 +159,8 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{X} \xrightarrow{\NAMEREF{abrupted}( \VAR{V} : \NAMEHYPER{../../../Values}{Value-Types}{values} )}_{} 
-          \VAR{X}'
+       \VAR{X} \xrightarrow{\NAMEREF{abrupted}( \VAR{V} : \NAMEHYPER{../../../Values}{Value-Types}{values} )}_{} 
+        \VAR{X}'
       }{
       &  \NAMEREF{finally}
                       ( \VAR{X},   

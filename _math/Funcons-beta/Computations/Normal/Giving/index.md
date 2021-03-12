@@ -76,8 +76,8 @@ $$\relax\begin{aligned}\relax
 $$\relax\begin{aligned}\relax
   \KEY{Rule} ~ 
     & \RULE{
-      & \NAMEREF{given-value} ( \VAR{V} ) \vdash \VAR{Y} \TRANS 
-          \VAR{Y}'
+      \NAMEREF{given-value} ( \VAR{V} ) \vdash \VAR{Y} \TRANS 
+        \VAR{Y}'
       }{
       & \NAMEREF{given-value} ( \_\QUERY ) \vdash \NAMEREF{give}
                       ( \VAR{V} : \VAR{T},   
@@ -126,8 +126,8 @@ $$\relax\begin{aligned}\relax
 $$\relax\begin{aligned}\relax
   \KEY{Rule} ~ 
     & \RULE{
-      & \NAMEREF{given-value} (  ~  ) \vdash \VAR{X} \TRANS 
-          \VAR{X}'
+      \NAMEREF{given-value} (  ~  ) \vdash \VAR{X} \TRANS 
+        \VAR{X}'
       }{
       & \NAMEREF{given-value} ( \_\QUERY ) \vdash \NAMEREF{no-given}
                       ( \VAR{X} ) \TRANS 
@@ -236,10 +236,10 @@ $$\relax\begin{aligned}\relax
 $$\relax\begin{aligned}\relax
   \KEY{Rule} ~ 
     & \RULE{
-      & \NAMEHYPER{../../../Values/Primitive}{Integers}{is-less-or-equal}
-          ( \VAR{M},   
-            \VAR{N} ) == 
-          \NAMEHYPER{../../../Values/Primitive}{Booleans}{true}
+      \NAMEHYPER{../../../Values/Primitive}{Integers}{is-less-or-equal}
+        ( \VAR{M},   
+          \VAR{N} ) == 
+        \NAMEHYPER{../../../Values/Primitive}{Booleans}{true}
       }{
       & \NAMEREF{left-to-right-repeat}
           ( \VAR{F},   
@@ -259,10 +259,10 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      & \NAMEHYPER{../../../Values/Primitive}{Integers}{is-less-or-equal}
-          ( \VAR{M},   
-            \VAR{N} ) == 
-          \NAMEHYPER{../../../Values/Primitive}{Booleans}{false}
+      \NAMEHYPER{../../../Values/Primitive}{Integers}{is-less-or-equal}
+        ( \VAR{M},   
+          \VAR{N} ) == 
+        \NAMEHYPER{../../../Values/Primitive}{Booleans}{false}
       }{
       & \NAMEREF{left-to-right-repeat}
           ( \_,   
@@ -288,10 +288,10 @@ $$\relax\begin{aligned}\relax
 $$\relax\begin{aligned}\relax
   \KEY{Rule} ~ 
     & \RULE{
-      & \NAMEHYPER{../../../Values/Primitive}{Integers}{is-less-or-equal}
-          ( \VAR{M},   
-            \VAR{N} ) == 
-          \NAMEHYPER{../../../Values/Primitive}{Booleans}{true}
+      \NAMEHYPER{../../../Values/Primitive}{Integers}{is-less-or-equal}
+        ( \VAR{M},   
+          \VAR{N} ) == 
+        \NAMEHYPER{../../../Values/Primitive}{Booleans}{true}
       }{
       & \NAMEREF{interleave-repeat}
           ( \VAR{F},   
@@ -311,10 +311,10 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      & \NAMEHYPER{../../../Values/Primitive}{Integers}{is-less-or-equal}
-          ( \VAR{M},   
-            \VAR{N} ) == 
-          \NAMEHYPER{../../../Values/Primitive}{Booleans}{false}
+      \NAMEHYPER{../../../Values/Primitive}{Integers}{is-less-or-equal}
+        ( \VAR{M},   
+          \VAR{N} ) == 
+        \NAMEHYPER{../../../Values/Primitive}{Booleans}{false}
       }{
       & \NAMEREF{interleave-repeat}
           ( \_,   

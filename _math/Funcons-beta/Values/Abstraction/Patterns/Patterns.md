@@ -202,7 +202,7 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      & \VAR{I}\SUB{2} \neq \STRING{pattern}
+      \VAR{I}\SUB{2} \neq \STRING{pattern}
       }{
       & \NAMEREF{match}
           ( \NAMEHYPER{../../Composite}{Datatypes}{datatype-value}
@@ -236,9 +236,9 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      & \NAMEHYPER{../../Composite}{Maps}{dom}
-          ( \VAR{M}\SUB{2} ) == 
-          \{  ~  \}
+      \NAMEHYPER{../../Composite}{Maps}{dom}
+        ( \VAR{M}\SUB{2} ) == 
+        \{  ~  \}
       }{
       & \NAMEREF{match}
           ( \VAR{M}\SUB{1} : \NAMEHYPER{../../Composite}{Maps}{maps}
@@ -259,12 +259,12 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      & \NAMEHYPER{../../Composite}{Maps}{dom}
-          ( \VAR{M}\SUB{2} ) \neq \{  ~  \}\\
-        &\NAMEHYPER{../../Composite}{Sets}{some-element}
-          ( \NAMEHYPER{../../Composite}{Maps}{dom}
-              ( \VAR{M}\SUB{2} ) ) \leadsto
-          \VAR{K}
+      \NAMEHYPER{../../Composite}{Maps}{dom}
+        ( \VAR{M}\SUB{2} ) \neq \{  ~  \}\\
+      \NAMEHYPER{../../Composite}{Sets}{some-element}
+        ( \NAMEHYPER{../../Composite}{Maps}{dom}
+            ( \VAR{M}\SUB{2} ) ) \leadsto
+        \VAR{K}
       }{
       & \NAMEREF{match}
           ( \VAR{M}\SUB{1} : \NAMEHYPER{../../Composite}{Maps}{maps}
@@ -298,9 +298,9 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{P} : \mathop{\sim} ( \NAMEHYPER{../../Composite}{Datatypes}{datatype-values} \mid \NAMEHYPER{../../Composite}{Maps}{maps}
-                                                             ( \_,   
-                                                               \_ ) )
+       \VAR{P} : \mathop{\sim} ( \NAMEHYPER{../../Composite}{Datatypes}{datatype-values} \mid \NAMEHYPER{../../Composite}{Maps}{maps}
+                                                           ( \_,   
+                                                             \_ ) )
       }{
       & \NAMEREF{match}
           ( \VAR{V} : \NAMEHYPER{../..}{Value-Types}{values},   
@@ -342,7 +342,7 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      & \VAR{I}\SUB{2} \neq \STRING{pattern}
+      \VAR{I}\SUB{2} \neq \STRING{pattern}
       }{
       & \NAMEREF{match-loosely}
           ( \NAMEHYPER{../../Composite}{Datatypes}{datatype-value}
@@ -376,9 +376,9 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      & \NAMEHYPER{../../Composite}{Maps}{dom}
-          ( \VAR{M}\SUB{2} ) == 
-          \{  ~  \}
+      \NAMEHYPER{../../Composite}{Maps}{dom}
+        ( \VAR{M}\SUB{2} ) == 
+        \{  ~  \}
       }{
       & \NAMEREF{match-loosely}
           ( \VAR{M}\SUB{1} : \NAMEHYPER{../../Composite}{Maps}{maps}
@@ -393,12 +393,12 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      & \NAMEHYPER{../../Composite}{Maps}{dom}
-          ( \VAR{M}\SUB{2} ) \neq \{  ~  \}\\
-        &\NAMEHYPER{../../Composite}{Sets}{some-element}
-          ( \NAMEHYPER{../../Composite}{Maps}{dom}
-              ( \VAR{M}\SUB{2} ) ) \leadsto
-          \VAR{K}
+      \NAMEHYPER{../../Composite}{Maps}{dom}
+        ( \VAR{M}\SUB{2} ) \neq \{  ~  \}\\
+      \NAMEHYPER{../../Composite}{Sets}{some-element}
+        ( \NAMEHYPER{../../Composite}{Maps}{dom}
+            ( \VAR{M}\SUB{2} ) ) \leadsto
+        \VAR{K}
       }{
       & \NAMEREF{match-loosely}
           ( \VAR{M}\SUB{1} : \NAMEHYPER{../../Composite}{Maps}{maps}
@@ -432,9 +432,9 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{P} : \mathop{\sim} ( \NAMEHYPER{../../Composite}{Datatypes}{datatype-values} \mid \NAMEHYPER{../../Composite}{Maps}{maps}
-                                                             ( \_,   
-                                                               \_ ) )
+       \VAR{P} : \mathop{\sim} ( \NAMEHYPER{../../Composite}{Datatypes}{datatype-values} \mid \NAMEHYPER{../../Composite}{Maps}{maps}
+                                                           ( \_,   
+                                                             \_ ) )
       }{
       & \NAMEREF{match-loosely}
           ( \VAR{DV} : \NAMEHYPER{../..}{Value-Types}{values},   

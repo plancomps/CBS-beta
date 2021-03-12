@@ -228,7 +228,7 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{C} : \mathop{\sim} \NAMEREF{ascii-characters}
+       \VAR{C} : \mathop{\sim} \NAMEREF{ascii-characters}
       }{
       & \NAMEREF{ascii-character} ~
           [ \VAR{C} : \NAMEREF{characters} ] \leadsto
@@ -237,8 +237,8 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      & \NAMEHYPER{../../Composite}{Sequences}{length}
-          ( \VAR{C}\STAR ) \neq 1
+      \NAMEHYPER{../../Composite}{Sequences}{length}
+        ( \VAR{C}\STAR ) \neq 1
       }{
       & \NAMEREF{ascii-character} ~
           [ \VAR{C}\STAR : \NAMEREF{characters}\STAR ] \leadsto

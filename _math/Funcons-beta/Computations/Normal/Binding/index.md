@@ -192,10 +192,10 @@ $$\relax\begin{aligned}\relax
 $$\relax\begin{aligned}\relax
   \KEY{Rule} ~ 
     & \RULE{
-      & \NAMEHYPER{../../../Values/Composite}{Maps}{lookup}
-          ( \VAR{$\rho$},   
-            \VAR{I} ) \leadsto
-          ( \VAR{V} : \NAMEHYPER{../../../Values}{Value-Types}{values} )
+      \NAMEHYPER{../../../Values/Composite}{Maps}{lookup}
+        ( \VAR{$\rho$},   
+          \VAR{I} ) \leadsto
+        ( \VAR{V} : \NAMEHYPER{../../../Values}{Value-Types}{values} )
       }{
       & \NAMEREF{environment} ( \VAR{$\rho$} ) \vdash \NAMEREF{bound-directly}
                       ( \VAR{I} : \NAMEREF{identifiers} ) \TRANS 
@@ -204,10 +204,10 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      & \NAMEHYPER{../../../Values/Composite}{Maps}{lookup}
-          ( \VAR{$\rho$},   
-            \VAR{I} ) \leadsto
-          (  ~  )
+      \NAMEHYPER{../../../Values/Composite}{Maps}{lookup}
+        ( \VAR{$\rho$},   
+          \VAR{I} ) \leadsto
+        (  ~  )
       }{
       & \NAMEREF{environment} ( \VAR{$\rho$} ) \vdash \NAMEREF{bound-directly}
                       ( \VAR{I} : \NAMEREF{identifiers} ) \TRANS 
@@ -257,9 +257,9 @@ $$\relax\begin{aligned}\relax
 $$\relax\begin{aligned}\relax
   \KEY{Rule} ~ 
     & \RULE{
-      & \NAMEREF{environment} ( \NAMEHYPER{../../../Values/Composite}{Maps}{map}
-                                 (  ~  ) ) \vdash \VAR{X} \TRANS 
-          \VAR{X}'
+      \NAMEREF{environment} ( \NAMEHYPER{../../../Values/Composite}{Maps}{map}
+                               (  ~  ) ) \vdash \VAR{X} \TRANS 
+        \VAR{X}'
       }{
       & \NAMEREF{environment} ( \_ ) \vdash \NAMEREF{closed}
                       ( \VAR{X} ) \TRANS 
@@ -296,10 +296,10 @@ $$\relax\begin{aligned}\relax
 $$\relax\begin{aligned}\relax
   \KEY{Rule} ~ 
     & \RULE{
-      & \NAMEREF{environment} ( \NAMEHYPER{../../../Values/Composite}{Maps}{map-override}
-                                 ( \VAR{$\rho$}\SUB{1},   
-                                   \VAR{$\rho$}\SUB{0} ) ) \vdash \VAR{X} \TRANS 
-          \VAR{X}'
+      \NAMEREF{environment} ( \NAMEHYPER{../../../Values/Composite}{Maps}{map-override}
+                               ( \VAR{$\rho$}\SUB{1},   
+                                 \VAR{$\rho$}\SUB{0} ) ) \vdash \VAR{X} \TRANS 
+        \VAR{X}'
       }{
       & \NAMEREF{environment} ( \VAR{$\rho$}\SUB{0} ) \vdash \NAMEREF{scope}
                       ( \VAR{$\rho$}\SUB{1} : \NAMEREF{environments},   
@@ -341,8 +341,8 @@ $$\relax\begin{aligned}\relax
 $$\relax\begin{aligned}\relax
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{D}\SUB{1} \TRANS 
-          \VAR{D}\SUB{1}'
+       \VAR{D}\SUB{1} \TRANS 
+        \VAR{D}\SUB{1}'
       }{
       &  \NAMEREF{accumulate}
                       ( \VAR{D}\SUB{1},   

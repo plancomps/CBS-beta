@@ -76,8 +76,8 @@ $$\relax\begin{aligned}\relax
 $$\relax\begin{aligned}\relax
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  ~  )}_{} 
-          \VAR{X}'
+       \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  ~  )}_{} 
+        \VAR{X}'
       }{
       &  \NAMEREF{handle-continue}
                       ( \VAR{X} ) \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  ~  )}_{} 
@@ -87,8 +87,8 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}( \NAMEREF{continued} )}_{} 
-          \_
+       \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}( \NAMEREF{continued} )}_{} 
+        \_
       }{
       &  \NAMEREF{handle-continue}
                       ( \VAR{X} ) \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  ~  )}_{} 
@@ -97,8 +97,8 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}( \VAR{V} : \mathop{\sim} \NAMEREF{continuing} )}_{} 
-          \VAR{X}'
+       \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}( \VAR{V} : \mathop{\sim} \NAMEREF{continuing} )}_{} 
+        \VAR{X}'
       }{
       &  \NAMEREF{handle-continue}
                       ( \VAR{X} ) \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}( \VAR{V} )}_{} 

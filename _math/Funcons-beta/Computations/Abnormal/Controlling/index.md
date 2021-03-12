@@ -90,8 +90,8 @@ $$\relax\begin{aligned}\relax
 $$\relax\begin{aligned}\relax
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{X} \xrightarrow{\NAMEREF{plug-signal}( \VAR{V} )}_{} 
-          \VAR{X}'
+       \VAR{X} \xrightarrow{\NAMEREF{plug-signal}( \VAR{V} )}_{} 
+        \VAR{X}'
       }{
       &  \NAMEREF{resume-continuation}
                       ( \NAMEREF{continuation}
@@ -165,8 +165,8 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{X} \xrightarrow{\NAMEREF{control-signal}(  ~  )}_{} 
-          \VAR{X}'
+       \VAR{X} \xrightarrow{\NAMEREF{control-signal}(  ~  )}_{} 
+        \VAR{X}'
       }{
       &  \NAMEREF{delimit-current-continuation}
                       ( \VAR{X} ) \xrightarrow{\NAMEREF{control-signal}(  ~  )}_{} 
@@ -176,8 +176,8 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{X} \xrightarrow{\NAMEREF{control-signal}( \VAR{F} )}_{} 
-          \VAR{X}'
+       \VAR{X} \xrightarrow{\NAMEREF{control-signal}( \VAR{F} )}_{} 
+        \VAR{X}'
       }{
       &  \NAMEREF{delimit-current-continuation}
                       ( \VAR{X} ) \xrightarrow{\NAMEREF{control-signal}(  ~  )}_{} 

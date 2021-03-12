@@ -21,7 +21,8 @@ $$\relax\begin{aligned}\relax
 
 $$\relax\begin{aligned}\relax
   \KEY{Semantics} ~ 
-  & \SEMDECL{start} \LEFTPHRASE ~ \_ : \SYNREF{start} ~ \RIGHTPHRASE  :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} 
+  & \SEMDECL{start} \LEFTPHRASE ~ \_ : \SYNREF{start} ~ \RIGHTPHRASE  
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}
 \\
   \KEY{Rule} ~ 
     & \SEMREF{start} \LEFTPHRASE ~ \VARHYPER{../.}{SIMPLE-5-Programs}{Pgm} ~ \RIGHTPHRASE  = \\&\quad

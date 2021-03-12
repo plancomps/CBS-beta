@@ -73,8 +73,8 @@ $$\relax\begin{aligned}\relax
 $$\relax\begin{aligned}\relax
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  ~  )}_{} 
-          \VAR{X}'
+       \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  ~  )}_{} 
+        \VAR{X}'
       }{
       &  \NAMEREF{else}
                       ( \VAR{X},   
@@ -86,8 +86,8 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}( \NAMEREF{failed} )}_{} 
-          \_
+       \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}( \NAMEREF{failed} )}_{} 
+        \_
       }{
       &  \NAMEREF{else}
                       ( \VAR{X},   
@@ -97,8 +97,8 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}( \VAR{V} : \mathop{\sim} \NAMEREF{failing} )}_{} 
-          \VAR{X}'
+       \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}( \VAR{V} : \mathop{\sim} \NAMEREF{failing} )}_{} 
+        \VAR{X}'
       }{
       &  \NAMEREF{else}
                       ( \VAR{X},   

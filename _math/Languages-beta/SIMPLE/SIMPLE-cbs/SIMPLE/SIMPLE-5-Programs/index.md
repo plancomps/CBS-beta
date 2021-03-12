@@ -23,17 +23,19 @@ $$\relax\begin{aligned}\relax
 
 $$\relax\begin{aligned}\relax
   \KEY{Semantics} ~ 
-  & \SEMDECL{run} \LEFTPHRASE ~ \VARREF{Decls} : \SYNREF{pgm} ~ \RIGHTPHRASE  :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} = \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{scope}
-                                                                                                                            (\NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{collateral}
-                                                                                                                               (\SEMREF{declarations} \LEFTPHRASE ~ \VAR{Decls} ~ \RIGHTPHRASE ), \\&\quad 
-                                                                                                                             \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
-                                                                                                                               (\SEMREF{initialisations} \LEFTPHRASE ~ \VAR{Decls} ~ \RIGHTPHRASE , \\&\quad \quad 
-                                                                                                                                \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{apply}
-                                                                                                                                  (\NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assigned}
-                                                                                                                                     (\NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{bound}
-                                                                                                                                        (\STRING{main})), \\&\quad \quad \quad 
-                                                                                                                                   \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
-                                                                                                                                     ( ~ ))))
+  & \SEMDECL{run} \LEFTPHRASE ~ \VARREF{Decls} : \SYNREF{pgm} ~ \RIGHTPHRASE  
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} 
+    = \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{scope}
+        ( \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{collateral}
+            ( \SEMREF{declarations} \LEFTPHRASE ~ \VAR{Decls} ~ \RIGHTPHRASE  ), \\&\quad \quad \quad \quad 
+          \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
+            ( \SEMREF{initialisations} \LEFTPHRASE ~ \VAR{Decls} ~ \RIGHTPHRASE , \\&\quad \quad \quad \quad \quad 
+              \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{apply}
+                ( \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assigned}
+                    ( \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{bound}
+                        ( \STRING{main} ) ), \\&\quad \quad \quad \quad \quad \quad 
+                  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
+                    (  ~  ) ) ) )
 \end{aligned}$$
 
 $$\relax\begin{aligned}\relax
@@ -44,7 +46,8 @@ $$\relax\begin{aligned}\relax
 
 $$\relax\begin{aligned}\relax
   \KEY{Semantics} ~ 
-  & \SEMDECL{declarations} \LEFTPHRASE ~ \_ : \SYNREF{decls} ~ \RIGHTPHRASE  : ( \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{environments})\PLUS 
+  & \SEMDECL{declarations} \LEFTPHRASE ~ \_ : \SYNREF{decls} ~ \RIGHTPHRASE  
+    : (  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{environments} )\PLUS
 \\
   \KEY{Rule} ~ 
     & \SEMREF{declarations} \LEFTPHRASE ~ \VARHYPER{../.}{SIMPLE-4-Declarations}{Decl} ~ \RIGHTPHRASE  = \\&\quad
@@ -58,7 +61,8 @@ $$\relax\begin{aligned}\relax
 
 $$\relax\begin{aligned}\relax
   \KEY{Semantics} ~ 
-  & \SEMDECL{initialisations} \LEFTPHRASE ~ \_ : \SYNREF{decls} ~ \RIGHTPHRASE  : ( \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type})\PLUS 
+  & \SEMDECL{initialisations} \LEFTPHRASE ~ \_ : \SYNREF{decls} ~ \RIGHTPHRASE  
+    : (  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} )\PLUS
 \\
   \KEY{Rule} ~ 
     & \SEMREF{initialisations} \LEFTPHRASE ~ \VARHYPER{../.}{SIMPLE-4-Declarations}{Decl} ~ \RIGHTPHRASE  = \\&\quad

@@ -368,10 +368,10 @@ $$\relax\begin{aligned}\relax
 $$\relax\begin{aligned}\relax
   \KEY{Rule} ~ 
     & \RULE{
-      & \NAMEREF{is-greater}
-          ( \VAR{M},   
-            \VAR{N} ) == 
-          \NAMEHYPER{../.}{Booleans}{false}
+      \NAMEREF{is-greater}
+        ( \VAR{M},   
+          \VAR{N} ) == 
+        \NAMEHYPER{../.}{Booleans}{false}
       }{
       & \NAMEREF{integer-sequence}
           ( \VAR{M} : \NAMEREF{integers},   
@@ -386,10 +386,10 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      & \NAMEREF{is-greater}
-          ( \VAR{M},   
-            \VAR{N} ) == 
-          \NAMEHYPER{../.}{Booleans}{true}
+      \NAMEREF{is-greater}
+        ( \VAR{M},   
+          \VAR{N} ) == 
+        \NAMEHYPER{../.}{Booleans}{true}
       }{
       & \NAMEREF{integer-sequence}
           ( \VAR{M} : \NAMEREF{integers},   

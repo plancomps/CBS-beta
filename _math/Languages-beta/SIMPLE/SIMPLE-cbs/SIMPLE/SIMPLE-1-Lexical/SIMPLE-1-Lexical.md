@@ -32,7 +32,8 @@ $$\relax\begin{aligned}\relax
 
 $$\relax\begin{aligned}\relax
   \KEY{Semantics} ~ 
-  & \SEMDECL{val} \LEFTPHRASE ~ \_ : \SYNREF{value} ~ \RIGHTPHRASE  :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} 
+  & \SEMDECL{val} \LEFTPHRASE ~ \_ : \SYNREF{value} ~ \RIGHTPHRASE  
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}
 \end{aligned}$$
 
 ## $$\SECT{1.1}$$ Booleans
@@ -57,7 +58,7 @@ $$\relax\begin{aligned}\relax
   \KEY{Rule} ~ 
     & \SEMREF{val} \LEFTPHRASE ~ \VARREF{Z} ~ \RIGHTPHRASE  = \\&\quad
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{decimal-natural}
-        (\textsf{\textquotedblleft}\VAR{Z}\textsf{\textquotedblright})
+        ( \textsf{\textquotedblleft}\VAR{Z}\textsf{\textquotedblright} )
 \end{aligned}$$
 
 ## $$\SECT{1.3}$$ Strings
@@ -82,7 +83,8 @@ $$\relax\begin{aligned}\relax
 
 $$\relax\begin{aligned}\relax
   \KEY{Semantics} ~ 
-  & \SEMDECL{id} \LEFTPHRASE ~ \_ : \SYNREF{id} ~ \RIGHTPHRASE  :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{ids} 
+  & \SEMDECL{id} \LEFTPHRASE ~ \_ : \SYNREF{id} ~ \RIGHTPHRASE  
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{ids}
 \\
   \KEY{Rule} ~ 
     & \SEMREF{id} \LEFTPHRASE ~ \VARREF{Id} ~ \RIGHTPHRASE  = \\&\quad

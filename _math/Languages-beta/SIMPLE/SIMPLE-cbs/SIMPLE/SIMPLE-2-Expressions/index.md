@@ -52,7 +52,8 @@ $$\relax\begin{aligned}\relax
 
 $$\relax\begin{aligned}\relax
   \KEY{Semantics} ~ 
-  & \SEMDECL{rval} \LEFTPHRASE ~ \_ : \SYNREF{exp} ~ \RIGHTPHRASE  :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} 
+  & \SEMDECL{rval} \LEFTPHRASE ~ \_ : \SYNREF{exp} ~ \RIGHTPHRASE  
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}
 \\
   \KEY{Rule} ~ 
     & \SEMREF{rval} \LEFTPHRASE ~ \VARHYPER{../.}{SIMPLE-1-Lexical}{V} ~ \RIGHTPHRASE  = \\&\quad
@@ -61,49 +62,49 @@ $$\relax\begin{aligned}\relax
   \KEY{Rule} ~ 
     & \SEMREF{rval} \LEFTPHRASE ~ \VARREF{LExp} ~ \RIGHTPHRASE  = \\&\quad
       \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assigned}
-        (\SEMREF{lval} \LEFTPHRASE ~ \VAR{LExp} ~ \RIGHTPHRASE )
+        ( \SEMREF{lval} \LEFTPHRASE ~ \VAR{LExp} ~ \RIGHTPHRASE  )
 \\
   \KEY{Rule} ~ 
     & \SEMREF{rval} \LEFTPHRASE ~ \VARREF{LExp} ~ \LEX{={}} ~ \VARREF{Exp} ~ \RIGHTPHRASE  = \\&\quad
       \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{give}
-        (\SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp} ~ \RIGHTPHRASE , \\&\quad \quad 
-         \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
-           (\NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assign}
-              (\SEMREF{lval} \LEFTPHRASE ~ \VAR{LExp} ~ \RIGHTPHRASE , \\&\quad \quad \quad \quad 
-               \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given}), \\&\quad \quad \quad 
-            \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given}))
+        ( \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp} ~ \RIGHTPHRASE , \\&\quad \quad 
+          \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
+            ( \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assign}
+                ( \SEMREF{lval} \LEFTPHRASE ~ \VAR{LExp} ~ \RIGHTPHRASE , \\&\quad \quad \quad \quad 
+                  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} ), \\&\quad \quad \quad 
+              \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} ) )
 \\
   \KEY{Rule} ~ 
     & \SEMREF{rval} \LEFTPHRASE ~ \LEX{+{}+{}} ~ \VARREF{LExp} ~ \RIGHTPHRASE  = \\&\quad
       \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{give}
-        (\SEMREF{lval} \LEFTPHRASE ~ \VAR{LExp} ~ \RIGHTPHRASE , \\&\quad \quad 
-         \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
-           (\NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assign}
-              (\NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given}, \\&\quad \quad \quad \quad 
-               \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-add}
-                 (\NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assigned}
-                    (\NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given}), \\&\quad \quad \quad \quad \quad 
-                  1)), \\&\quad \quad \quad 
-            \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assigned}
-              (\NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given})))
+        ( \SEMREF{lval} \LEFTPHRASE ~ \VAR{LExp} ~ \RIGHTPHRASE , \\&\quad \quad 
+          \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
+            ( \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assign}
+                ( \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given}, \\&\quad \quad \quad \quad 
+                  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-add}
+                    ( \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assigned}
+                        ( \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} ), \\&\quad \quad \quad \quad \quad 
+                      1 ) ), \\&\quad \quad \quad 
+              \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assigned}
+                ( \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} ) ) )
 \\
   \KEY{Rule} ~ 
     & \SEMREF{rval} \LEFTPHRASE ~ \LEX{-{}} ~ \VARREF{Exp} ~ \RIGHTPHRASE  = \\&\quad
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-negate}
-        (\SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp} ~ \RIGHTPHRASE )
+        ( \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp} ~ \RIGHTPHRASE  )
 \\
   \KEY{Rule} ~ 
     & \SEMREF{rval} \LEFTPHRASE ~ \VARREF{Exp} ~ \LEX{(} ~ \VARREF{Exps}\QUERY ~ \LEX{)} ~ \RIGHTPHRASE  = \\&\quad
       \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{apply}
-        (\SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp} ~ \RIGHTPHRASE , \\&\quad \quad 
-         \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
-           (\SEMREF{rvals} \LEFTPHRASE ~ \VAR{Exps}\QUERY ~ \RIGHTPHRASE ))
+        ( \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp} ~ \RIGHTPHRASE , \\&\quad \quad 
+          \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
+            ( \SEMREF{rvals} \LEFTPHRASE ~ \VAR{Exps}\QUERY ~ \RIGHTPHRASE  ) )
 \\
   \KEY{Rule} ~ 
     & \SEMREF{rval} \LEFTPHRASE ~ \LEX{sizeOf} ~ \LEX{(} ~ \VARREF{Exp} ~ \LEX{)} ~ \RIGHTPHRASE  = \\&\quad
       \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sequences}{length}
-        (\NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vector-elements}
-           (\SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp} ~ \RIGHTPHRASE ))
+        ( \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vector-elements}
+            ( \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp} ~ \RIGHTPHRASE  ) )
 \\
   \KEY{Rule} ~ 
     & \SEMREF{rval} \LEFTPHRASE ~ \LEX{read} ~ \LEX{(} ~ \LEX{)} ~ \RIGHTPHRASE  = \\&\quad
@@ -112,90 +113,90 @@ $$\relax\begin{aligned}\relax
   \KEY{Rule} ~ 
     & \SEMREF{rval} \LEFTPHRASE ~ \VARREF{Exp}\SUB{1} ~ \LEX{+{}} ~ \VARREF{Exp}\SUB{2} ~ \RIGHTPHRASE  = \\&\quad
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-add}
-        (\SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{1} ~ \RIGHTPHRASE , \\&\quad \quad 
-         \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{2} ~ \RIGHTPHRASE )
+        ( \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{1} ~ \RIGHTPHRASE , \\&\quad \quad 
+          \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{2} ~ \RIGHTPHRASE  )
 \\
   \KEY{Rule} ~ 
     & \SEMREF{rval} \LEFTPHRASE ~ \VARREF{Exp}\SUB{1} ~ \LEX{-{}} ~ \VARREF{Exp}\SUB{2} ~ \RIGHTPHRASE  = \\&\quad
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-subtract}
-        (\SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{1} ~ \RIGHTPHRASE , \\&\quad \quad 
-         \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{2} ~ \RIGHTPHRASE )
+        ( \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{1} ~ \RIGHTPHRASE , \\&\quad \quad 
+          \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{2} ~ \RIGHTPHRASE  )
 \\
   \KEY{Rule} ~ 
     & \SEMREF{rval} \LEFTPHRASE ~ \VARREF{Exp}\SUB{1} ~ \LEX{*{}} ~ \VARREF{Exp}\SUB{2} ~ \RIGHTPHRASE  = \\&\quad
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-multiply}
-        (\SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{1} ~ \RIGHTPHRASE , \\&\quad \quad 
-         \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{2} ~ \RIGHTPHRASE )
+        ( \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{1} ~ \RIGHTPHRASE , \\&\quad \quad 
+          \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{2} ~ \RIGHTPHRASE  )
 \\
   \KEY{Rule} ~ 
     & \SEMREF{rval} \LEFTPHRASE ~ \VARREF{Exp}\SUB{1} ~ \LEX{/{}} ~ \VARREF{Exp}\SUB{2} ~ \RIGHTPHRASE  = \\&\quad
       \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{checked} ~
         \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-divide}
-          (\SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{1} ~ \RIGHTPHRASE , \\&\quad \quad \quad 
-           \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{2} ~ \RIGHTPHRASE )
+          ( \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{1} ~ \RIGHTPHRASE , \\&\quad \quad \quad 
+            \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{2} ~ \RIGHTPHRASE  )
 \\
   \KEY{Rule} ~ 
     & \SEMREF{rval} \LEFTPHRASE ~ \VARREF{Exp}\SUB{1} ~ \LEX{\PERCENT } ~ \VARREF{Exp}\SUB{2} ~ \RIGHTPHRASE  = \\&\quad
       \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{checked} ~
         \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-modulo}
-          (\SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{1} ~ \RIGHTPHRASE , \\&\quad \quad \quad 
-           \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{2} ~ \RIGHTPHRASE )
+          ( \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{1} ~ \RIGHTPHRASE , \\&\quad \quad \quad 
+            \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{2} ~ \RIGHTPHRASE  )
 \\
   \KEY{Rule} ~ 
     & \SEMREF{rval} \LEFTPHRASE ~ \VARREF{Exp}\SUB{1} ~ \LEX{<{}} ~ \VARREF{Exp}\SUB{2} ~ \RIGHTPHRASE  = \\&\quad
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-less}
-        (\SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{1} ~ \RIGHTPHRASE , \\&\quad \quad 
-         \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{2} ~ \RIGHTPHRASE )
+        ( \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{1} ~ \RIGHTPHRASE , \\&\quad \quad 
+          \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{2} ~ \RIGHTPHRASE  )
 \\
   \KEY{Rule} ~ 
     & \SEMREF{rval} \LEFTPHRASE ~ \VARREF{Exp}\SUB{1} ~ \LEX{<{}={}} ~ \VARREF{Exp}\SUB{2} ~ \RIGHTPHRASE  = \\&\quad
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-less-or-equal}
-        (\SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{1} ~ \RIGHTPHRASE , \\&\quad \quad 
-         \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{2} ~ \RIGHTPHRASE )
+        ( \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{1} ~ \RIGHTPHRASE , \\&\quad \quad 
+          \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{2} ~ \RIGHTPHRASE  )
 \\
   \KEY{Rule} ~ 
     & \SEMREF{rval} \LEFTPHRASE ~ \VARREF{Exp}\SUB{1} ~ \LEX{>{}} ~ \VARREF{Exp}\SUB{2} ~ \RIGHTPHRASE  = \\&\quad
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-greater}
-        (\SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{1} ~ \RIGHTPHRASE , \\&\quad \quad 
-         \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{2} ~ \RIGHTPHRASE )
+        ( \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{1} ~ \RIGHTPHRASE , \\&\quad \quad 
+          \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{2} ~ \RIGHTPHRASE  )
 \\
   \KEY{Rule} ~ 
     & \SEMREF{rval} \LEFTPHRASE ~ \VARREF{Exp}\SUB{1} ~ \LEX{>{}={}} ~ \VARREF{Exp}\SUB{2} ~ \RIGHTPHRASE  = \\&\quad
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-greater-or-equal}
-        (\SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{1} ~ \RIGHTPHRASE , \\&\quad \quad 
-         \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{2} ~ \RIGHTPHRASE )
+        ( \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{1} ~ \RIGHTPHRASE , \\&\quad \quad 
+          \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{2} ~ \RIGHTPHRASE  )
 \\
   \KEY{Rule} ~ 
     & \SEMREF{rval} \LEFTPHRASE ~ \VARREF{Exp}\SUB{1} ~ \LEX{={}={}} ~ \VARREF{Exp}\SUB{2} ~ \RIGHTPHRASE  = \\&\quad
       \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-equal}
-        (\SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{1} ~ \RIGHTPHRASE , \\&\quad \quad 
-         \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{2} ~ \RIGHTPHRASE )
+        ( \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{1} ~ \RIGHTPHRASE , \\&\quad \quad 
+          \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{2} ~ \RIGHTPHRASE  )
 \\
   \KEY{Rule} ~ 
     & \SEMREF{rval} \LEFTPHRASE ~ \VARREF{Exp}\SUB{1} ~ \LEX{!{}={}} ~ \VARREF{Exp}\SUB{2} ~ \RIGHTPHRASE  = \\&\quad
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{not}
-        (\NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-equal}
-           (\SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{1} ~ \RIGHTPHRASE , \\&\quad \quad \quad 
-            \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{2} ~ \RIGHTPHRASE ))
+        ( \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-equal}
+            ( \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{1} ~ \RIGHTPHRASE , \\&\quad \quad \quad 
+              \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{2} ~ \RIGHTPHRASE  ) )
 \\
   \KEY{Rule} ~ 
     & \SEMREF{rval} \LEFTPHRASE ~ \LEX{!{}} ~ \VARREF{Exp} ~ \RIGHTPHRASE  = \\&\quad
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{not}
-        (\SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp} ~ \RIGHTPHRASE )
+        ( \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp} ~ \RIGHTPHRASE  )
 \\
   \KEY{Rule} ~ 
     & \SEMREF{rval} \LEFTPHRASE ~ \VARREF{Exp}\SUB{1} ~ \LEX{\AMPERSAND \AMPERSAND } ~ \VARREF{Exp}\SUB{2} ~ \RIGHTPHRASE  = \\&\quad
       \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{if-else}
-        (\SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{1} ~ \RIGHTPHRASE , \\&\quad \quad 
-         \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{2} ~ \RIGHTPHRASE , \\&\quad \quad 
-         \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false})
+        ( \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{1} ~ \RIGHTPHRASE , \\&\quad \quad 
+          \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{2} ~ \RIGHTPHRASE , \\&\quad \quad 
+          \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false} )
 \\
   \KEY{Rule} ~ 
     & \SEMREF{rval} \LEFTPHRASE ~ \VARREF{Exp}\SUB{1} ~ \LEX{||} ~ \VARREF{Exp}\SUB{2} ~ \RIGHTPHRASE  = \\&\quad
       \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{if-else}
-        (\SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{1} ~ \RIGHTPHRASE , \\&\quad \quad 
-         \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{true}, \\&\quad \quad 
-         \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{2} ~ \RIGHTPHRASE )
+        ( \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{1} ~ \RIGHTPHRASE , \\&\quad \quad 
+          \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{true}, \\&\quad \quad 
+          \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp}\SUB{2} ~ \RIGHTPHRASE  )
 \end{aligned}$$
 
 $$\relax\begin{aligned}\relax
@@ -206,11 +207,12 @@ $$\relax\begin{aligned}\relax
 
 $$\relax\begin{aligned}\relax
   \KEY{Semantics} ~ 
-  & \SEMDECL{rvals} \LEFTPHRASE ~ \_ : \SYNREF{exps}\QUERY ~ \RIGHTPHRASE  : ( \TO \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values})\STAR 
+  & \SEMDECL{rvals} \LEFTPHRASE ~ \_ : \SYNREF{exps}\QUERY ~ \RIGHTPHRASE  
+    : (  \TO \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} )\STAR
 \\
   \KEY{Rule} ~ 
     & \SEMREF{rvals} \LEFTPHRASE ~  ~ \RIGHTPHRASE  = \\&\quad
-      ( ~ )
+      (  ~  )
 \\
   \KEY{Rule} ~ 
     & \SEMREF{rvals} \LEFTPHRASE ~ \VARREF{Exp} ~ \RIGHTPHRASE  = \\&\quad
@@ -238,22 +240,23 @@ $$\relax\begin{aligned}\relax
 
 $$\relax\begin{aligned}\relax
   \KEY{Semantics} ~ 
-  & \SEMDECL{lval} \LEFTPHRASE ~ \_ : \SYNREF{lexp} ~ \RIGHTPHRASE  :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{variables} 
+  & \SEMDECL{lval} \LEFTPHRASE ~ \_ : \SYNREF{lexp} ~ \RIGHTPHRASE  
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{variables}
 \\
   \KEY{Rule} ~ 
     & \SEMREF{lval} \LEFTPHRASE ~ \VARHYPER{../.}{SIMPLE-1-Lexical}{Id} ~ \RIGHTPHRASE  = \\&\quad
       \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{bound}
-        (\SEMHYPER{../.}{SIMPLE-1-Lexical}{id} \LEFTPHRASE ~ \VAR{Id} ~ \RIGHTPHRASE )
+        ( \SEMHYPER{../.}{SIMPLE-1-Lexical}{id} \LEFTPHRASE ~ \VAR{Id} ~ \RIGHTPHRASE  )
 \\
   \KEY{Rule} ~ 
     & \SEMREF{lval} \LEFTPHRASE ~ \VARREF{LExp} ~ \LEX{[{}} ~ \VARREF{Exp} ~ \LEX{]{}} ~ \RIGHTPHRASE  = \\&\quad
       \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{checked} ~
         \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sequences}{index}
-          (\NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-add}
-             (1, \\&\quad \quad \quad \quad 
-              \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp} ~ \RIGHTPHRASE ), \\&\quad \quad \quad 
-           \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vector-elements}
-             (\SEMREF{rval} \LEFTPHRASE ~ \VAR{LExp} ~ \RIGHTPHRASE ))
+          ( \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-add}
+              ( 1, \\&\quad \quad \quad \quad 
+                \SEMREF{rval} \LEFTPHRASE ~ \VAR{Exp} ~ \RIGHTPHRASE  ), \\&\quad \quad \quad 
+            \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vector-elements}
+              ( \SEMREF{rval} \LEFTPHRASE ~ \VAR{LExp} ~ \RIGHTPHRASE  ) )
 \end{aligned}$$
 
 

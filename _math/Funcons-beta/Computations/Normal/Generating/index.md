@@ -69,10 +69,10 @@ $$\relax\begin{aligned}\relax
 $$\relax\begin{aligned}\relax
   \KEY{Rule} ~ 
     & \RULE{
-      & \NAMEHYPER{../../../Values/Composite}{Sets}{element-not-in}
-          ( \NAMEREF{atoms},   
-            \VAR{SA} ) \leadsto
-          \VAR{A}
+      \NAMEHYPER{../../../Values/Composite}{Sets}{element-not-in}
+        ( \NAMEREF{atoms},   
+          \VAR{SA} ) \leadsto
+        \VAR{A}
       }{
       &  \langle \NAMEREF{fresh-atom}, \NAMEREF{used-atom-set} ( \VAR{SA} ) \rangle \TRANS 
           \langle \VAR{A}, \NAMEREF{used-atom-set} ( \NAMEHYPER{../../../Values/Composite}{Sets}{set-insert}
@@ -97,10 +97,10 @@ $$\relax\begin{aligned}\relax
 $$\relax\begin{aligned}\relax
   \KEY{Rule} ~ 
     & \RULE{
-      & \NAMEHYPER{../../../Values/Composite}{Sets}{element-not-in}
-          ( \NAMEREF{atoms},   
-            \VAR{SA} ) \leadsto
-          \VAR{A}
+      \NAMEHYPER{../../../Values/Composite}{Sets}{element-not-in}
+        ( \NAMEREF{atoms},   
+          \VAR{SA} ) \leadsto
+        \VAR{A}
       }{
       &  \langle \NAMEREF{use-atom-not-in}
                               ( \VAR{SA} : \NAMEHYPER{../../../Values/Composite}{Sets}{sets}

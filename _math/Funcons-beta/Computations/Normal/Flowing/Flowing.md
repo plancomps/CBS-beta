@@ -74,8 +74,8 @@ $$\relax\begin{aligned}\relax
 $$\relax\begin{aligned}\relax
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{Y} \TRANS 
-          \VAR{Y}'
+       \VAR{Y} \TRANS 
+        \VAR{Y}'
       }{
       &  \NAMEREF{left-to-right}
                       ( \VAR{V}\STAR : ( \VAR{T} )\STAR,   
@@ -118,8 +118,8 @@ $$\relax\begin{aligned}\relax
 $$\relax\begin{aligned}\relax
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{Y} \TRANS 
-          \VAR{Y}'
+       \VAR{Y} \TRANS 
+        \VAR{Y}'
       }{
       &  \NAMEREF{right-to-left}
                       ( \VAR{X}\STAR,   
@@ -160,8 +160,8 @@ $$\relax\begin{aligned}\relax
 $$\relax\begin{aligned}\relax
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{X} \TRANS 
-          \VAR{X}'
+       \VAR{X} \TRANS 
+        \VAR{X}'
       }{
       &  \NAMEREF{sequential}
                       ( \VAR{X},   
@@ -404,8 +404,8 @@ $$\relax\begin{aligned}\relax
 $$\relax\begin{aligned}\relax
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{X} \xrightarrow{\NAMEHYPER{../../Abnormal}{Abrupting}{abrupt}( \VAR{V} : \VAR{T} ), \NAMEREF{yielded}( \_\QUERY )}_{} 
-          \VAR{X}'
+       \VAR{X} \xrightarrow{\NAMEHYPER{../../Abnormal}{Abrupting}{abrupt}( \VAR{V} : \VAR{T} ), \NAMEREF{yielded}( \_\QUERY )}_{} 
+        \VAR{X}'
       }{
       &  \NAMEREF{yield-on-abrupt}
                       ( \VAR{X} ) \xrightarrow{\NAMEHYPER{../../Abnormal}{Abrupting}{abrupt}( \VAR{V} ), \NAMEREF{yielded}( \NAMEREF{signal} )}_{} 
@@ -415,8 +415,8 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{X} \xrightarrow{\NAMEHYPER{../../Abnormal}{Abrupting}{abrupt}(  ~  )}_{} 
-          \VAR{X}'
+       \VAR{X} \xrightarrow{\NAMEHYPER{../../Abnormal}{Abrupting}{abrupt}(  ~  )}_{} 
+        \VAR{X}'
       }{
       &  \NAMEREF{yield-on-abrupt}
                       ( \VAR{X} ) \xrightarrow{\NAMEHYPER{../../Abnormal}{Abrupting}{abrupt}(  ~  )}_{} 
@@ -446,11 +446,11 @@ $$\relax\begin{aligned}\relax
 $$\relax\begin{aligned}\relax
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{X} \xrightarrow{\NAMEREF{yielded}(  ~  )}_{1} 
-          \VAR{X}'\\
-        & \NAMEREF{atomic}
-                      ( \VAR{X}' ) \xrightarrow{\NAMEREF{yielded}(  ~  )}_{2} 
-          \VAR{X}''
+       \VAR{X} \xrightarrow{\NAMEREF{yielded}(  ~  )}_{1} 
+        \VAR{X}'\\
+       \NAMEREF{atomic}
+                    ( \VAR{X}' ) \xrightarrow{\NAMEREF{yielded}(  ~  )}_{2} 
+        \VAR{X}''
       }{
       &  \NAMEREF{atomic}
                       ( \VAR{X} ) \xrightarrow{\NAMEREF{yielded}(  ~  )}_{1} ; \xrightarrow{\NAMEREF{yielded}(  ~  )}_{2} 
@@ -459,9 +459,9 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{X} \xrightarrow{\NAMEREF{yielded}(  ~  )}_{} 
-          \VAR{V}\\
-        & \VAR{V} : \VAR{T}
+       \VAR{X} \xrightarrow{\NAMEREF{yielded}(  ~  )}_{} 
+        \VAR{V}\\
+       \VAR{V} : \VAR{T}
       }{
       &  \NAMEREF{atomic}
                       ( \VAR{X} ) \xrightarrow{\NAMEREF{yielded}(  ~  )}_{} 
@@ -475,8 +475,8 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{X} \xrightarrow{\NAMEREF{yielded}( \NAMEREF{signal} )}_{} 
-          \VAR{X}'
+       \VAR{X} \xrightarrow{\NAMEREF{yielded}( \NAMEREF{signal} )}_{} 
+        \VAR{X}'
       }{
       &  \NAMEREF{atomic}
                       ( \VAR{X} ) \xrightarrow{\NAMEREF{yielded}(  ~  )}_{} 

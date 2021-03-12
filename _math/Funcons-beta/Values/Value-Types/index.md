@@ -161,7 +161,7 @@ $$\relax\begin{aligned}\relax
 $$\relax\begin{aligned}\relax
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{V} : \VAR{T}
+       \VAR{V} : \VAR{T}
       }{
       & \NAMEREF{is-in-type}
           ( \VAR{V} : \NAMEREF{values},   
@@ -171,7 +171,7 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{V} : \mathop{\sim} \VAR{T}
+       \VAR{V} : \mathop{\sim} \VAR{T}
       }{
       & \NAMEREF{is-in-type}
           ( \VAR{V} : \NAMEREF{values},   
@@ -268,7 +268,7 @@ $$\relax\begin{aligned}\relax
 $$\relax\begin{aligned}\relax
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{V} : \VAR{T}
+       \VAR{V} : \VAR{T}
       }{
       & \NAMEREF{cast-to-type}
           ( \VAR{V} : \NAMEREF{values},   
@@ -278,7 +278,7 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{V} : \mathop{\sim} \VAR{T}
+       \VAR{V} : \mathop{\sim} \VAR{T}
       }{
       & \NAMEREF{cast-to-type}
           ( \VAR{V} : \NAMEREF{values},   
@@ -326,8 +326,8 @@ $$\relax\begin{aligned}\relax
 $$\relax\begin{aligned}\relax
   \KEY{Rule} ~ 
     & \RULE{
-      & \VAR{V} == 
-          \VAR{W}
+      \VAR{V} == 
+        \VAR{W}
       }{
       & \NAMEREF{is-equal}
           ( \VAR{V} : \NAMEREF{ground-values},   
@@ -337,7 +337,7 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      & \VAR{V} \neq \VAR{W}
+      \VAR{V} \neq \VAR{W}
       }{
       & \NAMEREF{is-equal}
           ( \VAR{V} : \NAMEREF{ground-values},   

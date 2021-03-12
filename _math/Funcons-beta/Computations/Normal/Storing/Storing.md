@@ -175,15 +175,15 @@ $$\relax\begin{aligned}\relax
 $$\relax\begin{aligned}\relax
   \KEY{Rule} ~ 
     & \RULE{
-      &  \langle \NAMEHYPER{../.}{Generating}{use-atom-not-in}
-                              ( \NAMEHYPER{../../../Values/Composite}{Maps}{dom}
-                                  ( \VAR{$\sigma$} ) ), \NAMEREF{store} ( \VAR{$\sigma$} ) \rangle \TRANS 
-          \langle \VAR{L}, \NAMEREF{store} ( \VAR{$\sigma$}' ) \rangle\\
-        &\NAMEHYPER{../../../Values/Composite}{Maps}{map-override}
-          ( \{ \VAR{L} \mapsto 
-                 (  ~  ) \},   
-            \VAR{$\sigma$}' ) \leadsto
-          \VAR{$\sigma$}''
+       \langle \NAMEHYPER{../.}{Generating}{use-atom-not-in}
+                            ( \NAMEHYPER{../../../Values/Composite}{Maps}{dom}
+                                ( \VAR{$\sigma$} ) ), \NAMEREF{store} ( \VAR{$\sigma$} ) \rangle \TRANS 
+        \langle \VAR{L}, \NAMEREF{store} ( \VAR{$\sigma$}' ) \rangle\\
+      \NAMEHYPER{../../../Values/Composite}{Maps}{map-override}
+        ( \{ \VAR{L} \mapsto 
+               (  ~  ) \},   
+          \VAR{$\sigma$}' ) \leadsto
+        \VAR{$\sigma$}''
       }{
       &  \langle \NAMEREF{allocate-variable}
                               ( \VAR{T} : \NAMEHYPER{../../../Values}{Value-Types}{types} ), \NAMEREF{store} ( \VAR{$\sigma$} ) \rangle \TRANS 
@@ -211,11 +211,11 @@ $$\relax\begin{aligned}\relax
 $$\relax\begin{aligned}\relax
   \KEY{Rule} ~ 
     & \RULE{
-      & \NAMEHYPER{../../../Values/Composite}{Sets}{is-in-set}
-          ( \VAR{L},   
-            \NAMEHYPER{../../../Values/Composite}{Maps}{dom}
-              ( \VAR{$\sigma$} ) ) == 
-          \NAMEHYPER{../../../Values/Primitive}{Booleans}{true}
+      \NAMEHYPER{../../../Values/Composite}{Sets}{is-in-set}
+        ( \VAR{L},   
+          \NAMEHYPER{../../../Values/Composite}{Maps}{dom}
+            ( \VAR{$\sigma$} ) ) == 
+        \NAMEHYPER{../../../Values/Primitive}{Booleans}{true}
       }{
       &  \langle \NAMEREF{recycle-variables}
                               ( \NAMEREF{variable}
@@ -228,11 +228,11 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      & \NAMEHYPER{../../../Values/Composite}{Sets}{is-in-set}
-          ( \VAR{L},   
-            \NAMEHYPER{../../../Values/Composite}{Maps}{dom}
-              ( \VAR{$\sigma$} ) ) == 
-          \NAMEHYPER{../../../Values/Primitive}{Booleans}{false}
+      \NAMEHYPER{../../../Values/Composite}{Sets}{is-in-set}
+        ( \VAR{L},   
+          \NAMEHYPER{../../../Values/Composite}{Maps}{dom}
+            ( \VAR{$\sigma$} ) ) == 
+        \NAMEHYPER{../../../Values/Primitive}{Booleans}{false}
       }{
       &  \langle \NAMEREF{recycle-variables}
                               ( \NAMEREF{variable}
@@ -270,20 +270,20 @@ $$\relax\begin{aligned}\relax
 $$\relax\begin{aligned}\relax
   \KEY{Rule} ~ 
     & \RULE{
-      & \NAMEHYPER{../../../Values/Primitive}{Booleans}{and}
-          ( \NAMEHYPER{../../../Values/Composite}{Sets}{is-in-set}
-              ( \VAR{L},    
-                \NAMEHYPER{../../../Values/Composite}{Maps}{dom}
-                  ( \VAR{$\sigma$} ) ),   
-            \NAMEHYPER{../../../Values/Primitive}{Booleans}{not} ~
-              \NAMEHYPER{../../../Values}{Value-Types}{is-value}
-                ( \NAMEHYPER{../../../Values/Composite}{Maps}{map-lookup}
-                    ( \VAR{$\sigma$},      
-                      \VAR{L} ) ),   
-            \NAMEHYPER{../../../Values}{Value-Types}{is-in-type}
-              ( \VAR{Val},    
-                \VAR{T} ) ) == 
-          \NAMEHYPER{../../../Values/Primitive}{Booleans}{true}
+      \NAMEHYPER{../../../Values/Primitive}{Booleans}{and}
+        ( \NAMEHYPER{../../../Values/Composite}{Sets}{is-in-set}
+            ( \VAR{L},    
+              \NAMEHYPER{../../../Values/Composite}{Maps}{dom}
+                ( \VAR{$\sigma$} ) ),   
+          \NAMEHYPER{../../../Values/Primitive}{Booleans}{not} ~
+            \NAMEHYPER{../../../Values}{Value-Types}{is-value}
+              ( \NAMEHYPER{../../../Values/Composite}{Maps}{map-lookup}
+                  ( \VAR{$\sigma$},      
+                    \VAR{L} ) ),   
+          \NAMEHYPER{../../../Values}{Value-Types}{is-in-type}
+            ( \VAR{Val},    
+              \VAR{T} ) ) == 
+        \NAMEHYPER{../../../Values/Primitive}{Booleans}{true}
       }{
       &  \langle \NAMEREF{initialise-variable}
                               ( \NAMEREF{variable}
@@ -298,20 +298,20 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      & \NAMEHYPER{../../../Values/Primitive}{Booleans}{and}
-          ( \NAMEHYPER{../../../Values/Composite}{Sets}{is-in-set}
-              ( \VAR{L},    
-                \NAMEHYPER{../../../Values/Composite}{Maps}{dom}
-                  ( \VAR{$\sigma$} ) ),   
-            \NAMEHYPER{../../../Values/Primitive}{Booleans}{not} ~
-              \NAMEHYPER{../../../Values}{Value-Types}{is-value}
-                ( \NAMEHYPER{../../../Values/Composite}{Maps}{map-lookup}
-                    ( \VAR{$\sigma$},      
-                      \VAR{L} ) ),   
-            \NAMEHYPER{../../../Values}{Value-Types}{is-in-type}
-              ( \VAR{Val},    
-                \VAR{T} ) ) == 
-          \NAMEHYPER{../../../Values/Primitive}{Booleans}{false}
+      \NAMEHYPER{../../../Values/Primitive}{Booleans}{and}
+        ( \NAMEHYPER{../../../Values/Composite}{Sets}{is-in-set}
+            ( \VAR{L},    
+              \NAMEHYPER{../../../Values/Composite}{Maps}{dom}
+                ( \VAR{$\sigma$} ) ),   
+          \NAMEHYPER{../../../Values/Primitive}{Booleans}{not} ~
+            \NAMEHYPER{../../../Values}{Value-Types}{is-value}
+              ( \NAMEHYPER{../../../Values/Composite}{Maps}{map-lookup}
+                  ( \VAR{$\sigma$},      
+                    \VAR{L} ) ),   
+          \NAMEHYPER{../../../Values}{Value-Types}{is-in-type}
+            ( \VAR{Val},    
+              \VAR{T} ) ) == 
+        \NAMEHYPER{../../../Values/Primitive}{Booleans}{false}
       }{
       &  \langle \NAMEREF{initialise-variable}
                               ( \NAMEREF{variable}
@@ -361,15 +361,15 @@ $$\relax\begin{aligned}\relax
 $$\relax\begin{aligned}\relax
   \KEY{Rule} ~ 
     & \RULE{
-      & \NAMEHYPER{../../../Values/Primitive}{Booleans}{and}
-          ( \NAMEHYPER{../../../Values/Composite}{Sets}{is-in-set}
-              ( \VAR{L},    
-                \NAMEHYPER{../../../Values/Composite}{Maps}{dom}
-                  ( \VAR{$\sigma$} ) ),   
-            \NAMEHYPER{../../../Values}{Value-Types}{is-in-type}
-              ( \VAR{Val},    
-                \VAR{T} ) ) == 
-          \NAMEHYPER{../../../Values/Primitive}{Booleans}{true}
+      \NAMEHYPER{../../../Values/Primitive}{Booleans}{and}
+        ( \NAMEHYPER{../../../Values/Composite}{Sets}{is-in-set}
+            ( \VAR{L},    
+              \NAMEHYPER{../../../Values/Composite}{Maps}{dom}
+                ( \VAR{$\sigma$} ) ),   
+          \NAMEHYPER{../../../Values}{Value-Types}{is-in-type}
+            ( \VAR{Val},    
+              \VAR{T} ) ) == 
+        \NAMEHYPER{../../../Values/Primitive}{Booleans}{true}
       }{
       &  \langle \NAMEREF{assign}
                               ( \NAMEREF{variable}
@@ -384,15 +384,15 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      & \NAMEHYPER{../../../Values/Primitive}{Booleans}{and}
-          ( \NAMEHYPER{../../../Values/Composite}{Sets}{is-in-set}
-              ( \VAR{L},    
-                \NAMEHYPER{../../../Values/Composite}{Maps}{dom}
-                  ( \VAR{$\sigma$} ) ),   
-            \NAMEHYPER{../../../Values}{Value-Types}{is-in-type}
-              ( \VAR{Val},    
-                \VAR{T} ) ) == 
-          \NAMEHYPER{../../../Values/Primitive}{Booleans}{false}
+      \NAMEHYPER{../../../Values/Primitive}{Booleans}{and}
+        ( \NAMEHYPER{../../../Values/Composite}{Sets}{is-in-set}
+            ( \VAR{L},    
+              \NAMEHYPER{../../../Values/Composite}{Maps}{dom}
+                ( \VAR{$\sigma$} ) ),   
+          \NAMEHYPER{../../../Values}{Value-Types}{is-in-type}
+            ( \VAR{Val},    
+              \VAR{T} ) ) == 
+        \NAMEHYPER{../../../Values/Primitive}{Booleans}{false}
       }{
       &  \langle \NAMEREF{assign}
                               ( \NAMEREF{variable}
@@ -417,10 +417,10 @@ $$\relax\begin{aligned}\relax
 $$\relax\begin{aligned}\relax
   \KEY{Rule} ~ 
     & \RULE{
-      & \NAMEHYPER{../../../Values/Composite}{Maps}{map-lookup}
-          ( \VAR{$\sigma$},   
-            \VAR{L} ) \leadsto
-          ( \VAR{Val} : \NAMEHYPER{../../../Values}{Value-Types}{values} )
+      \NAMEHYPER{../../../Values/Composite}{Maps}{map-lookup}
+        ( \VAR{$\sigma$},   
+          \VAR{L} ) \leadsto
+        ( \VAR{Val} : \NAMEHYPER{../../../Values}{Value-Types}{values} )
       }{
       &  \langle \NAMEREF{assigned}
                               ( \NAMEREF{variable}
@@ -431,10 +431,10 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      & \NAMEHYPER{../../../Values/Composite}{Maps}{map-lookup}
-          ( \VAR{$\sigma$},   
-            \VAR{L} ) == 
-          (  ~  )
+      \NAMEHYPER{../../../Values/Composite}{Maps}{map-lookup}
+        ( \VAR{$\sigma$},   
+          \VAR{L} ) == 
+        (  ~  )
       }{
       &  \langle \NAMEREF{assigned}
                               ( \NAMEREF{variable}
@@ -484,11 +484,11 @@ $$\relax\begin{aligned}\relax
 $$\relax\begin{aligned}\relax
   \KEY{Rule} ~ 
     & \RULE{
-      & \NAMEHYPER{../../../Values/Composite}{Sets}{is-in-set}
-          ( \VAR{L},   
-            \NAMEHYPER{../../../Values/Composite}{Maps}{dom}
-              ( \VAR{$\sigma$} ) ) == 
-          \NAMEHYPER{../../../Values/Primitive}{Booleans}{true}
+      \NAMEHYPER{../../../Values/Composite}{Sets}{is-in-set}
+        ( \VAR{L},   
+          \NAMEHYPER{../../../Values/Composite}{Maps}{dom}
+            ( \VAR{$\sigma$} ) ) == 
+        \NAMEHYPER{../../../Values/Primitive}{Booleans}{true}
       }{
       &  \langle \NAMEREF{un-assign}
                               ( \NAMEREF{variable}
@@ -502,11 +502,11 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      & \NAMEHYPER{../../../Values/Composite}{Sets}{is-in-set}
-          ( \VAR{L},   
-            \NAMEHYPER{../../../Values/Composite}{Maps}{dom}
-              ( \VAR{$\sigma$} ) ) == 
-          \NAMEHYPER{../../../Values/Primitive}{Booleans}{false}
+      \NAMEHYPER{../../../Values/Composite}{Sets}{is-in-set}
+        ( \VAR{L},   
+          \NAMEHYPER{../../../Values/Composite}{Maps}{dom}
+            ( \VAR{$\sigma$} ) ) == 
+        \NAMEHYPER{../../../Values/Primitive}{Booleans}{false}
       }{
       &  \langle \NAMEREF{un-assign}
                               ( \NAMEREF{variable}
@@ -567,15 +567,15 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{V}\SUB{1} : \mathop{\sim} ( \NAMEREF{variables} )\\
-        &\VAR{V}\SUB{1} \leadsto
-          \NAMEHYPER{../../../Values/Composite}{Datatypes}{datatype-value}
-            ( \VAR{I}\SUB{1} : \NAMEHYPER{../.}{Binding}{identifiers},   
-              \VAR{V}\SUB{1}\STAR : \NAMEHYPER{../../../Values}{Value-Types}{values}\STAR )\\
-        &\VAR{V}\SUB{2} \leadsto
-          \NAMEHYPER{../../../Values/Composite}{Datatypes}{datatype-value}
-            ( \VAR{I}\SUB{2} : \NAMEHYPER{../.}{Binding}{identifiers},   
-              \VAR{V}\SUB{2}\STAR : \NAMEHYPER{../../../Values}{Value-Types}{values}\STAR )
+       \VAR{V}\SUB{1} : \mathop{\sim} ( \NAMEREF{variables} )\\
+      \VAR{V}\SUB{1} \leadsto
+        \NAMEHYPER{../../../Values/Composite}{Datatypes}{datatype-value}
+          ( \VAR{I}\SUB{1} : \NAMEHYPER{../.}{Binding}{identifiers},   
+            \VAR{V}\SUB{1}\STAR : \NAMEHYPER{../../../Values}{Value-Types}{values}\STAR )\\
+      \VAR{V}\SUB{2} \leadsto
+        \NAMEHYPER{../../../Values/Composite}{Datatypes}{datatype-value}
+          ( \VAR{I}\SUB{2} : \NAMEHYPER{../.}{Binding}{identifiers},   
+            \VAR{V}\SUB{2}\STAR : \NAMEHYPER{../../../Values}{Value-Types}{values}\STAR )
       }{
       & \NAMEREF{structural-assign}
           ( \VAR{V}\SUB{1} : \NAMEHYPER{../../../Values/Composite}{Datatypes}{datatype-values},   
@@ -607,9 +607,9 @@ $$\relax\begin{aligned}\relax
 $$\relax\begin{aligned}\relax
   \KEY{Rule} ~ 
     & \RULE{
-      & \NAMEHYPER{../../../Values/Composite}{Maps}{dom}
-          ( \VAR{M}\SUB{1} ) == 
-          \{  ~  \}
+      \NAMEHYPER{../../../Values/Composite}{Maps}{dom}
+        ( \VAR{M}\SUB{1} ) == 
+        \{  ~  \}
       }{
       & \NAMEREF{structural-assign}
           ( \VAR{M}\SUB{1} : \NAMEHYPER{../../../Values/Composite}{Maps}{maps}
@@ -627,10 +627,10 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      & \NAMEHYPER{../../../Values/Composite}{Sets}{some-element}
-          ( \NAMEHYPER{../../../Values/Composite}{Maps}{dom}
-              ( \VAR{M}\SUB{1} ) ) \leadsto
-          \VAR{K}
+      \NAMEHYPER{../../../Values/Composite}{Sets}{some-element}
+        ( \NAMEHYPER{../../../Values/Composite}{Maps}{dom}
+            ( \VAR{M}\SUB{1} ) ) \leadsto
+        \VAR{K}
       }{
       & \NAMEREF{structural-assign}
           ( \VAR{M}\SUB{1} : \NAMEHYPER{../../../Values/Composite}{Maps}{maps}
@@ -663,9 +663,9 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{V}\SUB{1} : \mathop{\sim} ( \NAMEHYPER{../../../Values/Composite}{Datatypes}{datatype-values} \mid \NAMEHYPER{../../../Values/Composite}{Maps}{maps}
-                                                             ( \_,   
-                                                               \_ ) )
+       \VAR{V}\SUB{1} : \mathop{\sim} ( \NAMEHYPER{../../../Values/Composite}{Datatypes}{datatype-values} \mid \NAMEHYPER{../../../Values/Composite}{Maps}{maps}
+                                                           ( \_,   
+                                                             \_ ) )
       }{
       & \NAMEREF{structural-assign}
           ( \VAR{V}\SUB{1} : \NAMEHYPER{../../../Values}{Value-Types}{values},   
@@ -704,11 +704,11 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{V} : \mathop{\sim} ( \NAMEREF{variables} )\\
-        &\VAR{V} \leadsto
-          \NAMEHYPER{../../../Values/Composite}{Datatypes}{datatype-value}
-            ( \VAR{I} : \NAMEHYPER{../.}{Binding}{identifiers},   
-              \VAR{V}\STAR : \NAMEHYPER{../../../Values}{Value-Types}{values}\STAR )
+       \VAR{V} : \mathop{\sim} ( \NAMEREF{variables} )\\
+      \VAR{V} \leadsto
+        \NAMEHYPER{../../../Values/Composite}{Datatypes}{datatype-value}
+          ( \VAR{I} : \NAMEHYPER{../.}{Binding}{identifiers},   
+            \VAR{V}\STAR : \NAMEHYPER{../../../Values}{Value-Types}{values}\STAR )
       }{
       & \NAMEREF{structural-assigned}
           ( \VAR{V} : \NAMEHYPER{../../../Values/Composite}{Datatypes}{datatype-values} ) \leadsto
@@ -740,9 +740,9 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{U} : \mathop{\sim} ( \NAMEHYPER{../../../Values/Composite}{Datatypes}{datatype-values} \mid \NAMEHYPER{../../../Values/Composite}{Maps}{maps}
-                                                             ( \_,   
-                                                               \_ ) )
+       \VAR{U} : \mathop{\sim} ( \NAMEHYPER{../../../Values/Composite}{Datatypes}{datatype-values} \mid \NAMEHYPER{../../../Values/Composite}{Maps}{maps}
+                                                           ( \_,   
+                                                             \_ ) )
       }{
       & \NAMEREF{structural-assigned}
           ( \VAR{U} : \NAMEHYPER{../../../Values}{Value-Types}{values} ) \leadsto

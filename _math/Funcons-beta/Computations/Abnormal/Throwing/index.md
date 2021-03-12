@@ -97,8 +97,8 @@ $$\relax\begin{aligned}\relax
 $$\relax\begin{aligned}\relax
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  ~  )}_{} 
-          \VAR{X}'
+       \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  ~  )}_{} 
+        \VAR{X}'
       }{
       &  \NAMEREF{handle-thrown}
                       ( \VAR{X},   
@@ -110,9 +110,9 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}( \NAMEREF{thrown}
-                                                                                                      ( \VAR{V}'' : \NAMEHYPER{../../../Values}{Value-Types}{values} ) )}_{} 
-          \VAR{X}'
+       \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}( \NAMEREF{thrown}
+                                                                                                    ( \VAR{V}'' : \NAMEHYPER{../../../Values}{Value-Types}{values} ) )}_{} 
+        \VAR{X}'
       }{
       &  \NAMEREF{handle-thrown}
                       ( \VAR{X},   
@@ -124,8 +124,8 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      &  \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}( \VAR{V}' : \mathop{\sim} \NAMEREF{throwing} )}_{} 
-          \VAR{X}'
+       \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}( \VAR{V}' : \mathop{\sim} \NAMEREF{throwing} )}_{} 
+        \VAR{X}'
       }{
       &  \NAMEREF{handle-thrown}
                       ( \VAR{X},   

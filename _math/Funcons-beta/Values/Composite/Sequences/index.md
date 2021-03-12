@@ -137,9 +137,9 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      & \NAMEHYPER{../../Primitive}{Integers}{natural-predecessor}
-          ( \VAR{N} ) \leadsto
-          \VAR{N}'
+      \NAMEHYPER{../../Primitive}{Integers}{natural-predecessor}
+        ( \VAR{N} ) \leadsto
+        \VAR{N}'
       }{
       & \NAMEREF{index}
           ( \VAR{N} : \NAMEHYPER{../../Primitive}{Integers}{positive-integers},   
@@ -217,9 +217,9 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      & \NAMEHYPER{../../Primitive}{Integers}{natural-predecessor}
-          ( \VAR{N} ) \leadsto
-          \VAR{N}'
+      \NAMEHYPER{../../Primitive}{Integers}{natural-predecessor}
+        ( \VAR{N} ) \leadsto
+        \VAR{N}'
       }{
       & \NAMEREF{first-n}
           ( \VAR{N} : \NAMEHYPER{../../Primitive}{Integers}{positive-integers},   
@@ -250,9 +250,9 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      & \NAMEHYPER{../../Primitive}{Integers}{natural-predecessor}
-          ( \VAR{N} ) \leadsto
-          \VAR{N}'
+      \NAMEHYPER{../../Primitive}{Integers}{natural-predecessor}
+        ( \VAR{N} ) \leadsto
+        \VAR{N}'
       }{
       & \NAMEREF{drop-first-n}
           ( \VAR{N} : \NAMEHYPER{../../Primitive}{Integers}{positive-integers},   
@@ -300,9 +300,9 @@ $$\relax\begin{aligned}\relax
 \\
   \KEY{Rule} ~ 
     & \RULE{
-      & \NAMEHYPER{../../Primitive}{Integers}{natural-predecessor}
-          ( \VAR{N} ) \leadsto
-          \VAR{N}'
+      \NAMEHYPER{../../Primitive}{Integers}{natural-predecessor}
+        ( \VAR{N} ) \leadsto
+        \VAR{N}'
       }{
       & \NAMEREF{n-of}
           ( \VAR{N} : \NAMEHYPER{../../Primitive}{Integers}{positive-integers},   
