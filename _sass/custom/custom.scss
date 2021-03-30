@@ -4,6 +4,12 @@ pre{
     tab-size: 4;
 }
 
+// Link wrap
+
+.main-content a {
+    white-space: normal;
+}
+
 /* CBS syntax highlighting: */
 
 i.keyword {
@@ -43,6 +49,12 @@ span.sectnumtitle a:link {
 
 /* Math */
 
+// Potential workaround for KaTeX 0.13.0 bug https://github.com/KaTeX/KaTeX/issues/2815
+
+.katex .vlist-t2 > .vlist-r:nth-child(2) > .vlist {
+	pointer-events: none;
+}
+
 .MathJax, .katex {
   padding: $sp-3;
   margin-top: 0;
@@ -63,6 +75,7 @@ p, li, a, dt, dd, td, th, h1, h2, h3, h4, h5, h6 {
 .MathJax a, .katex a {
   color: $body-text-color;
   background-image: none;
+  white-space: nowrap;
 }
 
 mjx-container[jax="SVG"] > svg a[href] {
@@ -72,7 +85,7 @@ mjx-container[jax="SVG"] > svg a[href] {
       
 .MathJax, .katex {
   .cbs-Key {
-    color: Gray;
+    color: Silver;
   }
   .cbs-Name {
     color: DarkRed;
