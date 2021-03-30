@@ -1,4 +1,11 @@
 Language "Test"
 
+# ASCII characters
+
+/*
+The apostrophe and the backslash have to be escaped in terminal symbols.
+*/
+
 Syntax
-  b ::= 'test'
+  test ::= '! " # $ % & \' ( ) * + , - . / : ;'
+         | '< = > ? @ [ \\ ] ^ _ ` { | } ~ A Z a z 0 9'
