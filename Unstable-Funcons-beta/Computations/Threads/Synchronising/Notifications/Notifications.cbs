@@ -22,7 +22,7 @@ notifications are ephemeral, and do not get held and released.
 
 ##### Barriers
 /*
-A [barrier[] notifies all requesting threads when a specified number of requests
+A [barrier] notifies all requesting threads when a specified number of requests
 for it have been made. Subsequent requests give immediate notification.
 
 [Barrier]: https://en.wikipedia.org/wiki/Barrier_(computer_science)

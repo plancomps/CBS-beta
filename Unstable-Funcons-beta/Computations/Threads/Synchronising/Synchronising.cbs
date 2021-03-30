@@ -138,7 +138,3 @@ Auxiliary Funcon
 Various kinds of locks and notifications are represented by sync feature maps,
 together with funcons that (atomically) inspect and update them accordngly.
 */
-[
-#### Locks
-#### Notifications
-]
