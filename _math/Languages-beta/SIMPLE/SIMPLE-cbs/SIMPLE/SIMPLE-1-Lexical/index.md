@@ -1,13 +1,21 @@
 ---
-layout: default
 title: "SIMPLE-1-Lexical"
 math: katex
 parent: SIMPLE
 ancestor: Languages-beta
 
 ---
+[Languages-beta] : [SIMPLE-1-Lexical.cbs] \| [PLAIN] \| [PDF]
 
-[Languages-beta] : [SIMPLE-1-Lexical.cbs]
+{::comment}{% raw %}{:/}
+<details open markdown="block">
+  <summary>
+    Outline
+  </summary>
+  {: .text-delta }
+- TOC
+{:toc}
+</details>
 
 $$\KEY{Language} \STRING{SIMPLE}$$
 
@@ -15,119 +23,113 @@ $$\KEY{Language} \STRING{SIMPLE}$$
            
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Syntax} ~ 
-    \VARDECL{V} : \SYNDECL{value}
-      ~ ::= ~ &
-      \SYNREF{bool} \\
-      ~ \mid ~ &  \SYNREF{int} \\
-      ~ \mid ~ &  \SYNREF{string}
+$$\begin{align*}
+  \KEY{Syntax} \
+    \VARDECL{V} : \SYN{value}
+      \ ::= \ & \
+      \SYNREF{bool} \mid \SYNREF{int} \mid \SYNREF{string}
     \\
-     \SYNDECL{bool}
-      ~ ::= ~ &
-      \LEX{false} \\
-      ~ \mid ~ &  \LEX{true}
+     \SYN{bool}
+      \ ::= \ & \
+      \LEX{false} \mid \LEX{true}
 \\
-  \KEY{Lexis} ~ 
+  \KEY{Lexis} \
     \VARDECL{Z} : \SYN{int}
-      ~ ::= ~ & \LEFTGROUP \LEX{0} - \LEX{9} \RIGHTGROUP\PLUS
+      \ ::= \ & \
+      \LEFTGROUP \LEX{0} - \LEX{9} \RIGHTGROUP\PLUS
 \\
-  \KEY{Syntax} ~ 
+  \KEY{Syntax} \
      \SYN{string}
-      ~ ::= ~ & \LEX{"{}} \_ \SYNREF{string-chars} \_ \LEX{"{}}
+      \ ::= \ & \
+      \LEX{{"}} \_ \SYNREF{string-chars} \_ \LEX{{"}}
 \\
-  \KEY{Lexis} ~ 
+  \KEY{Lexis} \
     \VARDECL{S} : \SYN{string-chars}
-      ~ ::= ~ & \LEFTGROUP \mathop{\sim} \LEX{"{}} \RIGHTGROUP\STAR
-\end{aligned}$$
+      \ ::= \ & \
+      \LEFTGROUP \mathop{\sim} \LEX{{"}} \RIGHTGROUP\STAR
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Semantics} ~ 
-  & \SEMDECL{val} \LEFTPHRASE ~ \_ : \SYNREF{value} ~ \RIGHTPHRASE  
-    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Semantics} \
+  & \SEMDECL{val} \LEFTPHRASE \ \_ : \SYNREF{value} \ \RIGHTPHRASE  
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} 
+\end{align*}$$
 
 ## $$\SECT{1.1}$$ Booleans
            
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
-    & \SEMREF{val} \LEFTPHRASE ~ \LEX{false} ~ \RIGHTPHRASE  = \\&\quad
+$$\begin{align*}
+  \KEY{Rule} \
+    & \SEMREF{val} \LEFTPHRASE \
+                            \LEX{false} \
+                          \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false}
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{val} \LEFTPHRASE ~ \LEX{true} ~ \RIGHTPHRASE  = \\&\quad
+  \KEY{Rule} \
+    & \SEMREF{val} \LEFTPHRASE \
+                            \LEX{true} \
+                          \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{true}
-\end{aligned}$$
+\end{align*}$$
 
 ## $$\SECT{1.2}$$ Integers
            
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
-    & \SEMREF{val} \LEFTPHRASE ~ \VARREF{Z} ~ \RIGHTPHRASE  = \\&\quad
+$$\begin{align*}
+  \KEY{Rule} \
+    & \SEMREF{val} \LEFTPHRASE \
+                            \VARREF{Z} \
+                          \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{decimal-natural}
-        ( \textsf{\textquotedblleft}\VAR{Z}\textsf{\textquotedblright} )
-\end{aligned}$$
+        (  \textsf{\textquotedblleft}\VAR{Z}\textsf{\textquotedblright} )
+\end{align*}$$
 
 ## $$\SECT{1.3}$$ Strings
            
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
-    & \SEMREF{val} \LEFTPHRASE ~ \LEX{"{}} ~ \VARREF{S} ~ \LEX{"{}} ~ \RIGHTPHRASE  = \\&\quad
+$$\begin{align*}
+  \KEY{Rule} \
+    & \SEMREF{val} \LEFTPHRASE \
+                            \LEX{{"}} \ \VARREF{S} \ \LEX{{"}} \
+                          \RIGHTPHRASE  = 
       \textsf{\textquotedblleft}\VAR{S}\textsf{\textquotedblright}
-\end{aligned}$$
+\end{align*}$$
 
 ## $$\SECT{1.4}$$ Identifiers
            
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Lexis} ~ 
+$$\begin{align*}
+  \KEY{Lexis} \
     \VARDECL{Id} : \SYN{id}
-      ~ ::= ~ & \LEFTGROUP \LEX{A} - \LEX{Z} \mid \LEX{a} - \LEX{z} \mid \LEX{\UNDERSCORE } \RIGHTGROUP ~ \LEFTGROUP \LEX{0} - \LEX{9} \mid \LEX{A} - \LEX{Z} \mid \LEX{a} - \LEX{z} \mid \LEX{\UNDERSCORE } \RIGHTGROUP\STAR
-\end{aligned}$$
+      \ ::= \ & \
+      \LEFTGROUP \LEX{A} - \LEX{Z} \mid \LEX{a} - \LEX{z} \mid \LEX{{\UNDERSCORE}} \RIGHTGROUP \ \LEFTGROUP \LEX{0} - \LEX{9} \mid \LEX{A} - \LEX{Z} \mid \LEX{a} - \LEX{z} \mid \LEX{{\UNDERSCORE}} \RIGHTGROUP\STAR
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Semantics} ~ 
-  & \SEMDECL{id} \LEFTPHRASE ~ \_ : \SYNREF{id} ~ \RIGHTPHRASE  
-    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{ids}
+$$\begin{align*}
+  \KEY{Semantics} \
+  & \SEMDECL{id} \LEFTPHRASE \ \_ : \SYNREF{id} \ \RIGHTPHRASE  
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{ids} 
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{id} \LEFTPHRASE ~ \VARREF{Id} ~ \RIGHTPHRASE  = \\&\quad
+  \KEY{Rule} \
+    & \SEMREF{id} \LEFTPHRASE \
+                            \VARREF{Id} \
+                          \RIGHTPHRASE  = 
       \textsf{\textquotedblleft}\VAR{Id}\textsf{\textquotedblright}
-\end{aligned}$$
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Lexis} ~ 
-     \SYNDECL{keyword}
-      ~ ::= ~ &
-      \LEX{false} \\
-      ~ \mid ~ &  \LEX{true} \\
-      ~ \mid ~ &  \LEX{var} \\
-      ~ \mid ~ &  \LEX{function} \\
-      ~ \mid ~ &  \LEX{sizeOf} \\
-      ~ \mid ~ &  \LEX{read} \\
-      ~ \mid ~ &  \LEX{spawn} \\
-      ~ \mid ~ &  \LEX{if} \\
-      ~ \mid ~ &  \LEX{else} \\
-      ~ \mid ~ &  \LEX{while} \\
-      ~ \mid ~ &  \LEX{for} \\
-      ~ \mid ~ &  \LEX{print} \\
-      ~ \mid ~ &  \LEX{return} \\
-      ~ \mid ~ &  \LEX{try} \\
-      ~ \mid ~ &  \LEX{catch} \\
-      ~ \mid ~ &  \LEX{throw} \\
-      ~ \mid ~ &  \LEX{join} \\
-      ~ \mid ~ &  \LEX{acquire} \\
-      ~ \mid ~ &  \LEX{release} \\
-      ~ \mid ~ &  \LEX{rendezvous}
-\end{aligned}$$
-
+$$\begin{align*}
+  \KEY{Lexis} \
+     \SYN{keyword}
+      \ ::= \ & \
+      \LEX{false} \mid \LEX{true} \mid \LEX{var} \mid \LEX{function} \mid \LEX{sizeOf} \mid \LEX{read} \\
+      \ \mid \ & \ \LEX{spawn} \mid \LEX{if} \mid \LEX{else} \mid \LEX{while} \mid \LEX{for} \mid \LEX{print} \mid \LEX{return} \\
+      \ \mid \ & \ \LEX{try} \mid \LEX{catch} \mid \LEX{throw} \mid \LEX{join} \mid \LEX{acquire} \mid \LEX{release} \\
+      \ \mid \ & \ \LEX{rendezvous}
+\end{align*}$$
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -138,19 +140,24 @@ $$\relax\begin{aligned}\relax
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]: /CBS-beta 
+[CBS-beta]: /CBS-beta
   "CBS-BETA"
-
-
-____
-
-From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
-
-[SIMPLE-1-Lexical.cbs]: /CBS-beta/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-1-Lexical/SIMPLE-1-Lexical.cbs
-  "CBS SOURCE FILE"
+[SIMPLE-1-Lexical.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-1-Lexical/SIMPLE-1-Lexical.cbs
+  "CBS SOURCE FILE ON GITHUB"
+[PLAIN]: /CBS-beta/docs/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-1-Lexical
+  "CBS SOURCE WEB PAGE"
+ [PRETTY]: /CBS-beta/math/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-1-Lexical
+  "CBS-KATEX WEB PAGE"
+[PDF]: /CBS-beta/math/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-1-Lexical/SIMPLE-1-Lexical.pdf
+  "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
+{::comment}{% endraw %}{:/}
+
+____
+From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
+
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues
   "CBS-BETA ISSUE REPORTS ON GITHUB"
-[Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20SIMPLE/SIMPLE-1-Lexical/SIMPLE-1-Lexical.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A 
+[Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20SIMPLE/SIMPLE-1-Lexical/SIMPLE-1-Lexical.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A
   "GENERATE AN EMAIL TEMPLATE"

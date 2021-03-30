@@ -1,117 +1,121 @@
 ---
-layout: default
 title: "Continuing"
 math: katex
 parent: Abnormal
 ancestor: Funcons-beta
 
 ---
+[Funcons-beta] : [Continuing.cbs] \| [PLAIN] \| [PDF]
 
-[Funcons-beta] : [Continuing.cbs]
+{::comment}{% raw %}{:/}
 
 ### Continuing
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Datatype} ~ & \NAMEREF{continuing} \\
-  \KEY{Funcon} ~ & \NAMEREF{continued} \\
-  \KEY{Funcon} ~ & \NAMEREF{finalise-continuing} \\
-  \KEY{Funcon} ~ & \NAMEREF{continue} \\
-  \KEY{Funcon} ~ & \NAMEREF{handle-continue}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Datatype} \ & \NAMEREF{continuing} \\
+  \KEY{Funcon} \ & \NAMEREF{continued} \\
+  \KEY{Funcon} \ & \NAMEREF{finalise-continuing} \\
+  \KEY{Funcon} \ & \NAMEREF{continue} \\
+  \KEY{Funcon} \ & \NAMEREF{handle-continue}
+  \ ]
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Meta-variables} ~ 
+$$\begin{align*}
+  \KEY{Meta-variables} \
   & \VAR{T} <: \NAMEHYPER{../../../Values}{Value-Types}{values}
-\end{aligned}$$
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Datatype} ~ 
-  \NAMEDECL{continuing}  
-  ~ ::= ~ & \NAMEDECL{continued} 
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Datatype} \ 
+  \NAMEDECL{continuing} 
+  \ ::= \ & \NAMEDECL{continued}
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{continued}}$$ is a reason for abrupt termination.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{finalise-continuing}(\VAR{X} :  \TO \VAR{T}) :  \TO \VAR{T} \mid \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} \\
-  & \quad \leadsto \NAMEHYPER{../.}{Abrupting}{finalise-abrupting}
-                     ( \VAR{X} )
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{finalise-continuing}(
+                       \VAR{X} :  \TO \VAR{T}) 
+    :  \TO \VAR{T}  \mid \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} \\&\quad
+    \leadsto \NAMEHYPER{../.}{Abrupting}{finalise-abrupting}
+               (  \VAR{X} )
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{finalise-continuing}
-           ( \VAR{X} )}$$ handles abrupt termination of $$\SHADE{\VAR{X}}$$ due to executing
+           (  \VAR{X} )}$$ handles abrupt termination of $$\SHADE{\VAR{X}}$$ due to executing
   $$\SHADE{\NAMEREF{continue}}$$.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{continue} :  \TO \NAMEHYPER{../../../Values}{Value-Types}{empty-type} \\
-  & \quad \leadsto \NAMEHYPER{../.}{Abrupting}{abrupt}
-                     ( \NAMEREF{continued} )
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{continue} 
+    :  \TO \NAMEHYPER{../../../Values}{Value-Types}{empty-type} \\&\quad
+    \leadsto \NAMEHYPER{../.}{Abrupting}{abrupt}
+               (  \NAMEREF{continued} )
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{continue}}$$ abruptly terminates all enclosing computations until it is handled.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{handle-continue}(\_ :  \TO \NAMEHYPER{../../../Values/Primitive}{Null}{null-type}) :  \TO \NAMEHYPER{../../../Values/Primitive}{Null}{null-type}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{handle-continue}(
+                       \_ :  \TO \NAMEHYPER{../../../Values/Primitive}{Null}{null-type}) 
+    :  \TO \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} 
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{handle-continue}
-           ( \VAR{X} )}$$ terminates normally when $$\SHADE{\VAR{X}}$$ terminates abruptly for the
+           (  \VAR{X} )}$$ terminates normally when $$\SHADE{\VAR{X}}$$ terminates abruptly for the
   reason $$\SHADE{\NAMEREF{continued}}$$.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
+$$\begin{align*}
+  \KEY{Rule} \
     & \RULE{
-       \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  ~  )}_{} 
-        \VAR{X}'
+      &  \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(   \  )}_{} 
+          \VAR{X}'
       }{
       &  \NAMEREF{handle-continue}
-                      ( \VAR{X} ) \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  ~  )}_{} 
+                      (  \VAR{X} ) \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(   \  )}_{} 
           \NAMEREF{handle-continue}
-            ( \VAR{X}' )
+            (  \VAR{X}' )
       }
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \RULE{
-       \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}( \NAMEREF{continued} )}_{} 
-        \_
+      &  \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  \NAMEREF{continued} )}_{} 
+          \_
       }{
       &  \NAMEREF{handle-continue}
-                      ( \VAR{X} ) \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  ~  )}_{} 
+                      (  \VAR{X} ) \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(   \  )}_{} 
           \NAMEHYPER{../../../Values/Primitive}{Null}{null-value}
       }
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \RULE{
-       \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}( \VAR{V} : \mathop{\sim} \NAMEREF{continuing} )}_{} 
-        \VAR{X}'
+      &  \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  \VAR{V} : \mathop{\sim} \NAMEREF{continuing} )}_{} 
+          \VAR{X}'
       }{
       &  \NAMEREF{handle-continue}
-                      ( \VAR{X} ) \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}( \VAR{V} )}_{} 
+                      (  \VAR{X} ) \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  \VAR{V} )}_{} 
           \NAMEREF{handle-continue}
-            ( \VAR{X}' )
+            (  \VAR{X}' )
       }
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{handle-continue}
-        ( \NAMEHYPER{../../../Values/Primitive}{Null}{null-value} ) \leadsto
+        (  \NAMEHYPER{../../../Values/Primitive}{Null}{null-value} ) \leadsto 
         \NAMEHYPER{../../../Values/Primitive}{Null}{null-value}
-\end{aligned}$$
-
+\end{align*}$$
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -122,19 +126,24 @@ $$\relax\begin{aligned}\relax
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]: /CBS-beta 
+[CBS-beta]: /CBS-beta
   "CBS-BETA"
-
-
-____
-
-From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
-
-[Continuing.cbs]: /CBS-beta/Funcons-beta/Computations/Abnormal/Continuing/Continuing.cbs
-  "CBS SOURCE FILE"
+[Continuing.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Funcons-beta/Computations/Abnormal/Continuing/Continuing.cbs
+  "CBS SOURCE FILE ON GITHUB"
+[PLAIN]: /CBS-beta/docs/Funcons-beta/Computations/Abnormal/Continuing
+  "CBS SOURCE WEB PAGE"
+ [PRETTY]: /CBS-beta/math/Funcons-beta/Computations/Abnormal/Continuing
+  "CBS-KATEX WEB PAGE"
+[PDF]: /CBS-beta/math/Funcons-beta/Computations/Abnormal/Continuing/Continuing.pdf
+  "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
+{::comment}{% endraw %}{:/}
+
+____
+From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
+
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues
   "CBS-BETA ISSUE REPORTS ON GITHUB"
-[Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20Computations/Abnormal/Continuing/Continuing.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A 
+[Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20Computations/Abnormal/Continuing/Continuing.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A
   "GENERATE AN EMAIL TEMPLATE"

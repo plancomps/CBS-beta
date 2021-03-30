@@ -1,56 +1,57 @@
 ---
-layout: default
 title: "Objects"
 math: katex
 parent: Composite
 ancestor: Funcons-beta
 
 ---
+[Funcons-beta] : [Objects.cbs] \| [PLAIN] \| [PDF]
 
-[Funcons-beta] : [Objects.cbs]
+{::comment}{% raw %}{:/}
 
 ### Objects
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Datatype} ~ & \NAMEREF{objects} \\
-  \KEY{Funcon} ~ & \NAMEREF{object} \\
-  \KEY{Funcon} ~ & \NAMEREF{object-identity} \\
-  \KEY{Funcon} ~ & \NAMEREF{object-class-name} \\
-  \KEY{Funcon} ~ & \NAMEREF{object-feature-map} \\
-  \KEY{Funcon} ~ & \NAMEREF{object-subobject-sequence} \\
-  \KEY{Funcon} ~ & \NAMEREF{object-tree} \\
-  \KEY{Funcon} ~ & \NAMEREF{object-single-inheritance-feature-map}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Datatype} \ & \NAMEREF{objects} \\
+  \KEY{Funcon} \ & \NAMEREF{object} \\
+  \KEY{Funcon} \ & \NAMEREF{object-identity} \\
+  \KEY{Funcon} \ & \NAMEREF{object-class-name} \\
+  \KEY{Funcon} \ & \NAMEREF{object-feature-map} \\
+  \KEY{Funcon} \ & \NAMEREF{object-subobject-sequence} \\
+  \KEY{Funcon} \ & \NAMEREF{object-tree} \\
+  \KEY{Funcon} \ & \NAMEREF{object-single-inheritance-feature-map}
+  \ ]
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Datatype} ~ 
-  \NAMEDECL{objects}  
-  ~ ::= ~ & \NAMEDECL{object} (\_ : \NAMEHYPER{../../../Computations/Normal}{Generating}{atoms}, \_ : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}, \_ : \NAMEHYPER{../../../Computations/Normal}{Binding}{environments}, \_ : \NAMEREF{objects}\STAR)
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Datatype} \ 
+  \NAMEDECL{objects} 
+  \ ::= \ & \NAMEDECL{object}(
+                               \_ : \NAMEHYPER{../../../Computations/Normal}{Generating}{atoms}, \_ : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}, \_ : \NAMEHYPER{../../../Computations/Normal}{Binding}{environments}, \_ : \NAMEREF{objects}\STAR)
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{object}
-           ( \VAR{A},   
-             \VAR{C},   
-             \VAR{Env},   
-             \VAR{O}\STAR )}$$ is an object:
+           (  \VAR{A}, 
+                  \VAR{C}, 
+                  \VAR{Env}, 
+                  \VAR{O}\STAR )}$$ is an object:
   * distinguished by an atom $$\SHADE{\VAR{A}}$$,
   * of a class named $$\SHADE{\VAR{C}}$$,
   * with an environment $$\SHADE{\VAR{Env}}$$ with the features of the object, and 
   * a sequence $$\SHADE{\VAR{O}\STAR}$$ of subobjects of the direct superclasses of $$\SHADE{\VAR{C}}$$.
   $$\SHADE{\NAMEREF{object}
-           ( \VAR{A},   
-             \VAR{C},   
-             \VAR{Env} )}$$ is an object of a base class.
+           (  \VAR{A}, 
+                  \VAR{C}, 
+                  \VAR{Env} )}$$ is an object of a base class.
   $$\SHADE{\NAMEREF{object}
-           ( \VAR{A},   
-             \VAR{C},   
-             \VAR{Env},   
-             \VAR{O}' )}$$ is an object of a class with a single superclass.
+           (  \VAR{A}, 
+                  \VAR{C}, 
+                  \VAR{Env}, 
+                  \VAR{O}' )}$$ is an object of a class with a single superclass.
   With multiple inheritance, subobjects due to repeated inheritance of the 
   same class may be shared.
   
@@ -60,103 +61,114 @@ $$\relax\begin{aligned}\relax
   independent of such implementation concerns.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{object-identity}(\_ : \NAMEREF{objects}) :  \TO \NAMEHYPER{../../../Computations/Normal}{Generating}{atoms}
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{object-identity}(
+                       \_ : \NAMEREF{objects}) 
+    :  \TO \NAMEHYPER{../../../Computations/Normal}{Generating}{atoms} 
 \\
-  \KEY{Rule} ~ 
-    & \NAMEREF{object-identity} ~
+  \KEY{Rule} \
+    & \NAMEREF{object-identity} \\&\quad 
         \NAMEREF{object}
-          ( \VAR{A} : \NAMEHYPER{../../../Computations/Normal}{Generating}{atoms},    
-            \_ : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers},    
-            \_ : \NAMEHYPER{../../../Computations/Normal}{Binding}{environments},    
-            \_\STAR : \NAMEREF{objects}\STAR ) \leadsto
+          (  \VAR{A} : \NAMEHYPER{../../../Computations/Normal}{Generating}{atoms}, 
+                 \_ : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}, 
+                 \_ : \NAMEHYPER{../../../Computations/Normal}{Binding}{environments}, 
+                 \_\STAR : \NAMEREF{objects}\STAR ) \leadsto \\&\quad
         \VAR{A}
-\end{aligned}$$
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{object-class-name}(\_ : \NAMEREF{objects}) :  \TO \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{object-class-name}(
+                       \_ : \NAMEREF{objects}) 
+    :  \TO \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers} 
 \\
-  \KEY{Rule} ~ 
-    & \NAMEREF{object-class-name} ~
+  \KEY{Rule} \
+    & \NAMEREF{object-class-name} \\&\quad 
         \NAMEREF{object}
-          ( \_ : \NAMEHYPER{../../../Computations/Normal}{Generating}{atoms},    
-            \VAR{C} : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers},    
-            \_ : \NAMEHYPER{../../../Computations/Normal}{Binding}{environments},    
-            \_\STAR : \NAMEREF{objects}\STAR ) \leadsto
+          (  \_ : \NAMEHYPER{../../../Computations/Normal}{Generating}{atoms}, 
+                 \VAR{C} : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}, 
+                 \_ : \NAMEHYPER{../../../Computations/Normal}{Binding}{environments}, 
+                 \_\STAR : \NAMEREF{objects}\STAR ) \leadsto \\&\quad
         \VAR{C}
-\end{aligned}$$
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{object-feature-map}(\_ : \NAMEREF{objects}) :  \TO \NAMEHYPER{../../../Computations/Normal}{Binding}{environments}
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{object-feature-map}(
+                       \_ : \NAMEREF{objects}) 
+    :  \TO \NAMEHYPER{../../../Computations/Normal}{Binding}{environments} 
 \\
-  \KEY{Rule} ~ 
-    & \NAMEREF{object-feature-map} ~
+  \KEY{Rule} \
+    & \NAMEREF{object-feature-map} \\&\quad 
         \NAMEREF{object}
-          ( \_ : \NAMEHYPER{../../../Computations/Normal}{Generating}{atoms},    
-            \_ : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers},    
-            \VAR{Env} : \NAMEHYPER{../../../Computations/Normal}{Binding}{environments},    
-            \_\STAR : \NAMEREF{objects}\STAR ) \leadsto
+          (  \_ : \NAMEHYPER{../../../Computations/Normal}{Generating}{atoms}, 
+                 \_ : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}, 
+                 \VAR{Env} : \NAMEHYPER{../../../Computations/Normal}{Binding}{environments}, 
+                 \_\STAR : \NAMEREF{objects}\STAR ) \leadsto \\&\quad
         \VAR{Env}
-\end{aligned}$$
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{object-subobject-sequence}(\_ : \NAMEREF{objects}) :  \TO \NAMEREF{objects}\STAR
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{object-subobject-sequence}(
+                       \_ : \NAMEREF{objects}) 
+    :  \TO \NAMEREF{objects}\STAR 
 \\
-  \KEY{Rule} ~ 
-    & \NAMEREF{object-subobject-sequence} ~
+  \KEY{Rule} \
+    & \NAMEREF{object-subobject-sequence} \\&\quad 
         \NAMEREF{object}
-          ( \_ : \NAMEHYPER{../../../Computations/Normal}{Generating}{atoms},    
-            \_ : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers},    
-            \_ : \NAMEHYPER{../../../Computations/Normal}{Binding}{environments},    
-            \VAR{O}\STAR : \NAMEREF{objects}\STAR ) \leadsto
+          (  \_ : \NAMEHYPER{../../../Computations/Normal}{Generating}{atoms}, 
+                 \_ : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}, 
+                 \_ : \NAMEHYPER{../../../Computations/Normal}{Binding}{environments}, 
+                 \VAR{O}\STAR : \NAMEREF{objects}\STAR ) \leadsto \\&\quad
         \VAR{O}\STAR
-\end{aligned}$$
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{object-tree}(\_ : \NAMEREF{objects}) :  \TO \NAMEHYPER{../.}{Trees}{trees}
-                                                                         ( \NAMEREF{objects} )
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{object-tree}(
+                       \_ : \NAMEREF{objects}) 
+    :  \TO \NAMEHYPER{../.}{Trees}{trees}
+                     (  \NAMEREF{objects} ) 
+\end{align*}$$
 
 
-  $$\SHADE{\NAMEREF{object-tree} ~
+  $$\SHADE{\NAMEREF{object-tree} \ 
            \VAR{O}}$$ forms a tree where the branches are the object trees for
   the direct subobjects of $$\SHADE{\VAR{O}}$$.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
+$$\begin{align*}
+  \KEY{Rule} \
     & \NAMEREF{object-tree}
-        ( \VAR{O} : \NAMEREF{objects} ) \leadsto
+        (  \VAR{O} : \NAMEREF{objects} ) \leadsto \\&\quad
         \NAMEHYPER{../.}{Trees}{tree}
-          ( \VAR{O},   
-            \NAMEHYPER{../../../Computations/Normal}{Giving}{interleave-map}
-              ( \NAMEREF{object-tree} ~
-                  \NAMEHYPER{../../../Computations/Normal}{Giving}{given},    
-                \NAMEREF{object-subobject-sequence} ~
-                  \VAR{O} ) )
-\end{aligned}$$
+          ( \\&\quad\quad \VAR{O}, \\&\quad\quad
+                 \NAMEHYPER{../../../Computations/Normal}{Giving}{interleave-map}
+                  ( \\&\quad\quad\quad \NAMEREF{object-tree} \ 
+                          \NAMEHYPER{../../../Computations/Normal}{Giving}{given}, \\&\quad\quad\quad
+                         \NAMEREF{object-subobject-sequence} \ 
+                          \VAR{O} ) )
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{object-single-inheritance-feature-map}(\VAR{O} : \NAMEREF{objects}) :  \TO \NAMEHYPER{../../../Computations/Normal}{Binding}{environments} \\
-  & \quad \leadsto \NAMEHYPER{../.}{Maps}{map-override} ~
-                     \NAMEHYPER{../../../Computations/Normal}{Giving}{left-to-right-map}
-                       ( \NAMEREF{object-feature-map} ~
-                           \NAMEHYPER{../../../Computations/Normal}{Giving}{given}, \\&\quad \quad \quad \quad \quad 
-                         \NAMEHYPER{../.}{Trees}{single-branching-sequence} ~
-                           \NAMEREF{object-tree} ~
-                             \VAR{O} )
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{object-single-inheritance-feature-map}(
+                       \VAR{O} : \NAMEREF{objects}) 
+    :  \TO \NAMEHYPER{../../../Computations/Normal}{Binding}{environments} \\&\quad
+    \leadsto \NAMEHYPER{../.}{Maps}{map-override} \ 
+               \NAMEHYPER{../../../Computations/Normal}{Giving}{left-to-right-map}
+                 ( \\&\quad\quad\quad\quad \NAMEREF{object-feature-map} \ 
+                         \NAMEHYPER{../../../Computations/Normal}{Giving}{given}, \\&\quad\quad\quad\quad
+                        \NAMEHYPER{../.}{Trees}{single-branching-sequence} \ 
+                         \NAMEREF{object-tree} \ 
+                           \VAR{O} )
+\end{align*}$$
 
 
   For multiple inheritance, different resolution orders can be specified
   by using difference linearisations of the object tree.
-
 
 
 
@@ -168,19 +180,24 @@ $$\relax\begin{aligned}\relax
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]: /CBS-beta 
+[CBS-beta]: /CBS-beta
   "CBS-BETA"
-
-
-____
-
-From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
-
-[Objects.cbs]: /CBS-beta/Funcons-beta/Values/Composite/Objects/Objects.cbs
-  "CBS SOURCE FILE"
+[Objects.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Funcons-beta/Values/Composite/Objects/Objects.cbs
+  "CBS SOURCE FILE ON GITHUB"
+[PLAIN]: /CBS-beta/docs/Funcons-beta/Values/Composite/Objects
+  "CBS SOURCE WEB PAGE"
+ [PRETTY]: /CBS-beta/math/Funcons-beta/Values/Composite/Objects
+  "CBS-KATEX WEB PAGE"
+[PDF]: /CBS-beta/math/Funcons-beta/Values/Composite/Objects/Objects.pdf
+  "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
+{::comment}{% endraw %}{:/}
+
+____
+From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
+
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues
   "CBS-BETA ISSUE REPORTS ON GITHUB"
-[Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20Values/Composite/Objects/Objects.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A 
+[Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20Values/Composite/Objects/Objects.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A
   "GENERATE AN EMAIL TEMPLATE"

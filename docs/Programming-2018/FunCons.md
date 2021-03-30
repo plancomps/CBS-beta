@@ -1,5 +1,4 @@
 ---
-layout: default
 title: FunCons
 nav_exclude: true
 search_exclude: true

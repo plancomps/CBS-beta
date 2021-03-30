@@ -1,0 +1,35 @@
+\begin{displaymath}
+\KEY{Language} \STRING{IMPPP}
+\end{displaymath}
+
+\section*{$\SECT{A}$ Disambiguation}\hypertarget{secta-disambiguation}{}\label{secta-disambiguation}
+
+$\KEY{Lexis SDF}$
+
+\begin{quote}
+lexical syntax \newline
+  $\SHADE{~~\SYNHYPER{../.}{IMPPP-1}{id}}$ = $\SHADE{\SYNHYPER{../.}{IMPPP-1}{keyword}}$ \{reject\}\newline
+lexical restrictions\newline
+  $\SHADE{~~\SYNHYPER{../.}{IMPPP-1}{id}}$ -/- {[}A-Za-z0-9{]}
+\end{quote}
+
+$\KEY{Syntax SDF}$
+
+\begin{quote}
+context-free syntax\newline
+$\SHADE{ \SYNHYPER{../.}{IMPPP-2}{aexp}  ~ ::= ~  \SYNHYPER{../.}{IMPPP-2}{aexp} ~ \LEX{+{}} ~ \SYNHYPER{../.}{IMPPP-2}{aexp}}$  \{assoc\}\newline
+$\SHADE{ \SYNHYPER{../.}{IMPPP-3}{bexp}  ~ ::= ~  \SYNHYPER{../.}{IMPPP-3}{bexp} ~ \LEX{\AMPERSAND \AMPERSAND } ~ \SYNHYPER{../.}{IMPPP-3}{bexp}}$ \{assoc\}\newline
+\newline
+context-free priorities\newline
+$\SHADE{ \SYNHYPER{../.}{IMPPP-2}{aexp}  ~ ::= ~  \SYNHYPER{../.}{IMPPP-2}{aexp} ~ \LEX{/{}} ~ \SYNHYPER{../.}{IMPPP-2}{aexp}}$\newline
+\textgreater{}\newline
+$\SHADE{ \SYNHYPER{../.}{IMPPP-2}{aexp}  ~ ::= ~  \SYNHYPER{../.}{IMPPP-2}{aexp} ~ \LEX{+{}} ~ \SYNHYPER{../.}{IMPPP-2}{aexp}}$\newline
+\textgreater{}\newline
+$\SHADE{ \SYNHYPER{../.}{IMPPP-2}{aexp}  ~ ::= ~  \SYNHYPER{../.}{IMPPP-1}{id} ~ \LEX{={}} ~ \SYNHYPER{../.}{IMPPP-2}{aexp}}$\newline
+\newline
+context-free priorities\newline
+$\SHADE{ \SYNHYPER{../.}{IMPPP-3}{bexp}  ~ ::= ~  \LEX{!{}} ~ \SYNHYPER{../.}{IMPPP-3}{bexp}}$\newline
+\textgreater{}\newline
+$\SHADE{ \SYNHYPER{../.}{IMPPP-3}{bexp}  ~ ::= ~  \SYNHYPER{../.}{IMPPP-3}{bexp} ~ \LEX{\AMPERSAND \AMPERSAND } ~ \SYNHYPER{../.}{IMPPP-3}{bexp}}$
+\end{quote}
+

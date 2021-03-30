@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Browsing guide
 nav_order: "6"
 ---

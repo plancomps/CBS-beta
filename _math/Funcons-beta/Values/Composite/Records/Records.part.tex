@@ -1,0 +1,49 @@
+\subsubsection*{Records}\hypertarget{records}{}\label{records}
+
+\begin{align*}
+  [ ~ 
+  \KEY{Datatype} ~ & \NAMEREF{records} \\
+  \KEY{Funcon} ~ & \NAMEREF{record} \\
+  \KEY{Funcon} ~ & \NAMEREF{record-map} \\
+  \KEY{Funcon} ~ & \NAMEREF{record-select}
+  ~ ]
+\end{align*}
+\begin{align*}
+  \KEY{Meta-variables} ~ 
+  & \VAR{T} <: \NAMEHYPER{../..}{Value-Types}{values}
+\end{align*}
+\begin{align*}
+  \KEY{Datatype} ~ 
+  \NAMEDECL{records}(\VAR{T} )  
+  ~ ::= ~ & \NAMEDECL{record} (\_ : \NAMEHYPER{../.}{Maps}{maps}
+                                         ( \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}, \\&\quad 
+                                           \VAR{T} ))
+\end{align*}
+A value of type $\SHADE{\NAMEREF{records}
+           ( \VAR{T} )}$ contains a map from identifiers to values of
+  type $\SHADE{\VAR{T}}$.
+
+\begin{align*}
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{record-map}(\_ : \NAMEREF{records}
+                                ( \VAR{T} )) :  \TO \NAMEHYPER{../.}{Maps}{maps}
+                                                                         ( \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers},   
+                                                                           \VAR{T} )
+\\
+  \KEY{Rule} ~ 
+    & \NAMEREF{record-map}
+        ( \NAMEREF{record}
+            ( \VAR{M} : \NAMEHYPER{../.}{Maps}{maps}
+                          ( \_,     
+                            \_ ) ) ) \leadsto
+        \VAR{M}
+\end{align*}
+\begin{align*}
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{record-select}(\VAR{R} : \NAMEREF{records}
+                                ( \VAR{T} ), \VAR{I} : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}) :  \TO \VAR{T}\QUERY \\
+  & \quad \leadsto \NAMEHYPER{../.}{Maps}{map-lookup}
+                     ( \NAMEREF{record-map}
+                         ( \VAR{R} ), \\&\quad \quad \quad \quad 
+                       \VAR{I} )
+\end{align*}

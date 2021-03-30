@@ -1,41 +1,48 @@
+{::comment}{% raw %}{:/}
+
 $$\KEY{Language} \STRING{IMP}$$
 
 
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \textsf{\SECTHYPER{../.}{IMP-1}{1}} ~ & \textsf{Arithmetic expressions} \\
-  \textsf{\SECTHYPER{../.}{IMP-2}{2}} ~ & \textsf{Boolean expressions} \\
-  \textsf{\SECTHYPER{../.}{IMP-3}{3}} ~ & \textsf{Statements and blocks} \\
-  \textsf{\SECTHYPER{../.}{IMP-4}{4}} ~ & \textsf{Programs and variable declarations} \\
-  \textsf{\SECTHYPER{../.}{IMP-Disambiguation}{A}} ~ & \textsf{Disambiguation}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \textsf{\SECTHYPER{../.}{IMP-1}{1}} \ & \textsf{Arithmetic expressions} \\
+  \textsf{\SECTHYPER{../.}{IMP-2}{2}} \ & \textsf{Boolean expressions} \\
+  \textsf{\SECTHYPER{../.}{IMP-3}{3}} \ & \textsf{Statements and blocks} \\
+  \textsf{\SECTHYPER{../.}{IMP-4}{4}} \ & \textsf{Programs and variable declarations} \\
+  \textsf{\SECTHYPER{../.}{IMP-Disambiguation}{A}} \ & \textsf{Disambiguation}
+  \ ]
+\end{align*}$$
 
 # Top level
                
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Syntax} ~ 
+$$\begin{align*}
+  \KEY{Syntax} \
     \VARDECL{START} : \SYN{start}
-      ~ ::= ~ & \SYNHYPER{../.}{IMP-4}{pgm}
-\end{aligned}$$
+      \ ::= \ & \
+      \SYNHYPER{../.}{IMP-4}{pgm}
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Semantics} ~ 
-  & \SEMDECL{start} \LEFTPHRASE ~ \_ : \SYNREF{start} ~ \RIGHTPHRASE  :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
+$$\begin{align*}
+  \KEY{Semantics} \
+  & \SEMDECL{start} \LEFTPHRASE \ \_ : \SYNREF{start} \ \RIGHTPHRASE  
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{start} \LEFTPHRASE ~ \VARHYPER{../.}{IMP-4}{Pgm} ~ \RIGHTPHRASE  = \\&\quad
-      \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{initialise-binding} ~
-        \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{initialise-storing} ~
-          \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{initialise-giving} ~
-            \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{finalise-failing} ~
-              \SEMHYPER{../.}{IMP-4}{run} \LEFTPHRASE ~ \VAR{Pgm} ~ \RIGHTPHRASE 
-\end{aligned}$$
-
+  \KEY{Rule} \
+    & \SEMREF{start} \LEFTPHRASE \
+                            \VARHYPER{../.}{IMP-4}{Pgm} \
+                          \RIGHTPHRASE  = \\&\quad
+      \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{initialise-binding} \\&\quad\quad 
+        \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{initialise-storing} \\&\quad\quad\quad 
+          \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{initialise-giving} \\&\quad\quad\quad\quad 
+            \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{finalise-failing} \\&\quad\quad\quad\quad\quad 
+              \SEMHYPER{../.}{IMP-4}{run} \LEFTPHRASE \
+                                    \VAR{Pgm} \
+                                  \RIGHTPHRASE 
+\end{align*}$$
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -46,5 +53,16 @@ $$\relax\begin{aligned}\relax
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]: /CBS-beta 
+[CBS-beta]: /CBS-beta
   "CBS-BETA"
+[IMP-Start.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Languages-beta/IMP/IMP-cbs/IMP/IMP-Start/IMP-Start.cbs
+  "CBS SOURCE FILE ON GITHUB"
+[PLAIN]: /CBS-beta/docs/Languages-beta/IMP/IMP-cbs/IMP/IMP-Start
+  "CBS SOURCE WEB PAGE"
+ [PRETTY]: /CBS-beta/math/Languages-beta/IMP/IMP-cbs/IMP/IMP-Start
+  "CBS-KATEX WEB PAGE"
+[PDF]: /CBS-beta/math/Languages-beta/IMP/IMP-cbs/IMP/IMP-Start/IMP-Start.pdf
+  "CBS-LATEX PDF FILE"
+[PLanCompS Project]: https://plancomps.github.io
+  "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
+{::comment}{% endraw %}{:/}

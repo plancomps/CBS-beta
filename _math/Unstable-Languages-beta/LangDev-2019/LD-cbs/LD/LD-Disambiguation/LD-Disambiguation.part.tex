@@ -1,0 +1,119 @@
+\begin{displaymath}
+\KEY{Language} \STRING{LD}
+\end{displaymath}
+
+\section*{$\SECT{A}$ Disambiguation}\hypertarget{secta-disambiguation}{}\label{secta-disambiguation}
+
+\subsection*{$\SECT{A.1}$ Lexical constructs}\hypertarget{secta1-lexical-constructs}{}\label{secta1-lexical-constructs}
+
+$\KEY{Lexis SDF}$
+
+\begin{quote}
+lexical syntax\newline
+  $\SHADE{~~\SYNHYPER{../.}{LD-Start}{id}}$ = $\SHADE{\SYNHYPER{../.}{LD-Start}{keyword}}$ \{reject\}\newline
+\newline
+lexical restrictions\newline
+  $\SHADE{~~\SYNHYPER{../.}{LD-Start}{id}}$  -/- {[}a-z0-9{]}\newline
+  $\SHADE{~~\SYNHYPER{../.}{LD-Start}{int}}$ -/- {[}0-9{]}
+\end{quote}
+
+$\KEY{Syntax SDF}$
+
+\begin{quote}
+context-free syntax\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{start}  ~ ::= ~  \SYNHYPER{../.}{LD-Start}{exp}}$ \{prefer\}
+\end{quote}
+
+\subsection*{$\SECT{A.2}$ Call-by-value lambda-calculus}\hypertarget{secta2-call-by-value-lambda-calculus}{}\label{secta2-call-by-value-lambda-calculus}
+
+$\KEY{Syntax SDF}$
+
+\begin{quote}
+context-free syntax\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{exp}  ~ ::= ~  \LEX{lambda} ~ \SYNHYPER{../.}{LD-Start}{id} ~ \LEX{.{}} ~ \SYNHYPER{../.}{LD-Start}{exp}}$ \{longest-match\}\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{exp}  ~ ::= ~  \SYNHYPER{../.}{LD-Start}{exp} ~ \SYNHYPER{../.}{LD-Start}{exp}}$ \{left\}\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{exp}  ~ ::= ~  \LEX{let} ~ \SYNHYPER{../.}{LD-Start}{id} ~ \LEX{={}} ~ \SYNHYPER{../.}{LD-Start}{exp} ~ \LEX{in} ~ \SYNHYPER{../.}{LD-Start}{exp}}$ \{longest-match\}\newline
+\newline
+context-free priorities\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{exp}  ~ ::= ~  \SYNHYPER{../.}{LD-Start}{exp} ~ \SYNHYPER{../.}{LD-Start}{exp}}$\newline
+\textgreater{} \{\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{exp}  ~ ::= ~  \LEX{lambda} ~ \SYNHYPER{../.}{LD-Start}{id} ~ \LEX{.{}} ~ \SYNHYPER{../.}{LD-Start}{exp}}$\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{exp}  ~ ::= ~  \LEX{let} ~ \SYNHYPER{../.}{LD-Start}{id} ~ \LEX{={}} ~ \SYNHYPER{../.}{LD-Start}{exp} ~ \LEX{in} ~ \SYNHYPER{../.}{LD-Start}{exp}}$\newline
+\}
+\end{quote}
+
+\subsection*{$\SECT{A.3}$ Arithmetic and Boolean expressions}\hypertarget{secta3-arithmetic-and-boolean-expressions}{}\label{secta3-arithmetic-and-boolean-expressions}
+
+$\KEY{Syntax SDF}$
+
+\begin{quote}
+context-free syntax\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{exp}  ~ ::= ~  \SYNHYPER{../.}{LD-Start}{exp} ~ \LEX{+{}} ~ \SYNHYPER{../.}{LD-Start}{exp}}$ \{left\}\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{exp}  ~ ::= ~  \SYNHYPER{../.}{LD-Start}{exp} ~ \LEX{*{}} ~ \SYNHYPER{../.}{LD-Start}{exp}}$ \{left\}\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{exp}  ~ ::= ~  \SYNHYPER{../.}{LD-Start}{exp} ~ \LEX{/{}} ~ \SYNHYPER{../.}{LD-Start}{exp}}$ \{left\}\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{exp}  ~ ::= ~  \SYNHYPER{../.}{LD-Start}{exp} ~ \LEX{<{}={}} ~ \SYNHYPER{../.}{LD-Start}{exp}}$ \{non-assoc\}\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{exp}  ~ ::= ~  \SYNHYPER{../.}{LD-Start}{exp} ~ \LEX{\AMPERSAND \AMPERSAND } ~ \SYNHYPER{../.}{LD-Start}{exp}}$ \{right\}\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{exp}  ~ ::= ~  \LEX{if} ~ \SYNHYPER{../.}{LD-Start}{exp} ~ \LEX{then} ~ \SYNHYPER{../.}{LD-Start}{exp} ~ \LEX{else} ~ \SYNHYPER{../.}{LD-Start}{exp}}$ \{longest-match\}\newline
+\newline
+context-free priorities\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{exp}  ~ ::= ~  \SYNHYPER{../.}{LD-Start}{exp} ~ \SYNHYPER{../.}{LD-Start}{exp}}$\newline
+\textgreater{}\newline
+\{left:\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{exp}  ~ ::= ~  \SYNHYPER{../.}{LD-Start}{exp} ~ \LEX{*{}} ~ \SYNHYPER{../.}{LD-Start}{exp}}$\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{exp}  ~ ::= ~  \SYNHYPER{../.}{LD-Start}{exp} ~ \LEX{/{}} ~ \SYNHYPER{../.}{LD-Start}{exp}}$\newline
+\} \textgreater{}\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{exp}  ~ ::= ~  \SYNHYPER{../.}{LD-Start}{exp} ~ \LEX{+{}} ~ \SYNHYPER{../.}{LD-Start}{exp}}$\newline
+\textgreater{}\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{exp}  ~ ::= ~  \SYNHYPER{../.}{LD-Start}{exp} ~ \LEX{<{}={}} ~ \SYNHYPER{../.}{LD-Start}{exp}}$\newline
+\textgreater{}\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{exp}  ~ ::= ~  \SYNHYPER{../.}{LD-Start}{exp} ~ \LEX{\AMPERSAND \AMPERSAND } ~ \SYNHYPER{../.}{LD-Start}{exp}}$\newline
+\textgreater{} \{\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{exp}  ~ ::= ~  \LEX{lambda} ~ \SYNHYPER{../.}{LD-Start}{id} ~ \LEX{.{}} ~ \SYNHYPER{../.}{LD-Start}{exp}}$\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{exp}  ~ ::= ~  \LEX{let} ~ \SYNHYPER{../.}{LD-Start}{id} ~ \LEX{={}} ~ \SYNHYPER{../.}{LD-Start}{exp} ~ \LEX{in} ~ \SYNHYPER{../.}{LD-Start}{exp}}$\newline
+\}
+\end{quote}
+
+\subsection*{$\SECT{A.4}$ References and imperatives}\hypertarget{secta4-references-and-imperatives}{}\label{secta4-references-and-imperatives}
+
+$\KEY{Syntax SDF}$
+
+\begin{quote}
+context-free syntax\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{exp}  ~ ::= ~  \SYNHYPER{../.}{LD-Start}{exp} ~ \LEX{:{}={}} ~ \SYNHYPER{../.}{LD-Start}{exp}}$ \{non-assoc\}\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{exp}  ~ ::= ~  \SYNHYPER{../.}{LD-Start}{exp} ~ \LEX{;{}} ~ \SYNHYPER{../.}{LD-Start}{exp}}$ \{right\}\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{exp}  ~ ::= ~  \LEX{while} ~ \SYNHYPER{../.}{LD-Start}{exp} ~ \LEX{do} ~ \SYNHYPER{../.}{LD-Start}{exp}}$ \{longest-match\}\newline
+\newline
+context-free priorities\newline
+\{\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{exp}  ~ ::= ~  \LEX{ref} ~ \SYNHYPER{../.}{LD-Start}{exp}}$\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{exp}  ~ ::= ~  \LEX{!{}} ~ \SYNHYPER{../.}{LD-Start}{exp}}$\newline
+\}\textgreater{}\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{exp}  ~ ::= ~  \SYNHYPER{../.}{LD-Start}{exp} ~ \SYNHYPER{../.}{LD-Start}{exp}}$\newline
+\newline
+context-free priorities\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{exp}  ~ ::= ~  \SYNHYPER{../.}{LD-Start}{exp} ~ \LEX{\AMPERSAND \AMPERSAND } ~ \SYNHYPER{../.}{LD-Start}{exp}}$\newline
+\textgreater{}\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{exp}  ~ ::= ~  \SYNHYPER{../.}{LD-Start}{exp} ~ \LEX{:{}={}} ~ \SYNHYPER{../.}{LD-Start}{exp}}$\newline
+\textgreater{} \{\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{exp}  ~ ::= ~  \LEX{lambda} ~ \SYNHYPER{../.}{LD-Start}{id} ~ \LEX{.{}} ~ \SYNHYPER{../.}{LD-Start}{exp}}$\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{exp}  ~ ::= ~  \LEX{while} ~ \SYNHYPER{../.}{LD-Start}{exp} ~ \LEX{do} ~ \SYNHYPER{../.}{LD-Start}{exp}}$\newline
+\} \textgreater{}\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{exp}  ~ ::= ~  \SYNHYPER{../.}{LD-Start}{exp} ~ \LEX{;{}} ~ \SYNHYPER{../.}{LD-Start}{exp}}$\newline
+\textgreater{}\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{exp}  ~ ::= ~  \LEX{let} ~ \SYNHYPER{../.}{LD-Start}{id} ~ \LEX{={}} ~ \SYNHYPER{../.}{LD-Start}{exp} ~ \LEX{in} ~ \SYNHYPER{../.}{LD-Start}{exp}}$
+\end{quote}
+
+\subsection*{$\SECT{A.5}$ Multithreading}\hypertarget{secta5-multithreading}{}\label{secta5-multithreading}
+
+$\KEY{Syntax SDF}$
+
+\begin{quote}
+context-free priorities\newline
+\{\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{exp}  ~ ::= ~  \LEX{spawn} ~ \SYNHYPER{../.}{LD-Start}{exp}}$\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{exp}  ~ ::= ~  \LEX{join} ~ \SYNHYPER{../.}{LD-Start}{exp}}$\newline
+\}\newline
+\textgreater{}\newline
+$\SHADE{ \SYNHYPER{../.}{LD-Start}{exp}  ~ ::= ~  \SYNHYPER{../.}{LD-Start}{exp} ~ \LEX{;{}} ~ \SYNHYPER{../.}{LD-Start}{exp}}$
+\end{quote}
+

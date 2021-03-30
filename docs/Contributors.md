@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Contributors
 nav_exclude: true
 ---

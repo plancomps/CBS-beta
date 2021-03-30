@@ -1,5 +1,4 @@
 ---
-layout: default
 title: FunCons USB Memory Stick
 nav_exclude: true
 search_exclude: true

@@ -1,5 +1,4 @@
 ---
-layout: default
 title: FunCons Dojo Agenda
 nav_exclude: true
 search_exclude: true

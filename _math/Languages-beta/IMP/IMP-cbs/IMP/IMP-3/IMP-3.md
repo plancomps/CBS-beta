@@ -1,69 +1,108 @@
+{::comment}{% raw %}{:/}
+
 $$\KEY{Language} \STRING{IMP}$$
 
 # $$\SECT{3}$$ Statements and blocks
            
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Syntax} ~ 
-    \VARDECL{Stmt} : \SYNDECL{stmt}
-      ~ ::= ~ &
+$$\begin{align*}
+  \KEY{Syntax} \
+    \VARDECL{Stmt} : \SYN{stmt}
+      \ ::= \ & \
       \SYNREF{block} \\
-      ~ \mid ~ &  \SYNHYPER{../.}{IMP-1}{id} ~ \LEX{={}} ~ \SYNHYPER{../.}{IMP-1}{aexp} ~ \LEX{;{}} \\
-      ~ \mid ~ &  \LEX{if} ~ \LEX{(} ~ \SYNHYPER{../.}{IMP-2}{bexp} ~ \LEX{)} ~ \SYNREF{block} ~ \LEFTGROUP \LEX{else} ~ \SYNREF{block} \RIGHTGROUP\QUERY \\
-      ~ \mid ~ &  \LEX{while} ~ \LEX{(} ~ \SYNHYPER{../.}{IMP-2}{bexp} ~ \LEX{)} ~ \SYNREF{block} \\
-      ~ \mid ~ &  \SYNREF{stmt} ~ \SYNREF{stmt}
+      \ \mid \ & \ \SYNHYPER{../.}{IMP-1}{id} \ \LEX{{=}} \ \SYNHYPER{../.}{IMP-1}{aexp} \ \LEX{{;}} \\
+      \ \mid \ & \ \LEX{if} \ \LEX{{(}} \ \SYNHYPER{../.}{IMP-2}{bexp} \ \LEX{{)}} \ \SYNREF{block} \ \LEFTGROUP \LEX{else} \ \SYNREF{block} \RIGHTGROUP\QUERY \\
+      \ \mid \ & \ \LEX{while} \ \LEX{{(}} \ \SYNHYPER{../.}{IMP-2}{bexp} \ \LEX{{)}} \ \SYNREF{block} \\
+      \ \mid \ & \ \SYNREF{stmt} \ \SYNREF{stmt}
 \\
-  \KEY{Syntax} ~ 
+  \KEY{Syntax} \
     \VARDECL{Block} : \SYN{block}
-      ~ ::= ~ & \LEX{\LEFTBRACE } ~ \SYNREF{stmt}\QUERY ~ \LEX{\RIGHTBRACE }
-\end{aligned}$$
+      \ ::= \ & \
+      \LEX{{\LEFTBRACE}} \ \SYNREF{stmt}\QUERY \ \LEX{{\RIGHTBRACE}}
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
-    & \LEFTPHRASE ~ \LEX{if} ~ \LEX{(} ~ \VARHYPER{../.}{IMP-2}{BExp} ~ \LEX{)} ~ \VARREF{Block} ~ \RIGHTPHRASE : \SYNREF{stmt} = \\
-    & \LEFTPHRASE ~ \LEX{if} ~ \LEX{(} ~ \VAR{BExp} ~ \LEX{)} ~ \VAR{Block} ~ \LEX{else} ~ \LEX{\LEFTBRACE } ~ \LEX{\RIGHTBRACE } ~ \RIGHTPHRASE
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Rule} \
+    & \LEFTPHRASE \
+        \LEX{if} \ \LEX{{(}} \ \VARHYPER{../.}{IMP-2}{BExp} \ \LEX{{)}} \ \VARREF{Block} \
+      \RIGHTPHRASE : \SYNREF{stmt} = \\&
+      \LEFTPHRASE \
+        \LEX{if} \ \LEX{{(}} \ \VAR{BExp} \ \LEX{{)}} \ \VAR{Block} \ \LEX{else} \ \LEX{{\LEFTBRACE}} \ \LEX{{\RIGHTBRACE}} \
+      \RIGHTPHRASE
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Semantics} ~ 
-  & \SEMDECL{execute} \LEFTPHRASE ~ \_ : \SYNREF{stmt} ~ \RIGHTPHRASE  :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
+$$\begin{align*}
+  \KEY{Semantics} \
+  & \SEMDECL{execute} \LEFTPHRASE \ \_ : \SYNREF{stmt} \ \RIGHTPHRASE  
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{execute} \LEFTPHRASE ~ \VARHYPER{../.}{IMP-1}{I} ~ \LEX{={}} ~ \VARHYPER{../.}{IMP-1}{AExp} ~ \LEX{;{}} ~ \RIGHTPHRASE  = \\&\quad
+  \KEY{Rule} \
+    & \SEMREF{execute} \LEFTPHRASE \
+                            \VARHYPER{../.}{IMP-1}{I} \ \LEX{{=}} \ \VARHYPER{../.}{IMP-1}{AExp} \ \LEX{{;}} \
+                          \RIGHTPHRASE  = \\&\quad
       \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assign}
-        (\NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{bound}
-           (\SEMHYPER{../.}{IMP-1}{id} \LEFTPHRASE ~ \VAR{I} ~ \RIGHTPHRASE ), \\&\quad \quad 
-         \SEMHYPER{../.}{IMP-1}{eval-arith} \LEFTPHRASE ~ \VAR{AExp} ~ \RIGHTPHRASE )
+        (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{bound}
+                (  \SEMHYPER{../.}{IMP-1}{id} \LEFTPHRASE \
+                                            \VAR{I} \
+                                          \RIGHTPHRASE  ), 
+               \SEMHYPER{../.}{IMP-1}{eval-arith} \LEFTPHRASE \
+                                    \VAR{AExp} \
+                                  \RIGHTPHRASE  )
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{execute} \LEFTPHRASE ~ \LEX{if} ~ \LEX{(} ~ \VARHYPER{../.}{IMP-2}{BExp} ~ \LEX{)} ~ \VARREF{Block}\SUB{1} ~ \LEX{else} ~ \VARREF{Block}\SUB{2} ~ \RIGHTPHRASE  = \\&\quad
+  \KEY{Rule} \
+    & \SEMREF{execute} \LEFTPHRASE \
+                            \LEX{if} \ \LEX{{(}} \ \VARHYPER{../.}{IMP-2}{BExp} \ \LEX{{)}} \ \VARREF{Block}\SUB{1} \ \LEX{else} \ \VARREF{Block}\SUB{2} \
+                          \RIGHTPHRASE  = \\&\quad
       \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{if-true-else}
-        (\SEMHYPER{../.}{IMP-2}{eval-bool} \LEFTPHRASE ~ \VAR{BExp} ~ \RIGHTPHRASE , \\&\quad \quad 
-         \SEMREF{execute} \LEFTPHRASE ~ \VAR{Block}\SUB{1} ~ \RIGHTPHRASE , \\&\quad \quad 
-         \SEMREF{execute} \LEFTPHRASE ~ \VAR{Block}\SUB{2} ~ \RIGHTPHRASE )
+        ( \\&\quad\quad \SEMHYPER{../.}{IMP-2}{eval-bool} \LEFTPHRASE \
+                                    \VAR{BExp} \
+                                  \RIGHTPHRASE , \\&\quad\quad
+               \SEMREF{execute} \LEFTPHRASE \
+                                    \VAR{Block}\SUB{1} \
+                                  \RIGHTPHRASE , \\&\quad\quad
+               \SEMREF{execute} \LEFTPHRASE \
+                                    \VAR{Block}\SUB{2} \
+                                  \RIGHTPHRASE  )
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{execute} \LEFTPHRASE ~ \LEX{while} ~ \LEX{(} ~ \VARHYPER{../.}{IMP-2}{BExp} ~ \LEX{)} ~ \VARREF{Block} ~ \RIGHTPHRASE  = \\&\quad
+  \KEY{Rule} \
+    & \SEMREF{execute} \LEFTPHRASE \
+                            \LEX{while} \ \LEX{{(}} \ \VARHYPER{../.}{IMP-2}{BExp} \ \LEX{{)}} \ \VARREF{Block} \
+                          \RIGHTPHRASE  = \\&\quad
       \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{while-true}
-        (\SEMHYPER{../.}{IMP-2}{eval-bool} \LEFTPHRASE ~ \VAR{BExp} ~ \RIGHTPHRASE , \\&\quad \quad 
-         \SEMREF{execute} \LEFTPHRASE ~ \VAR{Block} ~ \RIGHTPHRASE )
+        (  \SEMHYPER{../.}{IMP-2}{eval-bool} \LEFTPHRASE \
+                                    \VAR{BExp} \
+                                  \RIGHTPHRASE , 
+               \SEMREF{execute} \LEFTPHRASE \
+                                    \VAR{Block} \
+                                  \RIGHTPHRASE  )
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{execute} \LEFTPHRASE ~ \VARREF{Stmt}\SUB{1} ~ \VARREF{Stmt}\SUB{2} ~ \RIGHTPHRASE  = \\&\quad
+  \KEY{Rule} \
+    & \SEMREF{execute} \LEFTPHRASE \
+                            \VARREF{Stmt}\SUB{1} \ \VARREF{Stmt}\SUB{2} \
+                          \RIGHTPHRASE  = \\&\quad
       \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
-        (\SEMREF{execute} \LEFTPHRASE ~ \VAR{Stmt}\SUB{1} ~ \RIGHTPHRASE , \\&\quad \quad 
-         \SEMREF{execute} \LEFTPHRASE ~ \VAR{Stmt}\SUB{2} ~ \RIGHTPHRASE )
+        (  \SEMREF{execute} \LEFTPHRASE \
+                                    \VAR{Stmt}\SUB{1} \
+                                  \RIGHTPHRASE , 
+               \SEMREF{execute} \LEFTPHRASE \
+                                    \VAR{Stmt}\SUB{2} \
+                                  \RIGHTPHRASE  )
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{execute} \LEFTPHRASE ~ \LEX{\LEFTBRACE } ~ \LEX{\RIGHTBRACE } ~ \RIGHTPHRASE  = \\&\quad
+  \KEY{Rule} \
+    & \SEMREF{execute} \LEFTPHRASE \
+                            \LEX{{\LEFTBRACE}} \ \LEX{{\RIGHTBRACE}} \
+                          \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null}
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{execute} \LEFTPHRASE ~ \LEX{\LEFTBRACE } ~ \VARREF{Stmt} ~ \LEX{\RIGHTBRACE } ~ \RIGHTPHRASE  = \\&\quad
-      \SEMREF{execute} \LEFTPHRASE ~ \VAR{Stmt} ~ \RIGHTPHRASE 
-\end{aligned}$$
-
+  \KEY{Rule} \
+    & \SEMREF{execute} \LEFTPHRASE \
+                            \LEX{{\LEFTBRACE}} \ \VARREF{Stmt} \ \LEX{{\RIGHTBRACE}} \
+                          \RIGHTPHRASE  = 
+      \SEMREF{execute} \LEFTPHRASE \
+                            \VAR{Stmt} \
+                          \RIGHTPHRASE 
+\end{align*}$$
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -74,5 +113,16 @@ $$\relax\begin{aligned}\relax
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]: /CBS-beta 
+[CBS-beta]: /CBS-beta
   "CBS-BETA"
+[IMP-3.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Languages-beta/IMP/IMP-cbs/IMP/IMP-3/IMP-3.cbs
+  "CBS SOURCE FILE ON GITHUB"
+[PLAIN]: /CBS-beta/docs/Languages-beta/IMP/IMP-cbs/IMP/IMP-3
+  "CBS SOURCE WEB PAGE"
+ [PRETTY]: /CBS-beta/math/Languages-beta/IMP/IMP-cbs/IMP/IMP-3
+  "CBS-KATEX WEB PAGE"
+[PDF]: /CBS-beta/math/Languages-beta/IMP/IMP-cbs/IMP/IMP-3/IMP-3.pdf
+  "CBS-LATEX PDF FILE"
+[PLanCompS Project]: https://plancomps.github.io
+  "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
+{::comment}{% endraw %}{:/}

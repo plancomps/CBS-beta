@@ -1,0 +1,29 @@
+\subsubsection*{Vectors}\hypertarget{vectors}{}\label{vectors}
+
+\begin{align*}
+  [ ~ 
+  \KEY{Datatype} ~ & \NAMEREF{vectors} \\
+  \KEY{Funcon} ~ & \NAMEREF{vector} \\
+  \KEY{Funcon} ~ & \NAMEREF{vector-elements}
+  ~ ]
+\end{align*}
+\begin{align*}
+  \KEY{Meta-variables} ~ 
+  & \VAR{T} <: \NAMEHYPER{../..}{Value-Types}{values}
+\end{align*}
+\begin{align*}
+  \KEY{Datatype} ~ 
+  \NAMEDECL{vectors}(\VAR{T} )  
+  ~ ::= ~ & \NAMEDECL{vector} (\_ : ( \VAR{T} )\STAR)
+\end{align*}
+\begin{align*}
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{vector-elements}(\_ : \NAMEREF{vectors}
+                                ( \VAR{T} )) :  \TO ( \VAR{T} )\STAR
+\\
+  \KEY{Rule} ~ 
+    & \NAMEREF{vector-elements}
+        ( \NAMEREF{vector}
+            ( \VAR{V}\STAR : ( \VAR{T} )\STAR ) ) \leadsto
+        \VAR{V}\STAR
+\end{align*}

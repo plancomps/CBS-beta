@@ -1,185 +1,195 @@
+{::comment}{% raw %}{:/}
+
 ### Abruptly terminating
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEREF{stuck} \\
-  \KEY{Entity} ~ & \NAMEREF{abrupted} \\
-  \KEY{Funcon} ~ & \NAMEREF{finalise-abrupting} \\
-  \KEY{Funcon} ~ & \NAMEREF{abrupt} \\
-  \KEY{Funcon} ~ & \NAMEREF{handle-abrupt} \\
-  \KEY{Funcon} ~ & \NAMEREF{finally}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEREF{stuck} \\
+  \KEY{Entity} \ & \NAMEREF{abrupted} \\
+  \KEY{Funcon} \ & \NAMEREF{finalise-abrupting} \\
+  \KEY{Funcon} \ & \NAMEREF{abrupt} \\
+  \KEY{Funcon} \ & \NAMEREF{handle-abrupt} \\
+  \KEY{Funcon} \ & \NAMEREF{finally}
+  \ ]
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Meta-variables} ~ 
+$$\begin{align*}
+  \KEY{Meta-variables} \
   & \VAR{T}, \VAR{T}', \VAR{T}'' <: \NAMEHYPER{../../../Values}{Value-Types}{values}
-\end{aligned}$$
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{stuck} :  \TO \NAMEHYPER{../../../Values}{Value-Types}{empty-type}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{stuck} 
+    :  \TO \NAMEHYPER{../../../Values}{Value-Types}{empty-type} 
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{stuck}}$$ does not have any computation. It is used to represent the result of
   a transition that causes the computation to terminate abruptly.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Entity} ~ 
+$$\begin{align*}
+  \KEY{Entity} \
   & \_ \xrightarrow{\NAMEDECL{abrupted}(\_ : \NAMEHYPER{../../../Values}{Value-Types}{values}\QUERY)} \_
-\end{aligned}$$
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{abrupted}
-           ( \VAR{V} )}$$ in a label on a tranistion indicates abrupt termination for
+           (  \VAR{V} )}$$ in a label on a tranistion indicates abrupt termination for
   reason $$\SHADE{\VAR{V}}$$. $$\SHADE{\NAMEREF{abrupted}
-           (  ~  )}$$ indicates the absence of abrupt termination.
+           (   \  )}$$ indicates the absence of abrupt termination.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{finalise-abrupting}(\VAR{X} :  \TO \VAR{T}) :  \TO \VAR{T} \mid \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} \\
-  & \quad \leadsto \NAMEREF{handle-abrupt}
-                     ( \VAR{X}, \\&\quad \quad \quad \quad 
-                       \NAMEHYPER{../../../Values/Primitive}{Null}{null-value} )
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{finalise-abrupting}(
+                       \VAR{X} :  \TO \VAR{T}) 
+    :  \TO \VAR{T}  \mid \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} \\&\quad
+    \leadsto \NAMEREF{handle-abrupt}
+               (  \VAR{X}, 
+                      \NAMEHYPER{../../../Values/Primitive}{Null}{null-value} )
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{finalise-abrupting}
-           ( \VAR{X} )}$$ handles abrupt termination of $$\SHADE{\VAR{X}}$$ for any reason.
+           (  \VAR{X} )}$$ handles abrupt termination of $$\SHADE{\VAR{X}}$$ for any reason.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{abrupt}(\_ : \NAMEHYPER{../../../Values}{Value-Types}{values}) :  \TO \NAMEHYPER{../../../Values}{Value-Types}{empty-type}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{abrupt}(
+                       \_ : \NAMEHYPER{../../../Values}{Value-Types}{values}) 
+    :  \TO \NAMEHYPER{../../../Values}{Value-Types}{empty-type} 
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{abrupt}
-           ( \VAR{V} )}$$ terminates abruptly for reason $$\SHADE{\VAR{V}}$$.
+           (  \VAR{V} )}$$ terminates abruptly for reason $$\SHADE{\VAR{V}}$$.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
+$$\begin{align*}
+  \KEY{Rule} \
     &  \NAMEREF{abrupt}
-                    ( \VAR{V} : \NAMEHYPER{../../../Values}{Value-Types}{values} ) \xrightarrow{\NAMEREF{abrupted}( \VAR{V} )}_{} 
+                    (  \VAR{V} : \NAMEHYPER{../../../Values}{Value-Types}{values} ) \xrightarrow{\NAMEREF{abrupted}(  \VAR{V} )}_{} 
         \NAMEREF{stuck}
-\end{aligned}$$
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{handle-abrupt}(\_ : \VAR{T}' \TO \VAR{T}, \_ : \VAR{T}'' \TO \VAR{T}) : \VAR{T}' \TO \VAR{T}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{handle-abrupt}(
+                       \_ : \VAR{T}' \TO \VAR{T}, \_ : \VAR{T}'' \TO \VAR{T}) 
+    : \VAR{T}' \TO \VAR{T} 
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{handle-abrupt}
-           ( \VAR{X},   
-             \VAR{Y} )}$$ first evaluates $$\SHADE{\VAR{X}}$$. If $$\SHADE{\VAR{X}}$$ terminates normally with
+           (  \VAR{X}, 
+                  \VAR{Y} )}$$ first evaluates $$\SHADE{\VAR{X}}$$. If $$\SHADE{\VAR{X}}$$ terminates normally with
   value $$\SHADE{\VAR{V}}$$, then $$\SHADE{\VAR{V}}$$ is returned and $$\SHADE{\VAR{Y}}$$ is ignored. If $$\SHADE{\VAR{X}}$$ terminates abruptly
   for reason $$\SHADE{\VAR{V}}$$, then $$\SHADE{\VAR{Y}}$$ is executed with $$\SHADE{\VAR{V}}$$ as $$\SHADE{\NAMEHYPER{../../Normal}{Giving}{given}}$$ value.
 
   $$\SHADE{\NAMEREF{handle-abrupt}
-           ( \VAR{X},   
-             \VAR{Y} )}$$ is associative, with $$\SHADE{\NAMEREF{abrupt}
-           ( \NAMEHYPER{../../Normal}{Giving}{given} )}$$ as left and right
+           (  \VAR{X}, 
+                  \VAR{Y} )}$$ is associative, with $$\SHADE{\NAMEREF{abrupt}
+           (  \NAMEHYPER{../../Normal}{Giving}{given} )}$$ as left and right
   unit. $$\SHADE{\NAMEREF{handle-abrupt}
-           ( \VAR{X},   
-             \NAMEHYPER{../.}{Failing}{else}
-               ( \VAR{Y},    
-                 \NAMEREF{abrupt}
-                   ( \NAMEHYPER{../../Normal}{Giving}{given} ) ) )}$$ ensures propagation of 
+           (  \VAR{X}, 
+                  \NAMEHYPER{../.}{Failing}{else}
+                   (  \VAR{Y}, 
+                          \NAMEREF{abrupt}
+                           (  \NAMEHYPER{../../Normal}{Giving}{given} ) ) )}$$ ensures propagation of 
   abrupt termination for the given reason if $$\SHADE{\VAR{Y}}$$ fails
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
+$$\begin{align*}
+  \KEY{Rule} \
     & \RULE{
-       \VAR{X} \xrightarrow{\NAMEREF{abrupted}(  ~  )}_{} 
-        \VAR{X}'
+      &  \VAR{X} \xrightarrow{\NAMEREF{abrupted}(   \  )}_{} 
+          \VAR{X}'
       }{
       &  \NAMEREF{handle-abrupt}
-                      ( \VAR{X},   
-                        \VAR{Y} ) \xrightarrow{\NAMEREF{abrupted}(  ~  )}_{} 
+                      (  \VAR{X}, 
+                             \VAR{Y} ) \xrightarrow{\NAMEREF{abrupted}(   \  )}_{} 
           \NAMEREF{handle-abrupt}
-            ( \VAR{X}',   
-              \VAR{Y} )
+            (  \VAR{X}', 
+                   \VAR{Y} )
       }
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \RULE{
-       \VAR{X} \xrightarrow{\NAMEREF{abrupted}( \VAR{V} : \VAR{T}'' )}_{} 
-        \VAR{X}'
+      &  \VAR{X} \xrightarrow{\NAMEREF{abrupted}(  \VAR{V} : \VAR{T}'' )}_{} 
+          \VAR{X}'
       }{
       &  \NAMEREF{handle-abrupt}
-                      ( \VAR{X},   
-                        \VAR{Y} ) \xrightarrow{\NAMEREF{abrupted}(  ~  )}_{} 
+                      (  \VAR{X}, 
+                             \VAR{Y} ) \xrightarrow{\NAMEREF{abrupted}(   \  )}_{} 
           \NAMEHYPER{../../Normal}{Giving}{give}
-            ( \VAR{V},   
-              \VAR{Y} )
+            (  \VAR{V}, 
+                   \VAR{Y} )
       }
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{handle-abrupt}
-        ( \VAR{V} : \VAR{T},   
-          \VAR{Y} ) \leadsto
+        (  \VAR{V} : \VAR{T}, 
+               \VAR{Y} ) \leadsto 
         \VAR{V}
-\end{aligned}$$
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{finally}(\_ :  \TO \VAR{T}, \_ :  \TO \NAMEHYPER{../../../Values/Primitive}{Null}{null-type}) :  \TO \VAR{T}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{finally}(
+                       \_ :  \TO \VAR{T}, \_ :  \TO \NAMEHYPER{../../../Values/Primitive}{Null}{null-type}) 
+    :  \TO \VAR{T} 
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{finally}
-           ( \VAR{X},   
-             \VAR{Y} )}$$ first executes $$\SHADE{\VAR{X}}$$. If $$\SHADE{\VAR{X}}$$ terminates normally with 
+           (  \VAR{X}, 
+                  \VAR{Y} )}$$ first executes $$\SHADE{\VAR{X}}$$. If $$\SHADE{\VAR{X}}$$ terminates normally with 
   value $$\SHADE{\VAR{V}}$$, then $$\SHADE{\VAR{Y}}$$ is executed before terminating normally with value $$\SHADE{\VAR{V}}$$.
   If $$\SHADE{\VAR{X}}$$ terminates abruptly for reason $$\SHADE{\VAR{V}}$$, then $$\SHADE{\VAR{Y}}$$ is executed before
   terminating abruptly with the same reason $$\SHADE{\VAR{V}}$$.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
+$$\begin{align*}
+  \KEY{Rule} \
     & \RULE{
-       \VAR{X} \xrightarrow{\NAMEREF{abrupted}(  ~  )}_{} 
-        \VAR{X}'
+      &  \VAR{X} \xrightarrow{\NAMEREF{abrupted}(   \  )}_{} 
+          \VAR{X}'
       }{
       &  \NAMEREF{finally}
-                      ( \VAR{X},   
-                        \VAR{Y} ) \xrightarrow{\NAMEREF{abrupted}(  ~  )}_{} 
+                      (  \VAR{X}, 
+                             \VAR{Y} ) \xrightarrow{\NAMEREF{abrupted}(   \  )}_{} 
           \NAMEREF{finally}
-            ( \VAR{X}',   
-              \VAR{Y} )
+            (  \VAR{X}', 
+                   \VAR{Y} )
       }
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \RULE{
-       \VAR{X} \xrightarrow{\NAMEREF{abrupted}( \VAR{V} : \NAMEHYPER{../../../Values}{Value-Types}{values} )}_{} 
-        \VAR{X}'
+      &  \VAR{X} \xrightarrow{\NAMEREF{abrupted}(  \VAR{V} : \NAMEHYPER{../../../Values}{Value-Types}{values} )}_{} 
+          \VAR{X}'
       }{
       &  \NAMEREF{finally}
-                      ( \VAR{X},   
-                        \VAR{Y} ) \xrightarrow{\NAMEREF{abrupted}(  ~  )}_{} 
+                      (  \VAR{X}, 
+                             \VAR{Y} ) \xrightarrow{\NAMEREF{abrupted}(   \  )}_{} 
           \NAMEHYPER{../../Normal}{Flowing}{sequential}
-            ( \VAR{Y},   
-              \NAMEREF{abrupt}
-                ( \VAR{V} ) )
+            (  \VAR{Y}, 
+                   \NAMEREF{abrupt}
+                    (  \VAR{V} ) )
       }
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{finally}
-        ( \VAR{V} : \VAR{T},   
-          \VAR{Y} ) \leadsto
+        (  \VAR{V} : \VAR{T}, 
+               \VAR{Y} ) \leadsto 
         \NAMEHYPER{../../Normal}{Flowing}{sequential}
-          ( \VAR{Y},   
-            \VAR{V} )
-\end{aligned}$$
-
+          (  \VAR{Y}, 
+                 \VAR{V} )
+\end{align*}$$
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -190,5 +200,16 @@ $$\relax\begin{aligned}\relax
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]: /CBS-beta 
+[CBS-beta]: /CBS-beta
   "CBS-BETA"
+[Abrupting.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Funcons-beta/Computations/Abnormal/Abrupting/Abrupting.cbs
+  "CBS SOURCE FILE ON GITHUB"
+[PLAIN]: /CBS-beta/docs/Funcons-beta/Computations/Abnormal/Abrupting
+  "CBS SOURCE WEB PAGE"
+ [PRETTY]: /CBS-beta/math/Funcons-beta/Computations/Abnormal/Abrupting
+  "CBS-KATEX WEB PAGE"
+[PDF]: /CBS-beta/math/Funcons-beta/Computations/Abnormal/Abrupting/Abrupting.pdf
+  "CBS-LATEX PDF FILE"
+[PLanCompS Project]: https://plancomps.github.io
+  "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
+{::comment}{% endraw %}{:/}

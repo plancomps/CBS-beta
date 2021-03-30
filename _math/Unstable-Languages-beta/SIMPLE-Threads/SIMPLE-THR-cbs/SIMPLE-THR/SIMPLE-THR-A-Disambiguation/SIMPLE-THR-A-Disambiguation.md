@@ -1,3 +1,5 @@
+{::comment}{% raw %}{:/}
+
 $$\KEY{Language} \STRING{SIMPLE-THR}$$
 
 # $$\SECT{A}$$ Disambiguation
@@ -5,60 +7,61 @@ $$\KEY{Language} \STRING{SIMPLE-THR}$$
 
 
 \$$\KEY{Lexis SDF}$$
-> lexical syntax\\
->   $$\SHADE{~~\SYNHYPER{../.}{SIMPLE-THR-1-Lexical}{id}}$$ = $$\SHADE{\SYNHYPER{../.}{SIMPLE-THR-1-Lexical}{keyword}}$$ {reject}\\
-> \\
-> lexical restrictions\\
->   $$\SHADE{~~\SYNHYPER{../.}{SIMPLE-THR-1-Lexical}{id}}$$ -/- [A-Za-z0-9]
+
+>    lexical syntax\\
+>      $$\SHADE{\SYNHYPER{../.}{SIMPLE-THR-1-Lexical}{id}}$$ = $$\SHADE{\SYNHYPER{../.}{SIMPLE-THR-1-Lexical}{keyword}}$$ {reject}\\
+>    \\
+>    lexical restrictions\\
+>      $$\SHADE{\SYNHYPER{../.}{SIMPLE-THR-1-Lexical}{id}}$$ -/- [A-Za-z0-9]
 
 \$$\KEY{Syntax SDF}$$
-> context-free syntax\\
-> $$\SHADE{ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} ~ \LEX{*{}} ~ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$ {left}\\
-> $$\SHADE{ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} ~ \LEX{/{}} ~ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$ {left}\\
-> $$\SHADE{ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} ~ \LEX{\PERCENT } ~ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$ {left}\\
-> \\
-> $$\SHADE{ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} ~ \LEX{+{}} ~ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$ {left}\\
-> $$\SHADE{ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} ~ \LEX{-{}} ~ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$ {left}\\
-> \\
-> $$\SHADE{ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} ~ \LEX{\AMPERSAND \AMPERSAND } ~ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$ {left}\\
-> $$\SHADE{ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} ~ \LEX{||} ~ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$ {left}\\
-> \\
-> context-free priorities\\
-> {\\
-> $$\SHADE{ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} ~ \LEX{(} ~ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exps}\QUERY ~ \LEX{)}}$$\\
-> } >\\
-> {\\
-> $$\SHADE{ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  ~ ::= ~  \LEX{-{}} ~ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$\\
-> $$\SHADE{ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  ~ ::= ~  \LEX{+{}+{}} ~ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{lexp}}$$\\
-> $$\SHADE{ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  ~ ::= ~  \LEX{!{}} ~ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$\\
-> } >\\
-> {left:\\
-> $$\SHADE{ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} ~ \LEX{*{}} ~ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$\\
-> $$\SHADE{ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} ~ \LEX{/{}} ~ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$\\
-> $$\SHADE{ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} ~ \LEX{\PERCENT } ~ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$\\
-> } >\\
-> {left:\\
-> $$\SHADE{ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} ~ \LEX{+{}} ~ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$\\
-> $$\SHADE{ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} ~ \LEX{-{}} ~ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$\\
-> } >\\
-> {non-assoc:\\
-> $$\SHADE{ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} ~ \LEX{<{}} ~ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$\\
-> $$\SHADE{ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} ~ \LEX{<{}={}} ~ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$\\
-> $$\SHADE{ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} ~ \LEX{>{}} ~ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$\\
-> $$\SHADE{ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} ~ \LEX{>{}={}} ~ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$\\
-> $$\SHADE{ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} ~ \LEX{={}={}} ~ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$\\
-> $$\SHADE{ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} ~ \LEX{!{}={}} ~ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$\\
-> } >\\
-> {assoc:\\
-> $$\SHADE{ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} ~ \LEX{\AMPERSAND \AMPERSAND } ~ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$\\
-> } >\\
-> {assoc:\\
-> $$\SHADE{ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} ~ \LEX{||} ~ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$\\
-> } >\\
-> {\\
-> $$\SHADE{ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{lexp} ~ \LEX{={}} ~ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$\\
-> }
 
+>    context-free syntax\\
+>    $$\SHADE{\quad\SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} \ \LEX{{*}} \ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$ {left}\\
+>    $$\SHADE{\quad\SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} \ \LEX{{/}} \ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$ {left}\\
+>    $$\SHADE{\quad\SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} \ \LEX{{\PERCENT}} \ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$ {left}\\
+>    \\
+>    $$\SHADE{\quad\SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} \ \LEX{{+}} \ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$ {left}\\
+>    $$\SHADE{\quad\SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} \ \LEX{{-}} \ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$ {left}\\
+>    \\
+>    $$\SHADE{\quad\SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} \ \LEX{{\AMPERSAND}{\AMPERSAND}} \ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$ {left}\\
+>    $$\SHADE{\quad\SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} \ \LEX{{|}{|}} \ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$ {left}\\
+>    \\
+>    context-free priorities\\
+>    {\\
+>    $$\SHADE{\quad\SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} \ \LEX{{(}} \ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exps}\QUERY \ \LEX{{)}}}$$\\
+>    } >\\
+>    {\\
+>    $$\SHADE{\quad\SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  \ ::= \  \  \LEX{{-}} \ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$\\
+>    $$\SHADE{\quad\SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  \ ::= \  \  \LEX{{+}{+}} \ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{lexp}}$$\\
+>    $$\SHADE{\quad\SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  \ ::= \  \  \LEX{{!}} \ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$\\
+>    } >\\
+>    {left:\\
+>    $$\SHADE{\quad\SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} \ \LEX{{*}} \ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$\\
+>    $$\SHADE{\quad\SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} \ \LEX{{/}} \ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$\\
+>    $$\SHADE{\quad\SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} \ \LEX{{\PERCENT}} \ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$\\
+>    } >\\
+>    {left:\\
+>    $$\SHADE{\quad\SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} \ \LEX{{+}} \ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$\\
+>    $$\SHADE{\quad\SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} \ \LEX{{-}} \ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$\\
+>    } >\\
+>    {non-assoc:\\
+>    $$\SHADE{\quad\SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} \ \LEX{{<}} \ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$\\
+>    $$\SHADE{\quad\SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} \ \LEX{{<}{=}} \ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$\\
+>    $$\SHADE{\quad\SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} \ \LEX{{>}} \ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$\\
+>    $$\SHADE{\quad\SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} \ \LEX{{>}{=}} \ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$\\
+>    $$\SHADE{\quad\SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} \ \LEX{{=}{=}} \ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$\\
+>    $$\SHADE{\quad\SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} \ \LEX{{!}{=}} \ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$\\
+>    } >\\
+>    {assoc:\\
+>    $$\SHADE{\quad\SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} \ \LEX{{\AMPERSAND}{\AMPERSAND}} \ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$\\
+>    } >\\
+>    {assoc:\\
+>    $$\SHADE{\quad\SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp} \ \LEX{{|}{|}} \ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$\\
+>    } >\\
+>    {\\
+>    $$\SHADE{\quad\SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{lexp} \ \LEX{{=}} \ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$\\
+>    }
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -69,5 +72,16 @@ $$\KEY{Language} \STRING{SIMPLE-THR}$$
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]: /CBS-beta 
+[CBS-beta]: /CBS-beta
   "CBS-BETA"
+[SIMPLE-THR-A-Disambiguation.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-A-Disambiguation/SIMPLE-THR-A-Disambiguation.cbs
+  "CBS SOURCE FILE ON GITHUB"
+[PLAIN]: /CBS-beta/docs/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-A-Disambiguation
+  "CBS SOURCE WEB PAGE"
+ [PRETTY]: /CBS-beta/math/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-A-Disambiguation
+  "CBS-KATEX WEB PAGE"
+[PDF]: /CBS-beta/math/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-A-Disambiguation/SIMPLE-THR-A-Disambiguation.pdf
+  "CBS-LATEX PDF FILE"
+[PLanCompS Project]: https://plancomps.github.io
+  "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
+{::comment}{% endraw %}{:/}

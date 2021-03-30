@@ -1,13 +1,13 @@
 ---
-layout: default
 title: "IMPPP-3"
 math: katex
 parent: IMPPP
 ancestor: Unstable-Languages-beta
 
 ---
+[Unstable-Languages-beta] : [IMPPP-3.cbs] \| [PLAIN] \| [PDF]
 
-[Unstable-Languages-beta] : [IMPPP-3.cbs]
+{::comment}{% raw %}{:/}
 
 $$\KEY{Language} \STRING{IMPPP}$$
 
@@ -15,54 +15,78 @@ $$\KEY{Language} \STRING{IMPPP}$$
            
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Syntax} ~ 
-    \VARDECL{BExp} : \SYNDECL{bexp}
-      ~ ::= ~ &
+$$\begin{align*}
+  \KEY{Syntax} \
+    \VARDECL{BExp} : \SYN{bexp}
+      \ ::= \ & \
       \LEX{false} \\
-      ~ \mid ~ &  \LEX{true} \\
-      ~ \mid ~ &  \SYNHYPER{../.}{IMPPP-2}{aexp} ~ \LEX{<{}={}} ~ \SYNHYPER{../.}{IMPPP-2}{aexp} \\
-      ~ \mid ~ &  \LEX{!{}} ~ \SYNREF{bexp} \\
-      ~ \mid ~ &  \SYNREF{bexp} ~ \LEX{\AMPERSAND \AMPERSAND } ~ \SYNREF{bexp} \\
-      ~ \mid ~ &  \LEX{(} ~ \SYNREF{bexp} ~ \LEX{)}
-\end{aligned}$$
+      \ \mid \ & \ \LEX{true} \\
+      \ \mid \ & \ \SYNHYPER{../.}{IMPPP-2}{aexp} \ \LEX{{<}{=}} \ \SYNHYPER{../.}{IMPPP-2}{aexp} \\
+      \ \mid \ & \ \LEX{{!}} \ \SYNREF{bexp} \\
+      \ \mid \ & \ \SYNREF{bexp} \ \LEX{{\AMPERSAND}{\AMPERSAND}} \ \SYNREF{bexp} \\
+      \ \mid \ & \ \LEX{{(}} \ \SYNREF{bexp} \ \LEX{{)}}
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Semantics} ~ 
-  & \SEMDECL{eval-bool} \LEFTPHRASE ~ \_ : \SYNREF{bexp} ~ \RIGHTPHRASE  :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{booleans} 
+$$\begin{align*}
+  \KEY{Semantics} \
+  & \SEMDECL{eval-bool} \LEFTPHRASE \ \_ : \SYNREF{bexp} \ \RIGHTPHRASE  
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{booleans} 
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{eval-bool} \LEFTPHRASE ~ \LEX{false} ~ \RIGHTPHRASE  = \\&\quad
+  \KEY{Rule} \
+    & \SEMREF{eval-bool} \LEFTPHRASE \
+                            \LEX{false} \
+                          \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false}
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{eval-bool} \LEFTPHRASE ~ \LEX{true} ~ \RIGHTPHRASE  = \\&\quad
+  \KEY{Rule} \
+    & \SEMREF{eval-bool} \LEFTPHRASE \
+                            \LEX{true} \
+                          \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{true}
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{eval-bool} \LEFTPHRASE ~ \VARHYPER{../.}{IMPPP-2}{AExp}\SUB{1} ~ \LEX{<{}={}} ~ \VARHYPER{../.}{IMPPP-2}{AExp}\SUB{2} ~ \RIGHTPHRASE  = \\&\quad
-      \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-less-or-equal} ~
+  \KEY{Rule} \
+    & \SEMREF{eval-bool} \LEFTPHRASE \
+                            \VARHYPER{../.}{IMPPP-2}{AExp}\SUB{1} \ \LEX{{<}{=}} \ \VARHYPER{../.}{IMPPP-2}{AExp}\SUB{2} \
+                          \RIGHTPHRASE  = \\&\quad
+      \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-less-or-equal} \ 
         \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{left-to-right}
-          (\SEMHYPER{../.}{IMPPP-2}{eval-arith} \LEFTPHRASE ~ \VAR{AExp}\SUB{1} ~ \RIGHTPHRASE , \\&\quad \quad \quad 
-           \SEMHYPER{../.}{IMPPP-2}{eval-arith} \LEFTPHRASE ~ \VAR{AExp}\SUB{2} ~ \RIGHTPHRASE )
+          (  \SEMHYPER{../.}{IMPPP-2}{eval-arith} \LEFTPHRASE \
+                                      \VAR{AExp}\SUB{1} \
+                                    \RIGHTPHRASE , 
+                 \SEMHYPER{../.}{IMPPP-2}{eval-arith} \LEFTPHRASE \
+                                      \VAR{AExp}\SUB{2} \
+                                    \RIGHTPHRASE  )
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{eval-bool} \LEFTPHRASE ~ \LEX{!{}} ~ \VARREF{BExp} ~ \RIGHTPHRASE  = \\&\quad
+  \KEY{Rule} \
+    & \SEMREF{eval-bool} \LEFTPHRASE \
+                            \LEX{{!}} \ \VARREF{BExp} \
+                          \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{not}
-        (\SEMREF{eval-bool} \LEFTPHRASE ~ \VAR{BExp} ~ \RIGHTPHRASE )
+        (  \SEMREF{eval-bool} \LEFTPHRASE \
+                                    \VAR{BExp} \
+                                  \RIGHTPHRASE  )
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{eval-bool} \LEFTPHRASE ~ \VARREF{BExp}\SUB{1} ~ \LEX{\AMPERSAND \AMPERSAND } ~ \VARREF{BExp}\SUB{2} ~ \RIGHTPHRASE  = \\&\quad
+  \KEY{Rule} \
+    & \SEMREF{eval-bool} \LEFTPHRASE \
+                            \VARREF{BExp}\SUB{1} \ \LEX{{\AMPERSAND}{\AMPERSAND}} \ \VARREF{BExp}\SUB{2} \
+                          \RIGHTPHRASE  = \\&\quad
       \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{if-true-else}
-        (\SEMREF{eval-bool} \LEFTPHRASE ~ \VAR{BExp}\SUB{1} ~ \RIGHTPHRASE , \\&\quad \quad 
-         \SEMREF{eval-bool} \LEFTPHRASE ~ \VAR{BExp}\SUB{2} ~ \RIGHTPHRASE , \\&\quad \quad 
-         \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false})
+        (  \SEMREF{eval-bool} \LEFTPHRASE \
+                                    \VAR{BExp}\SUB{1} \
+                                  \RIGHTPHRASE , 
+               \SEMREF{eval-bool} \LEFTPHRASE \
+                                    \VAR{BExp}\SUB{2} \
+                                  \RIGHTPHRASE , 
+               \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false} )
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{eval-bool} \LEFTPHRASE ~ \LEX{(} ~ \VARREF{BExp} ~ \LEX{)} ~ \RIGHTPHRASE  = \\&\quad
-      \SEMREF{eval-bool} \LEFTPHRASE ~ \VAR{BExp} ~ \RIGHTPHRASE 
-\end{aligned}$$
-
+  \KEY{Rule} \
+    & \SEMREF{eval-bool} \LEFTPHRASE \
+                            \LEX{{(}} \ \VARREF{BExp} \ \LEX{{)}} \
+                          \RIGHTPHRASE  = 
+      \SEMREF{eval-bool} \LEFTPHRASE \
+                            \VAR{BExp} \
+                          \RIGHTPHRASE 
+\end{align*}$$
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -73,19 +97,24 @@ $$\relax\begin{aligned}\relax
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]: /CBS-beta 
+[CBS-beta]: /CBS-beta
   "CBS-BETA"
-
-
-____
-
-From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
-
-[IMPPP-3.cbs]: /CBS-beta/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-3/IMPPP-3.cbs
-  "CBS SOURCE FILE"
+[IMPPP-3.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-3/IMPPP-3.cbs
+  "CBS SOURCE FILE ON GITHUB"
+[PLAIN]: /CBS-beta/docs/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-3
+  "CBS SOURCE WEB PAGE"
+ [PRETTY]: /CBS-beta/math/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-3
+  "CBS-KATEX WEB PAGE"
+[PDF]: /CBS-beta/math/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-3/IMPPP-3.pdf
+  "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
+{::comment}{% endraw %}{:/}
+
+____
+From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
+
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues
   "CBS-BETA ISSUE REPORTS ON GITHUB"
-[Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20IMPPP/IMPPP-3/IMPPP-3.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A 
+[Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20IMPPP/IMPPP-3/IMPPP-3.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A
   "GENERATE AN EMAIL TEMPLATE"

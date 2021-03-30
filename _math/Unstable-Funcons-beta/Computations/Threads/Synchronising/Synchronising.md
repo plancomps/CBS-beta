@@ -1,24 +1,34 @@
+{::comment}{% raw %}{:/}
+<details open markdown="block">
+  <summary>
+    Outline
+  </summary>
+  {: .text-delta }
+- TOC
+{:toc}
+</details>
+
 ### Thread synchronisation
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
+$$\begin{align*}
+  [ \
   \textsf{Syncs
-          } ~ & \textsf{} \\
-  \KEY{Datatype} ~ & \NAMEREF{syncs} \\
-  \KEY{Funcon} ~ & \NAMEREF{sync-create} \\
-  \KEY{Funcon} ~ & \NAMEREF{sync-feature} \\
-  \KEY{Funcon} ~ & \NAMEREF{is-sync-feature} \\
-  \textsf{Sync} ~ & \textsf{features} \\
-  \KEY{Datatype} ~ & \NAMEREF{sync-features} \\
-  \KEY{Funcon} ~ & \NAMEREF{sync-waiting-list} \\
-  \KEY{Funcon} ~ & \NAMEREF{sync-held} \\
-  \KEY{Funcon} ~ & \NAMEREF{sync-holder} \\
-  \KEY{Funcon} ~ & \NAMEREF{sync-count} \\
-  \KEY{Funcon} ~ & \NAMEREF{sync-feature-create}
-  ~ ]
-\end{aligned}$$
+          } \ & \textsf{} \\
+  \KEY{Datatype} \ & \NAMEREF{syncs} \\
+  \KEY{Funcon} \ & \NAMEREF{sync-create} \\
+  \KEY{Funcon} \ & \NAMEREF{sync-feature} \\
+  \KEY{Funcon} \ & \NAMEREF{is-sync-feature} \\
+  \textsf{Sync} \ & \textsf{features} \\
+  \KEY{Datatype} \ & \NAMEREF{sync-features} \\
+  \KEY{Funcon} \ & \NAMEREF{sync-waiting-list} \\
+  \KEY{Funcon} \ & \NAMEREF{sync-held} \\
+  \KEY{Funcon} \ & \NAMEREF{sync-holder} \\
+  \KEY{Funcon} \ & \NAMEREF{sync-count} \\
+  \KEY{Funcon} \ & \NAMEREF{sync-feature-create}
+  \ ]
+\end{align*}$$
 
 
 Thread synchronisation can be supported in many different ways: semaphores,
@@ -48,138 +58,156 @@ in case threads are preemptible.
 A sync is formed from its features:
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Datatype} ~ 
-  \NAMEDECL{syncs}  
-  ~ ::= ~ & \NAMEDECL{sync} (\_ : \NAMEREF{sync-feature-maps})
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Datatype} \ 
+  \NAMEDECL{syncs} 
+  \ ::= \ & \NAMEDECL{sync}(
+                               \_ : \NAMEREF{sync-feature-maps})
+\end{align*}$$
 
 
 $$\SHADE{\NAMEREF{sync-create}
-           (\VAR{M}\PLUS)}$$ checks that the specified features are distinct. (It could
+           (  \VAR{M}\PLUS )}$$ checks that the specified features are distinct. (It could
 also check required feature constraints.)
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{sync-create}(\VAR{M}\PLUS : \NAMEREF{sync-feature-maps}\PLUS) :  \TO \NAMEREF{syncs} \\
-  & \quad \leadsto \NAMEREF{sync} ~
-                     \NAMEHYPER{../../../../Funcons-beta/Computations/Abnormal}{Failing}{checked} ~
-                       \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{map-unite} ~
-                         \VAR{M}\PLUS
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{sync-create}(
+                       \VAR{M}\PLUS : \NAMEREF{sync-feature-maps}\PLUS) 
+    :  \TO \NAMEREF{syncs} \\&\quad
+    \leadsto \NAMEREF{sync} \ 
+               \NAMEHYPER{../../../../Funcons-beta/Computations/Abnormal}{Failing}{checked} \ 
+                 \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{map-unite} \ 
+                   \VAR{M}\PLUS
+\end{align*}$$
 
 
 $$\SHADE{\NAMEREF{sync-feature}
-           (\VAR{SY},   
-            \VAR{SF})}$$ selects the feature $$\SHADE{\VAR{SF}}$$ from $$\SHADE{\VAR{SY}}$$:
+           (  \VAR{SY}, 
+                  \VAR{SF} )}$$ selects the feature $$\SHADE{\VAR{SF}}$$ from $$\SHADE{\VAR{SY}}$$:
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{sync-feature}(\_ : \NAMEREF{syncs}, \_ : \NAMEREF{sync-features}) :  \TO \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values}
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{sync-feature}(
+                       \_ : \NAMEREF{syncs}, \_ : \NAMEREF{sync-features}) 
+    :  \TO \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values} 
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{sync-feature}
-        (\NAMEREF{sync}
-           (\VAR{SFM} : \NAMEREF{sync-feature-maps}),   
-         \VAR{SF} : \NAMEREF{sync-features}) \leadsto \NAMEHYPER{../../../../Funcons-beta/Computations/Abnormal}{Failing}{checked} ~
-                                                 \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{map-lookup}
-                                                   (\VAR{SFM},    
-                                                    \VAR{SF})
-\end{aligned}$$
+        (  \NAMEREF{sync}
+                (  \VAR{SFM} : \NAMEREF{sync-feature-maps} ), 
+               \VAR{SF} : \NAMEREF{sync-features} ) \leadsto \\&\quad
+        \NAMEHYPER{../../../../Funcons-beta/Computations/Abnormal}{Failing}{checked} \ 
+          \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{map-lookup}
+            (  \VAR{SFM}, 
+                   \VAR{SF} )
+\end{align*}$$
 
 
 $$\SHADE{\NAMEREF{is-sync-feature}
-           (\VAR{SY},   
-            \VAR{SF})}$$ tests whether $$\SHADE{\VAR{SY}}$$ has the feature $$\SHADE{\VAR{SF}}$$:
+           (  \VAR{SY}, 
+                  \VAR{SF} )}$$ tests whether $$\SHADE{\VAR{SY}}$$ has the feature $$\SHADE{\VAR{SF}}$$:
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{is-sync-feature}(\_ : \NAMEREF{syncs}, \_ : \NAMEREF{sync-features}) :  \TO \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values}
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{is-sync-feature}(
+                       \_ : \NAMEREF{syncs}, \_ : \NAMEREF{sync-features}) 
+    :  \TO \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values} 
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{is-sync-feature}
-        (\NAMEREF{sync}
-           (\VAR{SFM} : \NAMEREF{sync-feature-maps}),   
-         \VAR{SF} : \NAMEREF{sync-features}) \leadsto \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Sets}{is-in-set}
-                                                 (\VAR{SF},   
-                                                  \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{dom} ~
-                                                    \VAR{SFM})
-\end{aligned}$$
+        (  \NAMEREF{sync}
+                (  \VAR{SFM} : \NAMEREF{sync-feature-maps} ), 
+               \VAR{SF} : \NAMEREF{sync-features} ) \leadsto \\&\quad
+        \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Sets}{is-in-set}
+          (  \VAR{SF}, 
+                 \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{dom} \ 
+                  \VAR{SFM} )
+\end{align*}$$
 
 #### Sync features
                
+
 
 
 Combinations of the following features support various kinds of locks and
 notifications.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Datatype} ~ 
-  \NAMEDECL{sync-features}  
-  ~ ::= ~ & 
-  \NAMEDECL{sync-waiting-list}  \\
-  ~ \mid ~ & \NAMEDECL{sync-held}  \\
-  ~ \mid ~ & \NAMEDECL{sync-holder}  \\
-  ~ \mid ~ & \NAMEDECL{sync-count} 
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Datatype} \ 
+  \NAMEDECL{sync-features} 
+  \ ::= \ &
+  \NAMEDECL{sync-waiting-list} \\
+  \ \mid \ & \ \NAMEDECL{sync-held} \\
+  \ \mid \ & \ \NAMEDECL{sync-holder} \\
+  \ \mid \ & \ \NAMEDECL{sync-count}
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Auxiliary Type} ~  
+$$\begin{align*}
+  \KEY{Auxiliary Type} \ 
   & \NAMEDECL{sync-feature-maps}  
-  \leadsto \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{maps}
-             (\NAMEREF{sync-features},   
-              \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values})
-\end{aligned}$$
+    \leadsto \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{maps}
+               (  \NAMEREF{sync-features}, 
+                      \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values} )
+\end{align*}$$
 
 
 A field for each feature is created independently:
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{sync-feature-create}(\_ : \NAMEREF{sync-features}) :  \TO \NAMEREF{sync-feature-maps}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{sync-feature-create}(
+                       \_ : \NAMEREF{sync-features}) 
+    :  \TO \NAMEREF{sync-feature-maps} 
+\end{align*}$$
 
 
 $$\SHADE{\NAMEREF{sync-waiting-list}}$$ stores pending requests in the order of receipt, together
 with the requesting thread-ids:
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
-    & \NAMEREF{sync-feature-create} ~
-        \NAMEREF{sync-waiting-list} \leadsto \{ \NAMEREF{sync-waiting-list} \mapsto \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Storing}{allocate-initialised-variable}
-                                                                    (\NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Lists}{lists}
-                                                                       (\NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values}),   
-                                                                     \ ~ ) \}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Rule} \
+    & \NAMEREF{sync-feature-create} \ 
+        \NAMEREF{sync-waiting-list} \leadsto \\&\quad
+        \{ \NAMEREF{sync-waiting-list} \mapsto \\&\quad\quad\quad
+             \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Storing}{allocate-initialised-variable}
+               (  \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Lists}{lists}
+                       (  \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values} ), 
+                      [   \  ] ) \}
+\end{align*}$$
 
 
 $$\SHADE{\NAMEREF{sync-held}}$$ stores whether a lock is currently held:
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
-    & \NAMEREF{sync-feature-create} ~
-        \NAMEREF{sync-held} \leadsto \{ \NAMEREF{sync-held} \mapsto \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Storing}{allocate-initialised-variable}
-                                                                    (\NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Booleans}{booleans},   
-                                                                     \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Booleans}{false}) \}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Rule} \
+    & \NAMEREF{sync-feature-create} \ 
+        \NAMEREF{sync-held} \leadsto \\&\quad
+        \{ \NAMEREF{sync-held} \mapsto \\&\quad\quad\quad
+             \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Storing}{allocate-initialised-variable}
+               (  \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Booleans}{booleans}, 
+                      \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Booleans}{false} ) \}
+\end{align*}$$
 
 
 $$\SHADE{\NAMEREF{sync-holder}}$$ stores the current holder of a lock, if any:
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
-    & \NAMEREF{sync-feature-create} ~
-        \NAMEREF{sync-holder} \leadsto \{ \NAMEREF{sync-holder} \mapsto \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Storing}{allocate-variable}
-                                                                    (\NAMEHYPER{../.}{Multithreading}{thread-ids}) \}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Rule} \
+    & \NAMEREF{sync-feature-create} \ 
+        \NAMEREF{sync-holder} \leadsto \\&\quad
+        \{ \NAMEREF{sync-holder} \mapsto \\&\quad\quad\quad
+             \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Storing}{allocate-variable}
+               (  \NAMEHYPER{../.}{Multithreading}{thread-ids} ) \}
+\end{align*}$$
 
 
 $$\SHADE{\NAMEREF{sync-count}}$$ stores a counter. Different kinds of locks and notifications use
@@ -187,79 +215,74 @@ the counter in different ways, e.g., shared locks use it for the number of
 threads currently holding the lock:
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
-    & \NAMEREF{sync-feature-create} ~
-        \NAMEREF{sync-count} \leadsto \{ \NAMEREF{sync-count} \mapsto \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Storing}{allocate-initialised-variable}
-                                                                    (\NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Integers}{nats},   
-                                                                     0) \}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Rule} \
+    & \NAMEREF{sync-feature-create} \ 
+        \NAMEREF{sync-count} \leadsto \\&\quad
+        \{ \NAMEREF{sync-count} \mapsto \\&\quad\quad\quad
+             \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Storing}{allocate-initialised-variable}
+               (  \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Integers}{nats}, 
+                      0 ) \}
+\end{align*}$$
 
 
 $$\SHADE{\NAMEREF{sync-waiting-list-add}
-           (\VAR{SY},   
-            \VAR{V})}$$ adds $$\SHADE{\VAR{V}}$$ to the waiting-list of $$\SHADE{\VAR{SY}}$$:
+           (  \VAR{SY}, 
+                  \VAR{V} )}$$ adds $$\SHADE{\VAR{V}}$$ to the waiting-list of $$\SHADE{\VAR{SY}}$$:
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Auxiliary Funcon} ~ 
-  & \NAMEDECL{sync-waiting-list-add}(\VAR{SY} : \NAMEREF{syncs}, \VAR{V} : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values}) :  \TO \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\
-  & \quad \leadsto \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Storing}{assign}
-                     (\NAMEREF{sync-feature}
-                        (\VAR{SY}, \\&\quad \quad 
-                         \NAMEREF{sync-waiting-list}), \\&\quad 
+$$\begin{align*}
+  \KEY{Auxiliary Funcon} \
+  & \NAMEDECL{sync-waiting-list-add}(
+                       \VAR{SY} : \NAMEREF{syncs}, \VAR{V} : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values}) 
+    :  \TO \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
+    \leadsto \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Storing}{assign}
+               ( \\&\quad\quad\quad\quad \NAMEREF{sync-feature}
+                       (  \VAR{SY}, 
+                              \NAMEREF{sync-waiting-list} ), \\&\quad\quad\quad\quad
                       \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Lists}{list-append}
-                        (\NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Storing}{assigned} ~
-                           \NAMEREF{sync-feature}
-                             (\VAR{SY}, \\&\quad \quad \quad \quad 
-                              \NAMEREF{sync-waiting-list}), \\&\quad \quad 
-                         \\VAR{V}))
-\end{aligned}$$
+                       (  \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Storing}{assigned} \ 
+                               \NAMEREF{sync-feature}
+                                 (  \VAR{SY}, 
+                                        \NAMEREF{sync-waiting-list} ), 
+                              [  \VAR{V} ] ) )
+\end{align*}$$
 
 
 $$\SHADE{\NAMEREF{sync-waiting-list-head-remove}
-           (\VAR{SY})}$$ removes the first value from the 
+           (  \VAR{SY} )}$$ removes the first value from the 
 waiting-list of $$\SHADE{\VAR{SY}}$$:
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Auxiliary Funcon} ~ 
-  & \NAMEDECL{sync-waiting-list-head-remove}(\VAR{SY} : \NAMEREF{syncs}) :  \TO \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values} \\
-  & \quad \leadsto \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Giving}{give}
-                     (\NAMEHYPER{../../../../Funcons-beta/Computations/Abnormal}{Failing}{checked} ~
-                        \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Lists}{list-head} ~
-                          \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Storing}{assigned} ~
-                            \NAMEREF{sync-feature}
-                              (\VAR{SY}, \\&\quad \quad \quad \quad \quad 
-                               \NAMEREF{sync-waiting-list}), \\&\quad 
+$$\begin{align*}
+  \KEY{Auxiliary Funcon} \
+  & \NAMEDECL{sync-waiting-list-head-remove}(
+                       \VAR{SY} : \NAMEREF{syncs}) 
+    :  \TO \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values} \\&\quad
+    \leadsto \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Giving}{give}
+               ( \\&\quad\quad\quad\quad \NAMEHYPER{../../../../Funcons-beta/Computations/Abnormal}{Failing}{checked} \ 
+                       \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Lists}{list-head} \ 
+                         \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Storing}{assigned} \ 
+                           \NAMEREF{sync-feature}
+                             (  \VAR{SY}, 
+                                    \NAMEREF{sync-waiting-list} ), \\&\quad\quad\quad\quad
                       \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
-                        (\NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Storing}{assign}
-                           (\NAMEREF{sync-feature}
-                              (\VAR{SY}, \\&\quad \quad \quad \quad 
-                               \NAMEREF{sync-waiting-list}), \\&\quad \quad \quad 
-                            \NAMEHYPER{../../../../Funcons-beta/Computations/Abnormal}{Failing}{checked} ~
-                              \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Lists}{list-tail} ~
-                                \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Storing}{assigned} ~
-                                  \NAMEREF{sync-feature}
-                                    (\VAR{SY}, \\&\quad \quad \quad \quad \quad \quad \quad 
-                                     \NAMEREF{sync-waiting-list})), \\&\quad \quad 
-                         \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Giving}{given}))
-\end{aligned}$$
+                       ( \\&\quad\quad\quad\quad\quad \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Storing}{assign}
+                               ( \\&\quad\quad\quad\quad\quad\quad \NAMEREF{sync-feature}
+                                       (  \VAR{SY}, 
+                                              \NAMEREF{sync-waiting-list} ), \\&\quad\quad\quad\quad\quad\quad
+                                      \NAMEHYPER{../../../../Funcons-beta/Computations/Abnormal}{Failing}{checked} \ 
+                                       \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Lists}{list-tail} \ 
+                                         \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Storing}{assigned} \ 
+                                           \NAMEREF{sync-feature}
+                                             (  \VAR{SY}, 
+                                                    \NAMEREF{sync-waiting-list} ) ), \\&\quad\quad\quad\quad\quad
+                              \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Giving}{given} ) )
+\end{align*}$$
 
 
 Various kinds of locks and notifications are represented by sync feature maps,
 together with funcons that (atomically) inspect and update them accordngly.
-
-
-
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \textsf{Locks
-          } ~ & \textsf{} \\
-  \textsf{Notifications
-          } ~ & \textsf{}
-  ~ ]
-\end{aligned}$$
 
 
 
@@ -271,5 +294,16 @@ $$\relax\begin{aligned}\relax
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]: /CBS-beta 
+[CBS-beta]: /CBS-beta
   "CBS-BETA"
+[Synchronising.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Unstable-Funcons-beta/Computations/Threads/Synchronising/Synchronising.cbs
+  "CBS SOURCE FILE ON GITHUB"
+[PLAIN]: /CBS-beta/docs/Unstable-Funcons-beta/Computations/Threads/Synchronising
+  "CBS SOURCE WEB PAGE"
+ [PRETTY]: /CBS-beta/math/Unstable-Funcons-beta/Computations/Threads/Synchronising
+  "CBS-KATEX WEB PAGE"
+[PDF]: /CBS-beta/math/Unstable-Funcons-beta/Computations/Threads/Synchronising/Synchronising.pdf
+  "CBS-LATEX PDF FILE"
+[PLanCompS Project]: https://plancomps.github.io
+  "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
+{::comment}{% endraw %}{:/}

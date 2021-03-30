@@ -1,39 +1,47 @@
 ---
-layout: default
 title: "Notifications"
 math: katex
 parent: Synchronising
 ancestor: Unstable-Funcons-beta
 
 ---
+[Unstable-Funcons-beta] : [Notifications.cbs] \| [PLAIN] \| [PDF]
 
-[Unstable-Funcons-beta] : [Notifications.cbs]
+{::comment}{% raw %}{:/}
+<details open markdown="block">
+  <summary>
+    Outline
+  </summary>
+  {: .text-delta }
+- TOC
+{:toc}
+</details>
 
 #### Notifications
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
+$$\begin{align*}
+  [ \
   \textsf{Barriers
-          } ~ & \textsf{} \\
-  \KEY{Funcon} ~ & \NAMEREF{barrier-create} \\
-  \KEY{Funcon} ~ & \NAMEREF{barrier-sync} \\
-  \KEY{Funcon} ~ & \NAMEREF{barrier-sync-else-wait} \\
+          } \ & \textsf{} \\
+  \KEY{Funcon} \ & \NAMEREF{barrier-create} \\
+  \KEY{Funcon} \ & \NAMEREF{barrier-sync} \\
+  \KEY{Funcon} \ & \NAMEREF{barrier-sync-else-wait} \\
   \textsf{Conditions
-          } ~ & \textsf{} \\
-  \KEY{Funcon} ~ & \NAMEREF{condition-create} \\
-  \KEY{Funcon} ~ & \NAMEREF{condition-wait} \\
-  \KEY{Funcon} ~ & \NAMEREF{condition-wait-with-lock} \\
-  \KEY{Funcon} ~ & \NAMEREF{condition-notify-all} \\
-  \KEY{Funcon} ~ & \NAMEREF{condition-notify-first} \\
+          } \ & \textsf{} \\
+  \KEY{Funcon} \ & \NAMEREF{condition-create} \\
+  \KEY{Funcon} \ & \NAMEREF{condition-wait} \\
+  \KEY{Funcon} \ & \NAMEREF{condition-wait-with-lock} \\
+  \KEY{Funcon} \ & \NAMEREF{condition-notify-all} \\
+  \KEY{Funcon} \ & \NAMEREF{condition-notify-first} \\
   \textsf{Rendezvous
-          } ~ & \textsf{} \\
-  \KEY{Funcon} ~ & \NAMEREF{rendezvous-create} \\
-  \KEY{Funcon} ~ & \NAMEREF{rendezvous-sync} \\
-  \KEY{Funcon} ~ & \NAMEREF{rendezvous-sync-else-wait}
-  ~ ]
-\end{aligned}$$
+          } \ & \textsf{} \\
+  \KEY{Funcon} \ & \NAMEREF{rendezvous-create} \\
+  \KEY{Funcon} \ & \NAMEREF{rendezvous-sync} \\
+  \KEY{Funcon} \ & \NAMEREF{rendezvous-sync-else-wait}
+  \ ]
+\end{align*}$$
 
 
 Threads may synchronise by waiting for notifications. In contrast to locks,
@@ -45,29 +53,31 @@ notifications are ephemeral, and do not get held and released.
 
 
 
-A [barrier[] notifies all requesting threads when a specified number of requests
+A [barrier] notifies all requesting threads when a specified number of requests
 for it have been made. Subsequent requests give immediate notification.
 
 [Barrier]: https://en.wikipedia.org/wiki/Barrier_(computer_science)
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{barrier-create}(\VAR{N} : \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{pos-ints}) :  \TO \NAME{syncs} \\
-  & \quad \leadsto \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{give}
-                     (\NAME{sync-create}
-                        (\NAME{sync-feature-create} ~
-                           \NAME{sync-waiting-list}, \\&\quad \quad 
-                         \NAME{sync-feature-create} ~
-                           \NAME{sync-count}), \\&\quad 
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{barrier-create}(
+                       \VAR{N} : \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{pos-ints}) 
+    :  \TO \NAME{syncs} \\&\quad
+    \leadsto \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{give}
+               ( \\&\quad\quad\quad\quad \NAME{sync-create}
+                       ( \\&\quad\quad\quad\quad\quad \NAME{sync-feature-create} \ 
+                               \NAME{sync-waiting-list}, \\&\quad\quad\quad\quad\quad
+                              \NAME{sync-feature-create} \ 
+                               \NAME{sync-count} ), \\&\quad\quad\quad\quad
                       \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
-                        (\NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assign}
-                           (\NAME{sync-feature}
-                              (\NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given}, \\&\quad \quad \quad \quad 
-                               \NAME{sync-count}), \\&\quad \quad \quad 
-                            \VAR{N}), \\&\quad \quad 
-                         \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given}))
-\end{aligned}$$
+                       ( \\&\quad\quad\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assign}
+                               (  \NAME{sync-feature}
+                                       (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given}, 
+                                              \NAME{sync-count} ), 
+                                      \VAR{N} ), \\&\quad\quad\quad\quad\quad
+                              \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} ) )
+\end{align*}$$
 
 
 When the barrier is already open, requests to pass it are granted immediately.
@@ -76,71 +86,75 @@ a request for it opens the barrier and resumes all the threads wiating for it;
 otherwise the request fails.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{barrier-sync}(\VAR{SY} : \NAME{syncs}) :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\
-  & \quad \leadsto \NAMEHYPER{../..}{Multithreading}{thread-atomic} ~
-                     \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{give}
-                       (\NAME{sync-feature}
-                          (\VAR{SY}, \\&\quad \quad \quad 
-                           \NAME{sync-count}), \\&\quad \quad 
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{barrier-sync}(
+                       \VAR{SY} : \NAME{syncs}) 
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
+    \leadsto \NAMEHYPER{../..}{Multithreading}{thread-atomic} \ 
+               \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{give}
+                 ( \\&\quad\quad\quad\quad \NAME{sync-feature}
+                         (  \VAR{SY}, 
+                                \NAME{sync-count} ), \\&\quad\quad\quad\quad
                         \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{else}
-                          (\NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{check-true} ~
-                             \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-equal}
-                               (\NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assigned} ~
-                                  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given}, \\&\quad \quad \quad \quad \quad 
-                                0), \\&\quad \quad \quad 
-                           \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
-                             (\NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{check-true} ~
-                                \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-equal}
-                                  (\NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assigned} ~
-                                     \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given}, \\&\quad \quad \quad \quad \quad \quad 
-                                   1), \\&\quad \quad \quad \quad 
-                              \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assign}
-                                (\NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given}, \\&\quad \quad \quad \quad \quad 
-                                 0), \\&\quad \quad \quad \quad 
-                              \NAMEHYPER{../..}{Multithreading}{thread-resume} ~
-                                \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{list-elements} ~
-                                  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assigned} ~
-                                    \NAME{sync-feature}
-                                      (\VAR{SY}, \\&\quad \quad \quad \quad \quad \quad \quad \quad 
-                                       \NAME{sync-waiting-list}), \\&\quad \quad \quad \quad 
-                              \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assign}
-                                (\NAME{sync-feature}
-                                   (\VAR{SY}, \\&\quad \quad \quad \quad \quad \quad 
-                                    \NAME{sync-waiting-list}), \\&\quad \quad \quad \quad \quad 
-                                 \ ~ ))))
-\end{aligned}$$
+                         ( \\&\quad\quad\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{check-true} \ 
+                                 \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-equal}
+                                   (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assigned} \ 
+                                           \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given}, 
+                                          0 ), \\&\quad\quad\quad\quad\quad
+                                \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
+                                 ( \\&\quad\quad\quad\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{check-true} \ 
+                                         \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-equal}
+                                           (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assigned} \ 
+                                                   \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given}, 
+                                                  1 ), \\&\quad\quad\quad\quad\quad\quad
+                                        \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assign}
+                                         (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given}, 
+                                                0 ), \\&\quad\quad\quad\quad\quad\quad
+                                        \NAMEHYPER{../..}{Multithreading}{thread-resume} \ 
+                                         \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{list-elements} \\&\quad\quad\quad\quad\quad\quad\quad 
+                                           \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assigned} \ 
+                                             \NAME{sync-feature}
+                                               (  \VAR{SY}, 
+                                                      \NAME{sync-waiting-list} ), \\&\quad\quad\quad\quad\quad\quad
+                                        \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assign}
+                                         (  \NAME{sync-feature}
+                                                 (  \VAR{SY}, 
+                                                        \NAME{sync-waiting-list} ), 
+                                                [   \  ] ) ) ) )
+\end{align*}$$
 
 
 When the request fails, the current thread is added to the waiting list, and
 suspended until the request can be granted:
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{barrier-sync-else-wait}(\VAR{SY} : \NAME{syncs}) :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\
-  & \quad \leadsto \NAMEHYPER{../..}{Multithreading}{thread-atomic} ~
-                     \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{else}
-                       (\NAMEREF{barrier-sync}
-                          (\VAR{SY}), \\&\quad \quad 
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{barrier-sync-else-wait}(
+                       \VAR{SY} : \NAME{syncs}) 
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
+    \leadsto \NAMEHYPER{../..}{Multithreading}{thread-atomic} \ 
+               \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{else}
+                 ( \\&\quad\quad\quad\quad \NAMEREF{barrier-sync}
+                         (  \VAR{SY} ), \\&\quad\quad\quad\quad
                         \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
-                          (\NAME{sync-waiting-list-add}
-                             (\VAR{SY}, \\&\quad \quad \quad \quad 
-                              \NAMEHYPER{../..}{Multithreading}{current-thread}), \\&\quad \quad \quad 
-                           \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assign}
-                             (\NAME{sync-feature}
-                                (\VAR{SY}, \\&\quad \quad \quad \quad \quad 
-                                 \NAME{sync-count}), \\&\quad \quad \quad \quad 
-                              \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{checked} ~
-                                \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{nat-pred} ~
-                                  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assigned} ~
-                                    \NAME{sync-feature}
-                                      (\VAR{SY}, \\&\quad \quad \quad \quad \quad \quad \quad \quad 
-                                       \NAME{sync-count})), \\&\quad \quad \quad 
-                           \NAMEHYPER{../..}{Multithreading}{thread-suspend} ~
-                             \NAMEHYPER{../..}{Multithreading}{current-thread}))
-\end{aligned}$$
+                         ( \\&\quad\quad\quad\quad\quad \NAME{sync-waiting-list-add}
+                                 (  \VAR{SY}, 
+                                        \NAMEHYPER{../..}{Multithreading}{current-thread} ), \\&\quad\quad\quad\quad\quad
+                                \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assign}
+                                 ( \\&\quad\quad\quad\quad\quad\quad \NAME{sync-feature}
+                                         (  \VAR{SY}, 
+                                                \NAME{sync-count} ), \\&\quad\quad\quad\quad\quad\quad
+                                        \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{checked} \ 
+                                         \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{nat-pred} \ 
+                                           \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assigned} \ 
+                                             \NAME{sync-feature}
+                                               (  \VAR{SY}, 
+                                                      \NAME{sync-count} ) ), \\&\quad\quad\quad\quad\quad
+                                \NAMEHYPER{../..}{Multithreading}{thread-suspend} \ 
+                                 \NAMEHYPER{../..}{Multithreading}{current-thread} ) )
+\end{align*}$$
 
 ##### Conditions
                
@@ -165,13 +179,14 @@ the exclusive lock, and atomically reverts to requesting the notification.
 [Condition]: http://pages.cs.wisc.edu/~remzi/OSTEP/threads-cv.pdf
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{condition-create} :  \TO \NAME{syncs} \\
-  & \quad \leadsto \NAME{sync-create}
-                     (\NAME{sync-feature-create} ~
-                        \NAME{sync-waiting-list})
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{condition-create} 
+    :  \TO \NAME{syncs} \\&\quad
+    \leadsto \NAME{sync-create}
+               ( \\&\quad\quad\quad\quad \NAME{sync-feature-create} \ 
+                       \NAME{sync-waiting-list} )
+\end{align*}$$
 
 
 A condition request always adds the current thread to the waiting list, and
@@ -180,17 +195,19 @@ associated exclusive lock as a further argument, assumed to be held by the
 current thread, and releases it at the same time as suspending the thread.)
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{condition-wait}(\VAR{SY} : \NAME{syncs}) :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\
-  & \quad \leadsto \NAMEHYPER{../..}{Multithreading}{thread-atomic} ~
-                     \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
-                       (\NAME{sync-waiting-list-add}
-                          (\VAR{SY}, \\&\quad \quad \quad 
-                           \NAMEHYPER{../..}{Multithreading}{current-thread}), \\&\quad \quad 
-                        \NAMEHYPER{../..}{Multithreading}{thread-suspend} ~
-                          \NAMEHYPER{../..}{Multithreading}{current-thread})
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{condition-wait}(
+                       \VAR{SY} : \NAME{syncs}) 
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
+    \leadsto \NAMEHYPER{../..}{Multithreading}{thread-atomic} \ 
+               \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
+                 ( \\&\quad\quad\quad\quad \NAME{sync-waiting-list-add}
+                         (  \VAR{SY}, 
+                                \NAMEHYPER{../..}{Multithreading}{current-thread} ), \\&\quad\quad\quad\quad
+                        \NAMEHYPER{../..}{Multithreading}{thread-suspend} \ 
+                         \NAMEHYPER{../..}{Multithreading}{current-thread} )
+\end{align*}$$
 
 
 In practice, a condition request usually takes also an associated exclusive lock
@@ -198,60 +215,66 @@ as a further argument, assumed to be held by the current thread, releases it
 together with suspending the thread, and waits for the lock when resumed:
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{condition-wait-with-lock}(\VAR{SY} : \NAME{syncs}, \VAR{L} : \NAME{syncs}) :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\
-  & \quad \leadsto \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
-                     (\NAMEHYPER{../..}{Multithreading}{thread-atomic} ~
-                        \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
-                          (\NAMEHYPER{../.}{Locks}{exclusive-lock-release}
-                             (\VAR{L}), \\&\quad \quad \quad 
-                           \NAME{sync-waiting-list-add}
-                             (\VAR{SY}, \\&\quad \quad \quad \quad 
-                              \NAMEHYPER{../..}{Multithreading}{current-thread}), \\&\quad \quad \quad 
-                           \NAMEHYPER{../..}{Multithreading}{thread-suspend} ~
-                             \NAMEHYPER{../..}{Multithreading}{current-thread}), \\&\quad 
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{condition-wait-with-lock}(
+                       \VAR{SY} : \NAME{syncs}, \VAR{L} : \NAME{syncs}) 
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
+    \leadsto \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
+               ( \\&\quad\quad\quad\quad \NAMEHYPER{../..}{Multithreading}{thread-atomic} \ 
+                       \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
+                         ( \\&\quad\quad\quad\quad\quad \NAMEHYPER{../.}{Locks}{exclusive-lock-release}
+                                 (  \VAR{L} ), \\&\quad\quad\quad\quad\quad
+                                \NAME{sync-waiting-list-add}
+                                 (  \VAR{SY}, 
+                                        \NAMEHYPER{../..}{Multithreading}{current-thread} ), \\&\quad\quad\quad\quad\quad
+                                \NAMEHYPER{../..}{Multithreading}{thread-suspend} \ 
+                                 \NAMEHYPER{../..}{Multithreading}{current-thread} ), \\&\quad\quad\quad\quad
                       \NAMEHYPER{../.}{Locks}{exclusive-lock-sync-else-wait}
-                        (\VAR{L}))
-\end{aligned}$$
+                       (  \VAR{L} ) )
+\end{align*}$$
 
 
 Threads that are waiting for the condition are notified simply by resuming them.
 To notify them all:
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{condition-notify-all}(\VAR{SY} : \NAME{syncs}) :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\
-  & \quad \leadsto \NAMEHYPER{../..}{Multithreading}{thread-atomic} ~
-                     \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
-                       (\NAMEHYPER{../..}{Multithreading}{thread-resume} ~
-                          \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{list-elements} ~
-                            \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assigned} ~
-                              \NAME{sync-feature}
-                                (\VAR{SY}, \\&\quad \quad \quad \quad \quad \quad 
-                                 \NAME{sync-waiting-list}), \\&\quad \quad 
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{condition-notify-all}(
+                       \VAR{SY} : \NAME{syncs}) 
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
+    \leadsto \NAMEHYPER{../..}{Multithreading}{thread-atomic} \\&\quad\quad\quad\quad 
+               \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
+                 ( \\&\quad\quad\quad\quad\quad \NAMEHYPER{../..}{Multithreading}{thread-resume} \ 
+                         \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{list-elements} \\&\quad\quad\quad\quad\quad\quad 
+                           \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assigned} \ 
+                             \NAME{sync-feature}
+                               (  \VAR{SY}, 
+                                      \NAME{sync-waiting-list} ), \\&\quad\quad\quad\quad\quad
                         \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assign}
-                          (\NAME{sync-feature}
-                             (\VAR{SY}, \\&\quad \quad \quad \quad 
-                              \NAME{sync-waiting-list}), \\&\quad \quad \quad 
-                           \ ~ ))
-\end{aligned}$$
+                         (  \NAME{sync-feature}
+                                 (  \VAR{SY}, 
+                                        \NAME{sync-waiting-list} ), 
+                                [   \  ] ) )
+\end{align*}$$
 
 
 To notify just one of the waiting threads:
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{condition-notify-first}(\VAR{SY} : \NAME{syncs}) :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\
-  & \quad \leadsto \NAMEHYPER{../..}{Multithreading}{thread-atomic} ~
-                     \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{give}
-                       (\NAME{sync-waiting-list-head-remove}
-                          (\VAR{SY}), \\&\quad \quad 
-                        \NAMEHYPER{../..}{Multithreading}{thread-resume} ~
-                          \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given})
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{condition-notify-first}(
+                       \VAR{SY} : \NAME{syncs}) 
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
+    \leadsto \NAMEHYPER{../..}{Multithreading}{thread-atomic} \\&\quad\quad\quad\quad 
+               \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{give}
+                 ( \\&\quad\quad\quad\quad\quad \NAME{sync-waiting-list-head-remove}
+                         (  \VAR{SY} ), \\&\quad\quad\quad\quad\quad
+                        \NAMEHYPER{../..}{Multithreading}{thread-resume} \ 
+                         \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} )
+\end{align*}$$
 
 ##### Rendezvous
                
@@ -266,23 +289,25 @@ of requests is selected; for a binary rendezvous, this is the first matching
 request in the stored list.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{rendezvous-create}(\VAR{N} : \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{pos-ints}) :  \TO \NAME{syncs} \\
-  & \quad \leadsto \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{give}
-                     (\NAME{sync-create}
-                        (\NAME{sync-feature-create} ~
-                           \NAME{sync-waiting-list}, \\&\quad \quad 
-                         \NAME{sync-feature-create} ~
-                           \NAME{sync-count}), \\&\quad 
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{rendezvous-create}(
+                       \VAR{N} : \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{pos-ints}) 
+    :  \TO \NAME{syncs} \\&\quad
+    \leadsto \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{give}
+               ( \\&\quad\quad\quad\quad \NAME{sync-create}
+                       ( \\&\quad\quad\quad\quad\quad \NAME{sync-feature-create} \ 
+                               \NAME{sync-waiting-list}, \\&\quad\quad\quad\quad\quad
+                              \NAME{sync-feature-create} \ 
+                               \NAME{sync-count} ), \\&\quad\quad\quad\quad
                       \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
-                        (\NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assign}
-                           (\NAME{sync-feature}
-                              (\NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given}, \\&\quad \quad \quad \quad 
-                               \NAME{sync-count}), \\&\quad \quad \quad 
-                            \VAR{N}), \\&\quad \quad 
-                         \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given}))
-\end{aligned}$$
+                       ( \\&\quad\quad\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assign}
+                               (  \NAME{sync-feature}
+                                       (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given}, 
+                                              \NAME{sync-count} ), 
+                                      \VAR{N} ), \\&\quad\quad\quad\quad\quad
+                              \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} ) )
+\end{align*}$$
 
 
 Each rendezvous request includes a pattern, and the corresponding notifications
@@ -308,178 +333,194 @@ matching element from the waiting list, and resumes its thread; otherwise the
 request fails.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{rendezvous-sync}(\VAR{SY} : \NAME{syncs}, \VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{ground-values}) :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\
-  & \quad \leadsto \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{give}
-                     (\NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assigned} ~
-                        \NAME{sync-feature}
-                          (\VAR{SY}, \\&\quad \quad \quad 
-                           \NAME{sync-waiting-list}), \\&\quad 
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{rendezvous-sync}(
+                       \VAR{SY} : \NAME{syncs}, \VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{ground-values}) 
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
+    \leadsto \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{give}
+               ( \\&\quad\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assigned} \ 
+                       \NAME{sync-feature}
+                         (  \VAR{SY}, 
+                                \NAME{sync-waiting-list} ), \\&\quad\quad\quad\quad
                       \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
-                        (\NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{check-true} ~
-                           \NAMEREF{is-rendezvous-match}
-                             (\NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given}, \\&\quad \quad \quad \quad 
-                              \VAR{V}), \\&\quad \quad 
-                         \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assign}
-                           (\NAME{sync-feature}
-                              (\VAR{SY}, \\&\quad \quad \quad \quad 
-                               \NAME{sync-waiting-list}), \\&\quad \quad \quad 
-                            \NAMEREF{rendezvous-first-match-drop}
-                              (\NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given}, \\&\quad \quad \quad \quad 
-                               \VAR{V})), \\&\quad \quad 
-                         \NAMEHYPER{../..}{Multithreading}{thread-resume} ~
-                           \NAMEREF{rendezvous-first-match-thread}
-                             (\NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given}, \\&\quad \quad \quad \quad 
-                              \VAR{V})))
-\end{aligned}$$
+                       ( \\&\quad\quad\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{check-true} \ 
+                               \NAMEREF{is-rendezvous-match}
+                                 (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given}, 
+                                        \VAR{V} ), \\&\quad\quad\quad\quad\quad
+                              \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assign}
+                               ( \\&\quad\quad\quad\quad\quad\quad \NAME{sync-feature}
+                                       (  \VAR{SY}, 
+                                              \NAME{sync-waiting-list} ), \\&\quad\quad\quad\quad\quad\quad
+                                      \NAMEREF{rendezvous-first-match-drop}
+                                       (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given}, 
+                                              \VAR{V} ) ), \\&\quad\quad\quad\quad\quad
+                              \NAMEHYPER{../..}{Multithreading}{thread-resume} \\&\quad\quad\quad\quad\quad\quad 
+                               \NAMEREF{rendezvous-first-match-thread}
+                                 (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given}, 
+                                        \VAR{V} ) ) )
+\end{align*}$$
 
 
 When the request fails, a tuple of the value and the current thread is added
 to the waiting list, and the thread suspended until the request can be granted:
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{rendezvous-sync-else-wait}(\VAR{SY} : \NAME{syncs}, \VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{ground-values}) :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\
-  & \quad \leadsto \NAMEHYPER{../..}{Multithreading}{thread-atomic} ~
-                     \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{else}
-                       (\NAMEREF{rendezvous-sync}
-                          (\VAR{SY}, \\&\quad \quad \quad 
-                           \VAR{V}), \\&\quad \quad 
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{rendezvous-sync-else-wait}(
+                       \VAR{SY} : \NAME{syncs}, \VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{ground-values}) 
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
+    \leadsto \NAMEHYPER{../..}{Multithreading}{thread-atomic} \ 
+               \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{else}
+                 ( \\&\quad\quad\quad\quad \NAMEREF{rendezvous-sync}
+                         (  \VAR{SY}, 
+                                \VAR{V} ), \\&\quad\quad\quad\quad
                         \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
-                          (\NAME{sync-waiting-list-add}
-                             (\VAR{SY}, \\&\quad \quad \quad \quad 
-                              \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
-                                (\VAR{V}, \\&\quad \quad \quad \quad \quad 
-                                 \NAMEHYPER{../..}{Multithreading}{current-thread})), \\&\quad \quad \quad 
-                           \NAMEHYPER{../..}{Multithreading}{thread-suspend} ~
-                             \NAMEHYPER{../..}{Multithreading}{current-thread}))
-\end{aligned}$$
+                         ( \\&\quad\quad\quad\quad\quad \NAME{sync-waiting-list-add}
+                                 (  \VAR{SY}, 
+                                        \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
+                                         (  \VAR{V}, 
+                                                \NAMEHYPER{../..}{Multithreading}{current-thread} ) ), \\&\quad\quad\quad\quad\quad
+                                \NAMEHYPER{../..}{Multithreading}{thread-suspend} \ 
+                                 \NAMEHYPER{../..}{Multithreading}{current-thread} ) )
+\end{align*}$$
 
 
 The remaining rendezvous funcons are all auxiliary:
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Auxiliary Type} ~  
+$$\begin{align*}
+  \KEY{Auxiliary Type} \ 
   & \NAMEDECL{rendezvous-waits}  
-  \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuples}
-             (\NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{ground-values},   
-              \NAMEHYPER{../..}{Multithreading}{thread-ids})
-\end{aligned}$$
+    \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuples}
+               (  \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{ground-values}, 
+                      \NAMEHYPER{../..}{Multithreading}{thread-ids} )
+\end{align*}$$
 
 
 The funcon $$\SHADE{\NAMEREF{is-rendezvous-match}
-           (\VAR{L},   
-            \VAR{V})}$$ returns whether the list $$\SHADE{\VAR{L}}$$ contains
+           (  \VAR{L}, 
+                  \VAR{V} )}$$ returns whether the list $$\SHADE{\VAR{L}}$$ contains
 $$\SHADE{\NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
-           (\VAR{V},   
-            \VAR{TI})}$$ for some $$\SHADE{\VAR{TI}}$$:
+           (  \VAR{V}, 
+                  \VAR{TI} )}$$ for some $$\SHADE{\VAR{TI}}$$:
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Auxiliary Funcon} ~ 
-  & \NAMEDECL{is-rendezvous-match}(\_ : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{lists}
-                                (\NAMEREF{rendezvous-waits}), \_ : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{ground-values}) :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{booleans}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Auxiliary Funcon} \
+  & \NAMEDECL{is-rendezvous-match}(
+                       \_ : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{lists}
+                                 (  \NAMEREF{rendezvous-waits} ), \_ : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{ground-values}) 
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{booleans} 
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
+$$\begin{align*}
+  \KEY{Rule} \
     & \NAMEREF{is-rendezvous-match}
-        ( NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
-            (\VAR{V}',    
-             \VAR{TI}),   
-          \VAR{P}\STAR,   
-         \VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}) \leadsto \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{if-true-else}
-                                                 (\NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-equal}
-                                                    (\VAR{V}',    
-                                                     \VAR{V}),   
-                                                  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{true},   
-                                                  \NAMEREF{is-rendezvous-match}
-                                                    ( VAR{P}\STAR,    
-                                                     \VAR{V}))
+        (  [  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
+                      (  \VAR{V}', 
+                             \VAR{TI} ), 
+                     \VAR{P}\STAR ], 
+               \VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} ) \leadsto \\&\quad
+        \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{if-true-else}
+          (  \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-equal}
+                  (  \VAR{V}', 
+                         \VAR{V} ), 
+                 \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{true}, 
+                 \NAMEREF{is-rendezvous-match}
+                  (  [  \VAR{P}\STAR ], 
+                         \VAR{V} ) )
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{is-rendezvous-match}
-        (\ ~ ,   
-         \VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}) \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false}
-\end{aligned}$$
+        (  [   \  ], 
+               \VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} ) \leadsto 
+        \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false}
+\end{align*}$$
 
 
 The funcon $$\SHADE{\NAMEREF{rendezvous-first-match-thread}
-           (\VAR{L},   
-            \VAR{V})}$$ returns the thread-id of the
+           (  \VAR{L}, 
+                  \VAR{V} )}$$ returns the thread-id of the
 first element of $$\SHADE{\VAR{L}}$$ with value $$\SHADE{\VAR{V}}$$:
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Auxiliary Funcon} ~ 
-  & \NAMEDECL{rendezvous-first-match-thread}(\_ : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{lists}
-                                (\NAMEREF{rendezvous-waits}), \_ : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}) :  \TO \NAMEHYPER{../..}{Multithreading}{thread-ids}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Auxiliary Funcon} \
+  & \NAMEDECL{rendezvous-first-match-thread}(
+                       \_ : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{lists}
+                                 (  \NAMEREF{rendezvous-waits} ), \_ : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}) \\&\quad
+    :  \TO \NAMEHYPER{../..}{Multithreading}{thread-ids} 
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
+$$\begin{align*}
+  \KEY{Rule} \
     & \NAMEREF{rendezvous-first-match-thread}
-        ( NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
-            (\VAR{V}',    
-             \VAR{TI}),   
-          \VAR{P}\STAR,   
-         \VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}) \leadsto \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{if-true-else}
-                                                 (\NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-equal}
-                                                    (\VAR{V}',    
-                                                     \VAR{V}),   
-                                                  \VAR{TI},   
-                                                  \NAMEREF{rendezvous-first-match-thread}
-                                                    ( VAR{P}\STAR,    
-                                                     \VAR{V}))
+        (  [  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
+                      (  \VAR{V}', 
+                             \VAR{TI} ), 
+                     \VAR{P}\STAR ], 
+               \VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} ) \leadsto \\&\quad
+        \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{if-true-else}
+          (  \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-equal}
+                  (  \VAR{V}', 
+                         \VAR{V} ), 
+                 \VAR{TI}, 
+                 \NAMEREF{rendezvous-first-match-thread}
+                  (  [  \VAR{P}\STAR ], 
+                         \VAR{V} ) )
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{rendezvous-first-match-thread}
-        (\ ~ ,   
-         \VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}) \leadsto \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{fail}
-\end{aligned}$$
+        (  [   \  ], 
+               \VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} ) \leadsto 
+        \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{fail}
+\end{align*}$$
 
 
 The funcon $$\SHADE{\NAMEREF{rendezvous-first-match-drop}
-           (\VAR{L},   
-            \VAR{V})}$$ returns the list $$\SHADE{\VAR{L}}$$ omitting the
+           (  \VAR{L}, 
+                  \VAR{V} )}$$ returns the list $$\SHADE{\VAR{L}}$$ omitting the
 first element with value $$\SHADE{\VAR{V}}$$:
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Auxiliary Funcon} ~ 
-  & \NAMEDECL{rendezvous-first-match-drop}(\_ : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{lists}
-                                (\NAMEREF{rendezvous-waits}), \_ : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}) :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{lists}
-                                                                         (\NAMEREF{rendezvous-waits})
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Auxiliary Funcon} \
+  & \NAMEDECL{rendezvous-first-match-drop}(
+                       \_ : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{lists}
+                                 (  \NAMEREF{rendezvous-waits} ), \_ : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}) \\&\quad
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{lists}
+                     (  \NAMEREF{rendezvous-waits} ) 
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
+$$\begin{align*}
+  \KEY{Rule} \
     & \NAMEREF{rendezvous-first-match-drop}
-        ( NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
-            (\VAR{V}',    
-             \VAR{TI}),   
-          \VAR{P}\STAR,   
-         \VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}) \leadsto \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{if-true-else}
-                                                 (\NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-equal}
-                                                    (\VAR{V}',    
-                                                     \VAR{V}),   
-                                                   VAR{P}\STAR,   
-                                                  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{cons}
-                                                    (\NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
-                                                       (\VAR{V}',     
-                                                        \VAR{TI}),    
-                                                     \NAMEREF{rendezvous-first-match-drop}
-                                                       ( VAR{P}\STAR,     
-                                                        \VAR{V})))
+        (  [  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
+                      (  \VAR{V}', 
+                             \VAR{TI} ), 
+                     \VAR{P}\STAR ], 
+               \VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} ) \leadsto \\&\quad
+        \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{if-true-else}
+          ( \\&\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-equal}
+                  (  \VAR{V}', 
+                         \VAR{V} ), \\&\quad\quad
+                 [  \VAR{P}\STAR ], \\&\quad\quad
+                 \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{cons}
+                  (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
+                          (  \VAR{V}', 
+                                 \VAR{TI} ), 
+                         \NAMEREF{rendezvous-first-match-drop}
+                          (  [  \VAR{P}\STAR ], 
+                                 \VAR{V} ) ) )
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{rendezvous-first-match-drop}
-        (\ ~ ,   
-         \VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}) \leadsto \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{fail}
-\end{aligned}$$
+        (  [   \  ], 
+               \VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} ) \leadsto 
+        \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{fail}
+\end{align*}$$
 
 
 A series of rendezvous between the same two threads is called an extended
@@ -487,7 +528,6 @@ rendezvous.  After the completion of each rendezvous in the series, one of the
 threads may immediately request the next, allowing the other thread to execute
 some code before synchronising. A simple rendezvous is restricted to
 synchronisation, and does not involve ordinary computation steps.
-
 
 
 
@@ -499,19 +539,24 @@ synchronisation, and does not involve ordinary computation steps.
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]: /CBS-beta 
+[CBS-beta]: /CBS-beta
   "CBS-BETA"
-
-
-____
-
-From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
-
-[Notifications.cbs]: /CBS-beta/Unstable-Funcons-beta/Computations/Threads/Synchronising/Notifications/Notifications.cbs
-  "CBS SOURCE FILE"
+[Notifications.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Unstable-Funcons-beta/Computations/Threads/Synchronising/Notifications/Notifications.cbs
+  "CBS SOURCE FILE ON GITHUB"
+[PLAIN]: /CBS-beta/docs/Unstable-Funcons-beta/Computations/Threads/Synchronising/Notifications
+  "CBS SOURCE WEB PAGE"
+ [PRETTY]: /CBS-beta/math/Unstable-Funcons-beta/Computations/Threads/Synchronising/Notifications
+  "CBS-KATEX WEB PAGE"
+[PDF]: /CBS-beta/math/Unstable-Funcons-beta/Computations/Threads/Synchronising/Notifications/Notifications.pdf
+  "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
+{::comment}{% endraw %}{:/}
+
+____
+From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
+
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues
   "CBS-BETA ISSUE REPORTS ON GITHUB"
-[Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20Computations/Threads/Synchronising/Notifications/Notifications.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A 
+[Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20Computations/Threads/Synchronising/Notifications/Notifications.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A
   "GENERATE AN EMAIL TEMPLATE"

@@ -1,13 +1,21 @@
 ---
-layout: default
 title: "LD-Unstable-Funcons-Index"
 math: katex
 parent: LD
 ancestor: Unstable-Languages-beta
 
 ---
+[Unstable-Languages-beta] : [LD-Unstable-Funcons-Index.cbs] \| [PLAIN] \| [PDF]
 
-[Unstable-Languages-beta] : [LD-Unstable-Funcons-Index.cbs]
+{::comment}{% raw %}{:/}
+<details open markdown="block">
+  <summary>
+    Outline
+  </summary>
+  {: .text-delta }
+- TOC
+{:toc}
+</details>
 
 
 
@@ -28,34 +36,33 @@ Unstable Funcons, for use only in Unstable Languages
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Datatype} ~ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads}{Multithreading}{thread-ids} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads}{Multithreading}{thread-joinable}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Datatype} \ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads}{Multithreading}{thread-ids} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads}{Multithreading}{thread-joinable}
+  \ ]
+\end{align*}$$
 
 #### Activation
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads}{Multithreading}{multithread} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads}{Multithreading}{thread-activate}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads}{Multithreading}{multithread} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads}{Multithreading}{thread-activate}
+  \ ]
+\end{align*}$$
 
 #### Termination
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads}{Multithreading}{thread-join}
-  ~ ]
-\end{aligned}$$
-
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads}{Multithreading}{thread-join}
+  \ ]
+\end{align*}$$
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -66,19 +73,24 @@ $$\relax\begin{aligned}\relax
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]: /CBS-beta 
+[CBS-beta]: /CBS-beta
   "CBS-BETA"
-
-
-____
-
-From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
-
-[LD-Unstable-Funcons-Index.cbs]: /CBS-beta/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Unstable-Funcons-Index/LD-Unstable-Funcons-Index.cbs
-  "CBS SOURCE FILE"
+[LD-Unstable-Funcons-Index.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Unstable-Funcons-Index/LD-Unstable-Funcons-Index.cbs
+  "CBS SOURCE FILE ON GITHUB"
+[PLAIN]: /CBS-beta/docs/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Unstable-Funcons-Index
+  "CBS SOURCE WEB PAGE"
+ [PRETTY]: /CBS-beta/math/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Unstable-Funcons-Index
+  "CBS-KATEX WEB PAGE"
+[PDF]: /CBS-beta/math/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Unstable-Funcons-Index/LD-Unstable-Funcons-Index.pdf
+  "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
+{::comment}{% endraw %}{:/}
+
+____
+From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
+
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues
   "CBS-BETA ISSUE REPORTS ON GITHUB"
-[Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20LD/LD-Unstable-Funcons-Index/LD-Unstable-Funcons-Index.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A 
+[Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20LD/LD-Unstable-Funcons-Index/LD-Unstable-Funcons-Index.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A
   "GENERATE AN EMAIL TEMPLATE"

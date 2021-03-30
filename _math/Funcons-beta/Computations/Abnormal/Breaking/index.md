@@ -1,117 +1,121 @@
 ---
-layout: default
 title: "Breaking"
 math: katex
 parent: Abnormal
 ancestor: Funcons-beta
 
 ---
+[Funcons-beta] : [Breaking.cbs] \| [PLAIN] \| [PDF]
 
-[Funcons-beta] : [Breaking.cbs]
+{::comment}{% raw %}{:/}
 
 ### Breaking
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Datatype} ~ & \NAMEREF{breaking} \\
-  \KEY{Funcon} ~ & \NAMEREF{broken} \\
-  \KEY{Funcon} ~ & \NAMEREF{finalise-breaking} \\
-  \KEY{Funcon} ~ & \NAMEREF{break} \\
-  \KEY{Funcon} ~ & \NAMEREF{handle-break}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Datatype} \ & \NAMEREF{breaking} \\
+  \KEY{Funcon} \ & \NAMEREF{broken} \\
+  \KEY{Funcon} \ & \NAMEREF{finalise-breaking} \\
+  \KEY{Funcon} \ & \NAMEREF{break} \\
+  \KEY{Funcon} \ & \NAMEREF{handle-break}
+  \ ]
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Meta-variables} ~ 
+$$\begin{align*}
+  \KEY{Meta-variables} \
   & \VAR{T} <: \NAMEHYPER{../../../Values}{Value-Types}{values}
-\end{aligned}$$
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Datatype} ~ 
-  \NAMEDECL{breaking}  
-  ~ ::= ~ & \NAMEDECL{broken} 
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Datatype} \ 
+  \NAMEDECL{breaking} 
+  \ ::= \ & \NAMEDECL{broken}
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{broken}}$$ is a reason for abrupt termination.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{finalise-breaking}(\VAR{X} :  \TO \VAR{T}) :  \TO \VAR{T} \mid \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} \\
-  & \quad \leadsto \NAMEHYPER{../.}{Abrupting}{finalise-abrupting}
-                     ( \VAR{X} )
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{finalise-breaking}(
+                       \VAR{X} :  \TO \VAR{T}) 
+    :  \TO \VAR{T}  \mid \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} \\&\quad
+    \leadsto \NAMEHYPER{../.}{Abrupting}{finalise-abrupting}
+               (  \VAR{X} )
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{finalise-breaking}
-           ( \VAR{X} )}$$ handles abrupt termination of $$\SHADE{\VAR{X}}$$ due to executing
+           (  \VAR{X} )}$$ handles abrupt termination of $$\SHADE{\VAR{X}}$$ due to executing
   $$\SHADE{\NAMEREF{break}}$$.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{break} :  \TO \NAMEHYPER{../../../Values}{Value-Types}{empty-type} \\
-  & \quad \leadsto \NAMEHYPER{../.}{Abrupting}{abrupt}
-                     ( \NAMEREF{broken} )
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{break} 
+    :  \TO \NAMEHYPER{../../../Values}{Value-Types}{empty-type} \\&\quad
+    \leadsto \NAMEHYPER{../.}{Abrupting}{abrupt}
+               (  \NAMEREF{broken} )
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{break}}$$ abruptly terminates all enclosing computations until it is handled.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{handle-break}(\_ :  \TO \NAMEHYPER{../../../Values/Primitive}{Null}{null-type}) :  \TO \NAMEHYPER{../../../Values/Primitive}{Null}{null-type}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{handle-break}(
+                       \_ :  \TO \NAMEHYPER{../../../Values/Primitive}{Null}{null-type}) 
+    :  \TO \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} 
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{handle-break}
-           ( \VAR{X} )}$$ terminates normally when $$\SHADE{\VAR{X}}$$ terminates abruptly for the
+           (  \VAR{X} )}$$ terminates normally when $$\SHADE{\VAR{X}}$$ terminates abruptly for the
   reason $$\SHADE{\NAMEREF{broken}}$$.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
+$$\begin{align*}
+  \KEY{Rule} \
     & \RULE{
-       \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  ~  )}_{} 
-        \VAR{X}'
+      &  \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(   \  )}_{} 
+          \VAR{X}'
       }{
       &  \NAMEREF{handle-break}
-                      ( \VAR{X} ) \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  ~  )}_{} 
+                      (  \VAR{X} ) \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(   \  )}_{} 
           \NAMEREF{handle-break}
-            ( \VAR{X}' )
+            (  \VAR{X}' )
       }
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \RULE{
-       \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}( \NAMEREF{broken} )}_{} 
-        \_
+      &  \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  \NAMEREF{broken} )}_{} 
+          \_
       }{
       &  \NAMEREF{handle-break}
-                      ( \VAR{X} ) \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  ~  )}_{} 
+                      (  \VAR{X} ) \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(   \  )}_{} 
           \NAMEHYPER{../../../Values/Primitive}{Null}{null-value}
       }
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \RULE{
-       \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}( \VAR{V} : \mathop{\sim} \NAMEREF{breaking} )}_{} 
-        \VAR{X}'
+      &  \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  \VAR{V} : \mathop{\sim} \NAMEREF{breaking} )}_{} 
+          \VAR{X}'
       }{
       &  \NAMEREF{handle-break}
-                      ( \VAR{X} ) \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}( \VAR{V} )}_{} 
+                      (  \VAR{X} ) \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  \VAR{V} )}_{} 
           \NAMEREF{handle-break}
-            ( \VAR{X}' )
+            (  \VAR{X}' )
       }
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{handle-break}
-        ( \NAMEHYPER{../../../Values/Primitive}{Null}{null-value} ) \leadsto
+        (  \NAMEHYPER{../../../Values/Primitive}{Null}{null-value} ) \leadsto 
         \NAMEHYPER{../../../Values/Primitive}{Null}{null-value}
-\end{aligned}$$
-
+\end{align*}$$
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -122,19 +126,24 @@ $$\relax\begin{aligned}\relax
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]: /CBS-beta 
+[CBS-beta]: /CBS-beta
   "CBS-BETA"
-
-
-____
-
-From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
-
-[Breaking.cbs]: /CBS-beta/Funcons-beta/Computations/Abnormal/Breaking/Breaking.cbs
-  "CBS SOURCE FILE"
+[Breaking.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Funcons-beta/Computations/Abnormal/Breaking/Breaking.cbs
+  "CBS SOURCE FILE ON GITHUB"
+[PLAIN]: /CBS-beta/docs/Funcons-beta/Computations/Abnormal/Breaking
+  "CBS SOURCE WEB PAGE"
+ [PRETTY]: /CBS-beta/math/Funcons-beta/Computations/Abnormal/Breaking
+  "CBS-KATEX WEB PAGE"
+[PDF]: /CBS-beta/math/Funcons-beta/Computations/Abnormal/Breaking/Breaking.pdf
+  "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
+{::comment}{% endraw %}{:/}
+
+____
+From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
+
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues
   "CBS-BETA ISSUE REPORTS ON GITHUB"
-[Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20Computations/Abnormal/Breaking/Breaking.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A 
+[Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20Computations/Abnormal/Breaking/Breaking.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A
   "GENERATE AN EMAIL TEMPLATE"

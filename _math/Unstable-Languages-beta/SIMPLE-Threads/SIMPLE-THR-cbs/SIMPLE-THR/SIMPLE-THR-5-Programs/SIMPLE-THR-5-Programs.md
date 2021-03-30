@@ -1,64 +1,95 @@
+{::comment}{% raw %}{:/}
+
 $$\KEY{Language} \STRING{SIMPLE-THR}$$
 
 # $$\SECT{5}$$ Programs
            
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Syntax} ~ 
+$$\begin{align*}
+  \KEY{Syntax} \
     \VARDECL{Pgm} : \SYN{pgm}
-      ~ ::= ~ & \SYNREF{decls}
-\end{aligned}$$
+      \ ::= \ & \
+      \SYNREF{decls}
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Semantics} ~ 
-  & \SEMDECL{run} \LEFTPHRASE ~ \VARREF{Decls} : \SYNREF{pgm} ~ \RIGHTPHRASE  :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} = \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{scope}
-                                                                                                                            (\NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{collateral}
-                                                                                                                               (\SEMREF{declarations} \LEFTPHRASE ~ \VAR{Decls} ~ \RIGHTPHRASE ), \\&\quad 
-                                                                                                                             \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
-                                                                                                                               (\SEMREF{initialisations} \LEFTPHRASE ~ \VAR{Decls} ~ \RIGHTPHRASE , \\&\quad \quad 
-                                                                                                                                \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{apply}
-                                                                                                                                  (\NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assigned}
-                                                                                                                                     (\NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{bound}
-                                                                                                                                        (\STRING{main})), \\&\quad \quad \quad 
-                                                                                                                                   \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
-                                                                                                                                     ( ~ ))))
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Semantics} \
+  & \SEMDECL{run} \LEFTPHRASE \ \VARREF{Decls} : \SYNREF{pgm} \ \RIGHTPHRASE  
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} \\&\quad
+    =  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{scope}
+         ( \\&\quad\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{collateral}
+                 (  \SEMREF{declarations} \LEFTPHRASE \
+                                             \VAR{Decls} \
+                                           \RIGHTPHRASE  ), \\&\quad\quad\quad\quad
+                \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
+                 ( \\&\quad\quad\quad\quad\quad \SEMREF{initialisations} \LEFTPHRASE \
+                                             \VAR{Decls} \
+                                           \RIGHTPHRASE , \\&\quad\quad\quad\quad\quad
+                        \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{apply}
+                         (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assigned}
+                                 (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{bound}
+                                         (  \STRING{main} ) ), 
+                                \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
+                                 (   \  ) ) ) )
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Syntax} ~ 
+$$\begin{align*}
+  \KEY{Syntax} \
     \VARDECL{Decls} : \SYN{decls}
-      ~ ::= ~ & \SYNHYPER{../.}{SIMPLE-THR-4-Declarations}{decl} ~ \SYNREF{decls}\QUERY
-\end{aligned}$$
+      \ ::= \ & \
+      \SYNHYPER{../.}{SIMPLE-THR-4-Declarations}{decl} \ \SYNREF{decls}\QUERY
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Semantics} ~ 
-  & \SEMDECL{declarations} \LEFTPHRASE ~ \_ : \SYNREF{decls} ~ \RIGHTPHRASE  : ( \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{environments})\PLUS 
+$$\begin{align*}
+  \KEY{Semantics} \
+  & \SEMDECL{declarations} \LEFTPHRASE \ \_ : \SYNREF{decls} \ \RIGHTPHRASE  
+    : (   \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{environments} )\PLUS 
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{declarations} \LEFTPHRASE ~ \VARHYPER{../.}{SIMPLE-THR-4-Declarations}{Decl} ~ \RIGHTPHRASE  = \\&\quad
-      \SEMHYPER{../.}{SIMPLE-THR-4-Declarations}{declare} \LEFTPHRASE ~ \VAR{Decl} ~ \RIGHTPHRASE 
+  \KEY{Rule} \
+    & \SEMREF{declarations} \LEFTPHRASE \
+                            \VARHYPER{../.}{SIMPLE-THR-4-Declarations}{Decl} \
+                          \RIGHTPHRASE  = 
+      \SEMHYPER{../.}{SIMPLE-THR-4-Declarations}{declare} \LEFTPHRASE \
+                            \VAR{Decl} \
+                          \RIGHTPHRASE 
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{declarations} \LEFTPHRASE ~ \VARHYPER{../.}{SIMPLE-THR-4-Declarations}{Decl} ~ \VARREF{Decls} ~ \RIGHTPHRASE  = \\&\quad
-      \SEMHYPER{../.}{SIMPLE-THR-4-Declarations}{declare} \LEFTPHRASE ~ \VAR{Decl} ~ \RIGHTPHRASE , \\&\quad 
-      \SEMREF{declarations} \LEFTPHRASE ~ \VAR{Decls} ~ \RIGHTPHRASE 
-\end{aligned}$$
+  \KEY{Rule} \
+    & \SEMREF{declarations} \LEFTPHRASE \
+                            \VARHYPER{../.}{SIMPLE-THR-4-Declarations}{Decl} \ \VARREF{Decls} \
+                          \RIGHTPHRASE  = 
+      \SEMHYPER{../.}{SIMPLE-THR-4-Declarations}{declare} \LEFTPHRASE \
+                            \VAR{Decl} \
+                          \RIGHTPHRASE , 
+       \SEMREF{declarations} \LEFTPHRASE \
+                            \VAR{Decls} \
+                          \RIGHTPHRASE 
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Semantics} ~ 
-  & \SEMDECL{initialisations} \LEFTPHRASE ~ \_ : \SYNREF{decls} ~ \RIGHTPHRASE  : ( \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type})\PLUS 
+$$\begin{align*}
+  \KEY{Semantics} \
+  & \SEMDECL{initialisations} \LEFTPHRASE \ \_ : \SYNREF{decls} \ \RIGHTPHRASE  
+    : (   \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} )\PLUS 
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{initialisations} \LEFTPHRASE ~ \VARHYPER{../.}{SIMPLE-THR-4-Declarations}{Decl} ~ \RIGHTPHRASE  = \\&\quad
-      \SEMHYPER{../.}{SIMPLE-THR-4-Declarations}{initialise} \LEFTPHRASE ~ \VAR{Decl} ~ \RIGHTPHRASE 
+  \KEY{Rule} \
+    & \SEMREF{initialisations} \LEFTPHRASE \
+                            \VARHYPER{../.}{SIMPLE-THR-4-Declarations}{Decl} \
+                          \RIGHTPHRASE  = 
+      \SEMHYPER{../.}{SIMPLE-THR-4-Declarations}{initialise} \LEFTPHRASE \
+                            \VAR{Decl} \
+                          \RIGHTPHRASE 
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{initialisations} \LEFTPHRASE ~ \VARHYPER{../.}{SIMPLE-THR-4-Declarations}{Decl} ~ \VARREF{Decls} ~ \RIGHTPHRASE  = \\&\quad
-      \SEMHYPER{../.}{SIMPLE-THR-4-Declarations}{initialise} \LEFTPHRASE ~ \VAR{Decl} ~ \RIGHTPHRASE , \\&\quad 
-      \SEMREF{initialisations} \LEFTPHRASE ~ \VAR{Decls} ~ \RIGHTPHRASE 
-\end{aligned}$$
-
+  \KEY{Rule} \
+    & \SEMREF{initialisations} \LEFTPHRASE \
+                            \VARHYPER{../.}{SIMPLE-THR-4-Declarations}{Decl} \ \VARREF{Decls} \
+                          \RIGHTPHRASE  = \\&\quad
+      \SEMHYPER{../.}{SIMPLE-THR-4-Declarations}{initialise} \LEFTPHRASE \
+                            \VAR{Decl} \
+                          \RIGHTPHRASE , 
+       \SEMREF{initialisations} \LEFTPHRASE \
+                            \VAR{Decls} \
+                          \RIGHTPHRASE 
+\end{align*}$$
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -69,5 +100,16 @@ $$\relax\begin{aligned}\relax
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]: /CBS-beta 
+[CBS-beta]: /CBS-beta
   "CBS-BETA"
+[SIMPLE-THR-5-Programs.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-5-Programs/SIMPLE-THR-5-Programs.cbs
+  "CBS SOURCE FILE ON GITHUB"
+[PLAIN]: /CBS-beta/docs/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-5-Programs
+  "CBS SOURCE WEB PAGE"
+ [PRETTY]: /CBS-beta/math/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-5-Programs
+  "CBS-KATEX WEB PAGE"
+[PDF]: /CBS-beta/math/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-5-Programs/SIMPLE-THR-5-Programs.pdf
+  "CBS-LATEX PDF FILE"
+[PLanCompS Project]: https://plancomps.github.io
+  "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
+{::comment}{% endraw %}{:/}

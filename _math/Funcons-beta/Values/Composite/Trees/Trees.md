@@ -1,200 +1,215 @@
+{::comment}{% raw %}{:/}
+
 ### Trees
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Datatype} ~ & \NAMEREF{trees} \\
-  \KEY{Funcon} ~ & \NAMEREF{tree} \\
-  \KEY{Funcon} ~ & \NAMEREF{tree-root-value} \\
-  \KEY{Funcon} ~ & \NAMEREF{tree-branch-sequence} \\
-  \KEY{Funcon} ~ & \NAMEREF{single-branching-sequence} \\
-  \KEY{Funcon} ~ & \NAMEREF{forest-root-value-sequence} \\
-  \KEY{Funcon} ~ & \NAMEREF{forest-branch-sequence} \\
-  \KEY{Funcon} ~ & \NAMEREF{forest-value-sequence}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Datatype} \ & \NAMEREF{trees} \\
+  \KEY{Funcon} \ & \NAMEREF{tree} \\
+  \KEY{Funcon} \ & \NAMEREF{tree-root-value} \\
+  \KEY{Funcon} \ & \NAMEREF{tree-branch-sequence} \\
+  \KEY{Funcon} \ & \NAMEREF{single-branching-sequence} \\
+  \KEY{Funcon} \ & \NAMEREF{forest-root-value-sequence} \\
+  \KEY{Funcon} \ & \NAMEREF{forest-branch-sequence} \\
+  \KEY{Funcon} \ & \NAMEREF{forest-value-sequence}
+  \ ]
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Meta-variables} ~ 
+$$\begin{align*}
+  \KEY{Meta-variables} \
   & \VAR{T} <: \NAMEHYPER{../..}{Value-Types}{values}
-\end{aligned}$$
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Datatype} ~ 
-  \NAMEDECL{trees}(\VAR{T} )  
-  ~ ::= ~ & \NAMEDECL{tree} (\_ : \VAR{T}, \_ : ( \NAMEREF{trees}
-                                           ( \VAR{T} ) )\STAR)
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Datatype} \ 
+  \NAMEDECL{trees}(
+                     \VAR{T} ) 
+  \ ::= \ & \NAMEDECL{tree}(
+                               \_ : \VAR{T}, \_ : (  \NAMEREF{trees}
+                                               (  \VAR{T} ) )\STAR)
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{trees}
-           ( \VAR{T} )}$$ consists of finitely-branching trees with elements of type $$\SHADE{\VAR{T}}$$.
+           (  \VAR{T} )}$$ consists of finitely-branching trees with elements of type $$\SHADE{\VAR{T}}$$.
   When $$\SHADE{\VAR{V} : \VAR{T}}$$, $$\SHADE{\NAMEREF{tree}
-           ( \VAR{V} )}$$ is a leaf, and $$\SHADE{\NAMEREF{tree}
-           ( \VAR{V},   
-             \VAR{B}\SUB{1},   
-             \cdots,   
-             \VAR{Bn} )}$$ is a tree with
-  branches $$\SHADE{\VAR{B}\SUB{1}}$$, ..., $$\SHADE{\VAR{Bn}}$$.
+           (  \VAR{V} )}$$ is a leaf, and $$\SHADE{\NAMEREF{tree}
+           (  \VAR{V}, 
+                  \VAR{B}\SUB{1}, 
+                  \cdots, 
+                  \VAR{B}\SUB{n} )}$$ is a tree with
+  branches $$\SHADE{\VAR{B}\SUB{1}}$$, ..., $$\SHADE{\VAR{B}\SUB{n}}$$.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{tree-root-value}(\_ : \NAMEREF{trees}
-                                ( \VAR{T} )) :  \TO ( \VAR{T} )\QUERY
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{tree-root-value}(
+                       \_ : \NAMEREF{trees}
+                                 (  \VAR{T} )) 
+    :  \TO (  \VAR{T} )\QUERY 
 \\
-  \KEY{Rule} ~ 
-    & \NAMEREF{tree-root-value} ~
+  \KEY{Rule} \
+    & \NAMEREF{tree-root-value} \ 
         \NAMEREF{tree}
-          ( \VAR{V} : \VAR{T},    
-            \_\STAR : ( \NAMEREF{trees}
-                          ( \VAR{T} ) )\STAR ) \leadsto
+          (  \VAR{V} : \VAR{T}, 
+                 \_\STAR : (  \NAMEREF{trees}
+                                  (  \VAR{T} ) )\STAR ) \leadsto 
         \VAR{V}
-\end{aligned}$$
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{tree-branch-sequence}(\_ : \NAMEREF{trees}
-                                ( \VAR{T} )) :  \TO ( \NAMEREF{trees}
-                                                                           ( \VAR{T} ) )\STAR
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{tree-branch-sequence}(
+                       \_ : \NAMEREF{trees}
+                                 (  \VAR{T} )) 
+    :  \TO (  \NAMEREF{trees}
+                           (  \VAR{T} ) )\STAR 
 \\
-  \KEY{Rule} ~ 
-    & \NAMEREF{tree-branch-sequence} ~
+  \KEY{Rule} \
+    & \NAMEREF{tree-branch-sequence} \ 
         \NAMEREF{tree}
-          ( \_ : \VAR{T},    
-            \VAR{B}\STAR : ( \NAMEREF{trees}
-                          ( \VAR{T} ) )\STAR ) \leadsto
+          (  \_ : \VAR{T}, 
+                 \VAR{B}\STAR : (  \NAMEREF{trees}
+                                  (  \VAR{T} ) )\STAR ) \leadsto 
         \VAR{B}\STAR
-\end{aligned}$$
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{single-branching-sequence}(\_ : \NAMEREF{trees}
-                                ( \VAR{T} )) :  \TO \VAR{T}\PLUS
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{single-branching-sequence}(
+                       \_ : \NAMEREF{trees}
+                                 (  \VAR{T} )) 
+    :  \TO \VAR{T}\PLUS 
+\end{align*}$$
 
 
-  $$\SHADE{\NAMEREF{single-branching-sequence} ~
+  $$\SHADE{\NAMEREF{single-branching-sequence} \ 
            \VAR{B}}$$ extracts the values in $$\SHADE{\VAR{B}}$$ starting from 
   the root, provided that $$\SHADE{\VAR{B}}$$ is at most single-branching; otherwise it fails.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
-    & \NAMEREF{single-branching-sequence} ~
+$$\begin{align*}
+  \KEY{Rule} \
+    & \NAMEREF{single-branching-sequence} \ 
         \NAMEREF{tree}
-          ( \VAR{V} : \VAR{T} ) \leadsto
+          (  \VAR{V} : \VAR{T} ) \leadsto 
         \VAR{V}
 \\
-  \KEY{Rule} ~ 
-    & \NAMEREF{single-branching-sequence} ~
+  \KEY{Rule} \
+    & \NAMEREF{single-branching-sequence} \ 
         \NAMEREF{tree}
-          ( \VAR{V} : \VAR{T},    
-            \VAR{B} : \NAMEREF{trees}
-                        ( \VAR{T} ) ) \leadsto
+          (  \VAR{V} : \VAR{T}, 
+                 \VAR{B} : \NAMEREF{trees}
+                            (  \VAR{T} ) ) \leadsto \\&\quad
         \NAMEHYPER{../../../Computations/Normal}{Flowing}{left-to-right}
-          ( \VAR{V},   
-            \NAMEREF{single-branching-sequence} ~
-              \VAR{B} )
+          (  \VAR{V}, 
+                 \NAMEREF{single-branching-sequence} \ 
+                  \VAR{B} )
 \\
-  \KEY{Rule} ~ 
-    & \NAMEREF{single-branching-sequence} ~
+  \KEY{Rule} \
+    & \NAMEREF{single-branching-sequence} \ 
         \NAMEREF{tree}
-          ( \_ : \VAR{T},    
-            \_ : \NAMEREF{trees}
-                        ( \VAR{T} ),    
-            \_\PLUS : ( \NAMEREF{trees}
-                          ( \VAR{T} ) )\PLUS ) \leadsto
+          (  \_ : \VAR{T}, 
+                 \_ : \NAMEREF{trees}
+                            (  \VAR{T} ), 
+                 \_\PLUS : (  \NAMEREF{trees}
+                                  (  \VAR{T} ) )\PLUS ) \leadsto 
         \NAMEHYPER{../../../Computations/Abnormal}{Failing}{fail}
-\end{aligned}$$
+\end{align*}$$
 
 
   A sequence of trees corresponds to a forest, and the selector funcons
   on trees $$\SHADE{\VAR{B}}$$ extend to forests $$\SHADE{\VAR{B}\STAR}$$:
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{forest-root-value-sequence}(\_ : ( \NAMEREF{trees}
-                                  ( \VAR{T} ) )\STAR) :  \TO \VAR{T}\STAR
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{forest-root-value-sequence}(
+                       \_ : (  \NAMEREF{trees}
+                                       (  \VAR{T} ) )\STAR) 
+    :  \TO \VAR{T}\STAR 
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{forest-root-value-sequence}
-        ( \VAR{B} : \NAMEREF{trees}
-                      ( \VAR{T} ),   
-          \VAR{B}\STAR : ( \NAMEREF{trees}
-                        ( \VAR{T} ) )\STAR ) \leadsto
-        ( \NAMEREF{tree-root-value} ~
-            \VAR{B},  
-          \NAMEREF{forest-root-value-sequence} ~
-            \VAR{B}\STAR )
+        (  \VAR{B} : \NAMEREF{trees}
+                          (  \VAR{T} ), 
+               \VAR{B}\STAR : (  \NAMEREF{trees}
+                                (  \VAR{T} ) )\STAR ) \leadsto \\&\quad
+        (  \NAMEREF{tree-root-value} \ 
+                \VAR{B}, 
+               \NAMEREF{forest-root-value-sequence} \ 
+                \VAR{B}\STAR )
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{forest-root-value-sequence}
-        (  ~  ) \leadsto
-        (  ~  )
-\end{aligned}$$
+        (   \  ) \leadsto 
+        (   \  )
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{forest-branch-sequence}(\_ : ( \NAMEREF{trees}
-                                  ( \VAR{T} ) )\STAR) :  \TO \VAR{T}\STAR
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{forest-branch-sequence}(
+                       \_ : (  \NAMEREF{trees}
+                                       (  \VAR{T} ) )\STAR) 
+    :  \TO \VAR{T}\STAR 
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{forest-branch-sequence}
-        ( \VAR{B} : \NAMEREF{trees}
-                      ( \VAR{T} ),   
-          \VAR{B}\STAR : ( \NAMEREF{trees}
-                        ( \VAR{T} ) )\STAR ) \leadsto
-        ( \NAMEREF{tree-branch-sequence} ~
-            \VAR{B},  
-          \NAMEREF{forest-branch-sequence} ~
-            \VAR{B}\STAR )
+        (  \VAR{B} : \NAMEREF{trees}
+                          (  \VAR{T} ), 
+               \VAR{B}\STAR : (  \NAMEREF{trees}
+                                (  \VAR{T} ) )\STAR ) \leadsto \\&\quad
+        (  \NAMEREF{tree-branch-sequence} \ 
+                \VAR{B}, 
+               \NAMEREF{forest-branch-sequence} \ 
+                \VAR{B}\STAR )
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{forest-branch-sequence}
-        (  ~  ) \leadsto
-        (  ~  )
-\end{aligned}$$
+        (   \  ) \leadsto 
+        (   \  )
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{forest-value-sequence}(\_ : ( \NAMEREF{trees}
-                                  ( \VAR{T} ) )\STAR) :  \TO \VAR{T}\STAR
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{forest-value-sequence}(
+                       \_ : (  \NAMEREF{trees}
+                                       (  \VAR{T} ) )\STAR) 
+    :  \TO \VAR{T}\STAR 
+\end{align*}$$
 
 
-  $$\SHADE{\NAMEREF{forest-value-sequence} ~
+  $$\SHADE{\NAMEREF{forest-value-sequence} \ 
            \VAR{B}\STAR}$$ provides the values from a left-to-right pre-order
   depth-first traversal.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
+$$\begin{align*}
+  \KEY{Rule} \
     & \NAMEREF{forest-value-sequence}
-        ( \NAMEREF{tree}
-            ( \VAR{V} : \VAR{T},    
-              \VAR{B}\SUB{1}\STAR : ( \NAMEREF{trees}
-                            ( \VAR{T} ) )\STAR ),   
-          \VAR{B}\SUB{2}\STAR : ( \NAMEREF{trees}
-                        ( \VAR{T} ) )\STAR ) \leadsto
-        ( \VAR{V},  
-          \NAMEREF{forest-value-sequence} ~
-            \VAR{B}\SUB{1}\STAR,  
-          \NAMEREF{forest-value-sequence} ~
-            \VAR{B}\SUB{2}\STAR )
+        (  \NAMEREF{tree}
+                (  \VAR{V} : \VAR{T}, 
+                       \VAR{B}\SUB{1}\STAR : (  \NAMEREF{trees}
+                                        (  \VAR{T} ) )\STAR ), 
+               \VAR{B}\SUB{2}\STAR : (  \NAMEREF{trees}
+                                (  \VAR{T} ) )\STAR ) \leadsto \\&\quad
+        (  \VAR{V}, 
+               \NAMEREF{forest-value-sequence} \ 
+                \VAR{B}\SUB{1}\STAR, 
+               \NAMEREF{forest-value-sequence} \ 
+                \VAR{B}\SUB{2}\STAR )
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{forest-value-sequence}
-        (  ~  ) \leadsto
-        (  ~  )
-\end{aligned}$$
+        (   \  ) \leadsto 
+        (   \  )
+\end{align*}$$
 
 
   Other linearizations of trees can be added: breadth-first, right-to-left,
   C3, etc.
-
 
 
 
@@ -206,5 +221,16 @@ $$\relax\begin{aligned}\relax
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]: /CBS-beta 
+[CBS-beta]: /CBS-beta
   "CBS-BETA"
+[Trees.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Funcons-beta/Values/Composite/Trees/Trees.cbs
+  "CBS SOURCE FILE ON GITHUB"
+[PLAIN]: /CBS-beta/docs/Funcons-beta/Values/Composite/Trees
+  "CBS SOURCE WEB PAGE"
+ [PRETTY]: /CBS-beta/math/Funcons-beta/Values/Composite/Trees
+  "CBS-KATEX WEB PAGE"
+[PDF]: /CBS-beta/math/Funcons-beta/Values/Composite/Trees/Trees.pdf
+  "CBS-LATEX PDF FILE"
+[PLanCompS Project]: https://plancomps.github.io
+  "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
+{::comment}{% endraw %}{:/}

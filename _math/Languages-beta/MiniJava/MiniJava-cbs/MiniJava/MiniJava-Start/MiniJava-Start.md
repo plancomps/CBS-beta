@@ -1,45 +1,52 @@
+{::comment}{% raw %}{:/}
+
 $$\KEY{Language} \STRING{MiniJava}$$
 
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Syntax} ~ 
+$$\begin{align*}
+  \KEY{Syntax} \
     \VARDECL{START} : \SYN{start}
-      ~ ::= ~ & \SYNHYPER{../.}{MiniJava-Dynamics}{program}
-\end{aligned}$$
+      \ ::= \ & \
+      \SYNHYPER{../.}{MiniJava-Dynamics}{program}
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Semantics} ~ 
-  & \SEMDECL{start} \LEFTPHRASE ~ \VARREF{START} : \SYNREF{start} ~ \RIGHTPHRASE  :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
+$$\begin{align*}
+  \KEY{Semantics} \
+  & \SEMDECL{start} \LEFTPHRASE \ \VARREF{START} : \SYNREF{start} \ \RIGHTPHRASE  
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{start} \LEFTPHRASE ~ \VARHYPER{../.}{MiniJava-Dynamics}{P} ~ \RIGHTPHRASE  = \\&\quad
-      \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{initialise-binding} ~
-        \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{initialise-storing} ~
-          \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{initialise-giving} ~
-            \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{finalise-failing} ~
-              \SEMHYPER{../.}{MiniJava-Dynamics}{run} \LEFTPHRASE ~ \VAR{P} ~ \RIGHTPHRASE 
-\end{aligned}$$
+  \KEY{Rule} \
+    & \SEMREF{start} \LEFTPHRASE \
+                            \VARHYPER{../.}{MiniJava-Dynamics}{P} \
+                          \RIGHTPHRASE  = \\&\quad
+      \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{initialise-binding} \\&\quad\quad 
+        \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{initialise-storing} \\&\quad\quad\quad 
+          \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{initialise-giving} \\&\quad\quad\quad\quad 
+            \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{finalise-failing} \\&\quad\quad\quad\quad\quad 
+              \SEMHYPER{../.}{MiniJava-Dynamics}{run} \LEFTPHRASE \
+                                    \VAR{P} \
+                                  \RIGHTPHRASE 
+\end{align*}$$
 
 
 Contents:
 
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \textsf{\SECTHYPER{../.}{MiniJava-Dynamics}{1}} ~ & \textsf{Programs} \\
-  \textsf{\SECTHYPER{../.}{MiniJava-Dynamics}{2}} ~ & \textsf{Declarations} \\
-  \textsf{\SECTHYPER{../.}{MiniJava-Dynamics}{3}} ~ & \textsf{Statements} \\
-  \textsf{\SECTHYPER{../.}{MiniJava-Dynamics}{4}} ~ & \textsf{Expressions} \\
-  \textsf{\SECTHYPER{../.}{MiniJava-Dynamics}{5}} ~ & \textsf{Lexemes} \\
-  \textsf{\SECTHYPER{../.}{MiniJava-Syntax}{6}} ~ & \textsf{Disambiguation}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \textsf{\SECTHYPER{../.}{MiniJava-Dynamics}{1}} \ & \textsf{Programs} \\
+  \textsf{\SECTHYPER{../.}{MiniJava-Dynamics}{2}} \ & \textsf{Declarations} \\
+  \textsf{\SECTHYPER{../.}{MiniJava-Dynamics}{3}} \ & \textsf{Statements} \\
+  \textsf{\SECTHYPER{../.}{MiniJava-Dynamics}{4}} \ & \textsf{Expressions} \\
+  \textsf{\SECTHYPER{../.}{MiniJava-Dynamics}{5}} \ & \textsf{Lexemes} \\
+  \textsf{\SECTHYPER{../.}{MiniJava-Syntax}{6}} \ & \textsf{Disambiguation}
+  \ ]
+\end{align*}$$
 
 
 The section numbers above are links into other files.
-
 
 
 
@@ -51,5 +58,16 @@ The section numbers above are links into other files.
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]: /CBS-beta 
+[CBS-beta]: /CBS-beta
   "CBS-BETA"
+[MiniJava-Start.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Start/MiniJava-Start.cbs
+  "CBS SOURCE FILE ON GITHUB"
+[PLAIN]: /CBS-beta/docs/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Start
+  "CBS SOURCE WEB PAGE"
+ [PRETTY]: /CBS-beta/math/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Start
+  "CBS-KATEX WEB PAGE"
+[PDF]: /CBS-beta/math/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Start/MiniJava-Start.pdf
+  "CBS-LATEX PDF FILE"
+[PLanCompS Project]: https://plancomps.github.io
+  "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
+{::comment}{% endraw %}{:/}

@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Changes
 nav_order: "8"
 ---

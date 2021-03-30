@@ -1,134 +1,151 @@
+{::comment}{% raw %}{:/}
+<details open markdown="block">
+  <summary>
+    Outline
+  </summary>
+  {: .text-delta }
+- TOC
+{:toc}
+</details>
+
 ### Giving
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Entity} ~ & \NAMEREF{given-value} \\
-  \KEY{Funcon} ~ & \NAMEREF{initialise-giving} \\
-  \KEY{Funcon} ~ & \NAMEREF{give} \\
-  \KEY{Funcon} ~ & \NAMEREF{given} \\
-  \KEY{Funcon} ~ & \NAMEREF{no-given} \\
-  \KEY{Funcon} ~ & \NAMEREF{left-to-right-map} \\
-  \KEY{Funcon} ~ & \NAMEREF{interleave-map} \\
-  \KEY{Funcon} ~ & \NAMEREF{left-to-right-repeat} \\
-  \KEY{Funcon} ~ & \NAMEREF{interleave-repeat} \\
-  \KEY{Funcon} ~ & \NAMEREF{left-to-right-filter} \\
-  \KEY{Funcon} ~ & \NAMEREF{interleave-filter} \\
-  \KEY{Funcon} ~ & \NAMEREF{fold-left} \\
-  \KEY{Funcon} ~ & \NAMEREF{fold-right}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Entity} \ & \NAMEREF{given-value} \\
+  \KEY{Funcon} \ & \NAMEREF{initialise-giving} \\
+  \KEY{Funcon} \ & \NAMEREF{give} \\
+  \KEY{Funcon} \ & \NAMEREF{given} \\
+  \KEY{Funcon} \ & \NAMEREF{no-given} \\
+  \KEY{Funcon} \ & \NAMEREF{left-to-right-map} \\
+  \KEY{Funcon} \ & \NAMEREF{interleave-map} \\
+  \KEY{Funcon} \ & \NAMEREF{left-to-right-repeat} \\
+  \KEY{Funcon} \ & \NAMEREF{interleave-repeat} \\
+  \KEY{Funcon} \ & \NAMEREF{left-to-right-filter} \\
+  \KEY{Funcon} \ & \NAMEREF{interleave-filter} \\
+  \KEY{Funcon} \ & \NAMEREF{fold-left} \\
+  \KEY{Funcon} \ & \NAMEREF{fold-right}
+  \ ]
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Meta-variables} ~ 
-  & \VAR{T}, \VAR{T}' <: \NAMEHYPER{../../../Values}{Value-Types}{values} \VAR{T}\QUERY <: \NAMEHYPER{../../../Values}{Value-Types}{values}\QUERY
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Meta-variables} \
+  & \VAR{T}, \VAR{T}' <: \NAMEHYPER{../../../Values}{Value-Types}{values} \qquad \\& \VAR{T}\QUERY <: \NAMEHYPER{../../../Values}{Value-Types}{values}\QUERY
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Entity} ~ 
+$$\begin{align*}
+  \KEY{Entity} \
   & \NAMEDECL{given-value}(\_ : \NAMEHYPER{../../../Values}{Value-Types}{values}\QUERY) \vdash \_ \TRANS  \_
-\end{aligned}$$
+\end{align*}$$
 
 
   The given-value entity allows a computation to refer to a single
-  previously-computed $$\SHADE{\VAR{V} : \NAMEHYPER{../../../Values}{Value-Types}{values}}$$. The given value $$\SHADE{(  ~  )}$$ represents 
+  previously-computed $$\SHADE{\VAR{V} : \NAMEHYPER{../../../Values}{Value-Types}{values}}$$. The given value $$\SHADE{(   \  )}$$ represents 
   the absence of a current given value.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{initialise-giving}(\VAR{X} : (  ~  ) \TO \VAR{T}') : (  ~  ) \TO \VAR{T}' \\
-  & \quad \leadsto \NAMEREF{no-given}
-                     ( \VAR{X} )
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{initialise-giving}(
+                       \VAR{X} : (   \  ) \TO \VAR{T}') 
+    : (   \  ) \TO \VAR{T}' \\&\quad
+    \leadsto \NAMEREF{no-given}
+               (  \VAR{X} )
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{initialise-giving}
-           ( \VAR{X} )}$$ ensures that the entities used by the funcons for
+           (  \VAR{X} )}$$ ensures that the entities used by the funcons for
   giving are properly initialised.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{give}(\_ : \VAR{T}, \_ : \VAR{T} \TO \VAR{T}') :  \TO \VAR{T}'
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{give}(
+                       \_ : \VAR{T}, \_ : \VAR{T} \TO \VAR{T}') 
+    :  \TO \VAR{T}' 
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{give}
-           ( \VAR{X},   
-             \VAR{Y} )}$$ executes $$\SHADE{\VAR{X}}$$, possibly referring to the current $$\SHADE{\NAMEREF{given}}$$ value,
+           (  \VAR{X}, 
+                  \VAR{Y} )}$$ executes $$\SHADE{\VAR{X}}$$, possibly referring to the current $$\SHADE{\NAMEREF{given}}$$ value,
   to compute a value $$\SHADE{\VAR{V}}$$. It then executes $$\SHADE{\VAR{Y}}$$ with $$\SHADE{\VAR{V}}$$ as the $$\SHADE{\NAMEREF{given}}$$ value,
   to compute the result.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
+$$\begin{align*}
+  \KEY{Rule} \
     & \RULE{
-      \NAMEREF{given-value} ( \VAR{V} ) \vdash \VAR{Y} \TRANS 
-        \VAR{Y}'
+      & \NAMEREF{given-value} (  \VAR{V} ) \vdash \VAR{Y} \TRANS 
+          \VAR{Y}'
       }{
-      & \NAMEREF{given-value} ( \_\QUERY ) \vdash \NAMEREF{give}
-                      ( \VAR{V} : \VAR{T},   
-                        \VAR{Y} ) \TRANS 
+      & \NAMEREF{given-value} (  \_\QUERY ) \vdash \NAMEREF{give}
+                      (  \VAR{V} : \VAR{T}, 
+                             \VAR{Y} ) \TRANS 
           \NAMEREF{give}
-            ( \VAR{V},   
-              \VAR{Y}' )
+            (  \VAR{V}, 
+                   \VAR{Y}' )
       }
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{give}
-        ( \_ : \VAR{T},   
-          \VAR{W} : \VAR{T}' ) \leadsto
+        (  \_ : \VAR{T}, 
+               \VAR{W} : \VAR{T}' ) \leadsto 
         \VAR{W}
-\end{aligned}$$
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{given} : \VAR{T} \TO \VAR{T}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{given} 
+    : \VAR{T} \TO \VAR{T} 
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{given}}$$ refers to the current given value.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
-    & \NAMEREF{given-value} ( \VAR{V} : \NAMEHYPER{../../../Values}{Value-Types}{values} ) \vdash \NAMEREF{given} \TRANS 
+$$\begin{align*}
+  \KEY{Rule} \
+    & \NAMEREF{given-value} (  \VAR{V} : \NAMEHYPER{../../../Values}{Value-Types}{values} ) \vdash \NAMEREF{given} \TRANS 
         \VAR{V}
 \\
-  \KEY{Rule} ~ 
-    & \NAMEREF{given-value} (  ~  ) \vdash \NAMEREF{given} \TRANS 
+  \KEY{Rule} \
+    & \NAMEREF{given-value} (   \  ) \vdash \NAMEREF{given} \TRANS 
         \NAMEHYPER{../../Abnormal}{Failing}{fail}
-\end{aligned}$$
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{no-given}(\_ : (  ~  ) \TO \VAR{T}') : (  ~  ) \TO \VAR{T}'
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{no-given}(
+                       \_ : (   \  ) \TO \VAR{T}') 
+    : (   \  ) \TO \VAR{T}' 
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{no-given}
-           ( \VAR{X} )}$$ computes $$\SHADE{\VAR{X}}$$ without references to the current given value.
+           (  \VAR{X} )}$$ computes $$\SHADE{\VAR{X}}$$ without references to the current given value.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
+$$\begin{align*}
+  \KEY{Rule} \
     & \RULE{
-      \NAMEREF{given-value} (  ~  ) \vdash \VAR{X} \TRANS 
-        \VAR{X}'
+      & \NAMEREF{given-value} (   \  ) \vdash \VAR{X} \TRANS 
+          \VAR{X}'
       }{
-      & \NAMEREF{given-value} ( \_\QUERY ) \vdash \NAMEREF{no-given}
-                      ( \VAR{X} ) \TRANS 
+      & \NAMEREF{given-value} (  \_\QUERY ) \vdash \NAMEREF{no-given}
+                      (  \VAR{X} ) \TRANS 
           \NAMEREF{no-given}
-            ( \VAR{X}' )
+            (  \VAR{X}' )
       }
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{no-given}
-        ( \VAR{U} : \VAR{T}' ) \leadsto
+        (  \VAR{U} : \VAR{T}' ) \leadsto 
         \VAR{U}
-\end{aligned}$$
+\end{align*}$$
 
 #### Mapping
                
@@ -137,181 +154,189 @@ $$\relax\begin{aligned}\relax
 
   Maps on collection values can be expressed directly, e.g.,
   $$\SHADE{\NAMEHYPER{../../../Values/Composite}{Lists}{list}
-           ( \NAMEREF{left-to-right-map}
-               ( \VAR{F},    
-                 \NAMEHYPER{../../../Values/Composite}{Lists}{list-elements}
-                   ( \VAR{L} ) ) )}$$.
+           (  \NAMEREF{left-to-right-map}
+                   (  \VAR{F}, 
+                          \NAMEHYPER{../../../Values/Composite}{Lists}{list-elements}
+                           (  \VAR{L} ) ) )}$$.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{left-to-right-map}(\_ : \VAR{T} \TO \VAR{T}', \_ : ( \VAR{T} )\STAR) :  \TO ( \VAR{T}' )\STAR
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{left-to-right-map}(
+                       \_ : \VAR{T} \TO \VAR{T}', \_ : (  \VAR{T} )\STAR) 
+    :  \TO (  \VAR{T}' )\STAR 
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{left-to-right-map}
-           ( \VAR{F},   
-             \VAR{V}\STAR )}$$ computes $$\SHADE{\VAR{F}}$$ for each value in $$\SHADE{\VAR{V}\STAR}$$ from left
+           (  \VAR{F}, 
+                  \VAR{V}\STAR )}$$ computes $$\SHADE{\VAR{F}}$$ for each value in $$\SHADE{\VAR{V}\STAR}$$ from left
   to right, returning the sequence of resulting values.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
+$$\begin{align*}
+  \KEY{Rule} \
     & \NAMEREF{left-to-right-map}
-        ( \VAR{F},   
-          \VAR{V} : \VAR{T},   
-          \VAR{V}\STAR : ( \VAR{T} )\STAR ) \leadsto
+        (  \VAR{F}, 
+               \VAR{V} : \VAR{T}, 
+               \VAR{V}\STAR : (  \VAR{T} )\STAR ) \leadsto \\&\quad
         \NAMEHYPER{../.}{Flowing}{left-to-right}
-          ( \NAMEREF{give}
-              ( \VAR{V},    
-                \VAR{F} ),   
-            \NAMEREF{left-to-right-map}
-              ( \VAR{F},    
-                \VAR{V}\STAR ) )
+          (  \NAMEREF{give}
+                  (  \VAR{V}, 
+                         \VAR{F} ), 
+                 \NAMEREF{left-to-right-map}
+                  (  \VAR{F}, 
+                         \VAR{V}\STAR ) )
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{left-to-right-map}
-        ( \_,   
-          (  ~  ) ) \leadsto
-        (  ~  )
-\end{aligned}$$
+        (  \_, 
+               (   \  ) ) \leadsto 
+        (   \  )
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{interleave-map}(\_ : \VAR{T} \TO \VAR{T}', \_ : ( \VAR{T} )\STAR) :  \TO ( \VAR{T}' )\STAR
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{interleave-map}(
+                       \_ : \VAR{T} \TO \VAR{T}', \_ : (  \VAR{T} )\STAR) 
+    :  \TO (  \VAR{T}' )\STAR 
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{interleave-map}
-           ( \VAR{F},   
-             \VAR{V}\STAR )}$$ computes $$\SHADE{\VAR{F}}$$ for each value in $$\SHADE{\VAR{V}\STAR}$$ interleaved, 
+           (  \VAR{F}, 
+                  \VAR{V}\STAR )}$$ computes $$\SHADE{\VAR{F}}$$ for each value in $$\SHADE{\VAR{V}\STAR}$$ interleaved, 
   returning the sequence of resulting values.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
+$$\begin{align*}
+  \KEY{Rule} \
     & \NAMEREF{interleave-map}
-        ( \VAR{F},   
-          \VAR{V} : \VAR{T},   
-          \VAR{V}\STAR : ( \VAR{T} )\STAR ) \leadsto
+        (  \VAR{F}, 
+               \VAR{V} : \VAR{T}, 
+               \VAR{V}\STAR : (  \VAR{T} )\STAR ) \leadsto \\&\quad
         \NAMEHYPER{../.}{Flowing}{interleave}
-          ( \NAMEREF{give}
-              ( \VAR{V},    
-                \VAR{F} ),   
-            \NAMEREF{interleave-map}
-              ( \VAR{F},    
-                \VAR{V}\STAR ) )
+          (  \NAMEREF{give}
+                  (  \VAR{V}, 
+                         \VAR{F} ), 
+                 \NAMEREF{interleave-map}
+                  (  \VAR{F}, 
+                         \VAR{V}\STAR ) )
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{interleave-map}
-        ( \_,   
-          (  ~  ) ) \leadsto
-        (  ~  )
-\end{aligned}$$
+        (  \_, 
+               (   \  ) ) \leadsto 
+        (   \  )
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{left-to-right-repeat}(\_ : \NAMEHYPER{../../../Values/Primitive}{Integers}{integers} \TO \VAR{T}', \_ : \NAMEHYPER{../../../Values/Primitive}{Integers}{integers}, \_ : \NAMEHYPER{../../../Values/Primitive}{Integers}{integers}) :  \TO ( \VAR{T}' )\STAR
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{left-to-right-repeat}(
+                       \_ : \NAMEHYPER{../../../Values/Primitive}{Integers}{integers} \TO \VAR{T}', \_ : \NAMEHYPER{../../../Values/Primitive}{Integers}{integers}, \_ : \NAMEHYPER{../../../Values/Primitive}{Integers}{integers}) 
+    :  \TO (  \VAR{T}' )\STAR 
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{left-to-right-repeat}
-           ( \VAR{F},   
-             \VAR{M},   
-             \VAR{N} )}$$ computes $$\SHADE{\VAR{F}}$$ for each value from $$\SHADE{\VAR{M}}$$ to $$\SHADE{\VAR{N}}$$ 
+           (  \VAR{F}, 
+                  \VAR{M}, 
+                  \VAR{N} )}$$ computes $$\SHADE{\VAR{F}}$$ for each value from $$\SHADE{\VAR{M}}$$ to $$\SHADE{\VAR{N}}$$ 
   sequentially, returning the sequence of resulting values.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
+$$\begin{align*}
+  \KEY{Rule} \
     & \RULE{
-      \NAMEHYPER{../../../Values/Primitive}{Integers}{is-less-or-equal}
-        ( \VAR{M},   
-          \VAR{N} ) == 
-        \NAMEHYPER{../../../Values/Primitive}{Booleans}{true}
+      & \NAMEHYPER{../../../Values/Primitive}{Integers}{is-less-or-equal}
+          (  \VAR{M}, 
+                 \VAR{N} ) 
+        == \NAMEHYPER{../../../Values/Primitive}{Booleans}{true}
       }{
       & \NAMEREF{left-to-right-repeat}
-          ( \VAR{F},   
-            \VAR{M} : \NAMEHYPER{../../../Values/Primitive}{Integers}{integers},   
-            \VAR{N} : \NAMEHYPER{../../../Values/Primitive}{Integers}{integers} ) \leadsto
+          (  \VAR{F}, 
+                 \VAR{M} : \NAMEHYPER{../../../Values/Primitive}{Integers}{integers}, 
+                 \VAR{N} : \NAMEHYPER{../../../Values/Primitive}{Integers}{integers} ) \leadsto \\&\quad
           \NAMEHYPER{../.}{Flowing}{left-to-right}
-            ( \NAMEREF{give}
-                ( \VAR{M},    
-                  \VAR{F} ),   
-              \NAMEREF{left-to-right-repeat}
-                ( \VAR{F},    
-                  \NAMEHYPER{../../../Values/Primitive}{Integers}{int-add}
-                    ( \VAR{M},     
-                      1 ),    
-                  \VAR{N} ) )
+            (  \NAMEREF{give}
+                    (  \VAR{M}, 
+                           \VAR{F} ), 
+                   \NAMEREF{left-to-right-repeat}
+                    (  \VAR{F}, 
+                           \NAMEHYPER{../../../Values/Primitive}{Integers}{int-add}
+                            (  \VAR{M}, 
+                                   1 ), 
+                           \VAR{N} ) )
       }
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \RULE{
-      \NAMEHYPER{../../../Values/Primitive}{Integers}{is-less-or-equal}
-        ( \VAR{M},   
-          \VAR{N} ) == 
-        \NAMEHYPER{../../../Values/Primitive}{Booleans}{false}
+      & \NAMEHYPER{../../../Values/Primitive}{Integers}{is-less-or-equal}
+          (  \VAR{M}, 
+                 \VAR{N} ) 
+        == \NAMEHYPER{../../../Values/Primitive}{Booleans}{false}
       }{
       & \NAMEREF{left-to-right-repeat}
-          ( \_,   
-            \VAR{M} : \NAMEHYPER{../../../Values/Primitive}{Integers}{integers},   
-            \VAR{N} : \NAMEHYPER{../../../Values/Primitive}{Integers}{integers} ) \leadsto
-          (  ~  )
+          (  \_, 
+                 \VAR{M} : \NAMEHYPER{../../../Values/Primitive}{Integers}{integers}, 
+                 \VAR{N} : \NAMEHYPER{../../../Values/Primitive}{Integers}{integers} ) \leadsto 
+          (   \  )
       }
-\end{aligned}$$
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{interleave-repeat}(\_ : \NAMEHYPER{../../../Values/Primitive}{Integers}{integers} \TO \VAR{T}', \_ : \NAMEHYPER{../../../Values/Primitive}{Integers}{integers}, \_ : \NAMEHYPER{../../../Values/Primitive}{Integers}{integers}) :  \TO ( \VAR{T}' )\STAR
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{interleave-repeat}(
+                       \_ : \NAMEHYPER{../../../Values/Primitive}{Integers}{integers} \TO \VAR{T}', \_ : \NAMEHYPER{../../../Values/Primitive}{Integers}{integers}, \_ : \NAMEHYPER{../../../Values/Primitive}{Integers}{integers}) 
+    :  \TO (  \VAR{T}' )\STAR 
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{interleave-repeat}
-           ( \VAR{F},   
-             \VAR{M},   
-             \VAR{N} )}$$ computes $$\SHADE{\VAR{F}}$$ for each value from $$\SHADE{\VAR{M}}$$ to $$\SHADE{\VAR{N}}$$ 
+           (  \VAR{F}, 
+                  \VAR{M}, 
+                  \VAR{N} )}$$ computes $$\SHADE{\VAR{F}}$$ for each value from $$\SHADE{\VAR{M}}$$ to $$\SHADE{\VAR{N}}$$ 
   interleaved, returning the sequence of resulting values.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
+$$\begin{align*}
+  \KEY{Rule} \
     & \RULE{
-      \NAMEHYPER{../../../Values/Primitive}{Integers}{is-less-or-equal}
-        ( \VAR{M},   
-          \VAR{N} ) == 
-        \NAMEHYPER{../../../Values/Primitive}{Booleans}{true}
+      & \NAMEHYPER{../../../Values/Primitive}{Integers}{is-less-or-equal}
+          (  \VAR{M}, 
+                 \VAR{N} ) 
+        == \NAMEHYPER{../../../Values/Primitive}{Booleans}{true}
       }{
       & \NAMEREF{interleave-repeat}
-          ( \VAR{F},   
-            \VAR{M} : \NAMEHYPER{../../../Values/Primitive}{Integers}{integers},   
-            \VAR{N} : \NAMEHYPER{../../../Values/Primitive}{Integers}{integers} ) \leadsto
+          (  \VAR{F}, 
+                 \VAR{M} : \NAMEHYPER{../../../Values/Primitive}{Integers}{integers}, 
+                 \VAR{N} : \NAMEHYPER{../../../Values/Primitive}{Integers}{integers} ) \leadsto \\&\quad
           \NAMEHYPER{../.}{Flowing}{interleave}
-            ( \NAMEREF{give}
-                ( \VAR{M},    
-                  \VAR{F} ),   
-              \NAMEREF{interleave-repeat}
-                ( \VAR{F},    
-                  \NAMEHYPER{../../../Values/Primitive}{Integers}{int-add}
-                    ( \VAR{M},     
-                      1 ),    
-                  \VAR{N} ) )
+            (  \NAMEREF{give}
+                    (  \VAR{M}, 
+                           \VAR{F} ), 
+                   \NAMEREF{interleave-repeat}
+                    (  \VAR{F}, 
+                           \NAMEHYPER{../../../Values/Primitive}{Integers}{int-add}
+                            (  \VAR{M}, 
+                                   1 ), 
+                           \VAR{N} ) )
       }
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \RULE{
-      \NAMEHYPER{../../../Values/Primitive}{Integers}{is-less-or-equal}
-        ( \VAR{M},   
-          \VAR{N} ) == 
-        \NAMEHYPER{../../../Values/Primitive}{Booleans}{false}
+      & \NAMEHYPER{../../../Values/Primitive}{Integers}{is-less-or-equal}
+          (  \VAR{M}, 
+                 \VAR{N} ) 
+        == \NAMEHYPER{../../../Values/Primitive}{Booleans}{false}
       }{
       & \NAMEREF{interleave-repeat}
-          ( \_,   
-            \VAR{M} : \NAMEHYPER{../../../Values/Primitive}{Integers}{integers},   
-            \VAR{N} : \NAMEHYPER{../../../Values/Primitive}{Integers}{integers} ) \leadsto
-          (  ~  )
+          (  \_, 
+                 \VAR{M} : \NAMEHYPER{../../../Values/Primitive}{Integers}{integers}, 
+                 \VAR{N} : \NAMEHYPER{../../../Values/Primitive}{Integers}{integers} ) \leadsto 
+          (   \  )
       }
-\end{aligned}$$
+\end{align*}$$
 
 #### Filtering
                
@@ -320,167 +345,174 @@ $$\relax\begin{aligned}\relax
 
  Filters on collections of values can be expressed directly, e.g., 
  $$\SHADE{\NAMEHYPER{../../../Values/Composite}{Lists}{list}
-           ( \NAMEREF{left-to-right-filter}
-               ( \VAR{P},    
-                 \NAMEHYPER{../../../Values/Composite}{Lists}{list-elements}
-                   ( \VAR{L} ) ) )}$$ to filter a list $$\SHADE{\VAR{L}}$$.
+           (  \NAMEREF{left-to-right-filter}
+                   (  \VAR{P}, 
+                          \NAMEHYPER{../../../Values/Composite}{Lists}{list-elements}
+                           (  \VAR{L} ) ) )}$$ to filter a list $$\SHADE{\VAR{L}}$$.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{left-to-right-filter}(\_ : \VAR{T} \TO \NAMEHYPER{../../../Values/Primitive}{Booleans}{booleans}, \_ : ( \VAR{T} )\STAR) :  \TO ( \VAR{T} )\STAR
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{left-to-right-filter}(
+                       \_ : \VAR{T} \TO \NAMEHYPER{../../../Values/Primitive}{Booleans}{booleans}, \_ : (  \VAR{T} )\STAR) 
+    :  \TO (  \VAR{T} )\STAR 
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{left-to-right-filter}
-           ( \VAR{P},   
-             \VAR{V}\STAR )}$$ computes $$\SHADE{\VAR{P}}$$ for each value in $$\SHADE{\VAR{V}\STAR}$$ from left
+           (  \VAR{P}, 
+                  \VAR{V}\STAR )}$$ computes $$\SHADE{\VAR{P}}$$ for each value in $$\SHADE{\VAR{V}\STAR}$$ from left
   to right, returning the sequence of argument values for which the result is
   $$\SHADE{\NAMEHYPER{../../../Values/Primitive}{Booleans}{true}}$$.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
+$$\begin{align*}
+  \KEY{Rule} \
     & \NAMEREF{left-to-right-filter}
-        ( \VAR{P},   
-          \VAR{V} : \VAR{T},   
-          \VAR{V}\STAR : ( \VAR{T} )\STAR ) \leadsto
+        (  \VAR{P}, 
+               \VAR{V} : \VAR{T}, 
+               \VAR{V}\STAR : (  \VAR{T} )\STAR ) \leadsto \\&\quad
         \NAMEHYPER{../.}{Flowing}{left-to-right}
-          ( \NAMEHYPER{../../../Values}{Value-Types}{when-true}
-              ( \NAMEREF{give}
-                  ( \VAR{V},     
-                    \VAR{P} ),    
-                \VAR{V} ),   
-            \NAMEREF{left-to-right-filter}
-              ( \VAR{P},    
-                \VAR{V}\STAR ) )
+          (  \NAMEHYPER{../../../Values}{Value-Types}{when-true}
+                  (  \NAMEREF{give}
+                          (  \VAR{V}, 
+                                 \VAR{P} ), 
+                         \VAR{V} ), 
+                 \NAMEREF{left-to-right-filter}
+                  (  \VAR{P}, 
+                         \VAR{V}\STAR ) )
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{left-to-right-filter}
-        ( \_ ) \leadsto
-        (  ~  )
-\end{aligned}$$
+        (  \_ ) \leadsto 
+        (   \  )
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{interleave-filter}(\_ : \VAR{T} \TO \NAMEHYPER{../../../Values/Primitive}{Booleans}{booleans}, \_ : ( \VAR{T} )\STAR) :  \TO ( \VAR{T} )\STAR
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{interleave-filter}(
+                       \_ : \VAR{T} \TO \NAMEHYPER{../../../Values/Primitive}{Booleans}{booleans}, \_ : (  \VAR{T} )\STAR) 
+    :  \TO (  \VAR{T} )\STAR 
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{interleave-filter}
-           ( \VAR{P},   
-             \VAR{V}\STAR )}$$ computes $$\SHADE{\VAR{P}}$$ for each value in $$\SHADE{\VAR{V}\STAR}$$ interleaved,
+           (  \VAR{P}, 
+                  \VAR{V}\STAR )}$$ computes $$\SHADE{\VAR{P}}$$ for each value in $$\SHADE{\VAR{V}\STAR}$$ interleaved,
   returning the sequence of argument values for which the result is $$\SHADE{\NAMEHYPER{../../../Values/Primitive}{Booleans}{true}}$$.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
+$$\begin{align*}
+  \KEY{Rule} \
     & \NAMEREF{interleave-filter}
-        ( \VAR{P},   
-          \VAR{V} : \VAR{T},   
-          \VAR{V}\STAR : ( \VAR{T} )\STAR ) \leadsto
+        (  \VAR{P}, 
+               \VAR{V} : \VAR{T}, 
+               \VAR{V}\STAR : (  \VAR{T} )\STAR ) \leadsto \\&\quad
         \NAMEHYPER{../.}{Flowing}{interleave}
-          ( \NAMEHYPER{../../../Values}{Value-Types}{when-true}
-              ( \NAMEREF{give}
-                  ( \VAR{V},     
-                    \VAR{P} ),    
-                \VAR{V} ),   
-            \NAMEREF{interleave-filter}
-              ( \VAR{P},    
-                \VAR{V}\STAR ) )
+          (  \NAMEHYPER{../../../Values}{Value-Types}{when-true}
+                  (  \NAMEREF{give}
+                          (  \VAR{V}, 
+                                 \VAR{P} ), 
+                         \VAR{V} ), 
+                 \NAMEREF{interleave-filter}
+                  (  \VAR{P}, 
+                         \VAR{V}\STAR ) )
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{interleave-filter}
-        ( \_ ) \leadsto
-        (  ~  )
-\end{aligned}$$
+        (  \_ ) \leadsto 
+        (   \  )
+\end{align*}$$
 
 #### Folding
                
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{fold-left}(\_ : \NAMEHYPER{../../../Values/Composite}{Tuples}{tuples}
-                                ( \VAR{T},   
-                                  \VAR{T}' ) \TO \VAR{T}, \_ : \VAR{T}, \_ : ( \VAR{T}' )\STAR) :  \TO \VAR{T}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{fold-left}(
+                       \_ : \NAMEHYPER{../../../Values/Composite}{Tuples}{tuples}
+                                 (  \VAR{T}, 
+                                        \VAR{T}' ) \TO \VAR{T}, \_ : \VAR{T}, \_ : (  \VAR{T}' )\STAR) 
+    :  \TO \VAR{T} 
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{fold-left}
-           ( \VAR{F},   
-             \VAR{A},   
-             \VAR{V}\STAR )}$$ reduces a sequence $$\SHADE{\VAR{V}\STAR}$$ to a single value by folding it
+           (  \VAR{F}, 
+                  \VAR{A}, 
+                  \VAR{V}\STAR )}$$ reduces a sequence $$\SHADE{\VAR{V}\STAR}$$ to a single value by folding it
   from the left, using $$\SHADE{\VAR{A}}$$ as the initial accumulator value, and iteratively
   updating the accumulator by giving $$\SHADE{\VAR{F}}$$ the pair of the accumulator value and
   the first of the remaining arguments.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
+$$\begin{align*}
+  \KEY{Rule} \
     & \NAMEREF{fold-left}
-        ( \_,   
-          \VAR{A} : \VAR{T},   
-          (  ~  ) ) \leadsto
+        (  \_, 
+               \VAR{A} : \VAR{T}, 
+               (   \  ) ) \leadsto 
         \VAR{A}
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{fold-left}
-        ( \VAR{F},   
-          \VAR{A} : \VAR{T},   
-          \VAR{V} : \VAR{T}',   
-          \VAR{V}\STAR : ( \VAR{T}' )\STAR ) \leadsto
+        (  \VAR{F}, 
+               \VAR{A} : \VAR{T}, 
+               \VAR{V} : \VAR{T}', 
+               \VAR{V}\STAR : (  \VAR{T}' )\STAR ) \leadsto 
         \NAMEREF{fold-left}
-          ( \VAR{F},   
-            \NAMEREF{give}
-              ( \NAMEHYPER{../../../Values/Composite}{Tuples}{tuple}
-                  ( \VAR{A},     
-                    \VAR{V} ),    
-                \VAR{F} ),   
-            \VAR{V}\STAR )
-\end{aligned}$$
+          (  \VAR{F}, 
+                 \NAMEREF{give}
+                  (  \NAMEHYPER{../../../Values/Composite}{Tuples}{tuple}
+                          (  \VAR{A}, 
+                                 \VAR{V} ), 
+                         \VAR{F} ), 
+                 \VAR{V}\STAR )
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{fold-right}(\_ : \NAMEHYPER{../../../Values/Composite}{Tuples}{tuples}
-                                ( \VAR{T},   
-                                  \VAR{T}' ) \TO \VAR{T}', \_ : \VAR{T}', \_ : ( \VAR{T} )\STAR) :  \TO \VAR{T}'
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{fold-right}(
+                       \_ : \NAMEHYPER{../../../Values/Composite}{Tuples}{tuples}
+                                 (  \VAR{T}, 
+                                        \VAR{T}' ) \TO \VAR{T}', \_ : \VAR{T}', \_ : (  \VAR{T} )\STAR) 
+    :  \TO \VAR{T}' 
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{fold-right}
-           ( \VAR{F},   
-             \VAR{A},   
-             \VAR{V}\STAR )}$$ reduces a sequence $$\SHADE{\VAR{V}\STAR}$$ to a single value by folding it
+           (  \VAR{F}, 
+                  \VAR{A}, 
+                  \VAR{V}\STAR )}$$ reduces a sequence $$\SHADE{\VAR{V}\STAR}$$ to a single value by folding it
   from the right, using $$\SHADE{\VAR{A}}$$ as the initial accumulator value, and iteratively
   updating the accumulator by giving $$\SHADE{\VAR{F}}$$ the pair of the the last of the 
   remaining arguments and the accumulator value.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
+$$\begin{align*}
+  \KEY{Rule} \
     & \NAMEREF{fold-right}
-        ( \_,   
-          \VAR{A} : \VAR{T}',   
-          (  ~  ) ) \leadsto
+        (  \_, 
+               \VAR{A} : \VAR{T}', 
+               (   \  ) ) \leadsto 
         \VAR{A}
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{fold-right}
-        ( \VAR{F},   
-          \VAR{A} : \VAR{T}',   
-          \VAR{V}\STAR : ( \VAR{T} )\STAR,   
-          \VAR{V} : \VAR{T} ) \leadsto
+        (  \VAR{F}, 
+               \VAR{A} : \VAR{T}', 
+               \VAR{V}\STAR : (  \VAR{T} )\STAR, 
+               \VAR{V} : \VAR{T} ) \leadsto 
         \NAMEREF{give}
-          ( \NAMEHYPER{../../../Values/Composite}{Tuples}{tuple}
-              ( \VAR{V},    
-                \NAMEREF{fold-right}
-                  ( \VAR{F},     
-                    \VAR{A},     
-                    \VAR{V}\STAR ) ),   
-            \VAR{F} )
-\end{aligned}$$
-
+          (  \NAMEHYPER{../../../Values/Composite}{Tuples}{tuple}
+                  (  \VAR{V}, 
+                         \NAMEREF{fold-right}
+                          (  \VAR{F}, 
+                                 \VAR{A}, 
+                                 \VAR{V}\STAR ) ), 
+                 \VAR{F} )
+\end{align*}$$
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -491,5 +523,16 @@ $$\relax\begin{aligned}\relax
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]: /CBS-beta 
+[CBS-beta]: /CBS-beta
   "CBS-BETA"
+[Giving.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Funcons-beta/Computations/Normal/Giving/Giving.cbs
+  "CBS SOURCE FILE ON GITHUB"
+[PLAIN]: /CBS-beta/docs/Funcons-beta/Computations/Normal/Giving
+  "CBS SOURCE WEB PAGE"
+ [PRETTY]: /CBS-beta/math/Funcons-beta/Computations/Normal/Giving
+  "CBS-KATEX WEB PAGE"
+[PDF]: /CBS-beta/math/Funcons-beta/Computations/Normal/Giving/Giving.pdf
+  "CBS-LATEX PDF FILE"
+[PLanCompS Project]: https://plancomps.github.io
+  "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
+{::comment}{% endraw %}{:/}

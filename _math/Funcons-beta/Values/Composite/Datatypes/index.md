@@ -1,26 +1,26 @@
 ---
-layout: default
 title: "Datatypes"
 math: katex
 parent: Composite
 ancestor: Funcons-beta
 
 ---
+[Funcons-beta] : [Datatypes.cbs] \| [PLAIN] \| [PDF]
 
-[Funcons-beta] : [Datatypes.cbs]
+{::comment}{% raw %}{:/}
 
 ### Datatypes
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Type} ~ & \NAMEREF{datatype-values} \\
-  \KEY{Funcon} ~ & \NAMEREF{datatype-value} \\
-  \KEY{Funcon} ~ & \NAMEREF{datatype-value-id} \\
-  \KEY{Funcon} ~ & \NAMEREF{datatype-value-elements}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Type} \ & \NAMEREF{datatype-values} \\
+  \KEY{Funcon} \ & \NAMEREF{datatype-value} \\
+  \KEY{Funcon} \ & \NAMEREF{datatype-value-id} \\
+  \KEY{Funcon} \ & \NAMEREF{datatype-value-elements}
+  \ ]
+\end{align*}$$
 
 
   A datatype value consists of an identifier and a sequence of values.
@@ -28,57 +28,61 @@ $$\relax\begin{aligned}\relax
   'Datatype T ::= ...' declares the type $$\SHADE{\VAR{T}}$$ to refer to a fresh value
   constructor in $$\SHADE{\NAMEHYPER{../..}{Value-Types}{types}}$$, and asserts $$\SHADE{\VAR{T} <: \NAMEREF{datatype-values}}$$. 
   
-  Each constructor funcon 'F(_:T1,...,_:Tn)' of the datatype declaration
+  Each constructor funcon 'F(\_:T_1,...,\_:T_n)' of the datatype declaration
   generates values in $$\SHADE{\VAR{T}}$$ of the form $$\SHADE{\NAMEREF{datatype-value}
-           ( \STRING{F},   
-             \VAR{V}\SUB{1},   
-             \cdots,   
-             \VAR{Vn} )}$$ from
-  $$\SHADE{\VAR{V}\SUB{1} : \VAR{T}\SUB{1}}$$, ..., $$\SHADE{\VAR{Vn} : \VAR{Tn}}$$.
+           (  \STRING{F}, 
+                  \VAR{V}\SUB{1}, 
+                  \cdots, 
+                  \VAR{V}\SUB{n} )}$$ from
+  $$\SHADE{\VAR{V}\SUB{1} : \VAR{T}\SUB{1}}$$, ..., $$\SHADE{\VAR{V}\SUB{n} : \VAR{T}\SUB{n}}$$.
   
   Note that a computation $$\SHADE{\VAR{X}}$$ cannot be directly included in datatype values:
   it is necessary to encapsulate it in $$\SHADE{\NAMEHYPER{../../Abstraction}{Generic}{abstraction}
-           ( \VAR{X} )}$$.
+           (  \VAR{X} )}$$.
   
   'Datatype T', followed by declarations of constructor funcons for 'T',
   allows specification of GADTs.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Built-in Type} ~  
+$$\begin{align*}
+  \KEY{Built-in Type} \ 
   & \NAMEDECL{datatype-values}  
-  
-\end{aligned}$$
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Built-in Funcon} ~ 
-  & \NAMEDECL{datatype-value}(\_ : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}, \_ : \NAMEHYPER{../..}{Value-Types}{values}\STAR) : \NAMEREF{datatype-values}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Built-in Funcon} \
+  & \NAMEDECL{datatype-value}(
+                       \_ : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}, \_ : \NAMEHYPER{../..}{Value-Types}{values}\STAR) 
+    : \NAMEREF{datatype-values} 
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{datatype-value-id}(\_ : \NAMEREF{datatype-values}) :  \TO \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{datatype-value-id}(
+                       \_ : \NAMEREF{datatype-values}) 
+    :  \TO \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers} 
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{datatype-value-id}
-        ( \NAMEREF{datatype-value}
-            ( \VAR{I} : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers},    
-              \_\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ) ) \leadsto
+        (  \NAMEREF{datatype-value}
+                (  \VAR{I} : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}, 
+                       \_\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ) ) \leadsto 
         \VAR{I}
-\end{aligned}$$
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{datatype-value-elements}(\_ : \NAMEREF{datatype-values}) :  \TO \NAMEHYPER{../..}{Value-Types}{values}\STAR
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{datatype-value-elements}(
+                       \_ : \NAMEREF{datatype-values}) 
+    :  \TO \NAMEHYPER{../..}{Value-Types}{values}\STAR 
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{datatype-value-elements}
-        ( \NAMEREF{datatype-value}
-            ( \_ : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers},    
-              \VAR{V}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ) ) \leadsto
+        (  \NAMEREF{datatype-value}
+                (  \_ : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}, 
+                       \VAR{V}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ) ) \leadsto 
         \VAR{V}\STAR
-\end{aligned}$$
-
+\end{align*}$$
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -89,19 +93,24 @@ $$\relax\begin{aligned}\relax
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]: /CBS-beta 
+[CBS-beta]: /CBS-beta
   "CBS-BETA"
-
-
-____
-
-From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
-
-[Datatypes.cbs]: /CBS-beta/Funcons-beta/Values/Composite/Datatypes/Datatypes.cbs
-  "CBS SOURCE FILE"
+[Datatypes.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Funcons-beta/Values/Composite/Datatypes/Datatypes.cbs
+  "CBS SOURCE FILE ON GITHUB"
+[PLAIN]: /CBS-beta/docs/Funcons-beta/Values/Composite/Datatypes
+  "CBS SOURCE WEB PAGE"
+ [PRETTY]: /CBS-beta/math/Funcons-beta/Values/Composite/Datatypes
+  "CBS-KATEX WEB PAGE"
+[PDF]: /CBS-beta/math/Funcons-beta/Values/Composite/Datatypes/Datatypes.pdf
+  "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
+{::comment}{% endraw %}{:/}
+
+____
+From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
+
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues
   "CBS-BETA ISSUE REPORTS ON GITHUB"
-[Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20Values/Composite/Datatypes/Datatypes.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A 
+[Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20Values/Composite/Datatypes/Datatypes.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A
   "GENERATE AN EMAIL TEMPLATE"

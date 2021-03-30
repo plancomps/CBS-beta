@@ -1,0 +1,78 @@
+\begin{displaymath}
+\KEY{Language} \STRING{SL}
+\end{displaymath}
+
+\section*{$\SECT{4}$ Function definitions}\hypertarget{sect4-function-definitions}{}\label{sect4-function-definitions}
+
+\begin{align*}
+  \KEY{Syntax} ~ 
+    \VARDECL{FunDef} : \SYN{fun-def}
+      ~ ::= ~ & \LEX{function} ~ \SYNHYPER{../.}{SL-1-Lexemes}{id} ~ \LEX{(} ~ \SYNREF{id-list}\QUERY ~ \LEX{)} ~ \SYNHYPER{../.}{SL-3-Statements}{block}
+\end{align*}
+\begin{align*}
+  \KEY{Semantics} ~ 
+  & \SEMDECL{declare} \LEFTPHRASE ~ \VARREF{FunDef}\STAR : \SYNREF{fun-def}\STAR ~ \RIGHTPHRASE  
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{environments}
+\\
+  \KEY{Rule} ~ 
+    & \SEMREF{declare} \LEFTPHRASE ~ \LEX{function} ~ \VARHYPER{../.}{SL-1-Lexemes}{Id} ~ \LEX{(} ~ \VARREF{IdList}\QUERY ~ \LEX{)} ~ \VARHYPER{../.}{SL-3-Statements}{Block} ~ \RIGHTPHRASE  = \\&\quad
+      \{ \SEMHYPER{../.}{SL-1-Lexemes}{id} \LEFTPHRASE ~ \VAR{Id} ~ \RIGHTPHRASE  \mapsto 
+           \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{function} ~
+             \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Generic}{closure} ~
+               \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{scope}
+                 ( \NAMEHYPER{../.}{SL-Funcons}{initialise-local-variables}, \\&\quad \quad \quad \quad 
+                   \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
+                     ( \SEMREF{pass-list} \LEFTPHRASE ~ \VAR{IdList}\QUERY ~ \RIGHTPHRASE , \\&\quad \quad \quad \quad \quad 
+                       \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Returning}{handle-return}
+                         ( \SEMHYPER{../.}{SL-3-Statements}{exec} \LEFTPHRASE ~ \VAR{Block} ~ \RIGHTPHRASE  ) ) ) \}
+\\
+  \KEY{Rule} ~ 
+    & \SEMREF{declare} \LEFTPHRASE ~  ~ \RIGHTPHRASE  = \\&\quad
+      \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Maps}{map}
+        (  ~  )
+\\
+  \KEY{Rule} ~ 
+    & \SEMREF{declare} \LEFTPHRASE ~ \VARREF{FunDef} ~ \VARREF{FunDef}\PLUS ~ \RIGHTPHRASE  = \\&\quad
+      \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{collateral}
+        ( \SEMREF{declare} \LEFTPHRASE ~ \VAR{FunDef} ~ \RIGHTPHRASE , \\&\quad \quad 
+          \SEMREF{declare} \LEFTPHRASE ~ \VAR{FunDef}\PLUS ~ \RIGHTPHRASE  )
+\end{align*}
+\subsection*{Parameter lists}\hypertarget{parameter-lists}{}\label{parameter-lists}
+
+\begin{align*}
+  \KEY{Syntax} ~ 
+    \VARDECL{IdList} : \SYN{id-list}
+      ~ ::= ~ & \SYNHYPER{../.}{SL-1-Lexemes}{id} ~ \LEFTGROUP \LEX{,{}} ~ \SYNREF{id-list} \RIGHTGROUP\QUERY
+\end{align*}
+\begin{align*}
+  \KEY{Semantics} ~ 
+  & \SEMDECL{pass-list} \LEFTPHRASE ~ \VARREF{IdList} : \SYNREF{id-list}\QUERY ~ \RIGHTPHRASE  
+    : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{lists}
+        ( \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} ) \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type}
+\\
+  \KEY{Rule} ~ 
+    & \SEMREF{pass-list} \LEFTPHRASE ~  ~ \RIGHTPHRASE  = \\&\quad
+      \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-value}
+\\
+  \KEY{Rule} ~ 
+    & \SEMREF{pass-list} \LEFTPHRASE ~ \VARHYPER{../.}{SL-1-Lexemes}{Id} ~ \RIGHTPHRASE  = \\&\quad
+      \NAMEHYPER{../.}{SL-Funcons}{local-variable-initialise}
+        ( \SEMHYPER{../.}{SL-1-Lexemes}{id} \LEFTPHRASE ~ \VAR{Id} ~ \RIGHTPHRASE , \\&\quad \quad 
+          \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{checked} ~
+            \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{head} ~
+              \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} )
+\\
+  \KEY{Rule} ~ 
+    & \SEMREF{pass-list} \LEFTPHRASE ~ \VARHYPER{../.}{SL-1-Lexemes}{Id} ~ \LEX{,{}} ~ \VARREF{IdList} ~ \RIGHTPHRASE  = \\&\quad
+      \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
+        ( \NAMEHYPER{../.}{SL-Funcons}{local-variable-initialise}
+            ( \SEMHYPER{../.}{SL-1-Lexemes}{id} \LEFTPHRASE ~ \VAR{Id} ~ \RIGHTPHRASE , \\&\quad \quad \quad 
+              \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{checked} ~
+                \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{head} ~
+                  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} ), \\&\quad \quad 
+          \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{give}
+            ( \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{checked} ~
+                \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{tail} ~
+                  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given}, \\&\quad \quad \quad 
+              \SEMREF{pass-list} \LEFTPHRASE ~ \VAR{IdList} ~ \RIGHTPHRASE  ) )
+\end{align*}

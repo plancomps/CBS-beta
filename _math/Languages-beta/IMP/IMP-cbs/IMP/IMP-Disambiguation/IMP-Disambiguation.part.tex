@@ -1,0 +1,24 @@
+\begin{displaymath}
+\KEY{Language} \STRING{IMP}
+\end{displaymath}
+
+\section*{$\SECT{A}$ Disambiguation}\hypertarget{secta-disambiguation}{}\label{secta-disambiguation}
+
+$\KEY{Lexis SDF}$
+
+\begin{quote}
+lexical syntax \newline
+  $\SHADE{~~\SYNHYPER{../.}{IMP-1}{id}}$ = $\SHADE{\SYNHYPER{../.}{IMP-1}{keyword}}$ \{reject\}\newline
+lexical restrictions\newline
+  $\SHADE{~~\SYNHYPER{../.}{IMP-1}{id}}$ -/- {[}A-Za-z0-9{]}
+\end{quote}
+
+$\KEY{Syntax SDF}$
+
+\begin{quote}
+context-free syntax\newline
+$\SHADE{ \SYNHYPER{../.}{IMP-1}{aexp}  ~ ::= ~  \SYNHYPER{../.}{IMP-1}{aexp} ~ \LEX{+{}} ~ \SYNHYPER{../.}{IMP-1}{aexp}}$  \{assoc\}\newline
+$\SHADE{ \SYNHYPER{../.}{IMP-2}{bexp}  ~ ::= ~  \SYNHYPER{../.}{IMP-2}{bexp} ~ \LEX{\AMPERSAND \AMPERSAND } ~ \SYNHYPER{../.}{IMP-2}{bexp}}$ \{assoc\}\newline
+$\SHADE{ \SYNHYPER{../.}{IMP-3}{stmt}  ~ ::= ~  \SYNHYPER{../.}{IMP-3}{stmt} ~ \SYNHYPER{../.}{IMP-3}{stmt}}$      \{right\}
+\end{quote}
+

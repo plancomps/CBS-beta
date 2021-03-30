@@ -1,7 +1,6 @@
 \subsubsection*{Binding}\hypertarget{binding}{}\label{binding}
 
-\begin{displaymath}
-\relax\begin{aligned}\relax
+\begin{align*}
   [ ~ 
   \KEY{Type} ~ & \NAMEREF{environments} \\
   \KEY{Alias} ~ & \NAMEREF{envs} \\
@@ -26,20 +25,14 @@
   \KEY{Funcon} ~ & \NAMEREF{bind-recursively} \\
   \KEY{Funcon} ~ & \NAMEREF{recursive}
   ~ ]
-\end{aligned}
-\end{displaymath}
-
-\begin{displaymath}
-\relax\begin{aligned}\relax
+\end{align*}
+\begin{align*}
   \KEY{Meta-variables} ~ 
   & \VAR{T} <: \NAMEHYPER{../../../Values}{Value-Types}{values}
-\end{aligned}
-\end{displaymath}
-
+\end{align*}
 \paragraph*{Environments}\hypertarget{environments}{}\label{environments}
 
-\begin{displaymath}
-\relax\begin{aligned}\relax
+\begin{align*}
   \KEY{Type} ~  
   & \NAMEDECL{environments}  
   \leadsto \NAMEHYPER{../../../Values/Composite}{Maps}{maps}
@@ -48,9 +41,7 @@
 \\
   \KEY{Alias} ~ 
   & \NAMEDECL{envs} = \NAMEREF{environments}
-\end{aligned}
-\end{displaymath}
-
+\end{align*}
 An environment represents bindings of identifiers to values.
   Mapping an identifier to $\SHADE{(  ~  )}$ represents that its binding is hidden.
 
@@ -59,87 +50,65 @@ Circularity in environments (due to recursive bindings) is represented using
   declarations recursive and for referring to bound values without explicit
   mention of links, so their existence can generally be ignored.
 
-\begin{displaymath}
-\relax\begin{aligned}\relax
+\begin{align*}
   \KEY{Datatype} ~ 
   \NAMEDECL{identifiers}  
   ~ ::= ~ & 
   \{ \_ : \NAMEHYPER{../../../Values/Composite}{Strings}{strings} \} \\
   ~ \mid ~ & \NAMEDECL{identifier-tagged} (\_ : \NAMEREF{identifiers}, \_ : \NAMEHYPER{../../../Values}{Value-Types}{values})
-\end{aligned}
-\end{displaymath}
-
-\begin{displaymath}
-\relax\begin{aligned}\relax
+\end{align*}
+\begin{align*}
   \KEY{Alias} ~ 
   & \NAMEDECL{ids} = \NAMEREF{identifiers}
 \\
   \KEY{Alias} ~ 
   & \NAMEDECL{id-tagged} = \NAMEREF{identifier-tagged}
-\end{aligned}
-\end{displaymath}
-
+\end{align*}
 An identifier is either a string of characters, or an identifier tagged with
   some value (e.g., with the identifier of a namespace).
 
-\begin{displaymath}
-\relax\begin{aligned}\relax
+\begin{align*}
   \KEY{Funcon} ~ 
   & \NAMEDECL{fresh-identifier} :  \TO \NAMEREF{identifiers}
-\end{aligned}
-\end{displaymath}
-
+\end{align*}
 $\SHADE{\NAMEREF{fresh-identifier}}$ computes an identifier distinct from all previously
   computed identifiers.
 
-\begin{displaymath}
-\relax\begin{aligned}\relax
+\begin{align*}
   \KEY{Rule} ~ 
     & \NAMEREF{fresh-identifier} \leadsto
         \NAMEREF{identifier-tagged}
           ( \STRING{generated},   
             \NAMEHYPER{../.}{Generating}{fresh-atom} )
-\end{aligned}
-\end{displaymath}
-
+\end{align*}
 \paragraph*{Current bindings}\hypertarget{current-bindings}{}\label{current-bindings}
 
-\begin{displaymath}
-\relax\begin{aligned}\relax
+\begin{align*}
   \KEY{Entity} ~ 
   & \NAMEDECL{environment}(\_ : \NAMEREF{environments}) \vdash \_ \TRANS  \_
-\end{aligned}
-\end{displaymath}
-
-\begin{displaymath}
-\relax\begin{aligned}\relax
+\end{align*}
+\begin{align*}
   \KEY{Alias} ~ 
   & \NAMEDECL{env} = \NAMEREF{environment}
-\end{aligned}
-\end{displaymath}
-
+\end{align*}
 The environment entity allows a computation to refer to the current bindings
   of identifiers to values.
 
-\begin{displaymath}
-\relax\begin{aligned}\relax
+\begin{align*}
   \KEY{Funcon} ~ 
   & \NAMEDECL{initialise-binding}(\VAR{X} :  \TO \VAR{T}) :  \TO \VAR{T} \\
   & \quad \leadsto \NAMEHYPER{../.}{Linking}{initialise-linking}
                      ( \NAMEHYPER{../.}{Generating}{initialise-generating}
                          ( \NAMEREF{closed}
                              ( \VAR{X} ) ) )
-\end{aligned}
-\end{displaymath}
-
+\end{align*}
 $\SHADE{\NAMEREF{initialise-binding}
            ( \VAR{X} )}$ ensures that $\SHADE{\VAR{X}}$ does not depend on non-local bindings.
   It also ensures that the linking entity (used to represent potentially cyclic
   bindings) and the generating entity (for creating fresh identifiers) are 
   initialised.
 
-\begin{displaymath}
-\relax\begin{aligned}\relax
+\begin{align*}
   \KEY{Funcon} ~ 
   & \NAMEDECL{bind-value}(\VAR{I} : \NAMEREF{identifiers}, \VAR{V} : \NAMEHYPER{../../../Values}{Value-Types}{values}) :  \TO \NAMEREF{environments} \\
   & \quad \leadsto \{ \VAR{I} \mapsto 
@@ -147,33 +116,25 @@ $\SHADE{\NAMEREF{initialise-binding}
 \\
   \KEY{Alias} ~ 
   & \NAMEDECL{bind} = \NAMEREF{bind-value}
-\end{aligned}
-\end{displaymath}
-
+\end{align*}
 $\SHADE{\NAMEREF{bind-value}
            ( \VAR{I},   
              \VAR{X} )}$ computes the environment that binds only $\SHADE{\VAR{I}}$ to the value
   computed by $\SHADE{\VAR{X}}$.
 
-\begin{displaymath}
-\relax\begin{aligned}\relax
+\begin{align*}
   \KEY{Funcon} ~ 
   & \NAMEDECL{unbind}(\VAR{I} : \NAMEREF{identifiers}) :  \TO \NAMEREF{environments} \\
   & \quad \leadsto \{ \VAR{I} \mapsto 
                         (  ~  ) \}
-\end{aligned}
-\end{displaymath}
-
+\end{align*}
 $\SHADE{\NAMEREF{unbind}
            ( \VAR{I} )}$ computes the environment that hides the binding of $\SHADE{\VAR{I}}$.
 
-\begin{displaymath}
-\relax\begin{aligned}\relax
+\begin{align*}
   \KEY{Funcon} ~ 
   & \NAMEDECL{bound-directly}(\_ : \NAMEREF{identifiers}) :  \TO \NAMEHYPER{../../../Values}{Value-Types}{values}
-\end{aligned}
-\end{displaymath}
-
+\end{align*}
 $\SHADE{\NAMEREF{bound-directly}
            ( \VAR{I} )}$ returns the value to which $\SHADE{\VAR{I}}$ is currently bound, if any,
   and otherwise fails.
@@ -182,8 +143,7 @@ $\SHADE{\NAMEREF{bound-directly}
            ( \VAR{I} )}$ does \emph{not} follow links. It is used only in connection with
   recursively-bound values when references are not encapsulated in abstractions.
 
-\begin{displaymath}
-\relax\begin{aligned}\relax
+\begin{align*}
   \KEY{Rule} ~ 
     & \RULE{
       \NAMEHYPER{../../../Values/Composite}{Maps}{lookup}
@@ -207,11 +167,8 @@ $\SHADE{\NAMEREF{bound-directly}
                       ( \VAR{I} : \NAMEREF{identifiers} ) \TRANS 
           \NAMEHYPER{../../Abnormal}{Failing}{fail}
       }
-\end{aligned}
-\end{displaymath}
-
-\begin{displaymath}
-\relax\begin{aligned}\relax
+\end{align*}
+\begin{align*}
   \KEY{Funcon} ~ 
   & \NAMEDECL{bound-value}(\VAR{I} : \NAMEREF{identifiers}) :  \TO \NAMEHYPER{../../../Values}{Value-Types}{values} \\
   & \quad \leadsto \NAMEHYPER{../.}{Linking}{follow-if-link}
@@ -220,9 +177,7 @@ $\SHADE{\NAMEREF{bound-directly}
 \\
   \KEY{Alias} ~ 
   & \NAMEDECL{bound} = \NAMEREF{bound-value}
-\end{aligned}
-\end{displaymath}
-
+\end{align*}
 $\SHADE{\NAMEREF{bound-value}
            ( \VAR{I} )}$ inspects the value to which $\SHADE{\VAR{I}}$ is currently bound, if any,
    and otherwise fails. If the value is a link, $\SHADE{\NAMEREF{bound-value}
@@ -237,18 +192,14 @@ $\SHADE{\NAMEREF{bound-value}
 
 \paragraph*{Scope}\hypertarget{scope}{}\label{scope}
 
-\begin{displaymath}
-\relax\begin{aligned}\relax
+\begin{align*}
   \KEY{Funcon} ~ 
   & \NAMEDECL{closed}(\VAR{X} :  \TO \VAR{T}) :  \TO \VAR{T}
-\end{aligned}
-\end{displaymath}
-
+\end{align*}
 $\SHADE{\NAMEREF{closed}
            ( \VAR{X} )}$ ensures that $\SHADE{\VAR{X}}$ does not depend on non-local bindings.
 
-\begin{displaymath}
-\relax\begin{aligned}\relax
+\begin{align*}
   \KEY{Rule} ~ 
     & \RULE{
       \NAMEREF{environment} ( \NAMEHYPER{../../../Values/Composite}{Maps}{map}
@@ -265,16 +216,11 @@ $\SHADE{\NAMEREF{closed}
     & \NAMEREF{closed}
         ( \VAR{V} : \VAR{T} ) \leadsto
         \VAR{V}
-\end{aligned}
-\end{displaymath}
-
-\begin{displaymath}
-\relax\begin{aligned}\relax
+\end{align*}
+\begin{align*}
   \KEY{Funcon} ~ 
   & \NAMEDECL{scope}(\_ : \NAMEREF{environments}, \_ :  \TO \VAR{T}) :  \TO \VAR{T}
-\end{aligned}
-\end{displaymath}
-
+\end{align*}
 $\SHADE{\NAMEREF{scope}
            ( \VAR{D},   
              \VAR{X} )}$ executes $\SHADE{\VAR{D}}$ with the current bindings, to compute an environment
@@ -288,8 +234,7 @@ $\SHADE{\NAMEREF{closed}
                  \VAR{X} ) )}$ ensures that $\SHADE{\VAR{X}}$ can reference only the bindings
   provided by $\SHADE{\VAR{$\rho$}}$.
 
-\begin{displaymath}
-\relax\begin{aligned}\relax
+\begin{align*}
   \KEY{Rule} ~ 
     & \RULE{
       \NAMEREF{environment} ( \NAMEHYPER{../../../Values/Composite}{Maps}{map-override}
@@ -310,16 +255,11 @@ $\SHADE{\NAMEREF{closed}
         ( \_ : \NAMEREF{environments},   
           \VAR{V} : \VAR{T} ) \leadsto
         \VAR{V}
-\end{aligned}
-\end{displaymath}
-
-\begin{displaymath}
-\relax\begin{aligned}\relax
+\end{align*}
+\begin{align*}
   \KEY{Funcon} ~ 
   & \NAMEDECL{accumulate}(\_ : (  \TO \NAMEREF{environments} )\STAR) :  \TO \NAMEREF{environments}
-\end{aligned}
-\end{displaymath}
-
+\end{align*}
 $\SHADE{\NAMEREF{accumulate}
            ( \VAR{D}\SUB{1},   
              \VAR{D}\SUB{2} )}$ executes $\SHADE{\VAR{D}\SUB{1}}$ with the current bindings, to compute an
@@ -335,8 +275,7 @@ $\SHADE{\NAMEREF{accumulate}
            (  ~  )}$ as unit, and extends to any
   number of arguments.
 
-\begin{displaymath}
-\relax\begin{aligned}\relax
+\begin{align*}
   \KEY{Rule} ~ 
     & \RULE{
        \VAR{D}\SUB{1} \TRANS 
@@ -381,19 +320,14 @@ $\SHADE{\NAMEREF{accumulate}
             \NAMEREF{accumulate}
               ( \VAR{D}\SUB{2},    
                 \VAR{D}\PLUS ) )
-\end{aligned}
-\end{displaymath}
-
-\begin{displaymath}
-\relax\begin{aligned}\relax
+\end{align*}
+\begin{align*}
   \KEY{Funcon} ~ 
   & \NAMEDECL{collateral}(\VAR{$\rho$}\STAR : \NAMEREF{environments}\STAR) :  \TO \NAMEREF{environments} \\
   & \quad \leadsto \NAMEHYPER{../../Abnormal}{Failing}{checked} ~
                      \NAMEHYPER{../../../Values/Composite}{Maps}{map-unite}
                        ( \VAR{$\rho$}\STAR )
-\end{aligned}
-\end{displaymath}
-
+\end{align*}
 $\SHADE{\NAMEREF{collateral}
            ( \VAR{D}\SUB{1},   
              \cdots )}$ pre-evaluates its arguments with the current bindings,
@@ -408,8 +342,7 @@ $\SHADE{\NAMEREF{collateral}
 
 \paragraph*{Recurse}\hypertarget{recurse}{}\label{recurse}
 
-\begin{displaymath}
-\relax\begin{aligned}\relax
+\begin{align*}
   \KEY{Funcon} ~ 
   & \NAMEDECL{bind-recursively}(\VAR{I} : \NAMEREF{identifiers}, \VAR{E} :  \TO \NAMEHYPER{../../../Values}{Value-Types}{values}) :  \TO \NAMEREF{environments} \\
   & \quad \leadsto \NAMEREF{recursive}
@@ -417,9 +350,7 @@ $\SHADE{\NAMEREF{collateral}
                        \NAMEREF{bind-value}
                          ( \VAR{I}, \\&\quad \quad \quad \quad \quad 
                            \VAR{E} ) )
-\end{aligned}
-\end{displaymath}
-
+\end{align*}
 $\SHADE{\NAMEREF{bind-recursively}
            ( \VAR{I},   
              \VAR{E} )}$ binds $\SHADE{\VAR{I}}$ to a link that refers to the value of $\SHADE{\VAR{E}}$, 
@@ -428,8 +359,7 @@ $\SHADE{\NAMEREF{bind-recursively}
            ( \VAR{I} )}$ follows links, it should not be executed during the
   evaluation of $\SHADE{\VAR{E}}$.
 
-\begin{displaymath}
-\relax\begin{aligned}\relax
+\begin{align*}
   \KEY{Funcon} ~ 
   & \NAMEDECL{recursive}(\VAR{SI} : \NAMEHYPER{../../../Values/Composite}{Sets}{sets}
                                 ( \NAMEREF{identifiers} ), \VAR{D} :  \TO \NAMEREF{environments}) :  \TO \NAMEREF{environments} \\
@@ -437,17 +367,14 @@ $\SHADE{\NAMEREF{bind-recursively}
                      ( \NAMEREF{bind-to-forward-links}
                          ( \VAR{SI} ), \\&\quad \quad \quad \quad 
                        \VAR{D} )
-\end{aligned}
-\end{displaymath}
-
+\end{align*}
 $\SHADE{\NAMEREF{recursive}
            ( \VAR{SI},   
              \VAR{D} )}$ executes $\SHADE{\VAR{D}}$ with potential recursion on the bindings of 
   the identifiers in the set $\SHADE{\VAR{SI}}$ (which need not be the same as the set of
   identifiers bound by $\SHADE{\VAR{D}}$).
 
-\begin{displaymath}
-\relax\begin{aligned}\relax
+\begin{align*}
   \KEY{Auxiliary Funcon} ~ 
   & \NAMEDECL{re-close}(\VAR{M} : \NAMEHYPER{../../../Values/Composite}{Maps}{maps}
                                 ( \NAMEREF{identifiers},   
@@ -461,9 +388,7 @@ $\SHADE{\NAMEREF{recursive}
                              ( \VAR{M} ), \\&\quad \quad \quad \quad \quad 
                            \NAMEHYPER{../../../Values/Composite}{Maps}{map}
                              (  ~  ) ) )
-\end{aligned}
-\end{displaymath}
-
+\end{align*}
 $\SHADE{\NAMEREF{re-close}
            ( \VAR{M},   
              \VAR{D} )}$ first executes $\SHADE{\VAR{D}}$ in the scope $\SHADE{\VAR{M}}$, which maps identifiers
@@ -472,8 +397,7 @@ $\SHADE{\NAMEREF{re-close}
   values. It then sets the link for each identifier in the domain of $\SHADE{\VAR{M}}$ to
   refer to its bound value in $\SHADE{\VAR{$\rho$}}$, and returns $\SHADE{\VAR{$\rho$}}$ as the result.
 
-\begin{displaymath}
-\relax\begin{aligned}\relax
+\begin{align*}
   \KEY{Auxiliary Funcon} ~ 
   & \NAMEDECL{bind-to-forward-links}(\VAR{SI} : \NAMEHYPER{../../../Values/Composite}{Sets}{sets}
                                 ( \NAMEREF{identifiers} )) :  \TO \NAMEHYPER{../../../Values/Composite}{Maps}{maps}
@@ -487,15 +411,12 @@ $\SHADE{\NAMEREF{re-close}
                                  ( \NAMEHYPER{../../../Values}{Value-Types}{values} ) ), \\&\quad \quad \quad \quad \quad 
                            \NAMEHYPER{../../../Values/Composite}{Sets}{set-elements}
                              ( \VAR{SI} ) ) )
-\end{aligned}
-\end{displaymath}
-
+\end{align*}
 $\SHADE{\NAMEREF{bind-to-forward-links}
            ( \VAR{SI} )}$ binds each identifier in the set $\SHADE{\VAR{SI}}$ to a
   freshly allocated link.
 
-\begin{displaymath}
-\relax\begin{aligned}\relax
+\begin{align*}
   \KEY{Auxiliary Funcon} ~ 
   & \NAMEDECL{set-forward-links}(\VAR{M} : \NAMEHYPER{../../../Values/Composite}{Maps}{maps}
                                 ( \NAMEREF{identifiers},   
@@ -511,9 +432,7 @@ $\SHADE{\NAMEREF{bind-to-forward-links}
                            \NAMEHYPER{../../../Values/Composite}{Sets}{set-elements}
                              ( \NAMEHYPER{../../../Values/Composite}{Maps}{map-domain}
                                  ( \VAR{M} ) ) ) )
-\end{aligned}
-\end{displaymath}
-
+\end{align*}
 For each identifier $\SHADE{\VAR{I}}$ in the domain of $\SHADE{\VAR{M}}$, $\SHADE{\NAMEREF{set-forward-links}
            ( \VAR{M} )}$ sets the 
   link to which $\SHADE{\VAR{I}}$ is mapped by $\SHADE{\VAR{M}}$ to the current bound value of $\SHADE{\VAR{I}}$.

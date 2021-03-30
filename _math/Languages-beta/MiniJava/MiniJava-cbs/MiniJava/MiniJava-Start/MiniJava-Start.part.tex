@@ -1,0 +1,36 @@
+\begin{displaymath}
+\KEY{Language} \STRING{MiniJava}
+\end{displaymath}
+
+\begin{align*}
+  \KEY{Syntax} ~ 
+    \VARDECL{START} : \SYN{start}
+      ~ ::= ~ & \SYNHYPER{../.}{MiniJava-Dynamics}{program}
+\end{align*}
+\begin{align*}
+  \KEY{Semantics} ~ 
+  & \SEMDECL{start} \LEFTPHRASE ~ \VARREF{START} : \SYNREF{start} ~ \RIGHTPHRASE  
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type}
+\\
+  \KEY{Rule} ~ 
+    & \SEMREF{start} \LEFTPHRASE ~ \VARHYPER{../.}{MiniJava-Dynamics}{P} ~ \RIGHTPHRASE  = \\&\quad
+      \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{initialise-binding} ~
+        \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{initialise-storing} ~
+          \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{initialise-giving} ~
+            \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{finalise-failing} ~
+              \SEMHYPER{../.}{MiniJava-Dynamics}{run} \LEFTPHRASE ~ \VAR{P} ~ \RIGHTPHRASE 
+\end{align*}
+Contents:
+
+\begin{align*}
+  [ ~ 
+  \textsf{\SECTHYPER{../.}{MiniJava-Dynamics}{1}} ~ & \textsf{Programs} \\
+  \textsf{\SECTHYPER{../.}{MiniJava-Dynamics}{2}} ~ & \textsf{Declarations} \\
+  \textsf{\SECTHYPER{../.}{MiniJava-Dynamics}{3}} ~ & \textsf{Statements} \\
+  \textsf{\SECTHYPER{../.}{MiniJava-Dynamics}{4}} ~ & \textsf{Expressions} \\
+  \textsf{\SECTHYPER{../.}{MiniJava-Dynamics}{5}} ~ & \textsf{Lexemes} \\
+  \textsf{\SECTHYPER{../.}{MiniJava-Syntax}{6}} ~ & \textsf{Disambiguation}
+  ~ ]
+\end{align*}
+The section numbers above are links into other files.
+

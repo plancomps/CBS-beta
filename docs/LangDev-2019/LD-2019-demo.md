@@ -1,5 +1,4 @@
 ---
-layout: default
 title: LD-2019-demo
 nav_exclude: true
 search_exclude: true

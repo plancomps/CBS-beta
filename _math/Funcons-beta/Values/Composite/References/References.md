@@ -1,54 +1,59 @@
+{::comment}{% raw %}{:/}
+
 ### References and pointers
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Datatype} ~ & \NAMEREF{references} \\
-  \KEY{Funcon} ~ & \NAMEREF{reference} \\
-  \KEY{Type} ~ & \NAMEREF{pointers} \\
-  \KEY{Funcon} ~ & \NAMEREF{pointer-null} \\
-  \KEY{Funcon} ~ & \NAMEREF{dereference}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Datatype} \ & \NAMEREF{references} \\
+  \KEY{Funcon} \ & \NAMEREF{reference} \\
+  \KEY{Type} \ & \NAMEREF{pointers} \\
+  \KEY{Funcon} \ & \NAMEREF{pointer-null} \\
+  \KEY{Funcon} \ & \NAMEREF{dereference}
+  \ ]
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Meta-variables} ~ 
+$$\begin{align*}
+  \KEY{Meta-variables} \
   & \VAR{T} <: \NAMEHYPER{../..}{Value-Types}{values}
-\end{aligned}$$
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Datatype} ~ 
-  \NAMEDECL{references}(\VAR{T} )  
-  ~ ::= ~ & \NAMEDECL{reference} (\_ : \VAR{T})
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Datatype} \ 
+  \NAMEDECL{references}(
+                     \VAR{T} ) 
+  \ ::= \ & \NAMEDECL{reference}(
+                               \_ : \VAR{T})
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Datatype} ~ 
-  \NAMEDECL{pointers}(\VAR{T} )  
-  ~ ::= ~ & 
-  \NAMEDECL{pointer-null}  \\
-  ~ \mid ~ & \{ \_ : \NAMEREF{references}
-               ( \VAR{T} ) \}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Datatype} \ 
+  \NAMEDECL{pointers}(
+                     \VAR{T} ) 
+  \ ::= \ &
+  \NAMEDECL{pointer-null} \mid \{ \_ : \NAMEREF{references}
+               (  \VAR{T} ) \}
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{dereference}(\_ : \NAMEREF{pointers}
-                                ( \VAR{T} )) :  \TO ( \VAR{T} )\QUERY
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{dereference}(
+                       \_ : \NAMEREF{pointers}
+                                 (  \VAR{T} )) 
+    :  \TO (  \VAR{T} )\QUERY 
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{dereference}
-        ( \NAMEREF{reference}
-            ( \VAR{V} : \VAR{T} ) ) \leadsto
+        (  \NAMEREF{reference}
+                (  \VAR{V} : \VAR{T} ) ) \leadsto 
         \VAR{V}
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{dereference}
-        ( \NAMEREF{pointer-null} ) \leadsto
-        (  ~  )
-\end{aligned}$$
-
+        (  \NAMEREF{pointer-null} ) \leadsto 
+        (   \  )
+\end{align*}$$
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -59,5 +64,16 @@ $$\relax\begin{aligned}\relax
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]: /CBS-beta 
+[CBS-beta]: /CBS-beta
   "CBS-BETA"
+[References.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Funcons-beta/Values/Composite/References/References.cbs
+  "CBS SOURCE FILE ON GITHUB"
+[PLAIN]: /CBS-beta/docs/Funcons-beta/Values/Composite/References
+  "CBS SOURCE WEB PAGE"
+ [PRETTY]: /CBS-beta/math/Funcons-beta/Values/Composite/References
+  "CBS-KATEX WEB PAGE"
+[PDF]: /CBS-beta/math/Funcons-beta/Values/Composite/References/References.pdf
+  "CBS-LATEX PDF FILE"
+[PLanCompS Project]: https://plancomps.github.io
+  "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
+{::comment}{% endraw %}{:/}

@@ -1,3 +1,13 @@
+{::comment}{% raw %}{:/}
+<details open markdown="block">
+  <summary>
+    Outline
+  </summary>
+  {: .text-delta }
+- TOC
+{:toc}
+</details>
+
 $$\KEY{Language} \STRING{OCaml Light}$$
 
 # $$\SECT{2}$$ Values
@@ -9,11 +19,11 @@ $$\KEY{Language} \STRING{OCaml Light}$$
   release 4.06](https://caml.inria.fr/pub/docs/manual-ocaml-4.06/values.html).
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Type} ~  
-  & \NAMEDECL{implemented-values}  
-  \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \mid \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{booleans} \mid \NAMEREF{implemented-integers} \mid \NAMEREF{implemented-floats} \mid \NAMEREF{implemented-characters} \mid \NAMEREF{implemented-strings} \mid \NAMEREF{implemented-tuples} \mid \NAMEREF{implemented-lists} \mid \NAMEREF{implemented-records} \mid \NAMEREF{implemented-references} \mid \NAMEREF{implemented-vectors} \mid \NAMEREF{implemented-variants} \mid \NAMEREF{implemented-functions}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Type} \ 
+  & \NAMEDECL{implemented-values}  \\&\quad
+    \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad\quad\quad \mid \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{booleans} \\&\quad\quad\quad \mid \NAMEREF{implemented-integers} \\&\quad\quad\quad \mid \NAMEREF{implemented-floats} \\&\quad\quad\quad \mid \NAMEREF{implemented-characters} \\&\quad\quad\quad \mid \NAMEREF{implemented-strings} \\&\quad\quad\quad \mid \NAMEREF{implemented-tuples} \\&\quad\quad\quad \mid \NAMEREF{implemented-lists} \\&\quad\quad\quad \mid \NAMEREF{implemented-records} \\&\quad\quad\quad \mid \NAMEREF{implemented-references} \\&\quad\quad\quad \mid \NAMEREF{implemented-vectors} \\&\quad\quad\quad \mid \NAMEREF{implemented-variants} \\&\quad\quad\quad \mid \NAMEREF{implemented-functions}
+\end{align*}$$
 
 ## Base values
                
@@ -29,48 +39,56 @@ $$\relax\begin{aligned}\relax
   range of integer values (...).
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Type} ~  
-  & \NAMEDECL{implemented-integers}  
-  \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integers}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Type} \ 
+  & \NAMEDECL{implemented-integers}  \\&\quad
+    \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integers}
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{implemented-integer}(\VAR{I} : \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integers}) :  \TO \NAMEREF{implemented-integers} \\
-  & \quad \leadsto \VAR{I}
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{implemented-integer}(
+                       \VAR{I} : \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integers}) 
+    :  \TO \NAMEREF{implemented-integers} \\&\quad
+    \leadsto \VAR{I}
 \\
-  \KEY{Assert} ~ 
+  \KEY{Assert} \
   & \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-equal}
-      (\NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null},   
-       \NAMEREF{implemented-integer}
-         (\VAR{N} : \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{bounded-integers}
-                      (-1073741824,     
-                       1073741823))) == \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false}
-\end{aligned}$$
+      ( \\&\quad \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null}, \\&\quad
+             \NAMEREF{implemented-integer}
+              (  \VAR{N} : \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{bounded-integers}
+                                (  -1073741824, 
+                                       1073741823 ) ) ) \\&\quad
+    == \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false}
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{implemented-integers-width} :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{natural-numbers} \\
-  & \quad \leadsto 31
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{implemented-integers-width} 
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{natural-numbers} \\&\quad
+    \leadsto 31
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{implemented-integer-literal}(\VAR{IL} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{strings}) :  \TO \NAMEREF{implemented-integers} \\
-  & \quad \leadsto \NAMEREF{implemented-integer} ~
-                     \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{decimal-natural}
-                       (\VAR{IL})
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{implemented-integer-literal}(
+                       \VAR{IL} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{strings}) 
+    :  \TO \NAMEREF{implemented-integers} \\&\quad
+    \leadsto \NAMEREF{implemented-integer} \ 
+               \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{decimal-natural}
+                 (  \VAR{IL} )
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{implemented-bit-vector}(\VAR{I} : \NAMEREF{implemented-integers}) :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Bits}{bit-vectors}
-                                                                         (\NAMEREF{implemented-integers-width}) \\
-  & \quad \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Bits}{integer-to-bit-vector}
-                     (\VAR{I}, \\&\quad 
-                      \NAMEREF{implemented-integers-width})
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{implemented-bit-vector}(
+                       \VAR{I} : \NAMEREF{implemented-integers}) \\&\quad
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Bits}{bit-vectors}
+                     (  \NAMEREF{implemented-integers-width} ) \\&\quad
+    \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Bits}{integer-to-bit-vector}
+               (  \VAR{I}, 
+                      \NAMEREF{implemented-integers-width} )
+\end{align*}$$
 
 ### Floating-point numbers
                
@@ -83,22 +101,24 @@ $$\relax\begin{aligned}\relax
   an exponent ranging from -1022 to 1023.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Type} ~  
+$$\begin{align*}
+  \KEY{Type} \ 
   & \NAMEDECL{implemented-floats}  
-  
-\end{aligned}$$
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{implemented-floats-format} :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{float-formats} \\
-  & \quad \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{binary64}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{implemented-floats-format} 
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{float-formats} \\&\quad
+    \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{binary64}
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{implemented-float-literal}(\VAR{FL} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{strings}) :  \TO \NAMEREF{implemented-floats}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{implemented-float-literal}(
+                       \VAR{FL} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{strings}) 
+    :  \TO \NAMEREF{implemented-floats} 
+\end{align*}$$
 
 ### Characters
                
@@ -111,26 +131,27 @@ $$\relax\begin{aligned}\relax
   128 and 255 following the ISO 8859-1 standard.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Type} ~  
+$$\begin{align*}
+  \KEY{Type} \ 
   & \NAMEDECL{implemented-characters} <: \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Characters}{characters} 
-  
-\end{aligned}$$
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Type} ~  
-  & \NAMEDECL{implemented-character-points}  
-  \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{bounded-integers}
-             (0,   
-              255)
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Type} \ 
+  & \NAMEDECL{implemented-character-points}  \\&\quad
+    \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{bounded-integers}
+               (  0, 
+                      255 )
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{implemented-character}(\VAR{C} : \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Characters}{characters}) :  \TO \NAMEREF{implemented-characters}\QUERY \\
-  & \quad \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Characters}{ascii-character} ~
-                     \\VAR{C}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{implemented-character}(
+                       \VAR{C} : \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Characters}{characters}) 
+    :  \TO \NAMEREF{implemented-characters}\QUERY \\&\quad
+    \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Characters}{ascii-character} \ 
+               [  \VAR{C} ]
+\end{align*}$$
 
 ### Character strings
                
@@ -142,25 +163,26 @@ $$\relax\begin{aligned}\relax
   (...)
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Type} ~  
+$$\begin{align*}
+  \KEY{Type} \ 
   & \NAMEDECL{implemented-strings} <: \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{lists}
-                                                             (\NAMEREF{implemented-characters}) 
-  
-\end{aligned}$$
+                                     (  \NAMEREF{implemented-characters} ) 
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{implemented-string}(\VAR{L} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{lists}
-                                (\NAMEREF{implemented-characters})) :  \TO \NAMEREF{implemented-strings}\QUERY \\
-  & \quad \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{when-true}
-                     (\NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-less-or-equal}
-                        (\NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sequences}{length} ~
-                           \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{list-elements} ~
-                             \VAR{L}, \\&\quad \quad 
-                         16777211), \\&\quad 
-                      \VAR{L})
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{implemented-string}(
+                       \VAR{L} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{lists}
+                                 (  \NAMEREF{implemented-characters} )) 
+    :  \TO \NAMEREF{implemented-strings}\QUERY \\&\quad
+    \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{when-true}
+               (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-less-or-equal}
+                       (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sequences}{length} \ 
+                               \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{list-elements} \ 
+                                 \VAR{L}, 
+                              16777211 ), 
+                      \VAR{L} )
+\end{align*}$$
 
 ## Tuples
                
@@ -172,57 +194,61 @@ $$\relax\begin{aligned}\relax
   2^22 - 1 elements (4194303 elements).
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Type} ~  
+$$\begin{align*}
+  \KEY{Type} \ 
   & \NAMEDECL{implemented-tuples} <: \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuples}
-                                                             (\NAMEREF{implemented-values}\STAR) 
-  \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuples}
-             (\NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}\STAR)
-\end{aligned}$$
+                                     (  \NAMEREF{implemented-values}\STAR ) \\&\quad
+    \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuples}
+               (  \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}\STAR )
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{implemented-tuple}(\VAR{T} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuples}
-                                (\NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}\STAR)) :  \TO \NAMEREF{implemented-tuples}\QUERY \\
-  & \quad \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{when-true}
-                     (\NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-less-or-equal}
-                        (\NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sequences}{length} ~
-                           \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple-elements} ~
-                             \VAR{T}, \\&\quad \quad 
-                         4194303), \\&\quad 
-                      \VAR{T})
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{implemented-tuple}(
+                       \VAR{T} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuples}
+                                 (  \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}\STAR )) 
+    :  \TO \NAMEREF{implemented-tuples}\QUERY \\&\quad
+    \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{when-true}
+               (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-less-or-equal}
+                       (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sequences}{length} \ 
+                               \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple-elements} \ 
+                                 \VAR{T}, 
+                              4194303 ), 
+                      \VAR{T} )
+\end{align*}$$
 
 
   In OCaml Light, the unit value is represented by $$\SHADE{\NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
-           ( ~ )}$$.
+           (   \  )}$$.
 
 
 
-  In OCaml Light, lists are written [v_1; ...; v_n], and their values are
+  In OCaml Light, lists are written \[v_1; ...; v_n], and their values are
   represented by list values in CBS.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Type} ~  
+$$\begin{align*}
+  \KEY{Type} \ 
   & \NAMEDECL{implemented-lists} <: \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{lists}
-                                                             (\NAMEREF{implemented-values}) 
-  \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{lists}
-             (\NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values})
-\end{aligned}$$
+                                     (  \NAMEREF{implemented-values} ) \\&\quad
+    \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{lists}
+               (  \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} )
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{implemented-list}(\VAR{L} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{lists}
-                                (\NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values})) :  \TO \NAMEREF{implemented-lists}\QUERY \\
-  & \quad \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{when-true}
-                     (\NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-less-or-equal}
-                        (\NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sequences}{length} ~
-                           \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{list-elements} ~
-                             \VAR{L}, \\&\quad \quad 
-                         4194303), \\&\quad 
-                      \VAR{L})
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{implemented-list}(
+                       \VAR{L} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{lists}
+                                 (  \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} )) 
+    :  \TO \NAMEREF{implemented-lists}\QUERY \\&\quad
+    \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{when-true}
+               (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-less-or-equal}
+                       (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sequences}{length} \ 
+                               \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{list-elements} \ 
+                                 \VAR{L}, 
+                              4194303 ), 
+                      \VAR{L} )
+\end{align*}$$
 
 ## Records
                
@@ -235,38 +261,40 @@ $$\relax\begin{aligned}\relax
   records with up to 2^22 - 1 fields (4194303 fields).
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Type} ~  
+$$\begin{align*}
+  \KEY{Type} \ 
   & \NAMEDECL{implemented-records} <: \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Records}{records}
-                                                             (\NAMEREF{implemented-values}) 
-  \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Records}{records}
-             (\NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values})
-\end{aligned}$$
+                                     (  \NAMEREF{implemented-values} ) \\&\quad
+    \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Records}{records}
+               (  \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} )
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{implemented-record}(\VAR{R} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Records}{records}
-                                (\NAMEREF{implemented-values})) :  \TO \NAMEREF{implemented-records}\QUERY \\
-  & \quad \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{when-true}
-                     (\NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-less-or-equal}
-                        (\NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sequences}{length} ~
-                           \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Maps}{map-elements} ~
-                             \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Records}{record-map} ~
-                               \VAR{R}, \\&\quad \quad 
-                         4194303), \\&\quad 
-                      \VAR{R})
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{implemented-record}(
+                       \VAR{R} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Records}{records}
+                                 (  \NAMEREF{implemented-values} )) 
+    :  \TO \NAMEREF{implemented-records}\QUERY \\&\quad
+    \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{when-true}
+               (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-less-or-equal}
+                       (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sequences}{length} \ 
+                               \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Maps}{map-elements} \ 
+                                 \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Records}{record-map} \ 
+                                   \VAR{R}, 
+                              4194303 ), 
+                      \VAR{R} )
+\end{align*}$$
 
 
   In OCaml Light, records are non-mutable, and references are represented by
   mutable variables.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Type} ~  
+$$\begin{align*}
+  \KEY{Type} \ 
   & \NAMEDECL{implemented-references}  
-  \leadsto \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{variables}
-\end{aligned}$$
+    \leadsto \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{variables}
+\end{align*}$$
 
 ## Arrays
                
@@ -279,26 +307,28 @@ $$\relax\begin{aligned}\relax
   elements in this case); (...)
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Type} ~  
+$$\begin{align*}
+  \KEY{Type} \ 
   & \NAMEDECL{implemented-vectors} <: \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vectors}
-                                                             (\NAMEREF{implemented-values}) 
-  \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vectors}
-             (\NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values})
-\end{aligned}$$
+                                     (  \NAMEREF{implemented-values} ) \\&\quad
+    \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vectors}
+               (  \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} )
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{implemented-vector}(\VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vectors}
-                                (\NAMEREF{implemented-values})) :  \TO \NAMEREF{implemented-vectors}\QUERY \\
-  & \quad \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{when-true}
-                     (\NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-less-or-equal}
-                        (\NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sequences}{length} ~
-                           \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vector-elements} ~
-                             \VAR{V}, \\&\quad \quad 
-                         4194303), \\&\quad 
-                      \VAR{V})
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{implemented-vector}(
+                       \VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vectors}
+                                 (  \NAMEREF{implemented-values} )) 
+    :  \TO \NAMEREF{implemented-vectors}\QUERY \\&\quad
+    \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{when-true}
+               (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-less-or-equal}
+                       (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sequences}{length} \ 
+                               \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vector-elements} \ 
+                                 \VAR{V}, 
+                              4194303 ), 
+                      \VAR{V} )
+\end{align*}$$
 
 ## Variant values
                
@@ -313,20 +343,22 @@ $$\relax\begin{aligned}\relax
   to have at most 246 non-constant constructors and 2^30-1 constant constructors.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Type} ~  
+$$\begin{align*}
+  \KEY{Type} \ 
   & \NAMEDECL{implemented-variants} <: \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Variants}{variants}
-                                                             (\NAMEREF{implemented-values}) 
-  \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Variants}{variants}
-             (\NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values})
-\end{aligned}$$
+                                     (  \NAMEREF{implemented-values} ) \\&\quad
+    \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Variants}{variants}
+               (  \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} )
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{implemented-variant}(\VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Variants}{variants}
-                                (\NAMEREF{implemented-values})) :  \TO \NAMEREF{implemented-variants} \\
-  & \quad \leadsto \VAR{V}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{implemented-variant}(
+                       \VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Variants}{variants}
+                                 (  \NAMEREF{implemented-values} )) 
+    :  \TO \NAMEREF{implemented-variants} \\&\quad
+    \leadsto \VAR{V}
+\end{align*}$$
 
 ## Functions
                
@@ -336,24 +368,25 @@ $$\relax\begin{aligned}\relax
   Functional values are mappings from values to values.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Type} ~  
+$$\begin{align*}
+  \KEY{Type} \ 
   & \NAMEDECL{implemented-functions} <: \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{functions}
-                                                             (\NAMEREF{implemented-values}, \\&\quad 
-                                                              \NAMEREF{implemented-values}) 
-  \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{functions}
-             (\NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values},   
-              \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values})
-\end{aligned}$$
+                                     (  \NAMEREF{implemented-values}, 
+                                            \NAMEREF{implemented-values} ) \\&\quad
+    \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{functions}
+               (  \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}, 
+                      \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} )
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{implemented-function}(\VAR{F} : \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{functions}
-                                (\NAMEREF{implemented-values},   
-                                 \NAMEREF{implemented-values})) :  \TO \NAMEREF{implemented-functions} \\
-  & \quad \leadsto \VAR{F}
-\end{aligned}$$
-
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{implemented-function}(
+                       \VAR{F} : \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{functions}
+                                 (  \NAMEREF{implemented-values}, 
+                                        \NAMEREF{implemented-values} )) \\&\quad
+    :  \TO \NAMEREF{implemented-functions} \\&\quad
+    \leadsto \VAR{F}
+\end{align*}$$
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -364,5 +397,16 @@ $$\relax\begin{aligned}\relax
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]: /CBS-beta 
+[CBS-beta]: /CBS-beta
   "CBS-BETA"
+[OC-L-02-Values.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-02-Values/OC-L-02-Values.cbs
+  "CBS SOURCE FILE ON GITHUB"
+[PLAIN]: /CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-02-Values
+  "CBS SOURCE WEB PAGE"
+ [PRETTY]: /CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-02-Values
+  "CBS-KATEX WEB PAGE"
+[PDF]: /CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-02-Values/OC-L-02-Values.pdf
+  "CBS-LATEX PDF FILE"
+[PLanCompS Project]: https://plancomps.github.io
+  "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
+{::comment}{% endraw %}{:/}

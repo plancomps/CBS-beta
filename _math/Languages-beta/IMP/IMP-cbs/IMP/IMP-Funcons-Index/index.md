@@ -1,13 +1,21 @@
 ---
-layout: default
 title: "IMP-Funcons-Index"
 math: katex
 parent: IMP
 ancestor: Languages-beta
 
 ---
+[Languages-beta] : [IMP-Funcons-Index.cbs] \| [PLAIN] \| [PDF]
 
-[Languages-beta] : [IMP-Funcons-Index.cbs]
+{::comment}{% raw %}{:/}
+<details open markdown="block">
+  <summary>
+    Outline
+  </summary>
+  {: .text-delta }
+- TOC
+{:toc}
+</details>
 
 
 
@@ -24,60 +32,60 @@ ancestor: Languages-beta
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{seq} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{if-true-else} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{if-else} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{while-true} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{while}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{seq} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{if-true-else} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{if-else} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{while-true} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{while}
+  \ ]
+\end{align*}$$
 
 ### Giving
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{initialise-giving}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{initialise-giving}
+  \ ]
+\end{align*}$$
 
 ### Binding
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Type} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{environments} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{envs} \\
-  \KEY{Datatype} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{identifiers} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{ids} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{initialise-binding} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{bind-value} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{bind} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{bound-value} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{bound} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{scope} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{collateral}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Type} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{environments} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{envs} \\
+  \KEY{Datatype} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{identifiers} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{ids} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{initialise-binding} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{bind-value} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{bind} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{bound-value} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{bound} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{scope} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{collateral}
+  \ ]
+\end{align*}$$
 
 ### Storing
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{initialise-storing} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{allocate-initialised-variable} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{alloc-init} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assign} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assigned}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{initialise-storing} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{allocate-initialised-variable} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{alloc-init} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assign} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assigned}
+  \ ]
+\end{align*}$$
 
 ## Abnormal computation
                
@@ -87,12 +95,12 @@ $$\relax\begin{aligned}\relax
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{finalise-failing} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{checked}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{finalise-failing} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{checked}
+  \ ]
+\end{align*}$$
 
 # Values
                
@@ -106,49 +114,48 @@ $$\relax\begin{aligned}\relax
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Datatype} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{booleans} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{bools} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{true} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{not}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Datatype} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{booleans} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{bools} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{true} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{not}
+  \ ]
+\end{align*}$$
 
 ### Integers
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Type} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integers} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{ints} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-add} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{int-add} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-divide} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{int-div} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-negate} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{int-neg} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-is-less-or-equal} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-less-or-equal} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{decimal-natural} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{decimal}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Type} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integers} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{ints} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-add} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{int-add} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-divide} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{int-div} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-negate} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{int-neg} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-is-less-or-equal} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-less-or-equal} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{decimal-natural} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{decimal}
+  \ ]
+\end{align*}$$
 
 ### The null value
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Datatype} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-value} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null}
-  ~ ]
-\end{aligned}$$
-
+$$\begin{align*}
+  [ \
+  \KEY{Datatype} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-value} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null}
+  \ ]
+\end{align*}$$
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -159,19 +166,24 @@ $$\relax\begin{aligned}\relax
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]: /CBS-beta 
+[CBS-beta]: /CBS-beta
   "CBS-BETA"
-
-
-____
-
-From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
-
-[IMP-Funcons-Index.cbs]: /CBS-beta/Languages-beta/IMP/IMP-cbs/IMP/IMP-Funcons-Index/IMP-Funcons-Index.cbs
-  "CBS SOURCE FILE"
+[IMP-Funcons-Index.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Languages-beta/IMP/IMP-cbs/IMP/IMP-Funcons-Index/IMP-Funcons-Index.cbs
+  "CBS SOURCE FILE ON GITHUB"
+[PLAIN]: /CBS-beta/docs/Languages-beta/IMP/IMP-cbs/IMP/IMP-Funcons-Index
+  "CBS SOURCE WEB PAGE"
+ [PRETTY]: /CBS-beta/math/Languages-beta/IMP/IMP-cbs/IMP/IMP-Funcons-Index
+  "CBS-KATEX WEB PAGE"
+[PDF]: /CBS-beta/math/Languages-beta/IMP/IMP-cbs/IMP/IMP-Funcons-Index/IMP-Funcons-Index.pdf
+  "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
+{::comment}{% endraw %}{:/}
+
+____
+From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
+
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues
   "CBS-BETA ISSUE REPORTS ON GITHUB"
-[Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20IMP/IMP-Funcons-Index/IMP-Funcons-Index.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A 
+[Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20IMP/IMP-Funcons-Index/IMP-Funcons-Index.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A
   "GENERATE AN EMAIL TEMPLATE"

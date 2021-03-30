@@ -1,59 +1,66 @@
+{::comment}{% raw %}{:/}
+
 ### Strings
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Type} ~ & \NAMEREF{strings} \\
-  \KEY{Funcon} ~ & \NAMEREF{string} \\
-  \KEY{Funcon} ~ & \NAMEREF{string-append} \\
-  \KEY{Funcon} ~ & \NAMEREF{to-string}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Type} \ & \NAMEREF{strings} \\
+  \KEY{Funcon} \ & \NAMEREF{string} \\
+  \KEY{Funcon} \ & \NAMEREF{string-append} \\
+  \KEY{Funcon} \ & \NAMEREF{to-string}
+  \ ]
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Type} ~  
+$$\begin{align*}
+  \KEY{Type} \ 
   & \NAMEDECL{strings}  
-  \leadsto \NAMEHYPER{../.}{Lists}{lists}
-             ( \NAMEHYPER{../../Primitive}{Characters}{characters} )
-\end{aligned}$$
+    \leadsto \NAMEHYPER{../.}{Lists}{lists}
+               (  \NAMEHYPER{../../Primitive}{Characters}{characters} )
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{string}(\VAR{C}\STAR : \NAMEHYPER{../../Primitive}{Characters}{characters}\STAR) :  \TO \NAMEREF{strings} \\
-  & \quad \leadsto [ \VAR{C}\STAR ]
-\end{aligned}$$
-
-
-  Literal strings are written $$\SHADE{\STRING{C1.{}.{}.{}Cn}}$$.
-  A double-quote or backslash needs to be escaped: $$\SHADE{\STRING{.{}.{}.{}"{}.{}.{}.{}}}$$, $$\SHADE{\STRING{.{}.{}.{}\BACKSLASH .{}.{}.{}}}$$.
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{string}(
+                       \VAR{C}\STAR : \NAMEHYPER{../../Primitive}{Characters}{characters}\STAR) 
+    :  \TO \NAMEREF{strings} \\&\quad
+    \leadsto [  \VAR{C}\STAR ]
+\end{align*}$$
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{string-append}(\VAR{S}\STAR : \NAMEREF{strings}\STAR) :  \TO \NAMEREF{strings} \\
-  & \quad \leadsto \NAMEHYPER{../.}{Lists}{list-append}
-                     ( \VAR{S}\STAR )
-\end{aligned}$$
+  Literal strings are written $$\SHADE{\STRING{C{\UNDERSCORE}1{.}{.}{.}C{\UNDERSCORE}n}}$$.
+  A double-quote or backslash needs to be escaped: $$\SHADE{\STRING{{.}{.}{.}{\BACKSLASH}{"}{.}{.}{.}}}$$, $$\SHADE{\STRING{{.}{.}{.}{\BACKSLASH}{\BACKSLASH}{.}{.}{.}}}$$.
 
-$$\relax\begin{aligned}\relax
-  \KEY{Built-in Funcon} ~ 
-  & \NAMEDECL{to-string}(\_ : \NAMEHYPER{../..}{Value-Types}{ground-values}) :  \TO \NAMEREF{strings}
-\end{aligned}$$
+
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{string-append}(
+                       \VAR{S}\STAR : \NAMEREF{strings}\STAR) 
+    :  \TO \NAMEREF{strings} \\&\quad
+    \leadsto \NAMEHYPER{../.}{Lists}{list-append}
+               (  \VAR{S}\STAR )
+\end{align*}$$
+
+$$\begin{align*}
+  \KEY{Built-in Funcon} \
+  & \NAMEDECL{to-string}(
+                       \_ : \NAMEHYPER{../..}{Value-Types}{ground-values}) 
+    :  \TO \NAMEREF{strings} 
+\end{align*}$$
 
 
   The strings returned by $$\SHADE{\NAMEREF{to-string}
-           ( \VAR{GV} )}$$ are unspecified, except that when
+           (  \VAR{GV} )}$$ are unspecified, except that when
   $$\SHADE{\VAR{GV}}$$ is already a string, it is returned unchanged.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Assert} ~ 
+$$\begin{align*}
+  \KEY{Assert} \
   & \NAMEREF{to-string}
-      ( \VAR{S} : \NAMEREF{strings} ) == 
-      \VAR{S}
-\end{aligned}$$
-
+      (  \VAR{S} : \NAMEREF{strings} ) 
+    == \VAR{S}
+\end{align*}$$
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -64,5 +71,16 @@ $$\relax\begin{aligned}\relax
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]: /CBS-beta 
+[CBS-beta]: /CBS-beta
   "CBS-BETA"
+[Strings.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Funcons-beta/Values/Composite/Strings/Strings.cbs
+  "CBS SOURCE FILE ON GITHUB"
+[PLAIN]: /CBS-beta/docs/Funcons-beta/Values/Composite/Strings
+  "CBS SOURCE WEB PAGE"
+ [PRETTY]: /CBS-beta/math/Funcons-beta/Values/Composite/Strings
+  "CBS-KATEX WEB PAGE"
+[PDF]: /CBS-beta/math/Funcons-beta/Values/Composite/Strings/Strings.pdf
+  "CBS-LATEX PDF FILE"
+[PLanCompS Project]: https://plancomps.github.io
+  "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
+{::comment}{% endraw %}{:/}

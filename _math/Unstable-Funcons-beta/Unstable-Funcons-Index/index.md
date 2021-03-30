@@ -1,13 +1,21 @@
 ---
-layout: default
 title: "Unstable-Funcons-Index"
 math: katex
 parent: Unstable-Funcons-beta
 
 
 ---
+[Unstable-Funcons-beta] : [Unstable-Funcons-Index.cbs] \| [PLAIN] \| [PDF]
 
-[Unstable-Funcons-beta] : [Unstable-Funcons-Index.cbs]
+{::comment}{% raw %}{:/}
+<details open markdown="block">
+  <summary>
+    Outline
+  </summary>
+  {: .text-delta }
+- TOC
+{:toc}
+</details>
 
 
 
@@ -28,28 +36,28 @@ Unstable Funcons, for use only in Unstable Languages
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Entity} ~ & \NAMEHYPER{../Computations/Normal}{Indexing}{value-index} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Normal}{Indexing}{initialise-index} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Normal}{Indexing}{allocate-index} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Normal}{Indexing}{lookup-index}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Entity} \ & \NAMEHYPER{../Computations/Normal}{Indexing}{value-index} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Normal}{Indexing}{initialise-index} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Normal}{Indexing}{allocate-index} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Normal}{Indexing}{lookup-index}
+  \ ]
+\end{align*}$$
 
 ### Memos
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Entity} ~ & \NAMEHYPER{../Computations/Normal}{Memos}{memo-map} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Normal}{Memos}{initialise-memos} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Normal}{Memos}{memo-value} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Normal}{Memos}{initialise-memo-value} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Normal}{Memos}{memo-value-recall}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Entity} \ & \NAMEHYPER{../Computations/Normal}{Memos}{memo-map} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Normal}{Memos}{initialise-memos} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Normal}{Memos}{memo-value} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Normal}{Memos}{initialise-memo-value} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Normal}{Memos}{memo-value-recall}
+  \ ]
+\end{align*}$$
 
 ## Abnormal computation
                
@@ -59,14 +67,14 @@ $$\relax\begin{aligned}\relax
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Entity} ~ & \NAMEHYPER{../Computations/Abnormal}{Postponing}{postponing} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Abnormal}{Postponing}{postpone} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Abnormal}{Postponing}{postpone-after-effect} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Abnormal}{Postponing}{after-effect}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Entity} \ & \NAMEHYPER{../Computations/Abnormal}{Postponing}{postponing} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Abnormal}{Postponing}{postpone} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Abnormal}{Postponing}{postpone-after-effect} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Abnormal}{Postponing}{after-effect}
+  \ ]
+\end{align*}$$
 
 ## Threads
                
@@ -76,80 +84,80 @@ $$\relax\begin{aligned}\relax
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Datatype} ~ & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-ids} \\
-  \KEY{Datatype} ~ & \NAMEHYPER{../Computations/Threads}{Multithreading}{threads} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-joinable} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-detached}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Datatype} \ & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-ids} \\
+  \KEY{Datatype} \ & \NAMEHYPER{../Computations/Threads}{Multithreading}{threads} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-joinable} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-detached}
+  \ ]
+\end{align*}$$
 
 #### Initialisation
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads}{Multithreading}{initialise-multithreading}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads}{Multithreading}{initialise-multithreading}
+  \ ]
+\end{align*}$$
 
 #### Activation
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads}{Multithreading}{multithread} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-activate} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-detach}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads}{Multithreading}{multithread} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-activate} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-detach}
+  \ ]
+\end{align*}$$
 
 #### Execution
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads}{Multithreading}{current-thread} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-atomic} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-yield} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-spin} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-suspend} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-resume}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads}{Multithreading}{current-thread} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-atomic} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-yield} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-spin} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-suspend} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-resume}
+  \ ]
+\end{align*}$$
 
 #### Termination
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-terminate} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads}{Multithreading}{is-thread-terminated} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-value} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-join} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-exterminate}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-terminate} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads}{Multithreading}{is-thread-terminated} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-value} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-join} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-exterminate}
+  \ ]
+\end{align*}$$
 
 #### Scheduling
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads}{Multithreading}{update-thread-stepping} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads}{Multithreading}{update-thread-schedule} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads}{Multithreading}{current-thread-schedule} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads}{Multithreading}{is-thread-preemptible} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-preemptible} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-cooperative}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads}{Multithreading}{update-thread-stepping} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads}{Multithreading}{update-thread-schedule} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads}{Multithreading}{current-thread-schedule} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads}{Multithreading}{is-thread-preemptible} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-preemptible} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-cooperative}
+  \ ]
+\end{align*}$$
 
 ### Thread synchronisation
                
@@ -159,107 +167,107 @@ $$\relax\begin{aligned}\relax
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Datatype} ~ & \NAMEHYPER{../Computations/Threads}{Synchronising}{syncs} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads}{Synchronising}{sync-create} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads}{Synchronising}{sync-feature} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads}{Synchronising}{is-sync-feature}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Datatype} \ & \NAMEHYPER{../Computations/Threads}{Synchronising}{syncs} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads}{Synchronising}{sync-create} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads}{Synchronising}{sync-feature} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads}{Synchronising}{is-sync-feature}
+  \ ]
+\end{align*}$$
 
 #### Sync features
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Datatype} ~ & \NAMEHYPER{../Computations/Threads}{Synchronising}{sync-features} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads}{Synchronising}{sync-waiting-list} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads}{Synchronising}{sync-held} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads}{Synchronising}{sync-holder} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads}{Synchronising}{sync-count} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads}{Synchronising}{sync-feature-create}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Datatype} \ & \NAMEHYPER{../Computations/Threads}{Synchronising}{sync-features} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads}{Synchronising}{sync-waiting-list} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads}{Synchronising}{sync-held} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads}{Synchronising}{sync-holder} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads}{Synchronising}{sync-count} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads}{Synchronising}{sync-feature-create}
+  \ ]
+\end{align*}$$
 
 #### Locks
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{is-exclusive-lock-holder}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{is-exclusive-lock-holder}
+  \ ]
+\end{align*}$$
 
 ##### Spin locks
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{spin-lock-create} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{spin-lock-sync} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{spin-lock-release}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{spin-lock-create} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{spin-lock-sync} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{spin-lock-release}
+  \ ]
+\end{align*}$$
 
 ##### Exclusive locks
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{exclusive-lock-create} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{exclusive-lock-sync} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{exclusive-lock-sync-else-wait} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{exclusive-lock-release}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{exclusive-lock-create} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{exclusive-lock-sync} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{exclusive-lock-sync-else-wait} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{exclusive-lock-release}
+  \ ]
+\end{align*}$$
 
 ##### Reentrant locks
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{reentrant-lock-create} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{reentrant-lock-sync} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{reentrant-lock-sync-else-wait} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{reentrant-lock-release} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{reentrant-lock-exit}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{reentrant-lock-create} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{reentrant-lock-sync} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{reentrant-lock-sync-else-wait} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{reentrant-lock-release} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{reentrant-lock-exit}
+  \ ]
+\end{align*}$$
 
 ##### Semaphores
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{semaphore-create} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{semaphore-sync} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{semaphore-sync-else-wait} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{semaphore-release}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{semaphore-create} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{semaphore-sync} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{semaphore-sync-else-wait} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{semaphore-release}
+  \ ]
+\end{align*}$$
 
 ##### Shared-exclusive locks
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{rw-lock-create} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{rw-lock-sync-exclusive} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{rw-lock-sync-shared} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{rw-lock-sync-exclusive-else-wait} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{rw-lock-sync-shared-else-wait} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{rw-lock-release-exclusive} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{rw-lock-release-shared}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{rw-lock-create} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{rw-lock-sync-exclusive} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{rw-lock-sync-shared} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{rw-lock-sync-exclusive-else-wait} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{rw-lock-sync-shared-else-wait} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{rw-lock-release-exclusive} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{rw-lock-release-shared}
+  \ ]
+\end{align*}$$
 
 #### Notifications
                
@@ -269,40 +277,39 @@ $$\relax\begin{aligned}\relax
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads/Synchronising}{Notifications}{barrier-create} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads/Synchronising}{Notifications}{barrier-sync} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads/Synchronising}{Notifications}{barrier-sync-else-wait}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads/Synchronising}{Notifications}{barrier-create} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads/Synchronising}{Notifications}{barrier-sync} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads/Synchronising}{Notifications}{barrier-sync-else-wait}
+  \ ]
+\end{align*}$$
 
 ##### Conditions
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads/Synchronising}{Notifications}{condition-create} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads/Synchronising}{Notifications}{condition-wait} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads/Synchronising}{Notifications}{condition-wait-with-lock} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads/Synchronising}{Notifications}{condition-notify-all} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads/Synchronising}{Notifications}{condition-notify-first}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads/Synchronising}{Notifications}{condition-create} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads/Synchronising}{Notifications}{condition-wait} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads/Synchronising}{Notifications}{condition-wait-with-lock} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads/Synchronising}{Notifications}{condition-notify-all} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads/Synchronising}{Notifications}{condition-notify-first}
+  \ ]
+\end{align*}$$
 
 ##### Rendezvous
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads/Synchronising}{Notifications}{rendezvous-create} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads/Synchronising}{Notifications}{rendezvous-sync} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../Computations/Threads/Synchronising}{Notifications}{rendezvous-sync-else-wait}
-  ~ ]
-\end{aligned}$$
-
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads/Synchronising}{Notifications}{rendezvous-create} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads/Synchronising}{Notifications}{rendezvous-sync} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../Computations/Threads/Synchronising}{Notifications}{rendezvous-sync-else-wait}
+  \ ]
+\end{align*}$$
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -313,19 +320,24 @@ $$\relax\begin{aligned}\relax
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]: /CBS-beta 
+[CBS-beta]: /CBS-beta
   "CBS-BETA"
-
-
-____
-
-From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
-
-[Unstable-Funcons-Index.cbs]: /CBS-beta/Unstable-Funcons-beta/Unstable-Funcons-Index/Unstable-Funcons-Index.cbs
-  "CBS SOURCE FILE"
+[Unstable-Funcons-Index.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Unstable-Funcons-beta/Unstable-Funcons-Index/Unstable-Funcons-Index.cbs
+  "CBS SOURCE FILE ON GITHUB"
+[PLAIN]: /CBS-beta/docs/Unstable-Funcons-beta/Unstable-Funcons-Index
+  "CBS SOURCE WEB PAGE"
+ [PRETTY]: /CBS-beta/math/Unstable-Funcons-beta/Unstable-Funcons-Index
+  "CBS-KATEX WEB PAGE"
+[PDF]: /CBS-beta/math/Unstable-Funcons-beta/Unstable-Funcons-Index/Unstable-Funcons-Index.pdf
+  "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
+{::comment}{% endraw %}{:/}
+
+____
+From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
+
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues
   "CBS-BETA ISSUE REPORTS ON GITHUB"
-[Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20Unstable-Funcons-Index/Unstable-Funcons-Index.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A 
+[Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20Unstable-Funcons-Index/Unstable-Funcons-Index.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A
   "GENERATE AN EMAIL TEMPLATE"

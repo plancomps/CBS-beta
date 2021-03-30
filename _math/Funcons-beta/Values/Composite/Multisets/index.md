@@ -1,149 +1,160 @@
 ---
-layout: default
 title: "Multisets"
 math: katex
 parent: Composite
 ancestor: Funcons-beta
 
 ---
+[Funcons-beta] : [Multisets.cbs] \| [PLAIN] \| [PDF]
 
-[Funcons-beta] : [Multisets.cbs]
+{::comment}{% raw %}{:/}
 
 ### Multisets (bags)
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Type} ~ & \NAMEREF{multisets} \\
-  \KEY{Funcon} ~ & \NAMEREF{multiset} \\
-  \KEY{Funcon} ~ & \NAMEREF{multiset-elements} \\
-  \KEY{Funcon} ~ & \NAMEREF{multiset-occurrences} \\
-  \KEY{Funcon} ~ & \NAMEREF{multiset-insert} \\
-  \KEY{Funcon} ~ & \NAMEREF{multiset-delete} \\
-  \KEY{Funcon} ~ & \NAMEREF{is-submultiset}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Type} \ & \NAMEREF{multisets} \\
+  \KEY{Funcon} \ & \NAMEREF{multiset} \\
+  \KEY{Funcon} \ & \NAMEREF{multiset-elements} \\
+  \KEY{Funcon} \ & \NAMEREF{multiset-occurrences} \\
+  \KEY{Funcon} \ & \NAMEREF{multiset-insert} \\
+  \KEY{Funcon} \ & \NAMEREF{multiset-delete} \\
+  \KEY{Funcon} \ & \NAMEREF{is-submultiset}
+  \ ]
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Meta-variables} ~ 
+$$\begin{align*}
+  \KEY{Meta-variables} \
   & \VAR{GT} <: \NAMEHYPER{../..}{Value-Types}{ground-values}
-\end{aligned}$$
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Built-in Type} ~  
-  & \NAMEDECL{multisets}(\VAR{GT} )  
-  
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Built-in Type} \ 
+  & \NAMEDECL{multisets}(
+                       \VAR{GT} )  
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{multisets}
-           ( \VAR{GT} )}$$ is the type of possibly-empty finite multisets of elements
+           (  \VAR{GT} )}$$ is the type of possibly-empty finite multisets of elements
   of $$\SHADE{\VAR{GT}}$$. 
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Built-in Funcon} ~ 
-  & \NAMEDECL{multiset}(\_ : ( \VAR{GT} )\STAR) :  \TO \NAMEREF{multisets}
-                                                                         ( \VAR{GT} )
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Built-in Funcon} \
+  & \NAMEDECL{multiset}(
+                       \_ : (  \VAR{GT} )\STAR) 
+    :  \TO \NAMEREF{multisets}
+                     (  \VAR{GT} ) 
+\end{align*}$$
 
 
   Note that $$\SHADE{\NAMEREF{multiset}
-           ( \cdots )}$$ is not a constructor operation. The order of
+           (  \cdots )}$$ is not a constructor operation. The order of
   argument values is ignored, but duplicates are significant, e.g., 
   $$\SHADE{\NAMEREF{multiset}
-           ( 1,   
-             2,   
-             2 )}$$ is equivalent to $$\SHADE{\NAMEREF{multiset}
-           ( 2,   
-             1,   
-             2 )}$$, but not to
+           (  1, 
+                  2, 
+                  2 )}$$ is equivalent to $$\SHADE{\NAMEREF{multiset}
+           (  2, 
+                  1, 
+                  2 )}$$, but not to
   $$\SHADE{\NAMEREF{multiset}
-           ( 1,   
-             2 )}$$ or $$\SHADE{\NAMEREF{multiset}
-           ( 2,   
-             1 )}$$.
+           (  1, 
+                  2 )}$$ or $$\SHADE{\NAMEREF{multiset}
+           (  2, 
+                  1 )}$$.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Built-in Funcon} ~ 
-  & \NAMEDECL{multiset-elements}(\_ : \NAMEREF{multisets}
-                                ( \VAR{GT} )) :  \TO ( \VAR{GT} )\STAR
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Built-in Funcon} \
+  & \NAMEDECL{multiset-elements}(
+                       \_ : \NAMEREF{multisets}
+                                 (  \VAR{GT} )) 
+    :  \TO (  \VAR{GT} )\STAR 
+\end{align*}$$
 
 
   For each multiset $$\SHADE{\VAR{MS}}$$, the sequence of values $$\SHADE{\VAR{V}\STAR}$$ returned by 
   $$\SHADE{\NAMEREF{multiset-elements}
-           ( \VAR{MS} )}$$ contains each element of $$\SHADE{\VAR{MS}}$$ the same number of times
+           (  \VAR{MS} )}$$ contains each element of $$\SHADE{\VAR{MS}}$$ the same number of times
   as $$\SHADE{\VAR{MS}}$$ does.
   The order of the values in $$\SHADE{\VAR{V}\STAR}$$ is unspecified, and may vary between multisets.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Assert} ~ 
+$$\begin{align*}
+  \KEY{Assert} \
   & \NAMEREF{multiset}
-      ( \NAMEREF{multiset-elements}
-          ( \VAR{S} ) ) == 
-      \VAR{S}
-\end{aligned}$$
+      (  \NAMEREF{multiset-elements}
+              (  \VAR{S} ) ) 
+    == \VAR{S}
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Built-in Funcon} ~ 
-  & \NAMEDECL{multiset-occurrences}(\_ : \VAR{GT}, \_ : \NAMEREF{multisets}
-                                ( \VAR{GT} )) :  \TO \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Built-in Funcon} \
+  & \NAMEDECL{multiset-occurrences}(
+                       \_ : \VAR{GT}, \_ : \NAMEREF{multisets}
+                                 (  \VAR{GT} )) 
+    :  \TO \NAMEHYPER{../../Primitive}{Integers}{natural-numbers} 
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{multiset-occurrences}
-           ( \VAR{GV},   
-             \VAR{MS} )}$$ returns the number of occurrences of $$\SHADE{\VAR{GV}}$$
+           (  \VAR{GV}, 
+                  \VAR{MS} )}$$ returns the number of occurrences of $$\SHADE{\VAR{GV}}$$
   in $$\SHADE{\VAR{MS}}$$. 
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Built-in Funcon} ~ 
-  & \NAMEDECL{multiset-insert}(\_ : \VAR{GT}, \_ : \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}, \_ : \NAMEREF{multisets}
-                                ( \VAR{GT} )) :  \TO \NAMEREF{multisets}
-                                                                         ( \VAR{GT} )
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Built-in Funcon} \
+  & \NAMEDECL{multiset-insert}(
+                       \_ : \VAR{GT}, \_ : \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}, \_ : \NAMEREF{multisets}
+                                 (  \VAR{GT} )) 
+    :  \TO \NAMEREF{multisets}
+                     (  \VAR{GT} ) 
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{multiset-insert}
-           ( \VAR{GV},   
-             \VAR{N},   
-             \VAR{MS} )}$$ returns the multiset that differs from $$\SHADE{\VAR{MS}}$$ 
+           (  \VAR{GV}, 
+                  \VAR{N}, 
+                  \VAR{MS} )}$$ returns the multiset that differs from $$\SHADE{\VAR{MS}}$$ 
   by containing $$\SHADE{\VAR{N}}$$ more copies of $$\SHADE{\VAR{GV}}$$.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Built-in Funcon} ~ 
-  & \NAMEDECL{multiset-delete}(\_ : \NAMEREF{multisets}
-                                ( \VAR{GT} ), \_ : \VAR{GT}, \_ : \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}) :  \TO \NAMEREF{multisets}
-                                                                         ( \VAR{GT} )
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Built-in Funcon} \
+  & \NAMEDECL{multiset-delete}(
+                       \_ : \NAMEREF{multisets}
+                                 (  \VAR{GT} ), \_ : \VAR{GT}, \_ : \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}) 
+    :  \TO \NAMEREF{multisets}
+                     (  \VAR{GT} ) 
+\end{align*}$$
 
 
  $$\SHADE{\NAMEREF{multiset-delete}
-           ( \VAR{MS},   
-             \VAR{GV},   
-             \VAR{N} )}$$ removes $$\SHADE{\VAR{N}}$$ copies of $$\SHADE{\VAR{V}}$$ from the multiset $$\SHADE{\VAR{MS}}$$,
+           (  \VAR{MS}, 
+                  \VAR{GV}, 
+                  \VAR{N} )}$$ removes $$\SHADE{\VAR{N}}$$ copies of $$\SHADE{\VAR{V}}$$ from the multiset $$\SHADE{\VAR{MS}}$$,
  or all copies of $$\SHADE{\VAR{GV}}$$ if there are fewer than $$\SHADE{\VAR{N}}$$ in $$\SHADE{\VAR{MS}}$$.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Built-in Funcon} ~ 
-  & \NAMEDECL{is-submultiset}(\_ : \NAMEREF{multisets}
-                                ( \VAR{GT} ), \_ : \NAMEREF{multisets}
-                                ( \VAR{GT} )) :  \TO \NAMEHYPER{../../Primitive}{Booleans}{booleans}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Built-in Funcon} \
+  & \NAMEDECL{is-submultiset}(
+                       \_ : \NAMEREF{multisets}
+                                 (  \VAR{GT} ), \_ : \NAMEREF{multisets}
+                                 (  \VAR{GT} )) 
+    :  \TO \NAMEHYPER{../../Primitive}{Booleans}{booleans} 
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{is-submultiset}
-           ( \VAR{MS}\SUB{1},   
-             \VAR{MS}\SUB{2} )}$$ tests whether every element of $$\SHADE{\VAR{MS}\SUB{1}}$$ has equal or
+           (  \VAR{MS}\SUB{1}, 
+                  \VAR{MS}\SUB{2} )}$$ tests whether every element of $$\SHADE{\VAR{MS}\SUB{1}}$$ has equal or
   fewer occurrences in $$\SHADE{\VAR{MS}\SUB{1}}$$ than in $$\SHADE{\VAR{MS}\SUB{2}}$$. 
-
 
 
 
@@ -155,19 +166,24 @@ $$\relax\begin{aligned}\relax
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]: /CBS-beta 
+[CBS-beta]: /CBS-beta
   "CBS-BETA"
-
-
-____
-
-From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
-
-[Multisets.cbs]: /CBS-beta/Funcons-beta/Values/Composite/Multisets/Multisets.cbs
-  "CBS SOURCE FILE"
+[Multisets.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Funcons-beta/Values/Composite/Multisets/Multisets.cbs
+  "CBS SOURCE FILE ON GITHUB"
+[PLAIN]: /CBS-beta/docs/Funcons-beta/Values/Composite/Multisets
+  "CBS SOURCE WEB PAGE"
+ [PRETTY]: /CBS-beta/math/Funcons-beta/Values/Composite/Multisets
+  "CBS-KATEX WEB PAGE"
+[PDF]: /CBS-beta/math/Funcons-beta/Values/Composite/Multisets/Multisets.pdf
+  "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
+{::comment}{% endraw %}{:/}
+
+____
+From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
+
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues
   "CBS-BETA ISSUE REPORTS ON GITHUB"
-[Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20Values/Composite/Multisets/Multisets.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A 
+[Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20Values/Composite/Multisets/Multisets.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A
   "GENERATE AN EMAIL TEMPLATE"

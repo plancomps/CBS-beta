@@ -15,36 +15,50 @@ aux_links:
 # permalink: pretty
 
 collections:
+  docs:
+    output: true
   math:
     output: true
 
 just_the_docs:
   collections:
-    math:
-      name: Math
+    docs:
+      name: Plain
       nav_fold: true
+    math:
+      name: Pretty
+      nav_fold: true
+      search_exclude: true
 
 exclude:
   - "profiles/"
   - makefile
   - sunshine2.jar
-  - "Languages-beta/IMP/IMP-cbs/Funcons-beta/"
-  - "Languages-beta/IMP/IMP-cbs/target/"
-  - "Languages-beta/MiniJava/MiniJava-cbs/Funcons-beta/"
-  - "Languages-beta/MiniJava/MiniJava-cbs/target/"
-  - "Languages-beta/SIMPLE/SIMPLE-cbs/Funcons-beta/"
-  - "Languages-beta/SIMPLE/SIMPLE-cbs/target/"
-  - "Languages-beta/SL/SL-cbs/Funcons-beta/"
-  - "Languages-beta/SL/SL-cbs/target/"
-  - "Languages-beta/OCaml-Light/OC-L-cbs/Funcons-beta/"
-  - "Languages-beta/OCaml-Light/OC-L-cbs/target/"
-  - "Unstable-Funcons-beta/Funcons-beta/"
-  - "Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/Unstable-Funcons-beta/"
-  - "Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/target/"
-  - "Unstable-Languages-beta/LangDev-2019/LD-cbs/Unstable-Funcons-beta/"
-  - "Unstable-Languages-beta/LangDev-2019/LD-cbs/target/"
-  - "Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/Unstable-Funcons-beta/"
-  - "Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/target/"
+  - "Funcons-beta/"
+  - "Languages-beta/"
+  - "Unstable-Funcons-beta/"
+  - "Unstable-Languages-beta/"
+  # - "Languages-beta/IMP/IMP-cbs/Funcons-beta/"
+  # - "Languages-beta/IMP/IMP-cbs/target/"
+  # - "Languages-beta/MiniJava/MiniJava-cbs/Funcons-beta/"
+  # - "Languages-beta/MiniJava/MiniJava-cbs/target/"
+  # - "Languages-beta/SIMPLE/SIMPLE-cbs/Funcons-beta/"
+  # - "Languages-beta/SIMPLE/SIMPLE-cbs/target/"
+  # - "Languages-beta/SL/SL-cbs/Funcons-beta/"
+  # - "Languages-beta/SL/SL-cbs/target/"
+  # - "Languages-beta/OCaml-Light/OC-L-cbs/Funcons-beta/"
+  # - "Languages-beta/OCaml-Light/OC-L-cbs/target/"
+  # - "Unstable-Funcons-beta/Funcons-beta/"
+  # - "Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/Unstable-Funcons-beta/"
+  # - "Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/target/"
+  # - "Unstable-Languages-beta/LangDev-2019/LD-cbs/Unstable-Funcons-beta/"
+  # - "Unstable-Languages-beta/LangDev-2019/LD-cbs/target/"
+  # - "Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/Unstable-Funcons-beta/"
+  # - "Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/target/"
+  # - "_docs/Funcons-beta/"
+  # - "_docs/Languages-beta/"
+  # - "_docs/Unstable-Funcons-beta/"
+  # - "_docs/Unstable-Languages-beta/"
 
 # Set the search token separator
 # search_tokenizer_separator: /[\s/]+/
@@ -141,7 +155,13 @@ nav_next_prev: true
 
 defaults:
   -
-    scope: {path: "*/docs, type: pages"}
+    scope: {path: docs, type: pages}
+    values: {layout: default}
+  -
+    scope: {type: docs}
+    values: {layout: default}
+  -
+    scope: {type: math}
     values: {layout: default}
 
 # Funcons-beta

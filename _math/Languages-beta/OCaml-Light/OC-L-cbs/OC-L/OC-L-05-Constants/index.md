@@ -1,13 +1,13 @@
 ---
-layout: default
 title: "OC-L-05-Constants"
 math: katex
 parent: OC-L
 ancestor: Languages-beta
 
 ---
+[Languages-beta] : [OC-L-05-Constants.cbs] \| [PLAIN] \| [PDF]
 
-[Languages-beta] : [OC-L-05-Constants.cbs]
+{::comment}{% raw %}{:/}
 
 $$\KEY{Language} \STRING{OCaml Light}$$
 
@@ -15,74 +15,106 @@ $$\KEY{Language} \STRING{OCaml Light}$$
            
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Syntax} ~ 
-    \VARDECL{CNST} : \SYNDECL{constant}
-      ~ ::= ~ &
+$$\begin{align*}
+  \KEY{Syntax} \
+    \VARDECL{CNST} : \SYN{constant}
+      \ ::= \ & \
       \SYNHYPER{../.}{OC-L-01-Lexical-Conventions}{integer-literal} \\
-      ~ \mid ~ &  \SYNHYPER{../.}{OC-L-01-Lexical-Conventions}{float-literal} \\
-      ~ \mid ~ &  \SYNHYPER{../.}{OC-L-01-Lexical-Conventions}{char-literal} \\
-      ~ \mid ~ &  \SYNHYPER{../.}{OC-L-01-Lexical-Conventions}{string-literal} \\
-      ~ \mid ~ &  \SYNHYPER{../.}{OC-L-03-Names}{constr} \\
-      ~ \mid ~ &  \LEX{false} \\
-      ~ \mid ~ &  \LEX{true} \\
-      ~ \mid ~ &  \LEX{(} ~ \LEX{)} \\
-      ~ \mid ~ &  \LEX{begin} ~ \LEX{end} \\
-      ~ \mid ~ &  \LEX{[{}} ~ \LEX{]{}} \\
-      ~ \mid ~ &  \LEX{[{}|} ~ \LEX{|]{}}
-\end{aligned}$$
+      \ \mid \ & \ \SYNHYPER{../.}{OC-L-01-Lexical-Conventions}{float-literal} \\
+      \ \mid \ & \ \SYNHYPER{../.}{OC-L-01-Lexical-Conventions}{char-literal} \\
+      \ \mid \ & \ \SYNHYPER{../.}{OC-L-01-Lexical-Conventions}{string-literal} \\
+      \ \mid \ & \ \SYNHYPER{../.}{OC-L-03-Names}{constr} \\
+      \ \mid \ & \ \LEX{false} \\
+      \ \mid \ & \ \LEX{true} \\
+      \ \mid \ & \ \LEX{{(}} \ \LEX{{)}} \\
+      \ \mid \ & \ \LEX{begin} \ \LEX{end} \\
+      \ \mid \ & \ \LEX{{[}} \ \LEX{{]}} \\
+      \ \mid \ & \ \LEX{{[}{|}} \ \LEX{{|}{]}}
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Semantics} ~ 
-  & \SEMDECL{value} \LEFTPHRASE ~ \_ : \SYNREF{constant} ~ \RIGHTPHRASE  :  \TO \NAMEHYPER{../.}{OC-L-02-Values}{implemented-values} 
+$$\begin{align*}
+  \KEY{Semantics} \
+  & \SEMDECL{value} \LEFTPHRASE \ \_ : \SYNREF{constant} \ \RIGHTPHRASE  
+    :  \TO \NAMEHYPER{../.}{OC-L-02-Values}{implemented-values} 
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{value} \LEFTPHRASE ~ \VARHYPER{../.}{OC-L-01-Lexical-Conventions}{IL} ~ \RIGHTPHRASE  = \\&\quad
-      \SEMHYPER{../.}{OC-L-01-Lexical-Conventions}{integer-value} \LEFTPHRASE ~ \VAR{IL} ~ \RIGHTPHRASE 
+  \KEY{Rule} \
+    & \SEMREF{value} \LEFTPHRASE \
+                            \VARHYPER{../.}{OC-L-01-Lexical-Conventions}{IL} \
+                          \RIGHTPHRASE  = 
+      \SEMHYPER{../.}{OC-L-01-Lexical-Conventions}{integer-value} \LEFTPHRASE \
+                            \VAR{IL} \
+                          \RIGHTPHRASE 
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{value} \LEFTPHRASE ~ \VARHYPER{../.}{OC-L-01-Lexical-Conventions}{FL} ~ \RIGHTPHRASE  = \\&\quad
-      \SEMHYPER{../.}{OC-L-01-Lexical-Conventions}{float-value} \LEFTPHRASE ~ \VAR{FL} ~ \RIGHTPHRASE 
+  \KEY{Rule} \
+    & \SEMREF{value} \LEFTPHRASE \
+                            \VARHYPER{../.}{OC-L-01-Lexical-Conventions}{FL} \
+                          \RIGHTPHRASE  = 
+      \SEMHYPER{../.}{OC-L-01-Lexical-Conventions}{float-value} \LEFTPHRASE \
+                            \VAR{FL} \
+                          \RIGHTPHRASE 
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{value} \LEFTPHRASE ~ \VARHYPER{../.}{OC-L-01-Lexical-Conventions}{CL} ~ \RIGHTPHRASE  = \\&\quad
-      \SEMHYPER{../.}{OC-L-01-Lexical-Conventions}{character-value} \LEFTPHRASE ~ \VAR{CL} ~ \RIGHTPHRASE 
+  \KEY{Rule} \
+    & \SEMREF{value} \LEFTPHRASE \
+                            \VARHYPER{../.}{OC-L-01-Lexical-Conventions}{CL} \
+                          \RIGHTPHRASE  = 
+      \SEMHYPER{../.}{OC-L-01-Lexical-Conventions}{character-value} \LEFTPHRASE \
+                            \VAR{CL} \
+                          \RIGHTPHRASE 
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{value} \LEFTPHRASE ~ \VARHYPER{../.}{OC-L-01-Lexical-Conventions}{SL} ~ \RIGHTPHRASE  = \\&\quad
-      \SEMHYPER{../.}{OC-L-01-Lexical-Conventions}{string-value} \LEFTPHRASE ~ \VAR{SL} ~ \RIGHTPHRASE 
+  \KEY{Rule} \
+    & \SEMREF{value} \LEFTPHRASE \
+                            \VARHYPER{../.}{OC-L-01-Lexical-Conventions}{SL} \
+                          \RIGHTPHRASE  = 
+      \SEMHYPER{../.}{OC-L-01-Lexical-Conventions}{string-value} \LEFTPHRASE \
+                            \VAR{SL} \
+                          \RIGHTPHRASE 
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{value} \LEFTPHRASE ~ \VARHYPER{../.}{OC-L-03-Names}{CSTR} ~ \RIGHTPHRASE  = \\&\quad
+  \KEY{Rule} \
+    & \SEMREF{value} \LEFTPHRASE \
+                            \VARHYPER{../.}{OC-L-03-Names}{CSTR} \
+                          \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{bound}
-        (\SEMHYPER{../.}{OC-L-03-Names}{constr-name} \LEFTPHRASE ~ \VAR{CSTR} ~ \RIGHTPHRASE )
+        (  \SEMHYPER{../.}{OC-L-03-Names}{constr-name} \LEFTPHRASE \
+                                    \VAR{CSTR} \
+                                  \RIGHTPHRASE  )
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{value} \LEFTPHRASE ~ \LEX{false} ~ \RIGHTPHRASE  = \\&\quad
+  \KEY{Rule} \
+    & \SEMREF{value} \LEFTPHRASE \
+                            \LEX{false} \
+                          \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false}
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{value} \LEFTPHRASE ~ \LEX{true} ~ \RIGHTPHRASE  = \\&\quad
+  \KEY{Rule} \
+    & \SEMREF{value} \LEFTPHRASE \
+                            \LEX{true} \
+                          \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{true}
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{value} \LEFTPHRASE ~ \LEX{(} ~ \LEX{)} ~ \RIGHTPHRASE  = \\&\quad
+  \KEY{Rule} \
+    & \SEMREF{value} \LEFTPHRASE \
+                            \LEX{{(}} \ \LEX{{)}} \
+                          \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null}
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{value} \LEFTPHRASE ~ \LEX{begin} ~ \LEX{end} ~ \RIGHTPHRASE  = \\&\quad
+  \KEY{Rule} \
+    & \SEMREF{value} \LEFTPHRASE \
+                            \LEX{begin} \ \LEX{end} \
+                          \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null}
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{value} \LEFTPHRASE ~ \LEX{[{}} ~ \LEX{]{}} ~ \RIGHTPHRASE  = \\&\quad
+  \KEY{Rule} \
+    & \SEMREF{value} \LEFTPHRASE \
+                            \LEX{{[}} \ \LEX{{]}} \
+                          \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{nil}
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{value} \LEFTPHRASE ~ \LEX{[{}|} ~ \LEX{|]{}} ~ \RIGHTPHRASE  = \\&\quad
+  \KEY{Rule} \
+    & \SEMREF{value} \LEFTPHRASE \
+                            \LEX{{[}{|}} \ \LEX{{|}{]}} \
+                          \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vector}
-        ( ~ )
-\end{aligned}$$
-
+        (   \  )
+\end{align*}$$
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -93,19 +125,24 @@ $$\relax\begin{aligned}\relax
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]: /CBS-beta 
+[CBS-beta]: /CBS-beta
   "CBS-BETA"
-
-
-____
-
-From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
-
-[OC-L-05-Constants.cbs]: /CBS-beta/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-05-Constants/OC-L-05-Constants.cbs
-  "CBS SOURCE FILE"
+[OC-L-05-Constants.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-05-Constants/OC-L-05-Constants.cbs
+  "CBS SOURCE FILE ON GITHUB"
+[PLAIN]: /CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-05-Constants
+  "CBS SOURCE WEB PAGE"
+ [PRETTY]: /CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-05-Constants
+  "CBS-KATEX WEB PAGE"
+[PDF]: /CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-05-Constants/OC-L-05-Constants.pdf
+  "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
+{::comment}{% endraw %}{:/}
+
+____
+From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
+
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues
   "CBS-BETA ISSUE REPORTS ON GITHUB"
-[Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20OC-L/OC-L-05-Constants/OC-L-05-Constants.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A 
+[Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20OC-L/OC-L-05-Constants/OC-L-05-Constants.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A
   "GENERATE AN EMAIL TEMPLATE"

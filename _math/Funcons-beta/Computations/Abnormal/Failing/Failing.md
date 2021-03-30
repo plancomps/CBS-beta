@@ -1,224 +1,236 @@
+{::comment}{% raw %}{:/}
+
 ### Failing
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Datatype} ~ & \NAMEREF{failing} \\
-  \KEY{Funcon} ~ & \NAMEREF{failed} \\
-  \KEY{Funcon} ~ & \NAMEREF{finalise-failing} \\
-  \KEY{Funcon} ~ & \NAMEREF{fail} \\
-  \KEY{Funcon} ~ & \NAMEREF{else} \\
-  \KEY{Funcon} ~ & \NAMEREF{else-choice} \\
-  \KEY{Funcon} ~ & \NAMEREF{checked} \\
-  \KEY{Funcon} ~ & \NAMEREF{check-true}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Datatype} \ & \NAMEREF{failing} \\
+  \KEY{Funcon} \ & \NAMEREF{failed} \\
+  \KEY{Funcon} \ & \NAMEREF{finalise-failing} \\
+  \KEY{Funcon} \ & \NAMEREF{fail} \\
+  \KEY{Funcon} \ & \NAMEREF{else} \\
+  \KEY{Funcon} \ & \NAMEREF{else-choice} \\
+  \KEY{Funcon} \ & \NAMEREF{checked} \\
+  \KEY{Funcon} \ & \NAMEREF{check-true}
+  \ ]
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Meta-variables} ~ 
+$$\begin{align*}
+  \KEY{Meta-variables} \
   & \VAR{T} <: \NAMEHYPER{../../../Values}{Value-Types}{values}
-\end{aligned}$$
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Datatype} ~ 
-  \NAMEDECL{failing}  
-  ~ ::= ~ & \NAMEDECL{failed} 
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Datatype} \ 
+  \NAMEDECL{failing} 
+  \ ::= \ & \NAMEDECL{failed}
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{failed}}$$ is a reason for abrupt termination.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{finalise-failing}(\VAR{X} :  \TO \VAR{T}) :  \TO \VAR{T} \mid \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} \\
-  & \quad \leadsto \NAMEHYPER{../.}{Abrupting}{finalise-abrupting}
-                     ( \VAR{X} )
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{finalise-failing}(
+                       \VAR{X} :  \TO \VAR{T}) 
+    :  \TO \VAR{T}  \mid \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} \\&\quad
+    \leadsto \NAMEHYPER{../.}{Abrupting}{finalise-abrupting}
+               (  \VAR{X} )
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{finalise-failing}
-           ( \VAR{X} )}$$ handles abrupt termination of $$\SHADE{\VAR{X}}$$ due to executing $$\SHADE{\NAMEREF{fail}}$$.
+           (  \VAR{X} )}$$ handles abrupt termination of $$\SHADE{\VAR{X}}$$ due to executing $$\SHADE{\NAMEREF{fail}}$$.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{fail} :  \TO \NAMEHYPER{../../../Values}{Value-Types}{empty-type} \\
-  & \quad \leadsto \NAMEHYPER{../.}{Abrupting}{abrupt}
-                     ( \NAMEREF{failed} )
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{fail} 
+    :  \TO \NAMEHYPER{../../../Values}{Value-Types}{empty-type} \\&\quad
+    \leadsto \NAMEHYPER{../.}{Abrupting}{abrupt}
+               (  \NAMEREF{failed} )
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{fail}}$$ abruptly terminates all enclosing computations until it is handled.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{else}(\_ :  \TO \VAR{T}, \_ : (  \TO \VAR{T} )\PLUS) :  \TO \VAR{T}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{else}(
+                       \_ :  \TO \VAR{T}, \_ : (   \TO \VAR{T} )\PLUS) 
+    :  \TO \VAR{T} 
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{else}
-           ( \VAR{X}\SUB{1},   
-             \VAR{X}\SUB{2},   
-             \cdots )}$$ executes the arguments in turn until either some
+           (  \VAR{X}\SUB{1}, 
+                  \VAR{X}\SUB{2}, 
+                  \cdots )}$$ executes the arguments in turn until either some
   $$\SHADE{\VAR{Xi}}$$ does *not* fail, or all arguments $$\SHADE{\VAR{Xi}}$$ have been executed.
   The last argument executed determines the result.
   $$\SHADE{\NAMEREF{else}
-           ( \VAR{X},   
-             \VAR{Y} )}$$ is associative, with unit $$\SHADE{\NAMEREF{fail}}$$.
+           (  \VAR{X}, 
+                  \VAR{Y} )}$$ is associative, with unit $$\SHADE{\NAMEREF{fail}}$$.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
+$$\begin{align*}
+  \KEY{Rule} \
     & \RULE{
-       \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  ~  )}_{} 
-        \VAR{X}'
+      &  \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(   \  )}_{} 
+          \VAR{X}'
       }{
       &  \NAMEREF{else}
-                      ( \VAR{X},   
-                        \VAR{Y} ) \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  ~  )}_{} 
+                      (  \VAR{X}, 
+                             \VAR{Y} ) \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(   \  )}_{} 
           \NAMEREF{else}
-            ( \VAR{X}',   
-              \VAR{Y} )
+            (  \VAR{X}', 
+                   \VAR{Y} )
       }
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \RULE{
-       \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}( \NAMEREF{failed} )}_{} 
-        \_
+      &  \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  \NAMEREF{failed} )}_{} 
+          \_
       }{
       &  \NAMEREF{else}
-                      ( \VAR{X},   
-                        \VAR{Y} ) \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  ~  )}_{} 
+                      (  \VAR{X}, 
+                             \VAR{Y} ) \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(   \  )}_{} 
           \VAR{Y}
       }
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \RULE{
-       \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}( \VAR{V} : \mathop{\sim} \NAMEREF{failing} )}_{} 
-        \VAR{X}'
+      &  \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  \VAR{V} : \mathop{\sim} \NAMEREF{failing} )}_{} 
+          \VAR{X}'
       }{
       &  \NAMEREF{else}
-                      ( \VAR{X},   
-                        \VAR{Y} ) \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}( \VAR{V} )}_{} 
+                      (  \VAR{X}, 
+                             \VAR{Y} ) \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  \VAR{V} )}_{} 
           \NAMEREF{else}
-            ( \VAR{X}',   
-              \VAR{Y} )
+            (  \VAR{X}', 
+                   \VAR{Y} )
       }
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{else}
-        ( \VAR{V} : \VAR{T},   
-          \VAR{Y} ) \leadsto
+        (  \VAR{V} : \VAR{T}, 
+               \VAR{Y} ) \leadsto 
         \VAR{V}
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{else}
-        ( \VAR{X},   
-          \VAR{Y},   
-          \VAR{Z}\PLUS ) \leadsto
+        (  \VAR{X}, 
+               \VAR{Y}, 
+               \VAR{Z}\PLUS ) \leadsto 
         \NAMEREF{else}
-          ( \VAR{X},   
-            \NAMEREF{else}
-              ( \VAR{Y},    
-                \VAR{Z}\PLUS ) )
-\end{aligned}$$
+          (  \VAR{X}, 
+                 \NAMEREF{else}
+                  (  \VAR{Y}, 
+                         \VAR{Z}\PLUS ) )
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{else-choice}(\_ : (  \TO \VAR{T} )\PLUS) :  \TO \VAR{T}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{else-choice}(
+                       \_ : (   \TO \VAR{T} )\PLUS) 
+    :  \TO \VAR{T} 
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{else-choice}
-           ( \VAR{X},   
-             \cdots )}$$ executes the arguments in any order until either some
+           (  \VAR{X}, 
+                  \cdots )}$$ executes the arguments in any order until either some
   $$\SHADE{\VAR{Xi}}$$ does *not* fail, or all arguments $$\SHADE{\VAR{Xi}}$$ have been executed.
   The last argument executed determines the result.
   $$\SHADE{\NAMEREF{else}
-           ( \VAR{X},   
-             \VAR{Y} )}$$ is associative and commutative, with unit $$\SHADE{\NAMEREF{fail}}$$.
+           (  \VAR{X}, 
+                  \VAR{Y} )}$$ is associative and commutative, with unit $$\SHADE{\NAMEREF{fail}}$$.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
+$$\begin{align*}
+  \KEY{Rule} \
     & \NAMEREF{else-choice}
-        ( \VAR{W}\STAR,   
-          \VAR{X},   
-          \VAR{Y},   
-          \VAR{Z}\STAR ) \leadsto
+        (  \VAR{W}\STAR, 
+               \VAR{X}, 
+               \VAR{Y}, 
+               \VAR{Z}\STAR ) \leadsto \\&\quad
         \NAMEHYPER{../../Normal}{Flowing}{choice}
-          ( \NAMEREF{else}
-              ( \VAR{X},    
-                \NAMEREF{else-choice}
-                  ( \VAR{W}\STAR,     
-                    \VAR{Y},     
-                    \VAR{Z}\STAR ),    
-                \NAMEREF{else}
-                  ( \VAR{Y},     
-                    \NAMEREF{else-choice}
-                      ( \VAR{W}\STAR,      
-                        \VAR{X},      
-                        \VAR{Z}\STAR ) ) ) )
+          ( \\&\quad\quad \NAMEREF{else}
+                  ( \\&\quad\quad\quad \VAR{X}, \\&\quad\quad\quad
+                         \NAMEREF{else-choice}
+                          (  \VAR{W}\STAR, 
+                                 \VAR{Y}, 
+                                 \VAR{Z}\STAR ), \\&\quad\quad\quad
+                         \NAMEREF{else}
+                          (  \VAR{Y}, 
+                                 \NAMEREF{else-choice}
+                                  (  \VAR{W}\STAR, 
+                                         \VAR{X}, 
+                                         \VAR{Z}\STAR ) ) ) )
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{else-choice}
-        ( \VAR{X} ) \leadsto
+        (  \VAR{X} ) \leadsto 
         \VAR{X}
-\end{aligned}$$
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{check-true}(\_ : \NAMEHYPER{../../../Values/Primitive}{Booleans}{booleans}) :  \TO \NAMEHYPER{../../../Values/Primitive}{Null}{null-type}
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{check-true}(
+                       \_ : \NAMEHYPER{../../../Values/Primitive}{Booleans}{booleans}) 
+    :  \TO \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} 
 \\
-  \KEY{Alias} ~ 
+  \KEY{Alias} \
   & \NAMEDECL{check} = \NAMEREF{check-true}
-\end{aligned}$$
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{check-true}
-           ( \VAR{X} )}$$ terminates normally if the value computed by $$\SHADE{\VAR{X}}$$ is $$\SHADE{\NAMEHYPER{../../../Values/Primitive}{Booleans}{true}}$$,
+           (  \VAR{X} )}$$ terminates normally if the value computed by $$\SHADE{\VAR{X}}$$ is $$\SHADE{\NAMEHYPER{../../../Values/Primitive}{Booleans}{true}}$$,
   and fails if it is $$\SHADE{\NAMEHYPER{../../../Values/Primitive}{Booleans}{false}}$$.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
+$$\begin{align*}
+  \KEY{Rule} \
     & \NAMEREF{check-true}
-        ( \NAMEHYPER{../../../Values/Primitive}{Booleans}{true} ) \leadsto
+        (  \NAMEHYPER{../../../Values/Primitive}{Booleans}{true} ) \leadsto 
         \NAMEHYPER{../../../Values/Primitive}{Null}{null-value}
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{check-true}
-        ( \NAMEHYPER{../../../Values/Primitive}{Booleans}{false} ) \leadsto
+        (  \NAMEHYPER{../../../Values/Primitive}{Booleans}{false} ) \leadsto 
         \NAMEREF{fail}
-\end{aligned}$$
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{checked}(\_ : ( \VAR{T} )\QUERY) :  \TO \VAR{T}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{checked}(
+                       \_ : (  \VAR{T} )\QUERY) 
+    :  \TO \VAR{T} 
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{checked}
-           ( \VAR{X} )}$$ fails when $$\SHADE{\VAR{X}}$$ gives the empty sequence of values $$\SHADE{(  ~  )}$$,
+           (  \VAR{X} )}$$ fails when $$\SHADE{\VAR{X}}$$ gives the empty sequence of values $$\SHADE{(   \  )}$$,
   representing that an optional value has not been computed. It otherwise
   computes the same as $$\SHADE{\VAR{X}}$$.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
+$$\begin{align*}
+  \KEY{Rule} \
     & \NAMEREF{checked}
-        ( \VAR{V} : \VAR{T} ) \leadsto
+        (  \VAR{V} : \VAR{T} ) \leadsto 
         \VAR{V}
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{checked}
-        (  ~  ) \leadsto
+        (   \  ) \leadsto 
         \NAMEREF{fail}
-\end{aligned}$$
-
+\end{align*}$$
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -229,5 +241,16 @@ $$\relax\begin{aligned}\relax
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]: /CBS-beta 
+[CBS-beta]: /CBS-beta
   "CBS-BETA"
+[Failing.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Funcons-beta/Computations/Abnormal/Failing/Failing.cbs
+  "CBS SOURCE FILE ON GITHUB"
+[PLAIN]: /CBS-beta/docs/Funcons-beta/Computations/Abnormal/Failing
+  "CBS SOURCE WEB PAGE"
+ [PRETTY]: /CBS-beta/math/Funcons-beta/Computations/Abnormal/Failing
+  "CBS-KATEX WEB PAGE"
+[PDF]: /CBS-beta/math/Funcons-beta/Computations/Abnormal/Failing/Failing.pdf
+  "CBS-LATEX PDF FILE"
+[PLanCompS Project]: https://plancomps.github.io
+  "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
+{::comment}{% endraw %}{:/}

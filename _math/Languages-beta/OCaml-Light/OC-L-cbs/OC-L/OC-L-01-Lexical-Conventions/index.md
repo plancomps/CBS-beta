@@ -1,13 +1,21 @@
 ---
-layout: default
 title: "OC-L-01-Lexical-Conventions"
 math: katex
 parent: OC-L
 ancestor: Languages-beta
 
 ---
+[Languages-beta] : [OC-L-01-Lexical-Conventions.cbs] \| [PLAIN] \| [PDF]
 
-[Languages-beta] : [OC-L-01-Lexical-Conventions.cbs]
+{::comment}{% raw %}{:/}
+<details open markdown="block">
+  <summary>
+    Outline
+  </summary>
+  {: .text-delta }
+- TOC
+{:toc}
+</details>
 
 $$\KEY{Language} \STRING{OCaml Light}$$
 
@@ -19,482 +27,473 @@ $$\KEY{Language} \STRING{OCaml Light}$$
                
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Lexis} ~ 
-    \VARDECL{I} : \SYNDECL{ident}
-      ~ ::= ~ &
-      \SYNREF{capitalized-ident} \\
-      ~ \mid ~ &  \SYNREF{lowercase-ident}
+$$\begin{align*}
+  \KEY{Lexis} \
+    \VARDECL{I} : \SYN{ident}
+      \ ::= \ & \
+      \SYNREF{capitalized-ident} \mid \SYNREF{lowercase-ident}
     \\
     \VARDECL{CI} : \SYN{capitalized-ident}
-      ~ ::= ~ & \SYNREF{uppercase} ~ \LEFTGROUP \SYNREF{uppercase} \mid \SYNREF{lowercase} \mid \SYNREF{decimal} \mid \LEX{\UNDERSCORE } \mid \LEX{\APOSTROPHE } \RIGHTGROUP\STAR
+      \ ::= \ & \
+      \SYNREF{uppercase} \ \LEFTGROUP \SYNREF{uppercase} \mid \SYNREF{lowercase} \mid \SYNREF{decimal} \mid \LEX{{\UNDERSCORE}} \mid \LEX{{\APOSTROPHE}} \RIGHTGROUP\STAR
     \\
-    \VARDECL{LI} : \SYNDECL{lowercase-ident}
-      ~ ::= ~ &
-      \SYNREF{lowercase} ~ \LEFTGROUP \SYNREF{uppercase} \mid \SYNREF{lowercase} \mid \SYNREF{decimal} \mid \LEX{\UNDERSCORE } \mid \LEX{\APOSTROPHE } \RIGHTGROUP\STAR \\
-      ~ \mid ~ &  \LEX{\UNDERSCORE } ~ \LEFTGROUP \SYNREF{uppercase} \mid \SYNREF{lowercase} \mid \SYNREF{decimal} \mid \LEX{\UNDERSCORE } \mid \LEX{\APOSTROPHE } \RIGHTGROUP\PLUS
+    \VARDECL{LI} : \SYN{lowercase-ident}
+      \ ::= \ & \
+      \SYNREF{lowercase} \ \LEFTGROUP \SYNREF{uppercase} \mid \SYNREF{lowercase} \mid \SYNREF{decimal} \mid \LEX{{\UNDERSCORE}} \mid \LEX{{\APOSTROPHE}} \RIGHTGROUP\STAR \\
+      \ \mid \ & \ \LEX{{\UNDERSCORE}} \ \LEFTGROUP \SYNREF{uppercase} \mid \SYNREF{lowercase} \mid \SYNREF{decimal} \mid \LEX{{\UNDERSCORE}} \mid \LEX{{\APOSTROPHE}} \RIGHTGROUP\PLUS
     \\
      \SYN{uppercase}
-      ~ ::= ~ & \LEX{A} - \LEX{Z}
+      \ ::= \ & \
+      \LEX{A} - \LEX{Z}
     \\
      \SYN{lowercase}
-      ~ ::= ~ & \LEX{a} - \LEX{z}
+      \ ::= \ & \
+      \LEX{a} - \LEX{z}
     \\
      \SYN{decimal}
-      ~ ::= ~ & \LEX{0} - \LEX{9}
-\end{aligned}$$
+      \ ::= \ & \
+      \LEX{0} - \LEX{9}
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Semantics} ~ 
-  & \SEMDECL{id} \LEFTPHRASE ~ \_ : \SYNREF{ident} ~ \RIGHTPHRASE  : \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{ids} 
+$$\begin{align*}
+  \KEY{Semantics} \
+  & \SEMDECL{id} \LEFTPHRASE \ \_ : \SYNREF{ident} \ \RIGHTPHRASE  
+    : \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{ids} 
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{id} \LEFTPHRASE ~ \VARREF{I} ~ \RIGHTPHRASE  = \\&\quad
+  \KEY{Rule} \
+    & \SEMREF{id} \LEFTPHRASE \
+                            \VARREF{I} \
+                          \RIGHTPHRASE  = 
       \textsf{\textquotedblleft}\VAR{I}\textsf{\textquotedblright}
-\end{aligned}$$
+\end{align*}$$
 
 ## Integer literals
                
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Syntax} ~ 
+$$\begin{align*}
+  \KEY{Syntax} \
     \VARDECL{IL} : \SYN{integer-literal}
-      ~ ::= ~ & \LEX{-{}}\QUERY \_ \SYNREF{natural-literal}
+      \ ::= \ & \
+      \LEX{{-}}\QUERY \_ \SYNREF{natural-literal}
     \\
-    \VARDECL{NL} : \SYNDECL{natural-literal}
-      ~ ::= ~ &
+    \VARDECL{NL} : \SYN{natural-literal}
+      \ ::= \ & \
       \SYNREF{decimal-plus} \\
-      ~ \mid ~ &  \LEFTGROUP \LEX{0x} \mid \LEX{0X} \RIGHTGROUP ~ \SYNREF{hexadecimal-plus} \\
-      ~ \mid ~ &  \LEFTGROUP \LEX{0o} \mid \LEX{0O} \RIGHTGROUP ~ \SYNREF{octal-plus} \\
-      ~ \mid ~ &  \LEFTGROUP \LEX{0b} \mid \LEX{0B} \RIGHTGROUP ~ \SYNREF{binary-plus}
+      \ \mid \ & \ \LEFTGROUP \LEX{0x} \mid \LEX{0X} \RIGHTGROUP \ \SYNREF{hexadecimal-plus} \\
+      \ \mid \ & \ \LEFTGROUP \LEX{0o} \mid \LEX{0O} \RIGHTGROUP \ \SYNREF{octal-plus} \\
+      \ \mid \ & \ \LEFTGROUP \LEX{0b} \mid \LEX{0B} \RIGHTGROUP \ \SYNREF{binary-plus}
 \\
-  \KEY{Lexis} ~ 
+  \KEY{Lexis} \
     \VARDECL{DP} : \SYN{decimal-plus}
-      ~ ::= ~ & \SYNREF{decimal}\PLUS
+      \ ::= \ & \
+      \SYNREF{decimal}\PLUS
     \\
     \VARDECL{HP} : \SYN{hexadecimal-plus}
-      ~ ::= ~ & \LEFTGROUP \SYNREF{decimal} \mid \LEX{A} - \LEX{F} \mid \LEX{a} - \LEX{f} \RIGHTGROUP\PLUS
+      \ ::= \ & \
+      \LEFTGROUP \SYNREF{decimal} \mid \LEX{A} - \LEX{F} \mid \LEX{a} - \LEX{f} \RIGHTGROUP\PLUS
     \\
     \VARDECL{OP} : \SYN{octal-plus}
-      ~ ::= ~ & \LEFTGROUP \LEX{0} - \LEX{7} \RIGHTGROUP\PLUS
+      \ ::= \ & \
+      \LEFTGROUP \LEX{0} - \LEX{7} \RIGHTGROUP\PLUS
     \\
     \VARDECL{BP} : \SYN{binary-plus}
-      ~ ::= ~ & \LEFTGROUP \LEX{0} \mid \LEX{1} \RIGHTGROUP\PLUS
-\end{aligned}$$
+      \ ::= \ & \
+      \LEFTGROUP \LEX{0} \mid \LEX{1} \RIGHTGROUP\PLUS
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Semantics} ~ 
-  & \SEMDECL{integer-value} \LEFTPHRASE ~ \_ : \SYNREF{integer-literal} ~ \RIGHTPHRASE  :  \TO \NAMEHYPER{../.}{OC-L-02-Values}{implemented-integers} 
+$$\begin{align*}
+  \KEY{Semantics} \
+  & \SEMDECL{integer-value} \LEFTPHRASE \ \_ : \SYNREF{integer-literal} \ \RIGHTPHRASE  
+    :  \TO \NAMEHYPER{../.}{OC-L-02-Values}{implemented-integers} 
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{integer-value} \LEFTPHRASE ~ \LEX{-{}} ~ \VARREF{NL} ~ \RIGHTPHRASE  = \\&\quad
+  \KEY{Rule} \
+    & \SEMREF{integer-value} \LEFTPHRASE \
+                            \LEX{{-}} \ \VARREF{NL} \
+                          \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-negate}
-        (\SEMREF{integer-value} \LEFTPHRASE ~ \VAR{NL} ~ \RIGHTPHRASE )
+        (  \SEMREF{integer-value} \LEFTPHRASE \
+                                    \VAR{NL} \
+                                  \RIGHTPHRASE  )
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{integer-value} \LEFTPHRASE ~ \VARREF{DP} ~ \RIGHTPHRASE  = \\&\quad
-      \NAMEHYPER{../.}{OC-L-02-Values}{implemented-integer} ~
+  \KEY{Rule} \
+    & \SEMREF{integer-value} \LEFTPHRASE \
+                            \VARREF{DP} \
+                          \RIGHTPHRASE  = 
+      \NAMEHYPER{../.}{OC-L-02-Values}{implemented-integer} \ 
         \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{decimal-natural}
-          (\textsf{\textquotedblleft}\VAR{DP}\textsf{\textquotedblright})
-\end{aligned}$$
+          (  \textsf{\textquotedblleft}\VAR{DP}\textsf{\textquotedblright} )
+\end{align*}$$
 
 ## Floating-point literals
                
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Syntax} ~ 
+$$\begin{align*}
+  \KEY{Syntax} \
     \VARDECL{FL} : \SYN{float-literal}
-      ~ ::= ~ & \LEX{-{}}\QUERY \_ \SYNREF{non-negative-float-literal}
+      \ ::= \ & \
+      \LEX{{-}}\QUERY \_ \SYNREF{non-negative-float-literal}
     \\
-    \VARDECL{NNFL} : \SYNDECL{non-negative-float-literal}
-      ~ ::= ~ &
-      \SYNREF{decimal-plus} \_ \LEX{.{}} \_ \SYNREF{decimal-plus} \\
-      ~ \mid ~ &  \SYNREF{decimal-plus} \_ \LEX{.{}} \\
-      ~ \mid ~ &  \SYNREF{decimal-plus} \_ \LEX{.{}} \_ \SYNREF{decimal-plus} \_ \SYNREF{float-exponent} \\
-      ~ \mid ~ &  \SYNREF{decimal-plus} \_ \LEX{.{}} \_ \SYNREF{float-exponent} \\
-      ~ \mid ~ &  \SYNREF{decimal-plus} \_ \SYNREF{float-exponent}
+    \VARDECL{NNFL} : \SYN{non-negative-float-literal}
+      \ ::= \ & \
+      \SYNREF{decimal-plus} \_ \LEX{{.}} \_ \SYNREF{decimal-plus} \\
+      \ \mid \ & \ \SYNREF{decimal-plus} \_ \LEX{{.}} \\
+      \ \mid \ & \ \SYNREF{decimal-plus} \_ \LEX{{.}} \_ \SYNREF{decimal-plus} \_ \SYNREF{float-exponent} \\
+      \ \mid \ & \ \SYNREF{decimal-plus} \_ \LEX{{.}} \_ \SYNREF{float-exponent} \\
+      \ \mid \ & \ \SYNREF{decimal-plus} \_ \SYNREF{float-exponent}
     \\
     \VARDECL{FE} : \SYN{float-exponent}
-      ~ ::= ~ & \LEFTGROUP \LEX{e} \mid \LEX{E} \RIGHTGROUP \_ \LEFTGROUP \LEX{+{}} \mid \LEX{-{}} \RIGHTGROUP\QUERY \_ \SYNREF{decimal-plus}
-\end{aligned}$$
+      \ ::= \ & \
+      \LEFTGROUP \LEX{e} \mid \LEX{E} \RIGHTGROUP \_ \LEFTGROUP \LEX{{+}} \mid \LEX{{-}} \RIGHTGROUP\QUERY \_ \SYNREF{decimal-plus}
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
-    & \LEFTPHRASE ~ \VARREF{DP}\SUB{1} ~ \LEX{.{}} ~ \VARREF{DP}\SUB{2} ~ \RIGHTPHRASE : \SYNREF{non-negative-float-literal} = \\
-    & \LEFTPHRASE ~ \VAR{DP}\SUB{1} ~ \LEX{.{}} ~ \VAR{DP}\SUB{2} ~ \LEX{e} ~ \LEX{1} ~ \RIGHTPHRASE
+$$\begin{align*}
+  \KEY{Rule} \
+    & \LEFTPHRASE \
+        \VARREF{DP}\SUB{1} \ \LEX{{.}} \ \VARREF{DP}\SUB{2} \
+      \RIGHTPHRASE : \SYNREF{non-negative-float-literal} = 
+      \LEFTPHRASE \
+        \VAR{DP}\SUB{1} \ \LEX{{.}} \ \VAR{DP}\SUB{2} \ \LEX{e} \ \LEX{1} \
+      \RIGHTPHRASE
 \\
-  \KEY{Rule} ~ 
-    & \LEFTPHRASE ~ \VARREF{DP} ~ \LEX{.{}} ~ \RIGHTPHRASE : \SYNREF{non-negative-float-literal} = \\
-    & \LEFTPHRASE ~ \VAR{DP} ~ \LEX{.{}} ~ \LEX{0} ~ \LEX{e} ~ \LEX{1} ~ \RIGHTPHRASE
+  \KEY{Rule} \
+    & \LEFTPHRASE \
+        \VARREF{DP} \ \LEX{{.}} \
+      \RIGHTPHRASE : \SYNREF{non-negative-float-literal} = 
+      \LEFTPHRASE \
+        \VAR{DP} \ \LEX{{.}} \ \LEX{0} \ \LEX{e} \ \LEX{1} \
+      \RIGHTPHRASE
 \\
-  \KEY{Rule} ~ 
-    & \LEFTPHRASE ~ \VARREF{DP} ~ \LEX{.{}} ~ \VARREF{FE} ~ \RIGHTPHRASE : \SYNREF{non-negative-float-literal} = \\
-    & \LEFTPHRASE ~ \VAR{DP} ~ \LEX{.{}} ~ \LEX{0} ~ \VAR{FE} ~ \RIGHTPHRASE
+  \KEY{Rule} \
+    & \LEFTPHRASE \
+        \VARREF{DP} \ \LEX{{.}} \ \VARREF{FE} \
+      \RIGHTPHRASE : \SYNREF{non-negative-float-literal} = 
+      \LEFTPHRASE \
+        \VAR{DP} \ \LEX{{.}} \ \LEX{0} \ \VAR{FE} \
+      \RIGHTPHRASE
 \\
-  \KEY{Rule} ~ 
-    & \LEFTPHRASE ~ \VARREF{DP} ~ \VARREF{FE} ~ \RIGHTPHRASE : \SYNREF{non-negative-float-literal} = \\
-    & \LEFTPHRASE ~ \VAR{DP} ~ \LEX{.{}} ~ \LEX{0} ~ \VAR{FE} ~ \RIGHTPHRASE
+  \KEY{Rule} \
+    & \LEFTPHRASE \
+        \VARREF{DP} \ \VARREF{FE} \
+      \RIGHTPHRASE : \SYNREF{non-negative-float-literal} = 
+      \LEFTPHRASE \
+        \VAR{DP} \ \LEX{{.}} \ \LEX{0} \ \VAR{FE} \
+      \RIGHTPHRASE
 \\
-  \KEY{Rule} ~ 
-    & \LEFTPHRASE ~ \LEX{e} ~ \LEX{+{}} ~ \VARREF{DP} ~ \RIGHTPHRASE : \SYNREF{float-exponent} = \\
-    & \LEFTPHRASE ~ \LEX{e} ~ \VAR{DP} ~ \RIGHTPHRASE
+  \KEY{Rule} \
+    & \LEFTPHRASE \
+        \LEX{e} \ \LEX{{+}} \ \VARREF{DP} \
+      \RIGHTPHRASE : \SYNREF{float-exponent} = 
+      \LEFTPHRASE \
+        \LEX{e} \ \VAR{DP} \
+      \RIGHTPHRASE
 \\
-  \KEY{Rule} ~ 
-    & \LEFTPHRASE ~ \LEX{E} ~ \LEX{+{}} ~ \VARREF{DP} ~ \RIGHTPHRASE : \SYNREF{float-exponent} = \\
-    & \LEFTPHRASE ~ \LEX{e} ~ \VAR{DP} ~ \RIGHTPHRASE
+  \KEY{Rule} \
+    & \LEFTPHRASE \
+        \LEX{E} \ \LEX{{+}} \ \VARREF{DP} \
+      \RIGHTPHRASE : \SYNREF{float-exponent} = 
+      \LEFTPHRASE \
+        \LEX{e} \ \VAR{DP} \
+      \RIGHTPHRASE
 \\
-  \KEY{Rule} ~ 
-    & \LEFTPHRASE ~ \LEX{E} ~ \LEX{-{}} ~ \VARREF{DP} ~ \RIGHTPHRASE : \SYNREF{float-exponent} = \\
-    & \LEFTPHRASE ~ \LEX{e} ~ \LEX{-{}} ~ \VAR{DP} ~ \RIGHTPHRASE
-\end{aligned}$$
+  \KEY{Rule} \
+    & \LEFTPHRASE \
+        \LEX{E} \ \LEX{{-}} \ \VARREF{DP} \
+      \RIGHTPHRASE : \SYNREF{float-exponent} = 
+      \LEFTPHRASE \
+        \LEX{e} \ \LEX{{-}} \ \VAR{DP} \
+      \RIGHTPHRASE
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Semantics} ~ 
-  & \SEMDECL{float-value} \LEFTPHRASE ~ \_ : \SYNREF{float-literal} ~ \RIGHTPHRASE  :  \TO \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats} 
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Semantics} \
+  & \SEMDECL{float-value} \LEFTPHRASE \ \_ : \SYNREF{float-literal} \ \RIGHTPHRASE  
+    :  \TO \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats} 
+\end{align*}$$
 
 
-  $$\SHADE{\SEMREF{float-value} \LEFTPHRASE ~ \_ ~ \RIGHTPHRASE }$$ is unspecified if the literal value is not representable
+  $$\SHADE{\SEMREF{float-value} \LEFTPHRASE \
+                               \_ \
+                             \RIGHTPHRASE }$$ is unspecified if the literal value is not representable
   in $$\SHADE{\NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{floats}
-           (\NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats-format})}$$.
+           (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats-format} )}$$.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
-    & \SEMREF{float-value} \LEFTPHRASE ~ \LEX{-{}} ~ \VARREF{NNFL} ~ \RIGHTPHRASE  = \\&\quad
+$$\begin{align*}
+  \KEY{Rule} \
+    & \SEMREF{float-value} \LEFTPHRASE \
+                            \LEX{{-}} \ \VARREF{NNFL} \
+                          \RIGHTPHRASE  = \\&\quad
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{float-negate}
-        (\NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats-format}, \\&\quad \quad 
-         \SEMREF{float-value} \LEFTPHRASE ~ \VAR{NNFL} ~ \RIGHTPHRASE )
+        (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats-format}, 
+               \SEMREF{float-value} \LEFTPHRASE \
+                                    \VAR{NNFL} \
+                                  \RIGHTPHRASE  )
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{float-value} \LEFTPHRASE ~ \VARREF{DP}\SUB{1} ~ \LEX{.{}} ~ \VARREF{DP}\SUB{2} ~ \LEX{e} ~ \VARREF{DP}\SUB{3} ~ \RIGHTPHRASE  = \\&\quad
+  \KEY{Rule} \
+    & \SEMREF{float-value} \LEFTPHRASE \
+                            \VARREF{DP}\SUB{1} \ \LEX{{.}} \ \VARREF{DP}\SUB{2} \ \LEX{e} \ \VARREF{DP}\SUB{3} \
+                          \RIGHTPHRASE  = \\&\quad
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{decimal-float}
-        (\NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats-format}, \\&\quad \quad 
-         \textsf{\textquotedblleft}\VAR{DP}\SUB{1}\textsf{\textquotedblright}, \\&\quad \quad 
-         \textsf{\textquotedblleft}\VAR{DP}\SUB{2}\textsf{\textquotedblright}, \\&\quad \quad 
-         \textsf{\textquotedblleft}\VAR{DP}\SUB{3}\textsf{\textquotedblright})
+        ( \\&\quad\quad \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats-format}, 
+               \textsf{\textquotedblleft}\VAR{DP}\SUB{1}\textsf{\textquotedblright}, 
+               \textsf{\textquotedblleft}\VAR{DP}\SUB{2}\textsf{\textquotedblright}, 
+               \textsf{\textquotedblleft}\VAR{DP}\SUB{3}\textsf{\textquotedblright} )
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{float-value} \LEFTPHRASE ~ \VARREF{DP}\SUB{1} ~ \LEX{.{}} ~ \VARREF{DP}\SUB{2} ~ \LEX{e} ~ \LEX{-{}} ~ \VARREF{DP}\SUB{3} ~ \RIGHTPHRASE  = \\&\quad
+  \KEY{Rule} \
+    & \SEMREF{float-value} \LEFTPHRASE \
+                            \VARREF{DP}\SUB{1} \ \LEX{{.}} \ \VARREF{DP}\SUB{2} \ \LEX{e} \ \LEX{{-}} \ \VARREF{DP}\SUB{3} \
+                          \RIGHTPHRASE  = \\&\quad
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{decimal-float}
-        (\NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats-format}, \\&\quad \quad 
-         \textsf{\textquotedblleft}\VAR{DP}\SUB{1}\textsf{\textquotedblright}, \\&\quad \quad 
-         \textsf{\textquotedblleft}\VAR{DP}\SUB{2}\textsf{\textquotedblright}, \\&\quad \quad 
-         \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{cons}
-           (\ATOM{-{}}, \\&\quad \quad \quad 
-            \textsf{\textquotedblleft}\VAR{DP}\SUB{3}\textsf{\textquotedblright}))
-\end{aligned}$$
+        ( \\&\quad\quad \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats-format}, 
+               \textsf{\textquotedblleft}\VAR{DP}\SUB{1}\textsf{\textquotedblright}, 
+               \textsf{\textquotedblleft}\VAR{DP}\SUB{2}\textsf{\textquotedblright}, 
+               \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{cons}
+                (  \ATOM{{-}}, 
+                       \textsf{\textquotedblleft}\VAR{DP}\SUB{3}\textsf{\textquotedblright} ) )
+\end{align*}$$
 
 ## Character literals
                
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Syntax} ~ 
-    \VARDECL{CL} : \SYNDECL{char-literal}
-      ~ ::= ~ &
-      \LEX{\APOSTROPHE } \_ \SYNREF{regular-char} \_ \LEX{\APOSTROPHE } \\
-      ~ \mid ~ &  \LEX{\APOSTROPHE } \_ \SYNREF{escape-sequence} \_ \LEX{\APOSTROPHE }
+$$\begin{align*}
+  \KEY{Syntax} \
+    \VARDECL{CL} : \SYN{char-literal}
+      \ ::= \ & \
+      \LEX{{\APOSTROPHE}} \_ \SYNREF{regular-char} \_ \LEX{{\APOSTROPHE}} \\
+      \ \mid \ & \ \LEX{{\APOSTROPHE}} \_ \SYNREF{escape-sequence} \_ \LEX{{\APOSTROPHE}}
     \\
-    \VARDECL{ES} : \SYNDECL{escape-sequence}
-      ~ ::= ~ &
-      \LEX{\BACKSLASH } \_ \SYNREF{escaped-char} \\
-      ~ \mid ~ &  \LEX{\BACKSLASH } \_ \SYNREF{escaped-char-code}
+    \VARDECL{ES} : \SYN{escape-sequence}
+      \ ::= \ & \
+      \LEX{{\BACKSLASH}} \_ \SYNREF{escaped-char} \\
+      \ \mid \ & \ \LEX{{\BACKSLASH}} \_ \SYNREF{escaped-char-code}
 \\
-  \KEY{Lexis} ~ 
+  \KEY{Lexis} \
     \VARDECL{RC} : \SYN{regular-char}
-      ~ ::= ~ & \mathop{\sim} \LEFTGROUP \LEX{\APOSTROPHE } \mid \LEX{\BACKSLASH } \RIGHTGROUP
+      \ ::= \ & \
+      \mathop{\sim} \LEFTGROUP \LEX{{\APOSTROPHE}} \mid \LEX{{\BACKSLASH}} \RIGHTGROUP
     \\
-    \VARDECL{EC} : \SYNDECL{escaped-char}
-      ~ ::= ~ &
-      \LEX{\BACKSLASH } \\
-      ~ \mid ~ &  \LEX{"{}} \\
-      ~ \mid ~ &  \LEX{\APOSTROPHE } \\
-      ~ \mid ~ &  \LEX{n} \\
-      ~ \mid ~ &  \LEX{t} \\
-      ~ \mid ~ &  \LEX{b} \\
-      ~ \mid ~ &  \LEX{r} \\
-      ~ \mid ~ &  \LEX{~}
+    \VARDECL{EC} : \SYN{escaped-char}
+      \ ::= \ & \
+      \LEX{{\BACKSLASH}} \mid \LEX{{"}} \mid \LEX{{\APOSTROPHE}} \mid \LEX{n} \mid \LEX{t} \mid \LEX{b} \mid \LEX{r} \mid \LEX{~}
     \\
     \VARDECL{ECC} : \SYN{escaped-char-code}
-      ~ ::= ~ & \SYNREF{decimal} ~ \SYNREF{decimal} ~ \SYNREF{decimal}
-\end{aligned}$$
+      \ ::= \ & \
+      \SYNREF{decimal} \ \SYNREF{decimal} \ \SYNREF{decimal}
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Semantics} ~ 
-  & \SEMDECL{character-value} \LEFTPHRASE ~ \_ : \SYNREF{char-literal} ~ \RIGHTPHRASE  :  \TO \NAMEHYPER{../.}{OC-L-02-Values}{implemented-characters} 
+$$\begin{align*}
+  \KEY{Semantics} \
+  & \SEMDECL{character-value} \LEFTPHRASE \ \_ : \SYNREF{char-literal} \ \RIGHTPHRASE  
+    :  \TO \NAMEHYPER{../.}{OC-L-02-Values}{implemented-characters} 
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{character-value} \LEFTPHRASE ~ \LEX{\APOSTROPHE } ~ \VARREF{RC} ~ \LEX{\APOSTROPHE } ~ \RIGHTPHRASE  = \\&\quad
+  \KEY{Rule} \
+    & \SEMREF{character-value} \LEFTPHRASE \
+                            \LEX{{\APOSTROPHE}} \ \VARREF{RC} \ \LEX{{\APOSTROPHE}} \
+                          \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Characters}{ascii-character}
-        (\textsf{\textquotedblleft}\VAR{RC}\textsf{\textquotedblright})
+        (  \textsf{\textquotedblleft}\VAR{RC}\textsf{\textquotedblright} )
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{character-value} \LEFTPHRASE ~ \LEX{\APOSTROPHE } ~ \VARREF{ES} ~ \LEX{\APOSTROPHE } ~ \RIGHTPHRASE  = \\&\quad
-      \SEMREF{capture} \LEFTPHRASE ~ \VAR{ES} ~ \RIGHTPHRASE 
-\end{aligned}$$
+  \KEY{Rule} \
+    & \SEMREF{character-value} \LEFTPHRASE \
+                            \LEX{{\APOSTROPHE}} \ \VARREF{ES} \ \LEX{{\APOSTROPHE}} \
+                          \RIGHTPHRASE  = 
+      \SEMREF{capture} \LEFTPHRASE \
+                            \VAR{ES} \
+                          \RIGHTPHRASE 
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Semantics} ~ 
-  & \SEMDECL{capture} \LEFTPHRASE ~ \_ : \SYNREF{escape-sequence} ~ \RIGHTPHRASE  : \NAMEHYPER{../.}{OC-L-02-Values}{implemented-characters} 
+$$\begin{align*}
+  \KEY{Semantics} \
+  & \SEMDECL{capture} \LEFTPHRASE \ \_ : \SYNREF{escape-sequence} \ \RIGHTPHRASE  
+    : \NAMEHYPER{../.}{OC-L-02-Values}{implemented-characters} 
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{capture} \LEFTPHRASE ~ \LEX{\BACKSLASH } ~ \LEX{\BACKSLASH } ~ \RIGHTPHRASE  = \\&\quad
+  \KEY{Rule} \
+    & \SEMREF{capture} \LEFTPHRASE \
+                            \LEX{{\BACKSLASH}} \ \LEX{{\BACKSLASH}} \
+                          \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Characters}{backslash}
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{capture} \LEFTPHRASE ~ \LEX{\BACKSLASH } ~ \LEX{\APOSTROPHE } ~ \RIGHTPHRASE  = \\&\quad
-      \ATOM{\APOSTROPHE }
+  \KEY{Rule} \
+    & \SEMREF{capture} \LEFTPHRASE \
+                            \LEX{{\BACKSLASH}} \ \LEX{{\APOSTROPHE}} \
+                          \RIGHTPHRASE  = 
+      \ATOM{{\APOSTROPHE}}
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{capture} \LEFTPHRASE ~ \LEX{\BACKSLASH } ~ \LEX{n} ~ \RIGHTPHRASE  = \\&\quad
+  \KEY{Rule} \
+    & \SEMREF{capture} \LEFTPHRASE \
+                            \LEX{{\BACKSLASH}} \ \LEX{n} \
+                          \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Characters}{line-feed}
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{capture} \LEFTPHRASE ~ \LEX{\BACKSLASH } ~ \LEX{t} ~ \RIGHTPHRASE  = \\&\quad
+  \KEY{Rule} \
+    & \SEMREF{capture} \LEFTPHRASE \
+                            \LEX{{\BACKSLASH}} \ \LEX{t} \
+                          \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Characters}{horizontal-tab}
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{capture} \LEFTPHRASE ~ \LEX{\BACKSLASH } ~ \LEX{b} ~ \RIGHTPHRASE  = \\&\quad
+  \KEY{Rule} \
+    & \SEMREF{capture} \LEFTPHRASE \
+                            \LEX{{\BACKSLASH}} \ \LEX{b} \
+                          \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Characters}{backspace}
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{capture} \LEFTPHRASE ~ \LEX{\BACKSLASH } ~ \LEX{r} ~ \RIGHTPHRASE  = \\&\quad
+  \KEY{Rule} \
+    & \SEMREF{capture} \LEFTPHRASE \
+                            \LEX{{\BACKSLASH}} \ \LEX{r} \
+                          \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Characters}{carriage-return}
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{capture} \LEFTPHRASE ~ \LEX{\BACKSLASH } ~ \VARREF{ECC} ~ \RIGHTPHRASE  = \\&\quad
-      \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{checked} ~
-        \NAMEHYPER{../.}{OC-L-02-Values}{implemented-character} ~
-          \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Characters}{unicode-character} ~
+  \KEY{Rule} \
+    & \SEMREF{capture} \LEFTPHRASE \
+                            \LEX{{\BACKSLASH}} \ \VARREF{ECC} \
+                          \RIGHTPHRASE  = \\&\quad
+      \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{checked} \ 
+        \NAMEHYPER{../.}{OC-L-02-Values}{implemented-character} \ 
+          \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Characters}{unicode-character} \ 
             \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{decimal-natural}
-              (\textsf{\textquotedblleft}\VAR{ECC}\textsf{\textquotedblright})
-\end{aligned}$$
+              (  \textsf{\textquotedblleft}\VAR{ECC}\textsf{\textquotedblright} )
+\end{align*}$$
 
 ## String literals
                
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Syntax} ~ 
+$$\begin{align*}
+  \KEY{Syntax} \
     \VARDECL{SL} : \SYN{string-literal}
-      ~ ::= ~ & \LEX{"{}} \_ \SYNREF{string-character-star} \_ \LEX{"{}}
+      \ ::= \ & \
+      \LEX{{"}} \_ \SYNREF{string-character-star} \_ \LEX{{"}}
     \\
-    \VARDECL{SCS} : \SYNDECL{string-character-star}
-      ~ ::= ~ &
+    \VARDECL{SCS} : \SYN{string-character-star}
+      \ ::= \ & \
       \SYNREF{string-character} \_ \SYNREF{string-character-star} \\
-      ~ \mid ~ &  \LEFTGROUP  \RIGHTGROUP
+      \ \mid \ & \ \LEFTGROUP  \RIGHTGROUP
     \\
-    \VARDECL{SC} : \SYNDECL{string-character}
-      ~ ::= ~ &
+    \VARDECL{SC} : \SYN{string-character}
+      \ ::= \ & \
       \SYNREF{regular-string-char} \\
-      ~ \mid ~ &  \SYNREF{escape-sequence}
+      \ \mid \ & \ \SYNREF{escape-sequence}
 \\
-  \KEY{Lexis} ~ 
+  \KEY{Lexis} \
     \VARDECL{RSC} : \SYN{regular-string-char}
-      ~ ::= ~ & \mathop{\sim} \LEFTGROUP \LEX{"{}} \mid \LEX{\BACKSLASH } \RIGHTGROUP
-\end{aligned}$$
+      \ ::= \ & \
+      \mathop{\sim} \LEFTGROUP \LEX{{"}} \mid \LEX{{\BACKSLASH}} \RIGHTGROUP
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Semantics} ~ 
-  & \SEMDECL{string-value} \LEFTPHRASE ~ \_ : \SYNREF{string-literal} ~ \RIGHTPHRASE  :  \TO \NAMEHYPER{../.}{OC-L-02-Values}{implemented-strings} 
+$$\begin{align*}
+  \KEY{Semantics} \
+  & \SEMDECL{string-value} \LEFTPHRASE \ \_ : \SYNREF{string-literal} \ \RIGHTPHRASE  
+    :  \TO \NAMEHYPER{../.}{OC-L-02-Values}{implemented-strings} 
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{string-value} \LEFTPHRASE ~ \LEX{"{}} ~ \VARREF{SCS} ~ \LEX{"{}} ~ \RIGHTPHRASE  = \\&\quad
-      \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{checked} ~
-        \NAMEHYPER{../.}{OC-L-02-Values}{implemented-string} ~
-          \\SEMREF{string-chars} \LEFTPHRASE ~ \VAR{SCS} ~ \RIGHTPHRASE 
-\end{aligned}$$
+  \KEY{Rule} \
+    & \SEMREF{string-value} \LEFTPHRASE \
+                            \LEX{{"}} \ \VARREF{SCS} \ \LEX{{"}} \
+                          \RIGHTPHRASE  = \\&\quad
+      \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{checked} \ 
+        \NAMEHYPER{../.}{OC-L-02-Values}{implemented-string} \ 
+          [  \SEMREF{string-chars} \LEFTPHRASE \
+                                      \VAR{SCS} \
+                                    \RIGHTPHRASE  ]
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Semantics} ~ 
-  & \SEMDECL{string-chars} \LEFTPHRASE ~ \_ : \SYNREF{string-character-star} ~ \RIGHTPHRASE  :  \TO \NAMEHYPER{../.}{OC-L-02-Values}{implemented-characters}\STAR 
+$$\begin{align*}
+  \KEY{Semantics} \
+  & \SEMDECL{string-chars} \LEFTPHRASE \ \_ : \SYNREF{string-character-star} \ \RIGHTPHRASE  
+    :  \TO \NAMEHYPER{../.}{OC-L-02-Values}{implemented-characters}\STAR 
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{string-chars} \LEFTPHRASE ~  ~ \RIGHTPHRASE  = \\&\quad
-       ~ 
+  \KEY{Rule} \
+    & \SEMREF{string-chars} \LEFTPHRASE \
+                             \
+                          \RIGHTPHRASE  = 
+       \ 
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{string-chars} \LEFTPHRASE ~ \VARREF{SC} ~ \VARREF{SCS} ~ \RIGHTPHRASE  = \\&\quad
-      \SEMREF{string-capture} \LEFTPHRASE ~ \VAR{SC} ~ \RIGHTPHRASE , \\&\quad 
-      \SEMREF{string-chars} \LEFTPHRASE ~ \VAR{SCS} ~ \RIGHTPHRASE 
-\end{aligned}$$
+  \KEY{Rule} \
+    & \SEMREF{string-chars} \LEFTPHRASE \
+                            \VARREF{SC} \ \VARREF{SCS} \
+                          \RIGHTPHRASE  = 
+      \SEMREF{string-capture} \LEFTPHRASE \
+                            \VAR{SC} \
+                          \RIGHTPHRASE , 
+       \SEMREF{string-chars} \LEFTPHRASE \
+                            \VAR{SCS} \
+                          \RIGHTPHRASE 
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Semantics} ~ 
-  & \SEMDECL{string-capture} \LEFTPHRASE ~ \_ : \SYNREF{string-character} ~ \RIGHTPHRASE  : \NAMEHYPER{../.}{OC-L-02-Values}{implemented-characters} 
+$$\begin{align*}
+  \KEY{Semantics} \
+  & \SEMDECL{string-capture} \LEFTPHRASE \ \_ : \SYNREF{string-character} \ \RIGHTPHRASE  
+    : \NAMEHYPER{../.}{OC-L-02-Values}{implemented-characters} 
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{string-capture} \LEFTPHRASE ~ \VARREF{RSC} ~ \RIGHTPHRASE  = \\&\quad
+  \KEY{Rule} \
+    & \SEMREF{string-capture} \LEFTPHRASE \
+                            \VARREF{RSC} \
+                          \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Characters}{ascii-character}
-        (\textsf{\textquotedblleft}\VAR{RSC}\textsf{\textquotedblright})
+        (  \textsf{\textquotedblleft}\VAR{RSC}\textsf{\textquotedblright} )
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{string-capture} \LEFTPHRASE ~ \VARREF{ES} ~ \RIGHTPHRASE  = \\&\quad
-      \SEMREF{capture} \LEFTPHRASE ~ \VAR{ES} ~ \RIGHTPHRASE 
-\end{aligned}$$
+  \KEY{Rule} \
+    & \SEMREF{string-capture} \LEFTPHRASE \
+                            \VARREF{ES} \
+                          \RIGHTPHRASE  = 
+      \SEMREF{capture} \LEFTPHRASE \
+                            \VAR{ES} \
+                          \RIGHTPHRASE 
+\end{align*}$$
 
 ## Prefix and infix symbols
                
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Lexis} ~ 
-    \VARDECL{PS} : \SYNDECL{prefix-symbol}
-      ~ ::= ~ &
-      \LEX{!{}} ~ \SYNREF{operator-char}\STAR \\
-      ~ \mid ~ &  \LEFTGROUP \LEX{?{}} \mid \LEX{\TILDE } \RIGHTGROUP ~ \SYNREF{operator-char}\PLUS
+$$\begin{align*}
+  \KEY{Lexis} \
+    \VARDECL{PS} : \SYN{prefix-symbol}
+      \ ::= \ & \
+      \LEX{{!}} \ \SYNREF{operator-char}\STAR \\
+      \ \mid \ & \ \LEFTGROUP \LEX{{?}} \mid \LEX{{\TILDE}} \RIGHTGROUP \ \SYNREF{operator-char}\PLUS
     \\
-     \SYNDECL{operator-char}
-      ~ ::= ~ &
-      \LEX{!{}} \\
-      ~ \mid ~ &  \LEX{\DOLLAR } \\
-      ~ \mid ~ &  \LEX{\PERCENT } \\
-      ~ \mid ~ &  \LEX{\AMPERSAND } \\
-      ~ \mid ~ &  \LEX{*{}} \\
-      ~ \mid ~ &  \LEX{+{}} \\
-      ~ \mid ~ &  \LEX{-{}} \\
-      ~ \mid ~ &  \LEX{.{}} \\
-      ~ \mid ~ &  \LEX{/{}} \\
-      ~ \mid ~ &  \LEX{:{}} \\
-      ~ \mid ~ &  \LEX{<{}} \\
-      ~ \mid ~ &  \LEX{={}} \\
-      ~ \mid ~ &  \LEX{>{}} \\
-      ~ \mid ~ &  \LEX{?{}} \\
-      ~ \mid ~ &  \LEX{@{}} \\
-      ~ \mid ~ &  \LEX{\CARET } \\
-      ~ \mid ~ &  \LEX{|} \\
-      ~ \mid ~ &  \LEX{\TILDE }
+     \SYN{operator-char}
+      \ ::= \ & \
+      \LEX{{!}} \mid \LEX{{\DOLLAR}} \mid \LEX{{\PERCENT}} \mid \LEX{{\AMPERSAND}} \mid \LEX{{*}} \mid \LEX{{+}} \mid \LEX{{-}} \mid \LEX{{.}} \mid \LEX{{/}} \\
+      \ \mid \ & \ \LEX{{:}} \mid \LEX{{<}} \mid \LEX{{=}} \mid \LEX{{>}} \mid \LEX{{?}} \mid \LEX{{@}} \mid \LEX{{\CARET}} \mid \LEX{{|}} \mid \LEX{{\TILDE}}
     \\
-     \SYNDECL{operator-char-not-asterisk}
-      ~ ::= ~ &
-      \LEX{!{}} \\
-      ~ \mid ~ &  \LEX{\DOLLAR } \\
-      ~ \mid ~ &  \LEX{\PERCENT } \\
-      ~ \mid ~ &  \LEX{\AMPERSAND } \\
-      ~ \mid ~ &  \LEX{+{}} \\
-      ~ \mid ~ &  \LEX{-{}} \\
-      ~ \mid ~ &  \LEX{.{}} \\
-      ~ \mid ~ &  \LEX{/{}} \\
-      ~ \mid ~ &  \LEX{:{}} \\
-      ~ \mid ~ &  \LEX{<{}} \\
-      ~ \mid ~ &  \LEX{={}} \\
-      ~ \mid ~ &  \LEX{>{}} \\
-      ~ \mid ~ &  \LEX{?{}} \\
-      ~ \mid ~ &  \LEX{@{}} \\
-      ~ \mid ~ &  \LEX{\CARET } \\
-      ~ \mid ~ &  \LEX{|} \\
-      ~ \mid ~ &  \LEX{\TILDE }
+     \SYN{operator-char-not-asterisk}
+      \ ::= \ & \
+      \LEX{{!}} \mid \LEX{{\DOLLAR}} \mid \LEX{{\PERCENT}} \mid \LEX{{\AMPERSAND}} \mid \LEX{{+}} \mid \LEX{{-}} \mid \LEX{{.}} \mid \LEX{{/}} \\
+      \ \mid \ & \ \LEX{{:}} \mid \LEX{{<}} \mid \LEX{{=}} \mid \LEX{{>}} \mid \LEX{{?}} \mid \LEX{{@}} \mid \LEX{{\CARET}} \mid \LEX{{|}} \mid \LEX{{\TILDE}}
     \\
-     \SYNDECL{operator-char-not-bar}
-      ~ ::= ~ &
-      \LEX{!{}} \\
-      ~ \mid ~ &  \LEX{\DOLLAR } \\
-      ~ \mid ~ &  \LEX{\PERCENT } \\
-      ~ \mid ~ &  \LEX{\AMPERSAND } \\
-      ~ \mid ~ &  \LEX{*{}} \\
-      ~ \mid ~ &  \LEX{+{}} \\
-      ~ \mid ~ &  \LEX{-{}} \\
-      ~ \mid ~ &  \LEX{.{}} \\
-      ~ \mid ~ &  \LEX{/{}} \\
-      ~ \mid ~ &  \LEX{:{}} \\
-      ~ \mid ~ &  \LEX{<{}} \\
-      ~ \mid ~ &  \LEX{={}} \\
-      ~ \mid ~ &  \LEX{>{}} \\
-      ~ \mid ~ &  \LEX{?{}} \\
-      ~ \mid ~ &  \LEX{@{}} \\
-      ~ \mid ~ &  \LEX{\CARET } \\
-      ~ \mid ~ &  \LEX{\TILDE }
+     \SYN{operator-char-not-bar}
+      \ ::= \ & \
+      \LEX{{!}} \mid \LEX{{\DOLLAR}} \mid \LEX{{\PERCENT}} \mid \LEX{{\AMPERSAND}} \mid \LEX{{*}} \mid \LEX{{+}} \mid \LEX{{-}} \mid \LEX{{.}} \mid \LEX{{/}} \\
+      \ \mid \ & \ \LEX{{:}} \mid \LEX{{<}} \mid \LEX{{=}} \mid \LEX{{>}} \mid \LEX{{?}} \mid \LEX{{@}} \mid \LEX{{\CARET}} \mid \LEX{{\TILDE}}
     \\
-     \SYNDECL{operator-char-not-ampersand}
-      ~ ::= ~ &
-      \LEX{!{}} \\
-      ~ \mid ~ &  \LEX{\DOLLAR } \\
-      ~ \mid ~ &  \LEX{\PERCENT } \\
-      ~ \mid ~ &  \LEX{*{}} \\
-      ~ \mid ~ &  \LEX{+{}} \\
-      ~ \mid ~ &  \LEX{-{}} \\
-      ~ \mid ~ &  \LEX{.{}} \\
-      ~ \mid ~ &  \LEX{/{}} \\
-      ~ \mid ~ &  \LEX{:{}} \\
-      ~ \mid ~ &  \LEX{<{}} \\
-      ~ \mid ~ &  \LEX{={}} \\
-      ~ \mid ~ &  \LEX{>{}} \\
-      ~ \mid ~ &  \LEX{?{}} \\
-      ~ \mid ~ &  \LEX{@{}} \\
-      ~ \mid ~ &  \LEX{\CARET } \\
-      ~ \mid ~ &  \LEX{|} \\
-      ~ \mid ~ &  \LEX{\TILDE }
-\end{aligned}$$
+     \SYN{operator-char-not-ampersand}
+      \ ::= \ & \
+      \LEX{{!}} \mid \LEX{{\DOLLAR}} \mid \LEX{{\PERCENT}} \mid \LEX{{*}} \mid \LEX{{+}} \mid \LEX{{-}} \mid \LEX{{.}} \mid \LEX{{/}} \\
+      \ \mid \ & \ \LEX{{:}} \mid \LEX{{<}} \mid \LEX{{=}} \mid \LEX{{>}} \mid \LEX{{?}} \mid \LEX{{@}} \mid \LEX{{\CARET}} \mid \LEX{{|}} \mid \LEX{{\TILDE}}
+\end{align*}$$
 
 ## Keywords
                
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Lexis} ~ 
-     \SYNDECL{keyword}
-      ~ ::= ~ &
-      \LEX{and} \\
-      ~ \mid ~ &  \LEX{as} \\
-      ~ \mid ~ &  \LEX{assert} \\
-      ~ \mid ~ &  \LEX{asr} \\
-      ~ \mid ~ &  \LEX{begin} \\
-      ~ \mid ~ &  \LEX{class} \\
-      ~ \mid ~ &  \LEX{constraint} \\
-      ~ \mid ~ &  \LEX{do} \\
-      ~ \mid ~ &  \LEX{done} \\
-      ~ \mid ~ &  \LEX{downto} \\
-      ~ \mid ~ &  \LEX{else} \\
-      ~ \mid ~ &  \LEX{end} \\
-      ~ \mid ~ &  \LEX{exception} \\
-      ~ \mid ~ &  \LEX{external} \\
-      ~ \mid ~ &  \LEX{false} \\
-      ~ \mid ~ &  \LEX{for} \\
-      ~ \mid ~ &  \LEX{fun} \\
-      ~ \mid ~ &  \LEX{function} \\
-      ~ \mid ~ &  \LEX{functor} \\
-      ~ \mid ~ &  \LEX{if} \\
-      ~ \mid ~ &  \LEX{in} \\
-      ~ \mid ~ &  \LEX{include} \\
-      ~ \mid ~ &  \LEX{inherit} \\
-      ~ \mid ~ &  \LEX{initializer} \\
-      ~ \mid ~ &  \LEX{land} \\
-      ~ \mid ~ &  \LEX{lazy} \\
-      ~ \mid ~ &  \LEX{let} \\
-      ~ \mid ~ &  \LEX{lor} \\
-      ~ \mid ~ &  \LEX{lsl} \\
-      ~ \mid ~ &  \LEX{lsr} \\
-      ~ \mid ~ &  \LEX{lxor} \\
-      ~ \mid ~ &  \LEX{match} \\
-      ~ \mid ~ &  \LEX{method} \\
-      ~ \mid ~ &  \LEX{mod} \\
-      ~ \mid ~ &  \LEX{module} \\
-      ~ \mid ~ &  \LEX{mutable} \\
-      ~ \mid ~ &  \LEX{new} \\
-      ~ \mid ~ &  \LEX{nonrec} \\
-      ~ \mid ~ &  \LEX{object} \\
-      ~ \mid ~ &  \LEX{of} \\
-      ~ \mid ~ &  \LEX{open} \\
-      ~ \mid ~ &  \LEX{or} \\
-      ~ \mid ~ &  \LEX{private} \\
-      ~ \mid ~ &  \LEX{rec} \\
-      ~ \mid ~ &  \LEX{sig} \\
-      ~ \mid ~ &  \LEX{struct} \\
-      ~ \mid ~ &  \LEX{then} \\
-      ~ \mid ~ &  \LEX{to} \\
-      ~ \mid ~ &  \LEX{true} \\
-      ~ \mid ~ &  \LEX{try} \\
-      ~ \mid ~ &  \LEX{type} \\
-      ~ \mid ~ &  \LEX{val} \\
-      ~ \mid ~ &  \LEX{virtual} \\
-      ~ \mid ~ &  \LEX{when} \\
-      ~ \mid ~ &  \LEX{while} \\
-      ~ \mid ~ &  \LEX{with}
-\end{aligned}$$
-
+$$\begin{align*}
+  \KEY{Lexis} \
+     \SYN{keyword}
+      \ ::= \ & \
+      \LEX{and} \mid \LEX{as} \mid \LEX{assert} \mid \LEX{asr} \mid \LEX{begin} \mid \LEX{class} \\
+      \ \mid \ & \ \LEX{constraint} \mid \LEX{do} \mid \LEX{done} \mid \LEX{downto} \mid \LEX{else} \mid \LEX{end} \\
+      \ \mid \ & \ \LEX{exception} \mid \LEX{external} \mid \LEX{false} \mid \LEX{for} \mid \LEX{fun} \mid \LEX{function} \\
+      \ \mid \ & \ \LEX{functor} \mid \LEX{if} \mid \LEX{in} \mid \LEX{include} \mid \LEX{inherit} \mid \LEX{initializer} \\
+      \ \mid \ & \ \LEX{land} \mid \LEX{lazy} \mid \LEX{let} \mid \LEX{lor} \mid \LEX{lsl} \mid \LEX{lsr} \\
+      \ \mid \ & \ \LEX{lxor} \mid \LEX{match} \mid \LEX{method} \mid \LEX{mod} \mid \LEX{module} \mid \LEX{mutable} \\
+      \ \mid \ & \ \LEX{new} \mid \LEX{nonrec} \mid \LEX{object} \mid \LEX{of} \mid \LEX{open} \mid \LEX{or} \\
+      \ \mid \ & \ \LEX{private} \mid \LEX{rec} \mid \LEX{sig} \mid \LEX{struct} \mid \LEX{then} \mid \LEX{to} \\
+      \ \mid \ & \ \LEX{true} \mid \LEX{try} \mid \LEX{type} \mid \LEX{val} \mid \LEX{virtual} \mid \LEX{when} \\
+      \ \mid \ & \ \LEX{while} \mid \LEX{with}
+\end{align*}$$
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -505,19 +504,24 @@ $$\relax\begin{aligned}\relax
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]: /CBS-beta 
+[CBS-beta]: /CBS-beta
   "CBS-BETA"
-
-
-____
-
-From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
-
-[OC-L-01-Lexical-Conventions.cbs]: /CBS-beta/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-01-Lexical-Conventions/OC-L-01-Lexical-Conventions.cbs
-  "CBS SOURCE FILE"
+[OC-L-01-Lexical-Conventions.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-01-Lexical-Conventions/OC-L-01-Lexical-Conventions.cbs
+  "CBS SOURCE FILE ON GITHUB"
+[PLAIN]: /CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-01-Lexical-Conventions
+  "CBS SOURCE WEB PAGE"
+ [PRETTY]: /CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-01-Lexical-Conventions
+  "CBS-KATEX WEB PAGE"
+[PDF]: /CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-01-Lexical-Conventions/OC-L-01-Lexical-Conventions.pdf
+  "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
+{::comment}{% endraw %}{:/}
+
+____
+From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
+
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues
   "CBS-BETA ISSUE REPORTS ON GITHUB"
-[Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20OC-L/OC-L-01-Lexical-Conventions/OC-L-01-Lexical-Conventions.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A 
+[Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20OC-L/OC-L-01-Lexical-Conventions/OC-L-01-Lexical-Conventions.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A
   "GENERATE AN EMAIL TEMPLATE"

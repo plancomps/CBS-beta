@@ -1,71 +1,74 @@
 ---
-layout: default
 title: "Thunks"
 math: katex
 parent: Abstraction
 ancestor: Funcons-beta
 
 ---
+[Funcons-beta] : [Thunks.cbs] \| [PLAIN] \| [PDF]
 
-[Funcons-beta] : [Thunks.cbs]
+{::comment}{% raw %}{:/}
 
 ### Thunks
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Datatype} ~ & \NAMEREF{thunks} \\
-  \KEY{Funcon} ~ & \NAMEREF{thunk} \\
-  \KEY{Funcon} ~ & \NAMEREF{force}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Datatype} \ & \NAMEREF{thunks} \\
+  \KEY{Funcon} \ & \NAMEREF{thunk} \\
+  \KEY{Funcon} \ & \NAMEREF{force}
+  \ ]
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Meta-variables} ~ 
+$$\begin{align*}
+  \KEY{Meta-variables} \
   & \VAR{T} <: \NAMEHYPER{../..}{Value-Types}{values}
-\end{aligned}$$
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Datatype} ~ 
-  \NAMEDECL{thunks}(\VAR{T} )  
-  ~ ::= ~ & \NAMEDECL{thunk} (\_ : \NAMEHYPER{../.}{Generic}{abstractions}
-                                         ( (  ~  ) \TO \VAR{T} ))
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Datatype} \ 
+  \NAMEDECL{thunks}(
+                     \VAR{T} ) 
+  \ ::= \ & \NAMEDECL{thunk}(
+                               \_ : \NAMEHYPER{../.}{Generic}{abstractions}
+                                         (  (   \  ) \TO \VAR{T} ))
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{thunks}
-           ( \VAR{T} )}$$ consists of abstractions whose bodies do not depend on
+           (  \VAR{T} )}$$ consists of abstractions whose bodies do not depend on
   a given value, and whose executions normally compute values of type $$\SHADE{\VAR{T}}$$.
   $$\SHADE{\NAMEREF{thunk}
-           ( \NAMEHYPER{../.}{Generic}{abstraction}
-               ( \VAR{X} ) )}$$ evaluates to a thunk with dynamic bindings,
+           (  \NAMEHYPER{../.}{Generic}{abstraction}
+                   (  \VAR{X} ) )}$$ evaluates to a thunk with dynamic bindings,
   $$\SHADE{\NAMEREF{thunk}
-           ( \NAMEHYPER{../.}{Generic}{closure}
-               ( \VAR{X} ) )}$$ computes a thunk with static bindings.
+           (  \NAMEHYPER{../.}{Generic}{closure}
+                   (  \VAR{X} ) )}$$ computes a thunk with static bindings.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{force}(\_ : \NAMEREF{thunks}
-                                ( \VAR{T} )) :  \TO \VAR{T}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{force}(
+                       \_ : \NAMEREF{thunks}
+                                 (  \VAR{T} )) 
+    :  \TO \VAR{T} 
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{force}
-           ( \VAR{H} )}$$ enacts the abstraction of the thunk $$\SHADE{\VAR{H}}$$.
+           (  \VAR{H} )}$$ enacts the abstraction of the thunk $$\SHADE{\VAR{H}}$$.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
+$$\begin{align*}
+  \KEY{Rule} \
     & \NAMEREF{force}
-        ( \NAMEREF{thunk}
-            ( \NAMEHYPER{../.}{Generic}{abstraction}
-                ( \VAR{X} ) ) ) \leadsto
+        (  \NAMEREF{thunk}
+                (  \NAMEHYPER{../.}{Generic}{abstraction}
+                        (  \VAR{X} ) ) ) \leadsto 
         \NAMEHYPER{../../../Computations/Normal}{Giving}{no-given}
-          ( \VAR{X} )
-\end{aligned}$$
-
+          (  \VAR{X} )
+\end{align*}$$
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -76,19 +79,24 @@ $$\relax\begin{aligned}\relax
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]: /CBS-beta 
+[CBS-beta]: /CBS-beta
   "CBS-BETA"
-
-
-____
-
-From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
-
-[Thunks.cbs]: /CBS-beta/Funcons-beta/Values/Abstraction/Thunks/Thunks.cbs
-  "CBS SOURCE FILE"
+[Thunks.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Funcons-beta/Values/Abstraction/Thunks/Thunks.cbs
+  "CBS SOURCE FILE ON GITHUB"
+[PLAIN]: /CBS-beta/docs/Funcons-beta/Values/Abstraction/Thunks
+  "CBS SOURCE WEB PAGE"
+ [PRETTY]: /CBS-beta/math/Funcons-beta/Values/Abstraction/Thunks
+  "CBS-KATEX WEB PAGE"
+[PDF]: /CBS-beta/math/Funcons-beta/Values/Abstraction/Thunks/Thunks.pdf
+  "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
+{::comment}{% endraw %}{:/}
+
+____
+From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
+
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues
   "CBS-BETA ISSUE REPORTS ON GITHUB"
-[Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20Values/Abstraction/Thunks/Thunks.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A 
+[Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20Values/Abstraction/Thunks/Thunks.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A
   "GENERATE AN EMAIL TEMPLATE"

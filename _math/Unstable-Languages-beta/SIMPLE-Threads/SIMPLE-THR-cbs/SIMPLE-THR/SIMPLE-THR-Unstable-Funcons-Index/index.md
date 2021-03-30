@@ -1,13 +1,21 @@
 ---
-layout: default
 title: "SIMPLE-THR-Unstable-Funcons-Index"
 math: katex
 parent: SIMPLE-THR
 ancestor: Unstable-Languages-beta
 
 ---
+[Unstable-Languages-beta] : [SIMPLE-THR-Unstable-Funcons-Index.cbs] \| [PLAIN] \| [PDF]
 
-[Unstable-Languages-beta] : [SIMPLE-THR-Unstable-Funcons-Index.cbs]
+{::comment}{% raw %}{:/}
+<details open markdown="block">
+  <summary>
+    Outline
+  </summary>
+  {: .text-delta }
+- TOC
+{:toc}
+</details>
 
 
 
@@ -28,24 +36,24 @@ Unstable Funcons, for use only in Unstable Languages
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Normal}{Indexing}{allocate-index} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Normal}{Indexing}{lookup-index}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Normal}{Indexing}{allocate-index} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Normal}{Indexing}{lookup-index}
+  \ ]
+\end{align*}$$
 
 ### Memos
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Normal}{Memos}{initialise-memos} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Normal}{Memos}{memo-value} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Normal}{Memos}{memo-value-recall}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Normal}{Memos}{initialise-memos} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Normal}{Memos}{memo-value} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Normal}{Memos}{memo-value-recall}
+  \ ]
+\end{align*}$$
 
 ## Abnormal computation
                
@@ -55,12 +63,12 @@ $$\relax\begin{aligned}\relax
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Abnormal}{Postponing}{postpone} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Abnormal}{Postponing}{postpone-after-effect}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Abnormal}{Postponing}{postpone} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Abnormal}{Postponing}{postpone-after-effect}
+  \ ]
+\end{align*}$$
 
 ## Threads
                
@@ -70,32 +78,32 @@ $$\relax\begin{aligned}\relax
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads}{Multithreading}{thread-joinable}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads}{Multithreading}{thread-joinable}
+  \ ]
+\end{align*}$$
 
 #### Activation
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads}{Multithreading}{multithread} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads}{Multithreading}{thread-activate}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads}{Multithreading}{multithread} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads}{Multithreading}{thread-activate}
+  \ ]
+\end{align*}$$
 
 #### Termination
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads}{Multithreading}{thread-join}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads}{Multithreading}{thread-join}
+  \ ]
+\end{align*}$$
 
 ### Thread synchronisation
                
@@ -105,24 +113,24 @@ $$\relax\begin{aligned}\relax
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads/Synchronising}{Locks}{is-exclusive-lock-holder}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads/Synchronising}{Locks}{is-exclusive-lock-holder}
+  \ ]
+\end{align*}$$
 
 ##### Reentrant locks
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads/Synchronising}{Locks}{reentrant-lock-create} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads/Synchronising}{Locks}{reentrant-lock-sync-else-wait} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads/Synchronising}{Locks}{reentrant-lock-release} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads/Synchronising}{Locks}{reentrant-lock-exit}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads/Synchronising}{Locks}{reentrant-lock-create} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads/Synchronising}{Locks}{reentrant-lock-sync-else-wait} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads/Synchronising}{Locks}{reentrant-lock-release} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads/Synchronising}{Locks}{reentrant-lock-exit}
+  \ ]
+\end{align*}$$
 
 #### Notifications
                
@@ -132,13 +140,12 @@ $$\relax\begin{aligned}\relax
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads/Synchronising}{Notifications}{rendezvous-create} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads/Synchronising}{Notifications}{rendezvous-sync-else-wait}
-  ~ ]
-\end{aligned}$$
-
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads/Synchronising}{Notifications}{rendezvous-create} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads/Synchronising}{Notifications}{rendezvous-sync-else-wait}
+  \ ]
+\end{align*}$$
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -149,19 +156,24 @@ $$\relax\begin{aligned}\relax
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]: /CBS-beta 
+[CBS-beta]: /CBS-beta
   "CBS-BETA"
-
-
-____
-
-From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
-
-[SIMPLE-THR-Unstable-Funcons-Index.cbs]: /CBS-beta/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-Unstable-Funcons-Index/SIMPLE-THR-Unstable-Funcons-Index.cbs
-  "CBS SOURCE FILE"
+[SIMPLE-THR-Unstable-Funcons-Index.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-Unstable-Funcons-Index/SIMPLE-THR-Unstable-Funcons-Index.cbs
+  "CBS SOURCE FILE ON GITHUB"
+[PLAIN]: /CBS-beta/docs/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-Unstable-Funcons-Index
+  "CBS SOURCE WEB PAGE"
+ [PRETTY]: /CBS-beta/math/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-Unstable-Funcons-Index
+  "CBS-KATEX WEB PAGE"
+[PDF]: /CBS-beta/math/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-Unstable-Funcons-Index/SIMPLE-THR-Unstable-Funcons-Index.pdf
+  "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
+{::comment}{% endraw %}{:/}
+
+____
+From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
+
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues
   "CBS-BETA ISSUE REPORTS ON GITHUB"
-[Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20SIMPLE-THR/SIMPLE-THR-Unstable-Funcons-Index/SIMPLE-THR-Unstable-Funcons-Index.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A 
+[Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20SIMPLE-THR/SIMPLE-THR-Unstable-Funcons-Index/SIMPLE-THR-Unstable-Funcons-Index.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A
   "GENERATE AN EMAIL TEMPLATE"

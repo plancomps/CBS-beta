@@ -1,16 +1,18 @@
+{::comment}{% raw %}{:/}
+
 ### Memos
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Entity} ~ & \NAMEREF{memo-map} \\
-  \KEY{Funcon} ~ & \NAMEREF{initialise-memos} \\
-  \KEY{Funcon} ~ & \NAMEREF{memo-value} \\
-  \KEY{Funcon} ~ & \NAMEREF{initialise-memo-value} \\
-  \KEY{Funcon} ~ & \NAMEREF{memo-value-recall}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Entity} \ & \NAMEREF{memo-map} \\
+  \KEY{Funcon} \ & \NAMEREF{initialise-memos} \\
+  \KEY{Funcon} \ & \NAMEREF{memo-value} \\
+  \KEY{Funcon} \ & \NAMEREF{initialise-memo-value} \\
+  \KEY{Funcon} \ & \NAMEREF{memo-value-recall}
+  \ ]
+\end{align*}$$
 
 
 A memo is like a mutable variable, except that the memo is updated and
@@ -19,51 +21,57 @@ collection of memos is represented by a mutable entity that maps keys
 to values.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Entity} ~ 
+$$\begin{align*}
+  \KEY{Entity} \
   & \langle \_, \NAMEDECL{memo-map}(\_ : \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{maps}
-                                                            (\NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{ground-values}, \\&\quad 
-                                                             \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values})) \rangle \TRANS  \langle \_, \NAME{memo-map}(\_ : \NAME{maps}
-                                                                                               (\NAME{ground-values}, \\&\quad 
-                                                                                                \NAME{values})) \rangle
-\end{aligned}$$
+                                                            (  \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{ground-values}, 
+                                                                   \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values} )) \rangle \TRANS  \\& 
+    \langle \_, \NAME{memo-map}(\_ : \NAME{maps}
+                                                            (  \NAME{ground-values}, 
+                                                                   \NAME{values} )) \rangle
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{initialise-memos}(\_ :  \TO \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values}) :  \TO \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values}
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{initialise-memos}(
+                       \_ :  \TO \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values}) 
+    :  \TO \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values} 
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     &  \langle \NAMEREF{initialise-memos}
-                            (\VAR{X}), \NAMEREF{memo-map} (\_) \rangle \TRANS \langle \VAR{X}, \NAMEREF{memo-map} (\NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{map}
-                                                                                                     ( ~ )) \rangle
-\end{aligned}$$
+                            (  \VAR{X} ), \NAMEREF{memo-map} (  \_ ) \rangle \TRANS 
+        \langle \VAR{X}, \NAMEREF{memo-map} (  \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{map}
+                                                     (   \  ) ) \rangle
+\end{align*}$$
 
 
 When key $$\SHADE{\VAR{K}}$$ is associated with value $$\SHADE{\VAR{V}}$$, the funcon $$\SHADE{\NAMEREF{memo-value}
-           (\VAR{K},   
-            \VAR{X})}$$
+           (  \VAR{K}, 
+                  \VAR{X} )}$$
 simply gives $$\SHADE{\VAR{V}}$$, without evaluating $$\SHADE{\VAR{X}}$$. When $$\SHADE{\VAR{K}}$$ is not currently
 associated with any value, it associates $$\SHADE{\VAR{K}}$$ with the value computed
 by $$\SHADE{\VAR{X}}$$.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{memo-value}(\VAR{K} : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{ground-values}, \VAR{X} :  \TO \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values}) :  \TO \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values} \\
-  & \quad \leadsto \NAMEHYPER{../../../../Funcons-beta/Computations/Abnormal}{Failing}{else}
-                     (\NAMEREF{memo-value-recall}
-                        (\VAR{K}), \\&\quad 
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{memo-value}(
+                       \VAR{K} : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{ground-values}, \VAR{X} :  \TO \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values}) 
+    :  \TO \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values} \\&\quad
+    \leadsto \NAMEHYPER{../../../../Funcons-beta/Computations/Abnormal}{Failing}{else}
+               ( \\&\quad\quad\quad\quad \NAMEREF{memo-value-recall}
+                       (  \VAR{K} ), \\&\quad\quad\quad\quad
                       \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Giving}{give}
-                        (\VAR{X}, \\&\quad \quad 
-                         \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
-                           (\NAMEHYPER{../../../../Funcons-beta/Computations/Abnormal}{Failing}{else}
-                              (\NAMEREF{initialise-memo-value}
-                                 (\VAR{K}, \\&\quad \quad \quad \quad \quad 
-                                  \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Giving}{given}), \\&\quad \quad \quad \quad 
-                               \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-value}), \\&\quad \quad \quad 
-                            \NAMEREF{memo-value-recall}
-                              (\VAR{K}))))
-\end{aligned}$$
+                       ( \\&\quad\quad\quad\quad\quad \VAR{X}, \\&\quad\quad\quad\quad\quad
+                              \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
+                               ( \\&\quad\quad\quad\quad\quad\quad \NAMEHYPER{../../../../Funcons-beta/Computations/Abnormal}{Failing}{else}
+                                       (  \NAMEREF{initialise-memo-value}
+                                               (  \VAR{K}, 
+                                                      \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Giving}{given} ), 
+                                              \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-value} ), \\&\quad\quad\quad\quad\quad\quad
+                                      \NAMEREF{memo-value-recall}
+                                       (  \VAR{K} ) ) ) )
+\end{align*}$$
 
 
 The initialisation could fail due to memoisation of a (potentially
@@ -72,58 +80,71 @@ the value computed by $$\SHADE{\VAR{X}}$$ is simply discarded; a resource-safe
 funcon would take an extra argument to roll back the effects of $$\SHADE{\VAR{X}}$$.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{initialise-memo-value}(\_ : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{ground-values}, \_ : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values}) :  \TO \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-type}
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{initialise-memo-value}(
+                       \_ : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{ground-values}, \_ : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values}) 
+    :  \TO \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \RULE{
-      \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{map-unite}
-        (\VAR{M},   
-         \{ \VAR{K} \mapsto \VAR{V} \}) \leadsto \VAR{M}'
+      & \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{map-unite}
+          (  \VAR{M}, 
+                 \{ \VAR{K} \mapsto 
+                     \VAR{V} \} ) \leadsto 
+          \VAR{M}'
       }{
-       \langle \NAMEREF{initialise-memo-value}
-                            (\VAR{K} : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{ground-values},   
-                             \VAR{V} : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values}), \NAMEREF{memo-map} (\VAR{M}) \rangle \TRANS \langle \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-value}, \NAMEREF{memo-map} (\VAR{M}') \rangle
+      &  \langle \NAMEREF{initialise-memo-value}
+                              (  \VAR{K} : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{ground-values}, 
+                                     \VAR{V} : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values} ), \NAMEREF{memo-map} (  \VAR{M} ) \rangle \TRANS \\&\quad
+          \langle \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-value}, \NAMEREF{memo-map} (  \VAR{M}' ) \rangle
       }
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \RULE{
-      \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{map-unite}
-        (\VAR{M},   
-         \{ \VAR{K} \mapsto \VAR{V} \}) \leadsto ( ~ )
+      & \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{map-unite}
+          (  \VAR{M}, 
+                 \{ \VAR{K} \mapsto 
+                     \VAR{V} \} ) \leadsto 
+          (   \  )
       }{
-       \langle \NAMEREF{initialise-memo-value}
-                            (\VAR{K} : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{ground-values},   
-                             \VAR{V} : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values}), \NAMEREF{memo-map} (\VAR{M}) \rangle \TRANS \langle \NAMEHYPER{../../../../Funcons-beta/Computations/Abnormal}{Failing}{fail}, \NAMEREF{memo-map} (\VAR{M}) \rangle
+      &  \langle \NAMEREF{initialise-memo-value}
+                              (  \VAR{K} : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{ground-values}, 
+                                     \VAR{V} : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values} ), \NAMEREF{memo-map} (  \VAR{M} ) \rangle \TRANS \\&\quad
+          \langle \NAMEHYPER{../../../../Funcons-beta/Computations/Abnormal}{Failing}{fail}, \NAMEREF{memo-map} (  \VAR{M} ) \rangle
       }
-\end{aligned}$$
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{memo-value-recall}(\_ : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{ground-values}) :  \TO \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values}
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{memo-value-recall}(
+                       \_ : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{ground-values}) 
+    :  \TO \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values} 
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \RULE{
-      \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{lookup}
-        (\VAR{M},   
-         \VAR{K}) \leadsto \VAR{V}
+      & \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{lookup}
+          (  \VAR{M}, 
+                 \VAR{K} ) \leadsto 
+          \VAR{V}
       }{
-       \langle \NAMEREF{memo-value-recall}
-                            (\VAR{K} : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{ground-values}), \NAMEREF{memo-map} (\VAR{M}) \rangle \TRANS \langle \VAR{V}, \NAMEREF{memo-map} (\VAR{M}) \rangle
+      &  \langle \NAMEREF{memo-value-recall}
+                              (  \VAR{K} : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{ground-values} ), \NAMEREF{memo-map} (  \VAR{M} ) \rangle \TRANS 
+          \langle \VAR{V}, \NAMEREF{memo-map} (  \VAR{M} ) \rangle
       }
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \RULE{
-      \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{lookup}
-        (\VAR{M},   
-         \VAR{K}) \leadsto ( ~ )
+      & \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{lookup}
+          (  \VAR{M}, 
+                 \VAR{K} ) \leadsto 
+          (   \  )
       }{
-       \langle \NAMEREF{memo-value-recall}
-                            (\VAR{K} : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{ground-values}), \NAMEREF{memo-map} (\VAR{M}) \rangle \TRANS \langle \NAMEHYPER{../../../../Funcons-beta/Computations/Abnormal}{Failing}{fail}, \NAMEREF{memo-map} (\VAR{M}) \rangle
+      &  \langle \NAMEREF{memo-value-recall}
+                              (  \VAR{K} : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{ground-values} ), \NAMEREF{memo-map} (  \VAR{M} ) \rangle \TRANS 
+          \langle \NAMEHYPER{../../../../Funcons-beta/Computations/Abnormal}{Failing}{fail}, \NAMEREF{memo-map} (  \VAR{M} ) \rangle
       }
-\end{aligned}$$
-
+\end{align*}$$
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -134,5 +155,16 @@ $$\relax\begin{aligned}\relax
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]: /CBS-beta 
+[CBS-beta]: /CBS-beta
   "CBS-BETA"
+[Memos.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Unstable-Funcons-beta/Computations/Normal/Memos/Memos.cbs
+  "CBS SOURCE FILE ON GITHUB"
+[PLAIN]: /CBS-beta/docs/Unstable-Funcons-beta/Computations/Normal/Memos
+  "CBS SOURCE WEB PAGE"
+ [PRETTY]: /CBS-beta/math/Unstable-Funcons-beta/Computations/Normal/Memos
+  "CBS-KATEX WEB PAGE"
+[PDF]: /CBS-beta/math/Unstable-Funcons-beta/Computations/Normal/Memos/Memos.pdf
+  "CBS-LATEX PDF FILE"
+[PLanCompS Project]: https://plancomps.github.io
+  "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
+{::comment}{% endraw %}{:/}

@@ -1,3 +1,13 @@
+{::comment}{% raw %}{:/}
+<details open markdown="block">
+  <summary>
+    Outline
+  </summary>
+  {: .text-delta }
+- TOC
+{:toc}
+</details>
+
 
 
 
@@ -13,68 +23,68 @@
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{seq} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{effect} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{if-true-else} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{if-else} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{while-true} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{while}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{seq} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{effect} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{if-true-else} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{if-else} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{while-true} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{while}
+  \ ]
+\end{align*}$$
 
 ### Giving
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{initialise-giving} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{give} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{left-to-right-repeat}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{initialise-giving} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{give} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{left-to-right-repeat}
+  \ ]
+\end{align*}$$
 
 ### Binding
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Type} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{environments} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{envs} \\
-  \KEY{Datatype} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{identifiers} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{ids} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{initialise-binding} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{bind-value} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{bind} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{bound-value} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{bound} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{scope} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{collateral}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Type} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{environments} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{envs} \\
+  \KEY{Datatype} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{identifiers} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{ids} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{initialise-binding} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{bind-value} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{bind} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{bound-value} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{bound} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{scope} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{collateral}
+  \ ]
+\end{align*}$$
 
 ### Storing
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{initialise-storing} \\
-  \KEY{Datatype} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{variables} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{vars} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{allocate-variable} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{alloc} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{allocate-initialised-variable} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{alloc-init} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assign} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assigned}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{initialise-storing} \\
+  \KEY{Datatype} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{variables} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{vars} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{allocate-variable} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{alloc} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{allocate-initialised-variable} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{alloc-init} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assign} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assigned}
+  \ ]
+\end{align*}$$
 
 ### Interacting
                
@@ -84,21 +94,21 @@ $$\relax\begin{aligned}\relax
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Interacting}{read}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Interacting}{read}
+  \ ]
+\end{align*}$$
 
 #### Output
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Interacting}{print}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Interacting}{print}
+  \ ]
+\end{align*}$$
 
 ## Abnormal computation
                
@@ -108,35 +118,35 @@ $$\relax\begin{aligned}\relax
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{finalise-failing} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{checked}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{finalise-failing} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{checked}
+  \ ]
+\end{align*}$$
 
 ### Throwing
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Throwing}{finalise-throwing} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Throwing}{throw} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Throwing}{handle-thrown}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Throwing}{finalise-throwing} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Throwing}{throw} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Throwing}{handle-thrown}
+  \ ]
+\end{align*}$$
 
 ### Returning
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Returning}{return} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Returning}{handle-return}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Returning}{return} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Returning}{handle-return}
+  \ ]
+\end{align*}$$
 
 # Values
                
@@ -146,14 +156,14 @@ $$\relax\begin{aligned}\relax
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Type} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{vals} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-equal} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-eq}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Type} \ & \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{vals} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-equal} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-eq}
+  \ ]
+\end{align*}$$
 
 ## Primitive values
                
@@ -163,58 +173,58 @@ $$\relax\begin{aligned}\relax
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{true} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{not}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{true} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{not}
+  \ ]
+\end{align*}$$
 
 ### Integers
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Type} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{natural-numbers} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{nats} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-add} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{int-add} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-subtract} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{int-sub} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-multiply} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{int-mul} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-divide} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{int-div} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-modulo} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{int-mod} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-negate} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{int-neg} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-is-less} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-less} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-is-less-or-equal} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-less-or-equal} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-is-greater} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-greater} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-is-greater-or-equal} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-greater-or-equal} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{decimal-natural} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{decimal}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Type} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{natural-numbers} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{nats} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-add} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{int-add} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-subtract} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{int-sub} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-multiply} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{int-mul} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-divide} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{int-div} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-modulo} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{int-mod} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-negate} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{int-neg} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-is-less} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-less} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-is-less-or-equal} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-less-or-equal} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-is-greater} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-greater} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-is-greater-or-equal} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-greater-or-equal} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{decimal-natural} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{decimal}
+  \ ]
+\end{align*}$$
 
 ### The null value
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Datatype} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-value} \\
-  \KEY{Alias} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Datatype} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-value} \\
+  \KEY{Alias} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null}
+  \ ]
+\end{align*}$$
 
 ## Composite values
                
@@ -224,34 +234,34 @@ $$\relax\begin{aligned}\relax
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sequences}{length} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sequences}{index}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sequences}{length} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sequences}{index}
+  \ ]
+\end{align*}$$
 
 ### Tuples
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Datatype} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuples}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Datatype} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuples}
+  \ ]
+\end{align*}$$
 
 ### Vectors
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Datatype} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vectors} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vector} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vector-elements}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Datatype} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vectors} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vector} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vector-elements}
+  \ ]
+\end{align*}$$
 
 ## Abstraction values
                
@@ -261,36 +271,35 @@ $$\relax\begin{aligned}\relax
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Generic}{closure}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Generic}{closure}
+  \ ]
+\end{align*}$$
 
 ### Functions
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Datatype} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{functions} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{function} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{apply}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Datatype} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{functions} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{function} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{apply}
+  \ ]
+\end{align*}$$
 
 ### Patterns
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Datatype} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Patterns}{patterns} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Patterns}{pattern} \\
-  \KEY{Funcon} ~ & \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Patterns}{match}
-  ~ ]
-\end{aligned}$$
-
+$$\begin{align*}
+  [ \
+  \KEY{Datatype} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Patterns}{patterns} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Patterns}{pattern} \\
+  \KEY{Funcon} \ & \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Patterns}{match}
+  \ ]
+\end{align*}$$
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -301,5 +310,16 @@ $$\relax\begin{aligned}\relax
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]: /CBS-beta 
+[CBS-beta]: /CBS-beta
   "CBS-BETA"
+[SIMPLE-Funcons-Index.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-Funcons-Index/SIMPLE-Funcons-Index.cbs
+  "CBS SOURCE FILE ON GITHUB"
+[PLAIN]: /CBS-beta/docs/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-Funcons-Index
+  "CBS SOURCE WEB PAGE"
+ [PRETTY]: /CBS-beta/math/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-Funcons-Index
+  "CBS-KATEX WEB PAGE"
+[PDF]: /CBS-beta/math/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-Funcons-Index/SIMPLE-Funcons-Index.pdf
+  "CBS-LATEX PDF FILE"
+[PLanCompS Project]: https://plancomps.github.io
+  "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
+{::comment}{% endraw %}{:/}

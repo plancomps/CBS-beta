@@ -1,0 +1,281 @@
+\begin{displaymath}
+\KEY{Language} \STRING{OCaml Light}
+\end{displaymath}
+
+\section*{$\SECT{2}$ Values}\hypertarget{sect2-values}{}\label{sect2-values}
+
+The comments below are excerpts from section 7.2 of \href{https://caml.inria.fr/pub/docs/manual-ocaml-4.06/values.html}{The OCaml System,
+  release 4.06}.
+
+\begin{align*}
+  \KEY{Type} ~  
+  & \NAMEDECL{implemented-values}  
+  \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \mid \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{booleans} \mid \NAMEREF{implemented-integers} \mid \NAMEREF{implemented-floats} \mid \NAMEREF{implemented-characters} \mid \NAMEREF{implemented-strings} \mid \NAMEREF{implemented-tuples} \mid \NAMEREF{implemented-lists} \mid \NAMEREF{implemented-records} \mid \NAMEREF{implemented-references} \mid \NAMEREF{implemented-vectors} \mid \NAMEREF{implemented-variants} \mid \NAMEREF{implemented-functions}
+\end{align*}
+\subsection*{Base values}\hypertarget{base-values}{}\label{base-values}
+
+\subsubsection*{Integer numbers}\hypertarget{integer-numbers}{}\label{integer-numbers}
+
+Integer values are integer numbers from -2\^{}\{30\} to 2\^{}\{30\}-1, 
+  that is -1073741824 to 1073741823. The implementation may support a wider
+  range of integer values (\ldots{}).
+
+\begin{align*}
+  \KEY{Type} ~  
+  & \NAMEDECL{implemented-integers}  
+  \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integers}
+\end{align*}
+\begin{align*}
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{implemented-integer}(\VAR{I} : \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integers}) :  \TO \NAMEREF{implemented-integers} \\
+  & \quad \leadsto \VAR{I}
+\\
+  \KEY{Assert} ~ 
+  & \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-equal}
+      ( \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null},   
+        \NAMEREF{implemented-integer}
+          ( \VAR{N} : \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{bounded-integers}
+                        ( -1073741824,     
+                          1073741823 ) ) ) == 
+      \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false}
+\end{align*}
+\begin{align*}
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{implemented-integers-width} :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{natural-numbers} \\
+  & \quad \leadsto 31
+\end{align*}
+\begin{align*}
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{implemented-integer-literal}(\VAR{IL} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{strings}) :  \TO \NAMEREF{implemented-integers} \\
+  & \quad \leadsto \NAMEREF{implemented-integer} ~
+                     \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{decimal-natural}
+                       ( \VAR{IL} )
+\end{align*}
+\begin{align*}
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{implemented-bit-vector}(\VAR{I} : \NAMEREF{implemented-integers}) :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Bits}{bit-vectors}
+                                                                         ( \NAMEREF{implemented-integers-width} ) \\
+  & \quad \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Bits}{integer-to-bit-vector}
+                     ( \VAR{I}, \\&\quad \quad \quad \quad 
+                       \NAMEREF{implemented-integers-width} )
+\end{align*}
+\subsubsection*{Floating-point numbers}\hypertarget{floating-point-numbers}{}\label{floating-point-numbers}
+
+Floating-point values are numbers in floating-point representation. 
+  The current implementation uses double-precision floating-point numbers
+  conforming to the IEEE 754 standard, with 53 bits of mantissa and
+  an exponent ranging from -1022 to 1023.
+
+\begin{align*}
+  \KEY{Type} ~  
+  & \NAMEDECL{implemented-floats} 
+\end{align*}
+\begin{align*}
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{implemented-floats-format} :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{float-formats} \\
+  & \quad \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{binary64}
+\end{align*}
+\begin{align*}
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{implemented-float-literal}(\VAR{FL} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{strings}) :  \TO \NAMEREF{implemented-floats}
+\end{align*}
+\subsubsection*{Characters}\hypertarget{characters}{}\label{characters}
+
+Character values are represented as 8-bit integers between 0 and 255.
+  Character codes between 0 and 127 are interpreted following the ASCII
+  standard. The current implementation interprets character codes between 
+  128 and 255 following the ISO 8859-1 standard.
+
+\begin{align*}
+  \KEY{Type} ~  
+  & \NAMEDECL{implemented-characters} <: \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Characters}{characters}
+\end{align*}
+\begin{align*}
+  \KEY{Type} ~  
+  & \NAMEDECL{implemented-character-points}  
+  \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{bounded-integers}
+             ( 0,      
+               255 )
+\end{align*}
+\begin{align*}
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{implemented-character}(\VAR{C} : \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Characters}{characters}) :  \TO \NAMEREF{implemented-characters}\QUERY \\
+  & \quad \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Characters}{ascii-character} ~
+                     [ \VAR{C} ]
+\end{align*}
+\subsubsection*{Character strings}\hypertarget{character-strings}{}\label{character-strings}
+
+String values are finite sequences of characters. The current implementation
+  supports strings containing up to 2\^{}24 - 5 characters (16777211 characters);
+  (\ldots{})
+
+\begin{align*}
+  \KEY{Type} ~  
+  & \NAMEDECL{implemented-strings} <: \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{lists}
+                                                             ( \NAMEREF{implemented-characters} )
+\end{align*}
+\begin{align*}
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{implemented-string}(\VAR{L} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{lists}
+                                ( \NAMEREF{implemented-characters} )) :  \TO \NAMEREF{implemented-strings}\QUERY \\
+  & \quad \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{when-true}
+                     ( \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-less-or-equal}
+                         ( \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sequences}{length} ~
+                             \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{list-elements} ~
+                               \VAR{L}, \\&\quad \quad \quad \quad \quad 
+                           16777211 ), \\&\quad \quad \quad \quad 
+                       \VAR{L} )
+\end{align*}
+\subsection*{Tuples}\hypertarget{tuples}{}\label{tuples}
+
+Tuples of values are written (v\_1, \ldots{}, v\_n), standing for the n-tuple of
+  values v\_1 to v\_n. The current implementation supports tuples of up to 
+  2\^{}22 - 1 elements (4194303 elements).
+
+\begin{align*}
+  \KEY{Type} ~  
+  & \NAMEDECL{implemented-tuples} <: \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuples}
+                                                             ( \NAMEREF{implemented-values}\STAR ) 
+  \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuples}
+             ( \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}\STAR )
+\end{align*}
+\begin{align*}
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{implemented-tuple}(\VAR{T} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuples}
+                                ( \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}\STAR )) :  \TO \NAMEREF{implemented-tuples}\QUERY \\
+  & \quad \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{when-true}
+                     ( \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-less-or-equal}
+                         ( \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sequences}{length} ~
+                             \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple-elements} ~
+                               \VAR{T}, \\&\quad \quad \quad \quad \quad 
+                           4194303 ), \\&\quad \quad \quad \quad 
+                       \VAR{T} )
+\end{align*}
+In OCaml Light, the unit value is represented by $\SHADE{\NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
+           (  ~  )}$.
+
+In OCaml Light, lists are written {[}v\_1; \ldots{}; v\_n{]}, and their values are
+  represented by list values in CBS.
+
+\begin{align*}
+  \KEY{Type} ~  
+  & \NAMEDECL{implemented-lists} <: \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{lists}
+                                                             ( \NAMEREF{implemented-values} ) 
+  \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{lists}
+             ( \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} )
+\end{align*}
+\begin{align*}
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{implemented-list}(\VAR{L} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{lists}
+                                ( \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} )) :  \TO \NAMEREF{implemented-lists}\QUERY \\
+  & \quad \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{when-true}
+                     ( \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-less-or-equal}
+                         ( \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sequences}{length} ~
+                             \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{list-elements} ~
+                               \VAR{L}, \\&\quad \quad \quad \quad \quad 
+                           4194303 ), \\&\quad \quad \quad \quad 
+                       \VAR{L} )
+\end{align*}
+\subsection*{Records}\hypertarget{records}{}\label{records}
+
+Record values are labeled tuples of values. The record value written 
+  \{ field\_1 = v\_1; \ldots{}; field\_n = v\_n \} associates the value v\_i to the
+  record field field\_i, for i = 1 \ldots{} n. The current implementation supports
+  records with up to 2\^{}22 - 1 fields (4194303 fields).
+
+\begin{align*}
+  \KEY{Type} ~  
+  & \NAMEDECL{implemented-records} <: \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Records}{records}
+                                                             ( \NAMEREF{implemented-values} ) 
+  \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Records}{records}
+             ( \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} )
+\end{align*}
+\begin{align*}
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{implemented-record}(\VAR{R} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Records}{records}
+                                ( \NAMEREF{implemented-values} )) :  \TO \NAMEREF{implemented-records}\QUERY \\
+  & \quad \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{when-true}
+                     ( \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-less-or-equal}
+                         ( \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sequences}{length} ~
+                             \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Maps}{map-elements} ~
+                               \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Records}{record-map} ~
+                                 \VAR{R}, \\&\quad \quad \quad \quad \quad 
+                           4194303 ), \\&\quad \quad \quad \quad 
+                       \VAR{R} )
+\end{align*}
+In OCaml Light, records are non-mutable, and references are represented by
+  mutable variables.
+
+\begin{align*}
+  \KEY{Type} ~  
+  & \NAMEDECL{implemented-references}  
+  \leadsto \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{variables}
+\end{align*}
+\subsection*{Arrays}\hypertarget{arrays}{}\label{arrays}
+
+Arrays are finite, variable-sized sequences of values of the same type. 
+  The current implementation supports arrays containing up to 2\^{}22 - 1 elements
+  (4194303 elements) unless the elements are floating-point numbers (2097151
+  elements in this case); (\ldots{})
+
+\begin{align*}
+  \KEY{Type} ~  
+  & \NAMEDECL{implemented-vectors} <: \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vectors}
+                                                             ( \NAMEREF{implemented-values} ) 
+  \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vectors}
+             ( \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} )
+\end{align*}
+\begin{align*}
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{implemented-vector}(\VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vectors}
+                                ( \NAMEREF{implemented-values} )) :  \TO \NAMEREF{implemented-vectors}\QUERY \\
+  & \quad \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{when-true}
+                     ( \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-less-or-equal}
+                         ( \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sequences}{length} ~
+                             \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vector-elements} ~
+                               \VAR{V}, \\&\quad \quad \quad \quad \quad 
+                           4194303 ), \\&\quad \quad \quad \quad 
+                       \VAR{V} )
+\end{align*}
+\subsection*{Variant values}\hypertarget{variant-values}{}\label{variant-values}
+
+Variant values are either a constant constructor, or a pair of a non-constant
+  constructor and a value. The former case is written constr; the latter case
+  is written (v1, \ldots{}, vn), where the vi are said to be the arguments of the 
+  non-constant constructor constr. The parentheses may be omitted if there is
+  only one argument. (\ldots{}) The current implementation limits each variant type
+  to have at most 246 non-constant constructors and 2\^{}30-1 constant constructors.
+
+\begin{align*}
+  \KEY{Type} ~  
+  & \NAMEDECL{implemented-variants} <: \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Variants}{variants}
+                                                             ( \NAMEREF{implemented-values} ) 
+  \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Variants}{variants}
+             ( \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} )
+\end{align*}
+\begin{align*}
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{implemented-variant}(\VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Variants}{variants}
+                                ( \NAMEREF{implemented-values} )) :  \TO \NAMEREF{implemented-variants} \\
+  & \quad \leadsto \VAR{V}
+\end{align*}
+\subsection*{Functions}\hypertarget{functions}{}\label{functions}
+
+Functional values are mappings from values to values.
+
+\begin{align*}
+  \KEY{Type} ~  
+  & \NAMEDECL{implemented-functions} <: \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{functions}
+                                                             ( \NAMEREF{implemented-values}, \\&\quad 
+                                                               \NAMEREF{implemented-values} ) 
+  \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{functions}
+             ( \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values},      
+               \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} )
+\end{align*}
+\begin{align*}
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{implemented-function}(\VAR{F} : \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{functions}
+                                ( \NAMEREF{implemented-values},   
+                                  \NAMEREF{implemented-values} )) :  \TO \NAMEREF{implemented-functions} \\
+  & \quad \leadsto \VAR{F}
+\end{align*}

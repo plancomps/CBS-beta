@@ -1,105 +1,111 @@
+{::comment}{% raw %}{:/}
+
 ### Generating
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Type} ~ & \NAMEREF{atoms} \\
-  \KEY{Entity} ~ & \NAMEREF{used-atom-set} \\
-  \KEY{Funcon} ~ & \NAMEREF{initialise-generating} \\
-  \KEY{Funcon} ~ & \NAMEREF{fresh-atom} \\
-  \KEY{Funcon} ~ & \NAMEREF{use-atom-not-in}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Type} \ & \NAMEREF{atoms} \\
+  \KEY{Entity} \ & \NAMEREF{used-atom-set} \\
+  \KEY{Funcon} \ & \NAMEREF{initialise-generating} \\
+  \KEY{Funcon} \ & \NAMEREF{fresh-atom} \\
+  \KEY{Funcon} \ & \NAMEREF{use-atom-not-in}
+  \ ]
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Meta-variables} ~ 
+$$\begin{align*}
+  \KEY{Meta-variables} \
   & \VAR{T} <: \NAMEHYPER{../../../Values}{Value-Types}{values}
-\end{aligned}$$
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Built-in Type} ~  
+$$\begin{align*}
+  \KEY{Built-in Type} \ 
   & \NAMEDECL{atoms}  
-  
-\end{aligned}$$
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{atoms}}$$ is the type of values used as distinguishable tags.
   Notation for individual atoms is not provided.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Entity} ~ 
+$$\begin{align*}
+  \KEY{Entity} \
   & \langle \_, \NAMEDECL{used-atom-set}(\_ : \NAMEHYPER{../../../Values/Composite}{Sets}{sets}
-                                                            ( \NAMEREF{atoms} )) \rangle \TRANS  \langle \_, \NAME{used-atom-set}(\_ : \NAME{sets}
-                                                                                               ( \NAME{atoms} )) \rangle
-\end{aligned}$$
+                                                            (  \NAMEREF{atoms} )) \rangle \TRANS   
+    \langle \_, \NAME{used-atom-set}(\_ : \NAME{sets}
+                                                            (  \NAME{atoms} )) \rangle
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Built-in Funcon} ~ 
-  & \NAMEDECL{initialise-generating}(\_ :  \TO \VAR{T}) :  \TO \VAR{T}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Built-in Funcon} \
+  & \NAMEDECL{initialise-generating}(
+                       \_ :  \TO \VAR{T}) 
+    :  \TO \VAR{T} 
+\end{align*}$$
 
 
   The initial value of the $$\SHADE{\NAMEREF{used-atom-set}
-           ( \VAR{SA} )}$$ entity is unspecified. It could
+           (  \VAR{SA} )}$$ entity is unspecified. It could
   contains atoms that are reserved for internal use.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{fresh-atom} :  \TO \NAMEREF{atoms}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{fresh-atom} 
+    :  \TO \NAMEREF{atoms} 
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{fresh-atom}}$$ computes an atom distinct from all previously computed atoms.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
+$$\begin{align*}
+  \KEY{Rule} \
     & \RULE{
-      \NAMEHYPER{../../../Values/Composite}{Sets}{element-not-in}
-        ( \NAMEREF{atoms},   
-          \VAR{SA} ) \leadsto
-        \VAR{A}
+      & \NAMEHYPER{../../../Values/Composite}{Sets}{element-not-in}
+          (  \NAMEREF{atoms}, 
+                 \VAR{SA} ) \leadsto 
+          \VAR{A}
       }{
-      &  \langle \NAMEREF{fresh-atom}, \NAMEREF{used-atom-set} ( \VAR{SA} ) \rangle \TRANS 
-          \langle \VAR{A}, \NAMEREF{used-atom-set} ( \NAMEHYPER{../../../Values/Composite}{Sets}{set-insert}
-                                                   ( \VAR{A},   
-                                                     \VAR{SA} ) ) \rangle
+      &  \langle \NAMEREF{fresh-atom}, \NAMEREF{used-atom-set} (  \VAR{SA} ) \rangle \TRANS \\&\quad
+          \langle \VAR{A}, \NAMEREF{used-atom-set} (  \NAMEHYPER{../../../Values/Composite}{Sets}{set-insert}
+                                                       (  \VAR{A}, 
+                                                              \VAR{SA} ) ) \rangle
       }
-\end{aligned}$$
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{use-atom-not-in}(\_ : \NAMEHYPER{../../../Values/Composite}{Sets}{sets}
-                                ( \NAMEREF{atoms} )) :  \TO \NAMEREF{atoms}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{use-atom-not-in}(
+                       \_ : \NAMEHYPER{../../../Values/Composite}{Sets}{sets}
+                                 (  \NAMEREF{atoms} )) 
+    :  \TO \NAMEREF{atoms} 
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{use-atom-not-in}
-           ( \VAR{SA} )}$$ computes an atom not in the set $$\SHADE{\VAR{SA}}$$, and inserts it
+           (  \VAR{SA} )}$$ computes an atom not in the set $$\SHADE{\VAR{SA}}$$, and inserts it
   in the $$\SHADE{\NAMEREF{used-atom-set}
-           ( \VAR{SA}' )}$$ entity, in case it was not previously used.
+           (  \VAR{SA}' )}$$ entity, in case it was not previously used.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
+$$\begin{align*}
+  \KEY{Rule} \
     & \RULE{
-      \NAMEHYPER{../../../Values/Composite}{Sets}{element-not-in}
-        ( \NAMEREF{atoms},   
-          \VAR{SA} ) \leadsto
-        \VAR{A}
+      & \NAMEHYPER{../../../Values/Composite}{Sets}{element-not-in}
+          (  \NAMEREF{atoms}, 
+                 \VAR{SA} ) \leadsto 
+          \VAR{A}
       }{
       &  \langle \NAMEREF{use-atom-not-in}
-                              ( \VAR{SA} : \NAMEHYPER{../../../Values/Composite}{Sets}{sets}
-                                            ( \NAMEREF{atoms} ) ), \NAMEREF{used-atom-set} ( \VAR{SA}' ) \rangle \TRANS 
-          \langle \VAR{A}, \NAMEREF{used-atom-set} ( \NAMEHYPER{../../../Values/Composite}{Sets}{set-insert}
-                                                   ( \VAR{A},   
-                                                     \VAR{SA}' ) ) \rangle
+                              (  \VAR{SA} : \NAMEHYPER{../../../Values/Composite}{Sets}{sets}
+                                                (  \NAMEREF{atoms} ) ), \NAMEREF{used-atom-set} (  \VAR{SA}' ) \rangle \TRANS \\&\quad
+          \langle \VAR{A}, \NAMEREF{used-atom-set} (  \NAMEHYPER{../../../Values/Composite}{Sets}{set-insert}
+                                                       (  \VAR{A}, 
+                                                              \VAR{SA}' ) ) \rangle
       }
-\end{aligned}$$
-
+\end{align*}$$
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -110,5 +116,16 @@ $$\relax\begin{aligned}\relax
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]: /CBS-beta 
+[CBS-beta]: /CBS-beta
   "CBS-BETA"
+[Generating.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Funcons-beta/Computations/Normal/Generating/Generating.cbs
+  "CBS SOURCE FILE ON GITHUB"
+[PLAIN]: /CBS-beta/docs/Funcons-beta/Computations/Normal/Generating
+  "CBS SOURCE WEB PAGE"
+ [PRETTY]: /CBS-beta/math/Funcons-beta/Computations/Normal/Generating
+  "CBS-KATEX WEB PAGE"
+[PDF]: /CBS-beta/math/Funcons-beta/Computations/Normal/Generating/Generating.pdf
+  "CBS-LATEX PDF FILE"
+[PLanCompS Project]: https://plancomps.github.io
+  "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
+{::comment}{% endraw %}{:/}

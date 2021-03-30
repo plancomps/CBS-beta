@@ -1,59 +1,66 @@
+{::comment}{% raw %}{:/}
+
 ### Variants
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Datatype} ~ & \NAMEREF{variants} \\
-  \KEY{Funcon} ~ & \NAMEREF{variant} \\
-  \KEY{Funcon} ~ & \NAMEREF{variant-id} \\
-  \KEY{Funcon} ~ & \NAMEREF{variant-value}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Datatype} \ & \NAMEREF{variants} \\
+  \KEY{Funcon} \ & \NAMEREF{variant} \\
+  \KEY{Funcon} \ & \NAMEREF{variant-id} \\
+  \KEY{Funcon} \ & \NAMEREF{variant-value}
+  \ ]
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Meta-variables} ~ 
+$$\begin{align*}
+  \KEY{Meta-variables} \
   & \VAR{T} <: \NAMEHYPER{../..}{Value-Types}{values}
-\end{aligned}$$
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Datatype} ~ 
-  \NAMEDECL{variants}(\VAR{T} )  
-  ~ ::= ~ & \NAMEDECL{variant} (\_ : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}, \_ : \VAR{T})
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Datatype} \ 
+  \NAMEDECL{variants}(
+                     \VAR{T} ) 
+  \ ::= \ & \NAMEDECL{variant}(
+                               \_ : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}, \_ : \VAR{T})
+\end{align*}$$
 
 
   A value of type $$\SHADE{\NAMEREF{variants}
-           ( \VAR{T} )}$$ is a pair formed from an identifier and 
+           (  \VAR{T} )}$$ is a pair formed from an identifier and 
   a value of type $$\SHADE{\VAR{T}}$$.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{variant-id}(\_ : \NAMEREF{variants}
-                                ( \VAR{T} )) :  \TO \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{variant-id}(
+                       \_ : \NAMEREF{variants}
+                                 (  \VAR{T} )) 
+    :  \TO \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers} 
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{variant-id}
-        ( \NAMEREF{variant}
-            ( \VAR{I} : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers},    
-              \_ : \VAR{T} ) ) \leadsto
+        (  \NAMEREF{variant}
+                (  \VAR{I} : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}, 
+                       \_ : \VAR{T} ) ) \leadsto 
         \VAR{I}
-\end{aligned}$$
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{variant-value}(\_ : \NAMEREF{variants}
-                                ( \VAR{T} )) :  \TO \VAR{T}
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{variant-value}(
+                       \_ : \NAMEREF{variants}
+                                 (  \VAR{T} )) 
+    :  \TO \VAR{T} 
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{variant-value}
-        ( \NAMEREF{variant}
-            ( \_ : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers},    
-              \VAR{V} : \VAR{T} ) ) \leadsto
+        (  \NAMEREF{variant}
+                (  \_ : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}, 
+                       \VAR{V} : \VAR{T} ) ) \leadsto 
         \VAR{V}
-\end{aligned}$$
-
+\end{align*}$$
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -64,5 +71,16 @@ $$\relax\begin{aligned}\relax
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]: /CBS-beta 
+[CBS-beta]: /CBS-beta
   "CBS-BETA"
+[Variants.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Funcons-beta/Values/Composite/Variants/Variants.cbs
+  "CBS SOURCE FILE ON GITHUB"
+[PLAIN]: /CBS-beta/docs/Funcons-beta/Values/Composite/Variants
+  "CBS SOURCE WEB PAGE"
+ [PRETTY]: /CBS-beta/math/Funcons-beta/Values/Composite/Variants
+  "CBS-KATEX WEB PAGE"
+[PDF]: /CBS-beta/math/Funcons-beta/Values/Composite/Variants/Variants.pdf
+  "CBS-LATEX PDF FILE"
+[PLanCompS Project]: https://plancomps.github.io
+  "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
+{::comment}{% endraw %}{:/}

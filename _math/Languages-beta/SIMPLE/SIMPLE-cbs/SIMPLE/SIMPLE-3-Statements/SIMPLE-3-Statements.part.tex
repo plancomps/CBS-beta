@@ -4,8 +4,7 @@
 
 \section*{$\SECT{3}$ Statements}\hypertarget{sect3-statements}{}\label{sect3-statements}
 
-\begin{displaymath}
-\relax\begin{aligned}\relax
+\begin{align*}
   \KEY{Syntax} ~ 
     \VARDECL{Block} : \SYN{block}
       ~ ::= ~ & \LEX{\LEFTBRACE } ~ \SYNREF{stmts}\QUERY ~ \LEX{\RIGHTBRACE }
@@ -29,11 +28,8 @@
       ~ \mid ~ &  \LEX{return} ~ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}\QUERY ~ \LEX{;{}} \\
       ~ \mid ~ &  \LEX{try} ~ \SYNREF{block} ~ \LEX{catch} ~ \LEX{(} ~ \SYNHYPER{../.}{SIMPLE-1-Lexical}{id} ~ \LEX{)} ~ \SYNREF{block} \\
       ~ \mid ~ &  \LEX{throw} ~ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} ~ \LEX{;{}}
-\end{aligned}
-\end{displaymath}
-
-\begin{displaymath}
-\relax\begin{aligned}\relax
+\end{align*}
+\begin{align*}
   \KEY{Rule} ~ 
     & \LEFTPHRASE ~ \LEX{if} ~ \LEX{(} ~ \VARHYPER{../.}{SIMPLE-2-Expressions}{Exp} ~ \LEX{)} ~ \VARREF{Block} ~ \RIGHTPHRASE : \SYNREF{stmt} = \\
     & \LEFTPHRASE ~ \LEX{if} ~ \LEX{(} ~ \VAR{Exp} ~ \LEX{)} ~ \VAR{Block} ~ \LEX{else} ~ \LEX{\LEFTBRACE } ~ \LEX{\RIGHTBRACE } ~ \RIGHTPHRASE
@@ -41,11 +37,8 @@
   \KEY{Rule} ~ 
     & \LEFTPHRASE ~ \LEX{for} ~ \LEX{(} ~ \VARREF{Stmt} ~ \VARHYPER{../.}{SIMPLE-2-Expressions}{Exp}\SUB{1} ~ \LEX{;{}} ~ \VARHYPER{../.}{SIMPLE-2-Expressions}{Exp}\SUB{2} ~ \LEX{)} ~ \LEX{\LEFTBRACE } ~ \VARREF{Stmts} ~ \LEX{\RIGHTBRACE } ~ \RIGHTPHRASE : \SYNREF{stmt} = \\
     & \LEFTPHRASE ~ \LEX{\LEFTBRACE } ~ \VAR{Stmt} ~ \LEX{while} ~ \LEX{(} ~ \VAR{Exp}\SUB{1} ~ \LEX{)} ~ \LEX{\LEFTBRACE } ~ \LEX{\LEFTBRACE } ~ \VAR{Stmts} ~ \LEX{\RIGHTBRACE } ~ \VAR{Exp}\SUB{2} ~ \LEX{;{}} ~ \LEX{\RIGHTBRACE } ~ \LEX{\RIGHTBRACE } ~ \RIGHTPHRASE
-\end{aligned}
-\end{displaymath}
-
-\begin{displaymath}
-\relax\begin{aligned}\relax
+\end{align*}
+\begin{align*}
   \KEY{Semantics} ~ 
   & \SEMDECL{exec} \LEFTPHRASE ~ \_ : \SYNREF{stmts} ~ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type}
@@ -124,6 +117,4 @@
     & \SEMREF{exec} \LEFTPHRASE ~ \LEX{throw} ~ \VARHYPER{../.}{SIMPLE-2-Expressions}{Exp} ~ \LEX{;{}} ~ \RIGHTPHRASE  = \\&\quad
       \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Throwing}{throw}
         ( \SEMHYPER{../.}{SIMPLE-2-Expressions}{rval} \LEFTPHRASE ~ \VAR{Exp} ~ \RIGHTPHRASE  )
-\end{aligned}
-\end{displaymath}
-
+\end{align*}

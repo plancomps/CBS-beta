@@ -1,0 +1,44 @@
+\subsubsection*{References and pointers}\hypertarget{references-and-pointers}{}\label{references-and-pointers}
+
+\begin{align*}
+  [ ~ 
+  \KEY{Datatype} ~ & \NAMEREF{references} \\
+  \KEY{Funcon} ~ & \NAMEREF{reference} \\
+  \KEY{Type} ~ & \NAMEREF{pointers} \\
+  \KEY{Funcon} ~ & \NAMEREF{pointer-null} \\
+  \KEY{Funcon} ~ & \NAMEREF{dereference}
+  ~ ]
+\end{align*}
+\begin{align*}
+  \KEY{Meta-variables} ~ 
+  & \VAR{T} <: \NAMEHYPER{../..}{Value-Types}{values}
+\end{align*}
+\begin{align*}
+  \KEY{Datatype} ~ 
+  \NAMEDECL{references}(\VAR{T} )  
+  ~ ::= ~ & \NAMEDECL{reference} (\_ : \VAR{T})
+\end{align*}
+\begin{align*}
+  \KEY{Datatype} ~ 
+  \NAMEDECL{pointers}(\VAR{T} )  
+  ~ ::= ~ & 
+  \NAMEDECL{pointer-null}  \\
+  ~ \mid ~ & \{ \_ : \NAMEREF{references}
+               ( \VAR{T} ) \}
+\end{align*}
+\begin{align*}
+  \KEY{Funcon} ~ 
+  & \NAMEDECL{dereference}(\_ : \NAMEREF{pointers}
+                                ( \VAR{T} )) :  \TO ( \VAR{T} )\QUERY
+\\
+  \KEY{Rule} ~ 
+    & \NAMEREF{dereference}
+        ( \NAMEREF{reference}
+            ( \VAR{V} : \VAR{T} ) ) \leadsto
+        \VAR{V}
+\\
+  \KEY{Rule} ~ 
+    & \NAMEREF{dereference}
+        ( \NAMEREF{pointer-null} ) \leadsto
+        (  ~  )
+\end{align*}

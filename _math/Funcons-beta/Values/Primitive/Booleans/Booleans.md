@@ -1,196 +1,206 @@
+{::comment}{% raw %}{:/}
+
 ### Booleans
                
 
 
-$$\relax\begin{aligned}\relax
-  [ ~ 
-  \KEY{Datatype} ~ & \NAMEREF{booleans} \\
-  \KEY{Alias} ~ & \NAMEREF{bools} \\
-  \KEY{Funcon} ~ & \NAMEREF{true} \\
-  \KEY{Funcon} ~ & \NAMEREF{false} \\
-  \KEY{Funcon} ~ & \NAMEREF{not} \\
-  \KEY{Funcon} ~ & \NAMEREF{implies} \\
-  \KEY{Funcon} ~ & \NAMEREF{and} \\
-  \KEY{Funcon} ~ & \NAMEREF{or} \\
-  \KEY{Funcon} ~ & \NAMEREF{exclusive-or} \\
-  \KEY{Alias} ~ & \NAMEREF{xor}
-  ~ ]
-\end{aligned}$$
+$$\begin{align*}
+  [ \
+  \KEY{Datatype} \ & \NAMEREF{booleans} \\
+  \KEY{Alias} \ & \NAMEREF{bools} \\
+  \KEY{Funcon} \ & \NAMEREF{true} \\
+  \KEY{Funcon} \ & \NAMEREF{false} \\
+  \KEY{Funcon} \ & \NAMEREF{not} \\
+  \KEY{Funcon} \ & \NAMEREF{implies} \\
+  \KEY{Funcon} \ & \NAMEREF{and} \\
+  \KEY{Funcon} \ & \NAMEREF{or} \\
+  \KEY{Funcon} \ & \NAMEREF{exclusive-or} \\
+  \KEY{Alias} \ & \NAMEREF{xor}
+  \ ]
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Datatype} ~ 
-  \NAMEDECL{booleans}  
-  ~ ::= ~ & 
-  \NAMEDECL{true}  \\
-  ~ \mid ~ & \NAMEDECL{false} 
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Datatype} \ 
+  \NAMEDECL{booleans} 
+  \ ::= \ &
+  \NAMEDECL{true} \mid \NAMEDECL{false}
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Alias} ~ 
+$$\begin{align*}
+  \KEY{Alias} \
   & \NAMEDECL{bools} = \NAMEREF{booleans}
-\end{aligned}$$
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{not}(\_ : \NAMEREF{booleans}) :  \TO \NAMEREF{booleans}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{not}(
+                       \_ : \NAMEREF{booleans}) 
+    :  \TO \NAMEREF{booleans} 
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{not}
-           ( \VAR{B} )}$$   is logical negation.
+           (  \VAR{B} )}$$   is logical negation.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
+$$\begin{align*}
+  \KEY{Rule} \
     & \NAMEREF{not}
-        ( \NAMEREF{false} ) \leadsto
+        (  \NAMEREF{false} ) \leadsto 
         \NAMEREF{true}
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{not}
-        ( \NAMEREF{true} ) \leadsto
+        (  \NAMEREF{true} ) \leadsto 
         \NAMEREF{false}
-\end{aligned}$$
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{implies}(\_ : \NAMEREF{booleans}, \_ : \NAMEREF{booleans}) :  \TO \NAMEREF{booleans}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{implies}(
+                       \_ : \NAMEREF{booleans}, \_ : \NAMEREF{booleans}) 
+    :  \TO \NAMEREF{booleans} 
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{implies}
-           ( \VAR{B}\SUB{1},   
-             \VAR{B}\SUB{2} )}$$ is logical implication.
+           (  \VAR{B}\SUB{1}, 
+                  \VAR{B}\SUB{2} )}$$ is logical implication.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
+$$\begin{align*}
+  \KEY{Rule} \
     & \NAMEREF{implies}
-        ( \NAMEREF{false},   
-          \NAMEREF{false} ) \leadsto
+        (  \NAMEREF{false}, 
+               \NAMEREF{false} ) \leadsto 
         \NAMEREF{true}
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{implies}
-        ( \NAMEREF{false},   
-          \NAMEREF{true} ) \leadsto
+        (  \NAMEREF{false}, 
+               \NAMEREF{true} ) \leadsto 
         \NAMEREF{true}
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{implies}
-        ( \NAMEREF{true},   
-          \NAMEREF{true} ) \leadsto
+        (  \NAMEREF{true}, 
+               \NAMEREF{true} ) \leadsto 
         \NAMEREF{true}
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{implies}
-        ( \NAMEREF{true},   
-          \NAMEREF{false} ) \leadsto
+        (  \NAMEREF{true}, 
+               \NAMEREF{false} ) \leadsto 
         \NAMEREF{false}
-\end{aligned}$$
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{and}(\_ : \NAMEREF{booleans}\STAR) :  \TO \NAMEREF{booleans}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{and}(
+                       \_ : \NAMEREF{booleans}\STAR) 
+    :  \TO \NAMEREF{booleans} 
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{and}
-           ( \VAR{B},   
-             \cdots )}$$ is logical conjunction of any number of Boolean values.
+           (  \VAR{B}, 
+                  \cdots )}$$ is logical conjunction of any number of Boolean values.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
+$$\begin{align*}
+  \KEY{Rule} \
     & \NAMEREF{and}
-        (  ~  ) \leadsto
+        (   \  ) \leadsto 
         \NAMEREF{true}
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{and}
-        ( \NAMEREF{false},   
-          \_\STAR : \NAMEREF{booleans}\STAR ) \leadsto
+        (  \NAMEREF{false}, 
+               \_\STAR : \NAMEREF{booleans}\STAR ) \leadsto 
         \NAMEREF{false}
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{and}
-        ( \NAMEREF{true},   
-          \VAR{B}\STAR : \NAMEREF{booleans}\STAR ) \leadsto
+        (  \NAMEREF{true}, 
+               \VAR{B}\STAR : \NAMEREF{booleans}\STAR ) \leadsto 
         \NAMEREF{and}
-          ( \VAR{B}\STAR )
-\end{aligned}$$
+          (  \VAR{B}\STAR )
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{or}(\_ : \NAMEREF{booleans}\STAR) :  \TO \NAMEREF{booleans}
-\end{aligned}$$
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{or}(
+                       \_ : \NAMEREF{booleans}\STAR) 
+    :  \TO \NAMEREF{booleans} 
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{or}
-           ( \VAR{B},   
-             \cdots )}$$ is logical disjunction of any number of Boolean values.
+           (  \VAR{B}, 
+                  \cdots )}$$ is logical disjunction of any number of Boolean values.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
+$$\begin{align*}
+  \KEY{Rule} \
     & \NAMEREF{or}
-        (  ~  ) \leadsto
+        (   \  ) \leadsto 
         \NAMEREF{false}
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{or}
-        ( \NAMEREF{true},   
-          \_\STAR : \NAMEREF{booleans}\STAR ) \leadsto
+        (  \NAMEREF{true}, 
+               \_\STAR : \NAMEREF{booleans}\STAR ) \leadsto 
         \NAMEREF{true}
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{or}
-        ( \NAMEREF{false},   
-          \VAR{B}\STAR : \NAMEREF{booleans}\STAR ) \leadsto
+        (  \NAMEREF{false}, 
+               \VAR{B}\STAR : \NAMEREF{booleans}\STAR ) \leadsto 
         \NAMEREF{or}
-          ( \VAR{B}\STAR )
-\end{aligned}$$
+          (  \VAR{B}\STAR )
+\end{align*}$$
 
-$$\relax\begin{aligned}\relax
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{exclusive-or}(\_ : \NAMEREF{booleans}, \_ : \NAMEREF{booleans}) :  \TO \NAMEREF{booleans}
+$$\begin{align*}
+  \KEY{Funcon} \
+  & \NAMEDECL{exclusive-or}(
+                       \_ : \NAMEREF{booleans}, \_ : \NAMEREF{booleans}) 
+    :  \TO \NAMEREF{booleans} 
 \\
-  \KEY{Alias} ~ 
+  \KEY{Alias} \
   & \NAMEDECL{xor} = \NAMEREF{exclusive-or}
-\end{aligned}$$
+\end{align*}$$
 
 
   $$\SHADE{\NAMEREF{exclusive-or}
-           ( \VAR{B}\SUB{1},   
-             \VAR{B}\SUB{2} )}$$ is exclusive disjunction.
+           (  \VAR{B}\SUB{1}, 
+                  \VAR{B}\SUB{2} )}$$ is exclusive disjunction.
 
 
-$$\relax\begin{aligned}\relax
-  \KEY{Rule} ~ 
+$$\begin{align*}
+  \KEY{Rule} \
     & \NAMEREF{exclusive-or}
-        ( \NAMEREF{false},   
-          \NAMEREF{false} ) \leadsto
+        (  \NAMEREF{false}, 
+               \NAMEREF{false} ) \leadsto 
         \NAMEREF{false}
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{exclusive-or}
-        ( \NAMEREF{false},   
-          \NAMEREF{true} ) \leadsto
+        (  \NAMEREF{false}, 
+               \NAMEREF{true} ) \leadsto 
         \NAMEREF{true}
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{exclusive-or}
-        ( \NAMEREF{true},   
-          \NAMEREF{false} ) \leadsto
+        (  \NAMEREF{true}, 
+               \NAMEREF{false} ) \leadsto 
         \NAMEREF{true}
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \
     & \NAMEREF{exclusive-or}
-        ( \NAMEREF{true},   
-          \NAMEREF{true} ) \leadsto
+        (  \NAMEREF{true}, 
+               \NAMEREF{true} ) \leadsto 
         \NAMEREF{false}
-\end{aligned}$$
-
+\end{align*}$$
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -201,5 +211,16 @@ $$\relax\begin{aligned}\relax
   "LANGUAGES-BETA"
 [Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
-[CBS-beta]: /CBS-beta 
+[CBS-beta]: /CBS-beta
   "CBS-BETA"
+[Booleans.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Funcons-beta/Values/Primitive/Booleans/Booleans.cbs
+  "CBS SOURCE FILE ON GITHUB"
+[PLAIN]: /CBS-beta/docs/Funcons-beta/Values/Primitive/Booleans
+  "CBS SOURCE WEB PAGE"
+ [PRETTY]: /CBS-beta/math/Funcons-beta/Values/Primitive/Booleans
+  "CBS-KATEX WEB PAGE"
+[PDF]: /CBS-beta/math/Funcons-beta/Values/Primitive/Booleans/Booleans.pdf
+  "CBS-LATEX PDF FILE"
+[PLanCompS Project]: https://plancomps.github.io
+  "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
+{::comment}{% endraw %}{:/}
