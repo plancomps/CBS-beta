@@ -21,14 +21,14 @@
   by extracting their components as sequences, operating on the sequences, then
   forming the required composite values from the resulting sequences.
   
-  A sequence with elements `X1`, ..., `Xn` is written `X1,...,Xn`.
+  A sequence with elements `X_1`, ..., `X_n` is written `X_1,...,X_n`.
   A sequence with a single element `X` is identified with (and written) `X`.
   An empty sequence is indicated by the absence of a term.
   Any sequence `X*` can be enclosed in parentheses `(X*)`, e.g.:
   `( )`, `(1)`, `(1,2,3)`. Superfluous commas are ignored.
   
-  The elements of a type sequence `T1,...,Tn` are the value sequences `V1,...,Vn`
-  where `V1:T1`, ..., `Vn:Tn`. The only element of the empty type sequence `( )`
+  The elements of a type sequence `T_1,...,T_n` are the value sequences `V_1,...,V_n`
+  where `V_1:T_1`, ..., `V_n:T_n`. The only element of the empty type sequence `( )`
   is the empty value sequence `( )`.
   
   `(T)^N` is equivalent to `T,...,T` with `N` occurrences of `T`.

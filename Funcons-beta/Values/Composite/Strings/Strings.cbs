@@ -16,8 +16,8 @@ Funcon
   string(C*:characters*) : =>strings
     ~> [C*]
 /*
-  Literal strings are written `"C1...Cn"`.
-  A double-quote or backslash needs to be escaped: `"...\"..."`, `"...\\..."`.
+  Literal strings are written `"C_1...C_n"`.
+  A double-quote or backslash needs to be escaped: `"...\\\"..."`, `"...\\\\..."`.
 */
 
 

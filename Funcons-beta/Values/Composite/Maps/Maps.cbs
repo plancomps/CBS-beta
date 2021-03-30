@@ -28,15 +28,15 @@ Built-in Type
 Built-in Funcon
   map(_:(tuples(GT, T?))*) : =>(maps(GT, T?))?
 /* 
-  `map(tuple(K1, V1?), ..., tuple(Kn, Vn?))` constructs a map from 
-  `K1` to `V1?`, ..., `Kn` to `Vn?`, provided that `K1`, ..., `Kn`
+  `map(tuple(K_1, V_1?), ..., tuple(K_n, V_n?))` constructs a map from 
+  `K_1` to `V_1?`, ..., `K_n` to `V_n?`, provided that `K_1`, ..., `K_n`
   are distinct, otherwise the result is `( )`.
   
   Note that `map(...)` is not a constructor operation.
   
-  The built-in notation `{K1|->V1?, ..., Kn|->Vn?}` is equivalent to 
-  `map(tuple(K1, V1?), ..., tuple(Kn, Vn?))`. Note however that in general, 
-  maps cannot be identified with sets of tuples, since the values `Vi?` are 
+  The built-in notation `{K_1|->V_1?, ..., K_n|->V_n?}` is equivalent to 
+  `map(tuple(K_1, V_1?), ..., tuple(K_n, V_n?))`. Note however that in general, 
+  maps cannot be identified with sets of tuples, since the values `V_i?` are 
   not restricted to `ground-values`.
   
   When ``T? <: types``, ``maps(GT, T?) <: types``. The type `MT:maps(GT, T?)`
@@ -49,8 +49,8 @@ Built-in Funcon
 Built-in Funcon
   map-elements(_:maps(GT, T?)) : =>(tuples(GT, T?))*
 /*
-  The sequence of tuples `(tuple(K1, V1?), ..., tuple(Kn, Vn?))` given by
-  `map-elements(M)` contains each mapped value `Ki` just once. The order of
+  The sequence of tuples `(tuple(K_1, V_1?), ..., tuple(K_n, V_n?))` given by
+  `map-elements(M)` contains each mapped value `K_i` just once. The order of
   the elements is unspecified, and may vary between maps.
 */
 Assert

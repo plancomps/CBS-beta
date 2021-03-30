@@ -262,7 +262,7 @@ Type
 Semantics
   evaluate[[E:expression]] : => minijava-values
 /*
-  evaluate[[E]] is a well-typed funcon term only when E is a well-typed
+  `evaluate[[_]]` is a well-typed funcon term only when `_` is a well-typed
   MiniJava expression.
 */
 Rule

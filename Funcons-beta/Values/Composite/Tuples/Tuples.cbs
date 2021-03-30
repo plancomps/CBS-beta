@@ -18,8 +18,8 @@ Datatype
 /*
   `T*` can be any sequence of types, including `( )` and `values*`.
   
-  The values of type `tuples(T1, ..., Tn)` are of the form `tuple(V1, ..., Vn)`
-  with `V1:T1`, ..., `Vn:Tn`.
+  The values of type `tuples(T_1, ..., T_n)` are of the form `tuple(V_1, ..., V_n)`
+  with `V_1:T_1`, ..., `V_n:T_n`.
 */
 
 

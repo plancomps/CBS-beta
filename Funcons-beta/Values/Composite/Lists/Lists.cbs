@@ -20,13 +20,13 @@ Meta-variables
 Datatype
   lists(T) ::= list(_:(T)*)
 /*
-  `lists(T)` is the type of possibly-empty finite lists `[V1,...,Vn]` 
-  where `V1:T`, ..., `Vn:T`.
+  `lists(T)` is the type of possibly-empty finite lists `[V_1,...,V_n]` 
+  where `V_1:T`, ..., `V_n:T`.
   
   N.B. `[T]` is always a single list value, and *not* interpreted as the
   type `lists(T)`.
   
-  The notation `[V1, ..., Vn]` for `list(V1, ..., Vn)` is built-in.
+  The notation `[V_1, ..., V_n]` for `list(V_1, ..., V_n)` is built-in.
 */
 Assert
   [V*:values*] == list(V*)

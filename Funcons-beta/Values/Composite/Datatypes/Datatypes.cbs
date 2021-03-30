@@ -13,9 +13,9 @@
   'Datatype T ::= ...' declares the type `T` to refer to a fresh value
   constructor in `types`, and asserts ``T <: datatype-values``. 
   
-  Each constructor funcon 'F(_:T1,...,_:Tn)' of the datatype declaration
-  generates values in `T` of the form `datatype-value("F", V1, ..., Vn)` from
-  `V1:T1`, ..., `Vn:Tn`.
+  Each constructor funcon 'F(\_:T_1,...,\_:T_n)' of the datatype declaration
+  generates values in `T` of the form `datatype-value("F", V_1, ..., V_n)` from
+  `V_1:T_1`, ..., `V_n:T_n`.
   
   Note that a computation `X` cannot be directly included in datatype values:
   it is necessary to encapsulate it in `abstraction(X)`.

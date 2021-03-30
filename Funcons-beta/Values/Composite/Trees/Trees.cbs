@@ -20,8 +20,8 @@ Datatype
   trees(T) ::= tree( _:T, _:(trees(T))*)
 /*
   `trees(T)` consists of finitely-branching trees with elements of type `T`.
-  When `V:T`, `tree(V)` is a leaf, and `tree(V,B1,...,Bn)` is a tree with
-  branches `B1`, ..., `Bn`.
+  When `V:T`, `tree(V)` is a leaf, and `tree(V,B_1,...,B_n)` is a tree with
+  branches `B_1`, ..., `B_n`.
 */
 
 

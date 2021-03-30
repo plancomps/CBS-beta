@@ -63,7 +63,7 @@ Auxiliary Funcon
 /*
   The `ocaml-light-core-library` environment maps most of the names defined
   in OCaml Module Pervasives (the initially opened module) to funcon terms.
-  See [https://caml.inria.fr/pub/docs/manual-ocaml-4.06/core.html] for further
+  See <https://caml.inria.fr/pub/docs/manual-ocaml-4.06/core.html> for further
   details and comments.
   
   It also maps some other names defined in the OCaml Standard Libarary to
@@ -370,7 +370,8 @@ Rule
   ocaml-light-is-structurally-equal(tuple(V+), tuple()) ~> false
 Rule
   ocaml-light-is-structurally-equal(tuple(V, V*), tuple(W, W*)) ~>
-    and(ocaml-light-is-structurally-equal(V, W), ocaml-light-is-structurally-equal(tuple(V*), tuple(W*)))
+    and(ocaml-light-is-structurally-equal(V, W), 
+        ocaml-light-is-structurally-equal(tuple(V*), tuple(W*)))
 /* Lists */
 Rule
   ocaml-light-is-structurally-equal([], []) ~> true
@@ -380,7 +381,8 @@ Rule
   ocaml-light-is-structurally-equal([V+], []) ~> false
 Rule
   ocaml-light-is-structurally-equal([V,V*], [W,W*]) ~>
-    and(ocaml-light-is-structurally-equal(V,W), ocaml-light-is-structurally-equal([V*], [W*]))
+    and(ocaml-light-is-structurally-equal(V,W),
+        ocaml-light-is-structurally-equal([V*], [W*]))
 /* Records */
 Rule
                        dom(Map1) == dom(Map2)

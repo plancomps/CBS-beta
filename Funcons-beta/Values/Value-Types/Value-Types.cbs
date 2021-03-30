@@ -64,11 +64,12 @@ Built-in Type
 
   The set of types forms a Boolean algebra with the following operations and
   constants:
-    * `T1 & T2`    (meet/intersection)
-    * `T1 | T2`    (join/union)
-    * `~ T`        (complement)
-    * `values`     (top)
-    * `empty-type` (bottom)
+    
+  * `T1 & T2`    (meet/intersection)
+  * `T1 | T2`    (join/union)
+  * `~ T`        (complement)
+  * `values`     (top)
+  * `empty-type` (bottom)
   
   Subtyping: ``T1 <: T2`` is the partial order defined by the algebra. 
 

@@ -117,7 +117,7 @@ Funcon
 */
 
 /*
-  In OCaml Light, lists are written [v_1; ...; v_n], and their values are
+  In OCaml Light, lists are written \[v_1; ...; v_n], and their values are
   represented by list values in CBS.
 */
 Type

@@ -23,15 +23,15 @@ Meta-variables
 Built-in Type
   sets(GT)
 /*
-  `sets(GT)` is the type of possibly-empty finite sets `{V1, ..., Vn}` 
-  where `V1:GT`, ..., `Vn:GT`.
+  `sets(GT)` is the type of possibly-empty finite sets `{V_1, ..., V_n}` 
+  where `V_1:GT`, ..., `V_n:GT`.
 */
 
 
 Built-in Funcon
   set(_:(GT)*) : =>sets(GT)
 /*
-  The notation `{V1, ..., Vn}` for `set(V1, ..., Vn)` is built-in.
+  The notation `{V_1, ..., V_n}` for `set(V_1, ..., V_n)` is built-in.
 */
 Assert
   {V*:(GT)*} == set(V*)

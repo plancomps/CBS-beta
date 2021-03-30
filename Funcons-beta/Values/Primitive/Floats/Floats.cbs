@@ -60,8 +60,9 @@
   Floating-point numbers according to the IEEE 754 Standard (2008).
 
   See:
-    - http://doi.org/10.1109/IEEESTD.2008.4610935
-    - https://en.wikipedia.org/wiki/IEEE_754
+  
+  - <http://doi.org/10.1109/IEEESTD.2008.4610935>
+  - <https://en.wikipedia.org/wiki/IEEE_754>
 */
 
 Datatype

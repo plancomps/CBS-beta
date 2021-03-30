@@ -14,11 +14,10 @@ Syntax
   PO : prefix-op ::= prefix-symbol // added
  
 /*
-//  infix-op  
-//  ::= infix-symbol  
-//    | '*' | '+' | '-' | '-.' | '=' | '<' | '>' | '||' | '&' | '&&'  
-//    | '!=' | 'or' | ':=' | 'mod'  
-//    | 'land' | 'lor' | 'lxor' | 'lsl' | 'lsr' | 'asr'  
+    // infix-op ::= infix-symbol  
+    //            | '*' | '+' | '-' | '-.' | '=' | '<' | '>' | '||' | '&' | '&&'  
+    //            | '!=' | 'or' | ':=' | 'mod'  
+    //            | 'land' | 'lor' | 'lxor' | 'lsl' | 'lsr' | 'asr'  
 */
 
 

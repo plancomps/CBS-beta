@@ -2,20 +2,20 @@
 Language "MiniJava"
 
 /*
-  [The MiniJava Reference Manual]: 
-    http://www.cambridge.org/us/features/052182060X/mjreference/mjreference.html
+  \[The MiniJava Reference Manual]: 
+    <http://www.cambridge.org/us/features/052182060X/mjreference/mjreference.html>
   
-  [Modern Compiler Implementation in Java: the MiniJava Project]:
-    http://www.cambridge.org/us/features/052182060X/
+  \[Modern Compiler Implementation in Java: the MiniJava Project]:
+    <http://www.cambridge.org/us/features/052182060X/>
   
   The grammar used here is mostly a transliteration of the one provided at:
-  http://www.cambridge.org/us/features/052182060X/grammar.html
+  <http://www.cambridge.org/us/features/052182060X/grammar.html>
   (which differs in trivial ways from the one in the cited reference manual).
   
   The rest of this file gives an overview of the MiniJava syntax. It is mostly
   in the form of a comment with embedded productions. The nonterminal symbols
   are hyperlinks to their actual specifications; similarly, section numbers
-  (such as '#1 ' below) link to the corresponding specification section.
+  (such as #1 below) link to the corresponding specification section.
 
 #1 Programs
 
