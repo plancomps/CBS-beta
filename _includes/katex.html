@@ -13,14 +13,7 @@
 		font-size: 1em; 
 	}
 </style>
-
-<!-- Workaround for KaTeX 0.13.0 bug https://github.com/KaTeX/KaTeX/issues/2815 -->
-<style>
-	.katex .vlist-r {
-		display: table-cell;
-	}
-</style>
-
+ 
 <!-- To automatically render math in text elements, include the auto-render extension: -->
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js" integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB+w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v" crossorigin="anonymous"
 		onload="renderMathInElement(document.body, {
@@ -29,13 +22,14 @@
       trust: true,
       strict: false,
       throwOnError: false,
+			maxExpand: 4000,
       macros: {
         '\\SHADE': '#1',
 
         '\\KEY': '\\textsf{\\textit{\\htmlClass{cbs-Key}{#1}}} ~',
         '\\STRING': '\\textsf{\\textquotedblleft\\texttt{#1}\\textquotedblright}',
         '\\ATOM': '\\textsf{\\textquoteleft\\texttt{#1}\\textquoteright}',
-        '\\LEX': '\\texttt{#1}',
+        '\\LEX': '\\textsf{\\htmlClass{cbs-Key}{\\textquoteleft}\\texttt{#1}\\htmlClass{cbs-Key}{\\textquoteright}}',
         
         '\\HASH': '\\#',
         '\\DOLLAR': '\\textdollar',
@@ -84,7 +78,7 @@
         '\\STAR': '^{\\smash{\\boldsymbol{\\ast}}}',
         '\\QUERY': '^{\\smash{\\text{\\bf?}}}',
 
-        '\\RULE': '\\frac{\\begin{gathered}#1\\end{gathered}}{\\begin{aligned}#2\\end{aligned}}',
+        '\\RULE': '\\frac{\\begin{aligned}#1\\end{aligned}}{\\begin{aligned}#2\\end{aligned}}',
         '\\AXIOM': '\\begin{aligned}#1\\end{aligned}',
         '\\TO': '\\mathop{\\Rightarrow}',
         '\\TRANS': '\\longrightarrow',
