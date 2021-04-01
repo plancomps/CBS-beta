@@ -9,20 +9,20 @@
 
 <!-- Override the KaTeX 0.13.0 default of font-size: 1.21em -->
 <style>
-	.katex { 
-		font-size: 1em; 
-	}
+  .katex { 
+    font-size: 1em; 
+  }
 </style>
  
 <!-- To automatically render math in text elements, include the auto-render extension: -->
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js" integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB+w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v" crossorigin="anonymous"
-		onload="renderMathInElement(document.body, {
+    onload="renderMathInElement(document.body, {
       fleqn: true,
       globalGroup: true,
       trust: true,
       strict: false,
       throwOnError: false,
-			maxExpand: 4000,
+      maxExpand: 4000,
       macros: {
         '\\SHADE': '#1',
 
@@ -44,9 +44,9 @@
         '\\RIGHTBRACE': '\\textbraceright',
         '\\TILDE': '\\textasciitilde',
 
-				'\\SUB': '_{\\mskip{-2mu}\\textsf{#1}}',
+        '\\SUB': '_{\\mskip{-2mu}\\textsf{#1}}',
 
-        '\\VAR': '\\htmlClass{cbs-PartVariable}{\\textit{#1}\\mskip{2mu}}',
+        '\\VAR': '\\htmlClass{cbs-PartVariable}{\\textsf{\\textit{#1}\\kern2mu}}',
         '\\NAME': '\\htmlClass{cbs-Name}{\\textsf{#1}}',
         '\\SYN': '\\htmlClass{cbs-SyntaxName}{\\textsf{#1}}',
         '\\SEM': '\\htmlClass{cbs-SemanticsName}{\\textsf{#1}}',
@@ -83,6 +83,7 @@
         '\\TO': '\\mathop{\\Rightarrow}',
         '\\TRANS': '\\longrightarrow',
         
-        '\\LATEX': '\\mathsf{\\LaTeX}'
+        '\\LATEX': '\\mathsf{\\LaTeX}',
+        '\\\n': '\\ '
       }
     });"></script>
