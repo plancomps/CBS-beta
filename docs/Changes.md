@@ -1,15 +1,25 @@
 ---
 title: Changes
-nav_order: "8"
+nav_order: 4
 ---
 
 Beta-release changes
 ====================
 
 This page lists significant additions and changes to the funcon definitions and
-language specifications included in the CBS beta-release.
+language specifications included in the CBS beta-release, and to how they are 
+presented on this website.
 
-2020-10-31: [Funcons-beta](Funcons-beta), [Unstable-Funcons-beta](Unstable-Funcons-beta)
+2021-04-02: [CBS-beta](/CBS-beta/) (experimental math branch)
+* Formatting enhancements:
+  - Developed generation of LaTeX from CBS sources
+  - Developed a CBS-LaTeX macro package for general use
+  - Added a [Pretty](Pretty) version of each [Plain](Plain) web page
+  - Added LaTeX sources and PDFs corresponding to the [Pretty](Pretty) web pages
+  - Using [KaTeX](https://katex.org) for rendering LaTeX on web pages
+* Added automatic switching to dark mode
+
+2021-03-10: [Funcons-beta](Funcons-beta), [Unstable-Funcons-beta](Unstable-Funcons-beta)
 * Adjusted navigation order
 * Added links to sibling (← →) and parent (↑) pages
 

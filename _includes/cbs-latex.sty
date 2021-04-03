@@ -1,0 +1,148 @@
+% cbs-latex.sty
+%
+% {% raw %}
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{cbs-latex}[2021/03/27 CBS-LaTeX package]
+
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{stmaryrd}
+\RequirePackage{textcomp}
+\RequirePackage[svgnames]{xcolor}
+\RequirePackage{hyperref}
+% \hypersetup{filebordercolor={White}}
+
+% The following color names are used by the highlighting macros.
+% They are set to colors defined by the svgnames option of xcolor,
+% and can be reset locally in LaTeX documents.
+
+\colorlet{Key}{Silver}
+\colorlet{Name}{DarkRed}
+\colorlet{SyntaxName}{SeaGreen}
+\colorlet{SemanticsName}{DarkBlue}
+\colorlet{PartVariable}{Black}
+\colorlet{SectionNumber}{Black}
+
+\newcommand{\SHADE}[1]{\strut#1\strut}
+% The following definition of \SHADE{TEXT} produces a faint grey background
+% for CBS notation in running text:
+% \newcommand{\SHADE}[1]{{\setlength{\fboxsep}{0pt}\colorbox{gray!10}{$\strut#1\strut$}}}
+
+% \KEY{TEXT}, \STRING{TEXT}, \ATOM{TEXT}, \LEX{TEXT} can be used in math mode.
+
+\newcommand{\KEY}[1]{\textsf{\textsl{\color{Key}#1}}}
+\newcommand{\STRING}[1]{\textsf{``\texttt{#1}''}}
+\newcommand{\ATOM}[1]{\textsf{`\texttt{#1}'}}
+\newcommand{\LEX}[1]{\textsf{{\color{Key}`}\texttt{#1}{\color{Key}'}}}
+
+% The following commands produce ASCII characters that are treated specially by LaTeX.
+
+\newcommand{\HASH}{\char`\#}
+\newcommand{\DOLLAR}{\char`\$}
+\newcommand{\PERCENT}{\char`\%}
+\newcommand{\AMPERSAND}{\char`\&}
+\newcommand{\APOSTROPHE}{\textquotesingle}
+\newcommand{\BACKSLASH}{\char`\\}
+\newcommand{\CARET}{\char`\^}
+\newcommand{\UNDERSCORE}{\char`\_}
+\newcommand{\GRAVE}{\`{}}
+\newcommand{\LEFTBRACE}{\char`\{}
+\newcommand{\RIGHTBRACE}{\char`\}}
+\newcommand{\TILDE}{\char`\~}
+
+% \NAME{name} highlights the name
+% \NAMEDECL{name} declares Name.name as the target of links to name
+% \NAMEREF{name} links name to the target Name.name in the current file
+% \NAMEHYPER{url}{file}{name} links name to Name.name at url/file/file.pdf
+% Similarly for \VAR{partvariable}, \SYN{syntaxname}, \SEM{semanticsName},
+% and \SECT{sectionnumber}
+
+\newcommand{\SUB}[1]{_{\textsf{#1}}}
+
+% PLAIN
+
+\newcommand{\VAR}[1]{\textcolor{PartVariable}{\textsl{#1\/}}}
+\newcommand{\NAME}[1]{\textcolor{Name}{\textsf{#1}}}
+\newcommand{\SYN}[1]{\textcolor{SyntaxName}{\textsf{#1}}}
+\newcommand{\SEM}[1]{\textcolor{SemanticsName}{\textsf{#1}}}
+\newcommand{\SECT}[1]{\textcolor{SectionNumber}{\text{\bf #1}}}
+
+% DECL
+
+\newcommand{\VARDECL}[1]{\raisebox{1.2\ht\strutbox}{\hyperdef{PartVariable}{#1}{}}\VAR{#1}}
+\newcommand{\NAMEDECL}[1]{\raisebox{1.2\ht\strutbox}{\hyperdef{Name}{#1}{}}\NAME{#1}}
+\newcommand{\SYNDECL}[1]{\raisebox{1.2\ht\strutbox}{\hyperdef{SyntaxName}{#1}{}}\SYN{#1}}
+\newcommand{\SEMDECL}[1]{\raisebox{1.2\ht\strutbox}{\hyperdef{SemanticsName}{#1}{}}\SEM{#1}}
+\newcommand{\SECTDECL}[1]{\raisebox{1.2\ht\strutbox}{\hyperdef{SectionNumber}{#1}{}}\SECT{#1}}
+
+% REF
+
+\newcommand{\VARREF}[1]{\hyperref{\jobname}{PartVariable}{#1}{\VAR{#1}}}
+\newcommand{\NAMEREF}[1]{\hyperref{\jobname}{Name}{#1}{\NAME{#1}}}
+\newcommand{\SYNREF}[1]{\hyperref{\jobname}{SyntaxName}{#1}{\SYN{#1}}}
+\newcommand{\SEMREF}[1]{\hyperref{\jobname}{SemanticsName}{#1}{\SEM{#1}}}
+\newcommand{\SECTREF}[1]{\hyperref{\jobname}{SectionNumber}{#1}{\SECT{#1}}}
+
+% HYPER
+
+\newcommand{\VARHYPER}[3]{\hyperref{#1/#2/#2}{PartVariable}{#3}{\VAR{#3}}}
+\newcommand{\NAMEHYPER}[3]{\hyperref{#1/#2/#2}{Name}{#3}{\NAME{#3}}}
+\newcommand{\SYNHYPER}[3]{\hyperref{#1/#2/#2}{SyntaxName}{#3}{\SYN{#3}}}
+\newcommand{\SEMHYPER}[3]{\hyperref{#1/#2/#2}{SemanticsName}{#3}{\SEM{#3}}}
+\newcommand{\SECTHYPER}[3]{\hyperref{#1/#2/#2}{SectionNumber}{#3}{\SECT{#3}}}
+
+% \hyperdef and \hyperref support both internal and external hyperlinks
+% (whereas \hypertarget and \hyperlink support only internal hyperlinks)
+% See https://tex.stackexchange.com/a/197244 regarding the use of \raisebox
+
+% \LEFTPHRASE MATH \RIGHTPHRASE produces [[ MATH ]]
+
+\newcommand{\LEFTPHRASE}{\llbracket}
+\newcommand{\RIGHTPHRASE}{\rrbracket}
+
+% \LEFTGROUP MATH \RIGHTGROUP produces ( MATH ) where the parentheses are
+% highlighted the same color as keywords
+
+\newcommand{\LEFTGROUP}{{\color{Key}(}}
+\newcommand{\RIGHTGROUP}{{\color{Key})}}
+
+% MATH\PLUS produces a superscript +
+% MATH\STAR produces a superscript *
+% MATH\QUERY produces a superscript ?
+
+\newcommand{\PLUS}{{}^{\textsf{\scriptsize+}}}
+\newcommand{\STAR}{{}^{\raisebox{-0.5ex}{\textsf{\scriptsize*}}}}
+\newcommand{\QUERY}{{}^{\raisebox{-0.5ex}{\textsf{\scriptsize?}}}}
+
+% \RULE{& PREMISE \\ & ...}{& FORMULA ... \\ & ...} produces an inference rule
+% with separately aligned premises and conclusion
+%   PREMISE
+%     ...
+% -----------
+% FORMULA ...
+% ...
+
+\newcommand{\RULE}[2]
+{\frac{\begin{aligned}#1\end{aligned}}{\begin{aligned}#2\end{aligned}}}
+
+% \AXIOM{& FORMULA ... \\ & ...} produces an aligned formula
+%
+% FORMULA ...
+% ...
+
+\newcommand{\AXIOM}[1]{\begin{aligned}#1\end{aligned}}
+
+% \TO TYPE produces => TYPE
+
+\newcommand{\TO}{\mathop{\Rightarrow}}
+
+% TERM \TRANS TERM produces TERM ---> TERM
+
+\newcommand{\TRANS}{\longrightarrow}
+
+% TERM \xrightarrow{LABEL} TERM puts the label above the long arrow
+
+\newcommand{\LATEX}{\textsf{\LaTeX}}
+
+% {% endraw %}

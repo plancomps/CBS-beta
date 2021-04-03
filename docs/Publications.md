@@ -1,6 +1,6 @@
 ---
 title: Publications
-nav_order: "7"
+nav_order: 3
 ---
 
 Publications

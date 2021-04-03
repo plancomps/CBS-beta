@@ -14,7 +14,7 @@ AUX-FILES  = $(CBS-FILES:%.cbs=_math/%.aux)
 LOG-FILES  = $(CBS-FILES:%.cbs=_math/%.log)
 OUT-FILES  = $(CBS-FILES:%.cbs=_math/%.out)
 
-KRAMDOWN = kramdown -o latex --latex-headers "section*,subsection*,subsubsection*,paragraph*,subparagraph*,subparagraph*"
+KRAMDOWN = kramdown -o remove_html_tags,latex
 
 PDFLATEX = pdflatex -interaction=batchmode
 

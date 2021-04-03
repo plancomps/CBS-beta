@@ -12,6 +12,8 @@ pre{
 
 /* CBS syntax highlighting: */
 
+/* PLAIN */
+
 i.keyword {
     color: $grey-dk-000;
     background-color: inherit;
@@ -47,7 +49,7 @@ span.sectnumtitle a:link {
     background-color: inherit;
 }
 
-/* Math */
+/* PRETTY */
 
 // Potential workaround for KaTeX 0.13.0 bug https://github.com/KaTeX/KaTeX/issues/2815
 

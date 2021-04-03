@@ -1,18 +1,16 @@
 remote_theme: pdmosses/just-the-docs@combination-rec-nav
-# remote_theme: pmarsceill/just-the-docs
+# remote_theme: pmarsceill/just-the-docs@0.3.3 allows only 3 levels of navigation
 title: CBS-beta
 description: Beta-release of the CBS framework
 
-baseurl: "/CBS-beta" # the subpath of your site, e.g. /blog
-url: "https://plancomps.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-# Aux links for the upper right navigation
+baseurl: "/CBS-beta"
+url: "https://plancomps.github.io"
+
 aux_links:
   "CBS-beta on GitHub":
     - "//github.com/plancomps/CBS-beta"
-# Set a path/url to a logo that will be displayed instead of the title
-# logo: "/assets/images/PLanCompS-150.png"
 
-# permalink: pretty
+# logo: "/assets/images/PLanCompS-150.png"
 
 collections:
   docs:
@@ -30,41 +28,30 @@ just_the_docs:
       nav_fold: true
       search_exclude: true
 
+# Color scheme can be light (default) or cbs-dark
+color_scheme: cbs-dark
+
+callouts:
+  note:
+    title: Note
+    color: purple
+
 exclude:
   - "profiles/"
+  - "logs/"
   - makefile
   - sunshine2.jar
   - "Funcons-beta/"
   - "Languages-beta/"
   - "Unstable-Funcons-beta/"
   - "Unstable-Languages-beta/"
-  # - "Languages-beta/IMP/IMP-cbs/Funcons-beta/"
-  # - "Languages-beta/IMP/IMP-cbs/target/"
-  # - "Languages-beta/MiniJava/MiniJava-cbs/Funcons-beta/"
-  # - "Languages-beta/MiniJava/MiniJava-cbs/target/"
-  # - "Languages-beta/SIMPLE/SIMPLE-cbs/Funcons-beta/"
-  # - "Languages-beta/SIMPLE/SIMPLE-cbs/target/"
-  # - "Languages-beta/SL/SL-cbs/Funcons-beta/"
-  # - "Languages-beta/SL/SL-cbs/target/"
-  # - "Languages-beta/OCaml-Light/OC-L-cbs/Funcons-beta/"
-  # - "Languages-beta/OCaml-Light/OC-L-cbs/target/"
-  # - "Unstable-Funcons-beta/Funcons-beta/"
-  # - "Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/Unstable-Funcons-beta/"
-  # - "Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/target/"
-  # - "Unstable-Languages-beta/LangDev-2019/LD-cbs/Unstable-Funcons-beta/"
-  # - "Unstable-Languages-beta/LangDev-2019/LD-cbs/target/"
-  # - "Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/Unstable-Funcons-beta/"
-  # - "Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/target/"
-  # - "_docs/Funcons-beta/"
-  # - "_docs/Languages-beta/"
-  # - "_docs/Unstable-Funcons-beta/"
-  # - "_docs/Unstable-Languages-beta/"
 
-# Set the search token separator
-# search_tokenizer_separator: /[\s/]+/
+include:
+  - "Funcons-beta/index.md"
+  - "Languages-beta/index.md"
+  - "Unstable-Funcons-beta/index.md"
+  - "Unstable-Languages-beta/index.md"
 
-# Enable or disable the site search
-# Supports true (default) or false
 search_enabled: true
 search:
   # Split pages into sections that can be searched individually
@@ -90,66 +77,23 @@ search:
   # Supports true or false (default)
   button: true
 
-# Enable or disable heading anchors
-# heading_anchors: true
+nav_sort: case_sensitive
 
-# Makes Aux links open in a new tab. Default is false
-# aux_links_new_tab: false
-
-# Sort order for navigation links
-# nav_sort: case_insensitive # N.B. numbers are sorted lexicographically
-nav_sort: case_sensitive # Capital letters sorted before lowercase, numbers by value
-
-# Footer content
-# appears at the bottom of every page's main content
-
-# Back to top link
 back_to_top: true
 back_to_top_text: "Back to top"
 
-# footer_content: "Copyright &copy; 2017-2020 Patrick Marsceill. Distributed by an <a href=\"https://github.com/pmarsceill/just-the-docs/tree/master/LICENSE.txt\">MIT license.</a>"
 footer_content: ""
 
 nav_next_prev: true
-# nav_prev_text: "&#8678;"
-# nav_up_text:   "&#8679;"
-# nav_next_text: "&#8680;"
-
-# Footer last edited timestamp
-# last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
-# last_edit_time_format: "%b %e %Y at %I:%M %p" # uses ruby's time format: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
-
-# Footer "Edit this page on GitHub" link text
-# gh_edit_link: true # show or hide edit this page link
-# gh_edit_link_text: "Edit this page on GitHub"
-# gh_edit_repository: "https://github.com/plancomps/CBS-beta" # the github URL for your repo
-# gh_edit_branch: "master" # the branch that your docs is served from
-# gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
-
-# Color scheme currently only supports "dark", "light"/nil (default), or a custom scheme that you define
-# color_scheme: dark
-
-# Google Analytics Tracking (optional)
-# e.g, UA-1234567-89
-# ga_tracking: UA-2709176-10
-# ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (true/nil by default)
 
 plugins:
   - jekyll-remote-theme
   - jekyll-include-cache
-#   - jekyll-seo-tag
 
 compress_html:
-#   clippings: all
-#   comments: all
-#   endings: all
-#   startings: []
   blanklines: false
-#   profile: false
 
 nav_next_prev: true
-
-# nav_cache: false
 
 # Navigation order for generated funcons files
 
@@ -162,6 +106,9 @@ defaults:
     values: {layout: default}
   -
     scope: {type: math}
+    values: {layout: default}
+  -
+    scope: {path: "*/index.md", type: pages}
     values: {layout: default}
 
 # Funcons-beta
