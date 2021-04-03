@@ -1,8 +1,16 @@
-\subsection*{Computation Types}\hypertarget{computation-types}{}\label{computation-types}
+% {% raw %}
+
+
+\begin{center}
+\rule{3in}{0.4pt}
+\end{center}
+
+\subsection{Computation Types}\hypertarget{computation-types}{}\label{computation-types}
 
 \begin{align*}
-  \KEY{Built-in Funcon} ~ 
-  & \NAMEDECL{computation-types} : \NAMEHYPER{../../Values}{Value-Types}{types}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{computation-types} 
+    : \NAMEHYPER{../../Values}{Value-Types}{types} 
 \end{align*}
 For any value type $\SHADE{\VAR{T}}$, the term $\SHADE{ \TO \VAR{T}}$ is the type of computations that
   compute values of type $\SHADE{\VAR{T}}$ whenever they terminate normally.
@@ -11,4 +19,7 @@ For any subtypes $\SHADE{\VAR{S}}$, $\SHADE{\VAR{T}}$ of $\SHADE{\NAMEHYPER{../.
   that compute values of type $\SHADE{\VAR{T}}$ whenever they terminate normally, and
   either do not refer at all to the $\SHADE{\NAMEHYPER{../Normal}{Giving}{given}}$ entity, or require the $\SHADE{\NAMEHYPER{../Normal}{Giving}{given}}$
   entity to have type $\SHADE{\VAR{S}}$.
+
+% {% endraw %}
+
 

@@ -1,26 +1,29 @@
 {::comment}{% raw %}{:/}
 
+
+----
+
 ### Generating
                
 
 
 $$\begin{align*}
   [ \
-  \KEY{Type} \ & \NAMEREF{atoms} \\
-  \KEY{Entity} \ & \NAMEREF{used-atom-set} \\
-  \KEY{Funcon} \ & \NAMEREF{initialise-generating} \\
-  \KEY{Funcon} \ & \NAMEREF{fresh-atom} \\
-  \KEY{Funcon} \ & \NAMEREF{use-atom-not-in}
+  \KEY{Type} \quad & \NAMEREF{atoms} \\
+  \KEY{Entity} \quad & \NAMEREF{used-atom-set} \\
+  \KEY{Funcon} \quad & \NAMEREF{initialise-generating} \\
+  \KEY{Funcon} \quad & \NAMEREF{fresh-atom} \\
+  \KEY{Funcon} \quad & \NAMEREF{use-atom-not-in}
   \ ]
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Meta-variables} \
+  \KEY{Meta-variables} \quad
   & \VAR{T} <: \NAMEHYPER{../../../Values}{Value-Types}{values}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Type} \ 
+  \KEY{Built-in Type} \quad 
   & \NAMEDECL{atoms}  
 \end{align*}$$
 
@@ -30,7 +33,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Entity} \
+  \KEY{Entity} \quad
   & \langle \_, \NAMEDECL{used-atom-set}(\_ : \NAMEHYPER{../../../Values/Composite}{Sets}{sets}
                                                             (  \NAMEREF{atoms} )) \rangle \TRANS   
     \langle \_, \NAME{used-atom-set}(\_ : \NAME{sets}
@@ -38,7 +41,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{initialise-generating}(
                        \_ :  \TO \VAR{T}) 
     :  \TO \VAR{T} 
@@ -51,7 +54,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{fresh-atom} 
     :  \TO \NAMEREF{atoms} 
 \end{align*}$$
@@ -61,7 +64,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../Values/Composite}{Sets}{element-not-in}
           (  \NAMEREF{atoms}, 
@@ -76,7 +79,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{use-atom-not-in}(
                        \_ : \NAMEHYPER{../../../Values/Composite}{Sets}{sets}
                                  (  \NAMEREF{atoms} )) 
@@ -91,7 +94,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../Values/Composite}{Sets}{element-not-in}
           (  \NAMEREF{atoms}, 
@@ -106,6 +109,7 @@ $$\begin{align*}
                                                               \VAR{SA}' ) ) \rangle
       }
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

@@ -1,13 +1,16 @@
 {::comment}{% raw %}{:/}
 
-$$\KEY{Language} \STRING{IMP}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{IMP}$$
 
 # $$\SECT{3}$$ Statements and blocks
            
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{Stmt} : \SYN{stmt}
       \ ::= \ & \
       \SYNREF{block} \\
@@ -16,14 +19,14 @@ $$\begin{align*}
       \ \mid \ & \ \LEX{while} \ \LEX{{(}} \ \SYNHYPER{../.}{IMP-2}{bexp} \ \LEX{{)}} \ \SYNREF{block} \\
       \ \mid \ & \ \SYNREF{stmt} \ \SYNREF{stmt}
 \\
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{Block} : \SYN{block}
       \ ::= \ & \
       \LEX{{\LEFTBRACE}} \ \SYNREF{stmt}\QUERY \ \LEX{{\RIGHTBRACE}}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \LEX{if} \ \LEX{{(}} \ \VARHYPER{../.}{IMP-2}{BExp} \ \LEX{{)}} \ \VARREF{Block} \
       \RIGHTPHRASE : \SYNREF{stmt} = \\&
@@ -33,11 +36,11 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{execute} \LEFTPHRASE \ \_ : \SYNREF{stmt} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{execute} \LEFTPHRASE \
                             \VARHYPER{../.}{IMP-1}{I} \ \LEX{{=}} \ \VARHYPER{../.}{IMP-1}{AExp} \ \LEX{{;}} \
                           \RIGHTPHRASE  = \\&\quad
@@ -50,7 +53,7 @@ $$\begin{align*}
                                     \VAR{AExp} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{execute} \LEFTPHRASE \
                             \LEX{if} \ \LEX{{(}} \ \VARHYPER{../.}{IMP-2}{BExp} \ \LEX{{)}} \ \VARREF{Block}\SUB{1} \ \LEX{else} \ \VARREF{Block}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -65,7 +68,7 @@ $$\begin{align*}
                                     \VAR{Block}\SUB{2} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{execute} \LEFTPHRASE \
                             \LEX{while} \ \LEX{{(}} \ \VARHYPER{../.}{IMP-2}{BExp} \ \LEX{{)}} \ \VARREF{Block} \
                           \RIGHTPHRASE  = \\&\quad
@@ -77,7 +80,7 @@ $$\begin{align*}
                                     \VAR{Block} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{execute} \LEFTPHRASE \
                             \VARREF{Stmt}\SUB{1} \ \VARREF{Stmt}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -89,13 +92,13 @@ $$\begin{align*}
                                     \VAR{Stmt}\SUB{2} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{execute} \LEFTPHRASE \
                             \LEX{{\LEFTBRACE}} \ \LEX{{\RIGHTBRACE}} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{execute} \LEFTPHRASE \
                             \LEX{{\LEFTBRACE}} \ \VARREF{Stmt} \ \LEX{{\RIGHTBRACE}} \
                           \RIGHTPHRASE  = 
@@ -103,6 +106,7 @@ $$\begin{align*}
                             \VAR{Stmt} \
                           \RIGHTPHRASE 
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

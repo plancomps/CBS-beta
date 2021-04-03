@@ -10,37 +10,40 @@ ancestor: Languages-beta
 {::comment}{% raw %}{:/}
 <details open markdown="block">
   <summary>
-    Outline
+    OUTLINE
   </summary>
   {: .text-delta }
 - TOC
 {:toc}
 </details>
 
-$$\KEY{Language} \STRING{SL}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{SL}$$
 
 
 
 
 $$\begin{align*}
   [ \
-  \KEY{Funcon} \ & \NAMEREF{sl-to-string} \\
-  \KEY{Funcon} \ & \NAMEREF{integer-add-else-string-append} \\
-  \KEY{Funcon} \ & \NAMEREF{int} \\
-  \KEY{Funcon} \ & \NAMEREF{bool} \\
-  \KEY{Funcon} \ & \NAMEREF{str} \\
-  \KEY{Funcon} \ & \NAMEREF{obj} \\
-  \KEY{Funcon} \ & \NAMEREF{fun} \\
-  \KEY{Funcon} \ & \NAMEREF{scope-closed} \\
-  \KEY{Funcon} \ & \NAMEREF{initialise-local-variables} \\
-  \KEY{Funcon} \ & \NAMEREF{local-variable} \\
-  \KEY{Funcon} \ & \NAMEREF{local-variable-initialise} \\
-  \KEY{Funcon} \ & \NAMEREF{local-variable-assign} \\
-  \KEY{Funcon} \ & \NAMEREF{initialise-global-bindings} \\
-  \KEY{Funcon} \ & \NAMEREF{override-global-bindings} \\
-  \KEY{Funcon} \ & \NAMEREF{global-bound} \\
-  \KEY{Funcon} \ & \NAMEREF{read-line} \\
-  \KEY{Funcon} \ & \NAMEREF{print-line}
+  \KEY{Funcon} \quad & \NAMEREF{sl-to-string} \\
+  \KEY{Funcon} \quad & \NAMEREF{integer-add-else-string-append} \\
+  \KEY{Funcon} \quad & \NAMEREF{int} \\
+  \KEY{Funcon} \quad & \NAMEREF{bool} \\
+  \KEY{Funcon} \quad & \NAMEREF{str} \\
+  \KEY{Funcon} \quad & \NAMEREF{obj} \\
+  \KEY{Funcon} \quad & \NAMEREF{fun} \\
+  \KEY{Funcon} \quad & \NAMEREF{scope-closed} \\
+  \KEY{Funcon} \quad & \NAMEREF{initialise-local-variables} \\
+  \KEY{Funcon} \quad & \NAMEREF{local-variable} \\
+  \KEY{Funcon} \quad & \NAMEREF{local-variable-initialise} \\
+  \KEY{Funcon} \quad & \NAMEREF{local-variable-assign} \\
+  \KEY{Funcon} \quad & \NAMEREF{initialise-global-bindings} \\
+  \KEY{Funcon} \quad & \NAMEREF{override-global-bindings} \\
+  \KEY{Funcon} \quad & \NAMEREF{global-bound} \\
+  \KEY{Funcon} \quad & \NAMEREF{read-line} \\
+  \KEY{Funcon} \quad & \NAMEREF{print-line}
   \ ]
 \end{align*}$$
 
@@ -49,17 +52,17 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{sl-to-string}(
                        \VAR{V} : \NAMEHYPER{../.}{SL-2-Expressions}{sl-values}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{strings} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{sl-to-string}
         (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-value} ) \leadsto 
         \STRING{null}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{sl-to-string}
         (  \VAR{V} : \mathop{\sim} \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} ) \leadsto 
         \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{to-string}
@@ -67,7 +70,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{integer-add-else-string-append}(
                        \VAR{V}\SUB{1} : \NAMEHYPER{../.}{SL-2-Expressions}{sl-values}, \VAR{V}\SUB{2} : \NAMEHYPER{../.}{SL-2-Expressions}{sl-values}) 
     :  \TO \NAMEHYPER{../.}{SL-2-Expressions}{sl-values} \\&\quad
@@ -89,7 +92,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{int}(
                        \VAR{V} : \NAMEHYPER{../.}{SL-2-Expressions}{sl-values}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integers} \\&\quad
@@ -100,7 +103,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{bool}(
                        \VAR{V} : \NAMEHYPER{../.}{SL-2-Expressions}{sl-values}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{booleans} \\&\quad
@@ -111,7 +114,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{str}(
                        \VAR{V} : \NAMEHYPER{../.}{SL-2-Expressions}{sl-values}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{strings} \\&\quad
@@ -122,7 +125,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{obj}(
                        \VAR{V} : \NAMEHYPER{../.}{SL-2-Expressions}{sl-values}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Objects}{objects} \\&\quad
@@ -133,7 +136,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{fun}(
                        \VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{functions}
@@ -161,7 +164,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{scope-closed}(
                        \VAR{Env} : \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{envs}, \VAR{X} :  \TO \VAR{T}) 
     :  \TO \VAR{T} \\&\quad
@@ -200,7 +203,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{initialise-local-variables} 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{environments} \\&\quad
     \leadsto \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{bind}
@@ -212,7 +215,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{local-variable}(
                        \VAR{I} : \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{ids}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{variables} \\&\quad
@@ -225,7 +228,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{local-variable-initialise}(
                        \VAR{I} : \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{ids}, \VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
@@ -243,7 +246,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{local-variable-assign}(
                        \VAR{I} : \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{ids}, \VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
@@ -268,7 +271,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{initialise-global-bindings} 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{environments} \\&\quad
     \leadsto \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{bind}
@@ -280,7 +283,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{override-global-bindings}(
                        \VAR{E} : \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{environments}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
@@ -295,7 +298,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{global-bound}(
                        \VAR{I} : \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{ids}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} \\&\quad
@@ -312,7 +315,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{read-line} 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{strings} \\&\quad
     \leadsto \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{give}
@@ -335,7 +338,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{print-line}(
                        \VAR{S} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{strings}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
@@ -343,6 +346,7 @@ $$\begin{align*}
                (  \VAR{S}, 
                       \STRING{{\BACKSLASH}n} )
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -367,7 +371,9 @@ $$\begin{align*}
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

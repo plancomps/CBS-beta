@@ -1,12 +1,15 @@
 {::comment}{% raw %}{:/}
 <details open markdown="block">
   <summary>
-    Outline
+    OUTLINE
   </summary>
   {: .text-delta }
 - TOC
 {:toc}
 </details>
+
+
+----
 
 ### Thread synchronisation
                
@@ -16,17 +19,17 @@ $$\begin{align*}
   [ \
   \textsf{Syncs
           } \ & \textsf{} \\
-  \KEY{Datatype} \ & \NAMEREF{syncs} \\
-  \KEY{Funcon} \ & \NAMEREF{sync-create} \\
-  \KEY{Funcon} \ & \NAMEREF{sync-feature} \\
-  \KEY{Funcon} \ & \NAMEREF{is-sync-feature} \\
+  \KEY{Datatype} \quad & \NAMEREF{syncs} \\
+  \KEY{Funcon} \quad & \NAMEREF{sync-create} \\
+  \KEY{Funcon} \quad & \NAMEREF{sync-feature} \\
+  \KEY{Funcon} \quad & \NAMEREF{is-sync-feature} \\
   \textsf{Sync} \ & \textsf{features} \\
-  \KEY{Datatype} \ & \NAMEREF{sync-features} \\
-  \KEY{Funcon} \ & \NAMEREF{sync-waiting-list} \\
-  \KEY{Funcon} \ & \NAMEREF{sync-held} \\
-  \KEY{Funcon} \ & \NAMEREF{sync-holder} \\
-  \KEY{Funcon} \ & \NAMEREF{sync-count} \\
-  \KEY{Funcon} \ & \NAMEREF{sync-feature-create}
+  \KEY{Datatype} \quad & \NAMEREF{sync-features} \\
+  \KEY{Funcon} \quad & \NAMEREF{sync-waiting-list} \\
+  \KEY{Funcon} \quad & \NAMEREF{sync-held} \\
+  \KEY{Funcon} \quad & \NAMEREF{sync-holder} \\
+  \KEY{Funcon} \quad & \NAMEREF{sync-count} \\
+  \KEY{Funcon} \quad & \NAMEREF{sync-feature-create}
   \ ]
 \end{align*}$$
 
@@ -59,7 +62,7 @@ A sync is formed from its features:
 
 
 $$\begin{align*}
-  \KEY{Datatype} \ 
+  \KEY{Datatype} \quad 
   \NAMEDECL{syncs} 
   \ ::= \ & \NAMEDECL{sync}(
                                \_ : \NAMEREF{sync-feature-maps})
@@ -72,7 +75,7 @@ also check required feature constraints.)
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{sync-create}(
                        \VAR{M}\PLUS : \NAMEREF{sync-feature-maps}\PLUS) 
     :  \TO \NAMEREF{syncs} \\&\quad
@@ -89,12 +92,12 @@ $$\SHADE{\NAMEREF{sync-feature}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{sync-feature}(
                        \_ : \NAMEREF{syncs}, \_ : \NAMEREF{sync-features}) 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{sync-feature}
         (  \NAMEREF{sync}
                 (  \VAR{SFM} : \NAMEREF{sync-feature-maps} ), 
@@ -112,12 +115,12 @@ $$\SHADE{\NAMEREF{is-sync-feature}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{is-sync-feature}(
                        \_ : \NAMEREF{syncs}, \_ : \NAMEREF{sync-features}) 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{is-sync-feature}
         (  \NAMEREF{sync}
                 (  \VAR{SFM} : \NAMEREF{sync-feature-maps} ), 
@@ -138,7 +141,7 @@ notifications.
 
 
 $$\begin{align*}
-  \KEY{Datatype} \ 
+  \KEY{Datatype} \quad 
   \NAMEDECL{sync-features} 
   \ ::= \ &
   \NAMEDECL{sync-waiting-list} \\
@@ -148,7 +151,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Auxiliary Type} \ 
+  \KEY{Auxiliary Type} \quad 
   & \NAMEDECL{sync-feature-maps}  
     \leadsto \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{maps}
                (  \NAMEREF{sync-features}, 
@@ -160,7 +163,7 @@ A field for each feature is created independently:
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{sync-feature-create}(
                        \_ : \NAMEREF{sync-features}) 
     :  \TO \NAMEREF{sync-feature-maps} 
@@ -172,7 +175,7 @@ with the requesting thread-ids:
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{sync-feature-create} \ 
         \NAMEREF{sync-waiting-list} \leadsto \\&\quad
         \{ \NAMEREF{sync-waiting-list} \mapsto \\&\quad\quad\quad
@@ -187,7 +190,7 @@ $$\SHADE{\NAMEREF{sync-held}}$$ stores whether a lock is currently held:
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{sync-feature-create} \ 
         \NAMEREF{sync-held} \leadsto \\&\quad
         \{ \NAMEREF{sync-held} \mapsto \\&\quad\quad\quad
@@ -201,7 +204,7 @@ $$\SHADE{\NAMEREF{sync-holder}}$$ stores the current holder of a lock, if any:
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{sync-feature-create} \ 
         \NAMEREF{sync-holder} \leadsto \\&\quad
         \{ \NAMEREF{sync-holder} \mapsto \\&\quad\quad\quad
@@ -216,7 +219,7 @@ threads currently holding the lock:
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{sync-feature-create} \ 
         \NAMEREF{sync-count} \leadsto \\&\quad
         \{ \NAMEREF{sync-count} \mapsto \\&\quad\quad\quad
@@ -232,7 +235,7 @@ $$\SHADE{\NAMEREF{sync-waiting-list-add}
 
 
 $$\begin{align*}
-  \KEY{Auxiliary Funcon} \
+  \KEY{Auxiliary Funcon} \quad
   & \NAMEDECL{sync-waiting-list-add}(
                        \VAR{SY} : \NAMEREF{syncs}, \VAR{V} : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values}) 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
@@ -255,7 +258,7 @@ waiting-list of $$\SHADE{\VAR{SY}}$$:
 
 
 $$\begin{align*}
-  \KEY{Auxiliary Funcon} \
+  \KEY{Auxiliary Funcon} \quad
   & \NAMEDECL{sync-waiting-list-head-remove}(
                        \VAR{SY} : \NAMEREF{syncs}) 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values} \\&\quad
@@ -283,6 +286,7 @@ $$\begin{align*}
 
 Various kinds of locks and notifications are represented by sync feature maps,
 together with funcons that (atomically) inspect and update them accordngly.
+
 
 
 

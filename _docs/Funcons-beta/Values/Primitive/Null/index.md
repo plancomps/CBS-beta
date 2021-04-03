@@ -8,6 +8,7 @@ ancestor: Funcons-beta
 [Funcons-beta] : [Null.cbs] \| [PRETTY] \| [PDF]
 
 
+----
 ### Null
 
 <div class="highlighter-rouge"><pre class="highlight"><code>[

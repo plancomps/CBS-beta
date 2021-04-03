@@ -9,37 +9,40 @@ ancestor: Funcons-beta
 
 {::comment}{% raw %}{:/}
 
+
+----
+
 ### Linking
                
 
 
 $$\begin{align*}
   [ \
-  \KEY{Datatype} \ & \NAMEREF{links} \\
-  \KEY{Funcon} \ & \NAMEREF{initialise-linking} \\
-  \KEY{Funcon} \ & \NAMEREF{link} \\
-  \KEY{Funcon} \ & \NAMEREF{fresh-link} \\
-  \KEY{Funcon} \ & \NAMEREF{fresh-initialised-link} \\
-  \KEY{Alias} \ & \NAMEREF{fresh-init-link} \\
-  \KEY{Funcon} \ & \NAMEREF{set-link} \\
-  \KEY{Funcon} \ & \NAMEREF{follow-if-link}
+  \KEY{Datatype} \quad & \NAMEREF{links} \\
+  \KEY{Funcon} \quad & \NAMEREF{initialise-linking} \\
+  \KEY{Funcon} \quad & \NAMEREF{link} \\
+  \KEY{Funcon} \quad & \NAMEREF{fresh-link} \\
+  \KEY{Funcon} \quad & \NAMEREF{fresh-initialised-link} \\
+  \KEY{Alias} \quad & \NAMEREF{fresh-init-link} \\
+  \KEY{Funcon} \quad & \NAMEREF{set-link} \\
+  \KEY{Funcon} \quad & \NAMEREF{follow-if-link}
   \ ]
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Meta-variables} \
+  \KEY{Meta-variables} \quad
   & \VAR{T} <: \NAMEHYPER{../../../Values}{Value-Types}{values}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Datatype} \ 
+  \KEY{Datatype} \quad 
   \NAMEDECL{links} 
   \ ::= \ & \NAMEDECL{link}(
                                \_ : \NAMEHYPER{../.}{Storing}{variables})
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{initialise-linking}(
                        \VAR{X} :  \TO \VAR{T}) 
     :  \TO \VAR{T} \\&\quad
@@ -54,7 +57,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{fresh-link}(
                        \VAR{T} ) 
     :  \TO \NAMEREF{links} \\&\quad
@@ -64,7 +67,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{fresh-initialised-link}(
                        \VAR{T} , \VAR{V} : \VAR{T}) 
     :  \TO \NAMEREF{links} \\&\quad
@@ -73,12 +76,12 @@ $$\begin{align*}
                        (  \VAR{T}, 
                               \VAR{V} ) )
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{fresh-init-link} = \NAMEREF{fresh-initialised-link}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{set-link}(
                        \_ : \NAMEREF{links}, \_ : \VAR{T}) 
     :  \TO \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} 
@@ -89,7 +92,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{set-link}
         (  \NAMEREF{link}
                 (  \VAR{Var} : \NAMEHYPER{../.}{Storing}{variables} ), 
@@ -100,12 +103,12 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{follow-link}(
                        \_ : \NAMEREF{links}) 
     :  \TO \NAMEHYPER{../../../Values}{Value-Types}{values} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{follow-link}
         (  \NAMEREF{link}
                 (  \VAR{Var} : \NAMEHYPER{../.}{Storing}{variables} ) ) \leadsto 
@@ -114,7 +117,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{follow-if-link}(
                        \_ : \NAMEHYPER{../../../Values}{Value-Types}{values}) 
     :  \TO \NAMEHYPER{../../../Values}{Value-Types}{values} 
@@ -127,18 +130,19 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{follow-if-link}
         (  \NAMEREF{link}
                 (  \VAR{Var} : \NAMEHYPER{../.}{Storing}{variables} ) ) \leadsto 
         \NAMEHYPER{../.}{Storing}{assigned}
           (  \VAR{Var} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{follow-if-link}
         (  \VAR{V} : \mathop{\sim} \NAMEREF{links} ) \leadsto 
         \VAR{V}
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -163,7 +167,9 @@ $$\begin{align*}
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

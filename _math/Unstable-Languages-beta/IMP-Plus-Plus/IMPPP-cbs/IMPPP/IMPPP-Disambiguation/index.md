@@ -9,7 +9,10 @@ ancestor: Unstable-Languages-beta
 
 {::comment}{% raw %}{:/}
 
-$$\KEY{Language} \STRING{IMPPP}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{IMPPP}$$
 
 # $$\SECT{A}$$ Disambiguation
            
@@ -41,6 +44,7 @@ $$\KEY{Language} \STRING{IMPPP}$$
 >    $$\SHADE{\quad\SYNHYPER{../.}{IMPPP-3}{bexp}  \ ::= \  \  \SYNHYPER{../.}{IMPPP-3}{bexp} \ \LEX{{\AMPERSAND}{\AMPERSAND}} \ \SYNHYPER{../.}{IMPPP-3}{bexp}}$$
 
 
+
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
   "FUNCONS-BETA"
 [Unstable-Funcons-beta]: /CBS-beta/math/Unstable-Funcons-beta
@@ -63,7 +67,9 @@ $$\KEY{Language} \STRING{IMPPP}$$
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

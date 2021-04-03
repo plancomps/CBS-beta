@@ -1,52 +1,86 @@
+% {% raw %}
+
+
+\begin{center}
+\rule{3in}{0.4pt}
+\end{center}
+
 \begin{displaymath}
-\KEY{Language} \STRING{IMP}
+\KEY{Language} \quad \STRING{IMP}
 \end{displaymath}
 
-\section*{$\SECT{2}$ Boolean expressions}\hypertarget{sect2-boolean-expressions}{}\label{sect2-boolean-expressions}
+\section{$\SECT{2}$ Boolean expressions}\hypertarget{sect2-boolean-expressions}{}\label{sect2-boolean-expressions}
 
 \begin{align*}
-  \KEY{Syntax} ~ 
-    \VARDECL{BExp} : \SYNDECL{bexp}
-      ~ ::= ~ &
+  \KEY{Syntax} \quad
+    \VARDECL{BExp} : \SYN{bexp}
+      \ ::= \ & \
       \LEX{false} \\
-      ~ \mid ~ &  \LEX{true} \\
-      ~ \mid ~ &  \SYNHYPER{../.}{IMP-1}{aexp} ~ \LEX{<{}={}} ~ \SYNHYPER{../.}{IMP-1}{aexp} \\
-      ~ \mid ~ &  \LEX{!{}} ~ \SYNREF{bexp} \\
-      ~ \mid ~ &  \SYNREF{bexp} ~ \LEX{\AMPERSAND \AMPERSAND } ~ \SYNREF{bexp} \\
-      ~ \mid ~ &  \LEX{(} ~ \SYNREF{bexp} ~ \LEX{)}
+      \ \mid \ & \ \LEX{true} \\
+      \ \mid \ & \ \SYNHYPER{../.}{IMP-1}{aexp} \ \LEX{{<}{=}} \ \SYNHYPER{../.}{IMP-1}{aexp} \\
+      \ \mid \ & \ \LEX{{!}} \ \SYNREF{bexp} \\
+      \ \mid \ & \ \SYNREF{bexp} \ \LEX{{\AMPERSAND}{\AMPERSAND}} \ \SYNREF{bexp} \\
+      \ \mid \ & \ \LEX{{(}} \ \SYNREF{bexp} \ \LEX{{)}}
 \end{align*}
 \begin{align*}
-  \KEY{Semantics} ~ 
-  & \SEMDECL{eval-bool} \LEFTPHRASE ~ \_ : \SYNREF{bexp} ~ \RIGHTPHRASE  
-    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{booleans}
+  \KEY{Semantics} \quad
+  & \SEMDECL{eval-bool} \LEFTPHRASE \ \_ : \SYNREF{bexp} \ \RIGHTPHRASE  
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{booleans} 
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{eval-bool} \LEFTPHRASE ~ \LEX{false} ~ \RIGHTPHRASE  = \\&\quad
+  \KEY{Rule} \quad
+    & \SEMREF{eval-bool} \LEFTPHRASE \
+                            \LEX{false} \
+                          \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false}
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{eval-bool} \LEFTPHRASE ~ \LEX{true} ~ \RIGHTPHRASE  = \\&\quad
+  \KEY{Rule} \quad
+    & \SEMREF{eval-bool} \LEFTPHRASE \
+                            \LEX{true} \
+                          \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{true}
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{eval-bool} \LEFTPHRASE ~ \VARHYPER{../.}{IMP-1}{AExp}\SUB{1} ~ \LEX{<{}={}} ~ \VARHYPER{../.}{IMP-1}{AExp}\SUB{2} ~ \RIGHTPHRASE  = \\&\quad
+  \KEY{Rule} \quad
+    & \SEMREF{eval-bool} \LEFTPHRASE \
+                            \VARHYPER{../.}{IMP-1}{AExp}\SUB{1} \ \LEX{{<}{=}} \ \VARHYPER{../.}{IMP-1}{AExp}\SUB{2} \
+                          \RIGHTPHRASE  = \\&\quad
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-less-or-equal}
-        ( \SEMHYPER{../.}{IMP-1}{eval-arith} \LEFTPHRASE ~ \VAR{AExp}\SUB{1} ~ \RIGHTPHRASE , \\&\quad \quad 
-          \SEMHYPER{../.}{IMP-1}{eval-arith} \LEFTPHRASE ~ \VAR{AExp}\SUB{2} ~ \RIGHTPHRASE  )
+        (  \SEMHYPER{../.}{IMP-1}{eval-arith} \LEFTPHRASE \
+                                    \VAR{AExp}\SUB{1} \
+                                  \RIGHTPHRASE , 
+               \SEMHYPER{../.}{IMP-1}{eval-arith} \LEFTPHRASE \
+                                    \VAR{AExp}\SUB{2} \
+                                  \RIGHTPHRASE  )
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{eval-bool} \LEFTPHRASE ~ \LEX{!{}} ~ \VARREF{BExp} ~ \RIGHTPHRASE  = \\&\quad
+  \KEY{Rule} \quad
+    & \SEMREF{eval-bool} \LEFTPHRASE \
+                            \LEX{{!}} \ \VARREF{BExp} \
+                          \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{not}
-        ( \SEMREF{eval-bool} \LEFTPHRASE ~ \VAR{BExp} ~ \RIGHTPHRASE  )
+        (  \SEMREF{eval-bool} \LEFTPHRASE \
+                                    \VAR{BExp} \
+                                  \RIGHTPHRASE  )
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{eval-bool} \LEFTPHRASE ~ \VARREF{BExp}\SUB{1} ~ \LEX{\AMPERSAND \AMPERSAND } ~ \VARREF{BExp}\SUB{2} ~ \RIGHTPHRASE  = \\&\quad
+  \KEY{Rule} \quad
+    & \SEMREF{eval-bool} \LEFTPHRASE \
+                            \VARREF{BExp}\SUB{1} \ \LEX{{\AMPERSAND}{\AMPERSAND}} \ \VARREF{BExp}\SUB{2} \
+                          \RIGHTPHRASE  = \\&\quad
       \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{if-true-else}
-        ( \SEMREF{eval-bool} \LEFTPHRASE ~ \VAR{BExp}\SUB{1} ~ \RIGHTPHRASE , \\&\quad \quad 
-          \SEMREF{eval-bool} \LEFTPHRASE ~ \VAR{BExp}\SUB{2} ~ \RIGHTPHRASE , \\&\quad \quad 
-          \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false} )
+        (  \SEMREF{eval-bool} \LEFTPHRASE \
+                                    \VAR{BExp}\SUB{1} \
+                                  \RIGHTPHRASE , 
+               \SEMREF{eval-bool} \LEFTPHRASE \
+                                    \VAR{BExp}\SUB{2} \
+                                  \RIGHTPHRASE , 
+               \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false} )
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{eval-bool} \LEFTPHRASE ~ \LEX{(} ~ \VARREF{BExp} ~ \LEX{)} ~ \RIGHTPHRASE  = \\&\quad
-      \SEMREF{eval-bool} \LEFTPHRASE ~ \VAR{BExp} ~ \RIGHTPHRASE 
+  \KEY{Rule} \quad
+    & \SEMREF{eval-bool} \LEFTPHRASE \
+                            \LEX{{(}} \ \VARREF{BExp} \ \LEX{{)}} \
+                          \RIGHTPHRASE  = 
+      \SEMREF{eval-bool} \LEFTPHRASE \
+                            \VAR{BExp} \
+                          \RIGHTPHRASE 
 \end{align*}
+% {% endraw %}
+
+

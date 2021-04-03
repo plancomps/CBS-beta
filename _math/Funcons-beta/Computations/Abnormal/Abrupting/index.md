@@ -9,28 +9,31 @@ ancestor: Funcons-beta
 
 {::comment}{% raw %}{:/}
 
+
+----
+
 ### Abruptly terminating
                
 
 
 $$\begin{align*}
   [ \
-  \KEY{Funcon} \ & \NAMEREF{stuck} \\
-  \KEY{Entity} \ & \NAMEREF{abrupted} \\
-  \KEY{Funcon} \ & \NAMEREF{finalise-abrupting} \\
-  \KEY{Funcon} \ & \NAMEREF{abrupt} \\
-  \KEY{Funcon} \ & \NAMEREF{handle-abrupt} \\
-  \KEY{Funcon} \ & \NAMEREF{finally}
+  \KEY{Funcon} \quad & \NAMEREF{stuck} \\
+  \KEY{Entity} \quad & \NAMEREF{abrupted} \\
+  \KEY{Funcon} \quad & \NAMEREF{finalise-abrupting} \\
+  \KEY{Funcon} \quad & \NAMEREF{abrupt} \\
+  \KEY{Funcon} \quad & \NAMEREF{handle-abrupt} \\
+  \KEY{Funcon} \quad & \NAMEREF{finally}
   \ ]
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Meta-variables} \
+  \KEY{Meta-variables} \quad
   & \VAR{T}, \VAR{T}', \VAR{T}'' <: \NAMEHYPER{../../../Values}{Value-Types}{values}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{stuck} 
     :  \TO \NAMEHYPER{../../../Values}{Value-Types}{empty-type} 
 \end{align*}$$
@@ -41,7 +44,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Entity} \
+  \KEY{Entity} \quad
   & \_ \xrightarrow{\NAMEDECL{abrupted}(\_ : \NAMEHYPER{../../../Values}{Value-Types}{values}\QUERY)} \_
 \end{align*}$$
 
@@ -53,7 +56,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{finalise-abrupting}(
                        \VAR{X} :  \TO \VAR{T}) 
     :  \TO \VAR{T}  \mid \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} \\&\quad
@@ -68,7 +71,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{abrupt}(
                        \_ : \NAMEHYPER{../../../Values}{Value-Types}{values}) 
     :  \TO \NAMEHYPER{../../../Values}{Value-Types}{empty-type} 
@@ -80,14 +83,14 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     &  \NAMEREF{abrupt}
                     (  \VAR{V} : \NAMEHYPER{../../../Values}{Value-Types}{values} ) \xrightarrow{\NAMEREF{abrupted}(  \VAR{V} )}_{} 
         \NAMEREF{stuck}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{handle-abrupt}(
                        \_ : \VAR{T}' \TO \VAR{T}, \_ : \VAR{T}'' \TO \VAR{T}) 
     : \VAR{T}' \TO \VAR{T} 
@@ -114,7 +117,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{X} \xrightarrow{\NAMEREF{abrupted}(   \  )}_{} 
           \VAR{X}'
@@ -127,7 +130,7 @@ $$\begin{align*}
                    \VAR{Y} )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{X} \xrightarrow{\NAMEREF{abrupted}(  \VAR{V} : \VAR{T}'' )}_{} 
           \VAR{X}'
@@ -140,7 +143,7 @@ $$\begin{align*}
                    \VAR{Y} )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{handle-abrupt}
         (  \VAR{V} : \VAR{T}, 
                \VAR{Y} ) \leadsto 
@@ -148,7 +151,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{finally}(
                        \_ :  \TO \VAR{T}, \_ :  \TO \NAMEHYPER{../../../Values/Primitive}{Null}{null-type}) 
     :  \TO \VAR{T} 
@@ -164,7 +167,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{X} \xrightarrow{\NAMEREF{abrupted}(   \  )}_{} 
           \VAR{X}'
@@ -177,7 +180,7 @@ $$\begin{align*}
                    \VAR{Y} )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{X} \xrightarrow{\NAMEREF{abrupted}(  \VAR{V} : \NAMEHYPER{../../../Values}{Value-Types}{values} )}_{} 
           \VAR{X}'
@@ -191,7 +194,7 @@ $$\begin{align*}
                     (  \VAR{V} ) )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{finally}
         (  \VAR{V} : \VAR{T}, 
                \VAR{Y} ) \leadsto 
@@ -199,6 +202,7 @@ $$\begin{align*}
           (  \VAR{Y}, 
                  \VAR{V} )
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -223,7 +227,9 @@ $$\begin{align*}
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

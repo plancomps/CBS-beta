@@ -8,6 +8,7 @@ ancestor: Funcons-beta
 [Funcons-beta] : [Linking.cbs] \| [PRETTY] \| [PDF]
 
 
+----
 ### Linking
 
 <div class="highlighter-rouge"><pre class="highlight"><code>[

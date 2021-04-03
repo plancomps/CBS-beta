@@ -10,21 +10,24 @@ ancestor: Languages-beta
 {::comment}{% raw %}{:/}
 <details open markdown="block">
   <summary>
-    Outline
+    OUTLINE
   </summary>
   {: .text-delta }
 - TOC
 {:toc}
 </details>
 
-$$\KEY{Language} \STRING{OCaml Light}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{OCaml Light}$$
 
 # $$\SECT{6}$$ Patterns
            
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{P} : \SYN{pattern}
       \ ::= \ & \
       \SYNHYPER{../.}{OC-L-03-Names}{value-name} \\
@@ -54,7 +57,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \LEX{{(}} \ \VARREF{P} \ \LEX{{)}} \
       \RIGHTPHRASE : \SYNREF{pattern} = 
@@ -62,7 +65,7 @@ $$\begin{align*}
         \VAR{P} \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \LEX{{(}} \ \VARREF{P} \ \LEX{{:}} \ \VARHYPER{../.}{OC-L-04-Type-Expressions}{T} \ \LEX{{)}} \
       \RIGHTPHRASE : \SYNREF{pattern} = 
@@ -70,7 +73,7 @@ $$\begin{align*}
         \VAR{P} \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \LEX{{\LEFTBRACE}} \ \VARHYPER{../.}{OC-L-03-Names}{F} \ \LEX{{=}} \ \VARREF{P} \ \VARREF{SFP}\STAR \ \LEX{{;}} \ \LEX{{\RIGHTBRACE}} \
       \RIGHTPHRASE : \SYNREF{pattern} = 
@@ -78,7 +81,7 @@ $$\begin{align*}
         \LEX{{\LEFTBRACE}} \ \VAR{F} \ \LEX{{=}} \ \VAR{P} \ \VAR{SFP}\STAR \ \LEX{{\RIGHTBRACE}} \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \LEX{{[}} \ \VARREF{P} \ \VARREF{SP}\STAR \ \LEX{{;}} \ \LEX{{]}} \
       \RIGHTPHRASE : \SYNREF{pattern} = 
@@ -92,11 +95,11 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{evaluate-pattern} \LEFTPHRASE \ \_ : \SYNREF{pattern} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Patterns}{patterns} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate-pattern} \LEFTPHRASE \
                             \VARHYPER{../.}{OC-L-03-Names}{VN} \
                           \RIGHTPHRASE  = 
@@ -105,13 +108,13 @@ $$\begin{align*}
                                     \VAR{VN} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate-pattern} \LEFTPHRASE \
                             \LEX{{\UNDERSCORE}} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Patterns}{pattern-any}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate-pattern} \LEFTPHRASE \
                             \VARHYPER{../.}{OC-L-05-Constants}{CNST} \
                           \RIGHTPHRASE  = 
@@ -119,7 +122,7 @@ $$\begin{align*}
                             \VAR{CNST} \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate-pattern} \LEFTPHRASE \
                             \VARREF{P} \ \LEX{as} \ \VARHYPER{../.}{OC-L-03-Names}{VN} \
                           \RIGHTPHRASE  = \\&\quad
@@ -132,7 +135,7 @@ $$\begin{align*}
                                             \VAR{VN} \
                                           \RIGHTPHRASE  ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate-pattern} \LEFTPHRASE \
                             \VARREF{P}\SUB{1} \ \LEX{{|}} \ \VARREF{P}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -144,7 +147,7 @@ $$\begin{align*}
                                     \VAR{P}\SUB{2} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate-pattern} \LEFTPHRASE \
                             \VARHYPER{../.}{OC-L-03-Names}{CSTR} \ \VARREF{P} \
                           \RIGHTPHRASE  = \\&\quad
@@ -156,7 +159,7 @@ $$\begin{align*}
                                     \VAR{P} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate-pattern} \LEFTPHRASE \
                             \VARREF{P}\SUB{1} \ \LEX{{,}} \ \VARREF{P}\SUB{2} \ \VARREF{CP}\STAR \
                           \RIGHTPHRASE  = \\&\quad
@@ -165,7 +168,7 @@ $$\begin{align*}
                                     \VAR{P}\SUB{1} \ \LEX{{,}} \ \VAR{P}\SUB{2} \ \VAR{CP}\STAR \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate-pattern} \LEFTPHRASE \
                             \LEX{{\LEFTBRACE}} \ \VARHYPER{../.}{OC-L-03-Names}{F} \ \LEX{{=}} \ \VARREF{P} \ \VARREF{SFP}\STAR \ \LEX{{\RIGHTBRACE}} \
                           \RIGHTPHRASE  = \\&\quad
@@ -179,7 +182,7 @@ $$\begin{align*}
                                                               \VAR{F} \ \LEX{{=}} \ \VAR{P} \ \VAR{SFP}\STAR \
                                                             \RIGHTPHRASE  ) ) ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate-pattern} \LEFTPHRASE \
                             \LEX{{[}} \ \VARREF{P} \ \VARREF{SP}\STAR \ \LEX{{]}} \
                           \RIGHTPHRASE  = \\&\quad
@@ -187,7 +190,7 @@ $$\begin{align*}
                                   \VAR{P} \ \VAR{SP}\STAR \
                                 \RIGHTPHRASE  ]
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate-pattern} \LEFTPHRASE \
                             \VARREF{P}\SUB{1} \ \LEX{{:}{:}} \ \VARREF{P}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -218,11 +221,11 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{evaluate-comma-pattern-sequence} \LEFTPHRASE \ \_ : \LEFTGROUP \SYNREF{pattern} \ \SYNREF{comma-pattern}\STAR \RIGHTGROUP \ \RIGHTPHRASE  \\&\quad
     : (   \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Patterns}{patterns} )\PLUS 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate-comma-pattern-sequence} \LEFTPHRASE \
                             \VARREF{P}\SUB{1} \ \LEX{{,}} \ \VARREF{P}\SUB{2} \ \VARREF{CP}\STAR \
                           \RIGHTPHRASE  = \\&\quad
@@ -233,7 +236,7 @@ $$\begin{align*}
                             \VAR{P}\SUB{2} \ \VAR{CP}\STAR \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate-comma-pattern-sequence} \LEFTPHRASE \
                             \VARREF{P} \
                           \RIGHTPHRASE  = 
@@ -243,11 +246,11 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{evaluate-semic-pattern-sequence} \LEFTPHRASE \ \_ : \LEFTGROUP \SYNREF{pattern} \ \SYNREF{semic-pattern}\STAR \RIGHTGROUP \ \RIGHTPHRASE  \\&\quad
     : (   \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Patterns}{patterns} )\PLUS 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate-semic-pattern-sequence} \LEFTPHRASE \
                             \VARREF{P}\SUB{1} \ \LEX{{;}} \ \VARREF{P}\SUB{2} \ \VARREF{SP}\STAR \
                           \RIGHTPHRASE  = \\&\quad
@@ -258,7 +261,7 @@ $$\begin{align*}
                             \VAR{P}\SUB{2} \ \VAR{SP}\STAR \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate-semic-pattern-sequence} \LEFTPHRASE \
                             \VARREF{P} \
                           \RIGHTPHRASE  = 
@@ -268,13 +271,13 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{evaluate-field-pattern-sequence} \LEFTPHRASE \ \_ : \LEFTGROUP \SYNHYPER{../.}{OC-L-03-Names}{field} \ \LEX{{=}} \ \SYNREF{pattern} \ \SYNREF{semic-field-pattern}\STAR \RIGHTGROUP \ \RIGHTPHRASE  \\&\quad
     :  \TO (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Maps}{maps}
                            (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{ids}, 
                                   \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Patterns}{patterns} ) )\PLUS 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate-field-pattern-sequence} \LEFTPHRASE \
                             \VARHYPER{../.}{OC-L-03-Names}{F}\SUB{1} \ \LEX{{=}} \ \VARREF{P}\SUB{1} \ \LEX{{;}} \ \VARHYPER{../.}{OC-L-03-Names}{F}\SUB{2} \ \LEX{{=}} \ \VARREF{P}\SUB{2} \ \VARREF{SFP}\STAR \
                           \RIGHTPHRASE  = \\&\quad
@@ -288,7 +291,7 @@ $$\begin{align*}
                                   \VAR{F}\SUB{2} \ \LEX{{=}} \ \VAR{P}\SUB{2} \ \VAR{SFP}\STAR \
                                 \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate-field-pattern-sequence} \LEFTPHRASE \
                             \VARHYPER{../.}{OC-L-03-Names}{F} \ \LEX{{=}} \ \VARREF{P} \
                           \RIGHTPHRASE  = \\&\quad
@@ -299,6 +302,7 @@ $$\begin{align*}
                                  \VAR{P} \
                                \RIGHTPHRASE  \}
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -323,7 +327,9 @@ $$\begin{align*}
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

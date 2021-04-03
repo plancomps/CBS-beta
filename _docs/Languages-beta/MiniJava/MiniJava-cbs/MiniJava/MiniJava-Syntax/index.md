@@ -8,6 +8,7 @@ ancestor: Languages-beta
 [Languages-beta] : [MiniJava-Syntax.cbs] \| [PRETTY] \| [PDF]
 
 
+----
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword"></i>
 Language <span id="Language_MiniJava">"MiniJava"</span></code></pre></div>
 

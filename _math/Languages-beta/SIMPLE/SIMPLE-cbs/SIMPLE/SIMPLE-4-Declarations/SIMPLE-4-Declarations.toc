@@ -1,0 +1,4 @@
+\contentsline {section}{$\leavevmode {\color {SectionNumber}\text {\bf 4}}$ Declarations}{1}{section*.2}%
+\contentsline {subsection}{$\leavevmode {\color {SectionNumber}\text {\bf 4.1}}$ Variable Declarations}{1}{section*.3}%
+\contentsline {subsection}{$\leavevmode {\color {SectionNumber}\text {\bf 4.2}}$ Arrays}{2}{section*.4}%
+\contentsline {subsection}{$\leavevmode {\color {SectionNumber}\text {\bf 4.3}}$ Function Declarations}{2}{section*.5}%

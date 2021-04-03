@@ -10,12 +10,15 @@ ancestor: Funcons-beta
 {::comment}{% raw %}{:/}
 <details open markdown="block">
   <summary>
-    Outline
+    OUTLINE
   </summary>
   {: .text-delta }
 - TOC
 {:toc}
 </details>
+
+
+----
 
 ### Binding
                
@@ -23,33 +26,33 @@ ancestor: Funcons-beta
 
 $$\begin{align*}
   [ \
-  \KEY{Type} \ & \NAMEREF{environments} \\
-  \KEY{Alias} \ & \NAMEREF{envs} \\
-  \KEY{Datatype} \ & \NAMEREF{identifiers} \\
-  \KEY{Alias} \ & \NAMEREF{ids} \\
-  \KEY{Funcon} \ & \NAMEREF{identifier-tagged} \\
-  \KEY{Alias} \ & \NAMEREF{id-tagged} \\
-  \KEY{Funcon} \ & \NAMEREF{fresh-identifier} \\
-  \KEY{Entity} \ & \NAMEREF{environment} \\
-  \KEY{Alias} \ & \NAMEREF{env} \\
-  \KEY{Funcon} \ & \NAMEREF{initialise-binding} \\
-  \KEY{Funcon} \ & \NAMEREF{bind-value} \\
-  \KEY{Alias} \ & \NAMEREF{bind} \\
-  \KEY{Funcon} \ & \NAMEREF{unbind} \\
-  \KEY{Funcon} \ & \NAMEREF{bound-directly} \\
-  \KEY{Funcon} \ & \NAMEREF{bound-value} \\
-  \KEY{Alias} \ & \NAMEREF{bound} \\
-  \KEY{Funcon} \ & \NAMEREF{closed} \\
-  \KEY{Funcon} \ & \NAMEREF{scope} \\
-  \KEY{Funcon} \ & \NAMEREF{accumulate} \\
-  \KEY{Funcon} \ & \NAMEREF{collateral} \\
-  \KEY{Funcon} \ & \NAMEREF{bind-recursively} \\
-  \KEY{Funcon} \ & \NAMEREF{recursive}
+  \KEY{Type} \quad & \NAMEREF{environments} \\
+  \KEY{Alias} \quad & \NAMEREF{envs} \\
+  \KEY{Datatype} \quad & \NAMEREF{identifiers} \\
+  \KEY{Alias} \quad & \NAMEREF{ids} \\
+  \KEY{Funcon} \quad & \NAMEREF{identifier-tagged} \\
+  \KEY{Alias} \quad & \NAMEREF{id-tagged} \\
+  \KEY{Funcon} \quad & \NAMEREF{fresh-identifier} \\
+  \KEY{Entity} \quad & \NAMEREF{environment} \\
+  \KEY{Alias} \quad & \NAMEREF{env} \\
+  \KEY{Funcon} \quad & \NAMEREF{initialise-binding} \\
+  \KEY{Funcon} \quad & \NAMEREF{bind-value} \\
+  \KEY{Alias} \quad & \NAMEREF{bind} \\
+  \KEY{Funcon} \quad & \NAMEREF{unbind} \\
+  \KEY{Funcon} \quad & \NAMEREF{bound-directly} \\
+  \KEY{Funcon} \quad & \NAMEREF{bound-value} \\
+  \KEY{Alias} \quad & \NAMEREF{bound} \\
+  \KEY{Funcon} \quad & \NAMEREF{closed} \\
+  \KEY{Funcon} \quad & \NAMEREF{scope} \\
+  \KEY{Funcon} \quad & \NAMEREF{accumulate} \\
+  \KEY{Funcon} \quad & \NAMEREF{collateral} \\
+  \KEY{Funcon} \quad & \NAMEREF{bind-recursively} \\
+  \KEY{Funcon} \quad & \NAMEREF{recursive}
   \ ]
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Meta-variables} \
+  \KEY{Meta-variables} \quad
   & \VAR{T} <: \NAMEHYPER{../../../Values}{Value-Types}{values}
 \end{align*}$$
 
@@ -58,13 +61,13 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Type} \ 
+  \KEY{Type} \quad 
   & \NAMEDECL{environments}  
     \leadsto \NAMEHYPER{../../../Values/Composite}{Maps}{maps}
                (  \NAMEREF{identifiers}, 
                       \NAMEHYPER{../../../Values}{Value-Types}{values}\QUERY )
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{envs} = \NAMEREF{environments}
 \end{align*}$$
 
@@ -79,7 +82,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Datatype} \ 
+  \KEY{Datatype} \quad 
   \NAMEDECL{identifiers} 
   \ ::= \ &
   \{ \_ : \NAMEHYPER{../../../Values/Composite}{Strings}{strings} \} \mid \NAMEDECL{identifier-tagged}(
@@ -87,10 +90,10 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{ids} = \NAMEREF{identifiers}
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{id-tagged} = \NAMEREF{identifier-tagged}
 \end{align*}$$
 
@@ -100,7 +103,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{fresh-identifier} 
     :  \TO \NAMEREF{identifiers} 
 \end{align*}$$
@@ -111,7 +114,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{fresh-identifier} \leadsto 
         \NAMEREF{identifier-tagged}
           (  \STRING{generated}, 
@@ -123,12 +126,12 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Entity} \
+  \KEY{Entity} \quad
   & \NAMEDECL{environment}(\_ : \NAMEREF{environments}) \vdash \_ \TRANS  \_
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{env} = \NAMEREF{environment}
 \end{align*}$$
 
@@ -138,7 +141,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{initialise-binding}(
                        \VAR{X} :  \TO \VAR{T}) 
     :  \TO \VAR{T} \\&\quad
@@ -157,14 +160,14 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{bind-value}(
                        \VAR{I} : \NAMEREF{identifiers}, \VAR{V} : \NAMEHYPER{../../../Values}{Value-Types}{values}) 
     :  \TO \NAMEREF{environments} \\&\quad
     \leadsto \{ \VAR{I} \mapsto 
                   \VAR{V} \}
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{bind} = \NAMEREF{bind-value}
 \end{align*}$$
 
@@ -176,7 +179,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{unbind}(
                        \VAR{I} : \NAMEREF{identifiers}) 
     :  \TO \NAMEREF{environments} \\&\quad
@@ -190,7 +193,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{bound-directly}(
                        \_ : \NAMEREF{identifiers}) 
     :  \TO \NAMEHYPER{../../../Values}{Value-Types}{values} 
@@ -207,7 +210,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../Values/Composite}{Maps}{lookup}
           (  \VAR{$\rho$}, 
@@ -219,7 +222,7 @@ $$\begin{align*}
           \VAR{V}
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../Values/Composite}{Maps}{lookup}
           (  \VAR{$\rho$}, 
@@ -233,7 +236,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{bound-value}(
                        \VAR{I} : \NAMEREF{identifiers}) 
     :  \TO \NAMEHYPER{../../../Values}{Value-Types}{values} \\&\quad
@@ -241,7 +244,7 @@ $$\begin{align*}
                (  \NAMEREF{bound-directly}
                        (  \VAR{I} ) )
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{bound} = \NAMEREF{bound-value}
 \end{align*}$$
 
@@ -264,7 +267,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{closed}(
                        \VAR{X} :  \TO \VAR{T}) 
     :  \TO \VAR{T} 
@@ -276,7 +279,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEREF{environment} (  \NAMEHYPER{../../../Values/Composite}{Maps}{map}
                                      (   \  ) ) \vdash \VAR{X} \TRANS 
@@ -288,14 +291,14 @@ $$\begin{align*}
             (  \VAR{X}' )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{closed}
         (  \VAR{V} : \VAR{T} ) \leadsto 
         \VAR{V}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{scope}(
                        \_ : \NAMEREF{environments}, \_ :  \TO \VAR{T}) 
     :  \TO \VAR{T} 
@@ -317,7 +320,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEREF{environment} (  \NAMEHYPER{../../../Values/Composite}{Maps}{map-override}
                                      (  \VAR{$\rho$}\SUB{1}, 
@@ -332,7 +335,7 @@ $$\begin{align*}
                    \VAR{X}' )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{scope}
         (  \_ : \NAMEREF{environments}, 
                \VAR{V} : \VAR{T} ) \leadsto 
@@ -340,7 +343,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{accumulate}(
                        \_ : (   \TO \NAMEREF{environments} )\STAR) 
     :  \TO \NAMEREF{environments} 
@@ -364,7 +367,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{D}\SUB{1} \TRANS 
           \VAR{D}\SUB{1}'
@@ -377,7 +380,7 @@ $$\begin{align*}
                    \VAR{D}\SUB{2} )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{accumulate}
         (  \VAR{$\rho$}\SUB{1} : \NAMEREF{environments}, 
                \VAR{D}\SUB{2} ) \leadsto 
@@ -387,18 +390,18 @@ $$\begin{align*}
                   (  \VAR{D}\SUB{2}, 
                          \VAR{$\rho$}\SUB{1} ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{accumulate}
         (   \  ) \leadsto 
         \NAMEHYPER{../../../Values/Composite}{Maps}{map}
           (   \  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{accumulate}
         (  \VAR{D}\SUB{1} ) \leadsto 
         \VAR{D}\SUB{1}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{accumulate}
         (  \VAR{D}\SUB{1}, 
                \VAR{D}\SUB{2}, 
@@ -411,7 +414,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{collateral}(
                        \VAR{$\rho$}\STAR : \NAMEREF{environments}\STAR) 
     :  \TO \NAMEREF{environments} \\&\quad
@@ -439,7 +442,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{bind-recursively}(
                        \VAR{I} : \NAMEREF{identifiers}, \VAR{E} :  \TO \NAMEHYPER{../../../Values}{Value-Types}{values}) 
     :  \TO \NAMEREF{environments} \\&\quad
@@ -461,7 +464,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{recursive}(
                        \VAR{SI} : \NAMEHYPER{../../../Values/Composite}{Sets}{sets}
                                  (  \NAMEREF{identifiers} ), \VAR{D} :  \TO \NAMEREF{environments}) 
@@ -481,7 +484,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Auxiliary Funcon} \
+  \KEY{Auxiliary Funcon} \quad
   & \NAMEDECL{re-close}(
                        \VAR{M} : \NAMEHYPER{../../../Values/Composite}{Maps}{maps}
                                  (  \NAMEREF{identifiers}, 
@@ -509,7 +512,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Auxiliary Funcon} \
+  \KEY{Auxiliary Funcon} \quad
   & \NAMEDECL{bind-to-forward-links}(
                        \VAR{SI} : \NAMEHYPER{../../../Values/Composite}{Sets}{sets}
                                  (  \NAMEREF{identifiers} )) 
@@ -533,7 +536,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Auxiliary Funcon} \
+  \KEY{Auxiliary Funcon} \quad
   & \NAMEDECL{set-forward-links}(
                        \VAR{M} : \NAMEHYPER{../../../Values/Composite}{Maps}{maps}
                                  (  \NAMEREF{identifiers}, 
@@ -559,6 +562,7 @@ $$\begin{align*}
 
 
 
+
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
   "FUNCONS-BETA"
 [Unstable-Funcons-beta]: /CBS-beta/math/Unstable-Funcons-beta
@@ -581,7 +585,9 @@ $$\begin{align*}
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

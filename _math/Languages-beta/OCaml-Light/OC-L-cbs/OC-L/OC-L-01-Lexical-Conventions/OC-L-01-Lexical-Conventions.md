@@ -1,14 +1,17 @@
 {::comment}{% raw %}{:/}
 <details open markdown="block">
   <summary>
-    Outline
+    OUTLINE
   </summary>
   {: .text-delta }
 - TOC
 {:toc}
 </details>
 
-$$\KEY{Language} \STRING{OCaml Light}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{OCaml Light}$$
 
 # $$\SECT{1}$$ Lexical conventions
            
@@ -19,7 +22,7 @@ $$\KEY{Language} \STRING{OCaml Light}$$
 
 
 $$\begin{align*}
-  \KEY{Lexis} \
+  \KEY{Lexis} \quad
     \VARDECL{I} : \SYN{ident}
       \ ::= \ & \
       \SYNREF{capitalized-ident} \mid \SYNREF{lowercase-ident}
@@ -35,23 +38,23 @@ $$\begin{align*}
     \\
      \SYN{uppercase}
       \ ::= \ & \
-      \LEX{A} - \LEX{Z}
+      \LEX{A} {-} \LEX{Z}
     \\
      \SYN{lowercase}
       \ ::= \ & \
-      \LEX{a} - \LEX{z}
+      \LEX{a} {-} \LEX{z}
     \\
      \SYN{decimal}
       \ ::= \ & \
-      \LEX{0} - \LEX{9}
+      \LEX{0} {-} \LEX{9}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{id} \LEFTPHRASE \ \_ : \SYNREF{ident} \ \RIGHTPHRASE  
     : \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{ids} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{id} \LEFTPHRASE \
                             \VARREF{I} \
                           \RIGHTPHRASE  = 
@@ -63,7 +66,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{IL} : \SYN{integer-literal}
       \ ::= \ & \
       \LEX{{-}}\QUERY \_ \SYNREF{natural-literal}
@@ -75,18 +78,18 @@ $$\begin{align*}
       \ \mid \ & \ \LEFTGROUP \LEX{0o} \mid \LEX{0O} \RIGHTGROUP \ \SYNREF{octal-plus} \\
       \ \mid \ & \ \LEFTGROUP \LEX{0b} \mid \LEX{0B} \RIGHTGROUP \ \SYNREF{binary-plus}
 \\
-  \KEY{Lexis} \
+  \KEY{Lexis} \quad
     \VARDECL{DP} : \SYN{decimal-plus}
       \ ::= \ & \
       \SYNREF{decimal}\PLUS
     \\
     \VARDECL{HP} : \SYN{hexadecimal-plus}
       \ ::= \ & \
-      \LEFTGROUP \SYNREF{decimal} \mid \LEX{A} - \LEX{F} \mid \LEX{a} - \LEX{f} \RIGHTGROUP\PLUS
+      \LEFTGROUP \SYNREF{decimal} \mid \LEX{A} {-} \LEX{F} \mid \LEX{a} {-} \LEX{f} \RIGHTGROUP\PLUS
     \\
     \VARDECL{OP} : \SYN{octal-plus}
       \ ::= \ & \
-      \LEFTGROUP \LEX{0} - \LEX{7} \RIGHTGROUP\PLUS
+      \LEFTGROUP \LEX{0} {-} \LEX{7} \RIGHTGROUP\PLUS
     \\
     \VARDECL{BP} : \SYN{binary-plus}
       \ ::= \ & \
@@ -94,11 +97,11 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{integer-value} \LEFTPHRASE \ \_ : \SYNREF{integer-literal} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../.}{OC-L-02-Values}{implemented-integers} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{integer-value} \LEFTPHRASE \
                             \LEX{{-}} \ \VARREF{NL} \
                           \RIGHTPHRASE  = 
@@ -107,7 +110,7 @@ $$\begin{align*}
                                     \VAR{NL} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{integer-value} \LEFTPHRASE \
                             \VARREF{DP} \
                           \RIGHTPHRASE  = 
@@ -121,7 +124,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{FL} : \SYN{float-literal}
       \ ::= \ & \
       \LEX{{-}}\QUERY \_ \SYNREF{non-negative-float-literal}
@@ -140,7 +143,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \VARREF{DP}\SUB{1} \ \LEX{{.}} \ \VARREF{DP}\SUB{2} \
       \RIGHTPHRASE : \SYNREF{non-negative-float-literal} = 
@@ -148,7 +151,7 @@ $$\begin{align*}
         \VAR{DP}\SUB{1} \ \LEX{{.}} \ \VAR{DP}\SUB{2} \ \LEX{e} \ \LEX{1} \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \VARREF{DP} \ \LEX{{.}} \
       \RIGHTPHRASE : \SYNREF{non-negative-float-literal} = 
@@ -156,7 +159,7 @@ $$\begin{align*}
         \VAR{DP} \ \LEX{{.}} \ \LEX{0} \ \LEX{e} \ \LEX{1} \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \VARREF{DP} \ \LEX{{.}} \ \VARREF{FE} \
       \RIGHTPHRASE : \SYNREF{non-negative-float-literal} = 
@@ -164,7 +167,7 @@ $$\begin{align*}
         \VAR{DP} \ \LEX{{.}} \ \LEX{0} \ \VAR{FE} \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \VARREF{DP} \ \VARREF{FE} \
       \RIGHTPHRASE : \SYNREF{non-negative-float-literal} = 
@@ -172,7 +175,7 @@ $$\begin{align*}
         \VAR{DP} \ \LEX{{.}} \ \LEX{0} \ \VAR{FE} \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \LEX{e} \ \LEX{{+}} \ \VARREF{DP} \
       \RIGHTPHRASE : \SYNREF{float-exponent} = 
@@ -180,7 +183,7 @@ $$\begin{align*}
         \LEX{e} \ \VAR{DP} \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \LEX{E} \ \LEX{{+}} \ \VARREF{DP} \
       \RIGHTPHRASE : \SYNREF{float-exponent} = 
@@ -188,7 +191,7 @@ $$\begin{align*}
         \LEX{e} \ \VAR{DP} \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \LEX{E} \ \LEX{{-}} \ \VARREF{DP} \
       \RIGHTPHRASE : \SYNREF{float-exponent} = 
@@ -198,7 +201,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{float-value} \LEFTPHRASE \ \_ : \SYNREF{float-literal} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats} 
 \end{align*}$$
@@ -212,7 +215,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{float-value} \LEFTPHRASE \
                             \LEX{{-}} \ \VARREF{NNFL} \
                           \RIGHTPHRASE  = \\&\quad
@@ -222,7 +225,7 @@ $$\begin{align*}
                                     \VAR{NNFL} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{float-value} \LEFTPHRASE \
                             \VARREF{DP}\SUB{1} \ \LEX{{.}} \ \VARREF{DP}\SUB{2} \ \LEX{e} \ \VARREF{DP}\SUB{3} \
                           \RIGHTPHRASE  = \\&\quad
@@ -232,7 +235,7 @@ $$\begin{align*}
                \textsf{\textquotedblleft}\VAR{DP}\SUB{2}\textsf{\textquotedblright}, 
                \textsf{\textquotedblleft}\VAR{DP}\SUB{3}\textsf{\textquotedblright} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{float-value} \LEFTPHRASE \
                             \VARREF{DP}\SUB{1} \ \LEX{{.}} \ \VARREF{DP}\SUB{2} \ \LEX{e} \ \LEX{{-}} \ \VARREF{DP}\SUB{3} \
                           \RIGHTPHRASE  = \\&\quad
@@ -250,7 +253,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{CL} : \SYN{char-literal}
       \ ::= \ & \
       \LEX{{\APOSTROPHE}} \_ \SYNREF{regular-char} \_ \LEX{{\APOSTROPHE}} \\
@@ -261,7 +264,7 @@ $$\begin{align*}
       \LEX{{\BACKSLASH}} \_ \SYNREF{escaped-char} \\
       \ \mid \ & \ \LEX{{\BACKSLASH}} \_ \SYNREF{escaped-char-code}
 \\
-  \KEY{Lexis} \
+  \KEY{Lexis} \quad
     \VARDECL{RC} : \SYN{regular-char}
       \ ::= \ & \
       \mathop{\sim} \LEFTGROUP \LEX{{\APOSTROPHE}} \mid \LEX{{\BACKSLASH}} \RIGHTGROUP
@@ -276,18 +279,18 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{character-value} \LEFTPHRASE \ \_ : \SYNREF{char-literal} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../.}{OC-L-02-Values}{implemented-characters} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{character-value} \LEFTPHRASE \
                             \LEX{{\APOSTROPHE}} \ \VARREF{RC} \ \LEX{{\APOSTROPHE}} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Characters}{ascii-character}
         (  \textsf{\textquotedblleft}\VAR{RC}\textsf{\textquotedblright} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{character-value} \LEFTPHRASE \
                             \LEX{{\APOSTROPHE}} \ \VARREF{ES} \ \LEX{{\APOSTROPHE}} \
                           \RIGHTPHRASE  = 
@@ -297,47 +300,47 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{capture} \LEFTPHRASE \ \_ : \SYNREF{escape-sequence} \ \RIGHTPHRASE  
     : \NAMEHYPER{../.}{OC-L-02-Values}{implemented-characters} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{capture} \LEFTPHRASE \
                             \LEX{{\BACKSLASH}} \ \LEX{{\BACKSLASH}} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Characters}{backslash}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{capture} \LEFTPHRASE \
                             \LEX{{\BACKSLASH}} \ \LEX{{\APOSTROPHE}} \
                           \RIGHTPHRASE  = 
       \ATOM{{\APOSTROPHE}}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{capture} \LEFTPHRASE \
                             \LEX{{\BACKSLASH}} \ \LEX{n} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Characters}{line-feed}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{capture} \LEFTPHRASE \
                             \LEX{{\BACKSLASH}} \ \LEX{t} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Characters}{horizontal-tab}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{capture} \LEFTPHRASE \
                             \LEX{{\BACKSLASH}} \ \LEX{b} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Characters}{backspace}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{capture} \LEFTPHRASE \
                             \LEX{{\BACKSLASH}} \ \LEX{r} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Characters}{carriage-return}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{capture} \LEFTPHRASE \
                             \LEX{{\BACKSLASH}} \ \VARREF{ECC} \
                           \RIGHTPHRASE  = \\&\quad
@@ -353,7 +356,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{SL} : \SYN{string-literal}
       \ ::= \ & \
       \LEX{{"}} \_ \SYNREF{string-character-star} \_ \LEX{{"}}
@@ -368,18 +371,18 @@ $$\begin{align*}
       \SYNREF{regular-string-char} \\
       \ \mid \ & \ \SYNREF{escape-sequence}
 \\
-  \KEY{Lexis} \
+  \KEY{Lexis} \quad
     \VARDECL{RSC} : \SYN{regular-string-char}
       \ ::= \ & \
       \mathop{\sim} \LEFTGROUP \LEX{{"}} \mid \LEX{{\BACKSLASH}} \RIGHTGROUP
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{string-value} \LEFTPHRASE \ \_ : \SYNREF{string-literal} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../.}{OC-L-02-Values}{implemented-strings} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{string-value} \LEFTPHRASE \
                             \LEX{{"}} \ \VARREF{SCS} \ \LEX{{"}} \
                           \RIGHTPHRASE  = \\&\quad
@@ -391,17 +394,17 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{string-chars} \LEFTPHRASE \ \_ : \SYNREF{string-character-star} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../.}{OC-L-02-Values}{implemented-characters}\STAR 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{string-chars} \LEFTPHRASE \
                              \
                           \RIGHTPHRASE  = 
        \ 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{string-chars} \LEFTPHRASE \
                             \VARREF{SC} \ \VARREF{SCS} \
                           \RIGHTPHRASE  = 
@@ -414,18 +417,18 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{string-capture} \LEFTPHRASE \ \_ : \SYNREF{string-character} \ \RIGHTPHRASE  
     : \NAMEHYPER{../.}{OC-L-02-Values}{implemented-characters} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{string-capture} \LEFTPHRASE \
                             \VARREF{RSC} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Characters}{ascii-character}
         (  \textsf{\textquotedblleft}\VAR{RSC}\textsf{\textquotedblright} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{string-capture} \LEFTPHRASE \
                             \VARREF{ES} \
                           \RIGHTPHRASE  = 
@@ -439,7 +442,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Lexis} \
+  \KEY{Lexis} \quad
     \VARDECL{PS} : \SYN{prefix-symbol}
       \ ::= \ & \
       \LEX{{!}} \ \SYNREF{operator-char}\STAR \\
@@ -471,7 +474,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Lexis} \
+  \KEY{Lexis} \quad
      \SYN{keyword}
       \ ::= \ & \
       \LEX{and} \mid \LEX{as} \mid \LEX{assert} \mid \LEX{asr} \mid \LEX{begin} \mid \LEX{class} \\
@@ -485,6 +488,7 @@ $$\begin{align*}
       \ \mid \ & \ \LEX{true} \mid \LEX{try} \mid \LEX{type} \mid \LEX{val} \mid \LEX{virtual} \mid \LEX{when} \\
       \ \mid \ & \ \LEX{while} \mid \LEX{with}
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

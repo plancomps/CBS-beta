@@ -1,6 +1,9 @@
 {::comment}{% raw %}{:/}
 
-$$\KEY{Language} \STRING{SIMPLE}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{SIMPLE}$$
 
 # $$\SECT{A}$$ Disambiguation
            
@@ -62,6 +65,7 @@ $$\KEY{Language} \STRING{SIMPLE}$$
 >    {       \\
 >    $$\SHADE{\quad\SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-2-Expressions}{lexp} \ \LEX{{=}} \ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$$\\
 >    }
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

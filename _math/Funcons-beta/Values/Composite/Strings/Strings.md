@@ -1,27 +1,30 @@
 {::comment}{% raw %}{:/}
 
+
+----
+
 ### Strings
                
 
 
 $$\begin{align*}
   [ \
-  \KEY{Type} \ & \NAMEREF{strings} \\
-  \KEY{Funcon} \ & \NAMEREF{string} \\
-  \KEY{Funcon} \ & \NAMEREF{string-append} \\
-  \KEY{Funcon} \ & \NAMEREF{to-string}
+  \KEY{Type} \quad & \NAMEREF{strings} \\
+  \KEY{Funcon} \quad & \NAMEREF{string} \\
+  \KEY{Funcon} \quad & \NAMEREF{string-append} \\
+  \KEY{Funcon} \quad & \NAMEREF{to-string}
   \ ]
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Type} \ 
+  \KEY{Type} \quad 
   & \NAMEDECL{strings}  
     \leadsto \NAMEHYPER{../.}{Lists}{lists}
                (  \NAMEHYPER{../../Primitive}{Characters}{characters} )
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{string}(
                        \VAR{C}\STAR : \NAMEHYPER{../../Primitive}{Characters}{characters}\STAR) 
     :  \TO \NAMEREF{strings} \\&\quad
@@ -34,7 +37,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{string-append}(
                        \VAR{S}\STAR : \NAMEREF{strings}\STAR) 
     :  \TO \NAMEREF{strings} \\&\quad
@@ -43,7 +46,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{to-string}(
                        \_ : \NAMEHYPER{../..}{Value-Types}{ground-values}) 
     :  \TO \NAMEREF{strings} 
@@ -56,11 +59,12 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Assert} \
+  \KEY{Assert} \quad
   & \NAMEREF{to-string}
       (  \VAR{S} : \NAMEREF{strings} ) 
     == \VAR{S}
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

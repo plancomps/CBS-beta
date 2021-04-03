@@ -1,13 +1,16 @@
 {::comment}{% raw %}{:/}
 
-$$\KEY{Language} \STRING{OCaml Light}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{OCaml Light}$$
 
 # $$\SECT{5}$$ Constants
            
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{CNST} : \SYN{constant}
       \ ::= \ & \
       \SYNHYPER{../.}{OC-L-01-Lexical-Conventions}{integer-literal} \\
@@ -24,11 +27,11 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{value} \LEFTPHRASE \ \_ : \SYNREF{constant} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../.}{OC-L-02-Values}{implemented-values} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{value} \LEFTPHRASE \
                             \VARHYPER{../.}{OC-L-01-Lexical-Conventions}{IL} \
                           \RIGHTPHRASE  = 
@@ -36,7 +39,7 @@ $$\begin{align*}
                             \VAR{IL} \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{value} \LEFTPHRASE \
                             \VARHYPER{../.}{OC-L-01-Lexical-Conventions}{FL} \
                           \RIGHTPHRASE  = 
@@ -44,7 +47,7 @@ $$\begin{align*}
                             \VAR{FL} \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{value} \LEFTPHRASE \
                             \VARHYPER{../.}{OC-L-01-Lexical-Conventions}{CL} \
                           \RIGHTPHRASE  = 
@@ -52,7 +55,7 @@ $$\begin{align*}
                             \VAR{CL} \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{value} \LEFTPHRASE \
                             \VARHYPER{../.}{OC-L-01-Lexical-Conventions}{SL} \
                           \RIGHTPHRASE  = 
@@ -60,7 +63,7 @@ $$\begin{align*}
                             \VAR{SL} \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{value} \LEFTPHRASE \
                             \VARHYPER{../.}{OC-L-03-Names}{CSTR} \
                           \RIGHTPHRASE  = 
@@ -69,43 +72,44 @@ $$\begin{align*}
                                     \VAR{CSTR} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{value} \LEFTPHRASE \
                             \LEX{false} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{value} \LEFTPHRASE \
                             \LEX{true} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{true}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{value} \LEFTPHRASE \
                             \LEX{{(}} \ \LEX{{)}} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{value} \LEFTPHRASE \
                             \LEX{begin} \ \LEX{end} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{value} \LEFTPHRASE \
                             \LEX{{[}} \ \LEX{{]}} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{nil}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{value} \LEFTPHRASE \
                             \LEX{{[}{|}} \ \LEX{{|}{]}} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vector}
         (   \  )
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

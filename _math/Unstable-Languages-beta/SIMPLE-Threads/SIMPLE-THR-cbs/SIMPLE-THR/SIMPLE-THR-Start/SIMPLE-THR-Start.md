@@ -1,22 +1,25 @@
 {::comment}{% raw %}{:/}
 
-$$\KEY{Language} \STRING{SIMPLE-THR}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{SIMPLE-THR}$$
 
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{START} : \SYN{start}
       \ ::= \ & \
       \SYNHYPER{../.}{SIMPLE-THR-5-Programs}{pgm}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{start} \LEFTPHRASE \ \_ : \SYNREF{start} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{start} \LEFTPHRASE \
                             \VARHYPER{../.}{SIMPLE-THR-5-Programs}{Pgm} \
                           \RIGHTPHRASE  = \\&\quad
@@ -44,6 +47,7 @@ $$\begin{align*}
   \textsf{\SECTHYPER{../.}{SIMPLE-THR-A-Disambiguation}{A}} \ & \textsf{Disambiguation}
   \ ]
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

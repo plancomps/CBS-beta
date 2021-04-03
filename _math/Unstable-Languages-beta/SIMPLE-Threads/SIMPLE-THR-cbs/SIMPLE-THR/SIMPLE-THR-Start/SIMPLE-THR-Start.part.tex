@@ -1,36 +1,51 @@
+% {% raw %}
+
+
+\begin{center}
+\rule{3in}{0.4pt}
+\end{center}
+
 \begin{displaymath}
-\KEY{Language} \STRING{SIMPLE-THR}
+\KEY{Language} \quad \STRING{SIMPLE-THR}
 \end{displaymath}
 
 \begin{align*}
-  \KEY{Syntax} ~ 
+  \KEY{Syntax} \quad
     \VARDECL{START} : \SYN{start}
-      ~ ::= ~ & \SYNHYPER{../.}{SIMPLE-THR-5-Programs}{pgm}
+      \ ::= \ & \
+      \SYNHYPER{../.}{SIMPLE-THR-5-Programs}{pgm}
 \end{align*}
 \begin{align*}
-  \KEY{Semantics} ~ 
-  & \SEMDECL{start} \LEFTPHRASE ~ \_ : \SYNREF{start} ~ \RIGHTPHRASE  
-    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}
+  \KEY{Semantics} \quad
+  & \SEMDECL{start} \LEFTPHRASE \ \_ : \SYNREF{start} \ \RIGHTPHRASE  
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} 
 \\
-  \KEY{Rule} ~ 
-    & \SEMREF{start} \LEFTPHRASE ~ \VARHYPER{../.}{SIMPLE-THR-5-Programs}{Pgm} ~ \RIGHTPHRASE  = \\&\quad
-      \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{initialise-binding} ~
-        \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{initialise-storing} ~
-          \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{initialise-giving} ~
-            \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Normal}{Memos}{initialise-memos} ~
-              \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{finalise-failing} ~
-                \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Throwing}{finalise-throwing} ~
-                  \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads}{Multithreading}{multithread} ~
-                    \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Abnormal}{Postponing}{postpone-after-effect} ~
-                      \SEMHYPER{../.}{SIMPLE-THR-5-Programs}{run} \LEFTPHRASE ~ \VAR{Pgm} ~ \RIGHTPHRASE 
+  \KEY{Rule} \quad
+    & \SEMREF{start} \LEFTPHRASE \
+                            \VARHYPER{../.}{SIMPLE-THR-5-Programs}{Pgm} \
+                          \RIGHTPHRASE  = \\&\quad
+      \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{initialise-binding} \\&\quad\quad 
+        \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{initialise-storing} \\&\quad\quad\quad 
+          \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{initialise-giving} \\&\quad\quad\quad\quad 
+            \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Normal}{Memos}{initialise-memos} \\&\quad\quad\quad\quad\quad 
+              \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{finalise-failing} \\&\quad\quad\quad\quad\quad\quad 
+                \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Throwing}{finalise-throwing} \\&\quad\quad\quad\quad\quad\quad\quad 
+                  \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads}{Multithreading}{multithread} \\&\quad\quad\quad\quad\quad\quad\quad\quad 
+                    \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Abnormal}{Postponing}{postpone-after-effect} \ 
+                      \SEMHYPER{../.}{SIMPLE-THR-5-Programs}{run} \LEFTPHRASE \
+                                            \VAR{Pgm} \
+                                          \RIGHTPHRASE 
 \end{align*}
 \begin{align*}
-  [ ~ 
-  \textsf{\SECTHYPER{../.}{SIMPLE-THR-1-Lexical}{1}} ~ & \textsf{Lexical Syntax} \\
-  \textsf{\SECTHYPER{../.}{SIMPLE-THR-2-Expressions}{2}} ~ & \textsf{Expressions} \\
-  \textsf{\SECTHYPER{../.}{SIMPLE-THR-3-Statements}{3}} ~ & \textsf{Statements} \\
-  \textsf{\SECTHYPER{../.}{SIMPLE-THR-4-Declarations}{4}} ~ & \textsf{Declarations} \\
-  \textsf{\SECTHYPER{../.}{SIMPLE-THR-5-Programs}{5}} ~ & \textsf{Programs} \\
-  \textsf{\SECTHYPER{../.}{SIMPLE-THR-A-Disambiguation}{A}} ~ & \textsf{Disambiguation}
-  ~ ]
+  [ \
+  \textsf{\SECTHYPER{../.}{SIMPLE-THR-1-Lexical}{1}} \ & \textsf{Lexical Syntax} \\
+  \textsf{\SECTHYPER{../.}{SIMPLE-THR-2-Expressions}{2}} \ & \textsf{Expressions} \\
+  \textsf{\SECTHYPER{../.}{SIMPLE-THR-3-Statements}{3}} \ & \textsf{Statements} \\
+  \textsf{\SECTHYPER{../.}{SIMPLE-THR-4-Declarations}{4}} \ & \textsf{Declarations} \\
+  \textsf{\SECTHYPER{../.}{SIMPLE-THR-5-Programs}{5}} \ & \textsf{Programs} \\
+  \textsf{\SECTHYPER{../.}{SIMPLE-THR-A-Disambiguation}{A}} \ & \textsf{Disambiguation}
+  \ ]
 \end{align*}
+% {% endraw %}
+
+

@@ -9,14 +9,17 @@ ancestor: Languages-beta
 
 {::comment}{% raw %}{:/}
 
-$$\KEY{Language} \STRING{SIMPLE}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{SIMPLE}$$
 
 # $$\SECT{2}$$ Expressions
            
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{Exp} : \SYN{exp}
       \ ::= \ & \
       \LEX{{(}} \ \SYNREF{exp} \ \LEX{{)}} \\
@@ -45,7 +48,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \LEX{{(}} \ \VARREF{Exp} \ \LEX{{)}} \
       \RIGHTPHRASE : \SYNREF{exp} = 
@@ -55,11 +58,11 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{rval} \LEFTPHRASE \ \_ : \SYNREF{exp} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{rval} \LEFTPHRASE \
                             \VARHYPER{../.}{SIMPLE-1-Lexical}{V} \
                           \RIGHTPHRASE  = 
@@ -67,7 +70,7 @@ $$\begin{align*}
                             \VAR{V} \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{rval} \LEFTPHRASE \
                             \VARREF{LExp} \
                           \RIGHTPHRASE  = 
@@ -76,7 +79,7 @@ $$\begin{align*}
                                     \VAR{LExp} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{rval} \LEFTPHRASE \
                             \VARREF{LExp} \ \LEX{{=}} \ \VARREF{Exp} \
                           \RIGHTPHRASE  = \\&\quad
@@ -92,7 +95,7 @@ $$\begin{align*}
                                \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} ), \\&\quad\quad\quad
                        \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{rval} \LEFTPHRASE \
                             \LEX{{+}{+}} \ \VARREF{LExp} \
                           \RIGHTPHRASE  = \\&\quad
@@ -110,7 +113,7 @@ $$\begin{align*}
                        \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assigned}
                         (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} ) ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{rval} \LEFTPHRASE \
                             \LEX{{-}} \ \VARREF{Exp} \
                           \RIGHTPHRASE  = 
@@ -119,7 +122,7 @@ $$\begin{align*}
                                     \VAR{Exp} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{rval} \LEFTPHRASE \
                             \VARREF{Exp} \ \LEX{{(}} \ \VARREF{Exps}\QUERY \ \LEX{{)}} \
                           \RIGHTPHRASE  = 
@@ -132,7 +135,7 @@ $$\begin{align*}
                                             \VAR{Exps}\QUERY \
                                           \RIGHTPHRASE  ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{rval} \LEFTPHRASE \
                             \LEX{sizeOf} \ \LEX{{(}} \ \VARREF{Exp} \ \LEX{{)}} \
                           \RIGHTPHRASE  = 
@@ -142,13 +145,13 @@ $$\begin{align*}
                                             \VAR{Exp} \
                                           \RIGHTPHRASE  ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{rval} \LEFTPHRASE \
                             \LEX{read} \ \LEX{{(}} \ \LEX{{)}} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Interacting}{read}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{rval} \LEFTPHRASE \
                             \VARREF{Exp}\SUB{1} \ \LEX{{+}} \ \VARREF{Exp}\SUB{2} \
                           \RIGHTPHRASE  = 
@@ -160,7 +163,7 @@ $$\begin{align*}
                                     \VAR{Exp}\SUB{2} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{rval} \LEFTPHRASE \
                             \VARREF{Exp}\SUB{1} \ \LEX{{-}} \ \VARREF{Exp}\SUB{2} \
                           \RIGHTPHRASE  = 
@@ -172,7 +175,7 @@ $$\begin{align*}
                                     \VAR{Exp}\SUB{2} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{rval} \LEFTPHRASE \
                             \VARREF{Exp}\SUB{1} \ \LEX{{*}} \ \VARREF{Exp}\SUB{2} \
                           \RIGHTPHRASE  = 
@@ -184,7 +187,7 @@ $$\begin{align*}
                                     \VAR{Exp}\SUB{2} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{rval} \LEFTPHRASE \
                             \VARREF{Exp}\SUB{1} \ \LEX{{/}} \ \VARREF{Exp}\SUB{2} \
                           \RIGHTPHRASE  = 
@@ -197,7 +200,7 @@ $$\begin{align*}
                                       \VAR{Exp}\SUB{2} \
                                     \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{rval} \LEFTPHRASE \
                             \VARREF{Exp}\SUB{1} \ \LEX{{\PERCENT}} \ \VARREF{Exp}\SUB{2} \
                           \RIGHTPHRASE  = 
@@ -210,7 +213,7 @@ $$\begin{align*}
                                       \VAR{Exp}\SUB{2} \
                                     \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{rval} \LEFTPHRASE \
                             \VARREF{Exp}\SUB{1} \ \LEX{{<}} \ \VARREF{Exp}\SUB{2} \
                           \RIGHTPHRASE  = 
@@ -222,7 +225,7 @@ $$\begin{align*}
                                     \VAR{Exp}\SUB{2} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{rval} \LEFTPHRASE \
                             \VARREF{Exp}\SUB{1} \ \LEX{{<}{=}} \ \VARREF{Exp}\SUB{2} \
                           \RIGHTPHRASE  = 
@@ -234,7 +237,7 @@ $$\begin{align*}
                                     \VAR{Exp}\SUB{2} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{rval} \LEFTPHRASE \
                             \VARREF{Exp}\SUB{1} \ \LEX{{>}} \ \VARREF{Exp}\SUB{2} \
                           \RIGHTPHRASE  = 
@@ -246,7 +249,7 @@ $$\begin{align*}
                                     \VAR{Exp}\SUB{2} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{rval} \LEFTPHRASE \
                             \VARREF{Exp}\SUB{1} \ \LEX{{>}{=}} \ \VARREF{Exp}\SUB{2} \
                           \RIGHTPHRASE  = 
@@ -258,7 +261,7 @@ $$\begin{align*}
                                     \VAR{Exp}\SUB{2} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{rval} \LEFTPHRASE \
                             \VARREF{Exp}\SUB{1} \ \LEX{{=}{=}} \ \VARREF{Exp}\SUB{2} \
                           \RIGHTPHRASE  = 
@@ -270,7 +273,7 @@ $$\begin{align*}
                                     \VAR{Exp}\SUB{2} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{rval} \LEFTPHRASE \
                             \VARREF{Exp}\SUB{1} \ \LEX{{!}{=}} \ \VARREF{Exp}\SUB{2} \
                           \RIGHTPHRASE  = 
@@ -283,7 +286,7 @@ $$\begin{align*}
                                             \VAR{Exp}\SUB{2} \
                                           \RIGHTPHRASE  ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{rval} \LEFTPHRASE \
                             \LEX{{!}} \ \VARREF{Exp} \
                           \RIGHTPHRASE  = 
@@ -292,7 +295,7 @@ $$\begin{align*}
                                     \VAR{Exp} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{rval} \LEFTPHRASE \
                             \VARREF{Exp}\SUB{1} \ \LEX{{\AMPERSAND}{\AMPERSAND}} \ \VARREF{Exp}\SUB{2} \
                           \RIGHTPHRASE  = 
@@ -305,7 +308,7 @@ $$\begin{align*}
                                   \RIGHTPHRASE , 
                \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{rval} \LEFTPHRASE \
                             \VARREF{Exp}\SUB{1} \ \LEX{{|}{|}} \ \VARREF{Exp}\SUB{2} \
                           \RIGHTPHRASE  = 
@@ -320,24 +323,24 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{Exps} : \SYN{exps}
       \ ::= \ & \
       \SYNREF{exp} \ \LEFTGROUP \LEX{{,}} \ \SYNREF{exps} \RIGHTGROUP\QUERY
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{rvals} \LEFTPHRASE \ \_ : \SYNREF{exps}\QUERY \ \RIGHTPHRASE  
     : (   \TO \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} )\STAR 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{rvals} \LEFTPHRASE \
                              \
                           \RIGHTPHRASE  = 
       (   \  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{rvals} \LEFTPHRASE \
                             \VARREF{Exp} \
                           \RIGHTPHRASE  = 
@@ -345,7 +348,7 @@ $$\begin{align*}
                             \VAR{Exp} \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{rvals} \LEFTPHRASE \
                             \VARREF{Exp} \ \LEX{{,}} \ \VARREF{Exps} \
                           \RIGHTPHRASE  = 
@@ -358,14 +361,14 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{LExp} : \SYN{lexp}
       \ ::= \ & \
       \SYNHYPER{../.}{SIMPLE-1-Lexical}{id} \mid \SYNREF{lexp} \ \LEX{{[}} \ \SYNREF{exps} \ \LEX{{]}}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \VARREF{LExp} \ \LEX{{[}} \ \VARREF{Exp} \ \LEX{{,}} \ \VARREF{Exps} \ \LEX{{]}} \
       \RIGHTPHRASE : \SYNREF{lexp} = \\&
@@ -375,11 +378,11 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{lval} \LEFTPHRASE \ \_ : \SYNREF{lexp} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{variables} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{lval} \LEFTPHRASE \
                             \VARHYPER{../.}{SIMPLE-1-Lexical}{Id} \
                           \RIGHTPHRASE  = 
@@ -388,7 +391,7 @@ $$\begin{align*}
                                     \VAR{Id} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{lval} \LEFTPHRASE \
                             \VARREF{LExp} \ \LEX{{[}} \ \VARREF{Exp} \ \LEX{{]}} \
                           \RIGHTPHRASE  = \\&\quad
@@ -404,6 +407,7 @@ $$\begin{align*}
                                               \VAR{LExp} \
                                             \RIGHTPHRASE  ) )
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -428,7 +432,9 @@ $$\begin{align*}
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

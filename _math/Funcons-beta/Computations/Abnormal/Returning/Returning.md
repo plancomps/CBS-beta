@@ -1,26 +1,29 @@
 {::comment}{% raw %}{:/}
 
+
+----
+
 ### Returning
                
 
 
 $$\begin{align*}
   [ \
-  \KEY{Datatype} \ & \NAMEREF{returning} \\
-  \KEY{Funcon} \ & \NAMEREF{returned} \\
-  \KEY{Funcon} \ & \NAMEREF{finalise-returning} \\
-  \KEY{Funcon} \ & \NAMEREF{return} \\
-  \KEY{Funcon} \ & \NAMEREF{handle-return}
+  \KEY{Datatype} \quad & \NAMEREF{returning} \\
+  \KEY{Funcon} \quad & \NAMEREF{returned} \\
+  \KEY{Funcon} \quad & \NAMEREF{finalise-returning} \\
+  \KEY{Funcon} \quad & \NAMEREF{return} \\
+  \KEY{Funcon} \quad & \NAMEREF{handle-return}
   \ ]
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Meta-variables} \
+  \KEY{Meta-variables} \quad
   & \VAR{T} <: \NAMEHYPER{../../../Values}{Value-Types}{values}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Datatype} \ 
+  \KEY{Datatype} \quad 
   \NAMEDECL{returning} 
   \ ::= \ & \NAMEDECL{returned}(
                                \_ : \NAMEHYPER{../../../Values}{Value-Types}{values})
@@ -32,7 +35,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{finalise-returning}(
                        \VAR{X} :  \TO \VAR{T}) 
     :  \TO \VAR{T}  \mid \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} \\&\quad
@@ -48,7 +51,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{return}(
                        \VAR{V} : \VAR{T}) 
     :  \TO \NAMEHYPER{../../../Values}{Value-Types}{empty-type} \\&\quad
@@ -64,7 +67,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{handle-return}(
                        \_ :  \TO \VAR{T}) 
     :  \TO \VAR{T} 
@@ -78,7 +81,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(   \  )}_{} 
           \VAR{X}'
@@ -89,7 +92,7 @@ $$\begin{align*}
             (  \VAR{X}' )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  \NAMEREF{returned}
                                                                                   (  \VAR{V} : \NAMEHYPER{../../../Values}{Value-Types}{values} ) )}_{} 
@@ -100,7 +103,7 @@ $$\begin{align*}
           \VAR{V}
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  \VAR{V}' : \mathop{\sim} \NAMEREF{returning} )}_{} 
           \VAR{X}'
@@ -111,11 +114,12 @@ $$\begin{align*}
             (  \VAR{X}' )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{handle-return}
         (  \VAR{V} : \VAR{T} ) \leadsto 
         \VAR{V}
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

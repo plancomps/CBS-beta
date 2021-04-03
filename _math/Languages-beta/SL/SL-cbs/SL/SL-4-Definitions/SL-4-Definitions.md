@@ -1,32 +1,35 @@
 {::comment}{% raw %}{:/}
 <details open markdown="block">
   <summary>
-    Outline
+    OUTLINE
   </summary>
   {: .text-delta }
 - TOC
 {:toc}
 </details>
 
-$$\KEY{Language} \STRING{SL}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{SL}$$
 
 # $$\SECT{4}$$ Function definitions
            
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{FunDef} : \SYN{fun-def}
       \ ::= \ & \
       \LEX{function} \ \SYNHYPER{../.}{SL-1-Lexemes}{id} \ \LEX{{(}} \ \SYNREF{id-list}\QUERY \ \LEX{{)}} \ \SYNHYPER{../.}{SL-3-Statements}{block}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{declare} \LEFTPHRASE \ \VARREF{FunDef}\STAR : \SYNREF{fun-def}\STAR \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{environments} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{declare} \LEFTPHRASE \
                             \LEX{function} \ \VARHYPER{../.}{SL-1-Lexemes}{Id} \ \LEX{{(}} \ \VARREF{IdList}\QUERY \ \LEX{{)}} \ \VARHYPER{../.}{SL-3-Statements}{Block} \
                           \RIGHTPHRASE  = \\&\quad
@@ -46,14 +49,14 @@ $$\begin{align*}
                                                              \VAR{Block} \
                                                            \RIGHTPHRASE  ) ) ) \}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{declare} \LEFTPHRASE \
                              \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Maps}{map}
         (   \  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{declare} \LEFTPHRASE \
                             \VARREF{FunDef} \ \VARREF{FunDef}\PLUS \
                           \RIGHTPHRASE  = \\&\quad
@@ -71,25 +74,25 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{IdList} : \SYN{id-list}
       \ ::= \ & \
       \SYNHYPER{../.}{SL-1-Lexemes}{id} \ \LEFTGROUP \LEX{{,}} \ \SYNREF{id-list} \RIGHTGROUP\QUERY
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{pass-list} \LEFTPHRASE \ \VARREF{IdList} : \SYNREF{id-list}\QUERY \ \RIGHTPHRASE  
     : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{lists}
         (  \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} ) \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{pass-list} \LEFTPHRASE \
                              \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-value}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{pass-list} \LEFTPHRASE \
                             \VARHYPER{../.}{SL-1-Lexemes}{Id} \
                           \RIGHTPHRASE  = \\&\quad
@@ -101,7 +104,7 @@ $$\begin{align*}
                 \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{head} \ 
                   \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{pass-list} \LEFTPHRASE \
                             \VARHYPER{../.}{SL-1-Lexemes}{Id} \ \LEX{{,}} \ \VARREF{IdList} \
                           \RIGHTPHRASE  = \\&\quad
@@ -121,6 +124,7 @@ $$\begin{align*}
                                             \VAR{IdList} \
                                           \RIGHTPHRASE  ) )
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

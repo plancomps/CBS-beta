@@ -1,21 +1,24 @@
 {::comment}{% raw %}{:/}
 <details open markdown="block">
   <summary>
-    Outline
+    OUTLINE
   </summary>
   {: .text-delta }
 - TOC
 {:toc}
 </details>
 
-$$\KEY{Language} \STRING{OCaml Light}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{OCaml Light}$$
 
 # $$\SECT{7}$$ Expressions
            
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{E} : \SYN{expr}
       \ ::= \ & \
       \SYNHYPER{../.}{OC-L-03-Names}{value-path} \\
@@ -100,7 +103,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \LEX{{(}} \ \VARREF{E} \ \LEX{{)}} \
       \RIGHTPHRASE : \SYNREF{expr} = 
@@ -108,7 +111,7 @@ $$\begin{align*}
         \VAR{E} \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \LEX{begin} \ \VARREF{E} \ \LEX{end} \
       \RIGHTPHRASE : \SYNREF{expr} = 
@@ -116,7 +119,7 @@ $$\begin{align*}
         \VAR{E} \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \LEX{{(}} \ \VARREF{E} \ \LEX{{:}} \ \VARHYPER{../.}{OC-L-04-Type-Expressions}{T} \ \LEX{{)}} \
       \RIGHTPHRASE : \SYNREF{expr} = 
@@ -124,7 +127,7 @@ $$\begin{align*}
         \VAR{E} \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \VARREF{E}\SUB{1} \ \VARREF{E}\SUB{2} \ \VARREF{A} \ \VARREF{A}\STAR \
       \RIGHTPHRASE : \SYNREF{expr} = 
@@ -132,7 +135,7 @@ $$\begin{align*}
         \LEFTGROUP \LEX{{(}} \ \VAR{E}\SUB{1} \ \VAR{E}\SUB{2} \ \LEX{{)}} \RIGHTGROUP \ \VAR{A} \ \VAR{A}\STAR \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \VARHYPER{../.}{OC-L-01-Lexical-Conventions}{PS} \ \VARREF{E} \
       \RIGHTPHRASE : \SYNREF{expr} = 
@@ -140,7 +143,7 @@ $$\begin{align*}
         \LEFTGROUP \LEX{{(}} \ \VAR{PS} \ \LEX{{)}} \RIGHTGROUP \ \VAR{E} \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \LEX{{-}} \ \VARREF{E} \
       \RIGHTPHRASE : \SYNREF{expr} = 
@@ -148,7 +151,7 @@ $$\begin{align*}
         \LEFTGROUP \LEX{{(}} \ \LEX{{\TILDE}{-}} \ \LEX{{)}} \RIGHTGROUP \ \VAR{E} \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \LEX{{-}{.}} \ \VARREF{E} \
       \RIGHTPHRASE : \SYNREF{expr} = 
@@ -156,7 +159,7 @@ $$\begin{align*}
         \LEFTGROUP \LEX{{(}} \ \LEX{{\TILDE}{-}{.}} \ \LEX{{)}} \RIGHTGROUP \ \VAR{E} \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \VARREF{E}\SUB{1} \ \VARHYPER{../.}{OC-L-03-Names}{IO-1} \ \VARREF{E}\SUB{2} \
       \RIGHTPHRASE : \SYNREF{expr} = 
@@ -164,7 +167,7 @@ $$\begin{align*}
         \LEFTGROUP \LEX{{(}} \ \VAR{IO-1} \ \LEX{{)}} \RIGHTGROUP \ \VAR{E}\SUB{1} \ \VAR{E}\SUB{2} \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \VARREF{E}\SUB{1} \ \VARHYPER{../.}{OC-L-03-Names}{IO-2} \ \VARREF{E}\SUB{2} \
       \RIGHTPHRASE : \SYNREF{expr} = 
@@ -172,7 +175,7 @@ $$\begin{align*}
         \LEFTGROUP \LEX{{(}} \ \VAR{IO-2} \ \LEX{{)}} \RIGHTGROUP \ \VAR{E}\SUB{1} \ \VAR{E}\SUB{2} \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \VARREF{E}\SUB{1} \ \VARHYPER{../.}{OC-L-03-Names}{IO-3} \ \VARREF{E}\SUB{2} \
       \RIGHTPHRASE : \SYNREF{expr} = 
@@ -180,7 +183,7 @@ $$\begin{align*}
         \LEFTGROUP \LEX{{(}} \ \VAR{IO-3} \ \LEX{{)}} \RIGHTGROUP \ \VAR{E}\SUB{1} \ \VAR{E}\SUB{2} \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \VARREF{E}\SUB{1} \ \VARHYPER{../.}{OC-L-03-Names}{IO-4} \ \VARREF{E}\SUB{2} \
       \RIGHTPHRASE : \SYNREF{expr} = 
@@ -188,7 +191,7 @@ $$\begin{align*}
         \LEFTGROUP \LEX{{(}} \ \VAR{IO-4} \ \LEX{{)}} \RIGHTGROUP \ \VAR{E}\SUB{1} \ \VAR{E}\SUB{2} \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \VARREF{E}\SUB{1} \ \VARHYPER{../.}{OC-L-03-Names}{IO-5} \ \VARREF{E}\SUB{2} \
       \RIGHTPHRASE : \SYNREF{expr} = 
@@ -196,7 +199,7 @@ $$\begin{align*}
         \LEFTGROUP \LEX{{(}} \ \VAR{IO-5} \ \LEX{{)}} \RIGHTGROUP \ \VAR{E}\SUB{1} \ \VAR{E}\SUB{2} \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \VARREF{E}\SUB{1} \ \LEX{{\AMPERSAND}} \ \VARREF{E}\SUB{2} \
       \RIGHTPHRASE : \SYNREF{expr} = 
@@ -204,7 +207,7 @@ $$\begin{align*}
         \VAR{E}\SUB{1} \ \LEX{{\AMPERSAND}{\AMPERSAND}} \ \VAR{E}\SUB{2} \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \VARREF{E}\SUB{1} \ \LEX{or} \ \VARREF{E}\SUB{2} \
       \RIGHTPHRASE : \SYNREF{expr} = 
@@ -212,7 +215,7 @@ $$\begin{align*}
         \VAR{E}\SUB{1} \ \LEX{{|}{|}} \ \VAR{E}\SUB{2} \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \VARREF{E}\SUB{1} \ \VARHYPER{../.}{OC-L-03-Names}{IO-8} \ \VARREF{E}\SUB{2} \
       \RIGHTPHRASE : \SYNREF{expr} = 
@@ -220,7 +223,7 @@ $$\begin{align*}
         \LEFTGROUP \LEX{{(}} \ \VAR{IO-8} \ \LEX{{)}} \RIGHTGROUP \ \VAR{E}\SUB{1} \ \VAR{E}\SUB{2} \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \VARREF{E}\SUB{1} \ \LEX{{.}{(}} \ \VARREF{E}\SUB{2} \ \LEX{{)}} \
       \RIGHTPHRASE : \SYNREF{expr} = 
@@ -228,7 +231,7 @@ $$\begin{align*}
         \LEX{array{\UNDERSCORE}get} \ \VAR{E}\SUB{1} \ \VAR{E}\SUB{2} \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \VARREF{E}\SUB{1} \ \LEX{{.}{(}} \ \VARREF{E}\SUB{2} \ \LEX{{)}} \ \LEX{{<}{-}} \ \VARREF{E}\SUB{3} \
       \RIGHTPHRASE : \SYNREF{expr} = 
@@ -236,7 +239,7 @@ $$\begin{align*}
         \LEX{array{\UNDERSCORE}set} \ \VAR{E}\SUB{1} \ \VAR{E}\SUB{2} \ \VAR{E}\SUB{3} \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \LEX{if} \ \VARREF{E}\SUB{1} \ \LEX{then} \ \VARREF{E}\SUB{2} \
       \RIGHTPHRASE : \SYNREF{expr} = 
@@ -244,7 +247,7 @@ $$\begin{align*}
         \LEX{if} \ \VAR{E}\SUB{1} \ \LEX{then} \ \VAR{E}\SUB{2} \ \LEX{else} \ \LEFTGROUP \LEX{{(}} \ \LEX{{)}} \RIGHTGROUP \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \LEX{fun} \ \VARHYPER{../.}{OC-L-06-Patterns}{P} \ \LEX{{-}{>}} \ \VARREF{E} \
       \RIGHTPHRASE : \SYNREF{expr} = 
@@ -252,7 +255,7 @@ $$\begin{align*}
         \LEX{function} \ \VAR{P} \ \LEX{{-}{>}} \ \VAR{E} \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \LEX{fun} \ \VARHYPER{../.}{OC-L-06-Patterns}{P} \ \VARHYPER{../.}{OC-L-06-Patterns}{P}\PLUS \ \LEX{{-}{>}} \ \VARREF{E} \
       \RIGHTPHRASE : \SYNREF{expr} = 
@@ -260,7 +263,7 @@ $$\begin{align*}
         \LEX{fun} \ \VAR{P} \ \LEX{{-}{>}} \ \LEFTGROUP \LEX{fun} \ \VAR{P}\PLUS \ \LEX{{-}{>}} \ \VAR{E} \RIGHTGROUP \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \LEX{{[}} \ \VARREF{E} \ \VARREF{SE}\STAR \ \LEX{{;}} \ \LEX{{]}} \
       \RIGHTPHRASE : \SYNREF{expr} = 
@@ -268,7 +271,7 @@ $$\begin{align*}
         \LEX{{[}} \ \VAR{E} \ \VAR{SE}\STAR \ \LEX{{]}} \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \LEX{{[}{|}} \ \VARREF{E} \ \VARREF{SE}\STAR \ \LEX{{;}} \ \LEX{{|}{]}} \
       \RIGHTPHRASE : \SYNREF{expr} = 
@@ -276,7 +279,7 @@ $$\begin{align*}
         \LEX{{[}{|}} \ \VAR{E} \ \VAR{SE}\STAR \ \LEX{{|}{]}} \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \LEX{{\LEFTBRACE}} \ \VARHYPER{../.}{OC-L-03-Names}{F} \ \LEX{{=}} \ \VARREF{E} \ \VARREF{SFE}\STAR \ \LEX{{;}} \ \LEX{{\RIGHTBRACE}} \
       \RIGHTPHRASE : \SYNREF{expr} = 
@@ -284,7 +287,7 @@ $$\begin{align*}
         \LEX{{\LEFTBRACE}} \ \VAR{F} \ \LEX{{=}} \ \VAR{E} \ \VAR{SFE}\STAR \ \LEX{{\RIGHTBRACE}} \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \LEX{{\LEFTBRACE}} \ \VARREF{E}\SUB{1} \ \LEX{with} \ \VARHYPER{../.}{OC-L-03-Names}{F} \ \LEX{{=}} \ \VARREF{E}\SUB{2} \ \VARREF{SFE}\STAR \ \LEX{{;}} \ \LEX{{\RIGHTBRACE}} \
       \RIGHTPHRASE : \SYNREF{expr} = \\&
@@ -292,7 +295,7 @@ $$\begin{align*}
         \LEX{{\LEFTBRACE}} \ \VAR{E}\SUB{1} \ \LEX{with} \ \VAR{F} \ \LEX{{=}} \ \VAR{E}\SUB{2} \ \VAR{SFE}\STAR \ \LEX{{\RIGHTBRACE}} \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \LEX{{|}} \ \VARHYPER{../.}{OC-L-06-Patterns}{P} \ \LEX{{-}{>}} \ \VARREF{E} \ \VARREF{PE}\STAR \
       \RIGHTPHRASE : \SYNREF{pattern-matching} = 
@@ -300,7 +303,7 @@ $$\begin{align*}
         \VAR{P} \ \LEX{{-}{>}} \ \VAR{E} \ \VAR{PE}\STAR \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \VARHYPER{../.}{OC-L-03-Names}{VN} \ \LEX{{:}} \ \VARHYPER{../.}{OC-L-04-Type-Expressions}{PT} \ \LEX{{=}} \ \VARREF{E} \
       \RIGHTPHRASE : \SYNREF{let-binding} = 
@@ -308,7 +311,7 @@ $$\begin{align*}
         \VAR{VN} \ \LEX{{=}} \ \VAR{E} \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \VARHYPER{../.}{OC-L-03-Names}{VN} \ \VARHYPER{../.}{OC-L-06-Patterns}{P}\PLUS \ \LEX{{=}} \ \VARREF{E} \
       \RIGHTPHRASE : \SYNREF{let-binding} = 
@@ -318,11 +321,11 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{evaluate} \LEFTPHRASE \ \_ : \SYNREF{expr} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../.}{OC-L-02-Values}{implemented-values} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \VARHYPER{../.}{OC-L-03-Names}{VP} \
                           \RIGHTPHRASE  = 
@@ -331,7 +334,7 @@ $$\begin{align*}
                                     \VAR{VP} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \VARHYPER{../.}{OC-L-05-Constants}{CNST} \
                           \RIGHTPHRASE  = 
@@ -339,7 +342,7 @@ $$\begin{align*}
                             \VAR{CNST} \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \LEX{{(}} \ \VARREF{E} \ \LEX{{:}} \ \VARHYPER{../.}{OC-L-04-Type-Expressions}{T} \ \LEX{{)}} \
                           \RIGHTPHRASE  = 
@@ -347,7 +350,7 @@ $$\begin{align*}
                             \VAR{E} \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \VARREF{E}\SUB{1} \ \LEX{{,}} \ \VARREF{E}\SUB{2} \ \VARREF{CE}\STAR \
                           \RIGHTPHRASE  = \\&\quad
@@ -356,7 +359,7 @@ $$\begin{align*}
                                     \VAR{E}\SUB{1} \ \LEX{{,}} \ \VAR{E}\SUB{2} \ \VAR{CE}\STAR \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \VARREF{E}\SUB{1} \ \LEX{{:}{:}} \ \VARREF{E}\SUB{2} \
                           \RIGHTPHRASE  = 
@@ -368,7 +371,7 @@ $$\begin{align*}
                                     \VAR{E}\SUB{2} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \LEX{{[}} \ \VARREF{E} \ \VARREF{SE}\STAR \ \LEX{{]}} \
                           \RIGHTPHRASE  = 
@@ -376,7 +379,7 @@ $$\begin{align*}
                                   \VAR{E} \ \VAR{SE}\STAR \
                                 \RIGHTPHRASE  ]
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \LEX{{[}{|}} \ \VARREF{E} \ \VARREF{SE}\STAR \ \LEX{{|}{]}} \
                           \RIGHTPHRASE  = \\&\quad
@@ -389,14 +392,14 @@ $$\begin{align*}
                                             \VAR{E} \ \VAR{SE}\STAR \
                                           \RIGHTPHRASE  ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \LEX{{[}{|}} \ \LEX{{|}{]}} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vector}
         (   \  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \LEX{{\LEFTBRACE}} \ \VARHYPER{../.}{OC-L-03-Names}{F} \ \LEX{{=}} \ \VARREF{E} \ \VARREF{SFE}\STAR \ \LEX{{\RIGHTBRACE}} \
                           \RIGHTPHRASE  = \\&\quad
@@ -406,7 +409,7 @@ $$\begin{align*}
                                             \VAR{F} \ \LEX{{=}} \ \VAR{E} \ \VAR{SFE}\STAR \
                                           \RIGHTPHRASE  ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \LEX{{\LEFTBRACE}} \ \VARREF{E}\SUB{1} \ \LEX{with} \ \VARHYPER{../.}{OC-L-03-Names}{F} \ \LEX{{=}} \ \VARREF{E}\SUB{2} \ \VARREF{SFE}\STAR \ \LEX{{\RIGHTBRACE}} \
                           \RIGHTPHRASE  = \\&\quad
@@ -421,7 +424,7 @@ $$\begin{align*}
                                                       \VAR{E}\SUB{1} \
                                                     \RIGHTPHRASE  ) ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \VARHYPER{../.}{OC-L-03-Names}{CSTR} \ \VARREF{E} \
                           \RIGHTPHRASE  = \\&\quad
@@ -433,7 +436,7 @@ $$\begin{align*}
                                     \VAR{E} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Otherwise} \
+  \KEY{Otherwise} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \VARREF{E}\SUB{1} \ \VARREF{E}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -445,7 +448,7 @@ $$\begin{align*}
                                     \VAR{E}\SUB{2} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \VARREF{E} \ \LEX{{.}} \ \VARHYPER{../.}{OC-L-03-Names}{F} \
                           \RIGHTPHRASE  = \\&\quad
@@ -457,7 +460,7 @@ $$\begin{align*}
                                     \VAR{F} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \VARREF{E}\SUB{1} \ \LEX{{\AMPERSAND}{\AMPERSAND}} \ \VARREF{E}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -470,7 +473,7 @@ $$\begin{align*}
                                   \RIGHTPHRASE , 
                \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \VARREF{E}\SUB{1} \ \LEX{{|}{|}} \ \VARREF{E}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -483,7 +486,7 @@ $$\begin{align*}
                                     \VAR{E}\SUB{2} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \LEX{if} \ \VARREF{E}\SUB{1} \ \LEX{then} \ \VARREF{E}\SUB{2} \ \LEX{else} \ \VARREF{E}\SUB{3} \
                           \RIGHTPHRASE  = \\&\quad
@@ -498,7 +501,7 @@ $$\begin{align*}
                                     \VAR{E}\SUB{3} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \LEX{while} \ \VARREF{E}\SUB{1} \ \LEX{do} \ \VARREF{E}\SUB{2} \ \LEX{done} \
                           \RIGHTPHRASE  = \\&\quad
@@ -511,7 +514,7 @@ $$\begin{align*}
                                             \VAR{E}\SUB{2} \
                                           \RIGHTPHRASE  ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \LEX{for} \ \VARHYPER{../.}{OC-L-03-Names}{VN} \ \LEX{{=}} \ \VARREF{E}\SUB{1} \ \LEX{to} \ \VARREF{E}\SUB{2} \ \LEX{do} \ \VARREF{E}\SUB{3} \ \LEX{done} \
                           \RIGHTPHRASE  = \\&\quad
@@ -533,7 +536,7 @@ $$\begin{align*}
                                                     \VAR{E}\SUB{2} \
                                                   \RIGHTPHRASE  ) ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \LEX{for} \ \VARHYPER{../.}{OC-L-03-Names}{VN} \ \LEX{{=}} \ \VARREF{E}\SUB{1} \ \LEX{downto} \ \VARREF{E}\SUB{2} \ \LEX{do} \ \VARREF{E}\SUB{3} \ \LEX{done} \
                           \RIGHTPHRASE  = \\&\quad
@@ -556,7 +559,7 @@ $$\begin{align*}
                                                       \VAR{E}\SUB{1} \
                                                     \RIGHTPHRASE  ) ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \VARREF{E}\SUB{1} \ \LEX{{;}} \ \VARREF{E}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -569,7 +572,7 @@ $$\begin{align*}
                                     \VAR{E}\SUB{2} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \LEX{match} \ \VARREF{E} \ \LEX{with} \ \VARREF{PM} \
                           \RIGHTPHRASE  = \\&\quad
@@ -584,7 +587,7 @@ $$\begin{align*}
                        \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Throwing}{throw}
                         (  \NAMEHYPER{../.}{OC-L-12-Core-Library}{ocaml-light-match-failure} ) ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \LEX{function} \ \VARREF{PM} \
                           \RIGHTPHRASE  = \\&\quad
@@ -597,7 +600,7 @@ $$\begin{align*}
                          \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Throwing}{throw}
                           (  \NAMEHYPER{../.}{OC-L-12-Core-Library}{ocaml-light-match-failure} ) ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \LEX{try} \ \VARREF{E} \ \LEX{with} \ \VARREF{PM} \
                           \RIGHTPHRASE  = \\&\quad
@@ -612,7 +615,7 @@ $$\begin{align*}
                        \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Throwing}{throw}
                         (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} ) ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \VARREF{LD} \ \LEX{in} \ \VARREF{E} \
                           \RIGHTPHRASE  = 
@@ -624,7 +627,7 @@ $$\begin{align*}
                                     \VAR{E} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \LEX{assert} \ \VARREF{E} \
                           \RIGHTPHRASE  = \\&\quad
@@ -642,11 +645,11 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{evaluate-comma-sequence} \LEFTPHRASE \ \_ : \LEFTGROUP \SYNREF{expr} \ \SYNREF{comma-expr}\STAR \RIGHTGROUP \ \RIGHTPHRASE  
     : (   \TO \NAMEHYPER{../.}{OC-L-02-Values}{implemented-values} )\PLUS 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate-comma-sequence} \LEFTPHRASE \
                             \VARREF{E}\SUB{1} \ \LEX{{,}} \ \VARREF{E}\SUB{2} \ \VARREF{CE}\STAR \
                           \RIGHTPHRASE  = \\&\quad
@@ -657,7 +660,7 @@ $$\begin{align*}
                             \VAR{E}\SUB{2} \ \VAR{CE}\STAR \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate-comma-sequence} \LEFTPHRASE \
                             \VARREF{E} \
                           \RIGHTPHRASE  = 
@@ -667,11 +670,11 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{evaluate-semic-sequence} \LEFTPHRASE \ \_ : \LEFTGROUP \SYNREF{expr} \ \SYNREF{semic-expr}\STAR \RIGHTGROUP \ \RIGHTPHRASE  
     : (   \TO \NAMEHYPER{../.}{OC-L-02-Values}{implemented-values} )\PLUS 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate-semic-sequence} \LEFTPHRASE \
                             \VARREF{E}\SUB{1} \ \LEX{{;}} \ \VARREF{E}\SUB{2} \ \VARREF{SE}\STAR \
                           \RIGHTPHRASE  = \\&\quad
@@ -682,7 +685,7 @@ $$\begin{align*}
                             \VAR{E}\SUB{2} \ \VAR{SE}\STAR \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate-semic-sequence} \LEFTPHRASE \
                             \VARREF{E} \
                           \RIGHTPHRASE  = 
@@ -692,11 +695,11 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{evaluate-field-sequence} \LEFTPHRASE \ \_ : \LEFTGROUP \SYNHYPER{../.}{OC-L-03-Names}{field} \ \LEX{{=}} \ \SYNREF{expr} \ \SYNREF{semic-field-expr}\STAR \RIGHTGROUP \ \RIGHTPHRASE  
     : (   \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{envs} )\PLUS 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate-field-sequence} \LEFTPHRASE \
                             \VARHYPER{../.}{OC-L-03-Names}{F}\SUB{1} \ \LEX{{=}} \ \VARREF{E}\SUB{1} \ \LEX{{;}} \ \VARHYPER{../.}{OC-L-03-Names}{F}\SUB{2} \ \LEX{{=}} \ \VARREF{E}\SUB{2} \ \VARREF{SFE}\STAR \
                           \RIGHTPHRASE  = \\&\quad
@@ -710,7 +713,7 @@ $$\begin{align*}
                             \VAR{F}\SUB{2} \ \LEX{{=}} \ \VAR{E}\SUB{2} \ \VAR{SFE}\STAR \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate-field-sequence} \LEFTPHRASE \
                             \VARHYPER{../.}{OC-L-03-Names}{F} \ \LEX{{=}} \ \VARREF{E} \
                           \RIGHTPHRASE  = 
@@ -727,11 +730,11 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{match} \LEFTPHRASE \ \_ : \SYNREF{pattern-matching} \ \RIGHTPHRASE  
     : (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-values} \TO \NAMEHYPER{../.}{OC-L-02-Values}{implemented-values} )\PLUS 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{match} \LEFTPHRASE \
                             \VARHYPER{../.}{OC-L-06-Patterns}{P}\SUB{1} \ \LEX{{-}{>}} \ \VARREF{E}\SUB{1} \ \LEX{{|}} \ \VARHYPER{../.}{OC-L-06-Patterns}{P}\SUB{2} \ \LEX{{-}{>}} \ \VARREF{E}\SUB{2} \ \VARREF{PE}\STAR \
                           \RIGHTPHRASE  = \\&\quad
@@ -742,7 +745,7 @@ $$\begin{align*}
                             \VAR{P}\SUB{2} \ \LEX{{-}{>}} \ \VAR{E}\SUB{2} \ \VAR{PE}\STAR \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{match} \LEFTPHRASE \
                             \VARHYPER{../.}{OC-L-06-Patterns}{P} \ \LEX{{-}{>}} \ \VARREF{E} \
                           \RIGHTPHRASE  = 
@@ -760,11 +763,11 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{define-values} \LEFTPHRASE \ \_ : \SYNREF{let-definition} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{environments} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{define-values} \LEFTPHRASE \
                             \LEX{let} \ \VARREF{LB} \ \VARREF{ALB}\STAR \
                           \RIGHTPHRASE  = 
@@ -772,7 +775,7 @@ $$\begin{align*}
                             \VAR{LB} \ \VAR{ALB}\STAR \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{define-values} \LEFTPHRASE \
                             \LEX{let~rec} \ \VARREF{LB} \ \VARREF{ALB}\STAR \
                           \RIGHTPHRASE  = \\&\quad
@@ -787,11 +790,11 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{define-values-nonrec} \LEFTPHRASE \ \_ : \LEFTGROUP \SYNREF{let-binding} \ \SYNREF{and-let-binding}\STAR \RIGHTGROUP \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{environments} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{define-values-nonrec} \LEFTPHRASE \
                             \VARREF{LB}\SUB{1} \ \LEX{and} \ \VARREF{LB}\SUB{2} \ \VARREF{ALB}\STAR \
                           \RIGHTPHRASE  = \\&\quad
@@ -803,7 +806,7 @@ $$\begin{align*}
                                     \VAR{LB}\SUB{2} \ \VAR{ALB}\STAR \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{define-values-nonrec} \LEFTPHRASE \
                             \VARHYPER{../.}{OC-L-06-Patterns}{P} \ \LEX{{=}} \ \VARREF{E} \
                           \RIGHTPHRASE  = \\&\quad
@@ -820,11 +823,11 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{bound-ids-sequence} \LEFTPHRASE \ \_ : \LEFTGROUP \SYNREF{let-binding} \ \SYNREF{and-let-binding}\STAR \RIGHTGROUP \ \RIGHTPHRASE  
     : \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{ids}\PLUS 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{bound-ids-sequence} \LEFTPHRASE \
                             \VARREF{LB} \
                           \RIGHTPHRASE  = 
@@ -832,7 +835,7 @@ $$\begin{align*}
                             \VAR{LB} \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{bound-ids-sequence} \LEFTPHRASE \
                             \VARREF{LB}\SUB{1} \ \LEX{and} \ \VARREF{LB}\SUB{2} \ \VARREF{ALB}\STAR \
                           \RIGHTPHRASE  = \\&\quad
@@ -845,11 +848,11 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{bound-id} \LEFTPHRASE \ \_ : \SYNREF{let-binding} \ \RIGHTPHRASE  
     : \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{ids} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{bound-id} \LEFTPHRASE \
                             \VARHYPER{../.}{OC-L-03-Names}{VN} \ \LEX{{=}} \ \VARREF{E} \
                           \RIGHTPHRASE  = 
@@ -857,12 +860,13 @@ $$\begin{align*}
                             \VAR{VN} \
                           \RIGHTPHRASE 
 \\
-  \KEY{Otherwise} \
+  \KEY{Otherwise} \quad
     & \SEMREF{bound-id} \LEFTPHRASE \
                             \VARREF{LB} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{fail}
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

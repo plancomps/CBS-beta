@@ -10,12 +10,15 @@ ancestor: Unstable-Funcons-beta
 {::comment}{% raw %}{:/}
 <details open markdown="block">
   <summary>
-    Outline
+    OUTLINE
   </summary>
   {: .text-delta }
 - TOC
 {:toc}
 </details>
+
+
+----
 
 #### Locks
                
@@ -23,36 +26,36 @@ ancestor: Unstable-Funcons-beta
 
 $$\begin{align*}
   [ \
-  \KEY{Funcon} \ & \NAMEREF{is-exclusive-lock-holder} \\
+  \KEY{Funcon} \quad & \NAMEREF{is-exclusive-lock-holder} \\
   \textsf{Spin} \ & \textsf{locks} \\
-  \KEY{Funcon} \ & \NAMEREF{spin-lock-create} \\
-  \KEY{Funcon} \ & \NAMEREF{spin-lock-sync} \\
-  \KEY{Funcon} \ & \NAMEREF{spin-lock-release} \\
+  \KEY{Funcon} \quad & \NAMEREF{spin-lock-create} \\
+  \KEY{Funcon} \quad & \NAMEREF{spin-lock-sync} \\
+  \KEY{Funcon} \quad & \NAMEREF{spin-lock-release} \\
   \textsf{Exclusive} \ & \textsf{locks} \\
-  \KEY{Funcon} \ & \NAMEREF{exclusive-lock-create} \\
-  \KEY{Funcon} \ & \NAMEREF{exclusive-lock-sync} \\
-  \KEY{Funcon} \ & \NAMEREF{exclusive-lock-sync-else-wait} \\
-  \KEY{Funcon} \ & \NAMEREF{exclusive-lock-release} \\
+  \KEY{Funcon} \quad & \NAMEREF{exclusive-lock-create} \\
+  \KEY{Funcon} \quad & \NAMEREF{exclusive-lock-sync} \\
+  \KEY{Funcon} \quad & \NAMEREF{exclusive-lock-sync-else-wait} \\
+  \KEY{Funcon} \quad & \NAMEREF{exclusive-lock-release} \\
   \textsf{Reentrant} \ & \textsf{locks} \\
-  \KEY{Funcon} \ & \NAMEREF{reentrant-lock-create} \\
-  \KEY{Funcon} \ & \NAMEREF{reentrant-lock-sync} \\
-  \KEY{Funcon} \ & \NAMEREF{reentrant-lock-sync-else-wait} \\
-  \KEY{Funcon} \ & \NAMEREF{reentrant-lock-release} \\
-  \KEY{Funcon} \ & \NAMEREF{reentrant-lock-exit} \\
+  \KEY{Funcon} \quad & \NAMEREF{reentrant-lock-create} \\
+  \KEY{Funcon} \quad & \NAMEREF{reentrant-lock-sync} \\
+  \KEY{Funcon} \quad & \NAMEREF{reentrant-lock-sync-else-wait} \\
+  \KEY{Funcon} \quad & \NAMEREF{reentrant-lock-release} \\
+  \KEY{Funcon} \quad & \NAMEREF{reentrant-lock-exit} \\
   \textsf{Semaphores
           } \ & \textsf{} \\
-  \KEY{Funcon} \ & \NAMEREF{semaphore-create} \\
-  \KEY{Funcon} \ & \NAMEREF{semaphore-sync} \\
-  \KEY{Funcon} \ & \NAMEREF{semaphore-sync-else-wait} \\
-  \KEY{Funcon} \ & \NAMEREF{semaphore-release} \\
+  \KEY{Funcon} \quad & \NAMEREF{semaphore-create} \\
+  \KEY{Funcon} \quad & \NAMEREF{semaphore-sync} \\
+  \KEY{Funcon} \quad & \NAMEREF{semaphore-sync-else-wait} \\
+  \KEY{Funcon} \quad & \NAMEREF{semaphore-release} \\
   \textsf{Shared-exclusive} \ & \textsf{locks} \\
-  \KEY{Funcon} \ & \NAMEREF{rw-lock-create} \\
-  \KEY{Funcon} \ & \NAMEREF{rw-lock-sync-exclusive} \\
-  \KEY{Funcon} \ & \NAMEREF{rw-lock-sync-shared} \\
-  \KEY{Funcon} \ & \NAMEREF{rw-lock-sync-exclusive-else-wait} \\
-  \KEY{Funcon} \ & \NAMEREF{rw-lock-sync-shared-else-wait} \\
-  \KEY{Funcon} \ & \NAMEREF{rw-lock-release-exclusive} \\
-  \KEY{Funcon} \ & \NAMEREF{rw-lock-release-shared}
+  \KEY{Funcon} \quad & \NAMEREF{rw-lock-create} \\
+  \KEY{Funcon} \quad & \NAMEREF{rw-lock-sync-exclusive} \\
+  \KEY{Funcon} \quad & \NAMEREF{rw-lock-sync-shared} \\
+  \KEY{Funcon} \quad & \NAMEREF{rw-lock-sync-exclusive-else-wait} \\
+  \KEY{Funcon} \quad & \NAMEREF{rw-lock-sync-shared-else-wait} \\
+  \KEY{Funcon} \quad & \NAMEREF{rw-lock-release-exclusive} \\
+  \KEY{Funcon} \quad & \NAMEREF{rw-lock-release-shared}
   \ ]
 \end{align*}$$
 
@@ -67,7 +70,7 @@ the holding thread.
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{is-exclusive-lock-holder}(
                        \VAR{SY} : \NAME{syncs}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{booleans} \\&\quad
@@ -94,7 +97,7 @@ granting requests out of order.
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{spin-lock-create} 
     :  \TO \NAME{syncs} \\&\quad
     \leadsto \NAME{sync-create}
@@ -110,7 +113,7 @@ to the current thread; otherwise the request fails.
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{spin-lock-sync}(
                        \VAR{SY} : \NAME{syncs}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
@@ -140,7 +143,7 @@ release it. Releasing cannot be blocked by other threads, so it is not a request
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{spin-lock-release}(
                        \VAR{SY} : \NAME{syncs}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
@@ -173,7 +176,7 @@ interleaving.
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{exclusive-lock-create} 
     :  \TO \NAME{syncs} \\&\quad
     \leadsto \NAME{sync-create}
@@ -191,7 +194,7 @@ to the current thread; otherwise the request fails.
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{exclusive-lock-sync}(
                        \VAR{SY} : \NAME{syncs}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
@@ -221,7 +224,7 @@ suspended until the request can be granted:
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{exclusive-lock-sync-else-wait}(
                        \VAR{SY} : \NAME{syncs}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
@@ -245,7 +248,7 @@ Releasing a lock cannot be blocked by other threads, so it is not a request.
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{exclusive-lock-release}(
                        \VAR{SY} : \NAME{syncs}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
@@ -295,7 +298,7 @@ multiple times by the same thread.
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{reentrant-lock-create} 
     :  \TO \NAME{syncs} \\&\quad
     \leadsto \NAME{sync-create}
@@ -316,7 +319,7 @@ increments the counter; otherwise the request fails.
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{reentrant-lock-sync}(
                        \VAR{SY} : \NAME{syncs}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
@@ -370,7 +373,7 @@ suspended until the request can be granted:
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{reentrant-lock-sync-else-wait}(
                        \VAR{SY} : \NAME{syncs}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
@@ -394,7 +397,7 @@ Releasing a lock cannot be blocked by other threads, so it is not a request.
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{reentrant-lock-release}(
                        \VAR{SY} : \NAME{syncs}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
@@ -449,7 +452,7 @@ Otherwise it is 0, and the exit releases the lock.
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{reentrant-lock-exit}(
                        \VAR{SY} : \NAME{syncs}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
@@ -489,7 +492,7 @@ that can hold it at the same time. A semaphore can be released by any thread.
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{semaphore-create}(
                        \VAR{N} : \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{pos-ints}) 
     :  \TO \NAME{syncs} \\&\quad
@@ -514,7 +517,7 @@ of further threads that can hold it; otherwise the request fails.
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{semaphore-sync}(
                        \VAR{SY} : \NAME{syncs}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
@@ -545,7 +548,7 @@ suspended until the request can be granted:
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{semaphore-sync-else-wait}(
                        \VAR{SY} : \NAME{syncs}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
@@ -569,7 +572,7 @@ it is not a request.
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{semaphore-release}(
                        \VAR{SY} : \NAME{syncs}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
@@ -610,7 +613,7 @@ same time. It can be released by any thread.
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{rw-lock-create} 
     :  \TO \NAME{syncs} \\&\quad
     \leadsto \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{give}
@@ -635,7 +638,7 @@ When the lock is not currently held at all, it can be granted exclusively:
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{rw-lock-sync-exclusive}(
                        \VAR{SY} : \NAME{syncs}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
@@ -667,7 +670,7 @@ granted immediately (regardless of any waiting exclusive requests):
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{rw-lock-sync-shared}(
                        \VAR{SY} : \NAME{syncs}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
@@ -699,7 +702,7 @@ whether the request is for sharing:
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{rw-lock-sync-exclusive-else-wait}(
                        \VAR{SY} : \NAME{syncs}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
@@ -718,7 +721,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{rw-lock-sync-shared-else-wait}(
                        \VAR{SY} : \NAME{syncs}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
@@ -745,7 +748,7 @@ a lock cannot be blocked by other threads, so it is not a request.
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{rw-lock-release-exclusive}(
                        \VAR{SY} : \NAME{syncs}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
@@ -766,7 +769,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{rw-lock-release-shared}(
                        \VAR{SY} : \NAME{syncs}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
@@ -802,7 +805,7 @@ granted,
 
 
 $$\begin{align*}
-  \KEY{Auxiliary Funcon} \
+  \KEY{Auxiliary Funcon} \quad
   & \NAMEDECL{rw-lock-sync}(
                        \VAR{SY} : \NAME{syncs}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
@@ -852,7 +855,7 @@ all its sharing requests:
 
 
 $$\begin{align*}
-  \KEY{Auxiliary Funcon} \
+  \KEY{Auxiliary Funcon} \quad
   & \NAMEDECL{rw-lock-sync-all-shared}(
                        \VAR{SY} : \NAME{syncs}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-value} \\&\quad
@@ -889,6 +892,7 @@ $$\begin{align*}
 \end{align*}$$
 
 
+
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
   "FUNCONS-BETA"
 [Unstable-Funcons-beta]: /CBS-beta/math/Unstable-Funcons-beta
@@ -911,7 +915,9 @@ $$\begin{align*}
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

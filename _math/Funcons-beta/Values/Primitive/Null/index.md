@@ -9,31 +9,35 @@ ancestor: Funcons-beta
 
 {::comment}{% raw %}{:/}
 
+
+----
+
 ### Null
                
 
 
 $$\begin{align*}
   [ \
-  \KEY{Datatype} \ & \NAMEREF{null-type} \\
-  \KEY{Funcon} \ & \NAMEREF{null-value} \\
-  \KEY{Alias} \ & \NAMEREF{null}
+  \KEY{Datatype} \quad & \NAMEREF{null-type} \\
+  \KEY{Funcon} \quad & \NAMEREF{null-value} \\
+  \KEY{Alias} \quad & \NAMEREF{null}
   \ ]
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Datatype} \ 
+  \KEY{Datatype} \quad 
   \NAMEDECL{null-type} 
   \ ::= \ & \NAMEDECL{null-value}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{null} = \NAMEREF{null-value}
 \end{align*}$$
 
 
   The only element of the datatype $$\SHADE{\NAMEREF{null-type}}$$ is $$\SHADE{\NAMEREF{null-value}}$$.
+
 
 
 
@@ -59,7 +63,9 @@ $$\begin{align*}
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

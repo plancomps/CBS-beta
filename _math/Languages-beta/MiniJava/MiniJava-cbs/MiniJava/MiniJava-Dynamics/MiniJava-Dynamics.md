@@ -1,14 +1,17 @@
 {::comment}{% raw %}{:/}
 <details open markdown="block">
   <summary>
-    Outline
+    OUTLINE
   </summary>
   {: .text-delta }
 - TOC
 {:toc}
 </details>
 
-$$\KEY{Language} \STRING{MiniJava}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{MiniJava}$$
 
 
 
@@ -18,7 +21,7 @@ $$\KEY{Language} \STRING{MiniJava}$$
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{P} : \SYN{program}
       \ ::= \ & \
       \SYNREF{main-class} \ \SYNREF{class-declaration}\STAR
@@ -33,11 +36,11 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{run} \LEFTPHRASE \ \VARREF{P} : \SYNREF{program} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{run} \LEFTPHRASE \
                             \LEX{class} \ \VARREF{ID}\SUB{1} \ \LEX{{\LEFTBRACE}} \\&\quad
                             \LEX{public} \ \LEX{static} \ \LEX{void} \ \LEX{main} \ \LEX{{(}} \ \LEX{String} \ \LEX{{[}} \ \LEX{{]}} \ \VARREF{ID}\SUB{2} \ \LEX{{)}} \ \LEX{{\LEFTBRACE}} \\&\quad
@@ -72,7 +75,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{CD} : \SYN{class-declaration}
       \ ::= \ & \
       \LEX{class} \ \SYNREF{identifier} \ \LEFTGROUP \LEX{extends} \ \SYNREF{identifier} \RIGHTGROUP\QUERY \ \LEX{{\LEFTBRACE}} \\
@@ -82,12 +85,12 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{bound-names} \LEFTPHRASE \ \VARREF{CD}\STAR : \SYNREF{class-declaration}\STAR \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sets}{sets}
                      (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{ids} ) 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{bound-names} \LEFTPHRASE \
                             \LEX{class} \ \VARREF{ID}\SUB{1} \ \LEX{{\LEFTBRACE}} \ \VARREF{VD}\STAR \ \VARREF{MD}\STAR \ \LEX{{\RIGHTBRACE}} \
                           \RIGHTPHRASE  = 
@@ -95,7 +98,7 @@ $$\begin{align*}
                                    \VAR{ID}\SUB{1} \
                                  \RIGHTPHRASE  \}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{bound-names} \LEFTPHRASE \
                             \LEX{class} \ \VARREF{ID}\SUB{1} \ \LEX{extends} \ \VARREF{ID}\SUB{2} \ \LEX{{\LEFTBRACE}} \ \VARREF{VD}\STAR \ \VARREF{MD}\STAR \ \LEX{{\RIGHTBRACE}} \
                           \RIGHTPHRASE  = 
@@ -103,13 +106,13 @@ $$\begin{align*}
                                    \VAR{ID}\SUB{1} \
                                  \RIGHTPHRASE  \}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{bound-names} \LEFTPHRASE \
                              \
                           \RIGHTPHRASE  = 
       \{   \  \}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{bound-names} \LEFTPHRASE \
                             \VARREF{CD} \ \VARREF{CD}\PLUS \
                           \RIGHTPHRASE  = \\&\quad
@@ -123,11 +126,11 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{declare-classes} \LEFTPHRASE \ \VARREF{CD}\STAR : \SYNREF{class-declaration}\STAR \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{envs} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{declare-classes} \LEFTPHRASE \
                             \LEX{class} \ \VARREF{ID}\SUB{1} \ \LEX{{\LEFTBRACE}} \ \VARREF{VD}\STAR \ \VARREF{MD}\STAR \ \LEX{{\RIGHTBRACE}} \
                           \RIGHTPHRASE  = \\&\quad
@@ -150,7 +153,7 @@ $$\begin{align*}
                                          \VAR{MD}\STAR \
                                        \RIGHTPHRASE  ) \}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{declare-classes} \LEFTPHRASE \
                             \LEX{class} \ \VARREF{ID}\SUB{1} \ \LEX{extends} \ \VARREF{ID}\SUB{2} \ \LEX{{\LEFTBRACE}} \ \VARREF{VD}\STAR \ \VARREF{MD}\STAR \ \LEX{{\RIGHTBRACE}} \
                           \RIGHTPHRASE  = \\&\quad
@@ -183,14 +186,14 @@ $$\begin{align*}
                                          \VAR{ID}\SUB{2} \
                                        \RIGHTPHRASE  ) \}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{declare-classes} \LEFTPHRASE \
                              \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Maps}{map}
         (   \  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{declare-classes} \LEFTPHRASE \
                             \VARREF{CD} \ \VARREF{CD}\PLUS \
                           \RIGHTPHRASE  = \\&\quad
@@ -208,18 +211,18 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{VD} : \SYN{var-declaration}
       \ ::= \ & \
       \SYNREF{type} \ \SYNREF{identifier} \ \LEX{{;}}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{declare-variables} \LEFTPHRASE \ \VARREF{VD}\STAR : \SYNREF{var-declaration}\STAR \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{envs} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{declare-variables} \LEFTPHRASE \
                             \VARREF{T} \ \VARREF{ID} \ \LEX{{;}} \
                           \RIGHTPHRASE  = \\&\quad
@@ -234,14 +237,14 @@ $$\begin{align*}
                                          \VAR{T} \
                                        \RIGHTPHRASE  ) \}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{declare-variables} \LEFTPHRASE \
                              \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Maps}{map}
         (   \  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{declare-variables} \LEFTPHRASE \
                             \VARREF{VD} \ \VARREF{VD}\PLUS \
                           \RIGHTPHRASE  = \\&\quad
@@ -259,7 +262,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{T} : \SYN{type}
       \ ::= \ & \
       \LEX{int} \ \LEX{{[}} \ \LEX{{]}} \\
@@ -269,30 +272,30 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{type} \LEFTPHRASE \ \VARREF{T} : \SYNREF{type} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{types} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{type} \LEFTPHRASE \
                             \LEX{int} \ \LEX{{[}} \ \LEX{{]}} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vectors}
         (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{variables} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{type} \LEFTPHRASE \
                             \LEX{boolean} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{booleans}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{type} \LEFTPHRASE \
                             \LEX{int} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integers}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{type} \LEFTPHRASE \
                             \VARREF{ID} \
                           \RIGHTPHRASE  = 
@@ -301,30 +304,30 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{initial-value} \LEFTPHRASE \ \VARREF{T} : \SYNREF{type} \ \RIGHTPHRASE  
     :  \TO \NAMEREF{minijava-values} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{initial-value} \LEFTPHRASE \
                             \LEX{int} \ \LEX{{[}} \ \LEX{{]}} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vector}
         (   \  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{initial-value} \LEFTPHRASE \
                             \LEX{boolean} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{initial-value} \LEFTPHRASE \
                             \LEX{int} \
                           \RIGHTPHRASE  = 
       0
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{initial-value} \LEFTPHRASE \
                             \VARREF{ID} \
                           \RIGHTPHRASE  = 
@@ -336,7 +339,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{MD} : \SYN{method-declaration}
       \ ::= \ & \
       \LEX{public} \ \SYNREF{type} \ \SYNREF{identifier} \ \LEX{{(}} \ \SYNREF{formal-list}\QUERY \ \LEX{{)}} \ \LEX{{\LEFTBRACE}} \\
@@ -347,7 +350,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Type} \ 
+  \KEY{Type} \quad 
   & \NAMEDECL{methods}  \\&\quad
     \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{functions}
                (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuples}
@@ -358,11 +361,11 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{declare-methods} \LEFTPHRASE \ \VARREF{MD}\STAR : \SYNREF{method-declaration}\STAR \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{envs} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{declare-methods} \LEFTPHRASE \
                             \LEX{public} \ \VARREF{T} \ \VARREF{ID} \ \LEX{{(}} \ \VARREF{FL}\QUERY \ \LEX{{)}} \ \LEX{{\LEFTBRACE}} \ \VARREF{VD}\STAR \ \VARREF{S}\STAR \ \LEX{return} \ \VARREF{E} \ \LEX{{;}} \ \LEX{{\RIGHTBRACE}} \
                           \RIGHTPHRASE  = \\&\quad
@@ -403,14 +406,14 @@ $$\begin{align*}
                                                      \VAR{E} \
                                                    \RIGHTPHRASE  ) ) \}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{declare-methods} \LEFTPHRASE \
                              \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Maps}{map}
         (   \  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{declare-methods} \LEFTPHRASE \
                             \VARREF{MD} \ \VARREF{MD}\PLUS \
                           \RIGHTPHRASE  = \\&\quad
@@ -428,18 +431,18 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{FL} : \SYN{formal-list}
       \ ::= \ & \
       \SYNREF{type} \ \SYNREF{identifier} \ \LEFTGROUP \LEX{{,}} \ \SYNREF{formal-list} \RIGHTGROUP\QUERY
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{bind-formals} \LEFTPHRASE \ \VARREF{FL}\QUERY : \SYNREF{formal-list}\QUERY \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Patterns}{patterns}\STAR 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{bind-formals} \LEFTPHRASE \
                             \VARREF{T} \ \VARREF{ID} \
                           \RIGHTPHRASE  = \\&\quad
@@ -454,7 +457,7 @@ $$\begin{align*}
                                            \RIGHTPHRASE , 
                         \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} ) \}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{bind-formals} \LEFTPHRASE \
                             \VARREF{T} \ \VARREF{ID} \ \LEX{{,}} \ \VARREF{FL} \
                           \RIGHTPHRASE  = 
@@ -465,7 +468,7 @@ $$\begin{align*}
                             \VAR{FL} \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{bind-formals} \LEFTPHRASE \
                              \
                           \RIGHTPHRASE  = 
@@ -477,7 +480,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{S} : \SYN{statement}
       \ ::= \ & \
       \LEX{{\LEFTBRACE}} \ \SYNREF{statement}\STAR \ \LEX{{\RIGHTBRACE}} \\
@@ -489,11 +492,11 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{execute} \LEFTPHRASE \ \VARREF{S}\STAR : \SYNREF{statement}\STAR \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{execute} \LEFTPHRASE \
                             \LEX{{\LEFTBRACE}} \ \VARREF{S}\STAR \ \LEX{{\RIGHTBRACE}} \
                           \RIGHTPHRASE  = 
@@ -501,7 +504,7 @@ $$\begin{align*}
                             \VAR{S}\STAR \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{execute} \LEFTPHRASE \
                             \LEX{if} \ \LEX{{(}} \ \VARREF{E} \ \LEX{{)}} \ \VARREF{S}\SUB{1} \ \LEX{else} \ \VARREF{S}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -516,7 +519,7 @@ $$\begin{align*}
                                     \VAR{S}\SUB{2} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{execute} \LEFTPHRASE \
                             \LEX{while} \ \LEX{{(}} \ \VARREF{E} \ \LEX{{)}} \ \VARREF{S} \
                           \RIGHTPHRASE  = \\&\quad
@@ -528,7 +531,7 @@ $$\begin{align*}
                                     \VAR{S} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{execute} \LEFTPHRASE \
                             \LEX{System} \ \LEX{{.}} \ \LEX{out} \ \LEX{{.}} \ \LEX{println} \ \LEX{{(}} \ \VARREF{E} \ \LEX{{)}} \ \LEX{{;}} \
                           \RIGHTPHRASE  = \\&\quad
@@ -539,7 +542,7 @@ $$\begin{align*}
                                     \RIGHTPHRASE , 
                \STRING{{\BACKSLASH}n} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{execute} \LEFTPHRASE \
                             \VARREF{ID} \ \LEX{{=}} \ \VARREF{E} \ \LEX{{;}} \
                           \RIGHTPHRASE  = \\&\quad
@@ -552,7 +555,7 @@ $$\begin{align*}
                                     \VAR{E} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{execute} \LEFTPHRASE \
                             \VARREF{ID} \ \LEX{{[}} \ \VARREF{E}\SUB{1} \ \LEX{{]}} \ \LEX{{=}} \ \VARREF{E}\SUB{2} \ \LEX{{;}} \
                           \RIGHTPHRASE  = \\&\quad
@@ -574,13 +577,13 @@ $$\begin{align*}
                                     \VAR{E}\SUB{2} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{execute} \LEFTPHRASE \
                              \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{execute} \LEFTPHRASE \
                             \VARREF{S} \ \VARREF{S}\PLUS \
                           \RIGHTPHRASE  = 
@@ -598,7 +601,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{E} : \SYN{expression}
       \ ::= \ & \
       \SYNREF{expression} \ \LEX{{\AMPERSAND}{\AMPERSAND}} \ \SYNREF{expression} \\
@@ -621,7 +624,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Type} \ 
+  \KEY{Type} \quad 
   & \NAMEDECL{minijava-values}  \\&\quad
     \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{booleans}  \mid \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integers}  \mid \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vectors}
                                 (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{variables} )  \mid \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{References}{pointers}
@@ -629,7 +632,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{evaluate} \LEFTPHRASE \ \VARREF{E} : \SYNREF{expression} \ \RIGHTPHRASE  
     :  \TO \NAMEREF{minijava-values} 
 \end{align*}$$
@@ -642,7 +645,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \VARREF{E}\SUB{1} \ \LEX{{\AMPERSAND}{\AMPERSAND}} \ \VARREF{E}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -655,7 +658,7 @@ $$\begin{align*}
                                   \RIGHTPHRASE , 
                \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \VARREF{E}\SUB{1} \ \LEX{{<}} \ \VARREF{E}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -667,7 +670,7 @@ $$\begin{align*}
                                     \VAR{E}\SUB{2} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \VARREF{E}\SUB{1} \ \LEX{{+}} \ \VARREF{E}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -679,7 +682,7 @@ $$\begin{align*}
                                     \VAR{E}\SUB{2} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \VARREF{E}\SUB{1} \ \LEX{{-}} \ \VARREF{E}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -691,7 +694,7 @@ $$\begin{align*}
                                     \VAR{E}\SUB{2} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \VARREF{E}\SUB{1} \ \LEX{{*}} \ \VARREF{E}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -703,7 +706,7 @@ $$\begin{align*}
                                     \VAR{E}\SUB{2} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \VARREF{E}\SUB{1} \ \LEX{{[}} \ \VARREF{E}\SUB{2} \ \LEX{{]}} \
                           \RIGHTPHRASE  = \\&\quad
@@ -720,7 +723,7 @@ $$\begin{align*}
                                           \VAR{E}\SUB{1} \
                                         \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \VARREF{E} \ \LEX{{.}} \ \LEX{length} \
                           \RIGHTPHRASE  = \\&\quad
@@ -730,7 +733,7 @@ $$\begin{align*}
                                 \VAR{E} \
                               \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \VARREF{E} \ \LEX{{.}} \ \VARREF{ID} \ \LEX{{(}} \ \VARREF{EL}\QUERY \ \LEX{{)}} \
                           \RIGHTPHRASE  = \\&\quad
@@ -754,7 +757,7 @@ $$\begin{align*}
                                                     \VAR{EL}\QUERY \
                                                   \RIGHTPHRASE  ) ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \VARREF{IL} \
                           \RIGHTPHRASE  = 
@@ -762,19 +765,19 @@ $$\begin{align*}
                             \VAR{IL} \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \LEX{true} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{true}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \LEX{false} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \VARREF{ID} \
                           \RIGHTPHRASE  = 
@@ -784,7 +787,7 @@ $$\begin{align*}
                                 \VAR{ID} \
                               \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \LEX{this} \
                           \RIGHTPHRASE  = 
@@ -792,7 +795,7 @@ $$\begin{align*}
         \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{bound} \ 
           \STRING{this}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \LEX{new} \ \LEX{int} \ \LEX{{[}} \ \VARREF{E} \ \LEX{{]}} \
                           \RIGHTPHRASE  = \\&\quad
@@ -806,7 +809,7 @@ $$\begin{align*}
                                             \VAR{E} \
                                           \RIGHTPHRASE  ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \LEX{new} \ \VARREF{ID} \ \LEX{{(}} \ \LEX{{)}} \
                           \RIGHTPHRASE  = \\&\quad
@@ -817,7 +820,7 @@ $$\begin{align*}
                                   \VAR{ID} \
                                 \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \LEX{{!}} \ \VARREF{E} \
                           \RIGHTPHRASE  = 
@@ -826,7 +829,7 @@ $$\begin{align*}
                               \VAR{E} \
                             \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate} \LEFTPHRASE \
                             \LEX{{(}} \ \VARREF{E} \ \LEX{{)}} \
                           \RIGHTPHRASE  = 
@@ -836,18 +839,18 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{EL} : \SYN{expression-list}
       \ ::= \ & \
       \SYNREF{expression} \ \LEFTGROUP \LEX{{,}} \ \SYNREF{expression-list} \RIGHTGROUP\QUERY
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{evaluate-actuals} \LEFTPHRASE \ \VARREF{EL}\QUERY : \SYNREF{expression-list}\QUERY \ \RIGHTPHRASE  
     : (   \TO \NAMEREF{minijava-values} )\STAR 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate-actuals} \LEFTPHRASE \
                             \VARREF{E} \
                           \RIGHTPHRASE  = 
@@ -855,7 +858,7 @@ $$\begin{align*}
                             \VAR{E} \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate-actuals} \LEFTPHRASE \
                             \VARREF{E} \ \LEX{{,}} \ \VARREF{EL} \
                           \RIGHTPHRASE  = 
@@ -866,7 +869,7 @@ $$\begin{align*}
                             \VAR{EL} \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{evaluate-actuals} \LEFTPHRASE \
                              \
                           \RIGHTPHRASE  = 
@@ -878,41 +881,42 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Lexis} \
+  \KEY{Lexis} \quad
     \VARDECL{ID} : \SYN{identifier}
       \ ::= \ & \
       \SYNREF{letter} \ \LEFTGROUP \SYNREF{letter} \mid \SYNREF{digit} \mid \LEX{{\UNDERSCORE}} \RIGHTGROUP\STAR
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{id} \LEFTPHRASE \ \VARREF{ID} : \SYNREF{identifier} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{ids} \\&\quad
     =  \textsf{\textquotedblleft}\VAR{ID}\textsf{\textquotedblright}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Lexis} \
+  \KEY{Lexis} \quad
     \VARDECL{IL} : \SYN{integer-literal}
       \ ::= \ & \
       \SYNREF{digit}\PLUS
     \\
      \SYN{letter}
       \ ::= \ & \
-      \LEX{a} - \LEX{z} \mid \LEX{A} - \LEX{Z}
+      \LEX{a} {-} \LEX{z} \mid \LEX{A} {-} \LEX{Z}
     \\
      \SYN{digit}
       \ ::= \ & \
-      \LEX{0} - \LEX{9}
+      \LEX{0} {-} \LEX{9}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{integer-value} \LEFTPHRASE \ \VARREF{IL} : \SYNREF{integer-literal} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integers} \\&\quad
     =  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{decimal-natural} \ 
          \textsf{\textquotedblleft}\VAR{IL}\textsf{\textquotedblright}
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

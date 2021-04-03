@@ -1,0 +1,4 @@
+\contentsline {paragraph}{Notifications}{1}{section*.2}%
+\contentsline {subparagraph}{Barriers}{1}{section*.3}%
+\contentsline {subparagraph}{Conditions}{2}{section*.4}%
+\contentsline {subparagraph}{Rendezvous}{3}{section*.5}%

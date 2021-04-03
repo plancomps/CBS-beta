@@ -9,26 +9,29 @@ ancestor: Funcons-beta
 
 {::comment}{% raw %}{:/}
 
+
+----
+
 ### Variants
                
 
 
 $$\begin{align*}
   [ \
-  \KEY{Datatype} \ & \NAMEREF{variants} \\
-  \KEY{Funcon} \ & \NAMEREF{variant} \\
-  \KEY{Funcon} \ & \NAMEREF{variant-id} \\
-  \KEY{Funcon} \ & \NAMEREF{variant-value}
+  \KEY{Datatype} \quad & \NAMEREF{variants} \\
+  \KEY{Funcon} \quad & \NAMEREF{variant} \\
+  \KEY{Funcon} \quad & \NAMEREF{variant-id} \\
+  \KEY{Funcon} \quad & \NAMEREF{variant-value}
   \ ]
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Meta-variables} \
+  \KEY{Meta-variables} \quad
   & \VAR{T} <: \NAMEHYPER{../..}{Value-Types}{values}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Datatype} \ 
+  \KEY{Datatype} \quad 
   \NAMEDECL{variants}(
                      \VAR{T} ) 
   \ ::= \ & \NAMEDECL{variant}(
@@ -42,13 +45,13 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{variant-id}(
                        \_ : \NAMEREF{variants}
                                  (  \VAR{T} )) 
     :  \TO \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{variant-id}
         (  \NAMEREF{variant}
                 (  \VAR{I} : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}, 
@@ -57,19 +60,20 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{variant-value}(
                        \_ : \NAMEREF{variants}
                                  (  \VAR{T} )) 
     :  \TO \VAR{T} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{variant-value}
         (  \NAMEREF{variant}
                 (  \_ : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}, 
                        \VAR{V} : \VAR{T} ) ) \leadsto 
         \VAR{V}
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -94,7 +98,9 @@ $$\begin{align*}
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

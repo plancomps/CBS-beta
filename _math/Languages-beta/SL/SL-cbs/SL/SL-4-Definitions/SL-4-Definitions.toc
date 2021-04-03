@@ -1,0 +1,2 @@
+\contentsline {section}{$\leavevmode {\color {SectionNumber}\text {\bf 4}}$ Function definitions}{1}{section*.2}%
+\contentsline {subsection}{Parameter lists}{1}{section*.3}%

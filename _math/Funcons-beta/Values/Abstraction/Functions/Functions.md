@@ -1,29 +1,32 @@
 {::comment}{% raw %}{:/}
 
+
+----
+
 ### Functions
                
 
 
 $$\begin{align*}
   [ \
-  \KEY{Datatype} \ & \NAMEREF{functions} \\
-  \KEY{Funcon} \ & \NAMEREF{function} \\
-  \KEY{Funcon} \ & \NAMEREF{apply} \\
-  \KEY{Funcon} \ & \NAMEREF{supply} \\
-  \KEY{Funcon} \ & \NAMEREF{compose} \\
-  \KEY{Funcon} \ & \NAMEREF{uncurry} \\
-  \KEY{Funcon} \ & \NAMEREF{curry} \\
-  \KEY{Funcon} \ & \NAMEREF{partial-apply}
+  \KEY{Datatype} \quad & \NAMEREF{functions} \\
+  \KEY{Funcon} \quad & \NAMEREF{function} \\
+  \KEY{Funcon} \quad & \NAMEREF{apply} \\
+  \KEY{Funcon} \quad & \NAMEREF{supply} \\
+  \KEY{Funcon} \quad & \NAMEREF{compose} \\
+  \KEY{Funcon} \quad & \NAMEREF{uncurry} \\
+  \KEY{Funcon} \quad & \NAMEREF{curry} \\
+  \KEY{Funcon} \quad & \NAMEREF{partial-apply}
   \ ]
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Meta-variables} \
+  \KEY{Meta-variables} \quad
   & \VAR{T}, \VAR{T}', \VAR{T}\SUB{1}, \VAR{T}\SUB{2} <: \NAMEHYPER{../..}{Value-Types}{values}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Datatype} \ 
+  \KEY{Datatype} \quad 
   \NAMEDECL{functions}(
                      \VAR{T} , \VAR{T}' ) 
   \ ::= \ & \NAMEDECL{function}(
@@ -46,7 +49,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{apply}(
                        \_ : \NAMEREF{functions}
                                  (  \VAR{T}, 
@@ -64,7 +67,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{apply}
         (  \NAMEREF{function}
                 (  \NAMEHYPER{../.}{Generic}{abstraction}
@@ -76,7 +79,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{supply}(
                        \_ : \NAMEREF{functions}
                                  (  \VAR{T}, 
@@ -93,7 +96,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{supply}
         (  \NAMEREF{function}
                 (  \NAMEHYPER{../.}{Generic}{abstraction}
@@ -107,7 +110,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{compose}(
                        \_ : \NAMEREF{functions}
                                  (  \VAR{T}\SUB{2}, 
@@ -127,7 +130,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{compose}
         (  \NAMEREF{function}
                 (  \NAMEHYPER{../.}{Generic}{abstraction}
@@ -143,7 +146,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{uncurry}(
                        \VAR{F} : \NAMEREF{functions}
                                  (  \VAR{T}\SUB{1}, 
@@ -179,7 +182,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{curry}(
                        \VAR{F} : \NAMEREF{functions}
                                  (  \NAMEHYPER{../../Composite}{Tuples}{tuples}
@@ -205,7 +208,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{partial-apply}(
                        \VAR{F} : \NAMEREF{functions}
                                  (  \NAMEHYPER{../../Composite}{Tuples}{tuples}
@@ -230,6 +233,7 @@ $$\begin{align*}
                   \VAR{V} )}$$ takes a function $$\SHADE{\VAR{F}}$$ that takes a pair of arguments, 
   and determines the first argument, returning a function of the second 
   argument.
+
 
 
 

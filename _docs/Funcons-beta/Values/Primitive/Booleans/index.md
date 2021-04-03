@@ -8,6 +8,7 @@ ancestor: Funcons-beta
 [Funcons-beta] : [Booleans.cbs] \| [PRETTY] \| [PDF]
 
 
+----
 ### Booleans
 
 <div class="highlighter-rouge"><pre class="highlight"><code>[

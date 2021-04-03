@@ -10,12 +10,15 @@ ancestor: Funcons-beta
 {::comment}{% raw %}{:/}
 <details open markdown="block">
   <summary>
-    Outline
+    OUTLINE
   </summary>
   {: .text-delta }
 - TOC
 {:toc}
 </details>
+
+
+----
 
 ### Characters
                
@@ -23,42 +26,42 @@ ancestor: Funcons-beta
 
 $$\begin{align*}
   [ \
-  \KEY{Type} \ & \NAMEREF{characters} \\
-  \KEY{Alias} \ & \NAMEREF{chars} \\
-  \KEY{Datatype} \ & \NAMEREF{unicode-characters} \\
-  \KEY{Alias} \ & \NAMEREF{unicode-chars} \\
-  \KEY{Type} \ & \NAMEREF{unicode-points} \\
-  \KEY{Funcon} \ & \NAMEREF{unicode-character} \\
-  \KEY{Alias} \ & \NAMEREF{unicode-char} \\
-  \KEY{Funcon} \ & \NAMEREF{unicode-point} \\
-  \KEY{Alias} \ & \NAMEREF{unicode} \\
-  \KEY{Type} \ & \NAMEREF{basic-multilingual-plane-characters} \\
-  \KEY{Alias} \ & \NAMEREF{bmp-chars} \\
-  \KEY{Type} \ & \NAMEREF{basic-multilingual-plane-points} \\
-  \KEY{Type} \ & \NAMEREF{iso-latin-1-characters} \\
-  \KEY{Alias} \ & \NAMEREF{latin-1-chars} \\
-  \KEY{Type} \ & \NAMEREF{iso-latin-1-points} \\
-  \KEY{Type} \ & \NAMEREF{ascii-characters} \\
-  \KEY{Alias} \ & \NAMEREF{ascii-chars} \\
-  \KEY{Type} \ & \NAMEREF{ascii-points} \\
-  \KEY{Funcon} \ & \NAMEREF{ascii-character} \\
-  \KEY{Alias} \ & \NAMEREF{ascii-char} \\
-  \KEY{Funcon} \ & \NAMEREF{utf-8} \\
-  \KEY{Funcon} \ & \NAMEREF{utf-16} \\
-  \KEY{Funcon} \ & \NAMEREF{utf-32} \\
-  \KEY{Funcon} \ & \NAMEREF{backspace} \\
-  \KEY{Funcon} \ & \NAMEREF{horizontal-tab} \\
-  \KEY{Funcon} \ & \NAMEREF{line-feed} \\
-  \KEY{Funcon} \ & \NAMEREF{form-feed} \\
-  \KEY{Funcon} \ & \NAMEREF{carriage-return} \\
-  \KEY{Funcon} \ & \NAMEREF{double-quote} \\
-  \KEY{Funcon} \ & \NAMEREF{single-quote} \\
-  \KEY{Funcon} \ & \NAMEREF{backslash}
+  \KEY{Type} \quad & \NAMEREF{characters} \\
+  \KEY{Alias} \quad & \NAMEREF{chars} \\
+  \KEY{Datatype} \quad & \NAMEREF{unicode-characters} \\
+  \KEY{Alias} \quad & \NAMEREF{unicode-chars} \\
+  \KEY{Type} \quad & \NAMEREF{unicode-points} \\
+  \KEY{Funcon} \quad & \NAMEREF{unicode-character} \\
+  \KEY{Alias} \quad & \NAMEREF{unicode-char} \\
+  \KEY{Funcon} \quad & \NAMEREF{unicode-point} \\
+  \KEY{Alias} \quad & \NAMEREF{unicode} \\
+  \KEY{Type} \quad & \NAMEREF{basic-multilingual-plane-characters} \\
+  \KEY{Alias} \quad & \NAMEREF{bmp-chars} \\
+  \KEY{Type} \quad & \NAMEREF{basic-multilingual-plane-points} \\
+  \KEY{Type} \quad & \NAMEREF{iso-latin-1-characters} \\
+  \KEY{Alias} \quad & \NAMEREF{latin-1-chars} \\
+  \KEY{Type} \quad & \NAMEREF{iso-latin-1-points} \\
+  \KEY{Type} \quad & \NAMEREF{ascii-characters} \\
+  \KEY{Alias} \quad & \NAMEREF{ascii-chars} \\
+  \KEY{Type} \quad & \NAMEREF{ascii-points} \\
+  \KEY{Funcon} \quad & \NAMEREF{ascii-character} \\
+  \KEY{Alias} \quad & \NAMEREF{ascii-char} \\
+  \KEY{Funcon} \quad & \NAMEREF{utf-8} \\
+  \KEY{Funcon} \quad & \NAMEREF{utf-16} \\
+  \KEY{Funcon} \quad & \NAMEREF{utf-32} \\
+  \KEY{Funcon} \quad & \NAMEREF{backspace} \\
+  \KEY{Funcon} \quad & \NAMEREF{horizontal-tab} \\
+  \KEY{Funcon} \quad & \NAMEREF{line-feed} \\
+  \KEY{Funcon} \quad & \NAMEREF{form-feed} \\
+  \KEY{Funcon} \quad & \NAMEREF{carriage-return} \\
+  \KEY{Funcon} \quad & \NAMEREF{double-quote} \\
+  \KEY{Funcon} \quad & \NAMEREF{single-quote} \\
+  \KEY{Funcon} \quad & \NAMEREF{backslash}
   \ ]
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Type} \ 
+  \KEY{Built-in Type} \quad 
   & \NAMEDECL{characters} <: \NAMEHYPER{../..}{Value-Types}{values} 
 \end{align*}$$
 
@@ -69,7 +72,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{chars} = \NAMEREF{characters}
 \end{align*}$$
 
@@ -83,17 +86,17 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Built-in Datatype} \ 
+  \KEY{Built-in Datatype} \quad 
   \NAMEDECL{unicode-characters} <: \NAMEREF{characters}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{unicode-chars} = \NAMEREF{unicode-characters}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Type} \ 
+  \KEY{Built-in Type} \quad 
   & \NAMEDECL{unicode-points} <: \NAMEHYPER{../.}{Integers}{bounded-integers}
                                      (  0, 
                                             \NAMEHYPER{../../Composite}{Bits}{unsigned-bit-vector-maximum}
@@ -101,12 +104,12 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{unicode-character}(
                        \_ : \NAMEREF{unicode-points}) 
     : \NAMEREF{unicode-characters} 
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{unicode-char} = \NAMEREF{unicode-character}
 \end{align*}$$
 
@@ -117,17 +120,17 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{unicode-point}(
                        \_ : \NAMEREF{unicode-characters}) 
     :  \TO \NAMEREF{unicode-points} 
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{unicode} = \NAMEREF{unicode-point}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{unicode-point}
         (  \NAMEREF{unicode-character}
                 (  \VAR{UP} : \NAMEREF{unicode-points} ) ) \leadsto 
@@ -143,17 +146,17 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Built-in Datatype} \ 
+  \KEY{Built-in Datatype} \quad 
   \NAMEDECL{basic-multilingual-plane-characters} <: \NAMEREF{unicode-characters}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{bmp-chars} = \NAMEREF{basic-multilingual-plane-characters}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Type} \ 
+  \KEY{Built-in Type} \quad 
   & \NAMEDECL{basic-multilingual-plane-points} <: \NAMEHYPER{../.}{Integers}{bounded-integers}
                                      (  0, 
                                             \NAMEHYPER{../../Composite}{Bits}{unsigned-bit-vector-maximum}
@@ -171,17 +174,17 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Built-in Datatype} \ 
+  \KEY{Built-in Datatype} \quad 
   \NAMEDECL{iso-latin-1-characters} <: \NAMEREF{basic-multilingual-plane-characters}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{latin-1-chars} = \NAMEREF{iso-latin-1-characters}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Type} \ 
+  \KEY{Type} \quad 
   & \NAMEDECL{iso-latin-1-points}  
     \leadsto \NAMEHYPER{../.}{Integers}{bounded-integers}
                (  0, 
@@ -200,15 +203,15 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Built-in Type} \ 
+  \KEY{Built-in Type} \quad 
   & \NAMEDECL{ascii-characters} <: \NAMEREF{iso-latin-1-characters} 
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{ascii-chars} = \NAMEREF{ascii-characters}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Type} \ 
+  \KEY{Type} \quad 
   & \NAMEDECL{ascii-points}  
     \leadsto \NAMEHYPER{../.}{Integers}{bounded-integers}
                (  0, 
@@ -223,12 +226,12 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{ascii-character}(
                        \_ : \NAMEHYPER{../../Composite}{Strings}{strings}) 
     :  \TO \NAMEREF{ascii-characters}\QUERY 
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{ascii-char} = \NAMEREF{ascii-character}
 \end{align*}$$
 
@@ -239,12 +242,12 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{ascii-character} \ 
         [  \VAR{C} : \NAMEREF{ascii-characters} ] \leadsto 
         \VAR{C}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{C} : \mathop{\sim} \NAMEREF{ascii-characters}
       }{
@@ -253,7 +256,7 @@ $$\begin{align*}
           (   \  )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../Composite}{Sequences}{length}
           (  \VAR{C}\STAR ) 
@@ -274,7 +277,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{utf-8}(
                        \_ : \NAMEREF{unicode-points}) 
     :  \TO (  \NAMEHYPER{../../Composite}{Bits}{bytes}, 
@@ -284,7 +287,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{utf-16}(
                        \_ : \NAMEREF{unicode-points}) 
     :  \TO (  \NAMEHYPER{../../Composite}{Bits}{bit-vectors}
@@ -294,7 +297,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{utf-32}(
                        \_ : \NAMEREF{unicode-points}) 
     :  \TO \NAMEHYPER{../../Composite}{Bits}{bit-vectors}
@@ -306,7 +309,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{backspace} 
     :  \TO \NAMEREF{ascii-characters} \\&\quad
     \leadsto \NAMEREF{unicode-character}
@@ -315,7 +318,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{horizontal-tab} 
     :  \TO \NAMEREF{ascii-characters} \\&\quad
     \leadsto \NAMEREF{unicode-character}
@@ -324,7 +327,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{line-feed} 
     :  \TO \NAMEREF{ascii-characters} \\&\quad
     \leadsto \NAMEREF{unicode-character}
@@ -333,7 +336,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{form-feed} 
     :  \TO \NAMEREF{ascii-characters} \\&\quad
     \leadsto \NAMEREF{unicode-character}
@@ -342,7 +345,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{carriage-return} 
     :  \TO \NAMEREF{ascii-characters} \\&\quad
     \leadsto \NAMEREF{unicode-character}
@@ -351,7 +354,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{double-quote} 
     :  \TO \NAMEREF{ascii-characters} \\&\quad
     \leadsto \NAMEREF{unicode-character}
@@ -360,7 +363,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{single-quote} 
     :  \TO \NAMEREF{ascii-characters} \\&\quad
     \leadsto \NAMEREF{unicode-character}
@@ -369,13 +372,14 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{backslash} 
     :  \TO \NAMEREF{ascii-characters} \\&\quad
     \leadsto \NAMEREF{unicode-character}
                (  \NAMEHYPER{../.}{Integers}{hexadecimal-natural} \ 
                        \STRING{005c} )
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -400,7 +404,9 @@ $$\begin{align*}
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

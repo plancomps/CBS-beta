@@ -8,6 +8,7 @@ ancestor: Unstable-Funcons-beta
 [Unstable-Funcons-beta] : [Postponing.cbs] \| [PRETTY] \| [PDF]
 
 
+----
 ### Postponing
 <div class="highlighter-rouge"><pre class="highlight"><code>[
   <i class="keyword">Entity</i>   <span class="name"><a href="#Name_postponing">postponing</a></span>

@@ -10,12 +10,15 @@ ancestor: Funcons-beta
 {::comment}{% raw %}{:/}
 <details open markdown="block">
   <summary>
-    Outline
+    OUTLINE
   </summary>
   {: .text-delta }
 - TOC
 {:toc}
 </details>
+
+
+----
 
 ### Floats
                
@@ -23,63 +26,63 @@ ancestor: Funcons-beta
 
 $$\begin{align*}
   [ \
-  \KEY{Datatype} \ & \NAMEREF{float-formats} \\
-  \KEY{Funcon} \ & \NAMEREF{binary32} \\
-  \KEY{Funcon} \ & \NAMEREF{binary64} \\
-  \KEY{Funcon} \ & \NAMEREF{binary128} \\
-  \KEY{Funcon} \ & \NAMEREF{decimal64} \\
-  \KEY{Funcon} \ & \NAMEREF{decimal128} \\
-  \KEY{Type} \ & \NAMEREF{floats} \\
-  \KEY{Funcon} \ & \NAMEREF{float} \\
-  \KEY{Funcon} \ & \NAMEREF{quiet-not-a-number} \\
-  \KEY{Alias} \ & \NAMEREF{qNaN} \\
-  \KEY{Funcon} \ & \NAMEREF{signaling-not-a-number} \\
-  \KEY{Alias} \ & \NAMEREF{sNaN} \\
-  \KEY{Funcon} \ & \NAMEREF{positive-infinity} \\
-  \KEY{Alias} \ & \NAMEREF{pos-inf} \\
-  \KEY{Funcon} \ & \NAMEREF{negative-infinity} \\
-  \KEY{Alias} \ & \NAMEREF{neg-inf} \\
-  \KEY{Funcon} \ & \NAMEREF{float-convert} \\
-  \KEY{Funcon} \ & \NAMEREF{decimal-float} \\
-  \KEY{Funcon} \ & \NAMEREF{float-equal} \\
-  \KEY{Funcon} \ & \NAMEREF{float-is-less} \\
-  \KEY{Funcon} \ & \NAMEREF{float-is-less-or-equal} \\
-  \KEY{Funcon} \ & \NAMEREF{float-is-greater} \\
-  \KEY{Funcon} \ & \NAMEREF{float-is-greater-or-equal} \\
-  \KEY{Funcon} \ & \NAMEREF{float-negate} \\
-  \KEY{Funcon} \ & \NAMEREF{float-absolute-value} \\
-  \KEY{Funcon} \ & \NAMEREF{float-add} \\
-  \KEY{Funcon} \ & \NAMEREF{float-subtract} \\
-  \KEY{Funcon} \ & \NAMEREF{float-multiply} \\
-  \KEY{Funcon} \ & \NAMEREF{float-multiply-add} \\
-  \KEY{Funcon} \ & \NAMEREF{float-divide} \\
-  \KEY{Funcon} \ & \NAMEREF{float-remainder} \\
-  \KEY{Funcon} \ & \NAMEREF{float-sqrt} \\
-  \KEY{Funcon} \ & \NAMEREF{float-integer-power} \\
-  \KEY{Funcon} \ & \NAMEREF{float-float-power} \\
-  \KEY{Funcon} \ & \NAMEREF{float-round-ties-to-even} \\
-  \KEY{Funcon} \ & \NAMEREF{float-round-ties-to-infinity} \\
-  \KEY{Funcon} \ & \NAMEREF{float-floor} \\
-  \KEY{Funcon} \ & \NAMEREF{float-ceiling} \\
-  \KEY{Funcon} \ & \NAMEREF{float-truncate} \\
-  \KEY{Funcon} \ & \NAMEREF{float-pi} \\
-  \KEY{Funcon} \ & \NAMEREF{float-e} \\
-  \KEY{Funcon} \ & \NAMEREF{float-log} \\
-  \KEY{Funcon} \ & \NAMEREF{float-log10} \\
-  \KEY{Funcon} \ & \NAMEREF{float-exp} \\
-  \KEY{Funcon} \ & \NAMEREF{float-sin} \\
-  \KEY{Funcon} \ & \NAMEREF{float-cos} \\
-  \KEY{Funcon} \ & \NAMEREF{float-tan} \\
-  \KEY{Funcon} \ & \NAMEREF{float-asin} \\
-  \KEY{Funcon} \ & \NAMEREF{float-acos} \\
-  \KEY{Funcon} \ & \NAMEREF{float-atan} \\
-  \KEY{Funcon} \ & \NAMEREF{float-sinh} \\
-  \KEY{Funcon} \ & \NAMEREF{float-cosh} \\
-  \KEY{Funcon} \ & \NAMEREF{float-tanh} \\
-  \KEY{Funcon} \ & \NAMEREF{float-asinh} \\
-  \KEY{Funcon} \ & \NAMEREF{float-acosh} \\
-  \KEY{Funcon} \ & \NAMEREF{float-atanh} \\
-  \KEY{Funcon} \ & \NAMEREF{float-atan2}
+  \KEY{Datatype} \quad & \NAMEREF{float-formats} \\
+  \KEY{Funcon} \quad & \NAMEREF{binary32} \\
+  \KEY{Funcon} \quad & \NAMEREF{binary64} \\
+  \KEY{Funcon} \quad & \NAMEREF{binary128} \\
+  \KEY{Funcon} \quad & \NAMEREF{decimal64} \\
+  \KEY{Funcon} \quad & \NAMEREF{decimal128} \\
+  \KEY{Type} \quad & \NAMEREF{floats} \\
+  \KEY{Funcon} \quad & \NAMEREF{float} \\
+  \KEY{Funcon} \quad & \NAMEREF{quiet-not-a-number} \\
+  \KEY{Alias} \quad & \NAMEREF{qNaN} \\
+  \KEY{Funcon} \quad & \NAMEREF{signaling-not-a-number} \\
+  \KEY{Alias} \quad & \NAMEREF{sNaN} \\
+  \KEY{Funcon} \quad & \NAMEREF{positive-infinity} \\
+  \KEY{Alias} \quad & \NAMEREF{pos-inf} \\
+  \KEY{Funcon} \quad & \NAMEREF{negative-infinity} \\
+  \KEY{Alias} \quad & \NAMEREF{neg-inf} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-convert} \\
+  \KEY{Funcon} \quad & \NAMEREF{decimal-float} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-equal} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-is-less} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-is-less-or-equal} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-is-greater} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-is-greater-or-equal} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-negate} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-absolute-value} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-add} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-subtract} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-multiply} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-multiply-add} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-divide} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-remainder} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-sqrt} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-integer-power} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-float-power} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-round-ties-to-even} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-round-ties-to-infinity} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-floor} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-ceiling} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-truncate} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-pi} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-e} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-log} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-log10} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-exp} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-sin} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-cos} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-tan} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-asin} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-acos} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-atan} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-sinh} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-cosh} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-tanh} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-asinh} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-acosh} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-atanh} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-atan2}
   \ ]
 \end{align*}$$
 
@@ -93,14 +96,14 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Datatype} \ 
+  \KEY{Datatype} \quad 
   \NAMEDECL{float-formats} 
   \ ::= \ &
   \NAMEDECL{binary32} \mid \NAMEDECL{binary64} \mid \NAMEDECL{binary128} \mid \NAMEDECL{decimal64} \mid \NAMEDECL{decimal128}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Type} \ 
+  \KEY{Built-in Type} \quad 
   & \NAMEDECL{floats}(
                        \_ : \NAMEREF{float-formats})  
 \end{align*}$$
@@ -113,7 +116,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float}(\\&\quad
                        \VAR{FF} : \NAMEREF{float-formats}, \\&\quad
                        \_ : \NAMEHYPER{../.}{Integers}{bounded-integers}
@@ -147,46 +150,46 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{quiet-not-a-number}(
                        \VAR{FF} : \NAMEREF{float-formats}) 
     : \NAMEREF{floats}
         (  \VAR{FF} ) 
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{qNaN} = \NAMEREF{quiet-not-a-number}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{signaling-not-a-number}(
                        \VAR{FF} : \NAMEREF{float-formats}) 
     : \NAMEREF{floats}
         (  \VAR{FF} ) 
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{sNaN} = \NAMEREF{signaling-not-a-number}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{positive-infinity}(
                        \VAR{FF} : \NAMEREF{float-formats}) 
     : \NAMEREF{floats}
         (  \VAR{FF} ) 
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{pos-inf} = \NAMEREF{positive-infinity}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{negative-infinity}(
                        \VAR{FF} : \NAMEREF{float-formats}) 
     : \NAMEREF{floats}
         (  \VAR{FF} ) 
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{neg-inf} = \NAMEREF{negative-infinity}
 \end{align*}$$
 
@@ -195,7 +198,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-convert}(\\&\quad
                        \VAR{FF}\SUB{1} : \NAMEREF{float-formats}, \\&\quad
                        \VAR{FF}\SUB{2} : \NAMEREF{float-formats}, \VAR{F} : \NAMEREF{floats}
@@ -205,7 +208,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{decimal-float}(\\&\quad
                        \VAR{FF} : \NAMEREF{float-formats}, \\&\quad
                        \_ : \NAMEHYPER{../../Composite}{Strings}{strings}, \_ : \NAMEHYPER{../../Composite}{Strings}{strings}, \_ : \NAMEHYPER{../../Composite}{Strings}{strings}) \\&\quad
@@ -232,7 +235,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-equal}(\\&\quad
                        \VAR{FF} : \NAMEREF{float-formats}, \\&\quad
                        \_ : \NAMEREF{floats}
@@ -242,7 +245,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-is-less}(\\&\quad
                        \VAR{FF} : \NAMEREF{float-formats}, \\&\quad
                        \_ : \NAMEREF{floats}
@@ -252,7 +255,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-is-less-or-equal}(\\&\quad
                        \VAR{FF} : \NAMEREF{float-formats}, \\&\quad
                        \_ : \NAMEREF{floats}
@@ -262,7 +265,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-is-greater}(\\&\quad
                        \VAR{FF} : \NAMEREF{float-formats}, \\&\quad
                        \_ : \NAMEREF{floats}
@@ -272,7 +275,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-is-greater-or-equal}(\\&\quad
                        \VAR{FF} : \NAMEREF{float-formats}, \\&\quad
                        \_ : \NAMEREF{floats}
@@ -286,7 +289,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-negate}(
                        \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
                                  (  \VAR{FF} )) 
@@ -295,7 +298,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-absolute-value}(
                        \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
                                  (  \VAR{FF} )) 
@@ -304,7 +307,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-add}(
                        \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
                                  (  \VAR{FF} ), \_ : \NAMEREF{floats}
@@ -314,7 +317,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-subtract}(
                        \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
                                  (  \VAR{FF} ), \_ : \NAMEREF{floats}
@@ -324,7 +327,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-multiply}(
                        \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
                                  (  \VAR{FF} ), \_ : \NAMEREF{floats}
@@ -334,7 +337,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-multiply-add}(\\&\quad
                        \VAR{FF} : \NAMEREF{float-formats}, \\&\quad
                        \_ : \NAMEREF{floats}
@@ -346,7 +349,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-divide}(
                        \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
                                  (  \VAR{FF} ), \_ : \NAMEREF{floats}
@@ -356,7 +359,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-remainder}(
                        \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
                                  (  \VAR{FF} ), \_ : \NAMEREF{floats}
@@ -366,7 +369,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-sqrt}(
                        \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
                                  (  \VAR{FF} )) 
@@ -375,7 +378,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-integer-power}(
                        \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
                                  (  \VAR{FF} ), \_ : \NAMEHYPER{../.}{Integers}{integers}) 
@@ -384,7 +387,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-float-power}(
                        \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
                                  (  \VAR{FF} ), \_ : \NAMEREF{floats}
@@ -398,7 +401,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-round-ties-to-even}(
                        \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
                                  (  \VAR{FF} )) 
@@ -406,7 +409,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-round-ties-to-infinity}(
                        \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
                                  (  \VAR{FF} )) 
@@ -414,7 +417,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-floor}(
                        \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
                                  (  \VAR{FF} )) 
@@ -422,7 +425,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-ceiling}(
                        \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
                                  (  \VAR{FF} )) 
@@ -430,7 +433,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-truncate}(
                        \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
                                  (  \VAR{FF} )) 
@@ -442,7 +445,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-pi}(
                        \VAR{FF} : \NAMEREF{float-formats}) 
     :  \TO \NAMEREF{floats}
@@ -450,7 +453,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-e}(
                        \VAR{FF} : \NAMEREF{float-formats}) 
     :  \TO \NAMEREF{floats}
@@ -458,7 +461,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-log}(
                        \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
                                  (  \VAR{FF} )) 
@@ -467,7 +470,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-log10}(
                        \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
                                  (  \VAR{FF} )) 
@@ -476,7 +479,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-exp}(
                        \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
                                  (  \VAR{FF} )) 
@@ -485,7 +488,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-sin}(
                        \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
                                  (  \VAR{FF} )) 
@@ -494,7 +497,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-cos}(
                        \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
                                  (  \VAR{FF} )) 
@@ -503,7 +506,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-tan}(
                        \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
                                  (  \VAR{FF} )) 
@@ -512,7 +515,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-asin}(
                        \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
                                  (  \VAR{FF} )) 
@@ -521,7 +524,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-acos}(
                        \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
                                  (  \VAR{FF} )) 
@@ -530,7 +533,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-atan}(
                        \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
                                  (  \VAR{FF} )) 
@@ -539,7 +542,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-sinh}(
                        \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
                                  (  \VAR{FF} )) 
@@ -548,7 +551,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-cosh}(
                        \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
                                  (  \VAR{FF} )) 
@@ -557,7 +560,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-tanh}(
                        \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
                                  (  \VAR{FF} )) 
@@ -566,7 +569,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-asinh}(
                        \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
                                  (  \VAR{FF} )) 
@@ -575,7 +578,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-acosh}(
                        \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
                                  (  \VAR{FF} )) 
@@ -584,7 +587,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-atanh}(
                        \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
                                  (  \VAR{FF} )) 
@@ -593,7 +596,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{float-atan2}(
                        \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
                                  (  \VAR{FF} ), \_ : \NAMEREF{floats}
@@ -601,6 +604,7 @@ $$\begin{align*}
     :  \TO \NAMEREF{floats}
                      (  \VAR{FF} ) 
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -625,7 +629,9 @@ $$\begin{align*}
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

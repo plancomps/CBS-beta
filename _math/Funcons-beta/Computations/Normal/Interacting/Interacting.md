@@ -1,12 +1,15 @@
 {::comment}{% raw %}{:/}
 <details open markdown="block">
   <summary>
-    Outline
+    OUTLINE
   </summary>
   {: .text-delta }
 - TOC
 {:toc}
 </details>
+
+
+----
 
 ### Interacting
                
@@ -18,13 +21,13 @@
 
 $$\begin{align*}
   [ \
-  \KEY{Entity} \ & \NAMEREF{standard-out} \\
-  \KEY{Funcon} \ & \NAMEREF{print}
+  \KEY{Entity} \quad & \NAMEREF{standard-out} \\
+  \KEY{Funcon} \quad & \NAMEREF{print}
   \ ]
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Entity} \
+  \KEY{Entity} \quad
   & \_ \xrightarrow{\NAMEDECL{standard-out}!(\_ : \NAMEHYPER{../../../Values}{Value-Types}{values}\STAR)} \_
 \end{align*}$$
 
@@ -35,7 +38,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{print}(
                        \_ : \NAMEHYPER{../../../Values}{Value-Types}{values}\STAR) 
     :  \TO \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} 
@@ -49,7 +52,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     &  \NAMEREF{print}
                     (  \VAR{V}\STAR : \NAMEHYPER{../../../Values}{Value-Types}{values}\STAR ) \xrightarrow{\NAMEREF{standard-out}!(  \VAR{V}\STAR )}_{} 
         \NAMEHYPER{../../../Values/Primitive}{Null}{null-value}
@@ -61,13 +64,13 @@ $$\begin{align*}
 
 $$\begin{align*}
   [ \
-  \KEY{Entity} \ & \NAMEREF{standard-in} \\
-  \KEY{Funcon} \ & \NAMEREF{read}
+  \KEY{Entity} \quad & \NAMEREF{standard-in} \\
+  \KEY{Funcon} \quad & \NAMEREF{read}
   \ ]
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Entity} \
+  \KEY{Entity} \quad
   & \_ \xrightarrow{\NAMEDECL{standard-in}?(\_ : \NAMEHYPER{../../../Values}{Value-Types}{values}\STAR)} \_
 \end{align*}$$
 
@@ -82,7 +85,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{read} 
     :  \TO \NAMEHYPER{../../../Values}{Value-Types}{values} 
 \end{align*}$$
@@ -93,14 +96,15 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     &  \NAMEREF{read} \xrightarrow{\NAMEREF{standard-in}?(  \VAR{V} : \mathop{\sim} \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} )}_{} 
         \VAR{V}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     &  \NAMEREF{read} \xrightarrow{\NAMEREF{standard-in}?(  \NAMEHYPER{../../../Values/Primitive}{Null}{null-value} )}_{} 
         \NAMEHYPER{../../Abnormal}{Failing}{fail}
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

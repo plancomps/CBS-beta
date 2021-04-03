@@ -1,0 +1,5 @@
+\contentsline {section}{Computations}{1}{section*.2}%
+\contentsline {subsection}{Threads}{1}{section*.3}%
+\contentsline {subsubsection}{Multithreading}{1}{section*.4}%
+\contentsline {paragraph}{Activation}{1}{section*.5}%
+\contentsline {paragraph}{Termination}{1}{section*.6}%

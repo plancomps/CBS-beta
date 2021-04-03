@@ -9,7 +9,10 @@ ancestor: Languages-beta
 
 {::comment}{% raw %}{:/}
 
-$$\KEY{Language} \STRING{MiniJava}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{MiniJava}$$
 
 
 
@@ -142,11 +145,11 @@ $$\begin{align*}
   \\
    \SYNHYPER{../.}{MiniJava-Dynamics}{letter}
     \ ::= \ & \
-    \LEX{a} - \LEX{z} \mid \LEX{A} - \LEX{Z}
+    \LEX{a} {-} \LEX{z} \mid \LEX{A} {-} \LEX{Z}
   \\
    \SYNHYPER{../.}{MiniJava-Dynamics}{digit}
     \ ::= \ & \
-    \LEX{0} - \LEX{9}
+    \LEX{0} {-} \LEX{9}
 \end{align*}$$
 
 
@@ -198,7 +201,7 @@ $$\begin{align*}
 >    $$\SHADE{\SYNHYPER{../.}{MiniJava-Dynamics}{identifier}}$$ = $$\SHADE{\SYNREF{reserved-id}}$$ {reject}
 
 $$\begin{align*}
-  \KEY{Lexis} \
+  \KEY{Lexis} \quad
      \SYN{reserved-id}
       \ ::= \ & \
       \LEX{String} \\
@@ -224,6 +227,7 @@ $$\begin{align*}
 \end{align*}$$
 
 
+
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
   "FUNCONS-BETA"
 [Unstable-Funcons-beta]: /CBS-beta/math/Unstable-Funcons-beta
@@ -246,7 +250,9 @@ $$\begin{align*}
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

@@ -1,12 +1,15 @@
 {::comment}{% raw %}{:/}
 <details open markdown="block">
   <summary>
-    Outline
+    OUTLINE
   </summary>
   {: .text-delta }
 - TOC
 {:toc}
 </details>
+
+
+----
 
 ### Multithreading
                
@@ -14,10 +17,10 @@
 
 $$\begin{align*}
   [ \
-  \KEY{Datatype} \ & \NAMEREF{thread-ids} \\
-  \KEY{Datatype} \ & \NAMEREF{threads} \\
-  \KEY{Funcon} \ & \NAMEREF{thread-joinable} \\
-  \KEY{Funcon} \ & \NAMEREF{thread-detached}
+  \KEY{Datatype} \quad & \NAMEREF{thread-ids} \\
+  \KEY{Datatype} \quad & \NAMEREF{threads} \\
+  \KEY{Funcon} \quad & \NAMEREF{thread-joinable} \\
+  \KEY{Funcon} \quad & \NAMEREF{thread-detached}
   \ ]
 \end{align*}$$
 
@@ -27,7 +30,7 @@ $$\begin{align*}
 
 $$\begin{align*}
   [ \
-  \KEY{Funcon} \ & \NAMEREF{initialise-multithreading}
+  \KEY{Funcon} \quad & \NAMEREF{initialise-multithreading}
   \ ]
 \end{align*}$$
 
@@ -37,9 +40,9 @@ $$\begin{align*}
 
 $$\begin{align*}
   [ \
-  \KEY{Funcon} \ & \NAMEREF{multithread} \\
-  \KEY{Funcon} \ & \NAMEREF{thread-activate} \\
-  \KEY{Funcon} \ & \NAMEREF{thread-detach}
+  \KEY{Funcon} \quad & \NAMEREF{multithread} \\
+  \KEY{Funcon} \quad & \NAMEREF{thread-activate} \\
+  \KEY{Funcon} \quad & \NAMEREF{thread-detach}
   \ ]
 \end{align*}$$
 
@@ -49,12 +52,12 @@ $$\begin{align*}
 
 $$\begin{align*}
   [ \
-  \KEY{Funcon} \ & \NAMEREF{current-thread} \\
-  \KEY{Funcon} \ & \NAMEREF{thread-atomic} \\
-  \KEY{Funcon} \ & \NAMEREF{thread-yield} \\
-  \KEY{Funcon} \ & \NAMEREF{thread-spin} \\
-  \KEY{Funcon} \ & \NAMEREF{thread-suspend} \\
-  \KEY{Funcon} \ & \NAMEREF{thread-resume}
+  \KEY{Funcon} \quad & \NAMEREF{current-thread} \\
+  \KEY{Funcon} \quad & \NAMEREF{thread-atomic} \\
+  \KEY{Funcon} \quad & \NAMEREF{thread-yield} \\
+  \KEY{Funcon} \quad & \NAMEREF{thread-spin} \\
+  \KEY{Funcon} \quad & \NAMEREF{thread-suspend} \\
+  \KEY{Funcon} \quad & \NAMEREF{thread-resume}
   \ ]
 \end{align*}$$
 
@@ -64,11 +67,11 @@ $$\begin{align*}
 
 $$\begin{align*}
   [ \
-  \KEY{Funcon} \ & \NAMEREF{thread-terminate} \\
-  \KEY{Funcon} \ & \NAMEREF{is-thread-terminated} \\
-  \KEY{Funcon} \ & \NAMEREF{thread-value} \\
-  \KEY{Funcon} \ & \NAMEREF{thread-join} \\
-  \KEY{Funcon} \ & \NAMEREF{thread-exterminate}
+  \KEY{Funcon} \quad & \NAMEREF{thread-terminate} \\
+  \KEY{Funcon} \quad & \NAMEREF{is-thread-terminated} \\
+  \KEY{Funcon} \quad & \NAMEREF{thread-value} \\
+  \KEY{Funcon} \quad & \NAMEREF{thread-join} \\
+  \KEY{Funcon} \quad & \NAMEREF{thread-exterminate}
   \ ]
 \end{align*}$$
 
@@ -78,12 +81,12 @@ $$\begin{align*}
 
 $$\begin{align*}
   [ \
-  \KEY{Funcon} \ & \NAMEREF{update-thread-stepping} \\
-  \KEY{Funcon} \ & \NAMEREF{update-thread-schedule} \\
-  \KEY{Funcon} \ & \NAMEREF{current-thread-schedule} \\
-  \KEY{Funcon} \ & \NAMEREF{is-thread-preemptible} \\
-  \KEY{Funcon} \ & \NAMEREF{thread-preemptible} \\
-  \KEY{Funcon} \ & \NAMEREF{thread-cooperative}
+  \KEY{Funcon} \quad & \NAMEREF{update-thread-stepping} \\
+  \KEY{Funcon} \quad & \NAMEREF{update-thread-schedule} \\
+  \KEY{Funcon} \quad & \NAMEREF{current-thread-schedule} \\
+  \KEY{Funcon} \quad & \NAMEREF{is-thread-preemptible} \\
+  \KEY{Funcon} \quad & \NAMEREF{thread-preemptible} \\
+  \KEY{Funcon} \quad & \NAMEREF{thread-cooperative}
   \ ]
 \end{align*}$$
 
@@ -110,7 +113,7 @@ Activation of a thread generates a fresh thread-id for referring to it:
 
 
 $$\begin{align*}
-  \KEY{Auxiliary Datatype} \ 
+  \KEY{Auxiliary Datatype} \quad 
   \NAMEDECL{thread-ids} 
   \ ::= \ & \NAMEDECL{thread-id}(
                                \_ : \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Generating}{atoms})
@@ -124,7 +127,7 @@ detached:
 
 
 $$\begin{align*}
-  \KEY{Auxiliary Datatype} \ 
+  \KEY{Auxiliary Datatype} \quad 
   \NAMEDECL{threads} 
   \ ::= \ & \NAMEDECL{thread}(
                                \_ : \NAMEHYPER{../../../../Funcons-beta/Values/Abstraction}{Thunks}{thunks}
@@ -133,7 +136,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{thread-joinable}(
                        \VAR{TH} : \NAMEHYPER{../../../../Funcons-beta/Values/Abstraction}{Thunks}{thunks}
                                  (  \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values} )) 
@@ -144,7 +147,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{thread-detached}(
                        \VAR{TH} : \NAMEHYPER{../../../../Funcons-beta/Values/Abstraction}{Thunks}{thunks}
                                  (  \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values} )) 
@@ -197,7 +200,7 @@ The $$\SHADE{\NAMEREF{thread-map}}$$ contains all active and suspended threads:
 
 
 $$\begin{align*}
-  \KEY{Entity} \
+  \KEY{Entity} \quad
   & \langle \_, \NAMEDECL{thread-map}(\_ : \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{maps}
                                                             (  \NAMEREF{thread-ids}, 
                                                                    \NAMEREF{threads} )) \rangle \TRANS  \\& 
@@ -212,7 +215,7 @@ threads:
 
 
 $$\begin{align*}
-  \KEY{Entity} \
+  \KEY{Entity} \quad
   & \langle \_, \NAMEDECL{active-thread-set}(\_ : \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Sets}{sets}
                                                             (  \NAMEREF{thread-ids} )) \rangle \TRANS  \\& 
     \langle \_, \NAME{active-thread-set}(\_ : \NAME{sets}
@@ -220,11 +223,11 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{is-some-thread-active} 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Booleans}{booleans} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     &  \langle \NAMEREF{is-some-thread-active}, \NAMEREF{active-thread-set} (  \VAR{ATS} ) \rangle \TRANS \\&\quad
         \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Booleans}{not} \ 
           \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{is-equal}
@@ -233,11 +236,11 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{is-some-thread-suspended} 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Booleans}{booleans} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     &  \langle \NAMEREF{is-some-thread-suspended}, \NAMEREF{active-thread-set} (  \VAR{ATS} ), \NAMEREF{thread-map} (  \VAR{TM} ) \rangle \TRANS \\&\quad
         \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Booleans}{not} \ 
           \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{is-equal}
@@ -252,7 +255,7 @@ currently being executed. When defined, it identifies an active thread:
 
 
 $$\begin{align*}
-  \KEY{Entity} \
+  \KEY{Entity} \quad
   & \langle \_, \NAMEDECL{thread-stepping}(\_ : \NAMEREF{thread-ids}\QUERY) \rangle \TRANS  \\& 
     \langle \_, \NAME{thread-stepping}(\_ : \NAME{thread-ids}\QUERY) \rangle
 \end{align*}$$
@@ -263,7 +266,7 @@ joinable threads:
 
 
 $$\begin{align*}
-  \KEY{Entity} \
+  \KEY{Entity} \quad
   & \langle \_, \NAMEDECL{terminated-thread-map}(\_ : \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{maps}
                                                             (  \NAMEREF{thread-ids}, 
                                                                    \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values} )) \rangle \TRANS  \\& 
@@ -281,7 +284,7 @@ of thread steps:
 
 
 $$\begin{align*}
-  \KEY{Entity} \
+  \KEY{Entity} \quad
   & \langle \_, \NAMEDECL{thread-schedule}(\_ : \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Sets}{sets}
                                                             (  \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{ground-values} )) \rangle \TRANS  \\& 
     \langle \_, \NAME{thread-schedule}(\_ : \NAME{sets}
@@ -301,7 +304,7 @@ The entities used to model multithreading need initialising:
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{initialise-multithreading} 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
     \leadsto \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
@@ -317,63 +320,63 @@ The initial values are generally quite obvious:
 
 
 $$\begin{align*}
-  \KEY{Auxiliary Funcon} \
+  \KEY{Auxiliary Funcon} \quad
   & \NAMEDECL{initialise-thread-map} 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     &  \NAMEREF{initialise-thread-map} \TRANS \\&\quad
         \langle \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-value}, \NAMEREF{thread-map} (  \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{map}
                                                      (   \  ) ) \rangle
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Auxiliary Funcon} \
+  \KEY{Auxiliary Funcon} \quad
   & \NAMEDECL{initialise-active-thread-set} 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     &  \NAMEREF{initialise-active-thread-set} \TRANS \\&\quad
         \langle \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-value}, \NAMEREF{active-thread-set} \{   \  \} \rangle
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Auxiliary Funcon} \
+  \KEY{Auxiliary Funcon} \quad
   & \NAMEDECL{initialise-thread-stepping} 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     &  \NAMEREF{initialise-thread-stepping} \TRANS \\&\quad
         \langle \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-value}, \NAMEREF{thread-stepping} (   \  ) \rangle
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Auxiliary Funcon} \
+  \KEY{Auxiliary Funcon} \quad
   & \NAMEDECL{initialise-terminated-thread-map} 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     &  \NAMEREF{initialise-terminated-thread-map} \TRANS \\&\quad
         \langle \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-value}, \NAMEREF{terminated-thread-map} (  \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{map}
                                                      (   \  ) ) \rangle
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Auxiliary Funcon} \
+  \KEY{Auxiliary Funcon} \quad
   & \NAMEDECL{initialise-thread-schedule} 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     &  \NAMEREF{initialise-thread-schedule} \TRANS \\&\quad
         \langle \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-value}, \NAMEREF{thread-schedule} \{   \  \} \rangle
 \end{align*}$$
@@ -388,7 +391,7 @@ activate further threads:
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{multithread}(
                        \_ :  \TO \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values}) 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values} 
@@ -406,7 +409,7 @@ for it:
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{multithread} \ 
         \VAR{X} \leadsto \\&\quad
         \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
@@ -441,7 +444,7 @@ A thread can activate the execution of thread-activates:
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{thread-activate}(
                        \_ : \NAMEREF{threads}) 
     :  \TO \NAMEREF{thread-ids} 
@@ -453,7 +456,7 @@ thread is included in the thread-map and the active-thread-set:
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \NAMEREF{thread-id}
                       (  \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Generating}{fresh-atom} ) \TRANS 
@@ -480,7 +483,7 @@ list of joining threads:
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{thread-detach}(
                        \_ : \NAMEREF{thread-ids}) 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
@@ -491,7 +494,7 @@ When the thread has not yet terminated, it remains in the thread-map:
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{map-lookup}
           (  \VAR{TM}, 
@@ -518,7 +521,7 @@ the terminated-thread-map:
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Sets}{is-in-set}
           (  \VAR{TI}, 
@@ -551,11 +554,11 @@ and when all non-terminated threads are suspended.
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{current-thread} 
     :  \TO \NAMEREF{thread-ids} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     &  \langle \NAMEREF{current-thread}, \NAMEREF{thread-stepping} (  \VAR{TI} ) \rangle \TRANS 
         \VAR{TI}
 \end{align*}$$
@@ -565,7 +568,7 @@ $$\SHADE{\NAMEREF{current-thread}}$$ is only intended for use in threads:
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     &  \langle \NAMEREF{current-thread}, \NAMEREF{thread-stepping} (   \  ) \rangle \TRANS 
         \NAMEHYPER{../../../../Funcons-beta/Computations/Abnormal}{Failing}{fail}
 \end{align*}$$
@@ -580,7 +583,7 @@ by $$\SHADE{\NAMEREF{thread-stepping}}$$:
 
 
 $$\begin{align*}
-  \KEY{Auxiliary Funcon} \
+  \KEY{Auxiliary Funcon} \quad
   & \NAMEDECL{thread-step} 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
 \end{align*}$$
@@ -593,7 +596,7 @@ If the body of the thread can make a step, so can $$\SHADE{\NAMEREF{thread-step}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{lookup}
           (  \VAR{TM}, 
@@ -634,7 +637,7 @@ If it is detached, its computed value is discarded:
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{lookup}
           (  \VAR{TM}, 
@@ -665,7 +668,7 @@ computed value is made available in the terminated-thread-map:
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{lookup}
           (  \VAR{TM}, 
@@ -724,14 +727,14 @@ uses of $$\SHADE{\NAMEREF{thread-atomic}
 
 
 $$\begin{align*}
-  \KEY{Auxiliary Funcon} \
+  \KEY{Auxiliary Funcon} \quad
   & \NAMEDECL{thread-atomic}(
                        \_ :  \TO \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values}) 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values} 
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \langle \VAR{X}, \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Storing}{store} (  \VAR{$\sigma$} ), \NAMEREF{active-thread-set} (  \VAR{ATS} ), \NAMEREF{thread-stepping} (  \VAR{TI} ) \rangle \xrightarrow{\NAMEHYPER{../../../../Funcons-beta/Computations/Abnormal}{Abrupting}{abrupted}(   \  )}_{} \\&\quad
           \langle \VAR{X}', \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Storing}{store} (  \VAR{$\sigma$}' ), \NAMEREF{active-thread-set} (  \VAR{ATS}' ), \NAMEREF{thread-stepping} (  \VAR{TI}' ) \rangle\\&
@@ -744,7 +747,7 @@ $$\begin{align*}
           \langle \VAR{V}, \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Storing}{store} (  \VAR{$\sigma$}'' ), \NAMEREF{active-thread-set} (  \VAR{ATS}'' ), \NAMEREF{thread-stepping} (  \VAR{TI}''\QUERY ) \rangle
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \langle \VAR{X}, \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Storing}{store} (  \VAR{$\sigma$} ), \NAMEREF{active-thread-set} (  \VAR{ATS} ), \NAMEREF{thread-stepping} (  \VAR{TI} ) \rangle \xrightarrow{\NAMEHYPER{../../../../Funcons-beta/Computations/Abnormal}{Abrupting}{abrupted}(   \  )}_{} \\&\quad
           \langle \VAR{X}', \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Storing}{store} (  \VAR{$\sigma$}' ), \NAMEREF{active-thread-set} (  \VAR{ATS}' ), \NAMEREF{thread-stepping} (  \VAR{TI}' ) \rangle\\&
@@ -757,7 +760,7 @@ $$\begin{align*}
           \langle \VAR{V}, \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Storing}{store} (  \VAR{$\sigma$}'' ), \NAMEREF{active-thread-set} (  \VAR{ATS}'' ), \NAMEREF{thread-stepping} (  \VAR{TI}''\QUERY ) \rangle
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{X} \xrightarrow{\NAMEHYPER{../../../../Funcons-beta/Computations/Abnormal}{Abrupting}{abrupted}(  \VAR{A} )}_{} 
           \VAR{X}'
@@ -768,7 +771,7 @@ $$\begin{align*}
             (  \VAR{X}' )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{X} \xrightarrow{\NAMEHYPER{../../../../Funcons-beta/Computations/Abnormal}{Abrupting}{abrupted}(   \  )}_{} 
           (  \VAR{V} : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values} )
@@ -778,7 +781,7 @@ $$\begin{align*}
           \VAR{V}
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{X} \xrightarrow{\NAMEHYPER{../../../../Funcons-beta/Computations/Abnormal}{Abrupting}{abrupted}(  \VAR{A} )}_{} 
           (  \VAR{V} : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values} )
@@ -789,7 +792,7 @@ $$\begin{align*}
             (  \VAR{V} )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     &  \NAMEREF{thread-atomic}
                     (  \VAR{V} : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values} ) \TRANS 
         \VAR{V}
@@ -813,7 +816,7 @@ A thread can yield execution:
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{thread-yield}(
                        \_ : \NAMEREF{thread-ids}\QUERY) 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
@@ -825,7 +828,7 @@ is left undefined, to be determined by the scheduler:
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     &  \NAMEREF{thread-yield}
                     (   \  ) \TRANS \\&\quad
         \langle \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-value}, \NAMEREF{thread-stepping} (   \  ) \rangle
@@ -836,7 +839,7 @@ When the argument thread-id is $$\SHADE{\VAR{TI}}$$, it has to be an active thre
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Sets}{is-in-set}
           (  \VAR{TI}, 
@@ -848,7 +851,7 @@ $$\begin{align*}
           \langle \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-value}, \NAMEREF{thread-stepping} (  \VAR{TI} ) \rangle
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Sets}{is-in-set}
           (  \VAR{TI}, 
@@ -868,7 +871,7 @@ with other threads.
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{thread-spin}(
                        \VAR{X} :  \TO \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values}) 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values} \\&\quad
@@ -891,12 +894,12 @@ executed:
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{thread-suspend}(
                        \_ : \NAMEREF{thread-ids}\PLUS) 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Sets}{is-in-set}
           (  \VAR{TI}, 
@@ -923,7 +926,7 @@ yielding:
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Sets}{is-in-set}
           (  \VAR{TI}, 
@@ -951,12 +954,12 @@ A thread may resume any number of suspended threads:
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{thread-resume}(
                        \_ : \NAMEREF{thread-ids}\STAR) 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Sets}{is-in-set}
           (  \VAR{TI}, 
@@ -1000,7 +1003,7 @@ its computed value:
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{thread-terminate}(
                        \_ : \NAMEREF{thread-ids}, \_ : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values}\QUERY) 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
@@ -1011,7 +1014,7 @@ When the thread is detached, no value is specified:
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{lookup}
           (  \VAR{TM}, 
@@ -1049,7 +1052,7 @@ When the thread is joinable, its value has to be specified:
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{lookup}
           (  \VAR{TM}, 
@@ -1096,12 +1099,12 @@ A thread can test whether a joinable thread has terminated:
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{is-thread-terminated}(
                        \_ : \NAMEREF{thread-ids}) 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Booleans}{booleans} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     &  \langle \NAMEREF{is-thread-terminated}
                             (  \VAR{TI} : \NAMEREF{thread-ids} ), \NAMEREF{terminated-thread-map} (  \VAR{TVM} ) \rangle \TRANS \\&\quad
         \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{is-value}
@@ -1115,12 +1118,12 @@ If so, it can get the computed value:
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{thread-value}(
                        \_ : \NAMEREF{thread-ids}) 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     &  \langle \NAMEREF{thread-value}
                             (  \VAR{TI} : \NAMEREF{thread-ids} ), \NAMEREF{terminated-thread-map} (  \VAR{TVM} ) \rangle \TRANS \\&\quad
         \NAMEHYPER{../../../../Funcons-beta/Computations/Abnormal}{Failing}{checked} \ 
@@ -1134,12 +1137,12 @@ Joining a thread may cause suspension:
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{thread-join}(
                        \_ : \NAMEREF{thread-ids}) 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{lookup}
           (  \VAR{TM}, 
@@ -1174,7 +1177,7 @@ holds its value:
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{is-value}
           (  \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{lookup}
@@ -1193,7 +1196,7 @@ Trying to join a detached thread fails:
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{lookup}
           (  \VAR{TM}, 
@@ -1206,7 +1209,7 @@ $$\begin{align*}
           \NAMEHYPER{../../../../Funcons-beta/Computations/Abnormal}{Failing}{fail}
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{lookup}
           (  \VAR{TM}, 
@@ -1229,12 +1232,12 @@ inspection.
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{thread-exterminate}(
                        \_ : \NAMEREF{thread-ids}) 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \VAR{TI}' 
         \neq \VAR{TI}\\&
@@ -1279,7 +1282,7 @@ interleavings using oracles.)
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{update-thread-stepping} 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
 \end{align*}$$
@@ -1290,7 +1293,7 @@ $$\SHADE{\NAMEREF{update-thread-stepping}}$$ has no effect:
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \NAMEREF{is-thread-preemptible}
                       (  \VAR{TI} ) \TRANS 
@@ -1308,7 +1311,7 @@ active $$\SHADE{\VAR{TI}'}$$:
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \NAMEREF{is-thread-preemptible}
                       (  \VAR{TI} ) \TRANS 
@@ -1321,7 +1324,7 @@ $$\begin{align*}
           \langle \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-value}, \NAMEREF{thread-stepping} (  \VAR{TI}' ) \rangle
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Sets}{some-element}
           (  \VAR{ATS} ) \leadsto 
@@ -1338,7 +1341,7 @@ $$\SHADE{\NAMEREF{thread-stepping}}$$ is undefined:
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     &  \langle \NAMEREF{update-thread-stepping}, \NAMEREF{thread-stepping} (  \VAR{TI}\QUERY ), \NAMEREF{active-thread-set} \{   \  \} \rangle \TRANS \\&\quad
         \langle \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-value}, \NAMEREF{thread-stepping} (   \  ) \rangle
 \end{align*}$$
@@ -1348,13 +1351,13 @@ Scheduling information for each thread can be inspected and updated:
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{update-thread-schedule}(
                        \_ : \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Sets}{sets}
                                  (  \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{ground-values} )) 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     &  \NAMEREF{update-thread-schedule}
                     (  \VAR{VS} : \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Sets}{sets}
                                       (  \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{ground-values} ) ) \TRANS \\&\quad
@@ -1362,25 +1365,25 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{current-thread-schedule} 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Sets}{sets}
                      (  \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{ground-values} ) 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     &  \langle \NAMEREF{current-thread-schedule}, \NAMEREF{thread-schedule} (  \VAR{VS} ) \rangle \TRANS 
         \VAR{VS}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Datatype} \ 
+  \KEY{Datatype} \quad 
   \NAMEDECL{thread-preemtibilities} 
   \ ::= \ &
   \NAMEDECL{thread-preemptible} \mid \NAMEDECL{thread-cooperative}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{is-thread-preemptible}(
                        \_ : \NAMEREF{thread-ids}) 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Booleans}{booleans} \\&\quad
@@ -1395,6 +1398,7 @@ For now, all threads are preemptible unless the scheduling includes cooperative.
 
 The representation of scheduling information is left open here, together with
 the details of how it affects the result of $$\SHADE{\NAMEREF{update-thread-stepping}}$$.
+
 
 
 

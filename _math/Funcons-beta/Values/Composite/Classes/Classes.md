@@ -1,24 +1,27 @@
 {::comment}{% raw %}{:/}
 
+
+----
+
 ### Classes
                
 
 
 $$\begin{align*}
   [ \
-  \KEY{Datatype} \ & \NAMEREF{classes} \\
-  \KEY{Funcon} \ & \NAMEREF{class} \\
-  \KEY{Funcon} \ & \NAMEREF{class-instantiator} \\
-  \KEY{Funcon} \ & \NAMEREF{class-feature-map} \\
-  \KEY{Funcon} \ & \NAMEREF{class-superclass-name-sequence} \\
-  \KEY{Funcon} \ & \NAMEREF{class-name-tree} \\
-  \KEY{Funcon} \ & \NAMEREF{is-subclass-name} \\
-  \KEY{Funcon} \ & \NAMEREF{class-name-single-inheritance-feature-map}
+  \KEY{Datatype} \quad & \NAMEREF{classes} \\
+  \KEY{Funcon} \quad & \NAMEREF{class} \\
+  \KEY{Funcon} \quad & \NAMEREF{class-instantiator} \\
+  \KEY{Funcon} \quad & \NAMEREF{class-feature-map} \\
+  \KEY{Funcon} \quad & \NAMEREF{class-superclass-name-sequence} \\
+  \KEY{Funcon} \quad & \NAMEREF{class-name-tree} \\
+  \KEY{Funcon} \quad & \NAMEREF{is-subclass-name} \\
+  \KEY{Funcon} \quad & \NAMEREF{class-name-single-inheritance-feature-map}
   \ ]
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Datatype} \ 
+  \KEY{Datatype} \quad 
   \NAMEDECL{classes} 
   \ ::= \ & \NAMEDECL{class}(
                                \_ : \NAMEHYPER{../../Abstraction}{Thunks}{thunks}
@@ -54,14 +57,14 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{class-instantiator}(
                        \_ : \NAMEREF{classes}) 
     :  \TO \NAMEHYPER{../../Abstraction}{Thunks}{thunks}
                      (  \NAMEHYPER{../.}{References}{references}
                              (  \NAMEHYPER{../.}{Objects}{objects} ) ) 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{class-instantiator} \\&\quad 
         \NAMEREF{class}
           (  \VAR{Thunk} : \NAMEHYPER{../../Abstraction}{Thunks}{thunks}
@@ -72,12 +75,12 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{class-feature-map}(
                        \_ : \NAMEREF{classes}) 
     :  \TO \NAMEHYPER{../../../Computations/Normal}{Binding}{environments} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{class-feature-map} \\&\quad 
         \NAMEREF{class}
           (  \VAR{Thunk} : \NAMEHYPER{../../Abstraction}{Thunks}{thunks}
@@ -88,12 +91,12 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{class-superclass-name-sequence}(
                        \_ : \NAMEREF{classes}) 
     :  \TO \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}\STAR 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{class-superclass-name-sequence} \\&\quad 
         \NAMEREF{class}
           (  \VAR{Thunk} : \NAMEHYPER{../../Abstraction}{Thunks}{thunks}
@@ -104,7 +107,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{class-name-tree}(
                        \_ : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}) 
     :  \TO \NAMEHYPER{../.}{Trees}{trees}
@@ -118,7 +121,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{class-name-tree}
         (  \VAR{C} : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers} ) \leadsto \\&\quad
         \NAMEHYPER{../.}{Trees}{tree}
@@ -132,7 +135,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{is-subclass-name}(
                        \VAR{C} : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}, \VAR{C}' : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}) 
     :  \TO \NAMEHYPER{../../Primitive}{Booleans}{booleans} \\&\quad
@@ -153,7 +156,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{class-name-single-inheritance-feature-map}(
                        \VAR{C} : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}) 
     :  \TO \NAMEHYPER{../../../Computations/Normal}{Binding}{environments} \\&\quad
@@ -170,6 +173,7 @@ $$\begin{align*}
 
   For multiple inheritance, different resolution orders can be specified
   by using different linearisations of the class name tree.
+
 
 
 

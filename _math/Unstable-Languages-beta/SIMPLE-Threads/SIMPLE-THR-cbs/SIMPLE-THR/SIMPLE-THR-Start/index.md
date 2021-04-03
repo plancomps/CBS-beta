@@ -9,23 +9,26 @@ nav_order: SIMPLE-THR
 
 {::comment}{% raw %}{:/}
 
-$$\KEY{Language} \STRING{SIMPLE-THR}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{SIMPLE-THR}$$
 
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{START} : \SYN{start}
       \ ::= \ & \
       \SYNHYPER{../.}{SIMPLE-THR-5-Programs}{pgm}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{start} \LEFTPHRASE \ \_ : \SYNREF{start} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{start} \LEFTPHRASE \
                             \VARHYPER{../.}{SIMPLE-THR-5-Programs}{Pgm} \
                           \RIGHTPHRASE  = \\&\quad
@@ -55,6 +58,7 @@ $$\begin{align*}
 \end{align*}$$
 
 
+
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
   "FUNCONS-BETA"
 [Unstable-Funcons-beta]: /CBS-beta/math/Unstable-Funcons-beta
@@ -77,7 +81,9 @@ $$\begin{align*}
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

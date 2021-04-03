@@ -1,6 +1,9 @@
 {::comment}{% raw %}{:/}
 
-$$\KEY{Language} \STRING{OCaml Light}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{OCaml Light}$$
 
 # $$\SECT{9}$$ Classes
            
@@ -8,6 +11,7 @@ $$\KEY{Language} \STRING{OCaml Light}$$
 
 
   Omitted
+
 
 
 

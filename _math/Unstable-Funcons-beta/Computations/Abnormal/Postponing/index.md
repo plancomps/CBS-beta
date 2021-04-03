@@ -9,16 +9,19 @@ ancestor: Unstable-Funcons-beta
 
 {::comment}{% raw %}{:/}
 
+
+----
+
 ### Postponing
                
 
 
 $$\begin{align*}
   [ \
-  \KEY{Entity} \ & \NAMEREF{postponing} \\
-  \KEY{Funcon} \ & \NAMEREF{postpone} \\
-  \KEY{Funcon} \ & \NAMEREF{postpone-after-effect} \\
-  \KEY{Funcon} \ & \NAMEREF{after-effect}
+  \KEY{Entity} \quad & \NAMEREF{postponing} \\
+  \KEY{Funcon} \quad & \NAMEREF{postpone} \\
+  \KEY{Funcon} \quad & \NAMEREF{postpone-after-effect} \\
+  \KEY{Funcon} \quad & \NAMEREF{after-effect}
   \ ]
 \end{align*}$$
 
@@ -41,7 +44,7 @@ of the abstraction $$\SHADE{\VAR{A}}$$ is postponed:
 
 
 $$\begin{align*}
-  \KEY{Entity} \
+  \KEY{Entity} \quad
   & \_ \xrightarrow{\NAMEDECL{postponing}(\_ : (  \NAMEHYPER{../../../../Funcons-beta/Values/Abstraction}{Generic}{abstractions}
                                                                       (   \TO \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-type} ) )\QUERY)} \_
 \end{align*}$$
@@ -53,12 +56,12 @@ execution is postponed:
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{postpone}(
                        \_ :  \TO \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values}) 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Giving}{given-value} (  \VAR{V} ) \vdash \NAMEHYPER{../../../../Funcons-beta/Values/Abstraction}{Generic}{closure} \ 
                       \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Giving}{give}
@@ -71,7 +74,7 @@ $$\begin{align*}
           \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-value}
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Giving}{given-value} (   \  ) \vdash \NAMEHYPER{../../../../Funcons-beta/Values/Abstraction}{Generic}{closure} \ 
                       \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Giving}{no-given} \ 
@@ -92,12 +95,12 @@ by adding it as an after-effect of $$\SHADE{\VAR{X}}$$:
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{postpone-after-effect}(
                        \_ :  \TO \VAR{T}) 
     :  \TO \VAR{T} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{X} \xrightarrow{\NAMEREF{postponing}(   \  )}_{} 
           \VAR{X}'
@@ -108,7 +111,7 @@ $$\begin{align*}
             (  \VAR{X}' )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{X} \xrightarrow{\NAMEREF{postponing}(  \VAR{A} )}_{} 
           \VAR{X}'\\&
@@ -124,7 +127,7 @@ $$\begin{align*}
                            \VAR{Y} ) )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{postpone-after-effect}
         (  \VAR{V} : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values} ) \leadsto 
         \VAR{V}
@@ -138,7 +141,7 @@ it then executes $$\SHADE{\VAR{Y}}$$, and computes $$\SHADE{\VAR{V}}$$:
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{after-effect}(
                        \VAR{X} :  \TO \VAR{T}, \VAR{Y} :  \TO \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-type}) 
     :  \TO \VAR{T} \\&\quad
@@ -148,6 +151,7 @@ $$\begin{align*}
                        (  \VAR{Y}, 
                               \NAMEHYPER{../../../../Funcons-beta/Computations/Normal}{Giving}{given} ) )
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -172,7 +176,9 @@ $$\begin{align*}
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

@@ -8,6 +8,7 @@ ancestor: Funcons-beta
 [Funcons-beta] : [Failing.cbs] \| [PRETTY] \| [PDF]
 
 
+----
 ### Failing
 
 <div class="highlighter-rouge"><pre class="highlight"><code>[

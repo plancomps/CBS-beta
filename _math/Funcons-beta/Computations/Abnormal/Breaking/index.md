@@ -9,27 +9,30 @@ ancestor: Funcons-beta
 
 {::comment}{% raw %}{:/}
 
+
+----
+
 ### Breaking
                
 
 
 $$\begin{align*}
   [ \
-  \KEY{Datatype} \ & \NAMEREF{breaking} \\
-  \KEY{Funcon} \ & \NAMEREF{broken} \\
-  \KEY{Funcon} \ & \NAMEREF{finalise-breaking} \\
-  \KEY{Funcon} \ & \NAMEREF{break} \\
-  \KEY{Funcon} \ & \NAMEREF{handle-break}
+  \KEY{Datatype} \quad & \NAMEREF{breaking} \\
+  \KEY{Funcon} \quad & \NAMEREF{broken} \\
+  \KEY{Funcon} \quad & \NAMEREF{finalise-breaking} \\
+  \KEY{Funcon} \quad & \NAMEREF{break} \\
+  \KEY{Funcon} \quad & \NAMEREF{handle-break}
   \ ]
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Meta-variables} \
+  \KEY{Meta-variables} \quad
   & \VAR{T} <: \NAMEHYPER{../../../Values}{Value-Types}{values}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Datatype} \ 
+  \KEY{Datatype} \quad 
   \NAMEDECL{breaking} 
   \ ::= \ & \NAMEDECL{broken}
 \end{align*}$$
@@ -39,7 +42,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{finalise-breaking}(
                        \VAR{X} :  \TO \VAR{T}) 
     :  \TO \VAR{T}  \mid \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} \\&\quad
@@ -54,7 +57,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{break} 
     :  \TO \NAMEHYPER{../../../Values}{Value-Types}{empty-type} \\&\quad
     \leadsto \NAMEHYPER{../.}{Abrupting}{abrupt}
@@ -66,7 +69,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{handle-break}(
                        \_ :  \TO \NAMEHYPER{../../../Values/Primitive}{Null}{null-type}) 
     :  \TO \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} 
@@ -79,7 +82,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(   \  )}_{} 
           \VAR{X}'
@@ -90,7 +93,7 @@ $$\begin{align*}
             (  \VAR{X}' )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  \NAMEREF{broken} )}_{} 
           \_
@@ -100,7 +103,7 @@ $$\begin{align*}
           \NAMEHYPER{../../../Values/Primitive}{Null}{null-value}
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  \VAR{V} : \mathop{\sim} \NAMEREF{breaking} )}_{} 
           \VAR{X}'
@@ -111,11 +114,12 @@ $$\begin{align*}
             (  \VAR{X}' )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{handle-break}
         (  \NAMEHYPER{../../../Values/Primitive}{Null}{null-value} ) \leadsto 
         \NAMEHYPER{../../../Values/Primitive}{Null}{null-value}
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -140,7 +144,9 @@ $$\begin{align*}
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

@@ -9,7 +9,10 @@ ancestor: Languages-beta
 
 {::comment}{% raw %}{:/}
 
-$$\KEY{Language} \STRING{SL}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{SL}$$
 
 # $$\SECT{A}$$ Disambiguation
            
@@ -96,6 +99,7 @@ $$\KEY{Language} \STRING{SL}$$
 >    $$\SHADE{\SYNHYPER{../.}{SL-1-Lexemes}{id}}$$  -/- [a-zA-Z0-9\_]
 
 
+
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
   "FUNCONS-BETA"
 [Unstable-Funcons-beta]: /CBS-beta/math/Unstable-Funcons-beta
@@ -118,7 +122,9 @@ $$\KEY{Language} \STRING{SL}$$
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

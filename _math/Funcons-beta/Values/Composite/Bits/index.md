@@ -10,12 +10,15 @@ ancestor: Funcons-beta
 {::comment}{% raw %}{:/}
 <details open markdown="block">
   <summary>
-    Outline
+    OUTLINE
   </summary>
   {: .text-delta }
 - TOC
 {:toc}
 </details>
+
+
+----
 
 ### Bits and bit vectors
                
@@ -23,26 +26,26 @@ ancestor: Funcons-beta
 
 $$\begin{align*}
   [ \
-  \KEY{Type} \ & \NAMEREF{bits} \\
-  \KEY{Datatype} \ & \NAMEREF{bit-vectors} \\
-  \KEY{Funcon} \ & \NAMEREF{bit-vector} \\
-  \KEY{Type} \ & \NAMEREF{bytes} \\
-  \KEY{Alias} \ & \NAMEREF{octets} \\
-  \KEY{Funcon} \ & \NAMEREF{bit-vector-not} \\
-  \KEY{Funcon} \ & \NAMEREF{bit-vector-and} \\
-  \KEY{Funcon} \ & \NAMEREF{bit-vector-or} \\
-  \KEY{Funcon} \ & \NAMEREF{bit-vector-xor} \\
-  \KEY{Funcon} \ & \NAMEREF{bit-vector-shift-left} \\
-  \KEY{Funcon} \ & \NAMEREF{bit-vector-logical-shift-right} \\
-  \KEY{Funcon} \ & \NAMEREF{bit-vector-arithmetic-shift-right} \\
-  \KEY{Funcon} \ & \NAMEREF{integer-to-bit-vector} \\
-  \KEY{Funcon} \ & \NAMEREF{bit-vector-to-integer} \\
-  \KEY{Funcon} \ & \NAMEREF{bit-vector-to-natural} \\
-  \KEY{Funcon} \ & \NAMEREF{unsigned-bit-vector-maximum} \\
-  \KEY{Funcon} \ & \NAMEREF{signed-bit-vector-maximum} \\
-  \KEY{Funcon} \ & \NAMEREF{signed-bit-vector-minimum} \\
-  \KEY{Funcon} \ & \NAMEREF{is-in-signed-bit-vector} \\
-  \KEY{Funcon} \ & \NAMEREF{is-in-unsigned-bit-vector}
+  \KEY{Type} \quad & \NAMEREF{bits} \\
+  \KEY{Datatype} \quad & \NAMEREF{bit-vectors} \\
+  \KEY{Funcon} \quad & \NAMEREF{bit-vector} \\
+  \KEY{Type} \quad & \NAMEREF{bytes} \\
+  \KEY{Alias} \quad & \NAMEREF{octets} \\
+  \KEY{Funcon} \quad & \NAMEREF{bit-vector-not} \\
+  \KEY{Funcon} \quad & \NAMEREF{bit-vector-and} \\
+  \KEY{Funcon} \quad & \NAMEREF{bit-vector-or} \\
+  \KEY{Funcon} \quad & \NAMEREF{bit-vector-xor} \\
+  \KEY{Funcon} \quad & \NAMEREF{bit-vector-shift-left} \\
+  \KEY{Funcon} \quad & \NAMEREF{bit-vector-logical-shift-right} \\
+  \KEY{Funcon} \quad & \NAMEREF{bit-vector-arithmetic-shift-right} \\
+  \KEY{Funcon} \quad & \NAMEREF{integer-to-bit-vector} \\
+  \KEY{Funcon} \quad & \NAMEREF{bit-vector-to-integer} \\
+  \KEY{Funcon} \quad & \NAMEREF{bit-vector-to-natural} \\
+  \KEY{Funcon} \quad & \NAMEREF{unsigned-bit-vector-maximum} \\
+  \KEY{Funcon} \quad & \NAMEREF{signed-bit-vector-maximum} \\
+  \KEY{Funcon} \quad & \NAMEREF{signed-bit-vector-minimum} \\
+  \KEY{Funcon} \quad & \NAMEREF{is-in-signed-bit-vector} \\
+  \KEY{Funcon} \quad & \NAMEREF{is-in-unsigned-bit-vector}
   \ ]
 \end{align*}$$
 
@@ -51,7 +54,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Type} \ 
+  \KEY{Type} \quad 
   & \NAMEDECL{bits}  
     \leadsto \NAMEHYPER{../../Primitive}{Booleans}{booleans}
 \end{align*}$$
@@ -65,7 +68,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Datatype} \ 
+  \KEY{Datatype} \quad 
   \NAMEDECL{bit-vectors}(
                      \VAR{N} : \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}) 
   \ ::= \ & \NAMEDECL{bit-vector}(
@@ -73,44 +76,44 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Type} \ 
+  \KEY{Type} \quad 
   & \NAMEDECL{bytes}  
     \leadsto \NAMEREF{bit-vectors}
                (  8 )
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{octets} = \NAMEREF{bytes}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Meta-variables} \
+  \KEY{Meta-variables} \quad
   & \VAR{BT} <: \NAMEREF{bit-vectors}
                                                      (  \_ )
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{bit-vector-not}(
                        \_ : \VAR{BT}) 
     :  \TO \VAR{BT} 
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{bit-vector-and}(
                        \_ : \VAR{BT}, \_ : \VAR{BT}) 
     :  \TO \VAR{BT} 
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{bit-vector-or}(
                        \_ : \VAR{BT}, \_ : \VAR{BT}) 
     :  \TO \VAR{BT} 
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{bit-vector-xor}(
                        \_ : \VAR{BT}, \_ : \VAR{BT}) 
     :  \TO \VAR{BT} 
@@ -123,28 +126,28 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{bit-vector-shift-left}(
                        \_ : \VAR{BT}, \_ : \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}) 
     : \VAR{BT} 
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{bit-vector-logical-shift-right}(
                        \_ : \VAR{BT}, \_ : \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}) 
     : \VAR{BT} 
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{bit-vector-arithmetic-shift-right}(
                        \_ : \VAR{BT}, \_ : \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}) 
     : \VAR{BT} 
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{integer-to-bit-vector}(
                        \_ : \NAMEHYPER{../../Primitive}{Integers}{integers}, \VAR{N} : \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}) 
     : \NAMEREF{bit-vectors}
@@ -160,7 +163,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{bit-vector-to-integer}(
                        \_ : \VAR{BT}) 
     :  \TO \NAMEHYPER{../../Primitive}{Integers}{integers} 
@@ -173,7 +176,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{bit-vector-to-natural}(
                        \_ : \VAR{BT}) 
     :  \TO \NAMEHYPER{../../Primitive}{Integers}{natural-numbers} 
@@ -186,7 +189,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{unsigned-bit-vector-maximum}(
                        \VAR{N} : \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}) 
     :  \TO \NAMEHYPER{../../Primitive}{Integers}{natural-numbers} \\&\quad
@@ -198,7 +201,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{signed-bit-vector-maximum}(
                        \VAR{N} : \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}) 
     :  \TO \NAMEHYPER{../../Primitive}{Integers}{integers} \\&\quad
@@ -212,7 +215,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{signed-bit-vector-minimum}(
                        \VAR{N} : \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}) 
     :  \TO \NAMEHYPER{../../Primitive}{Integers}{integers} \\&\quad
@@ -225,7 +228,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{is-in-signed-bit-vector}(
                        \VAR{M} : \NAMEHYPER{../../Primitive}{Integers}{integers}, \VAR{N} : \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}) 
     :  \TO \NAMEHYPER{../../Primitive}{Booleans}{booleans} \\&\quad
@@ -241,7 +244,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{is-in-unsigned-bit-vector}(
                        \VAR{M} : \NAMEHYPER{../../Primitive}{Integers}{integers}, \VAR{N} : \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}) 
     :  \TO \NAMEHYPER{../../Primitive}{Booleans}{booleans} \\&\quad
@@ -254,6 +257,7 @@ $$\begin{align*}
                        (  \VAR{M}, 
                               0 ) )
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -278,7 +282,9 @@ $$\begin{align*}
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

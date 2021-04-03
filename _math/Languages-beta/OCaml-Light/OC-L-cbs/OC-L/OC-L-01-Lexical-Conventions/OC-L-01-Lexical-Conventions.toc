@@ -1,0 +1,8 @@
+\contentsline {section}{$\leavevmode {\color {SectionNumber}\text {\bf 1}}$ Lexical conventions}{1}{section*.2}%
+\contentsline {subsection}{Identifiers}{1}{section*.3}%
+\contentsline {subsection}{Integer literals}{2}{section*.4}%
+\contentsline {subsection}{Floating-point literals}{2}{section*.5}%
+\contentsline {subsection}{Character literals}{3}{section*.6}%
+\contentsline {subsection}{String literals}{3}{section*.7}%
+\contentsline {subsection}{Prefix and infix symbols}{4}{section*.8}%
+\contentsline {subsection}{Keywords}{4}{section*.9}%

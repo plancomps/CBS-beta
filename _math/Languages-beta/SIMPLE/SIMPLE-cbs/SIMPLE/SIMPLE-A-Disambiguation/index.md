@@ -9,7 +9,10 @@ ancestor: Languages-beta
 
 {::comment}{% raw %}{:/}
 
-$$\KEY{Language} \STRING{SIMPLE}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{SIMPLE}$$
 
 # $$\SECT{A}$$ Disambiguation
            
@@ -73,6 +76,7 @@ $$\KEY{Language} \STRING{SIMPLE}$$
 >    }
 
 
+
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
   "FUNCONS-BETA"
 [Unstable-Funcons-beta]: /CBS-beta/math/Unstable-Funcons-beta
@@ -95,7 +99,9 @@ $$\KEY{Language} \STRING{SIMPLE}$$
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

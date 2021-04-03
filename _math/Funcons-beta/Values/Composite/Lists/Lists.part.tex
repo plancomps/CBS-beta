@@ -1,184 +1,209 @@
-\subsubsection*{Lists}\hypertarget{lists}{}\label{lists}
+% {% raw %}
+
+
+\begin{center}
+\rule{3in}{0.4pt}
+\end{center}
+
+\subsubsection{Lists}\hypertarget{lists}{}\label{lists}
 
 \begin{align*}
-  [ ~ 
-  \KEY{Datatype} ~ & \NAMEREF{lists} \\
-  \KEY{Funcon} ~ & \NAMEREF{list} \\
-  \KEY{Funcon} ~ & \NAMEREF{list-elements} \\
-  \KEY{Funcon} ~ & \NAMEREF{list-nil} \\
-  \KEY{Alias} ~ & \NAMEREF{nil} \\
-  \KEY{Funcon} ~ & \NAMEREF{list-cons} \\
-  \KEY{Alias} ~ & \NAMEREF{cons} \\
-  \KEY{Funcon} ~ & \NAMEREF{list-head} \\
-  \KEY{Alias} ~ & \NAMEREF{head} \\
-  \KEY{Funcon} ~ & \NAMEREF{list-tail} \\
-  \KEY{Alias} ~ & \NAMEREF{tail} \\
-  \KEY{Funcon} ~ & \NAMEREF{list-length} \\
-  \KEY{Funcon} ~ & \NAMEREF{list-append}
-  ~ ]
+  [ \
+  \KEY{Datatype} \quad & \NAMEREF{lists} \\
+  \KEY{Funcon} \quad & \NAMEREF{list} \\
+  \KEY{Funcon} \quad & \NAMEREF{list-elements} \\
+  \KEY{Funcon} \quad & \NAMEREF{list-nil} \\
+  \KEY{Alias} \quad & \NAMEREF{nil} \\
+  \KEY{Funcon} \quad & \NAMEREF{list-cons} \\
+  \KEY{Alias} \quad & \NAMEREF{cons} \\
+  \KEY{Funcon} \quad & \NAMEREF{list-head} \\
+  \KEY{Alias} \quad & \NAMEREF{head} \\
+  \KEY{Funcon} \quad & \NAMEREF{list-tail} \\
+  \KEY{Alias} \quad & \NAMEREF{tail} \\
+  \KEY{Funcon} \quad & \NAMEREF{list-length} \\
+  \KEY{Funcon} \quad & \NAMEREF{list-append}
+  \ ]
 \end{align*}
 \begin{align*}
-  \KEY{Meta-variables} ~ 
+  \KEY{Meta-variables} \quad
   & \VAR{T} <: \NAMEHYPER{../..}{Value-Types}{values}
 \end{align*}
 \begin{align*}
-  \KEY{Datatype} ~ 
-  \NAMEDECL{lists}(\VAR{T} )  
-  ~ ::= ~ & \NAMEDECL{list} (\_ : ( \VAR{T} )\STAR)
+  \KEY{Datatype} \quad 
+  \NAMEDECL{lists}(
+                     \VAR{T} ) 
+  \ ::= \ & \NAMEDECL{list}(
+                               \_ : (  \VAR{T} )\STAR)
 \end{align*}
 $\SHADE{\NAMEREF{lists}
-           ( \VAR{T} )}$ is the type of possibly-empty finite lists $\SHADE{[ \VAR{V}\SUB{1},  
-           \cdots,  
-           \VAR{V}\SUB{n} ]}$ 
+           (  \VAR{T} )}$ is the type of possibly-empty finite lists $\SHADE{[  \VAR{V}\SUB{1}, 
+                \cdots, 
+                \VAR{V}\SUB{n} ]}$ 
   where $\SHADE{\VAR{V}\SUB{1} : \VAR{T}}$, \ldots{}, $\SHADE{\VAR{V}\SUB{n} : \VAR{T}}$.
 
-N.B. $\SHADE{[ \VAR{T} ]}$ is always a single list value, and \emph{not} interpreted as the
+N.B. $\SHADE{[  \VAR{T} ]}$ is always a single list value, and \emph{not} interpreted as the
   type $\SHADE{\NAMEREF{lists}
-           ( \VAR{T} )}$.
+           (  \VAR{T} )}$.
 
-The notation $\SHADE{[ \VAR{V}\SUB{1},  
-           \cdots,  
-           \VAR{V}\SUB{n} ]}$ for $\SHADE{\NAMEREF{list}
-           ( \VAR{V}\SUB{1},   
-             \cdots,   
-             \VAR{V}\SUB{n} )}$ is built-in.
+The notation $\SHADE{[  \VAR{V}\SUB{1}, 
+                \cdots, 
+                \VAR{V}\SUB{n} ]}$ for $\SHADE{\NAMEREF{list}
+           (  \VAR{V}\SUB{1}, 
+                  \cdots, 
+                  \VAR{V}\SUB{n} )}$ is built-in.
 
 \begin{align*}
-  \KEY{Assert} ~ 
-  & [ \VAR{V}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ] == 
-      \NAMEREF{list}
-        ( \VAR{V}\STAR )
+  \KEY{Assert} \quad
+  & [  \VAR{V}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ] 
+    == \NAMEREF{list}
+         (  \VAR{V}\STAR )
 \end{align*}
 \begin{align*}
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{list-elements}(\_ : \NAMEREF{lists}
-                                ( \VAR{T} )) :  \TO ( \VAR{T} )\STAR
+  \KEY{Funcon} \quad
+  & \NAMEDECL{list-elements}(
+                       \_ : \NAMEREF{lists}
+                                 (  \VAR{T} )) 
+    :  \TO (  \VAR{T} )\STAR 
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \quad
     & \NAMEREF{list-elements}
-        ( \NAMEREF{list}
-            ( \VAR{V}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ) ) \leadsto
+        (  \NAMEREF{list}
+                (  \VAR{V}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ) ) \leadsto 
         \VAR{V}\STAR
 \end{align*}
 \begin{align*}
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{list-nil} :  \TO \NAMEREF{lists}
-                                                                         ( \_ ) \\
-  & \quad \leadsto [  ~  ]
+  \KEY{Funcon} \quad
+  & \NAMEDECL{list-nil} 
+    :  \TO \NAMEREF{lists}
+                     (  \_ ) \\&\quad
+    \leadsto [   \  ]
 \\
-  \KEY{Alias} ~ 
+  \KEY{Alias} \quad
   & \NAMEDECL{nil} = \NAMEREF{list-nil}
 \end{align*}
 \begin{align*}
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{list-cons}(\_ : \VAR{T}, \_ : \NAMEREF{lists}
-                                ( \VAR{T} )) :  \TO \NAMEREF{lists}
-                                                                         ( \VAR{T} )
+  \KEY{Funcon} \quad
+  & \NAMEDECL{list-cons}(
+                       \_ : \VAR{T}, \_ : \NAMEREF{lists}
+                                 (  \VAR{T} )) 
+    :  \TO \NAMEREF{lists}
+                     (  \VAR{T} ) 
 \\
-  \KEY{Alias} ~ 
+  \KEY{Alias} \quad
   & \NAMEDECL{cons} = \NAMEREF{list-cons}
 \end{align*}
 \begin{align*}
-  \KEY{Rule} ~ 
+  \KEY{Rule} \quad
     & \NAMEREF{list-cons}
-        ( \VAR{V} : \NAMEHYPER{../..}{Value-Types}{values},   
-          [ \VAR{V}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ] ) \leadsto
-        [ \VAR{V},  
-          \VAR{V}\STAR ]
+        (  \VAR{V} : \NAMEHYPER{../..}{Value-Types}{values}, 
+               [  \VAR{V}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ] ) \leadsto 
+        [  \VAR{V}, 
+               \VAR{V}\STAR ]
 \end{align*}
 \begin{align*}
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{list-head}(\_ : \NAMEREF{lists}
-                                ( \VAR{T} )) :  \TO ( \VAR{T} )\QUERY
+  \KEY{Funcon} \quad
+  & \NAMEDECL{list-head}(
+                       \_ : \NAMEREF{lists}
+                                 (  \VAR{T} )) 
+    :  \TO (  \VAR{T} )\QUERY 
 \\
-  \KEY{Alias} ~ 
+  \KEY{Alias} \quad
   & \NAMEDECL{head} = \NAMEREF{list-head}
 \end{align*}
 \begin{align*}
-  \KEY{Rule} ~ 
-    & \NAMEREF{list-head} ~
-        [ \VAR{V} : \NAMEHYPER{../..}{Value-Types}{values},   
-          \_\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ] \leadsto
+  \KEY{Rule} \quad
+    & \NAMEREF{list-head} \ 
+        [  \VAR{V} : \NAMEHYPER{../..}{Value-Types}{values}, 
+               \_\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ] \leadsto 
         \VAR{V}
 \\
-  \KEY{Rule} ~ 
-    & \NAMEREF{list-head} ~
-        [  ~  ] \leadsto
-        (  ~  )
+  \KEY{Rule} \quad
+    & \NAMEREF{list-head} \ 
+        [   \  ] \leadsto 
+        (   \  )
 \end{align*}
 \begin{align*}
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{list-tail}(\_ : \NAMEREF{lists}
-                                ( \VAR{T} )) :  \TO ( \NAMEREF{lists}
-                                                                           ( \VAR{T} ) )\QUERY
+  \KEY{Funcon} \quad
+  & \NAMEDECL{list-tail}(
+                       \_ : \NAMEREF{lists}
+                                 (  \VAR{T} )) 
+    :  \TO (  \NAMEREF{lists}
+                           (  \VAR{T} ) )\QUERY 
 \\
-  \KEY{Alias} ~ 
+  \KEY{Alias} \quad
   & \NAMEDECL{tail} = \NAMEREF{list-tail}
 \end{align*}
 \begin{align*}
-  \KEY{Rule} ~ 
-    & \NAMEREF{list-tail} ~
-        [ \_ : \NAMEHYPER{../..}{Value-Types}{values},   
-          \VAR{V}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ] \leadsto
-        [ \VAR{V}\STAR ]
+  \KEY{Rule} \quad
+    & \NAMEREF{list-tail} \ 
+        [  \_ : \NAMEHYPER{../..}{Value-Types}{values}, 
+               \VAR{V}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ] \leadsto 
+        [  \VAR{V}\STAR ]
 \\
-  \KEY{Rule} ~ 
-    & \NAMEREF{list-tail} ~
-        [  ~  ] \leadsto
-        (  ~  )
+  \KEY{Rule} \quad
+    & \NAMEREF{list-tail} \ 
+        [   \  ] \leadsto 
+        (   \  )
 \end{align*}
 \begin{align*}
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{list-length}(\_ : \NAMEREF{lists}
-                                ( \VAR{T} )) :  \TO \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}
+  \KEY{Funcon} \quad
+  & \NAMEDECL{list-length}(
+                       \_ : \NAMEREF{lists}
+                                 (  \VAR{T} )) 
+    :  \TO \NAMEHYPER{../../Primitive}{Integers}{natural-numbers} 
 \\
-  \KEY{Rule} ~ 
-    & \NAMEREF{list-length} ~
-        [ \VAR{V}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ] \leadsto
+  \KEY{Rule} \quad
+    & \NAMEREF{list-length} \ 
+        [  \VAR{V}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ] \leadsto 
         \NAMEHYPER{../.}{Sequences}{length}
-          ( \VAR{V}\STAR )
+          (  \VAR{V}\STAR )
 \end{align*}
 \begin{align*}
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{list-append}(\_ : ( \NAMEREF{lists}
-                                  ( \VAR{T} ) )\STAR) :  \TO \NAMEREF{lists}
-                                                                         ( \VAR{T} )
+  \KEY{Funcon} \quad
+  & \NAMEDECL{list-append}(
+                       \_ : (  \NAMEREF{lists}
+                                       (  \VAR{T} ) )\STAR) 
+    :  \TO \NAMEREF{lists}
+                     (  \VAR{T} ) 
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \quad
     & \NAMEREF{list-append}
-        ( [ \VAR{V}\SUB{1}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ],   
-          [ \VAR{V}\SUB{2}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ] ) \leadsto
-        [ \VAR{V}\SUB{1}\STAR,  
-          \VAR{V}\SUB{2}\STAR ]
+        (  [  \VAR{V}\SUB{1}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ], 
+               [  \VAR{V}\SUB{2}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ] ) \leadsto 
+        [  \VAR{V}\SUB{1}\STAR, 
+               \VAR{V}\SUB{2}\STAR ]
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \quad
     & \NAMEREF{list-append}
-        ( \VAR{L}\SUB{1} : \NAMEREF{lists}
-                      ( \_ ),   
-          \VAR{L}\SUB{2} : \NAMEREF{lists}
-                      ( \_ ),   
-          \VAR{L}\SUB{3} : \NAMEREF{lists}
-                      ( \_ ),   
-          \VAR{L}\STAR : ( \NAMEREF{lists}
-                        ( \_ ) )\STAR ) \leadsto
+        (  \VAR{L}\SUB{1} : \NAMEREF{lists}
+                          (  \_ ), 
+               \VAR{L}\SUB{2} : \NAMEREF{lists}
+                          (  \_ ), 
+               \VAR{L}\SUB{3} : \NAMEREF{lists}
+                          (  \_ ), 
+               \VAR{L}\STAR : (  \NAMEREF{lists}
+                                (  \_ ) )\STAR ) \leadsto \\&\quad
         \NAMEREF{list-append}
-          ( \VAR{L}\SUB{1},   
-            \NAMEREF{list-append}
-              ( \VAR{L}\SUB{2},    
-                \VAR{L}\SUB{3},    
-                \VAR{L}\STAR ) )
+          (  \VAR{L}\SUB{1}, 
+                 \NAMEREF{list-append}
+                  (  \VAR{L}\SUB{2}, 
+                         \VAR{L}\SUB{3}, 
+                         \VAR{L}\STAR ) )
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \quad
     & \NAMEREF{list-append}
-        (  ~  ) \leadsto
-        [  ~  ]
+        (   \  ) \leadsto 
+        [   \  ]
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \quad
     & \NAMEREF{list-append}
-        ( \VAR{L} : \NAMEREF{lists}
-                      ( \_ ) ) \leadsto
+        (  \VAR{L} : \NAMEREF{lists}
+                          (  \_ ) ) \leadsto 
         \VAR{L}
 \end{align*}
 Datatypes of infinite and possibly-infinite lists can be specified as
   algebraic datatypes using abstractions.
+
+% {% endraw %}
+
 

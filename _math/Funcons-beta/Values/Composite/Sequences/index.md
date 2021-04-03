@@ -10,12 +10,15 @@ ancestor: Funcons-beta
 {::comment}{% raw %}{:/}
 <details open markdown="block">
   <summary>
-    Outline
+    OUTLINE
   </summary>
   {: .text-delta }
 - TOC
 {:toc}
 </details>
+
+
+----
 
 ### Sequences of values
                
@@ -23,17 +26,17 @@ ancestor: Funcons-beta
 
 $$\begin{align*}
   [ \
-  \KEY{Funcon} \ & \NAMEREF{length} \\
-  \KEY{Funcon} \ & \NAMEREF{index} \\
-  \KEY{Funcon} \ & \NAMEREF{is-in} \\
-  \KEY{Funcon} \ & \NAMEREF{first} \\
-  \KEY{Funcon} \ & \NAMEREF{second} \\
-  \KEY{Funcon} \ & \NAMEREF{third} \\
-  \KEY{Funcon} \ & \NAMEREF{first-n} \\
-  \KEY{Funcon} \ & \NAMEREF{drop-first-n} \\
-  \KEY{Funcon} \ & \NAMEREF{reverse} \\
-  \KEY{Funcon} \ & \NAMEREF{n-of} \\
-  \KEY{Funcon} \ & \NAMEREF{intersperse}
+  \KEY{Funcon} \quad & \NAMEREF{length} \\
+  \KEY{Funcon} \quad & \NAMEREF{index} \\
+  \KEY{Funcon} \quad & \NAMEREF{is-in} \\
+  \KEY{Funcon} \quad & \NAMEREF{first} \\
+  \KEY{Funcon} \quad & \NAMEREF{second} \\
+  \KEY{Funcon} \quad & \NAMEREF{third} \\
+  \KEY{Funcon} \quad & \NAMEREF{first-n} \\
+  \KEY{Funcon} \quad & \NAMEREF{drop-first-n} \\
+  \KEY{Funcon} \quad & \NAMEREF{reverse} \\
+  \KEY{Funcon} \quad & \NAMEREF{n-of} \\
+  \KEY{Funcon} \quad & \NAMEREF{intersperse}
   \ ]
 \end{align*}$$
 
@@ -67,12 +70,12 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Meta-variables} \
+  \KEY{Meta-variables} \quad
   & \VAR{T}, \VAR{T}' <: \NAMEHYPER{../..}{Value-Types}{values}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{length}(
                        \_ : \NAMEHYPER{../..}{Value-Types}{values}\STAR) 
     :  \TO \NAMEHYPER{../../Primitive}{Integers}{natural-numbers} 
@@ -84,12 +87,12 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{length}
         (   \  ) \leadsto 
         0
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{length}
         (  \VAR{V} : \NAMEHYPER{../..}{Value-Types}{values}, 
                \VAR{V}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ) \leadsto 
@@ -99,12 +102,12 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{is-in}(
                        \_ : \NAMEHYPER{../..}{Value-Types}{values}, \_ : \NAMEHYPER{../..}{Value-Types}{values}\STAR) 
     :  \TO \NAMEHYPER{../../Primitive}{Booleans}{booleans} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{is-in}
         (  \VAR{V} : \NAMEHYPER{../..}{Value-Types}{values}, 
                \VAR{V}' : \NAMEHYPER{../..}{Value-Types}{values}, 
@@ -117,7 +120,7 @@ $$\begin{align*}
                   (  \VAR{V}, 
                          \VAR{V}\STAR ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{is-in}
         (  \VAR{V} : \NAMEHYPER{../..}{Value-Types}{values}, 
                (   \  ) ) \leadsto 
@@ -129,7 +132,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{index}(
                        \_ : \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}, \_ : \NAMEHYPER{../..}{Value-Types}{values}\STAR) 
     :  \TO \NAMEHYPER{../..}{Value-Types}{values}\QUERY 
@@ -142,14 +145,14 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{index}
         (  1, 
                \VAR{V} : \NAMEHYPER{../..}{Value-Types}{values}, 
                \VAR{V}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ) \leadsto 
         \VAR{V}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../Primitive}{Integers}{natural-predecessor}
           (  \VAR{N} ) \leadsto 
@@ -164,13 +167,13 @@ $$\begin{align*}
                    \VAR{V}\STAR )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{index}
         (  0, 
                \VAR{V}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ) \leadsto 
         (   \  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{index}
         (  \_ : \NAMEHYPER{../../Primitive}{Integers}{positive-integers}, 
                (   \  ) ) \leadsto 
@@ -180,12 +183,12 @@ $$\begin{align*}
  Total indexing funcons: 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{first}(
                        \_ : \VAR{T}, \_ : \NAMEHYPER{../..}{Value-Types}{values}\STAR) 
     :  \TO \VAR{T} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{first}
         (  \VAR{V} : \VAR{T}, 
                \VAR{V}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ) \leadsto 
@@ -193,12 +196,12 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{second}(
                        \_ : \NAMEHYPER{../..}{Value-Types}{values}, \_ : \VAR{T}, \_ : \NAMEHYPER{../..}{Value-Types}{values}\STAR) 
     :  \TO \VAR{T} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{second}
         (  \_ : \NAMEHYPER{../..}{Value-Types}{values}, 
                \VAR{V} : \VAR{T}, 
@@ -207,12 +210,12 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{third}(
                        \_ : \NAMEHYPER{../..}{Value-Types}{values}, \_ : \NAMEHYPER{../..}{Value-Types}{values}, \_ : \VAR{T}, \_ : \NAMEHYPER{../..}{Value-Types}{values}\STAR) 
     :  \TO \VAR{T} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{third}
         (  \_ : \NAMEHYPER{../..}{Value-Types}{values}, 
                \_ : \NAMEHYPER{../..}{Value-Types}{values}, 
@@ -226,18 +229,18 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{first-n}(
                        \_ : \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}, \_ : (  \VAR{T} )\STAR) 
     :  \TO (  \VAR{T} )\STAR 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{first-n}
         (  0, 
                \VAR{V}\STAR : (  \VAR{T} )\STAR ) \leadsto 
         (   \  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../Primitive}{Integers}{natural-predecessor}
           (  \VAR{N} ) \leadsto 
@@ -253,7 +256,7 @@ $$\begin{align*}
                          \VAR{V}\STAR ) )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{first-n}
         (  \VAR{N} : \NAMEHYPER{../../Primitive}{Integers}{positive-integers}, 
                (   \  ) ) \leadsto 
@@ -261,18 +264,18 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{drop-first-n}(
                        \_ : \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}, \_ : (  \VAR{T} )\STAR) 
     :  \TO (  \VAR{T} )\STAR 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{drop-first-n}
         (  0, 
                \VAR{V}\STAR : (  \VAR{T} )\STAR ) \leadsto 
         \VAR{V}\STAR
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../Primitive}{Integers}{natural-predecessor}
           (  \VAR{N} ) \leadsto 
@@ -287,7 +290,7 @@ $$\begin{align*}
                    \VAR{V}\STAR )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{drop-first-n}
         (  \VAR{N} : \NAMEHYPER{../../Primitive}{Integers}{positive-integers}, 
                (   \  ) ) \leadsto 
@@ -295,17 +298,17 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{reverse}(
                        \_ : (  \VAR{T} )\STAR) 
     :  \TO (  \VAR{T} )\STAR 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{reverse}
         (   \  ) \leadsto 
         (   \  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{reverse}
         (  \VAR{V} : \VAR{T}, 
                \VAR{V}\STAR : (  \VAR{T} )\STAR ) \leadsto 
@@ -315,18 +318,18 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{n-of}(
                        \VAR{N} : \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}, \VAR{V} : \VAR{T}) 
     :  \TO (  \VAR{T} )\STAR 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{n-of}
         (  0, 
                \_ : \VAR{T} ) \leadsto 
         (   \  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../Primitive}{Integers}{natural-predecessor}
           (  \VAR{N} ) \leadsto 
@@ -343,26 +346,26 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{intersperse}(
                        \_ : \VAR{T}', \_ : (  \VAR{T} )\STAR) 
     :  \TO (  \VAR{T}, 
                           (  \VAR{T}', 
                                 \VAR{T} )\STAR )\QUERY 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{intersperse}
         (  \_ : \VAR{T}', 
                (   \  ) ) \leadsto 
         (   \  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{intersperse}
         (  \_ : \VAR{T}', 
                \VAR{V} ) \leadsto 
         \VAR{V}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{intersperse}
         (  \VAR{V}' : \VAR{T}', 
                \VAR{V}\SUB{1} : \VAR{T}, 
@@ -375,6 +378,7 @@ $$\begin{align*}
                        \VAR{V}\SUB{2}, 
                        \VAR{V}\STAR ) )
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -399,7 +403,9 @@ $$\begin{align*}
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

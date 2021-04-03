@@ -1,21 +1,24 @@
 {::comment}{% raw %}{:/}
 <details open markdown="block">
   <summary>
-    Outline
+    OUTLINE
   </summary>
   {: .text-delta }
 - TOC
 {:toc}
 </details>
 
-$$\KEY{Language} \STRING{SIMPLE-THR}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{SIMPLE-THR}$$
 
 # $$\SECT{1}$$ Lexical Syntax
            
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{V} : \SYN{value}
       \ ::= \ & \
       \SYNREF{bool} \mid \SYNREF{int} \mid \SYNREF{string}
@@ -24,24 +27,24 @@ $$\begin{align*}
       \ ::= \ & \
       \LEX{false} \mid \LEX{true}
 \\
-  \KEY{Lexis} \
+  \KEY{Lexis} \quad
     \VARDECL{Z} : \SYN{int}
       \ ::= \ & \
-      \LEFTGROUP \LEX{0} - \LEX{9} \RIGHTGROUP\PLUS
+      \LEFTGROUP \LEX{0} {-} \LEX{9} \RIGHTGROUP\PLUS
 \\
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
      \SYN{string}
       \ ::= \ & \
       \LEX{{"}} \_ \SYNREF{string-chars} \_ \LEX{{"}}
 \\
-  \KEY{Lexis} \
+  \KEY{Lexis} \quad
     \VARDECL{S} : \SYN{string-chars}
       \ ::= \ & \
       \LEFTGROUP \mathop{\sim} \LEX{{"}} \RIGHTGROUP\STAR
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{val} \LEFTPHRASE \ \_ : \SYNREF{value} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} 
 \end{align*}$$
@@ -51,13 +54,13 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{val} \LEFTPHRASE \
                             \LEX{false} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{val} \LEFTPHRASE \
                             \LEX{true} \
                           \RIGHTPHRASE  = 
@@ -69,7 +72,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{val} \LEFTPHRASE \
                             \VARREF{Z} \
                           \RIGHTPHRASE  = 
@@ -82,7 +85,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{val} \LEFTPHRASE \
                             \LEX{{"}} \ \VARREF{S} \ \LEX{{"}} \
                           \RIGHTPHRASE  = 
@@ -94,18 +97,18 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Lexis} \
+  \KEY{Lexis} \quad
     \VARDECL{Id} : \SYN{id}
       \ ::= \ & \
-      \LEFTGROUP \LEX{A} - \LEX{Z} \mid \LEX{a} - \LEX{z} \mid \LEX{{\UNDERSCORE}} \RIGHTGROUP \ \LEFTGROUP \LEX{0} - \LEX{9} \mid \LEX{A} - \LEX{Z} \mid \LEX{a} - \LEX{z} \mid \LEX{{\UNDERSCORE}} \RIGHTGROUP\STAR
+      \LEFTGROUP \LEX{A} {-} \LEX{Z} \mid \LEX{a} {-} \LEX{z} \mid \LEX{{\UNDERSCORE}} \RIGHTGROUP \ \LEFTGROUP \LEX{0} {-} \LEX{9} \mid \LEX{A} {-} \LEX{Z} \mid \LEX{a} {-} \LEX{z} \mid \LEX{{\UNDERSCORE}} \RIGHTGROUP\STAR
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{id} \LEFTPHRASE \ \_ : \SYNREF{id} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{ids} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{id} \LEFTPHRASE \
                             \VARREF{Id} \
                           \RIGHTPHRASE  = 
@@ -113,7 +116,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Lexis} \
+  \KEY{Lexis} \quad
      \SYN{keyword}
       \ ::= \ & \
       \LEX{false} \mid \LEX{true} \mid \LEX{var} \mid \LEX{function} \mid \LEX{sizeOf} \mid \LEX{read} \\
@@ -121,6 +124,7 @@ $$\begin{align*}
       \ \mid \ & \ \LEX{try} \mid \LEX{catch} \mid \LEX{throw} \mid \LEX{join} \mid \LEX{acquire} \mid \LEX{release} \\
       \ \mid \ & \ \LEX{rendezvous}
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

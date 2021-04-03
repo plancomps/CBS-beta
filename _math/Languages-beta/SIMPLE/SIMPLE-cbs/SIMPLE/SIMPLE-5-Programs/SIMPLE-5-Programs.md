@@ -1,20 +1,23 @@
 {::comment}{% raw %}{:/}
 
-$$\KEY{Language} \STRING{SIMPLE}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{SIMPLE}$$
 
 # $$\SECT{5}$$ Programs
            
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{Pgm} : \SYN{pgm}
       \ ::= \ & \
       \SYNREF{decls}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{run} \LEFTPHRASE \ \VARREF{Decls} : \SYNREF{pgm} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} \\&\quad
     =  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{scope}
@@ -35,18 +38,18 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{Decls} : \SYN{decls}
       \ ::= \ & \
       \SYNHYPER{../.}{SIMPLE-4-Declarations}{decl} \ \SYNREF{decls}\QUERY
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{declarations} \LEFTPHRASE \ \_ : \SYNREF{decls} \ \RIGHTPHRASE  
     : (   \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{environments} )\PLUS 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{declarations} \LEFTPHRASE \
                             \VARHYPER{../.}{SIMPLE-4-Declarations}{Decl} \
                           \RIGHTPHRASE  = 
@@ -54,7 +57,7 @@ $$\begin{align*}
                             \VAR{Decl} \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{declarations} \LEFTPHRASE \
                             \VARHYPER{../.}{SIMPLE-4-Declarations}{Decl} \ \VARREF{Decls} \
                           \RIGHTPHRASE  = 
@@ -67,11 +70,11 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{initialisations} \LEFTPHRASE \ \_ : \SYNREF{decls} \ \RIGHTPHRASE  
     : (   \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} )\PLUS 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{initialisations} \LEFTPHRASE \
                             \VARHYPER{../.}{SIMPLE-4-Declarations}{Decl} \
                           \RIGHTPHRASE  = 
@@ -79,7 +82,7 @@ $$\begin{align*}
                             \VAR{Decl} \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{initialisations} \LEFTPHRASE \
                             \VARHYPER{../.}{SIMPLE-4-Declarations}{Decl} \ \VARREF{Decls} \
                           \RIGHTPHRASE  = \\&\quad
@@ -90,6 +93,7 @@ $$\begin{align*}
                             \VAR{Decls} \
                           \RIGHTPHRASE 
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

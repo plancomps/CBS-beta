@@ -1,28 +1,31 @@
 {::comment}{% raw %}{:/}
 
+
+----
+
 ### Throwing
                
 
 
 $$\begin{align*}
   [ \
-  \KEY{Datatype} \ & \NAMEREF{throwing} \\
-  \KEY{Funcon} \ & \NAMEREF{thrown} \\
-  \KEY{Funcon} \ & \NAMEREF{finalise-throwing} \\
-  \KEY{Funcon} \ & \NAMEREF{throw} \\
-  \KEY{Funcon} \ & \NAMEREF{handle-thrown} \\
-  \KEY{Funcon} \ & \NAMEREF{handle-recursively} \\
-  \KEY{Funcon} \ & \NAMEREF{catch-else-throw}
+  \KEY{Datatype} \quad & \NAMEREF{throwing} \\
+  \KEY{Funcon} \quad & \NAMEREF{thrown} \\
+  \KEY{Funcon} \quad & \NAMEREF{finalise-throwing} \\
+  \KEY{Funcon} \quad & \NAMEREF{throw} \\
+  \KEY{Funcon} \quad & \NAMEREF{handle-thrown} \\
+  \KEY{Funcon} \quad & \NAMEREF{handle-recursively} \\
+  \KEY{Funcon} \quad & \NAMEREF{catch-else-throw}
   \ ]
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Meta-variables} \
+  \KEY{Meta-variables} \quad
   & \VAR{R}, \VAR{S}, \VAR{T}, \VAR{T}', \VAR{T}'' <: \NAMEHYPER{../../../Values}{Value-Types}{values}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Datatype} \ 
+  \KEY{Datatype} \quad 
   \NAMEDECL{throwing} 
   \ ::= \ & \NAMEDECL{thrown}(
                                \_ : \NAMEHYPER{../../../Values}{Value-Types}{values})
@@ -34,7 +37,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{finalise-throwing}(
                        \VAR{X} :  \TO \VAR{T}) 
     :  \TO \VAR{T}  \mid \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} \\&\quad
@@ -50,7 +53,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{throw}(
                        \VAR{V} : \VAR{T}) 
     :  \TO \NAMEHYPER{../../../Values}{Value-Types}{empty-type} \\&\quad
@@ -65,7 +68,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{handle-thrown}(
                        \_ : \VAR{T}' \TO \VAR{T}, \_ : \VAR{T}'' \TO \VAR{T}) 
     : \VAR{T}' \TO \VAR{T} 
@@ -93,7 +96,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(   \  )}_{} 
           \VAR{X}'
@@ -106,7 +109,7 @@ $$\begin{align*}
                    \VAR{Y} )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  \NAMEREF{thrown}
                                                                                   (  \VAR{V}'' : \NAMEHYPER{../../../Values}{Value-Types}{values} ) )}_{} 
@@ -120,7 +123,7 @@ $$\begin{align*}
                    \VAR{Y} )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  \VAR{V}' : \mathop{\sim} \NAMEREF{throwing} )}_{} 
           \VAR{X}'
@@ -133,7 +136,7 @@ $$\begin{align*}
                    \VAR{Y} )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{handle-thrown}
         (  \VAR{V} : \VAR{T}, 
                \VAR{Y} ) \leadsto 
@@ -141,7 +144,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{handle-recursively}(
                        \VAR{X} : \VAR{S} \TO \VAR{T}, \VAR{Y} : \VAR{R} \TO \VAR{T}) 
     : \VAR{S} \TO \VAR{T} \\&\quad
@@ -166,7 +169,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{catch-else-throw}(
                        \VAR{P} : \NAMEHYPER{../../../Values}{Value-Types}{values}, \VAR{Y} :  \TO \VAR{T}) 
     :  \TO \VAR{T} \\&\quad
@@ -186,6 +189,7 @@ $$\begin{align*}
                           \VAR{Y} ) )}$$ handles those values thrown by $$\SHADE{\VAR{X}}$$
    that match pattern $$\SHADE{\VAR{P}}$$.  Other thrown values are re-thrown.  
  
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

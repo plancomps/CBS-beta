@@ -9,25 +9,28 @@ ancestor: Funcons-beta
 
 {::comment}{% raw %}{:/}
 
+
+----
+
 ### Objects
                
 
 
 $$\begin{align*}
   [ \
-  \KEY{Datatype} \ & \NAMEREF{objects} \\
-  \KEY{Funcon} \ & \NAMEREF{object} \\
-  \KEY{Funcon} \ & \NAMEREF{object-identity} \\
-  \KEY{Funcon} \ & \NAMEREF{object-class-name} \\
-  \KEY{Funcon} \ & \NAMEREF{object-feature-map} \\
-  \KEY{Funcon} \ & \NAMEREF{object-subobject-sequence} \\
-  \KEY{Funcon} \ & \NAMEREF{object-tree} \\
-  \KEY{Funcon} \ & \NAMEREF{object-single-inheritance-feature-map}
+  \KEY{Datatype} \quad & \NAMEREF{objects} \\
+  \KEY{Funcon} \quad & \NAMEREF{object} \\
+  \KEY{Funcon} \quad & \NAMEREF{object-identity} \\
+  \KEY{Funcon} \quad & \NAMEREF{object-class-name} \\
+  \KEY{Funcon} \quad & \NAMEREF{object-feature-map} \\
+  \KEY{Funcon} \quad & \NAMEREF{object-subobject-sequence} \\
+  \KEY{Funcon} \quad & \NAMEREF{object-tree} \\
+  \KEY{Funcon} \quad & \NAMEREF{object-single-inheritance-feature-map}
   \ ]
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Datatype} \ 
+  \KEY{Datatype} \quad 
   \NAMEDECL{objects} 
   \ ::= \ & \NAMEDECL{object}(
                                \_ : \NAMEHYPER{../../../Computations/Normal}{Generating}{atoms}, \_ : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}, \_ : \NAMEHYPER{../../../Computations/Normal}{Binding}{environments}, \_ : \NAMEREF{objects}\STAR)
@@ -62,12 +65,12 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{object-identity}(
                        \_ : \NAMEREF{objects}) 
     :  \TO \NAMEHYPER{../../../Computations/Normal}{Generating}{atoms} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{object-identity} \\&\quad 
         \NAMEREF{object}
           (  \VAR{A} : \NAMEHYPER{../../../Computations/Normal}{Generating}{atoms}, 
@@ -78,12 +81,12 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{object-class-name}(
                        \_ : \NAMEREF{objects}) 
     :  \TO \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{object-class-name} \\&\quad 
         \NAMEREF{object}
           (  \_ : \NAMEHYPER{../../../Computations/Normal}{Generating}{atoms}, 
@@ -94,12 +97,12 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{object-feature-map}(
                        \_ : \NAMEREF{objects}) 
     :  \TO \NAMEHYPER{../../../Computations/Normal}{Binding}{environments} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{object-feature-map} \\&\quad 
         \NAMEREF{object}
           (  \_ : \NAMEHYPER{../../../Computations/Normal}{Generating}{atoms}, 
@@ -110,12 +113,12 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{object-subobject-sequence}(
                        \_ : \NAMEREF{objects}) 
     :  \TO \NAMEREF{objects}\STAR 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{object-subobject-sequence} \\&\quad 
         \NAMEREF{object}
           (  \_ : \NAMEHYPER{../../../Computations/Normal}{Generating}{atoms}, 
@@ -126,7 +129,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{object-tree}(
                        \_ : \NAMEREF{objects}) 
     :  \TO \NAMEHYPER{../.}{Trees}{trees}
@@ -140,7 +143,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{object-tree}
         (  \VAR{O} : \NAMEREF{objects} ) \leadsto \\&\quad
         \NAMEHYPER{../.}{Trees}{tree}
@@ -153,7 +156,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{object-single-inheritance-feature-map}(
                        \VAR{O} : \NAMEREF{objects}) 
     :  \TO \NAMEHYPER{../../../Computations/Normal}{Binding}{environments} \\&\quad
@@ -169,6 +172,7 @@ $$\begin{align*}
 
   For multiple inheritance, different resolution orders can be specified
   by using difference linearisations of the object tree.
+
 
 
 
@@ -194,7 +198,9 @@ $$\begin{align*}
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

@@ -1,6 +1,9 @@
 {::comment}{% raw %}{:/}
 
-$$\KEY{Language} \STRING{IMP}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{IMP}$$
 
 
 
@@ -20,18 +23,18 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{START} : \SYN{start}
       \ ::= \ & \
       \SYNHYPER{../.}{IMP-4}{pgm}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{start} \LEFTPHRASE \ \_ : \SYNREF{start} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{start} \LEFTPHRASE \
                             \VARHYPER{../.}{IMP-4}{Pgm} \
                           \RIGHTPHRASE  = \\&\quad
@@ -43,6 +46,7 @@ $$\begin{align*}
                                     \VAR{Pgm} \
                                   \RIGHTPHRASE 
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

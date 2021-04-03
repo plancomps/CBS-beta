@@ -1,31 +1,34 @@
 {::comment}{% raw %}{:/}
 
+
+----
+
 ### Maps
                
 
 
 $$\begin{align*}
   [ \
-  \KEY{Type} \ & \NAMEREF{maps} \\
-  \KEY{Funcon} \ & \NAMEREF{map} \\
-  \KEY{Funcon} \ & \NAMEREF{map-elements} \\
-  \KEY{Funcon} \ & \NAMEREF{map-lookup} \\
-  \KEY{Alias} \ & \NAMEREF{lookup} \\
-  \KEY{Funcon} \ & \NAMEREF{map-domain} \\
-  \KEY{Alias} \ & \NAMEREF{dom} \\
-  \KEY{Funcon} \ & \NAMEREF{map-override} \\
-  \KEY{Funcon} \ & \NAMEREF{map-unite} \\
-  \KEY{Funcon} \ & \NAMEREF{map-delete}
+  \KEY{Type} \quad & \NAMEREF{maps} \\
+  \KEY{Funcon} \quad & \NAMEREF{map} \\
+  \KEY{Funcon} \quad & \NAMEREF{map-elements} \\
+  \KEY{Funcon} \quad & \NAMEREF{map-lookup} \\
+  \KEY{Alias} \quad & \NAMEREF{lookup} \\
+  \KEY{Funcon} \quad & \NAMEREF{map-domain} \\
+  \KEY{Alias} \quad & \NAMEREF{dom} \\
+  \KEY{Funcon} \quad & \NAMEREF{map-override} \\
+  \KEY{Funcon} \quad & \NAMEREF{map-unite} \\
+  \KEY{Funcon} \quad & \NAMEREF{map-delete}
   \ ]
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Meta-variables} \
+  \KEY{Meta-variables} \quad
   & \VAR{GT} <: \NAMEHYPER{../..}{Value-Types}{ground-values} \qquad \\& \VAR{T}\QUERY <: \NAMEHYPER{../..}{Value-Types}{values}\QUERY
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Type} \ 
+  \KEY{Built-in Type} \quad 
   & \NAMEDECL{maps}(
                        \VAR{GT} , \VAR{T}\QUERY )  
 \end{align*}$$
@@ -38,7 +41,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{map}(
                        \_ : (  \NAMEHYPER{../.}{Tuples}{tuples}
                                        (  \VAR{GT}, 
@@ -99,7 +102,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{map-elements}(
                        \_ : \NAMEREF{maps}
                                  (  \VAR{GT}, 
@@ -123,7 +126,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Assert} \
+  \KEY{Assert} \quad
   & \NAMEREF{map}
       (  \NAMEREF{map-elements}
               (  \VAR{M} ) ) 
@@ -131,14 +134,14 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{map-lookup}(
                        \_ : \NAMEREF{maps}
                                  (  \VAR{GT}, 
                                         \VAR{T}\QUERY ), \VAR{K} : \VAR{GT}) 
     :  \TO (  \VAR{T}\QUERY )\QUERY 
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{lookup} = \NAMEREF{map-lookup}
 \end{align*}$$
 
@@ -150,7 +153,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{map-domain}(
                        \_ : \NAMEREF{maps}
                                  (  \VAR{GT}, 
@@ -158,7 +161,7 @@ $$\begin{align*}
     :  \TO \NAMEHYPER{../.}{Sets}{sets}
                      (  \VAR{GT} ) 
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{dom} = \NAMEREF{map-domain}
 \end{align*}$$
 
@@ -173,7 +176,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{map-override}(
                        \_ : (  \NAMEREF{maps}
                                        (  \VAR{GT}, 
@@ -197,7 +200,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{map-unite}(
                        \_ : (  \NAMEREF{maps}
                                        (  \VAR{GT}, 
@@ -216,7 +219,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{map-delete}(
                        \_ : \NAMEREF{maps}
                                  (  \VAR{GT}, 
@@ -235,7 +238,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Assert} \
+  \KEY{Assert} \quad
   & \NAMEREF{map-domain}
       (  \NAMEREF{map-delete}
               (  \VAR{M}, 
@@ -245,6 +248,7 @@ $$\begin{align*}
                  (  \VAR{M} ), 
                 \VAR{S} )
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

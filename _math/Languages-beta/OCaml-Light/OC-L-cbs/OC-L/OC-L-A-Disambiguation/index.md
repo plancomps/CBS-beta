@@ -9,7 +9,10 @@ ancestor: Languages-beta
 
 {::comment}{% raw %}{:/}
 
-$$\KEY{Language} \STRING{OCaml Light}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{OCaml Light}$$
 
 # $$\SECT{A}$$ Disambiguation
            
@@ -287,6 +290,7 @@ $$\KEY{Language} \STRING{OCaml Light}$$
 >    $$\SHADE{\quad\SYNHYPER{../.}{OC-L-07-Expressions}{expr}  \ ::= \  \  \SYNHYPER{../.}{OC-L-07-Expressions}{expr} \ \LEX{{;}} \ \SYNHYPER{../.}{OC-L-07-Expressions}{expr}}$$
 
 
+
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
   "FUNCONS-BETA"
 [Unstable-Funcons-beta]: /CBS-beta/math/Unstable-Funcons-beta
@@ -309,7 +313,9 @@ $$\KEY{Language} \STRING{OCaml Light}$$
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

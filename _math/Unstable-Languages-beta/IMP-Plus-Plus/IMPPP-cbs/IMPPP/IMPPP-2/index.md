@@ -10,21 +10,24 @@ ancestor: Unstable-Languages-beta
 {::comment}{% raw %}{:/}
 <details open markdown="block">
   <summary>
-    Outline
+    OUTLINE
   </summary>
   {: .text-delta }
 - TOC
 {:toc}
 </details>
 
-$$\KEY{Language} \STRING{IMPPP}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{IMPPP}$$
 
 # $$\SECT{2}$$ Value expressions
            
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{AExp} : \SYN{aexp}
       \ ::= \ & \
       \SYNHYPER{../.}{IMPPP-1}{int} \\
@@ -40,18 +43,18 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Type} \ 
+  \KEY{Type} \quad 
   & \NAMEDECL{aexp-values}  
     \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integers}  \mid \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{strings}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{integer-add-or-string-append}(
                        \_ : \NAMEREF{aexp-values}, \_ : \NAMEREF{aexp-values}) \\&\quad
     :  \TO \NAMEREF{aexp-values} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{integer-add-or-string-append}
         (  \VAR{N}\SUB{1} : \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integers}, 
                \VAR{N}\SUB{2} : \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integers} ) \leadsto \\&\quad
@@ -59,7 +62,7 @@ $$\begin{align*}
           (  \VAR{N}\SUB{1}, 
                  \VAR{N}\SUB{2} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{integer-add-or-string-append}
         (  \VAR{S}\SUB{1} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{strings}, 
                \VAR{S}\SUB{2} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{strings} ) \leadsto \\&\quad
@@ -69,11 +72,11 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{eval-arith} \LEFTPHRASE \ \_ : \SYNREF{aexp} \ \RIGHTPHRASE  
     :  \TO \NAMEREF{aexp-values} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval-arith} \LEFTPHRASE \
                             \VARHYPER{../.}{IMPPP-1}{N} \
                           \RIGHTPHRASE  = 
@@ -81,7 +84,7 @@ $$\begin{align*}
                             \VAR{N} \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval-arith} \LEFTPHRASE \
                             \VARHYPER{../.}{IMPPP-1}{S} \
                           \RIGHTPHRASE  = 
@@ -89,7 +92,7 @@ $$\begin{align*}
                             \VAR{S} \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval-arith} \LEFTPHRASE \
                             \VARHYPER{../.}{IMPPP-1}{I} \
                           \RIGHTPHRASE  = 
@@ -99,7 +102,7 @@ $$\begin{align*}
                                             \VAR{I} \
                                           \RIGHTPHRASE  ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval-arith} \LEFTPHRASE \
                             \VARREF{AExp}\SUB{1} \ \LEX{{+}} \ \VARREF{AExp}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -111,7 +114,7 @@ $$\begin{align*}
                                     \VAR{AExp}\SUB{2} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval-arith} \LEFTPHRASE \
                             \VARREF{AExp}\SUB{1} \ \LEX{{/}} \ \VARREF{AExp}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -124,7 +127,7 @@ $$\begin{align*}
                                       \VAR{AExp}\SUB{2} \
                                     \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval-arith} \LEFTPHRASE \
                             \LEX{{(}} \ \VARREF{AExp} \ \LEX{{)}} \
                           \RIGHTPHRASE  = 
@@ -132,7 +135,7 @@ $$\begin{align*}
                             \VAR{AExp} \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval-arith} \LEFTPHRASE \
                             \VARHYPER{../.}{IMPPP-1}{I} \ \LEX{{=}} \ \VARREF{AExp} \
                           \RIGHTPHRASE  = \\&\quad
@@ -149,7 +152,7 @@ $$\begin{align*}
                                \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} ), \\&\quad\quad\quad
                        \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval-arith} \LEFTPHRASE \
                             \LEX{{+}{+}} \ \VARHYPER{../.}{IMPPP-1}{I} \
                           \RIGHTPHRASE  = \\&\quad
@@ -170,13 +173,13 @@ $$\begin{align*}
                                \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} ), \\&\quad\quad\quad
                        \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval-arith} \LEFTPHRASE \
                             \LEX{read} \ \LEX{{(}} \ \LEX{{)}} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Interacting}{read}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval-arith} \LEFTPHRASE \
                             \LEX{spawn} \ \VARHYPER{../.}{IMPPP-4}{Block} \
                           \RIGHTPHRASE  = \\&\quad
@@ -195,18 +198,18 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{AExps} : \SYN{aexps}
       \ ::= \ & \
       \SYNREF{aexp} \ \LEFTGROUP \LEX{{,}} \ \SYNREF{aexps} \RIGHTGROUP\QUERY
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{eval-arith-seq} \LEFTPHRASE \ \_ : \SYNREF{aexps} \ \RIGHTPHRASE  
     : (   \TO \NAMEREF{aexp-values} )\PLUS 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval-arith-seq} \LEFTPHRASE \
                             \VARREF{AExp} \
                           \RIGHTPHRASE  = 
@@ -214,7 +217,7 @@ $$\begin{align*}
                             \VAR{AExp} \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval-arith-seq} \LEFTPHRASE \
                             \VARREF{AExp} \ \LEX{{,}} \ \VARREF{AExps} \
                           \RIGHTPHRASE  = 
@@ -225,6 +228,7 @@ $$\begin{align*}
                             \VAR{AExp} \
                           \RIGHTPHRASE 
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -249,7 +253,9 @@ $$\begin{align*}
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

@@ -16,6 +16,7 @@ nav_order: MiniJava
 {:toc}
 </details>
 
+----
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Language</i> <span id="Language_MiniJava">"MiniJava"</span></code></pre></div>
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Syntax</i>
 <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_START">START</span></i>:</i>

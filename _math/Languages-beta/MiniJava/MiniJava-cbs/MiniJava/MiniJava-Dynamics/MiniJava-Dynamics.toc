@@ -1,0 +1,10 @@
+\contentsline {section}{$\leavevmode {\color {SectionNumber}\text {\bf 1}}$ Programs}{1}{section*.2}%
+\contentsline {section}{$\leavevmode {\color {SectionNumber}\text {\bf 2}}$ Declarations}{2}{section*.3}%
+\contentsline {subsection}{Classes}{2}{section*.4}%
+\contentsline {subsection}{Variables}{2}{section*.5}%
+\contentsline {subsection}{Types}{3}{section*.6}%
+\contentsline {subsection}{Methods}{3}{section*.7}%
+\contentsline {subsection}{Formals}{4}{section*.8}%
+\contentsline {section}{$\leavevmode {\color {SectionNumber}\text {\bf 3}}$ Statements}{4}{section*.9}%
+\contentsline {section}{$\leavevmode {\color {SectionNumber}\text {\bf 4}}$ Expressions}{5}{section*.10}%
+\contentsline {section}{$\leavevmode {\color {SectionNumber}\text {\bf 5}}$ Lexemes}{7}{section*.11}%

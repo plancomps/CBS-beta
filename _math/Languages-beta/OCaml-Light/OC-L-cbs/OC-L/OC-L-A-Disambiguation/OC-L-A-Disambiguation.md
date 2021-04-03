@@ -1,6 +1,9 @@
 {::comment}{% raw %}{:/}
 
-$$\KEY{Language} \STRING{OCaml Light}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{OCaml Light}$$
 
 # $$\SECT{A}$$ Disambiguation
            
@@ -276,6 +279,7 @@ $$\KEY{Language} \STRING{OCaml Light}$$
 >    $$\SHADE{\quad\SYNHYPER{../.}{OC-L-07-Expressions}{semic-field-expr}  \ ::= \  \  \LEX{{;}} \ \SYNHYPER{../.}{OC-L-03-Names}{field} \ \LEX{{=}} \ \SYNHYPER{../.}{OC-L-07-Expressions}{expr}}$$\\
 >    } > \\
 >    $$\SHADE{\quad\SYNHYPER{../.}{OC-L-07-Expressions}{expr}  \ ::= \  \  \SYNHYPER{../.}{OC-L-07-Expressions}{expr} \ \LEX{{;}} \ \SYNHYPER{../.}{OC-L-07-Expressions}{expr}}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

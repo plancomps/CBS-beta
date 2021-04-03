@@ -8,6 +8,7 @@ ancestor: Funcons-beta
 [Funcons-beta] : [References.cbs] \| [PRETTY] \| [PDF]
 
 
+----
 ### References and pointers
 
 <div class="highlighter-rouge"><pre class="highlight"><code>[

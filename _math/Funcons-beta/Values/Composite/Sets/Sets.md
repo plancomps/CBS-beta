@@ -1,33 +1,36 @@
 {::comment}{% raw %}{:/}
 
+
+----
+
 ### Sets
                
 
 
 $$\begin{align*}
   [ \
-  \KEY{Type} \ & \NAMEREF{sets} \\
-  \KEY{Funcon} \ & \NAMEREF{set} \\
-  \KEY{Funcon} \ & \NAMEREF{set-elements} \\
-  \KEY{Funcon} \ & \NAMEREF{is-in-set} \\
-  \KEY{Funcon} \ & \NAMEREF{is-subset} \\
-  \KEY{Funcon} \ & \NAMEREF{set-insert} \\
-  \KEY{Funcon} \ & \NAMEREF{set-unite} \\
-  \KEY{Funcon} \ & \NAMEREF{set-intersect} \\
-  \KEY{Funcon} \ & \NAMEREF{set-difference} \\
-  \KEY{Funcon} \ & \NAMEREF{set-size} \\
-  \KEY{Funcon} \ & \NAMEREF{some-element} \\
-  \KEY{Funcon} \ & \NAMEREF{element-not-in}
+  \KEY{Type} \quad & \NAMEREF{sets} \\
+  \KEY{Funcon} \quad & \NAMEREF{set} \\
+  \KEY{Funcon} \quad & \NAMEREF{set-elements} \\
+  \KEY{Funcon} \quad & \NAMEREF{is-in-set} \\
+  \KEY{Funcon} \quad & \NAMEREF{is-subset} \\
+  \KEY{Funcon} \quad & \NAMEREF{set-insert} \\
+  \KEY{Funcon} \quad & \NAMEREF{set-unite} \\
+  \KEY{Funcon} \quad & \NAMEREF{set-intersect} \\
+  \KEY{Funcon} \quad & \NAMEREF{set-difference} \\
+  \KEY{Funcon} \quad & \NAMEREF{set-size} \\
+  \KEY{Funcon} \quad & \NAMEREF{some-element} \\
+  \KEY{Funcon} \quad & \NAMEREF{element-not-in}
   \ ]
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Meta-variables} \
+  \KEY{Meta-variables} \quad
   & \VAR{GT} <: \NAMEHYPER{../..}{Value-Types}{ground-values}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Type} \ 
+  \KEY{Built-in Type} \quad 
   & \NAMEDECL{sets}(
                        \VAR{GT} )  
 \end{align*}$$
@@ -41,7 +44,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{set}(
                        \_ : (  \VAR{GT} )\STAR) 
     :  \TO \NAMEREF{sets}
@@ -58,7 +61,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Assert} \
+  \KEY{Assert} \quad
   & \{  \VAR{V}\STAR : (  \VAR{GT} )\STAR \} 
     == \NAMEREF{set}
          (  \VAR{V}\STAR )
@@ -76,7 +79,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{set-elements}(
                        \_ : \NAMEREF{sets}
                                  (  \VAR{GT} )) 
@@ -100,7 +103,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Assert} \
+  \KEY{Assert} \quad
   & \NAMEREF{set}
       (  \NAMEREF{set-elements}
               (  \VAR{S} ) ) 
@@ -108,7 +111,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{is-in-set}(
                        \_ : \VAR{GT}, \_ : \NAMEREF{sets}
                                  (  \VAR{GT} )) 
@@ -122,13 +125,13 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Assert} \
+  \KEY{Assert} \quad
   & \NAMEREF{is-in-set}
       (  \VAR{GV} : \VAR{GT}, 
              \{   \  \} ) 
     == \NAMEHYPER{../../Primitive}{Booleans}{false}
 \\
-  \KEY{Assert} \
+  \KEY{Assert} \quad
   & \NAMEREF{is-in-set}
       (  \VAR{GV} : \VAR{GT}, 
              \{  \VAR{GV} \} : \NAMEREF{sets}
@@ -137,7 +140,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{is-subset}(
                        \_ : \NAMEREF{sets}
                                  (  \VAR{GT} ), \_ : \NAMEREF{sets}
@@ -152,14 +155,14 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Assert} \
+  \KEY{Assert} \quad
   & \NAMEREF{is-subset}
       (  \{   \  \}, 
              \VAR{S} : \NAMEREF{sets}
                         (  \VAR{GT} ) ) 
     == \NAMEHYPER{../../Primitive}{Booleans}{true}
 \\
-  \KEY{Assert} \
+  \KEY{Assert} \quad
   & \NAMEREF{is-subset}
       (  \VAR{S} : \NAMEREF{sets}
                         (  \VAR{GT} ), 
@@ -168,7 +171,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{set-insert}(
                        \_ : \VAR{GT}, \_ : \NAMEREF{sets}
                                  (  \VAR{GT} )) 
@@ -183,7 +186,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Assert} \
+  \KEY{Assert} \quad
   & \NAMEREF{is-in-set}
       (  \VAR{GV} : \VAR{GT}, 
              \NAMEREF{set-insert}
@@ -194,7 +197,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{set-unite}(
                        \_ : (  \NAMEREF{sets}
                                        (  \VAR{GT} ) )\STAR) 
@@ -208,14 +211,14 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Assert} \
+  \KEY{Assert} \quad
   & \NAMEREF{set-unite}
       (  \VAR{S} : \NAMEREF{sets}
                         (  \VAR{GT} ), 
              \VAR{S} ) 
     == \VAR{S}
 \\
-  \KEY{Assert} \
+  \KEY{Assert} \quad
   & \NAMEREF{set-unite}
       (  \VAR{S}\SUB{1} : \NAMEREF{sets}
                         (  \VAR{GT} ), 
@@ -225,7 +228,7 @@ $$\begin{align*}
          (  \VAR{S}\SUB{2}, 
                 \VAR{S}\SUB{1} )
 \\
-  \KEY{Assert} \
+  \KEY{Assert} \quad
   & \NAMEREF{set-unite}
       (  \VAR{S}\SUB{1} : \NAMEREF{sets}
                         (  \VAR{GT} ), 
@@ -240,7 +243,7 @@ $$\begin{align*}
                         \VAR{S}\SUB{2} ), 
                 \VAR{S}\SUB{3} )
 \\
-  \KEY{Assert} \
+  \KEY{Assert} \quad
   & \NAMEREF{set-unite}
       (  \VAR{S}\SUB{1} : \NAMEREF{sets}
                         (  \VAR{GT} ), 
@@ -254,20 +257,20 @@ $$\begin{align*}
                  (  \VAR{S}\SUB{2}, 
                         \VAR{S}\SUB{3} ) )
 \\
-  \KEY{Assert} \
+  \KEY{Assert} \quad
   & \NAMEREF{set-unite}
       (  \VAR{S} : \NAMEREF{sets}
                         (  \VAR{GT} ) ) 
     == \VAR{S}
 \\
-  \KEY{Assert} \
+  \KEY{Assert} \quad
   & \NAMEREF{set-unite}
       (   \  ) 
     == \{   \  \}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{set-intersect}(
                        \_ : (  \NAMEREF{sets}
                                        (  \VAR{GT} ) )\PLUS) 
@@ -282,14 +285,14 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Assert} \
+  \KEY{Assert} \quad
   & \NAMEREF{set-intersect}
       (  \VAR{S} : \NAMEREF{sets}
                         (  \VAR{GT} ), 
              \VAR{S} ) 
     == \VAR{S}
 \\
-  \KEY{Assert} \
+  \KEY{Assert} \quad
   & \NAMEREF{set-intersect}
       (  \VAR{S}\SUB{1} : \NAMEREF{sets}
                         (  \VAR{GT} ), 
@@ -299,7 +302,7 @@ $$\begin{align*}
          (  \VAR{S}\SUB{2}, 
                 \VAR{S}\SUB{1} )
 \\
-  \KEY{Assert} \
+  \KEY{Assert} \quad
   & \NAMEREF{set-intersect}
       (  \VAR{S}\SUB{1} : \NAMEREF{sets}
                         (  \VAR{GT} ), 
@@ -314,7 +317,7 @@ $$\begin{align*}
                         \VAR{S}\SUB{2} ), 
                 \VAR{S}\SUB{3} )
 \\
-  \KEY{Assert} \
+  \KEY{Assert} \quad
   & \NAMEREF{set-intersect}
       (  \VAR{S}\SUB{1} : \NAMEREF{sets}
                         (  \VAR{GT} ), 
@@ -328,7 +331,7 @@ $$\begin{align*}
                  (  \VAR{S}\SUB{2}, 
                         \VAR{S}\SUB{3} ) )
 \\
-  \KEY{Assert} \
+  \KEY{Assert} \quad
   & \NAMEREF{set-intersect}
       (  \VAR{S} : \NAMEREF{sets}
                         (  \VAR{GT} ) ) 
@@ -336,7 +339,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{set-difference}(
                        \_ : \NAMEREF{sets}
                                  (  \VAR{GT} ), \_ : \NAMEREF{sets}
@@ -353,7 +356,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{set-size}(
                        \_ : \NAMEREF{sets}
                                  (  \VAR{GT} )) 
@@ -361,7 +364,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Assert} \
+  \KEY{Assert} \quad
   & \NAMEREF{set-size}
       (  \VAR{S} : \NAMEREF{sets}
                         (  \VAR{GT} ) ) 
@@ -371,13 +374,13 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{some-element}(
                        \_ : \NAMEREF{sets}
                                  (  \VAR{GT} )) 
     :  \TO \VAR{GT}\QUERY 
 \\
-  \KEY{Assert} \
+  \KEY{Assert} \quad
   & \NAMEREF{some-element}
       (  \VAR{S} : \NAMEREF{sets}
                         (  \VAR{GT} ) ) 
@@ -386,14 +389,14 @@ $$\begin{align*}
                 \NAMEREF{set-elements}
                  (  \VAR{S} ) )
 \\
-  \KEY{Assert} \
+  \KEY{Assert} \quad
   & \NAMEREF{some-element} \ 
       \{   \  \} 
     == (   \  )
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{element-not-in}(
                        \VAR{GT} : \NAMEHYPER{../..}{Value-Types}{types}, \_ : \NAMEREF{set}
                                  (  \VAR{GT} )) 
@@ -408,6 +411,7 @@ $$\begin{align*}
   $$\SHADE{\NAMEREF{element-not-in}
            (  \VAR{GT}, 
                   \VAR{S} )}$$ never gives $$\SHADE{(   \  )}$$.
+
 
 
 

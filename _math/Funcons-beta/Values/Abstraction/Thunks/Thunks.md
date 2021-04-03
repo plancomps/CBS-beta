@@ -1,24 +1,27 @@
 {::comment}{% raw %}{:/}
 
+
+----
+
 ### Thunks
                
 
 
 $$\begin{align*}
   [ \
-  \KEY{Datatype} \ & \NAMEREF{thunks} \\
-  \KEY{Funcon} \ & \NAMEREF{thunk} \\
-  \KEY{Funcon} \ & \NAMEREF{force}
+  \KEY{Datatype} \quad & \NAMEREF{thunks} \\
+  \KEY{Funcon} \quad & \NAMEREF{thunk} \\
+  \KEY{Funcon} \quad & \NAMEREF{force}
   \ ]
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Meta-variables} \
+  \KEY{Meta-variables} \quad
   & \VAR{T} <: \NAMEHYPER{../..}{Value-Types}{values}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Datatype} \ 
+  \KEY{Datatype} \quad 
   \NAMEDECL{thunks}(
                      \VAR{T} ) 
   \ ::= \ & \NAMEDECL{thunk}(
@@ -39,7 +42,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{force}(
                        \_ : \NAMEREF{thunks}
                                  (  \VAR{T} )) 
@@ -52,7 +55,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{force}
         (  \NAMEREF{thunk}
                 (  \NAMEHYPER{../.}{Generic}{abstraction}
@@ -60,6 +63,7 @@ $$\begin{align*}
         \NAMEHYPER{../../../Computations/Normal}{Giving}{no-given}
           (  \VAR{X} )
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

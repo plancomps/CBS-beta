@@ -1,31 +1,34 @@
 {::comment}{% raw %}{:/}
 
+
+----
+
 ### Generic abstractions
                
 
 
 $$\begin{align*}
   [ \
-  \KEY{Type} \ & \NAMEREF{abstractions} \\
-  \KEY{Funcon} \ & \NAMEREF{abstraction} \\
-  \KEY{Funcon} \ & \NAMEREF{closure} \\
-  \KEY{Funcon} \ & \NAMEREF{enact}
+  \KEY{Type} \quad & \NAMEREF{abstractions} \\
+  \KEY{Funcon} \quad & \NAMEREF{abstraction} \\
+  \KEY{Funcon} \quad & \NAMEREF{closure} \\
+  \KEY{Funcon} \quad & \NAMEREF{enact}
   \ ]
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Meta-variables} \
+  \KEY{Meta-variables} \quad
   & \VAR{T} <: \NAMEHYPER{../..}{Value-Types}{values} \qquad \\& \VAR{T}\QUERY <: \NAMEHYPER{../..}{Value-Types}{values}\QUERY
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Type} \ 
+  \KEY{Type} \quad 
   & \NAMEDECL{abstractions}(
                        \_ : \NAMEHYPER{../../../Computations}{Computation-Types}{computation-types})  
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{abstraction}(
                        \_ : \VAR{T}\QUERY \TO \VAR{T}) 
     : \NAMEREF{abstractions}
@@ -42,7 +45,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{closure}(
                        \_ : \VAR{T}\QUERY \TO \VAR{T}) 
     :  \TO \NAMEREF{abstractions}
@@ -60,7 +63,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEHYPER{../../../Computations/Normal}{Binding}{environment} (  \VAR{$\rho$} ) \vdash \NAMEREF{closure}
                     (  \VAR{X} ) \TRANS 
         \NAMEREF{abstraction}
@@ -71,7 +74,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{enact}(
                        \_ : \NAMEREF{abstractions}
                                  (  \VAR{T}\QUERY \TO \VAR{T} )) 
@@ -85,12 +88,13 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{enact}
         (  \NAMEREF{abstraction}
                 (  \VAR{X} ) ) \leadsto 
         \VAR{X}
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

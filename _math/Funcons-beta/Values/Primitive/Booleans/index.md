@@ -9,39 +9,42 @@ ancestor: Funcons-beta
 
 {::comment}{% raw %}{:/}
 
+
+----
+
 ### Booleans
                
 
 
 $$\begin{align*}
   [ \
-  \KEY{Datatype} \ & \NAMEREF{booleans} \\
-  \KEY{Alias} \ & \NAMEREF{bools} \\
-  \KEY{Funcon} \ & \NAMEREF{true} \\
-  \KEY{Funcon} \ & \NAMEREF{false} \\
-  \KEY{Funcon} \ & \NAMEREF{not} \\
-  \KEY{Funcon} \ & \NAMEREF{implies} \\
-  \KEY{Funcon} \ & \NAMEREF{and} \\
-  \KEY{Funcon} \ & \NAMEREF{or} \\
-  \KEY{Funcon} \ & \NAMEREF{exclusive-or} \\
-  \KEY{Alias} \ & \NAMEREF{xor}
+  \KEY{Datatype} \quad & \NAMEREF{booleans} \\
+  \KEY{Alias} \quad & \NAMEREF{bools} \\
+  \KEY{Funcon} \quad & \NAMEREF{true} \\
+  \KEY{Funcon} \quad & \NAMEREF{false} \\
+  \KEY{Funcon} \quad & \NAMEREF{not} \\
+  \KEY{Funcon} \quad & \NAMEREF{implies} \\
+  \KEY{Funcon} \quad & \NAMEREF{and} \\
+  \KEY{Funcon} \quad & \NAMEREF{or} \\
+  \KEY{Funcon} \quad & \NAMEREF{exclusive-or} \\
+  \KEY{Alias} \quad & \NAMEREF{xor}
   \ ]
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Datatype} \ 
+  \KEY{Datatype} \quad 
   \NAMEDECL{booleans} 
   \ ::= \ &
   \NAMEDECL{true} \mid \NAMEDECL{false}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{bools} = \NAMEREF{booleans}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{not}(
                        \_ : \NAMEREF{booleans}) 
     :  \TO \NAMEREF{booleans} 
@@ -53,19 +56,19 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{not}
         (  \NAMEREF{false} ) \leadsto 
         \NAMEREF{true}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{not}
         (  \NAMEREF{true} ) \leadsto 
         \NAMEREF{false}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{implies}(
                        \_ : \NAMEREF{booleans}, \_ : \NAMEREF{booleans}) 
     :  \TO \NAMEREF{booleans} 
@@ -78,25 +81,25 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{implies}
         (  \NAMEREF{false}, 
                \NAMEREF{false} ) \leadsto 
         \NAMEREF{true}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{implies}
         (  \NAMEREF{false}, 
                \NAMEREF{true} ) \leadsto 
         \NAMEREF{true}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{implies}
         (  \NAMEREF{true}, 
                \NAMEREF{true} ) \leadsto 
         \NAMEREF{true}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{implies}
         (  \NAMEREF{true}, 
                \NAMEREF{false} ) \leadsto 
@@ -104,7 +107,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{and}(
                        \_ : \NAMEREF{booleans}\STAR) 
     :  \TO \NAMEREF{booleans} 
@@ -117,18 +120,18 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{and}
         (   \  ) \leadsto 
         \NAMEREF{true}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{and}
         (  \NAMEREF{false}, 
                \_\STAR : \NAMEREF{booleans}\STAR ) \leadsto 
         \NAMEREF{false}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{and}
         (  \NAMEREF{true}, 
                \VAR{B}\STAR : \NAMEREF{booleans}\STAR ) \leadsto 
@@ -137,7 +140,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{or}(
                        \_ : \NAMEREF{booleans}\STAR) 
     :  \TO \NAMEREF{booleans} 
@@ -150,18 +153,18 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{or}
         (   \  ) \leadsto 
         \NAMEREF{false}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{or}
         (  \NAMEREF{true}, 
                \_\STAR : \NAMEREF{booleans}\STAR ) \leadsto 
         \NAMEREF{true}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{or}
         (  \NAMEREF{false}, 
                \VAR{B}\STAR : \NAMEREF{booleans}\STAR ) \leadsto 
@@ -170,12 +173,12 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{exclusive-or}(
                        \_ : \NAMEREF{booleans}, \_ : \NAMEREF{booleans}) 
     :  \TO \NAMEREF{booleans} 
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{xor} = \NAMEREF{exclusive-or}
 \end{align*}$$
 
@@ -186,30 +189,31 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{exclusive-or}
         (  \NAMEREF{false}, 
                \NAMEREF{false} ) \leadsto 
         \NAMEREF{false}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{exclusive-or}
         (  \NAMEREF{false}, 
                \NAMEREF{true} ) \leadsto 
         \NAMEREF{true}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{exclusive-or}
         (  \NAMEREF{true}, 
                \NAMEREF{false} ) \leadsto 
         \NAMEREF{true}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{exclusive-or}
         (  \NAMEREF{true}, 
                \NAMEREF{true} ) \leadsto 
         \NAMEREF{false}
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -234,7 +238,9 @@ $$\begin{align*}
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

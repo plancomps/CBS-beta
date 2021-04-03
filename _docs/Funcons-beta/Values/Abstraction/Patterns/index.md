@@ -16,6 +16,7 @@ ancestor: Funcons-beta
 {:toc}
 </details>
 
+----
 ### Patterns
 
 <div class="highlighter-rouge"><pre class="highlight"><code>[

@@ -16,6 +16,7 @@ ancestor: Unstable-Funcons-beta
 {:toc}
 </details>
 
+----
 #### Locks
 <div class="highlighter-rouge"><pre class="highlight"><code>[
 <i class="keyword">Funcon</i>  <span class="name"><a href="#Name_is-exclusive-lock-holder">is-exclusive-lock-holder</a></span>

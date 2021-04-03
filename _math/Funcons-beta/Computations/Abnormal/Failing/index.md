@@ -9,30 +9,33 @@ ancestor: Funcons-beta
 
 {::comment}{% raw %}{:/}
 
+
+----
+
 ### Failing
                
 
 
 $$\begin{align*}
   [ \
-  \KEY{Datatype} \ & \NAMEREF{failing} \\
-  \KEY{Funcon} \ & \NAMEREF{failed} \\
-  \KEY{Funcon} \ & \NAMEREF{finalise-failing} \\
-  \KEY{Funcon} \ & \NAMEREF{fail} \\
-  \KEY{Funcon} \ & \NAMEREF{else} \\
-  \KEY{Funcon} \ & \NAMEREF{else-choice} \\
-  \KEY{Funcon} \ & \NAMEREF{checked} \\
-  \KEY{Funcon} \ & \NAMEREF{check-true}
+  \KEY{Datatype} \quad & \NAMEREF{failing} \\
+  \KEY{Funcon} \quad & \NAMEREF{failed} \\
+  \KEY{Funcon} \quad & \NAMEREF{finalise-failing} \\
+  \KEY{Funcon} \quad & \NAMEREF{fail} \\
+  \KEY{Funcon} \quad & \NAMEREF{else} \\
+  \KEY{Funcon} \quad & \NAMEREF{else-choice} \\
+  \KEY{Funcon} \quad & \NAMEREF{checked} \\
+  \KEY{Funcon} \quad & \NAMEREF{check-true}
   \ ]
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Meta-variables} \
+  \KEY{Meta-variables} \quad
   & \VAR{T} <: \NAMEHYPER{../../../Values}{Value-Types}{values}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Datatype} \ 
+  \KEY{Datatype} \quad 
   \NAMEDECL{failing} 
   \ ::= \ & \NAMEDECL{failed}
 \end{align*}$$
@@ -42,7 +45,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{finalise-failing}(
                        \VAR{X} :  \TO \VAR{T}) 
     :  \TO \VAR{T}  \mid \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} \\&\quad
@@ -56,7 +59,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{fail} 
     :  \TO \NAMEHYPER{../../../Values}{Value-Types}{empty-type} \\&\quad
     \leadsto \NAMEHYPER{../.}{Abrupting}{abrupt}
@@ -68,7 +71,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{else}(
                        \_ :  \TO \VAR{T}, \_ : (   \TO \VAR{T} )\PLUS) 
     :  \TO \VAR{T} 
@@ -87,7 +90,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(   \  )}_{} 
           \VAR{X}'
@@ -100,7 +103,7 @@ $$\begin{align*}
                    \VAR{Y} )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  \NAMEREF{failed} )}_{} 
           \_
@@ -111,7 +114,7 @@ $$\begin{align*}
           \VAR{Y}
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  \VAR{V} : \mathop{\sim} \NAMEREF{failing} )}_{} 
           \VAR{X}'
@@ -124,13 +127,13 @@ $$\begin{align*}
                    \VAR{Y} )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{else}
         (  \VAR{V} : \VAR{T}, 
                \VAR{Y} ) \leadsto 
         \VAR{V}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{else}
         (  \VAR{X}, 
                \VAR{Y}, 
@@ -143,7 +146,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{else-choice}(
                        \_ : (   \TO \VAR{T} )\PLUS) 
     :  \TO \VAR{T} 
@@ -161,7 +164,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{else-choice}
         (  \VAR{W}\STAR, 
                \VAR{X}, 
@@ -181,19 +184,19 @@ $$\begin{align*}
                                          \VAR{X}, 
                                          \VAR{Z}\STAR ) ) ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{else-choice}
         (  \VAR{X} ) \leadsto 
         \VAR{X}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{check-true}(
                        \_ : \NAMEHYPER{../../../Values/Primitive}{Booleans}{booleans}) 
     :  \TO \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} 
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{check} = \NAMEREF{check-true}
 \end{align*}$$
 
@@ -204,19 +207,19 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{check-true}
         (  \NAMEHYPER{../../../Values/Primitive}{Booleans}{true} ) \leadsto 
         \NAMEHYPER{../../../Values/Primitive}{Null}{null-value}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{check-true}
         (  \NAMEHYPER{../../../Values/Primitive}{Booleans}{false} ) \leadsto 
         \NAMEREF{fail}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{checked}(
                        \_ : (  \VAR{T} )\QUERY) 
     :  \TO \VAR{T} 
@@ -230,16 +233,17 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{checked}
         (  \VAR{V} : \VAR{T} ) \leadsto 
         \VAR{V}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{checked}
         (   \  ) \leadsto 
         \NAMEREF{fail}
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -264,7 +268,9 @@ $$\begin{align*}
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

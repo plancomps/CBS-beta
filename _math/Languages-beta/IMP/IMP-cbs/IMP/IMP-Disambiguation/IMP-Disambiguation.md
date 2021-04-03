@@ -1,6 +1,9 @@
 {::comment}{% raw %}{:/}
 
-$$\KEY{Language} \STRING{IMP}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{IMP}$$
 
 # $$\SECT{A}$$ Disambiguation
            
@@ -19,6 +22,7 @@ $$\KEY{Language} \STRING{IMP}$$
 >    $$\SHADE{\quad\SYNHYPER{../.}{IMP-1}{aexp}  \ ::= \  \  \SYNHYPER{../.}{IMP-1}{aexp} \ \LEX{{+}} \ \SYNHYPER{../.}{IMP-1}{aexp}}$$  {assoc}\\
 >    $$\SHADE{\quad\SYNHYPER{../.}{IMP-2}{bexp}  \ ::= \  \  \SYNHYPER{../.}{IMP-2}{bexp} \ \LEX{{\AMPERSAND}{\AMPERSAND}} \ \SYNHYPER{../.}{IMP-2}{bexp}}$$ {assoc}\\
 >    $$\SHADE{\quad\SYNHYPER{../.}{IMP-3}{stmt}  \ ::= \  \  \SYNHYPER{../.}{IMP-3}{stmt} \ \SYNHYPER{../.}{IMP-3}{stmt}}$$      {right}
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

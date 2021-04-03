@@ -1,11 +1,14 @@
 {::comment}{% raw %}{:/}
 
+
+----
+
 ## Computation Types
                
 
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{computation-types} 
     : \NAMEHYPER{../../Values}{Value-Types}{types} 
 \end{align*}$$
@@ -18,6 +21,7 @@ $$\begin{align*}
   that compute values of type $$\SHADE{\VAR{T}}$$ whenever they terminate normally, and
   either do not refer at all to the $$\SHADE{\NAMEHYPER{../Normal}{Giving}{given}}$$ entity, or require the $$\SHADE{\NAMEHYPER{../Normal}{Giving}{given}}$$
   entity to have type $$\SHADE{\VAR{S}}$$.
+
 
 
 

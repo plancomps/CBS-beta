@@ -8,6 +8,7 @@ ancestor: Funcons-beta
 [Funcons-beta] : [Multisets.cbs] \| [PRETTY] \| [PDF]
 
 
+----
 ### Multisets (bags)
 
 <div class="highlighter-rouge"><pre class="highlight"><code>[

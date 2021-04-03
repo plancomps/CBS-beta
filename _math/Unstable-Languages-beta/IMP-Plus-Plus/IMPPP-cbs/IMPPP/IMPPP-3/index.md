@@ -9,14 +9,17 @@ ancestor: Unstable-Languages-beta
 
 {::comment}{% raw %}{:/}
 
-$$\KEY{Language} \STRING{IMPPP}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{IMPPP}$$
 
 # $$\SECT{3}$$ Boolean expressions
            
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{BExp} : \SYN{bexp}
       \ ::= \ & \
       \LEX{false} \\
@@ -28,23 +31,23 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{eval-bool} \LEFTPHRASE \ \_ : \SYNREF{bexp} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{booleans} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval-bool} \LEFTPHRASE \
                             \LEX{false} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval-bool} \LEFTPHRASE \
                             \LEX{true} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{true}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval-bool} \LEFTPHRASE \
                             \VARHYPER{../.}{IMPPP-2}{AExp}\SUB{1} \ \LEX{{<}{=}} \ \VARHYPER{../.}{IMPPP-2}{AExp}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -57,7 +60,7 @@ $$\begin{align*}
                                       \VAR{AExp}\SUB{2} \
                                     \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval-bool} \LEFTPHRASE \
                             \LEX{{!}} \ \VARREF{BExp} \
                           \RIGHTPHRASE  = 
@@ -66,7 +69,7 @@ $$\begin{align*}
                                     \VAR{BExp} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval-bool} \LEFTPHRASE \
                             \VARREF{BExp}\SUB{1} \ \LEX{{\AMPERSAND}{\AMPERSAND}} \ \VARREF{BExp}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -79,7 +82,7 @@ $$\begin{align*}
                                   \RIGHTPHRASE , 
                \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval-bool} \LEFTPHRASE \
                             \LEX{{(}} \ \VARREF{BExp} \ \LEX{{)}} \
                           \RIGHTPHRASE  = 
@@ -87,6 +90,7 @@ $$\begin{align*}
                             \VAR{BExp} \
                           \RIGHTPHRASE 
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -111,7 +115,9 @@ $$\begin{align*}
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

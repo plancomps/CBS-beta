@@ -1,13 +1,16 @@
 {::comment}{% raw %}{:/}
 
-$$\KEY{Language} \STRING{SL}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{SL}$$
 
 # $$\SECT{2}$$ Expressions
            
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{Expr} : \SYN{expr}
       \ ::= \ & \
       \SYNHYPER{../.}{SL-1-Lexemes}{int} \\
@@ -37,7 +40,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \LEX{{(}} \ \VARREF{Expr} \ \LEX{{)}} \
       \RIGHTPHRASE : \SYNREF{expr} = 
@@ -47,17 +50,17 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Type} \ 
+  \KEY{Type} \quad 
   & \NAMEDECL{sl-values}  
     \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{booleans}  \mid \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integers}  \mid \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{strings}  \mid \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Objects}{objects}  \mid \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{eval} \LEFTPHRASE \ \VARREF{Expr} : \SYNREF{expr} \ \RIGHTPHRASE  
     :  \TO \NAMEREF{sl-values} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \VARHYPER{../.}{SL-1-Lexemes}{Int} \
                           \RIGHTPHRASE  = 
@@ -65,7 +68,7 @@ $$\begin{align*}
                             \VAR{Int} \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \VARHYPER{../.}{SL-1-Lexemes}{String} \
                           \RIGHTPHRASE  = 
@@ -73,19 +76,19 @@ $$\begin{align*}
                             \VAR{String} \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \LEX{true} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{true}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \LEX{false} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \VARREF{Expr}\SUB{1} \ \LEX{{+}} \ \VARREF{Expr}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -97,7 +100,7 @@ $$\begin{align*}
                                     \VAR{Expr}\SUB{2} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \VARREF{Expr}\SUB{1} \ \LEX{{/}} \ \VARREF{Expr}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -112,7 +115,7 @@ $$\begin{align*}
                                         \VAR{Expr}\SUB{2} \
                                       \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \VARREF{Expr}\SUB{1} \ \LEX{{*}} \ \VARREF{Expr}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -126,7 +129,7 @@ $$\begin{align*}
                                       \VAR{Expr}\SUB{2} \
                                     \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \VARREF{Expr}\SUB{1} \ \LEX{{-}} \ \VARREF{Expr}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -140,7 +143,7 @@ $$\begin{align*}
                                       \VAR{Expr}\SUB{2} \
                                     \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \VARREF{Expr}\SUB{1} \ \LEX{{=}{=}} \ \VARREF{Expr}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -152,7 +155,7 @@ $$\begin{align*}
                                     \VAR{Expr}\SUB{2} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \VARREF{Expr}\SUB{1} \ \LEX{{<}{=}} \ \VARREF{Expr}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -166,7 +169,7 @@ $$\begin{align*}
                                       \VAR{Expr}\SUB{2} \
                                     \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \VARREF{Expr}\SUB{1} \ \LEX{{<}} \ \VARREF{Expr}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -180,7 +183,7 @@ $$\begin{align*}
                                       \VAR{Expr}\SUB{2} \
                                     \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \VARREF{Expr}\SUB{1} \ \LEX{{!}{=}} \ \VARREF{Expr}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -193,7 +196,7 @@ $$\begin{align*}
                                       \VAR{Expr}\SUB{2} \
                                     \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \VARREF{Expr}\SUB{1} \ \LEX{{>}{=}} \ \VARREF{Expr}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -207,7 +210,7 @@ $$\begin{align*}
                                       \VAR{Expr}\SUB{2} \
                                     \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \VARREF{Expr}\SUB{1} \ \LEX{{>}} \ \VARREF{Expr}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -221,7 +224,7 @@ $$\begin{align*}
                                       \VAR{Expr}\SUB{2} \
                                     \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \VARREF{Expr}\SUB{1} \ \LEX{{\AMPERSAND}{\AMPERSAND}} \ \VARREF{Expr}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -236,7 +239,7 @@ $$\begin{align*}
                                     \RIGHTPHRASE , 
                \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \VARREF{Expr}\SUB{1} \ \LEX{{|}{|}} \ \VARREF{Expr}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -251,7 +254,7 @@ $$\begin{align*}
                                       \VAR{Expr}\SUB{2} \
                                     \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \LEX{{!}} \ \VARREF{Expr} \
                           \RIGHTPHRASE  = 
@@ -261,7 +264,7 @@ $$\begin{align*}
                                       \VAR{Expr} \
                                     \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \LEX{new} \ \LEX{{(}} \ \LEX{{)}} \
                           \RIGHTPHRASE  = \\&\quad
@@ -270,7 +273,7 @@ $$\begin{align*}
                \STRING{Object}, 
                \NAMEHYPER{../.}{SL-Funcons}{initialise-local-variables} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \LEX{println} \ \LEX{{(}} \ \VARREF{Expr} \ \LEX{{)}} \
                           \RIGHTPHRASE  = 
@@ -280,31 +283,31 @@ $$\begin{align*}
                                 \VAR{Expr} \
                               \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \LEX{readln} \ \LEX{{(}} \ \LEX{{)}} \
                           \RIGHTPHRASE  = 
       [  \NAMEHYPER{../.}{SL-Funcons}{read-line} ]
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \LEX{defineFunction} \ \LEX{{(}} \ \VARREF{Expr} \ \LEX{{)}} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{fail}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \LEX{nanoTime} \ \LEX{{(}} \ \LEX{{)}} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{fail}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \LEX{stacktrace} \ \LEX{{(}} \ \LEX{{)}} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{fail}
 \\
-  \KEY{Otherwise} \
+  \KEY{Otherwise} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \VARHYPER{../.}{SL-1-Lexemes}{Id} \ \LEX{{(}} \ \VARREF{ExprList}\QUERY \ \LEX{{)}} \
                           \RIGHTPHRASE  = \\&\quad
@@ -318,7 +321,7 @@ $$\begin{align*}
                                     \VAR{ExprList}\QUERY \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \VARHYPER{../.}{SL-1-Lexemes}{Id} \
                           \RIGHTPHRASE  = \\&\quad
@@ -333,7 +336,7 @@ $$\begin{align*}
                                       \VAR{Id} \
                                     \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \VARHYPER{../.}{SL-1-Lexemes}{Id} \ \LEX{{=}} \ \VARREF{Expr} \
                           \RIGHTPHRASE  = \\&\quad
@@ -349,7 +352,7 @@ $$\begin{align*}
                                \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} ), \\&\quad\quad\quad
                        \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \VARREF{Expr} \ \LEX{{.}} \ \VARHYPER{../.}{SL-1-Lexemes}{Id} \
                           \RIGHTPHRASE  = \\&\quad
@@ -367,7 +370,7 @@ $$\begin{align*}
                                               \RIGHTPHRASE , 
                        \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-value} ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \VARREF{Expr}\SUB{1} \ \LEX{{.}} \ \VARHYPER{../.}{SL-1-Lexemes}{Id} \ \LEX{{=}} \ \VARREF{Expr}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -389,7 +392,7 @@ $$\begin{align*}
                                        \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} ), \\&\quad\quad\quad\quad
                                \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} ) ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \VARREF{Expr} \ \LEX{{.}} \ \VARHYPER{../.}{SL-1-Lexemes}{Id} \ \LEX{{(}} \ \VARREF{ExprList}\QUERY \ \LEX{{)}} \
                           \RIGHTPHRASE  = \\&\quad
@@ -405,25 +408,25 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{ExprList} : \SYN{expr-list}
       \ ::= \ & \
       \SYNREF{expr} \ \LEFTGROUP \LEX{{,}} \ \SYNREF{expr-list} \RIGHTGROUP\QUERY
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{eval-list} \LEFTPHRASE \ \_ : \SYNREF{expr-list}\QUERY \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{lists}
                      (  \NAMEREF{sl-values} ) 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval-list} \LEFTPHRASE \
                              \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{nil}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval-list} \LEFTPHRASE \
                             \VARREF{Expr} \
                           \RIGHTPHRASE  = 
@@ -433,7 +436,7 @@ $$\begin{align*}
                                   \RIGHTPHRASE , 
                \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{nil} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval-list} \LEFTPHRASE \
                             \VARREF{Expr} \ \LEX{{,}} \ \VARREF{ExprList} \
                           \RIGHTPHRASE  = \\&\quad
@@ -445,6 +448,7 @@ $$\begin{align*}
                                     \VAR{ExprList} \
                                   \RIGHTPHRASE  )
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

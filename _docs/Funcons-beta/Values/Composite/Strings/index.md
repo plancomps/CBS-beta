@@ -8,6 +8,7 @@ ancestor: Funcons-beta
 [Funcons-beta] : [Strings.cbs] \| [PRETTY] \| [PDF]
 
 
+----
 ### Strings
 
 <div class="highlighter-rouge"><pre class="highlight"><code>[

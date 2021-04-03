@@ -1,26 +1,29 @@
 {::comment}{% raw %}{:/}
 
+
+----
+
 ### References and pointers
                
 
 
 $$\begin{align*}
   [ \
-  \KEY{Datatype} \ & \NAMEREF{references} \\
-  \KEY{Funcon} \ & \NAMEREF{reference} \\
-  \KEY{Type} \ & \NAMEREF{pointers} \\
-  \KEY{Funcon} \ & \NAMEREF{pointer-null} \\
-  \KEY{Funcon} \ & \NAMEREF{dereference}
+  \KEY{Datatype} \quad & \NAMEREF{references} \\
+  \KEY{Funcon} \quad & \NAMEREF{reference} \\
+  \KEY{Type} \quad & \NAMEREF{pointers} \\
+  \KEY{Funcon} \quad & \NAMEREF{pointer-null} \\
+  \KEY{Funcon} \quad & \NAMEREF{dereference}
   \ ]
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Meta-variables} \
+  \KEY{Meta-variables} \quad
   & \VAR{T} <: \NAMEHYPER{../..}{Value-Types}{values}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Datatype} \ 
+  \KEY{Datatype} \quad 
   \NAMEDECL{references}(
                      \VAR{T} ) 
   \ ::= \ & \NAMEDECL{reference}(
@@ -28,7 +31,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Datatype} \ 
+  \KEY{Datatype} \quad 
   \NAMEDECL{pointers}(
                      \VAR{T} ) 
   \ ::= \ &
@@ -37,23 +40,24 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{dereference}(
                        \_ : \NAMEREF{pointers}
                                  (  \VAR{T} )) 
     :  \TO (  \VAR{T} )\QUERY 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{dereference}
         (  \NAMEREF{reference}
                 (  \VAR{V} : \VAR{T} ) ) \leadsto 
         \VAR{V}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{dereference}
         (  \NAMEREF{pointer-null} ) \leadsto 
         (   \  )
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

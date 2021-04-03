@@ -16,6 +16,7 @@ ancestor: Funcons-beta
 {:toc}
 </details>
 
+----
 ### Bits and bit vectors
 
 <div class="highlighter-rouge"><pre class="highlight"><code>[

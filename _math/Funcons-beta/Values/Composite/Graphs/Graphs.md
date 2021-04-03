@@ -1,24 +1,27 @@
 {::comment}{% raw %}{:/}
 
+
+----
+
 ### Graphs
                
 
 
 $$\begin{align*}
   [ \
-  \KEY{Type} \ & \NAMEREF{directed-graphs} \\
-  \KEY{Funcon} \ & \NAMEREF{is-cyclic} \\
-  \KEY{Funcon} \ & \NAMEREF{topological-sort}
+  \KEY{Type} \quad & \NAMEREF{directed-graphs} \\
+  \KEY{Funcon} \quad & \NAMEREF{is-cyclic} \\
+  \KEY{Funcon} \quad & \NAMEREF{topological-sort}
   \ ]
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Meta-variables} \
+  \KEY{Meta-variables} \quad
   & \VAR{GT} <: \NAMEHYPER{../..}{Value-Types}{ground-values}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Type} \ 
+  \KEY{Type} \quad 
   & \NAMEDECL{directed-graphs}(
                        \VAR{GT} )  
     \leadsto \NAMEHYPER{../.}{Maps}{maps}
@@ -42,7 +45,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{is-cyclic}(
                        \_ : \NAMEREF{directed-graphs}
                                  (  \VAR{GT} )) 
@@ -50,7 +53,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{topological-sort}(
                        \_ : \NAMEREF{directed-graphs}
                                  (  \VAR{GT} )) 
@@ -62,6 +65,7 @@ $$\begin{align*}
            (  \VAR{DG} )}$$ returns a topological ordering of the vertices
   of the graph $$\SHADE{\VAR{DG}}$$, as a sequence of vertices, provided that $$\SHADE{\VAR{DG}}$$ is not
   cyclic.
+
 
 
 

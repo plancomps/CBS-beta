@@ -1,0 +1,13 @@
+\contentsline {section}{Computations}{1}{section*.2}%
+\contentsline {subsection}{Normal computation}{1}{section*.3}%
+\contentsline {subsubsection}{Flowing}{1}{section*.4}%
+\contentsline {subsubsection}{Giving}{1}{section*.5}%
+\contentsline {subsubsection}{Binding}{2}{section*.6}%
+\contentsline {subsubsection}{Storing}{2}{section*.7}%
+\contentsline {subsection}{Abnormal computation}{2}{section*.8}%
+\contentsline {subsubsection}{Failing}{2}{section*.9}%
+\contentsline {section}{Values}{2}{section*.10}%
+\contentsline {subsection}{Primitive values}{2}{section*.11}%
+\contentsline {subsubsection}{Booleans}{2}{section*.12}%
+\contentsline {subsubsection}{Integers}{3}{section*.13}%
+\contentsline {subsubsection}{The null value}{3}{section*.14}%

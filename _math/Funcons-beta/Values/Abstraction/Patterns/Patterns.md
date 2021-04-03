@@ -1,12 +1,15 @@
 {::comment}{% raw %}{:/}
 <details open markdown="block">
   <summary>
-    Outline
+    OUTLINE
   </summary>
   {: .text-delta }
 - TOC
 {:toc}
 </details>
+
+
+----
 
 ### Patterns
                
@@ -14,18 +17,18 @@
 
 $$\begin{align*}
   [ \
-  \KEY{Datatype} \ & \NAMEREF{patterns} \\
-  \KEY{Funcon} \ & \NAMEREF{pattern} \\
-  \KEY{Funcon} \ & \NAMEREF{pattern-any} \\
-  \KEY{Funcon} \ & \NAMEREF{pattern-bind} \\
-  \KEY{Funcon} \ & \NAMEREF{pattern-type} \\
-  \KEY{Funcon} \ & \NAMEREF{pattern-else} \\
-  \KEY{Funcon} \ & \NAMEREF{pattern-unite} \\
-  \KEY{Funcon} \ & \NAMEREF{match} \\
-  \KEY{Funcon} \ & \NAMEREF{match-loosely} \\
-  \KEY{Funcon} \ & \NAMEREF{case-match} \\
-  \KEY{Funcon} \ & \NAMEREF{case-match-loosely} \\
-  \KEY{Funcon} \ & \NAMEREF{case-variant-value}
+  \KEY{Datatype} \quad & \NAMEREF{patterns} \\
+  \KEY{Funcon} \quad & \NAMEREF{pattern} \\
+  \KEY{Funcon} \quad & \NAMEREF{pattern-any} \\
+  \KEY{Funcon} \quad & \NAMEREF{pattern-bind} \\
+  \KEY{Funcon} \quad & \NAMEREF{pattern-type} \\
+  \KEY{Funcon} \quad & \NAMEREF{pattern-else} \\
+  \KEY{Funcon} \quad & \NAMEREF{pattern-unite} \\
+  \KEY{Funcon} \quad & \NAMEREF{match} \\
+  \KEY{Funcon} \quad & \NAMEREF{match-loosely} \\
+  \KEY{Funcon} \quad & \NAMEREF{case-match} \\
+  \KEY{Funcon} \quad & \NAMEREF{case-match-loosely} \\
+  \KEY{Funcon} \quad & \NAMEREF{case-variant-value}
   \ ]
 \end{align*}$$
 
@@ -48,7 +51,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Meta-variables} \
+  \KEY{Meta-variables} \quad
   & \VAR{T}, \VAR{T}' <: \NAMEHYPER{../..}{Value-Types}{values}
 \end{align*}$$
 
@@ -57,7 +60,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Datatype} \ 
+  \KEY{Datatype} \quad 
   \NAMEDECL{patterns} 
   \ ::= \ & \NAMEDECL{pattern}(
                                \_ : \NAMEHYPER{../.}{Generic}{abstractions}
@@ -79,7 +82,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{pattern-any} 
     :  \TO \NAMEREF{patterns} \\&\quad
     \leadsto \NAMEREF{pattern}
@@ -93,7 +96,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{pattern-bind}(
                        \VAR{I} : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}) 
     :  \TO \NAMEREF{patterns} \\&\quad
@@ -111,7 +114,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{pattern-type}(
                        \VAR{T} ) 
     :  \TO \NAMEREF{patterns} \\&\quad
@@ -133,12 +136,12 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{pattern-else}(
                        \_ : \NAMEHYPER{../..}{Value-Types}{values}, \_ : \NAMEHYPER{../..}{Value-Types}{values}) 
     :  \TO \NAMEREF{patterns} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{pattern-else}
         (  \VAR{P}\SUB{1} : \NAMEHYPER{../..}{Value-Types}{values}, 
                \VAR{P}\SUB{2} : \NAMEHYPER{../..}{Value-Types}{values} ) \leadsto \\&\quad
@@ -163,12 +166,12 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{pattern-unite}(
                        \_ : \NAMEHYPER{../..}{Value-Types}{values}, \_ : \NAMEHYPER{../..}{Value-Types}{values}) 
     :  \TO \NAMEREF{patterns} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{pattern-unite}
         (  \VAR{P}\SUB{1} : \NAMEHYPER{../..}{Value-Types}{values}, 
                \VAR{P}\SUB{2} : \NAMEHYPER{../..}{Value-Types}{values} ) \leadsto \\&\quad
@@ -196,7 +199,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{match}(
                        \_ : \NAMEHYPER{../..}{Value-Types}{values}, \_ : \NAMEHYPER{../..}{Value-Types}{values}) 
     :  \TO \NAMEHYPER{../../../Computations/Normal}{Binding}{environments} 
@@ -212,7 +215,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{match}
         (  \VAR{V} : \NAMEHYPER{../..}{Value-Types}{values}, 
                \NAMEREF{pattern}
@@ -222,7 +225,7 @@ $$\begin{align*}
           (  \VAR{V}, 
                  \VAR{X} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \VAR{I}\SUB{2} 
         \neq \STRING{pattern}
@@ -257,7 +260,7 @@ $$\begin{align*}
                                             (  \VAR{V}\SUB{2}\STAR ) ) ) ) )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../Composite}{Maps}{dom}
           (  \VAR{M}\SUB{2} ) 
@@ -280,7 +283,7 @@ $$\begin{align*}
                    \NAMEHYPER{../../../Computations/Abnormal}{Failing}{fail} )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../Composite}{Maps}{dom}
           (  \VAR{M}\SUB{2} ) 
@@ -320,7 +323,7 @@ $$\begin{align*}
                    \NAMEHYPER{../../../Computations/Abnormal}{Failing}{fail} )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{P} : \mathop{\sim} (  \NAMEHYPER{../../Composite}{Datatypes}{datatype-values}  \mid \NAMEHYPER{../../Composite}{Maps}{maps}
                                                                      (  \_, 
@@ -340,7 +343,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{match-loosely}(
                        \_ : \NAMEHYPER{../..}{Value-Types}{values}, \_ : \NAMEHYPER{../..}{Value-Types}{values}) 
     :  \TO \NAMEHYPER{../../../Computations/Normal}{Binding}{environments} 
@@ -356,7 +359,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{match-loosely}
         (  \VAR{V} : \NAMEHYPER{../..}{Value-Types}{values}, 
                \NAMEREF{pattern}
@@ -366,7 +369,7 @@ $$\begin{align*}
           (  \VAR{V}, 
                  \VAR{X} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \VAR{I}\SUB{2} 
         \neq \STRING{pattern}
@@ -401,7 +404,7 @@ $$\begin{align*}
                                             (  \VAR{V}\SUB{2}\STAR ) ) ) ) )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../Composite}{Maps}{dom}
           (  \VAR{M}\SUB{2} ) 
@@ -418,7 +421,7 @@ $$\begin{align*}
             (   \  )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../Composite}{Maps}{dom}
           (  \VAR{M}\SUB{2} ) 
@@ -458,7 +461,7 @@ $$\begin{align*}
                    \NAMEHYPER{../../../Computations/Abnormal}{Failing}{fail} )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{P} : \mathop{\sim} (  \NAMEHYPER{../../Composite}{Datatypes}{datatype-values}  \mid \NAMEHYPER{../../Composite}{Maps}{maps}
                                                                      (  \_, 
@@ -478,7 +481,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{case-match}(
                        \_ : \NAMEHYPER{../..}{Value-Types}{values}, \_ :  \TO \VAR{T}') 
     :  \TO \VAR{T}' 
@@ -492,7 +495,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{case-match}
         (  \VAR{P} : \NAMEHYPER{../..}{Value-Types}{values}, 
                \VAR{X} ) \leadsto 
@@ -504,7 +507,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{case-match-loosely}(
                        \_ : \NAMEHYPER{../..}{Value-Types}{values}, \_ :  \TO \VAR{T}') 
     :  \TO \VAR{T}' 
@@ -518,7 +521,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{case-match-loosely}
         (  \VAR{P} : \NAMEHYPER{../..}{Value-Types}{values}, 
                \VAR{X} ) \leadsto 
@@ -530,7 +533,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{case-variant-value}(
                        \_ : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}) 
     :  \TO \NAMEHYPER{../..}{Value-Types}{values} 
@@ -543,7 +546,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{case-variant-value}
         (  \VAR{I} : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers} ) \leadsto \\&\quad
         \NAMEREF{case-match}
@@ -553,6 +556,7 @@ $$\begin{align*}
                  \NAMEHYPER{../../Composite}{Variants}{variant-value}
                   (  \NAMEHYPER{../../../Computations/Normal}{Giving}{given} ) )
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

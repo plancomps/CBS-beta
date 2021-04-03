@@ -1,6 +1,9 @@
 {::comment}{% raw %}{:/}
 
-$$\KEY{Language} \STRING{SL}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{SL}$$
 
 
 
@@ -16,18 +19,18 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{START} : \SYN{start}
       \ ::= \ & \
       \SYNREF{program}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{start} \LEFTPHRASE \ \VARREF{START} : \SYNREF{start} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{start} \LEFTPHRASE \
                             \VARREF{Program} \
                           \RIGHTPHRASE  = \\&\quad
@@ -41,18 +44,18 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{Program} : \SYN{program}
       \ ::= \ & \
       \SYNHYPER{../.}{SL-4-Definitions}{fun-def}\STAR
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{run} \LEFTPHRASE \ \VARREF{Program} : \SYNREF{program} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{run} \LEFTPHRASE \
                             \VARHYPER{../.}{SL-4-Definitions}{FunDef}\STAR \
                           \RIGHTPHRASE  = \\&\quad
@@ -69,6 +72,7 @@ $$\begin{align*}
                                   \STRING{main}, 
                                \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{nil} ) ) )
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

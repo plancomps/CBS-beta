@@ -1,12 +1,15 @@
 {::comment}{% raw %}{:/}
 <details open markdown="block">
   <summary>
-    Outline
+    OUTLINE
   </summary>
   {: .text-delta }
 - TOC
 {:toc}
 </details>
+
+
+----
 
 ### Storing
                
@@ -14,35 +17,35 @@
 
 $$\begin{align*}
   [ \
-  \KEY{Datatype} \ & \NAMEREF{locations} \\
-  \KEY{Alias} \ & \NAMEREF{locs} \\
-  \KEY{Type} \ & \NAMEREF{stores} \\
-  \KEY{Entity} \ & \NAMEREF{store} \\
-  \KEY{Funcon} \ & \NAMEREF{initialise-storing} \\
-  \KEY{Funcon} \ & \NAMEREF{store-clear} \\
-  \KEY{Datatype} \ & \NAMEREF{variables} \\
-  \KEY{Alias} \ & \NAMEREF{vars} \\
-  \KEY{Funcon} \ & \NAMEREF{variable} \\
-  \KEY{Alias} \ & \NAMEREF{var} \\
-  \KEY{Funcon} \ & \NAMEREF{allocate-variable} \\
-  \KEY{Alias} \ & \NAMEREF{alloc} \\
-  \KEY{Funcon} \ & \NAMEREF{recycle-variables} \\
-  \KEY{Alias} \ & \NAMEREF{recycle} \\
-  \KEY{Funcon} \ & \NAMEREF{initialise-variable} \\
-  \KEY{Alias} \ & \NAMEREF{init} \\
-  \KEY{Funcon} \ & \NAMEREF{allocate-initialised-variable} \\
-  \KEY{Alias} \ & \NAMEREF{alloc-init} \\
-  \KEY{Funcon} \ & \NAMEREF{assign} \\
-  \KEY{Funcon} \ & \NAMEREF{assigned} \\
-  \KEY{Funcon} \ & \NAMEREF{current-value} \\
-  \KEY{Funcon} \ & \NAMEREF{un-assign} \\
-  \KEY{Funcon} \ & \NAMEREF{structural-assign} \\
-  \KEY{Funcon} \ & \NAMEREF{structural-assigned}
+  \KEY{Datatype} \quad & \NAMEREF{locations} \\
+  \KEY{Alias} \quad & \NAMEREF{locs} \\
+  \KEY{Type} \quad & \NAMEREF{stores} \\
+  \KEY{Entity} \quad & \NAMEREF{store} \\
+  \KEY{Funcon} \quad & \NAMEREF{initialise-storing} \\
+  \KEY{Funcon} \quad & \NAMEREF{store-clear} \\
+  \KEY{Datatype} \quad & \NAMEREF{variables} \\
+  \KEY{Alias} \quad & \NAMEREF{vars} \\
+  \KEY{Funcon} \quad & \NAMEREF{variable} \\
+  \KEY{Alias} \quad & \NAMEREF{var} \\
+  \KEY{Funcon} \quad & \NAMEREF{allocate-variable} \\
+  \KEY{Alias} \quad & \NAMEREF{alloc} \\
+  \KEY{Funcon} \quad & \NAMEREF{recycle-variables} \\
+  \KEY{Alias} \quad & \NAMEREF{recycle} \\
+  \KEY{Funcon} \quad & \NAMEREF{initialise-variable} \\
+  \KEY{Alias} \quad & \NAMEREF{init} \\
+  \KEY{Funcon} \quad & \NAMEREF{allocate-initialised-variable} \\
+  \KEY{Alias} \quad & \NAMEREF{alloc-init} \\
+  \KEY{Funcon} \quad & \NAMEREF{assign} \\
+  \KEY{Funcon} \quad & \NAMEREF{assigned} \\
+  \KEY{Funcon} \quad & \NAMEREF{current-value} \\
+  \KEY{Funcon} \quad & \NAMEREF{un-assign} \\
+  \KEY{Funcon} \quad & \NAMEREF{structural-assign} \\
+  \KEY{Funcon} \quad & \NAMEREF{structural-assigned}
   \ ]
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Meta-variables} \
+  \KEY{Meta-variables} \quad
   & \VAR{T}, \VAR{T}' <: \NAMEHYPER{../../../Values}{Value-Types}{values}
 \end{align*}$$
 
@@ -51,11 +54,11 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Type} \ 
+  \KEY{Type} \quad 
   & \NAMEDECL{locations}  
     \leadsto \NAMEHYPER{../.}{Generating}{atoms}
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{locs} = \NAMEREF{locations}
 \end{align*}$$
 
@@ -64,7 +67,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Type} \ 
+  \KEY{Type} \quad 
   & \NAMEDECL{stores}  
     \leadsto \NAMEHYPER{../../../Values/Composite}{Maps}{maps}
                (  \NAMEREF{locations}, 
@@ -78,7 +81,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Entity} \
+  \KEY{Entity} \quad
   & \langle \_, \NAMEDECL{store}(\_ : \NAMEREF{stores}) \rangle \TRANS   
     \langle \_, \NAME{store}(\_ : \NAME{stores}) \rangle
 \end{align*}$$
@@ -92,11 +95,11 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{store-clear} 
     :  \TO \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     &  \langle \NAMEREF{store-clear}, \NAMEREF{store} (  \_ ) \rangle \TRANS 
         \langle \NAMEHYPER{../../../Values/Primitive}{Null}{null-value}, \NAMEREF{store} (  \NAMEHYPER{../../../Values/Composite}{Maps}{map}
                                                      (   \  ) ) \rangle
@@ -107,7 +110,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{initialise-storing}(
                        \VAR{X} :  \TO \VAR{T}) 
     :  \TO \VAR{T} \\&\quad
@@ -117,7 +120,7 @@ $$\begin{align*}
                        (  \NAMEHYPER{../.}{Generating}{initialise-generating}
                                (  \VAR{X} ) ) )
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{init-storing} = \NAMEREF{initialise-storing}
 \end{align*}$$
 
@@ -143,17 +146,17 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Datatype} \ 
+  \KEY{Datatype} \quad 
   \NAMEDECL{variables} 
   \ ::= \ & \NAMEDECL{variable}(
                                \_ : \NAMEREF{locations}, \_ : \NAMEHYPER{../../../Values}{Value-Types}{value-types})
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{vars} = \NAMEREF{variables}
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{var} = \NAMEREF{variable}
 \end{align*}$$
 
@@ -170,12 +173,12 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{allocate-variable}(
                        \VAR{T} : \NAMEHYPER{../../../Values}{Value-Types}{types}) 
     :  \TO \NAMEREF{variables} 
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{alloc} = \NAMEREF{allocate-variable}
 \end{align*}$$
 
@@ -190,7 +193,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \langle \NAMEHYPER{../.}{Generating}{use-atom-not-in}
                               (  \NAMEHYPER{../../../Values/Composite}{Maps}{dom}
@@ -211,12 +214,12 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{recycle-variables}(
                        \_ : \NAMEREF{variables}\PLUS) 
     :  \TO \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} 
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{recycle} = \NAMEREF{recycle-variables}
 \end{align*}$$
 
@@ -228,7 +231,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../Values/Composite}{Sets}{is-in-set}
           (  \VAR{L}, 
@@ -245,7 +248,7 @@ $$\begin{align*}
                                                               \{  \VAR{L} \} ) ) \rangle
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../Values/Composite}{Sets}{is-in-set}
           (  \VAR{L}, 
@@ -260,7 +263,7 @@ $$\begin{align*}
           \langle \NAMEHYPER{../../Abnormal}{Failing}{fail}, \NAMEREF{store} (  \VAR{$\sigma$} ) \rangle
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{recycle-variables}
         (  \VAR{Var} : \NAMEREF{variables}, 
                \VAR{Var}\PLUS : \NAMEREF{variables}\PLUS ) \leadsto \\&\quad
@@ -272,12 +275,12 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{initialise-variable}(
                        \_ : \NAMEREF{variables}, \_ : \NAMEHYPER{../../../Values}{Value-Types}{values}) 
     :  \TO \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} 
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{init} = \NAMEREF{initialise-variable}
 \end{align*}$$
 
@@ -289,7 +292,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../Values/Primitive}{Booleans}{and}
           ( \\&\quad \NAMEHYPER{../../../Values/Composite}{Sets}{is-in-set}
@@ -317,7 +320,7 @@ $$\begin{align*}
                                                               \VAR{$\sigma$} ) ) \rangle
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../Values/Primitive}{Booleans}{and}
           ( \\&\quad \NAMEHYPER{../../../Values/Composite}{Sets}{is-in-set}
@@ -344,7 +347,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{allocate-initialised-variable}(
                        \VAR{T} , \VAR{Val} : \VAR{T}) 
     :  \TO \NAMEREF{variables} \\&\quad
@@ -357,7 +360,7 @@ $$\begin{align*}
                                       \VAR{Val} ), 
                               \NAMEHYPER{../.}{Giving}{given} ) )
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{alloc-init} = \NAMEREF{allocate-initialised-variable}
 \end{align*}$$
 
@@ -370,7 +373,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{assign}(
                        \_ : \NAMEREF{variables}, \_ : \NAMEHYPER{../../../Values}{Value-Types}{values}) 
     :  \TO \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} 
@@ -384,7 +387,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../Values/Primitive}{Booleans}{and}
           (  \NAMEHYPER{../../../Values/Composite}{Sets}{is-in-set}
@@ -407,7 +410,7 @@ $$\begin{align*}
                                                               \VAR{$\sigma$} ) ) \rangle
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../Values/Primitive}{Booleans}{and}
           (  \NAMEHYPER{../../../Values/Composite}{Sets}{is-in-set}
@@ -429,7 +432,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{assigned}(
                        \_ : \NAMEREF{variables}) 
     :  \TO \NAMEHYPER{../../../Values}{Value-Types}{values} 
@@ -442,7 +445,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../Values/Composite}{Maps}{map-lookup}
           (  \VAR{$\sigma$}, 
@@ -456,7 +459,7 @@ $$\begin{align*}
           \langle \VAR{Val}, \NAMEREF{store} (  \VAR{$\sigma$} ) \rangle
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../Values/Composite}{Maps}{map-lookup}
           (  \VAR{$\sigma$}, 
@@ -472,7 +475,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{current-value}(
                        \_ : \NAMEHYPER{../../../Values}{Value-Types}{values}) 
     :  \TO \NAMEHYPER{../../../Values}{Value-Types}{values} 
@@ -488,20 +491,20 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{current-value}
         (  \VAR{Var} : \NAMEREF{variables} ) \leadsto 
         \NAMEREF{assigned}
           (  \VAR{Var} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{current-value}
         (  \VAR{U} : \mathop{\sim} \NAMEREF{variables} ) \leadsto 
         \VAR{U}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{un-assign}(
                        \_ : \NAMEREF{variables}) 
     :  \TO \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} 
@@ -513,7 +516,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../Values/Composite}{Sets}{is-in-set}
           (  \VAR{L}, 
@@ -531,7 +534,7 @@ $$\begin{align*}
                                                               \VAR{$\sigma$} ) ) \rangle
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../Values/Composite}{Sets}{is-in-set}
           (  \VAR{L}, 
@@ -573,7 +576,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{structural-assign}(
                        \_ : \NAMEHYPER{../../../Values}{Value-Types}{values}, \_ : \NAMEHYPER{../../../Values}{Value-Types}{values}) 
     :  \TO \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} 
@@ -590,7 +593,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{structural-assign}
         (  \VAR{V}\SUB{1} : \NAMEREF{variables}, 
                \VAR{V}\SUB{2} : \NAMEHYPER{../../../Values}{Value-Types}{values} ) \leadsto \\&\quad
@@ -598,7 +601,7 @@ $$\begin{align*}
           (  \VAR{V}\SUB{1}, 
                  \VAR{V}\SUB{2} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{V}\SUB{1} : \mathop{\sim} (  \NAMEREF{variables} )\\&
         \VAR{V}\SUB{1} \leadsto 
@@ -638,7 +641,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../Values/Composite}{Maps}{dom}
           (  \VAR{M}\SUB{1} ) 
@@ -658,7 +661,7 @@ $$\begin{align*}
                            \{   \  \} ) )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../Values/Composite}{Sets}{some-element}
           (  \NAMEHYPER{../../../Values/Composite}{Maps}{dom}
@@ -694,7 +697,7 @@ $$\begin{align*}
                                    \{  \VAR{K} \} ) ) )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{V}\SUB{1} : \mathop{\sim} (  \NAMEHYPER{../../../Values/Composite}{Datatypes}{datatype-values}  \mid \NAMEHYPER{../../../Values/Composite}{Maps}{maps}
                                                                      (  \_, 
@@ -711,7 +714,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{structural-assigned}(
                        \_ : \NAMEHYPER{../../../Values}{Value-Types}{values}) 
     :  \TO \NAMEHYPER{../../../Values}{Value-Types}{values} 
@@ -731,13 +734,13 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{structural-assigned}
         (  \VAR{Var} : \NAMEREF{variables} ) \leadsto 
         \NAMEREF{assigned}
           (  \VAR{Var} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{V} : \mathop{\sim} (  \NAMEREF{variables} )\\&
         \VAR{V} \leadsto 
@@ -761,7 +764,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{structural-assigned}
         (  \VAR{M} : \NAMEHYPER{../../../Values/Composite}{Maps}{maps}
                           (  \_, 
@@ -773,7 +776,7 @@ $$\begin{align*}
                          \NAMEHYPER{../../../Values/Composite}{Maps}{map-elements}
                           (  \VAR{M} ) ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{U} : \mathop{\sim} (  \NAMEHYPER{../../../Values/Composite}{Datatypes}{datatype-values}  \mid \NAMEHYPER{../../../Values/Composite}{Maps}{maps}
                                                                      (  \_, 
@@ -784,6 +787,7 @@ $$\begin{align*}
           \VAR{U}
       }
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

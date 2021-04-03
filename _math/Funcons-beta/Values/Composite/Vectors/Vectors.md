@@ -1,24 +1,27 @@
 {::comment}{% raw %}{:/}
 
+
+----
+
 ### Vectors
                
 
 
 $$\begin{align*}
   [ \
-  \KEY{Datatype} \ & \NAMEREF{vectors} \\
-  \KEY{Funcon} \ & \NAMEREF{vector} \\
-  \KEY{Funcon} \ & \NAMEREF{vector-elements}
+  \KEY{Datatype} \quad & \NAMEREF{vectors} \\
+  \KEY{Funcon} \quad & \NAMEREF{vector} \\
+  \KEY{Funcon} \quad & \NAMEREF{vector-elements}
   \ ]
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Meta-variables} \
+  \KEY{Meta-variables} \quad
   & \VAR{T} <: \NAMEHYPER{../..}{Value-Types}{values}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Datatype} \ 
+  \KEY{Datatype} \quad 
   \NAMEDECL{vectors}(
                      \VAR{T} ) 
   \ ::= \ & \NAMEDECL{vector}(
@@ -26,18 +29,19 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{vector-elements}(
                        \_ : \NAMEREF{vectors}
                                  (  \VAR{T} )) 
     :  \TO (  \VAR{T} )\STAR 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{vector-elements}
         (  \NAMEREF{vector}
                 (  \VAR{V}\STAR : (  \VAR{T} )\STAR ) ) \leadsto 
         \VAR{V}\STAR
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

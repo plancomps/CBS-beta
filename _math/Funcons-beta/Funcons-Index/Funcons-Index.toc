@@ -1,0 +1,51 @@
+\contentsline {section}{Computations}{2}{section*.2}%
+\contentsline {subsection}{Types of computation}{2}{section*.3}%
+\contentsline {subsection}{Normal computation}{2}{section*.4}%
+\contentsline {subsubsection}{Flowing}{2}{section*.5}%
+\contentsline {subsubsection}{Giving}{3}{section*.6}%
+\contentsline {subsubsection}{Binding}{3}{section*.7}%
+\contentsline {subsubsection}{Generating}{3}{section*.8}%
+\contentsline {subsubsection}{Storing}{4}{section*.9}%
+\contentsline {subsubsection}{Linking}{4}{section*.10}%
+\contentsline {subsubsection}{Interacting}{4}{section*.11}%
+\contentsline {paragraph}{Input}{4}{section*.12}%
+\contentsline {paragraph}{Output}{4}{section*.13}%
+\contentsline {subsection}{Abnormal computation}{5}{section*.14}%
+\contentsline {subsubsection}{Terminating abruptly}{5}{section*.15}%
+\contentsline {subsubsection}{Failing}{5}{section*.16}%
+\contentsline {subsubsection}{Throwing}{5}{section*.17}%
+\contentsline {subsubsection}{Returning}{5}{section*.18}%
+\contentsline {subsubsection}{Breaking}{5}{section*.19}%
+\contentsline {subsubsection}{Continuing}{6}{section*.20}%
+\contentsline {subsubsection}{Controlling}{6}{section*.21}%
+\contentsline {section}{Values}{6}{section*.22}%
+\contentsline {subsection}{Value Types}{6}{section*.23}%
+\contentsline {subsection}{Primitive values}{7}{section*.24}%
+\contentsline {subsubsection}{Booleans}{7}{section*.25}%
+\contentsline {subsubsection}{Integers}{8}{section*.26}%
+\contentsline {subsubsection}{Floats}{9}{section*.27}%
+\contentsline {subsubsection}{Characters}{10}{section*.28}%
+\contentsline {subsubsection}{The null value}{10}{section*.29}%
+\contentsline {subsection}{Composite values}{11}{section*.30}%
+\contentsline {subsubsection}{Sequences of values}{11}{section*.31}%
+\contentsline {subsubsection}{Datatypes}{11}{section*.32}%
+\contentsline {subsubsection}{Tuples}{11}{section*.33}%
+\contentsline {subsubsection}{Lists}{11}{section*.34}%
+\contentsline {subsubsection}{Strings}{11}{section*.35}%
+\contentsline {subsubsection}{Vectors}{12}{section*.36}%
+\contentsline {subsubsection}{Bits and bit vectors}{12}{section*.37}%
+\contentsline {subsubsection}{Sets}{12}{section*.38}%
+\contentsline {subsubsection}{Maps}{13}{section*.39}%
+\contentsline {subsubsection}{Multisets (bags)}{13}{section*.40}%
+\contentsline {subsubsection}{Trees}{13}{section*.41}%
+\contentsline {subsubsection}{Graphs}{13}{section*.42}%
+\contentsline {subsubsection}{References and pointers}{13}{section*.43}%
+\contentsline {subsubsection}{Records}{13}{section*.44}%
+\contentsline {subsubsection}{Variants}{14}{section*.45}%
+\contentsline {subsubsection}{Classes}{14}{section*.46}%
+\contentsline {subsubsection}{Objects}{14}{section*.47}%
+\contentsline {subsection}{Abstraction values}{14}{section*.48}%
+\contentsline {subsubsection}{Generic abstractions}{14}{section*.49}%
+\contentsline {subsubsection}{Thunks}{14}{section*.50}%
+\contentsline {subsubsection}{Functions}{14}{section*.51}%
+\contentsline {subsubsection}{Patterns}{15}{section*.52}%

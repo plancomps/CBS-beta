@@ -9,31 +9,34 @@ ancestor: Funcons-beta
 
 {::comment}{% raw %}{:/}
 
+
+----
+
 ### Controlling
                
 
 
 $$\begin{align*}
   [ \
-  \KEY{Datatype} \ & \NAMEREF{continuations} \\
-  \KEY{Funcon} \ & \NAMEREF{continuation} \\
-  \KEY{Entity} \ & \NAMEREF{plug-signal} \\
-  \KEY{Funcon} \ & \NAMEREF{hole} \\
-  \KEY{Funcon} \ & \NAMEREF{resume-continuation} \\
-  \KEY{Entity} \ & \NAMEREF{control-signal} \\
-  \KEY{Funcon} \ & \NAMEREF{control} \\
-  \KEY{Funcon} \ & \NAMEREF{delimit-current-continuation} \\
-  \KEY{Alias} \ & \NAMEREF{delimit-cc}
+  \KEY{Datatype} \quad & \NAMEREF{continuations} \\
+  \KEY{Funcon} \quad & \NAMEREF{continuation} \\
+  \KEY{Entity} \quad & \NAMEREF{plug-signal} \\
+  \KEY{Funcon} \quad & \NAMEREF{hole} \\
+  \KEY{Funcon} \quad & \NAMEREF{resume-continuation} \\
+  \KEY{Entity} \quad & \NAMEREF{control-signal} \\
+  \KEY{Funcon} \quad & \NAMEREF{control} \\
+  \KEY{Funcon} \quad & \NAMEREF{delimit-current-continuation} \\
+  \KEY{Alias} \quad & \NAMEREF{delimit-cc}
   \ ]
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Meta-variables} \
+  \KEY{Meta-variables} \quad
   & \VAR{T}, \VAR{T}\SUB{1}, \VAR{T}\SUB{2} <: \NAMEHYPER{../../../Values}{Value-Types}{values}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Datatype} \ 
+  \KEY{Datatype} \quad 
   \NAMEDECL{continuations}(
                      \VAR{T}\SUB{1} , \VAR{T}\SUB{2} ) 
   \ ::= \ & \NAMEDECL{continuation}(
@@ -50,7 +53,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Entity} \
+  \KEY{Entity} \quad
   & \_ \xrightarrow{\NAMEDECL{plug-signal}(\VAR{V}\QUERY : \NAMEHYPER{../../../Values}{Value-Types}{values}\QUERY)} \_
 \end{align*}$$
 
@@ -60,7 +63,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{hole} 
     :  \TO \NAMEHYPER{../../../Values}{Value-Types}{values} 
 \end{align*}$$
@@ -71,13 +74,13 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     &  \NAMEREF{hole} \xrightarrow{\NAMEREF{plug-signal}(  \VAR{V} )}_{} 
         \VAR{V}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{resume-continuation}(
                        \VAR{K} : \NAMEREF{continuations}
                                  (  \VAR{T}\SUB{1}, 
@@ -93,7 +96,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{X} \xrightarrow{\NAMEREF{plug-signal}(  \VAR{V} )}_{} 
           \VAR{X}'
@@ -108,7 +111,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Entity} \
+  \KEY{Entity} \quad
   & \_ \xrightarrow{\NAMEDECL{control-signal}(\VAR{F}\QUERY : (  \NAMEHYPER{../../../Values/Abstraction}{Functions}{functions}
                                                                       (  \NAMEREF{continuations}
                                                                               (  \VAR{T}\SUB{1}, 
@@ -123,7 +126,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{control}(
                        \VAR{F} : \NAMEHYPER{../../../Values/Abstraction}{Functions}{functions}
                                  (  \NAMEREF{continuations}
@@ -143,7 +146,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     &  \NAMEREF{control}
                     (  \VAR{F} : \NAMEHYPER{../../../Values/Abstraction}{Functions}{functions}
                                       (  \_, 
@@ -152,12 +155,12 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{delimit-current-continuation}(
                        \VAR{X} :  \TO \VAR{T}) 
     :  \TO \VAR{T} 
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{delimit-cc} = \NAMEREF{delimit-current-continuation}
 \end{align*}$$
 
@@ -167,12 +170,12 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{delimit-current-continuation}
         (  \VAR{V} : \VAR{T} ) \leadsto 
         \VAR{V}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{X} \xrightarrow{\NAMEREF{control-signal}(   \  )}_{} 
           \VAR{X}'
@@ -183,7 +186,7 @@ $$\begin{align*}
             (  \VAR{X}' )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{X} \xrightarrow{\NAMEREF{control-signal}(  \VAR{F} )}_{} 
           \VAR{X}'
@@ -198,6 +201,7 @@ $$\begin{align*}
                               (  \VAR{X}' ) ) )
       }
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -222,7 +226,9 @@ $$\begin{align*}
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

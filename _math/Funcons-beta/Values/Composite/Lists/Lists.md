@@ -1,34 +1,37 @@
 {::comment}{% raw %}{:/}
 
+
+----
+
 ### Lists
                
 
 
 $$\begin{align*}
   [ \
-  \KEY{Datatype} \ & \NAMEREF{lists} \\
-  \KEY{Funcon} \ & \NAMEREF{list} \\
-  \KEY{Funcon} \ & \NAMEREF{list-elements} \\
-  \KEY{Funcon} \ & \NAMEREF{list-nil} \\
-  \KEY{Alias} \ & \NAMEREF{nil} \\
-  \KEY{Funcon} \ & \NAMEREF{list-cons} \\
-  \KEY{Alias} \ & \NAMEREF{cons} \\
-  \KEY{Funcon} \ & \NAMEREF{list-head} \\
-  \KEY{Alias} \ & \NAMEREF{head} \\
-  \KEY{Funcon} \ & \NAMEREF{list-tail} \\
-  \KEY{Alias} \ & \NAMEREF{tail} \\
-  \KEY{Funcon} \ & \NAMEREF{list-length} \\
-  \KEY{Funcon} \ & \NAMEREF{list-append}
+  \KEY{Datatype} \quad & \NAMEREF{lists} \\
+  \KEY{Funcon} \quad & \NAMEREF{list} \\
+  \KEY{Funcon} \quad & \NAMEREF{list-elements} \\
+  \KEY{Funcon} \quad & \NAMEREF{list-nil} \\
+  \KEY{Alias} \quad & \NAMEREF{nil} \\
+  \KEY{Funcon} \quad & \NAMEREF{list-cons} \\
+  \KEY{Alias} \quad & \NAMEREF{cons} \\
+  \KEY{Funcon} \quad & \NAMEREF{list-head} \\
+  \KEY{Alias} \quad & \NAMEREF{head} \\
+  \KEY{Funcon} \quad & \NAMEREF{list-tail} \\
+  \KEY{Alias} \quad & \NAMEREF{tail} \\
+  \KEY{Funcon} \quad & \NAMEREF{list-length} \\
+  \KEY{Funcon} \quad & \NAMEREF{list-append}
   \ ]
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Meta-variables} \
+  \KEY{Meta-variables} \quad
   & \VAR{T} <: \NAMEHYPER{../..}{Value-Types}{values}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Datatype} \ 
+  \KEY{Datatype} \quad 
   \NAMEDECL{lists}(
                      \VAR{T} ) 
   \ ::= \ & \NAMEDECL{list}(
@@ -55,20 +58,20 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Assert} \
+  \KEY{Assert} \quad
   & [  \VAR{V}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ] 
     == \NAMEREF{list}
          (  \VAR{V}\STAR )
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{list-elements}(
                        \_ : \NAMEREF{lists}
                                  (  \VAR{T} )) 
     :  \TO (  \VAR{T} )\STAR 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{list-elements}
         (  \NAMEREF{list}
                 (  \VAR{V}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ) ) \leadsto 
@@ -76,30 +79,30 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{list-nil} 
     :  \TO \NAMEREF{lists}
                      (  \_ ) \\&\quad
     \leadsto [   \  ]
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{nil} = \NAMEREF{list-nil}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{list-cons}(
                        \_ : \VAR{T}, \_ : \NAMEREF{lists}
                                  (  \VAR{T} )) 
     :  \TO \NAMEREF{lists}
                      (  \VAR{T} ) 
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{cons} = \NAMEREF{list-cons}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{list-cons}
         (  \VAR{V} : \NAMEHYPER{../..}{Value-Types}{values}, 
                [  \VAR{V}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ] ) \leadsto 
@@ -108,62 +111,62 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{list-head}(
                        \_ : \NAMEREF{lists}
                                  (  \VAR{T} )) 
     :  \TO (  \VAR{T} )\QUERY 
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{head} = \NAMEREF{list-head}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{list-head} \ 
         [  \VAR{V} : \NAMEHYPER{../..}{Value-Types}{values}, 
                \_\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ] \leadsto 
         \VAR{V}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{list-head} \ 
         [   \  ] \leadsto 
         (   \  )
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{list-tail}(
                        \_ : \NAMEREF{lists}
                                  (  \VAR{T} )) 
     :  \TO (  \NAMEREF{lists}
                            (  \VAR{T} ) )\QUERY 
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{tail} = \NAMEREF{list-tail}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{list-tail} \ 
         [  \_ : \NAMEHYPER{../..}{Value-Types}{values}, 
                \VAR{V}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ] \leadsto 
         [  \VAR{V}\STAR ]
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{list-tail} \ 
         [   \  ] \leadsto 
         (   \  )
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{list-length}(
                        \_ : \NAMEREF{lists}
                                  (  \VAR{T} )) 
     :  \TO \NAMEHYPER{../../Primitive}{Integers}{natural-numbers} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{list-length} \ 
         [  \VAR{V}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ] \leadsto 
         \NAMEHYPER{../.}{Sequences}{length}
@@ -171,21 +174,21 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{list-append}(
                        \_ : (  \NAMEREF{lists}
                                        (  \VAR{T} ) )\STAR) 
     :  \TO \NAMEREF{lists}
                      (  \VAR{T} ) 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{list-append}
         (  [  \VAR{V}\SUB{1}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ], 
                [  \VAR{V}\SUB{2}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ] ) \leadsto 
         [  \VAR{V}\SUB{1}\STAR, 
                \VAR{V}\SUB{2}\STAR ]
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{list-append}
         (  \VAR{L}\SUB{1} : \NAMEREF{lists}
                           (  \_ ), 
@@ -202,12 +205,12 @@ $$\begin{align*}
                          \VAR{L}\SUB{3}, 
                          \VAR{L}\STAR ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{list-append}
         (   \  ) \leadsto 
         [   \  ]
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{list-append}
         (  \VAR{L} : \NAMEREF{lists}
                           (  \_ ) ) \leadsto 
@@ -217,6 +220,7 @@ $$\begin{align*}
 
   Datatypes of infinite and possibly-infinite lists can be specified as
   algebraic datatypes using abstractions.
+
 
 
 

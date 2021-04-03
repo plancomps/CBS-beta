@@ -1,22 +1,25 @@
 {::comment}{% raw %}{:/}
 
-$$\KEY{Language} \STRING{MiniJava}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{MiniJava}$$
 
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{START} : \SYN{start}
       \ ::= \ & \
       \SYNHYPER{../.}{MiniJava-Dynamics}{program}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{start} \LEFTPHRASE \ \VARREF{START} : \SYNREF{start} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{start} \LEFTPHRASE \
                             \VARHYPER{../.}{MiniJava-Dynamics}{P} \
                           \RIGHTPHRASE  = \\&\quad
@@ -47,6 +50,7 @@ $$\begin{align*}
 
 
 The section numbers above are links into other files.
+
 
 
 

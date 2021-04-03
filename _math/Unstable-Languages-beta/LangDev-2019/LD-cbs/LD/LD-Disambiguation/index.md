@@ -10,14 +10,17 @@ ancestor: Unstable-Languages-beta
 {::comment}{% raw %}{:/}
 <details open markdown="block">
   <summary>
-    Outline
+    OUTLINE
   </summary>
   {: .text-delta }
 - TOC
 {:toc}
 </details>
 
-$$\KEY{Language} \STRING{LD}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{LD}$$
 
 # $$\SECT{A}$$ Disambiguation
            
@@ -135,6 +138,7 @@ $$\KEY{Language} \STRING{LD}$$
 >    $$\SHADE{\quad\SYNHYPER{../.}{LD-Start}{exp}  \ ::= \  \  \SYNHYPER{../.}{LD-Start}{exp} \ \LEX{{;}} \ \SYNHYPER{../.}{LD-Start}{exp}}$$
 
 
+
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
   "FUNCONS-BETA"
 [Unstable-Funcons-beta]: /CBS-beta/math/Unstable-Funcons-beta
@@ -157,7 +161,9 @@ $$\KEY{Language} \STRING{LD}$$
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

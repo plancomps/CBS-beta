@@ -8,6 +8,7 @@ ancestor: Unstable-Funcons-beta
 [Unstable-Funcons-beta] : [Indexing.cbs] \| [PRETTY] \| [PDF]
 
 
+----
 ### Value indexing
 <div class="highlighter-rouge"><pre class="highlight"><code>[
   <i class="keyword">Entity</i>   <span class="name"><a href="#Name_value-index">value-index</a></span>

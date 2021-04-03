@@ -1,24 +1,27 @@
 {::comment}{% raw %}{:/}
 
+
+----
+
 ### Tuples
                
 
 
 $$\begin{align*}
   [ \
-  \KEY{Datatype} \ & \NAMEREF{tuples} \\
-  \KEY{Funcon} \ & \NAMEREF{tuple-elements} \\
-  \KEY{Funcon} \ & \NAMEREF{tuple-zip}
+  \KEY{Datatype} \quad & \NAMEREF{tuples} \\
+  \KEY{Funcon} \quad & \NAMEREF{tuple-elements} \\
+  \KEY{Funcon} \quad & \NAMEREF{tuple-zip}
   \ ]
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Meta-variables} \
+  \KEY{Meta-variables} \quad
   & \VAR{T}\SUB{1}, \VAR{T}\SUB{2} <: \NAMEHYPER{../..}{Value-Types}{values} \qquad \\& \VAR{T}\SUB{1}\PLUS, \VAR{T}\SUB{2}\PLUS <: \NAMEHYPER{../..}{Value-Types}{values}\PLUS \qquad \\& \VAR{T}\STAR, \VAR{T}\SUB{1}\STAR, \VAR{T}\SUB{2}\STAR <: \NAMEHYPER{../..}{Value-Types}{values}\STAR
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Datatype} \ 
+  \KEY{Datatype} \quad 
   \NAMEDECL{tuples}(
                      \VAR{T}\STAR ) 
   \ ::= \ & \NAMEDECL{tuple}(
@@ -39,13 +42,13 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{tuple-elements}(
                        \_ : \NAMEREF{tuples}
                                  (  \VAR{T}\STAR )) 
     :  \TO (  \VAR{T}\STAR ) 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{tuple-elements}
         (  \NAMEREF{tuple}
                 (  \VAR{V}\STAR : \VAR{T}\STAR ) ) \leadsto 
@@ -53,7 +56,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{tuple-zip}(
                        \_ : \NAMEREF{tuples}
                                  (  \NAMEHYPER{../..}{Value-Types}{values}\STAR ), \_ : \NAMEREF{tuples}
@@ -72,7 +75,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{tuple-zip}
         (  \NAMEREF{tuple}
                 (  \VAR{V}\SUB{1} : \VAR{T}\SUB{1}, 
@@ -89,7 +92,7 @@ $$\begin{align*}
                        \NAMEREF{tuple}
                         (  \VAR{V}\SUB{2}\STAR ) ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{tuple-zip}
         (  \NAMEREF{tuple}
                 (   \  ), 
@@ -97,7 +100,7 @@ $$\begin{align*}
                 (   \  ) ) \leadsto 
         (   \  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{tuple-zip}
         (  \NAMEREF{tuple}
                 (  \VAR{V}\SUB{1}\PLUS : \VAR{T}\SUB{1}\PLUS ), 
@@ -105,7 +108,7 @@ $$\begin{align*}
                 (   \  ) ) \leadsto 
         (   \  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{tuple-zip}
         (  \NAMEREF{tuple}
                 (   \  ), 
@@ -113,6 +116,7 @@ $$\begin{align*}
                 (  \VAR{V}\SUB{2}\PLUS : \VAR{T}\SUB{2}\PLUS ) ) \leadsto 
         (   \  )
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

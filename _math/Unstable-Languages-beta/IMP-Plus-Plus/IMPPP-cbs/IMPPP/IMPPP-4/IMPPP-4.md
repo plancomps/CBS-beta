@@ -1,21 +1,24 @@
 {::comment}{% raw %}{:/}
 <details open markdown="block">
   <summary>
-    Outline
+    OUTLINE
   </summary>
   {: .text-delta }
 - TOC
 {:toc}
 </details>
 
-$$\KEY{Language} \STRING{IMPPP}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{IMPPP}$$
 
 # $$\SECT{4}$$ Statements and blocks
            
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{Stmt} : \SYN{stmt}
       \ ::= \ & \
       \SYNREF{block} \\
@@ -33,17 +36,17 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{execute} \LEFTPHRASE \ \_ : \SYNREF{stmt}\STAR \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{execute} \LEFTPHRASE \
                              \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{execute} \LEFTPHRASE \
                             \LEX{int} \ \VARREF{IL} \ \LEX{{;}} \ \VARREF{Stmt}\STAR \
                           \RIGHTPHRASE  = \\&\quad
@@ -56,7 +59,7 @@ $$\begin{align*}
                                     \VAR{Stmt}\STAR \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Otherwise} \
+  \KEY{Otherwise} \quad
     & \SEMREF{execute} \LEFTPHRASE \
                             \VARREF{Stmt} \ \VARREF{Stmt}\PLUS \
                           \RIGHTPHRASE  = \\&\quad
@@ -68,7 +71,7 @@ $$\begin{align*}
                                     \VAR{Stmt}\PLUS \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{execute} \LEFTPHRASE \
                             \VARHYPER{../.}{IMPPP-2}{AExp} \ \LEX{{;}} \
                           \RIGHTPHRASE  = \\&\quad
@@ -77,7 +80,7 @@ $$\begin{align*}
                                     \VAR{AExp} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{execute} \LEFTPHRASE \
                             \LEX{if} \ \LEX{{(}} \ \VARHYPER{../.}{IMPPP-3}{BExp} \ \LEX{{)}} \ \VARREF{Block}\SUB{1} \ \LEX{else} \ \VARREF{Block}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -92,7 +95,7 @@ $$\begin{align*}
                                     \VAR{Block}\SUB{2} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{execute} \LEFTPHRASE \
                             \LEX{while} \ \LEX{{(}} \ \VARHYPER{../.}{IMPPP-3}{BExp} \ \LEX{{)}} \ \VARREF{Block} \
                           \RIGHTPHRASE  = \\&\quad
@@ -104,7 +107,7 @@ $$\begin{align*}
                                     \VAR{Block} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{execute} \LEFTPHRASE \
                             \LEX{print} \ \LEX{{(}} \ \VARHYPER{../.}{IMPPP-2}{AExp} \ \LEX{{)}} \ \LEX{{;}} \
                           \RIGHTPHRASE  = \\&\quad
@@ -113,7 +116,7 @@ $$\begin{align*}
                                     \VAR{AExp} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \LEX{print} \ \LEX{{(}} \ \VARHYPER{../.}{IMPPP-2}{AExp} \ \LEX{{,}} \ \VARHYPER{../.}{IMPPP-2}{AExps} \ \LEX{{)}} \ \LEX{{;}} \
       \RIGHTPHRASE : \SYNREF{stmt}\PLUS = \\&
@@ -121,14 +124,14 @@ $$\begin{align*}
         \LEX{print} \ \LEX{{(}} \ \VAR{AExp} \ \LEX{{)}} \ \LEX{{;}} \ \LEX{print} \ \LEX{{(}} \ \VAR{AExps} \ \LEX{{)}} \ \LEX{{;}} \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{execute} \LEFTPHRASE \
                             \LEX{halt} \ \LEX{{;}} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads}{Multithreading}{thread-terminate}
         (  \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads}{Multithreading}{current-thread} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{execute} \LEFTPHRASE \
                             \LEX{join} \ \VARHYPER{../.}{IMPPP-2}{AExp} \ \LEX{{;}} \
                           \RIGHTPHRASE  = \\&\quad
@@ -138,7 +141,7 @@ $$\begin{align*}
                                             \VAR{AExp} \
                                           \RIGHTPHRASE  ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{execute} \LEFTPHRASE \
                             \LEX{{\LEFTBRACE}} \ \VARREF{Stmt}\STAR \ \LEX{{\RIGHTBRACE}} \
                           \RIGHTPHRASE  = 
@@ -152,18 +155,18 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{IL} : \SYN{ids}
       \ ::= \ & \
       \SYNHYPER{../.}{IMPPP-1}{id} \ \LEFTGROUP \LEX{{,}} \ \SYNREF{ids} \RIGHTGROUP\QUERY
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{declare-int-vars} \LEFTPHRASE \ \_ : \SYNREF{ids} \ \RIGHTPHRASE  
     : (   \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{environments} )\PLUS 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{declare-int-vars} \LEFTPHRASE \
                             \VARHYPER{../.}{IMPPP-1}{I} \
                           \RIGHTPHRASE  = \\&\quad
@@ -175,7 +178,7 @@ $$\begin{align*}
                 (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integers}, 
                        0 ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{declare-int-vars} \LEFTPHRASE \
                             \VARHYPER{../.}{IMPPP-1}{I} \ \LEX{{,}} \ \VARREF{IL} \
                           \RIGHTPHRASE  = \\&\quad
@@ -186,6 +189,7 @@ $$\begin{align*}
                             \VAR{IL} \
                           \RIGHTPHRASE 
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

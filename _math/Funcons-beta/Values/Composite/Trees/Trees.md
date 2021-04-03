@@ -1,29 +1,32 @@
 {::comment}{% raw %}{:/}
 
+
+----
+
 ### Trees
                
 
 
 $$\begin{align*}
   [ \
-  \KEY{Datatype} \ & \NAMEREF{trees} \\
-  \KEY{Funcon} \ & \NAMEREF{tree} \\
-  \KEY{Funcon} \ & \NAMEREF{tree-root-value} \\
-  \KEY{Funcon} \ & \NAMEREF{tree-branch-sequence} \\
-  \KEY{Funcon} \ & \NAMEREF{single-branching-sequence} \\
-  \KEY{Funcon} \ & \NAMEREF{forest-root-value-sequence} \\
-  \KEY{Funcon} \ & \NAMEREF{forest-branch-sequence} \\
-  \KEY{Funcon} \ & \NAMEREF{forest-value-sequence}
+  \KEY{Datatype} \quad & \NAMEREF{trees} \\
+  \KEY{Funcon} \quad & \NAMEREF{tree} \\
+  \KEY{Funcon} \quad & \NAMEREF{tree-root-value} \\
+  \KEY{Funcon} \quad & \NAMEREF{tree-branch-sequence} \\
+  \KEY{Funcon} \quad & \NAMEREF{single-branching-sequence} \\
+  \KEY{Funcon} \quad & \NAMEREF{forest-root-value-sequence} \\
+  \KEY{Funcon} \quad & \NAMEREF{forest-branch-sequence} \\
+  \KEY{Funcon} \quad & \NAMEREF{forest-value-sequence}
   \ ]
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Meta-variables} \
+  \KEY{Meta-variables} \quad
   & \VAR{T} <: \NAMEHYPER{../..}{Value-Types}{values}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Datatype} \ 
+  \KEY{Datatype} \quad 
   \NAMEDECL{trees}(
                      \VAR{T} ) 
   \ ::= \ & \NAMEDECL{tree}(
@@ -44,13 +47,13 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{tree-root-value}(
                        \_ : \NAMEREF{trees}
                                  (  \VAR{T} )) 
     :  \TO (  \VAR{T} )\QUERY 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{tree-root-value} \ 
         \NAMEREF{tree}
           (  \VAR{V} : \VAR{T}, 
@@ -60,14 +63,14 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{tree-branch-sequence}(
                        \_ : \NAMEREF{trees}
                                  (  \VAR{T} )) 
     :  \TO (  \NAMEREF{trees}
                            (  \VAR{T} ) )\STAR 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{tree-branch-sequence} \ 
         \NAMEREF{tree}
           (  \_ : \VAR{T}, 
@@ -77,7 +80,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{single-branching-sequence}(
                        \_ : \NAMEREF{trees}
                                  (  \VAR{T} )) 
@@ -91,13 +94,13 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{single-branching-sequence} \ 
         \NAMEREF{tree}
           (  \VAR{V} : \VAR{T} ) \leadsto 
         \VAR{V}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{single-branching-sequence} \ 
         \NAMEREF{tree}
           (  \VAR{V} : \VAR{T}, 
@@ -108,7 +111,7 @@ $$\begin{align*}
                  \NAMEREF{single-branching-sequence} \ 
                   \VAR{B} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{single-branching-sequence} \ 
         \NAMEREF{tree}
           (  \_ : \VAR{T}, 
@@ -125,13 +128,13 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{forest-root-value-sequence}(
                        \_ : (  \NAMEREF{trees}
                                        (  \VAR{T} ) )\STAR) 
     :  \TO \VAR{T}\STAR 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{forest-root-value-sequence}
         (  \VAR{B} : \NAMEREF{trees}
                           (  \VAR{T} ), 
@@ -142,20 +145,20 @@ $$\begin{align*}
                \NAMEREF{forest-root-value-sequence} \ 
                 \VAR{B}\STAR )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{forest-root-value-sequence}
         (   \  ) \leadsto 
         (   \  )
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{forest-branch-sequence}(
                        \_ : (  \NAMEREF{trees}
                                        (  \VAR{T} ) )\STAR) 
     :  \TO \VAR{T}\STAR 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{forest-branch-sequence}
         (  \VAR{B} : \NAMEREF{trees}
                           (  \VAR{T} ), 
@@ -166,14 +169,14 @@ $$\begin{align*}
                \NAMEREF{forest-branch-sequence} \ 
                 \VAR{B}\STAR )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{forest-branch-sequence}
         (   \  ) \leadsto 
         (   \  )
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{forest-value-sequence}(
                        \_ : (  \NAMEREF{trees}
                                        (  \VAR{T} ) )\STAR) 
@@ -187,7 +190,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{forest-value-sequence}
         (  \NAMEREF{tree}
                 (  \VAR{V} : \VAR{T}, 
@@ -201,7 +204,7 @@ $$\begin{align*}
                \NAMEREF{forest-value-sequence} \ 
                 \VAR{B}\SUB{2}\STAR )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{forest-value-sequence}
         (   \  ) \leadsto 
         (   \  )
@@ -210,6 +213,7 @@ $$\begin{align*}
 
   Other linearizations of trees can be added: breadth-first, right-to-left,
   C3, etc.
+
 
 
 

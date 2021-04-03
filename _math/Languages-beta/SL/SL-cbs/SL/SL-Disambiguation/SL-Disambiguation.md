@@ -1,6 +1,9 @@
 {::comment}{% raw %}{:/}
 
-$$\KEY{Language} \STRING{SL}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{SL}$$
 
 # $$\SECT{A}$$ Disambiguation
            
@@ -85,6 +88,7 @@ $$\KEY{Language} \STRING{SL}$$
 >    // Ensure greedy matching for lexicals\\
 >    $$\SHADE{\SYNHYPER{../.}{SL-1-Lexemes}{nat}}$$ -/- [0-9]\\
 >    $$\SHADE{\SYNHYPER{../.}{SL-1-Lexemes}{id}}$$  -/- [a-zA-Z0-9\_]
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

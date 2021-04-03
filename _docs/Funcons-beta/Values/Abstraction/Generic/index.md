@@ -8,6 +8,7 @@ ancestor: Funcons-beta
 [Funcons-beta] : [Generic.cbs] \| [PRETTY] \| [PDF]
 
 
+----
 ### Generic abstractions
 
 <div class="highlighter-rouge"><pre class="highlight"><code>[

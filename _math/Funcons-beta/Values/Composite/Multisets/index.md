@@ -9,29 +9,32 @@ ancestor: Funcons-beta
 
 {::comment}{% raw %}{:/}
 
+
+----
+
 ### Multisets (bags)
                
 
 
 $$\begin{align*}
   [ \
-  \KEY{Type} \ & \NAMEREF{multisets} \\
-  \KEY{Funcon} \ & \NAMEREF{multiset} \\
-  \KEY{Funcon} \ & \NAMEREF{multiset-elements} \\
-  \KEY{Funcon} \ & \NAMEREF{multiset-occurrences} \\
-  \KEY{Funcon} \ & \NAMEREF{multiset-insert} \\
-  \KEY{Funcon} \ & \NAMEREF{multiset-delete} \\
-  \KEY{Funcon} \ & \NAMEREF{is-submultiset}
+  \KEY{Type} \quad & \NAMEREF{multisets} \\
+  \KEY{Funcon} \quad & \NAMEREF{multiset} \\
+  \KEY{Funcon} \quad & \NAMEREF{multiset-elements} \\
+  \KEY{Funcon} \quad & \NAMEREF{multiset-occurrences} \\
+  \KEY{Funcon} \quad & \NAMEREF{multiset-insert} \\
+  \KEY{Funcon} \quad & \NAMEREF{multiset-delete} \\
+  \KEY{Funcon} \quad & \NAMEREF{is-submultiset}
   \ ]
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Meta-variables} \
+  \KEY{Meta-variables} \quad
   & \VAR{GT} <: \NAMEHYPER{../..}{Value-Types}{ground-values}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Type} \ 
+  \KEY{Built-in Type} \quad 
   & \NAMEDECL{multisets}(
                        \VAR{GT} )  
 \end{align*}$$
@@ -43,7 +46,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{multiset}(
                        \_ : (  \VAR{GT} )\STAR) 
     :  \TO \NAMEREF{multisets}
@@ -69,7 +72,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{multiset-elements}(
                        \_ : \NAMEREF{multisets}
                                  (  \VAR{GT} )) 
@@ -85,7 +88,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Assert} \
+  \KEY{Assert} \quad
   & \NAMEREF{multiset}
       (  \NAMEREF{multiset-elements}
               (  \VAR{S} ) ) 
@@ -93,7 +96,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{multiset-occurrences}(
                        \_ : \VAR{GT}, \_ : \NAMEREF{multisets}
                                  (  \VAR{GT} )) 
@@ -108,7 +111,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{multiset-insert}(
                        \_ : \VAR{GT}, \_ : \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}, \_ : \NAMEREF{multisets}
                                  (  \VAR{GT} )) 
@@ -125,7 +128,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{multiset-delete}(
                        \_ : \NAMEREF{multisets}
                                  (  \VAR{GT} ), \_ : \VAR{GT}, \_ : \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}) 
@@ -142,7 +145,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{is-submultiset}(
                        \_ : \NAMEREF{multisets}
                                  (  \VAR{GT} ), \_ : \NAMEREF{multisets}
@@ -155,6 +158,7 @@ $$\begin{align*}
            (  \VAR{MS}\SUB{1}, 
                   \VAR{MS}\SUB{2} )}$$ tests whether every element of $$\SHADE{\VAR{MS}\SUB{1}}$$ has equal or
   fewer occurrences in $$\SHADE{\VAR{MS}\SUB{1}}$$ than in $$\SHADE{\VAR{MS}\SUB{2}}$$. 
+
 
 
 
@@ -180,7 +184,9 @@ $$\begin{align*}
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

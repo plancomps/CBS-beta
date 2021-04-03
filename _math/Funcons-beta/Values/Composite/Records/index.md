@@ -9,26 +9,29 @@ ancestor: Funcons-beta
 
 {::comment}{% raw %}{:/}
 
+
+----
+
 ### Records
                
 
 
 $$\begin{align*}
   [ \
-  \KEY{Datatype} \ & \NAMEREF{records} \\
-  \KEY{Funcon} \ & \NAMEREF{record} \\
-  \KEY{Funcon} \ & \NAMEREF{record-map} \\
-  \KEY{Funcon} \ & \NAMEREF{record-select}
+  \KEY{Datatype} \quad & \NAMEREF{records} \\
+  \KEY{Funcon} \quad & \NAMEREF{record} \\
+  \KEY{Funcon} \quad & \NAMEREF{record-map} \\
+  \KEY{Funcon} \quad & \NAMEREF{record-select}
   \ ]
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Meta-variables} \
+  \KEY{Meta-variables} \quad
   & \VAR{T} <: \NAMEHYPER{../..}{Value-Types}{values}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Datatype} \ 
+  \KEY{Datatype} \quad 
   \NAMEDECL{records}(
                      \VAR{T} ) 
   \ ::= \ & \NAMEDECL{record}(
@@ -44,7 +47,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{record-map}(
                        \_ : \NAMEREF{records}
                                  (  \VAR{T} )) 
@@ -52,7 +55,7 @@ $$\begin{align*}
                      (  \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}, 
                             \VAR{T} ) 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{record-map}
         (  \NAMEREF{record}
                 (  \VAR{M} : \NAMEHYPER{../.}{Maps}{maps}
@@ -62,7 +65,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{record-select}(
                        \VAR{R} : \NAMEREF{records}
                                  (  \VAR{T} ), \VAR{I} : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}) 
@@ -72,6 +75,7 @@ $$\begin{align*}
                        (  \VAR{R} ), 
                       \VAR{I} )
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -96,7 +100,9 @@ $$\begin{align*}
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

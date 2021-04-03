@@ -10,12 +10,15 @@ ancestor: Unstable-Funcons-beta
 {::comment}{% raw %}{:/}
 <details open markdown="block">
   <summary>
-    Outline
+    OUTLINE
   </summary>
   {: .text-delta }
 - TOC
 {:toc}
 </details>
+
+
+----
 
 #### Notifications
                
@@ -25,21 +28,21 @@ $$\begin{align*}
   [ \
   \textsf{Barriers
           } \ & \textsf{} \\
-  \KEY{Funcon} \ & \NAMEREF{barrier-create} \\
-  \KEY{Funcon} \ & \NAMEREF{barrier-sync} \\
-  \KEY{Funcon} \ & \NAMEREF{barrier-sync-else-wait} \\
+  \KEY{Funcon} \quad & \NAMEREF{barrier-create} \\
+  \KEY{Funcon} \quad & \NAMEREF{barrier-sync} \\
+  \KEY{Funcon} \quad & \NAMEREF{barrier-sync-else-wait} \\
   \textsf{Conditions
           } \ & \textsf{} \\
-  \KEY{Funcon} \ & \NAMEREF{condition-create} \\
-  \KEY{Funcon} \ & \NAMEREF{condition-wait} \\
-  \KEY{Funcon} \ & \NAMEREF{condition-wait-with-lock} \\
-  \KEY{Funcon} \ & \NAMEREF{condition-notify-all} \\
-  \KEY{Funcon} \ & \NAMEREF{condition-notify-first} \\
+  \KEY{Funcon} \quad & \NAMEREF{condition-create} \\
+  \KEY{Funcon} \quad & \NAMEREF{condition-wait} \\
+  \KEY{Funcon} \quad & \NAMEREF{condition-wait-with-lock} \\
+  \KEY{Funcon} \quad & \NAMEREF{condition-notify-all} \\
+  \KEY{Funcon} \quad & \NAMEREF{condition-notify-first} \\
   \textsf{Rendezvous
           } \ & \textsf{} \\
-  \KEY{Funcon} \ & \NAMEREF{rendezvous-create} \\
-  \KEY{Funcon} \ & \NAMEREF{rendezvous-sync} \\
-  \KEY{Funcon} \ & \NAMEREF{rendezvous-sync-else-wait}
+  \KEY{Funcon} \quad & \NAMEREF{rendezvous-create} \\
+  \KEY{Funcon} \quad & \NAMEREF{rendezvous-sync} \\
+  \KEY{Funcon} \quad & \NAMEREF{rendezvous-sync-else-wait}
   \ ]
 \end{align*}$$
 
@@ -60,7 +63,7 @@ for it have been made. Subsequent requests give immediate notification.
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{barrier-create}(
                        \VAR{N} : \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{pos-ints}) 
     :  \TO \NAME{syncs} \\&\quad
@@ -87,7 +90,7 @@ otherwise the request fails.
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{barrier-sync}(
                        \VAR{SY} : \NAME{syncs}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
@@ -130,7 +133,7 @@ suspended until the request can be granted:
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{barrier-sync-else-wait}(
                        \VAR{SY} : \NAME{syncs}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
@@ -180,7 +183,7 @@ the exclusive lock, and atomically reverts to requesting the notification.
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{condition-create} 
     :  \TO \NAME{syncs} \\&\quad
     \leadsto \NAME{sync-create}
@@ -196,7 +199,7 @@ current thread, and releases it at the same time as suspending the thread.)
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{condition-wait}(
                        \VAR{SY} : \NAME{syncs}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
@@ -216,7 +219,7 @@ together with suspending the thread, and waits for the lock when resumed:
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{condition-wait-with-lock}(
                        \VAR{SY} : \NAME{syncs}, \VAR{L} : \NAME{syncs}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
@@ -240,7 +243,7 @@ To notify them all:
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{condition-notify-all}(
                        \VAR{SY} : \NAME{syncs}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
@@ -264,7 +267,7 @@ To notify just one of the waiting threads:
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{condition-notify-first}(
                        \VAR{SY} : \NAME{syncs}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
@@ -290,7 +293,7 @@ request in the stored list.
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{rendezvous-create}(
                        \VAR{N} : \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{pos-ints}) 
     :  \TO \NAME{syncs} \\&\quad
@@ -334,7 +337,7 @@ request fails.
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{rendezvous-sync}(
                        \VAR{SY} : \NAME{syncs}, \VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{ground-values}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
@@ -367,7 +370,7 @@ to the waiting list, and the thread suspended until the request can be granted:
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{rendezvous-sync-else-wait}(
                        \VAR{SY} : \NAME{syncs}, \VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{ground-values}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad
@@ -391,7 +394,7 @@ The remaining rendezvous funcons are all auxiliary:
 
 
 $$\begin{align*}
-  \KEY{Auxiliary Type} \ 
+  \KEY{Auxiliary Type} \quad 
   & \NAMEDECL{rendezvous-waits}  
     \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuples}
                (  \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{ground-values}, 
@@ -408,7 +411,7 @@ $$\SHADE{\NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
 
 
 $$\begin{align*}
-  \KEY{Auxiliary Funcon} \
+  \KEY{Auxiliary Funcon} \quad
   & \NAMEDECL{is-rendezvous-match}(
                        \_ : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{lists}
                                  (  \NAMEREF{rendezvous-waits} ), \_ : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{ground-values}) 
@@ -416,7 +419,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{is-rendezvous-match}
         (  [  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
                       (  \VAR{V}', 
@@ -432,7 +435,7 @@ $$\begin{align*}
                   (  [  \VAR{P}\STAR ], 
                          \VAR{V} ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{is-rendezvous-match}
         (  [   \  ], 
                \VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} ) \leadsto 
@@ -447,7 +450,7 @@ first element of $$\SHADE{\VAR{L}}$$ with value $$\SHADE{\VAR{V}}$$:
 
 
 $$\begin{align*}
-  \KEY{Auxiliary Funcon} \
+  \KEY{Auxiliary Funcon} \quad
   & \NAMEDECL{rendezvous-first-match-thread}(
                        \_ : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{lists}
                                  (  \NAMEREF{rendezvous-waits} ), \_ : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}) \\&\quad
@@ -455,7 +458,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{rendezvous-first-match-thread}
         (  [  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
                       (  \VAR{V}', 
@@ -471,7 +474,7 @@ $$\begin{align*}
                   (  [  \VAR{P}\STAR ], 
                          \VAR{V} ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{rendezvous-first-match-thread}
         (  [   \  ], 
                \VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} ) \leadsto 
@@ -486,7 +489,7 @@ first element with value $$\SHADE{\VAR{V}}$$:
 
 
 $$\begin{align*}
-  \KEY{Auxiliary Funcon} \
+  \KEY{Auxiliary Funcon} \quad
   & \NAMEDECL{rendezvous-first-match-drop}(
                        \_ : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{lists}
                                  (  \NAMEREF{rendezvous-waits} ), \_ : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}) \\&\quad
@@ -495,7 +498,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{rendezvous-first-match-drop}
         (  [  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
                       (  \VAR{V}', 
@@ -515,7 +518,7 @@ $$\begin{align*}
                           (  [  \VAR{P}\STAR ], 
                                  \VAR{V} ) ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{rendezvous-first-match-drop}
         (  [   \  ], 
                \VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} ) \leadsto 
@@ -528,6 +531,7 @@ rendezvous.  After the completion of each rendezvous in the series, one of the
 threads may immediately request the next, allowing the other thread to execute
 some code before synchronising. A simple rendezvous is restricted to
 synchronisation, and does not involve ordinary computation steps.
+
 
 
 
@@ -553,7 +557,9 @@ synchronisation, and does not involve ordinary computation steps.
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

@@ -1,0 +1,6 @@
+\contentsline {paragraph}{Locks}{1}{section*.2}%
+\contentsline {subparagraph}{Spin locks}{2}{section*.3}%
+\contentsline {subparagraph}{Exclusive locks}{2}{section*.4}%
+\contentsline {subparagraph}{Rentrant locks}{3}{section*.5}%
+\contentsline {subparagraph}{Semaphores}{5}{section*.6}%
+\contentsline {subparagraph}{Shared-exclusive locks}{6}{section*.7}%

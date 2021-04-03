@@ -1,0 +1,3 @@
+\contentsline {subsubsection}{Sequences of values}{1}{section*.2}%
+\contentsline {paragraph}{Sequence indexing}{2}{section*.3}%
+\contentsline {paragraph}{Homogeneous sequences}{2}{section*.4}%

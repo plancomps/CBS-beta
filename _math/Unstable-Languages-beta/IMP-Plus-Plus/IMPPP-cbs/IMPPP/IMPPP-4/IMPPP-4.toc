@@ -1,0 +1,2 @@
+\contentsline {section}{$\leavevmode {\color {SectionNumber}\text {\bf 4}}$ Statements and blocks}{1}{section*.2}%
+\contentsline {subsection}{Variable declarations}{2}{section*.3}%

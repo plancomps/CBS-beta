@@ -1,6 +1,9 @@
 {::comment}{% raw %}{:/}
 
-$$\KEY{Language} \STRING{IMPPP}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{IMPPP}$$
 
 # $$\SECT{A}$$ Disambiguation
            
@@ -30,6 +33,7 @@ $$\KEY{Language} \STRING{IMPPP}$$
 >    $$\SHADE{\quad\SYNHYPER{../.}{IMPPP-3}{bexp}  \ ::= \  \  \LEX{{!}} \ \SYNHYPER{../.}{IMPPP-3}{bexp}}$$\\
 >    \>\\
 >    $$\SHADE{\quad\SYNHYPER{../.}{IMPPP-3}{bexp}  \ ::= \  \  \SYNHYPER{../.}{IMPPP-3}{bexp} \ \LEX{{\AMPERSAND}{\AMPERSAND}} \ \SYNHYPER{../.}{IMPPP-3}{bexp}}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

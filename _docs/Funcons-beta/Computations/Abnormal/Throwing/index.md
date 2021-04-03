@@ -8,6 +8,7 @@ ancestor: Funcons-beta
 [Funcons-beta] : [Throwing.cbs] \| [PRETTY] \| [PDF]
 
 
+----
 ### Throwing
 
 <div class="highlighter-rouge"><pre class="highlight"><code>[

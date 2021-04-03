@@ -1,14 +1,17 @@
 {::comment}{% raw %}{:/}
 <details open markdown="block">
   <summary>
-    Outline
+    OUTLINE
   </summary>
   {: .text-delta }
 - TOC
 {:toc}
 </details>
 
-$$\KEY{Language} \STRING{OCaml Light}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{OCaml Light}$$
 
 # $$\SECT{12}$$ Core library
            
@@ -16,17 +19,17 @@ $$\KEY{Language} \STRING{OCaml Light}$$
 
 $$\begin{align*}
   [ \
-  \KEY{Funcon} \ & \NAMEREF{ocaml-light-core-library} \\
-  \KEY{Funcon} \ & \NAMEREF{ocaml-light-match-failure} \\
-  \KEY{Funcon} \ & \NAMEREF{ocaml-light-is-structurally-equal} \\
-  \KEY{Funcon} \ & \NAMEREF{ocaml-light-to-string} \\
-  \KEY{Funcon} \ & \NAMEREF{ocaml-light-define-and-display} \\
-  \KEY{Funcon} \ & \NAMEREF{ocaml-light-evaluate-and-display}
+  \KEY{Funcon} \quad & \NAMEREF{ocaml-light-core-library} \\
+  \KEY{Funcon} \quad & \NAMEREF{ocaml-light-match-failure} \\
+  \KEY{Funcon} \quad & \NAMEREF{ocaml-light-is-structurally-equal} \\
+  \KEY{Funcon} \quad & \NAMEREF{ocaml-light-to-string} \\
+  \KEY{Funcon} \quad & \NAMEREF{ocaml-light-define-and-display} \\
+  \KEY{Funcon} \quad & \NAMEREF{ocaml-light-evaluate-and-display}
   \ ]
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Meta-variables} \
+  \KEY{Meta-variables} \quad
   & \VAR{R}, \VAR{S}, \VAR{S}\SUB{1}, \VAR{S}\SUB{2}, \VAR{S}\SUB{3}, \VAR{T}, \VAR{U} <: \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} \qquad \\& \VAR{S}\STAR <: \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}\STAR \qquad \\& \VAR{T}\PLUS <: \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}\PLUS
 \end{align*}$$
 
@@ -41,7 +44,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Auxiliary Funcon} \
+  \KEY{Auxiliary Funcon} \quad
   & \NAMEDECL{op-1}(
                        \VAR{X} : \VAR{S} \TO \VAR{T}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{functions}
@@ -53,7 +56,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Auxiliary Funcon} \
+  \KEY{Auxiliary Funcon} \quad
   & \NAMEDECL{op-2}(
                        \VAR{X} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuples}
                                  (  \VAR{S}\SUB{1}, 
@@ -70,7 +73,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Auxiliary Funcon} \
+  \KEY{Auxiliary Funcon} \quad
   & \NAMEDECL{op-3}(
                        \VAR{X} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuples}
                                  (  \VAR{S}\SUB{1}, 
@@ -94,7 +97,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Auxiliary Funcon} \
+  \KEY{Auxiliary Funcon} \quad
   & \NAMEDECL{partial-apply-first}(
                        \VAR{F} : \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{functions}
                                  (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuples}
@@ -126,14 +129,14 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Auxiliary Funcon} \
+  \KEY{Auxiliary Funcon} \quad
   & \NAMEDECL{arg} 
     : \VAR{T} \TO \VAR{T} \\&\quad
     \leadsto \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Auxiliary Funcon} \
+  \KEY{Auxiliary Funcon} \quad
   & \NAMEDECL{arg-1} 
     : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuples}
         (  \VAR{S}\SUB{1}, 
@@ -146,7 +149,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Auxiliary Funcon} \
+  \KEY{Auxiliary Funcon} \quad
   & \NAMEDECL{arg-2} 
     : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuples}
         (  \VAR{S}\SUB{1}, 
@@ -160,7 +163,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Auxiliary Funcon} \
+  \KEY{Auxiliary Funcon} \quad
   & \NAMEDECL{arg-3} 
     : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuples}
         (  \VAR{S}\SUB{1}, 
@@ -189,7 +192,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{ocaml-light-core-library} 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{environments} \\&\quad
     \leadsto \{ \STRING{Match{\UNDERSCORE}failure} \mapsto \\&\quad\quad\quad\quad\quad
@@ -748,7 +751,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{ocaml-light-match-failure} 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Variants}{variants}
                      (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuples}
@@ -770,7 +773,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{ocaml-light-assert-failure} 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Variants}{variants}
                      (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuples}
@@ -796,7 +799,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{ocaml-light-is-structurally-equal}(
                        \_ : \NAMEHYPER{../.}{OC-L-02-Values}{implemented-values}, \_ : \NAMEHYPER{../.}{OC-L-02-Values}{implemented-values}) \\&\quad
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{booleans} 
@@ -813,7 +816,7 @@ $$\begin{align*}
  Unit Type 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{ocaml-light-is-structurally-equal}
         (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-value}, 
                \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-value} ) \leadsto 
@@ -823,7 +826,7 @@ $$\begin{align*}
  Booleans 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{ocaml-light-is-structurally-equal}
         (  \VAR{B}\SUB{1} : \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{booleans}, 
                \VAR{B}\SUB{2} : \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{booleans} ) \leadsto 
@@ -835,7 +838,7 @@ $$\begin{align*}
  Integers 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{ocaml-light-is-structurally-equal}
         (  \VAR{I}\SUB{1} : \NAMEHYPER{../.}{OC-L-02-Values}{implemented-integers}, 
                \VAR{I}\SUB{2} : \NAMEHYPER{../.}{OC-L-02-Values}{implemented-integers} ) \leadsto \\&\quad
@@ -847,7 +850,7 @@ $$\begin{align*}
  Floats 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{ocaml-light-is-structurally-equal}
         (  \VAR{F}\SUB{1} : \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats}, 
                \VAR{F}\SUB{2} : \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats} ) \leadsto \\&\quad
@@ -859,7 +862,7 @@ $$\begin{align*}
  Characters 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{ocaml-light-is-structurally-equal}
         (  \VAR{C}\SUB{1} : \NAMEHYPER{../.}{OC-L-02-Values}{implemented-characters}, 
                \VAR{C}\SUB{2} : \NAMEHYPER{../.}{OC-L-02-Values}{implemented-characters} ) \leadsto \\&\quad
@@ -871,7 +874,7 @@ $$\begin{align*}
  Strings 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{ocaml-light-is-structurally-equal}
         (  \VAR{S}\SUB{1} : \NAMEHYPER{../.}{OC-L-02-Values}{implemented-strings}, 
                \VAR{S}\SUB{2} : \NAMEHYPER{../.}{OC-L-02-Values}{implemented-strings} ) \leadsto \\&\quad
@@ -883,7 +886,7 @@ $$\begin{align*}
  Tuples 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{ocaml-light-is-structurally-equal}
         (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
                 (   \  ), 
@@ -891,7 +894,7 @@ $$\begin{align*}
                 (   \  ) ) \leadsto 
         \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{true}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{ocaml-light-is-structurally-equal}
         (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
                 (   \  ), 
@@ -899,7 +902,7 @@ $$\begin{align*}
                 (  \VAR{V}\PLUS ) ) \leadsto 
         \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{ocaml-light-is-structurally-equal}
         (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
                 (  \VAR{V}\PLUS ), 
@@ -907,7 +910,7 @@ $$\begin{align*}
                 (   \  ) ) \leadsto 
         \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{ocaml-light-is-structurally-equal}
         (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
                 (  \VAR{V}, 
@@ -929,25 +932,25 @@ $$\begin{align*}
  Lists 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{ocaml-light-is-structurally-equal}
         (  [   \  ], 
                [   \  ] ) \leadsto 
         \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{true}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{ocaml-light-is-structurally-equal}
         (  [   \  ], 
                [  \VAR{V}\PLUS ] ) \leadsto 
         \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{ocaml-light-is-structurally-equal}
         (  [  \VAR{V}\PLUS ], 
                [   \  ] ) \leadsto 
         \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{ocaml-light-is-structurally-equal}
         (  [  \VAR{V}, 
                      \VAR{V}\STAR ], 
@@ -965,7 +968,7 @@ $$\begin{align*}
  Records 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Maps}{dom}
           (  \VAR{Map}\SUB{1} ) 
@@ -1004,7 +1007,7 @@ $$\begin{align*}
  References 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{ocaml-light-is-structurally-equal}
         (  \VAR{V}\SUB{1} : \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{variables}, 
                \VAR{V}\SUB{2} : \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{variables} ) \leadsto \\&\quad
@@ -1018,7 +1021,7 @@ $$\begin{align*}
  Vectors 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{ocaml-light-is-structurally-equal}
         (  \VAR{Vec}\SUB{1} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vectors}
                           (  \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} ), 
@@ -1034,7 +1037,7 @@ $$\begin{align*}
  Variants 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{ocaml-light-is-structurally-equal}
         (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Variants}{variant}
                 (  \VAR{Con}\SUB{1}, 
@@ -1074,7 +1077,7 @@ $$\begin{align*}
  Functions 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{ocaml-light-is-structurally-equal}
         (  \_ : \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{functions}
                           (  \_, 
@@ -1093,7 +1096,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{ocaml-light-to-string}(
                        \_ : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{strings} 
@@ -1106,30 +1109,30 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{ocaml-light-to-string}
         (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-value} ) \leadsto 
         \STRING{{(}{)}}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{ocaml-light-to-string}
         (  \VAR{B} : \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{booleans} ) \leadsto 
         \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{to-string}
           (  \VAR{B} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{ocaml-light-to-string}
         (  \VAR{I} : \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integers} ) \leadsto 
         \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{to-string}
           (  \VAR{I} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{ocaml-light-to-string}
         (  \VAR{F} : \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats} ) \leadsto 
         \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{to-string}
           (  \VAR{F} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{ocaml-light-to-string}
         (  \VAR{C} : \NAMEHYPER{../.}{OC-L-02-Values}{implemented-characters} ) \leadsto \\&\quad
         \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{string-append}
@@ -1138,7 +1141,7 @@ $$\begin{align*}
                   (  \VAR{C} ), 
                  \STRING{{\APOSTROPHE}} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \VAR{S} 
         \neq [   \  ]
@@ -1151,14 +1154,14 @@ $$\begin{align*}
                    \STRING{{"}} )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{ocaml-light-to-string}
         (  \_ : \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{functions}
                           (  \_, 
                                  \_ ) ) \leadsto 
         \STRING{{<}fun{>}}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{ocaml-light-to-string}
         (  \VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{variables} ) \leadsto \\&\quad
         \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{string-append}
@@ -1167,7 +1170,7 @@ $$\begin{align*}
                   (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assigned}
                           (  \VAR{V} ) ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{ocaml-light-to-string}
         (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Variants}{variant}
                 (  \VAR{Con}, 
@@ -1184,7 +1187,7 @@ $$\begin{align*}
                          \NAMEREF{ocaml-light-to-string}
                           (  \VAR{Arg} ) ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{ocaml-light-to-string}
         (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
                 (  \VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}, 
@@ -1200,7 +1203,7 @@ $$\begin{align*}
                                  \VAR{V}\PLUS ) ), \\&\quad\quad
                  \STRING{{)}} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{ocaml-light-to-string}
         (  [  \VAR{V}\STAR : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}\STAR ] ) \leadsto \\&\quad
         \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{string-append}
@@ -1213,7 +1216,7 @@ $$\begin{align*}
                                  \VAR{V}\STAR ) ), \\&\quad\quad
                  \STRING{{]}} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{ocaml-light-to-string}
         (  \VAR{V} : \NAMEHYPER{../.}{OC-L-02-Values}{implemented-vectors} ) \leadsto \\&\quad
         \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{string-append}
@@ -1228,7 +1231,7 @@ $$\begin{align*}
                                   (  \VAR{V} ) ) ), \\&\quad\quad
                  \STRING{{|}{]}} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{ocaml-light-to-string}
         (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Records}{record}
                 (  \VAR{M} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Maps}{maps}
@@ -1250,7 +1253,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{ocaml-light-define-and-display}(
                        \VAR{Env} : \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{envs}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{envs} \\&\quad
@@ -1269,7 +1272,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{ocaml-light-evaluate-and-display}(
                        \VAR{V} : \NAMEHYPER{../.}{OC-L-02-Values}{implemented-values}) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{envs} \\&\quad
@@ -1282,6 +1285,7 @@ $$\begin{align*}
                       \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Maps}{map}
                        (   \  ) )
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

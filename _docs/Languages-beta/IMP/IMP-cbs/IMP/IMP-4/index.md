@@ -8,6 +8,7 @@ ancestor: Languages-beta
 [Languages-beta] : [IMP-4.cbs] \| [PRETTY] \| [PDF]
 
 
+----
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Language</i> <span id="Language_IMP">"IMP"</span></code></pre></div>
 # <span id="SectionNumber_4">4</span> Programs and variable declarations
 

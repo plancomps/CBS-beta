@@ -1,13 +1,16 @@
 {::comment}{% raw %}{:/}
 
-$$\KEY{Language} \STRING{SL}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{SL}$$
 
 # $$\SECT{3}$$ Statements
            
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{Stmt} : \SYN{stmt}
       \ ::= \ & \
       \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{;}} \\
@@ -26,7 +29,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \LEX{if} \ \LEX{{(}} \ \VARHYPER{../.}{SL-2-Expressions}{Expr} \ \LEX{{)}} \ \VARREF{Block} \
       \RIGHTPHRASE : \SYNREF{stmt} = \\&
@@ -36,11 +39,11 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{exec} \LEFTPHRASE \ \VARREF{Stmt}\STAR : \SYNREF{stmt}\STAR \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{exec} \LEFTPHRASE \
                             \VARHYPER{../.}{SL-2-Expressions}{Expr} \ \LEX{{;}} \
                           \RIGHTPHRASE  = 
@@ -49,7 +52,7 @@ $$\begin{align*}
                                     \VAR{Expr} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{exec} \LEFTPHRASE \
                             \LEX{return} \ \VARHYPER{../.}{SL-2-Expressions}{Expr} \ \LEX{{;}} \
                           \RIGHTPHRASE  = 
@@ -58,14 +61,14 @@ $$\begin{align*}
                                     \VAR{Expr} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{exec} \LEFTPHRASE \
                             \LEX{return} \ \LEX{{;}} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Returning}{return}
         (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-value} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{exec} \LEFTPHRASE \
                             \LEX{if} \ \LEX{{(}} \ \VARHYPER{../.}{SL-2-Expressions}{Expr} \ \LEX{{)}} \ \VARREF{Block}\SUB{1} \ \LEX{else} \ \VARREF{Block}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -81,7 +84,7 @@ $$\begin{align*}
                                     \VAR{Block}\SUB{2} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{exec} \LEFTPHRASE \
                             \LEX{while} \ \LEX{{(}} \ \VARHYPER{../.}{SL-2-Expressions}{Expr} \ \LEX{{)}} \ \VARREF{Block} \
                           \RIGHTPHRASE  = \\&\quad
@@ -96,19 +99,19 @@ $$\begin{align*}
                                                     \VAR{Block} \
                                                   \RIGHTPHRASE  ) ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{exec} \LEFTPHRASE \
                             \LEX{break} \ \LEX{{;}} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Breaking}{break}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{exec} \LEFTPHRASE \
                             \LEX{continue} \ \LEX{{;}} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Continuing}{continue}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{exec} \LEFTPHRASE \
                             \LEX{{\LEFTBRACE}} \ \VARREF{Stmt}\STAR \ \LEX{{\RIGHTBRACE}} \
                           \RIGHTPHRASE  = 
@@ -116,13 +119,13 @@ $$\begin{align*}
                             \VAR{Stmt}\STAR \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{exec} \LEFTPHRASE \
                              \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-value}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{exec} \LEFTPHRASE \
                             \VARREF{Stmt} \ \VARREF{Stmt}\PLUS \
                           \RIGHTPHRASE  = \\&\quad
@@ -134,6 +137,7 @@ $$\begin{align*}
                                     \VAR{Stmt}\PLUS \
                                   \RIGHTPHRASE  )
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

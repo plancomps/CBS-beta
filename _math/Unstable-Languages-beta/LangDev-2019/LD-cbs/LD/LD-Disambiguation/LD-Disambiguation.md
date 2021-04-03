@@ -1,14 +1,17 @@
 {::comment}{% raw %}{:/}
 <details open markdown="block">
   <summary>
-    Outline
+    OUTLINE
   </summary>
   {: .text-delta }
 - TOC
 {:toc}
 </details>
 
-$$\KEY{Language} \STRING{LD}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{LD}$$
 
 # $$\SECT{A}$$ Disambiguation
            
@@ -124,6 +127,7 @@ $$\KEY{Language} \STRING{LD}$$
 >    }\\
 >    \>\\
 >    $$\SHADE{\quad\SYNHYPER{../.}{LD-Start}{exp}  \ ::= \  \  \SYNHYPER{../.}{LD-Start}{exp} \ \LEX{{;}} \ \SYNHYPER{../.}{LD-Start}{exp}}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

@@ -10,14 +10,17 @@ ancestor: Languages-beta
 {::comment}{% raw %}{:/}
 <details open markdown="block">
   <summary>
-    Outline
+    OUTLINE
   </summary>
   {: .text-delta }
 - TOC
 {:toc}
 </details>
 
-$$\KEY{Language} \STRING{OCaml Light}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{OCaml Light}$$
 
 # $$\SECT{3}$$ Names
            
@@ -28,7 +31,7 @@ $$\KEY{Language} \STRING{OCaml Light}$$
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{VN} : \SYN{value-name}
       \ ::= \ & \
       \SYNHYPER{../.}{OC-L-01-Lexical-Conventions}{lowercase-ident} \\
@@ -55,13 +58,13 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{IO} : \SYN{infix-op}
       \ ::= \ & \
       \SYNREF{infix-op-1} \mid \SYNREF{infix-op-2} \mid \SYNREF{infix-op-3} \mid \SYNREF{infix-op-4} \\
       \ \mid \ & \ \SYNREF{infix-op-5} \mid \SYNREF{infix-op-6} \mid \SYNREF{infix-op-7} \mid \SYNREF{infix-op-8}
 \\
-  \KEY{Lexis} \
+  \KEY{Lexis} \quad
     \VARDECL{IO-1} : \SYN{infix-op-1}
       \ ::= \ & \
       \LEX{{*}{*}} \ \SYNHYPER{../.}{OC-L-01-Lexical-Conventions}{operator-char}\STAR \mid \LEX{lsl} \mid \LEX{lsr} \mid \LEX{asr}
@@ -102,7 +105,7 @@ $$\begin{align*}
       \ ::= \ & \
       \LEX{{:}{=}}
 \\
-  \KEY{Lexis} \
+  \KEY{Lexis} \quad
     \VARDECL{CN} : \SYN{constr-name}
       \ ::= \ & \
       \SYNHYPER{../.}{OC-L-01-Lexical-Conventions}{capitalized-ident}
@@ -125,7 +128,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{VP} : \SYN{value-path}
       \ ::= \ & \
       \SYNREF{value-name}
@@ -144,17 +147,17 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{value-name} \LEFTPHRASE \ \_ : \SYNREF{value-path} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{ids} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{value-name} \LEFTPHRASE \
                             \VARHYPER{../.}{OC-L-01-Lexical-Conventions}{LI} \
                           \RIGHTPHRASE  = 
       \textsf{\textquotedblleft}\VAR{LI}\textsf{\textquotedblright}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{value-name} \LEFTPHRASE \
                             \LEX{{(}} \ \VARHYPER{../.}{OC-L-01-Lexical-Conventions}{PS} \ \LEX{{)}} \
                           \RIGHTPHRASE  = 
@@ -163,7 +166,7 @@ $$\begin{align*}
                \textsf{\textquotedblleft}\VAR{PS}\textsf{\textquotedblright}, 
                \STRING{{)}} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{value-name} \LEFTPHRASE \
                             \LEX{{(}} \ \VARREF{IO-1} \ \LEX{{)}} \
                           \RIGHTPHRASE  = 
@@ -172,7 +175,7 @@ $$\begin{align*}
                \textsf{\textquotedblleft}\VAR{IO-1}\textsf{\textquotedblright}, 
                \STRING{{)}} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{value-name} \LEFTPHRASE \
                             \LEX{{(}} \ \VARREF{IO-2} \ \LEX{{)}} \
                           \RIGHTPHRASE  = 
@@ -181,7 +184,7 @@ $$\begin{align*}
                \textsf{\textquotedblleft}\VAR{IO-2}\textsf{\textquotedblright}, 
                \STRING{{)}} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{value-name} \LEFTPHRASE \
                             \LEX{{(}} \ \VARREF{IO-3} \ \LEX{{)}} \
                           \RIGHTPHRASE  = 
@@ -190,7 +193,7 @@ $$\begin{align*}
                \textsf{\textquotedblleft}\VAR{IO-3}\textsf{\textquotedblright}, 
                \STRING{{)}} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{value-name} \LEFTPHRASE \
                             \LEX{{(}} \ \VARREF{IO-4} \ \LEX{{)}} \
                           \RIGHTPHRASE  = 
@@ -199,7 +202,7 @@ $$\begin{align*}
                \textsf{\textquotedblleft}\VAR{IO-4}\textsf{\textquotedblright}, 
                \STRING{{)}} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{value-name} \LEFTPHRASE \
                             \LEX{{(}} \ \VARREF{IO-5} \ \LEX{{)}} \
                           \RIGHTPHRASE  = 
@@ -208,7 +211,7 @@ $$\begin{align*}
                \textsf{\textquotedblleft}\VAR{IO-5}\textsf{\textquotedblright}, 
                \STRING{{)}} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{value-name} \LEFTPHRASE \
                             \LEX{{(}} \ \VARREF{IO-6} \ \LEX{{)}} \
                           \RIGHTPHRASE  = 
@@ -217,7 +220,7 @@ $$\begin{align*}
                \textsf{\textquotedblleft}\VAR{IO-6}\textsf{\textquotedblright}, 
                \STRING{{)}} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{value-name} \LEFTPHRASE \
                             \LEX{{(}} \ \VARREF{IO-7} \ \LEX{{)}} \
                           \RIGHTPHRASE  = 
@@ -226,7 +229,7 @@ $$\begin{align*}
                \textsf{\textquotedblleft}\VAR{IO-7}\textsf{\textquotedblright}, 
                \STRING{{)}} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{value-name} \LEFTPHRASE \
                             \LEX{{(}} \ \VARREF{IO-8} \ \LEX{{)}} \
                           \RIGHTPHRASE  = 
@@ -237,11 +240,11 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{constr-name} \LEFTPHRASE \ \_ : \SYNREF{constr} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{ids} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{constr-name} \LEFTPHRASE \
                             \VARREF{CN} \
                           \RIGHTPHRASE  = 
@@ -249,11 +252,11 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{typeconstr-name} \LEFTPHRASE \ \_ : \SYNREF{typeconstr} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{ids} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{typeconstr-name} \LEFTPHRASE \
                             \VARREF{TCN} \
                           \RIGHTPHRASE  = 
@@ -261,16 +264,17 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{field-name} \LEFTPHRASE \ \_ : \SYNREF{field} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{ids} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{field-name} \LEFTPHRASE \
                             \VARREF{FN} \
                           \RIGHTPHRASE  = 
       \textsf{\textquotedblleft}\VAR{FN}\textsf{\textquotedblright}
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -295,7 +299,9 @@ $$\begin{align*}
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

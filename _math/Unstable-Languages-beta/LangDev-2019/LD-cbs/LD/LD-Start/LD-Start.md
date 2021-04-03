@@ -1,14 +1,17 @@
 {::comment}{% raw %}{:/}
 <details open markdown="block">
   <summary>
-    Outline
+    OUTLINE
   </summary>
   {: .text-delta }
 - TOC
 {:toc}
 </details>
 
-$$\KEY{Language} \STRING{LD}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{LD}$$
 
 
 
@@ -30,14 +33,14 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Lexis} \
+  \KEY{Lexis} \quad
     \VARDECL{X} : \SYN{id}
       \ ::= \ & \
-      \LEFTGROUP \LEX{a} - \LEX{z} \RIGHTGROUP \ \LEFTGROUP \LEX{a} - \LEX{z} \mid \LEX{0} - \LEX{9} \RIGHTGROUP\STAR
+      \LEFTGROUP \LEX{a} {-} \LEX{z} \RIGHTGROUP \ \LEFTGROUP \LEX{a} {-} \LEX{z} \mid \LEX{0} {-} \LEX{9} \RIGHTGROUP\STAR
     \\
     \VARDECL{N} : \SYN{int}
       \ ::= \ & \
-      \LEFTGROUP \LEX{0} - \LEX{9} \RIGHTGROUP\PLUS
+      \LEFTGROUP \LEX{0} {-} \LEX{9} \RIGHTGROUP\PLUS
     \\
      \SYN{keyword}
       \ ::= \ & \
@@ -51,7 +54,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{E} : \SYN{exp}
       \ ::= \ & \
       \SYNREF{int} \\
@@ -81,7 +84,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Type} \ 
+  \KEY{Type} \quad 
   & \NAMEDECL{ld-values}  \\&\quad
     \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{functions}
                (  \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}, 
@@ -89,7 +92,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{eval} \LEFTPHRASE \ \_ : \SYNREF{exp} \ \RIGHTPHRASE  
     :  \TO \NAMEREF{ld-values} 
 \end{align*}$$
@@ -99,14 +102,14 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \VARREF{N} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{decimal} \ 
         \textsf{\textquotedblleft}\VAR{N}\textsf{\textquotedblright}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \VARREF{X} \
                           \RIGHTPHRASE  = 
@@ -119,7 +122,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \LEX{lambda} \ \VARREF{X} \ \LEX{{.}} \ \VARREF{E} \
                           \RIGHTPHRASE  = \\&\quad
@@ -133,7 +136,7 @@ $$\begin{align*}
                                         \VAR{E} \
                                       \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \VARREF{E}\SUB{1} \ \VARREF{E}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -145,7 +148,7 @@ $$\begin{align*}
                                     \VAR{E}\SUB{2} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \LEX{let} \ \VARREF{X} \ \LEX{{=}} \ \VARREF{E}\SUB{1} \ \LEX{in} \ \VARREF{E}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -164,7 +167,7 @@ $$\begin{align*}
 Desugaring (alternative to the above rule):
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \LEX{let} \ \VARREF{X} \ \LEX{{=}} \ \VARREF{E}\SUB{1} \ \LEX{in} \ \VARREF{E}\SUB{2} \
       \RIGHTPHRASE : \SYNREF{exp} = \\&
@@ -176,7 +179,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \LEX{{(}} \ \VARREF{E} \ \LEX{{)}} \
                           \RIGHTPHRASE  = 
@@ -190,7 +193,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \VARREF{E}\SUB{1} \ \LEX{{+}} \ \VARREF{E}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -202,7 +205,7 @@ $$\begin{align*}
                                     \VAR{E}\SUB{2} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \VARREF{E}\SUB{1} \ \LEX{{*}} \ \VARREF{E}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -214,7 +217,7 @@ $$\begin{align*}
                                     \VAR{E}\SUB{2} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \VARREF{E}\SUB{1} \ \LEX{{/}} \ \VARREF{E}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -227,7 +230,7 @@ $$\begin{align*}
                                       \VAR{E}\SUB{2} \
                                     \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \VARREF{E}\SUB{1} \ \LEX{{<}{=}} \ \VARREF{E}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -240,7 +243,7 @@ $$\begin{align*}
                                       \VAR{E}\SUB{2} \
                                     \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \VARREF{E}\SUB{1} \ \LEX{{\AMPERSAND}{\AMPERSAND}} \ \VARREF{E}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -253,7 +256,7 @@ $$\begin{align*}
                                   \RIGHTPHRASE , 
                \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \LEX{if} \ \VARREF{E}\SUB{1} \ \LEX{then} \ \VARREF{E}\SUB{2} \ \LEX{else} \ \VARREF{E}\SUB{3} \
                           \RIGHTPHRASE  = \\&\quad
@@ -274,7 +277,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \LEX{ref} \ \VARREF{E} \
                           \RIGHTPHRASE  = \\&\quad
@@ -284,7 +287,7 @@ $$\begin{align*}
                                     \VAR{E} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \VARREF{E}\SUB{1} \ \LEX{{:}{=}} \ \VARREF{E}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -296,7 +299,7 @@ $$\begin{align*}
                                     \VAR{E}\SUB{2} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \LEX{{!}} \ \VARREF{E} \
                           \RIGHTPHRASE  = 
@@ -305,7 +308,7 @@ $$\begin{align*}
                                     \VAR{E} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \VARREF{E}\SUB{1} \ \LEX{{;}} \ \VARREF{E}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -318,13 +321,13 @@ $$\begin{align*}
                                     \VAR{E}\SUB{2} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \LEX{{(}} \ \LEX{{)}} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-value}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \LEX{while} \ \VARREF{E}\SUB{1} \ \LEX{do} \ \VARREF{E}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -348,7 +351,7 @@ so they are defined in Unstable-Funcons-beta instead of Funcons-beta.
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \LEX{spawn} \ \VARREF{E} \
                           \RIGHTPHRASE  = \\&\quad
@@ -360,7 +363,7 @@ $$\begin{align*}
                                     \VAR{E} \
                                   \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval} \LEFTPHRASE \
                             \LEX{join} \ \VARREF{E} \
                           \RIGHTPHRASE  = 
@@ -375,18 +378,18 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{START} : \SYN{start}
       \ ::= \ & \
       \SYNREF{exp}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{start} \LEFTPHRASE \ \_ : \SYNREF{start} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{start} \LEFTPHRASE \
                             \VARREF{E} \
                           \RIGHTPHRASE  = \\&\quad
@@ -398,6 +401,7 @@ $$\begin{align*}
                                     \VAR{E} \
                                   \RIGHTPHRASE 
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

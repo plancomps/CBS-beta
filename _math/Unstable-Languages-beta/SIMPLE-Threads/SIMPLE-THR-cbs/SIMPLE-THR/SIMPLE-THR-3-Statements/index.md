@@ -9,14 +9,17 @@ ancestor: Unstable-Languages-beta
 
 {::comment}{% raw %}{:/}
 
-$$\KEY{Language} \STRING{SIMPLE-THR}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{SIMPLE-THR}$$
 
 # $$\SECT{3}$$ Statements
            
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{Block} : \SYN{block}
       \ ::= \ & \
       \LEX{{\LEFTBRACE}} \ \SYNREF{stmts}\QUERY \ \LEX{{\RIGHTBRACE}}
@@ -47,7 +50,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \LEX{if} \ \LEX{{(}} \ \VARHYPER{../.}{SIMPLE-THR-2-Expressions}{Exp} \ \LEX{{)}} \ \VARREF{Block} \
       \RIGHTPHRASE : \SYNREF{stmt} = \\&
@@ -55,7 +58,7 @@ $$\begin{align*}
         \LEX{if} \ \LEX{{(}} \ \VAR{Exp} \ \LEX{{)}} \ \VAR{Block} \ \LEX{else} \ \LEX{{\LEFTBRACE}} \ \LEX{{\RIGHTBRACE}} \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \LEX{for} \ \LEX{{(}} \ \VARREF{Stmt} \ \VARHYPER{../.}{SIMPLE-THR-2-Expressions}{Exp}\SUB{1} \ \LEX{{;}} \ \VARHYPER{../.}{SIMPLE-THR-2-Expressions}{Exp}\SUB{2} \ \LEX{{)}} \\&\quad
         \LEX{{\LEFTBRACE}} \ \VARREF{Stmts} \ \LEX{{\RIGHTBRACE}} \
@@ -69,17 +72,17 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{exec} \LEFTPHRASE \ \_ : \SYNREF{stmts} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{exec} \LEFTPHRASE \
                             \LEX{{\LEFTBRACE}} \ \LEX{{\RIGHTBRACE}} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{exec} \LEFTPHRASE \
                             \LEX{{\LEFTBRACE}} \ \VARREF{Stmts} \ \LEX{{\RIGHTBRACE}} \
                           \RIGHTPHRASE  = 
@@ -87,7 +90,7 @@ $$\begin{align*}
                             \VAR{Stmts} \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{exec} \LEFTPHRASE \
                             \VARREF{ImpStmt} \ \VARREF{Stmts} \
                           \RIGHTPHRASE  = \\&\quad
@@ -99,7 +102,7 @@ $$\begin{align*}
                                     \VAR{Stmts} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{exec} \LEFTPHRASE \
                             \VARHYPER{../.}{SIMPLE-THR-4-Declarations}{VarsDecl} \ \VARREF{Stmts} \
                           \RIGHTPHRASE  = \\&\quad
@@ -111,7 +114,7 @@ $$\begin{align*}
                                     \VAR{Stmts} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{exec} \LEFTPHRASE \
                             \VARHYPER{../.}{SIMPLE-THR-4-Declarations}{VarsDecl} \
                           \RIGHTPHRASE  = 
@@ -120,7 +123,7 @@ $$\begin{align*}
                                     \VAR{VarsDecl} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{exec} \LEFTPHRASE \
                             \VARHYPER{../.}{SIMPLE-THR-2-Expressions}{Exp} \ \LEX{{;}} \
                           \RIGHTPHRASE  = 
@@ -129,7 +132,7 @@ $$\begin{align*}
                                     \VAR{Exp} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{exec} \LEFTPHRASE \
                             \LEX{if} \ \LEX{{(}} \ \VARHYPER{../.}{SIMPLE-THR-2-Expressions}{Exp} \ \LEX{{)}} \ \VARREF{Block}\SUB{1} \ \LEX{else} \ \VARREF{Block}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -144,7 +147,7 @@ $$\begin{align*}
                                     \VAR{Block}\SUB{2} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{exec} \LEFTPHRASE \
                             \LEX{while} \ \LEX{{(}} \ \VARHYPER{../.}{SIMPLE-THR-2-Expressions}{Exp} \ \LEX{{)}} \ \VARREF{Block} \
                           \RIGHTPHRASE  = 
@@ -156,7 +159,7 @@ $$\begin{align*}
                                     \VAR{Block} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{exec} \LEFTPHRASE \
                             \LEX{print} \ \LEX{{(}} \ \VARHYPER{../.}{SIMPLE-THR-2-Expressions}{Exps} \ \LEX{{)}} \ \LEX{{;}} \
                           \RIGHTPHRASE  = 
@@ -165,7 +168,7 @@ $$\begin{align*}
                                     \VAR{Exps} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{exec} \LEFTPHRASE \
                             \LEX{return} \ \VARHYPER{../.}{SIMPLE-THR-2-Expressions}{Exp} \ \LEX{{;}} \
                           \RIGHTPHRASE  = 
@@ -174,14 +177,14 @@ $$\begin{align*}
                                     \VAR{Exp} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{exec} \LEFTPHRASE \
                             \LEX{return} \ \LEX{{;}} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Returning}{return}
         (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{exec} \LEFTPHRASE \
                             \LEX{try} \ \VARREF{Block}\SUB{1} \ \LEX{catch} \ \LEX{{(}} \ \VARHYPER{../.}{SIMPLE-THR-1-Lexical}{Id} \ \LEX{{)}} \ \VARREF{Block}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -201,7 +204,7 @@ $$\begin{align*}
                                             \VAR{Block}\SUB{2} \
                                           \RIGHTPHRASE  ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{exec} \LEFTPHRASE \
                             \LEX{throw} \ \VARHYPER{../.}{SIMPLE-THR-2-Expressions}{Exp} \ \LEX{{;}} \
                           \RIGHTPHRASE  = 
@@ -218,7 +221,7 @@ below converts a natural number to the associated thread-id.
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{exec} \LEFTPHRASE \
                             \LEX{join} \ \VARHYPER{../.}{SIMPLE-THR-2-Expressions}{Exp} \ \LEX{{;}} \
                           \RIGHTPHRASE  = \\&\quad
@@ -241,7 +244,7 @@ when the current thread terminates.
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{exec} \LEFTPHRASE \
                             \LEX{acquire} \ \VARHYPER{../.}{SIMPLE-THR-2-Expressions}{Exp} \ \LEX{{;}} \
                           \RIGHTPHRASE  = \\&\quad
@@ -269,7 +272,7 @@ The use of $$\SHADE{\NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{exec} \LEFTPHRASE \
                             \LEX{release} \ \VARHYPER{../.}{SIMPLE-THR-2-Expressions}{Exp} \ \LEX{{;}} \
                           \RIGHTPHRASE  = \\&\quad
@@ -290,7 +293,7 @@ the requesting thread is suspended until the request is granted.
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{exec} \LEFTPHRASE \
                             \LEX{rendezvous} \ \VARHYPER{../.}{SIMPLE-THR-2-Expressions}{Exp} \ \LEX{{;}} \
                           \RIGHTPHRASE  = \\&\quad
@@ -303,6 +306,7 @@ $$\begin{align*}
                                     \VAR{Exp} \
                                   \RIGHTPHRASE  )
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -327,7 +331,9 @@ $$\begin{align*}
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

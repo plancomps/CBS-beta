@@ -1,15 +1,18 @@
 {::comment}{% raw %}{:/}
 
+
+----
+
 ### Datatypes
                
 
 
 $$\begin{align*}
   [ \
-  \KEY{Type} \ & \NAMEREF{datatype-values} \\
-  \KEY{Funcon} \ & \NAMEREF{datatype-value} \\
-  \KEY{Funcon} \ & \NAMEREF{datatype-value-id} \\
-  \KEY{Funcon} \ & \NAMEREF{datatype-value-elements}
+  \KEY{Type} \quad & \NAMEREF{datatype-values} \\
+  \KEY{Funcon} \quad & \NAMEREF{datatype-value} \\
+  \KEY{Funcon} \quad & \NAMEREF{datatype-value-id} \\
+  \KEY{Funcon} \quad & \NAMEREF{datatype-value-elements}
   \ ]
 \end{align*}$$
 
@@ -36,24 +39,24 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Built-in Type} \ 
+  \KEY{Built-in Type} \quad 
   & \NAMEDECL{datatype-values}  
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Funcon} \
+  \KEY{Built-in Funcon} \quad
   & \NAMEDECL{datatype-value}(
                        \_ : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}, \_ : \NAMEHYPER{../..}{Value-Types}{values}\STAR) 
     : \NAMEREF{datatype-values} 
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{datatype-value-id}(
                        \_ : \NAMEREF{datatype-values}) 
     :  \TO \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{datatype-value-id}
         (  \NAMEREF{datatype-value}
                 (  \VAR{I} : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}, 
@@ -62,18 +65,19 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{datatype-value-elements}(
                        \_ : \NAMEREF{datatype-values}) 
     :  \TO \NAMEHYPER{../..}{Value-Types}{values}\STAR 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{datatype-value-elements}
         (  \NAMEREF{datatype-value}
                 (  \_ : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}, 
                        \VAR{V}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ) ) \leadsto 
         \VAR{V}\STAR
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

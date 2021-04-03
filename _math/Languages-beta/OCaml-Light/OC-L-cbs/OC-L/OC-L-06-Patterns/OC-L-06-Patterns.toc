@@ -1,0 +1,3 @@
+\contentsline {section}{$\leavevmode {\color {SectionNumber}\text {\bf 6}}$ Patterns}{1}{section*.2}%
+\contentsline {subsection}{Pattern evaluation}{2}{section*.3}%
+\contentsline {subsection}{Pattern sequence evaluation}{2}{section*.4}%

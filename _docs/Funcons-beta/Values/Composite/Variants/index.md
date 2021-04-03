@@ -8,6 +8,7 @@ ancestor: Funcons-beta
 [Funcons-beta] : [Variants.cbs] \| [PRETTY] \| [PDF]
 
 
+----
 ### Variants
 
 <div class="highlighter-rouge"><pre class="highlight"><code>[

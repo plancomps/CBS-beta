@@ -16,6 +16,7 @@ ancestor: Languages-beta
 {:toc}
 </details>
 
+----
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Language</i> <span id="Language_MiniJava">"MiniJava"</span></code></pre></div>
 # <span id="SectionNumber_1">1</span> Programs
 

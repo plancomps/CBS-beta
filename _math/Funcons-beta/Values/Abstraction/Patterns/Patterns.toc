@@ -1,0 +1,3 @@
+\contentsline {subsubsection}{Patterns}{1}{section*.2}%
+\contentsline {paragraph}{Simple patterns}{2}{section*.3}%
+\contentsline {paragraph}{Pattern matching}{2}{section*.4}%

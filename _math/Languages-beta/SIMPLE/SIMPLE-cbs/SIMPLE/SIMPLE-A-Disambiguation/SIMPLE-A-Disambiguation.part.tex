@@ -1,67 +1,77 @@
+% {% raw %}
+
+
+\begin{center}
+\rule{3in}{0.4pt}
+\end{center}
+
 \begin{displaymath}
-\KEY{Language} \STRING{SIMPLE}
+\KEY{Language} \quad \STRING{SIMPLE}
 \end{displaymath}
 
-\section*{$\SECT{A}$ Disambiguation}\hypertarget{secta-disambiguation}{}\label{secta-disambiguation}
+\section{$\SECT{A}$ Disambiguation}\hypertarget{secta-disambiguation}{}\label{secta-disambiguation}
 
 $\KEY{Lexis SDF}$
 
 \begin{quote}
 lexical syntax \newline
-  $\SHADE{~~\SYNHYPER{../.}{SIMPLE-1-Lexical}{id}}$ = $\SHADE{\SYNHYPER{../.}{SIMPLE-1-Lexical}{keyword}}$ \{reject\}\newline
-\newline
-lexical restrictions\newline
-  $\SHADE{~~\SYNHYPER{../.}{SIMPLE-1-Lexical}{id}}$ -/- {[}A-Za-z0-9{]}
+     $\SHADE{\SYNHYPER{../.}{SIMPLE-1-Lexical}{id}}$ = $\SHADE{\SYNHYPER{../.}{SIMPLE-1-Lexical}{keyword}}$ \{reject\}\newline
+   \newline
+   lexical restrictions\newline
+     $\SHADE{\SYNHYPER{../.}{SIMPLE-1-Lexical}{id}}$ -/- {[}A-Za-z0-9{]}
 \end{quote}
 
 $\KEY{Syntax SDF}$
 
 \begin{quote}
 context-free syntax\newline
-$\SHADE{ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} ~ \LEX{*{}} ~ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$ \{left\}\newline
-$\SHADE{ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} ~ \LEX{/{}} ~ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$ \{left\}\newline
-$\SHADE{ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} ~ \LEX{\PERCENT } ~ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$ \{left\}\newline
-  \newline
-$\SHADE{ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} ~ \LEX{+{}} ~ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$ \{left\}\newline
-$\SHADE{ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} ~ \LEX{-{}} ~ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$ \{left\}\newline
-  \newline
-$\SHADE{ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} ~ \LEX{\AMPERSAND \AMPERSAND } ~ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$ \{left\}\newline
-$\SHADE{ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} ~ \LEX{||} ~ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$ \{left\}\newline
-\newline
-context-free priorities\newline
-\{\newline
-$\SHADE{ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} ~ \LEX{(} ~ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exps}\QUERY ~ \LEX{)}}$\newline
-\} \textgreater{}\newline
-\{\newline
-$\SHADE{ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  ~ ::= ~  \LEX{-{}} ~ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$\newline
-$\SHADE{ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  ~ ::= ~  \LEX{+{}+{}} ~ \SYNHYPER{../.}{SIMPLE-2-Expressions}{lexp}}$\newline
-$\SHADE{ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  ~ ::= ~  \LEX{!{}} ~ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$\newline
-\} \textgreater{}\newline
-\{left: \newline
-$\SHADE{ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} ~ \LEX{*{}} ~ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$\newline
-$\SHADE{ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} ~ \LEX{/{}} ~ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$\newline
-$\SHADE{ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} ~ \LEX{\PERCENT } ~ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$\newline
-\} \textgreater{}\newline
-\{left: \newline
-$\SHADE{ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} ~ \LEX{+{}} ~ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$\newline
-$\SHADE{ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} ~ \LEX{-{}} ~ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$\newline
-\} \textgreater{}\newline
-\{non-assoc: \newline
-$\SHADE{ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} ~ \LEX{<{}} ~ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$\newline
-$\SHADE{ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} ~ \LEX{<{}={}} ~ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$\newline
-$\SHADE{ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} ~ \LEX{>{}} ~ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$\newline
-$\SHADE{ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} ~ \LEX{>{}={}} ~ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$\newline
-$\SHADE{ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} ~ \LEX{={}={}} ~ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$\newline
-$\SHADE{ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} ~ \LEX{!{}={}} ~ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$\newline
-\} \textgreater{}\newline
-\{assoc: \newline
-$\SHADE{ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} ~ \LEX{\AMPERSAND \AMPERSAND } ~ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$\newline
-\} \textgreater{}\newline
-\{assoc: \newline
-$\SHADE{ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} ~ \LEX{||} ~ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$\newline
-\} \textgreater{}\newline
-\{       \newline
-$\SHADE{ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  ~ ::= ~  \SYNHYPER{../.}{SIMPLE-2-Expressions}{lexp} ~ \LEX{={}} ~ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$\newline
-\}
+   $\SHADE{\quad\SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} \ \LEX{{*}} \ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$ \{left\}\newline
+   $\SHADE{\quad\SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} \ \LEX{{/}} \ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$ \{left\}\newline
+   $\SHADE{\quad\SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} \ \LEX{{\PERCENT}} \ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$ \{left\}\newline
+     \newline
+   $\SHADE{\quad\SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} \ \LEX{{+}} \ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$ \{left\}\newline
+   $\SHADE{\quad\SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} \ \LEX{{-}} \ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$ \{left\}\newline
+     \newline
+   $\SHADE{\quad\SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} \ \LEX{{\AMPERSAND}{\AMPERSAND}} \ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$ \{left\}\newline
+   $\SHADE{\quad\SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} \ \LEX{{|}{|}} \ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$ \{left\}\newline
+   \newline
+   context-free priorities\newline
+   \{\newline
+   $\SHADE{\quad\SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} \ \LEX{{(}} \ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exps}\QUERY \ \LEX{{)}}}$\newline
+   \} \textgreater{}\newline
+   \{\newline
+   $\SHADE{\quad\SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  \ ::= \  \  \LEX{{-}} \ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$\newline
+   $\SHADE{\quad\SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  \ ::= \  \  \LEX{{+}{+}} \ \SYNHYPER{../.}{SIMPLE-2-Expressions}{lexp}}$\newline
+   $\SHADE{\quad\SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  \ ::= \  \  \LEX{{!}} \ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$\newline
+   \} \textgreater{}\newline
+   \{left: \newline
+   $\SHADE{\quad\SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} \ \LEX{{*}} \ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$\newline
+   $\SHADE{\quad\SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} \ \LEX{{/}} \ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$\newline
+   $\SHADE{\quad\SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} \ \LEX{{\PERCENT}} \ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$\newline
+   \} \textgreater{}\newline
+   \{left: \newline
+   $\SHADE{\quad\SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} \ \LEX{{+}} \ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$\newline
+   $\SHADE{\quad\SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} \ \LEX{{-}} \ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$\newline
+   \} \textgreater{}\newline
+   \{non-assoc: \newline
+   $\SHADE{\quad\SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} \ \LEX{{<}} \ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$\newline
+   $\SHADE{\quad\SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} \ \LEX{{<}{=}} \ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$\newline
+   $\SHADE{\quad\SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} \ \LEX{{>}} \ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$\newline
+   $\SHADE{\quad\SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} \ \LEX{{>}{=}} \ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$\newline
+   $\SHADE{\quad\SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} \ \LEX{{=}{=}} \ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$\newline
+   $\SHADE{\quad\SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} \ \LEX{{!}{=}} \ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$\newline
+   \} \textgreater{}\newline
+   \{assoc: \newline
+   $\SHADE{\quad\SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} \ \LEX{{\AMPERSAND}{\AMPERSAND}} \ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$\newline
+   \} \textgreater{}\newline
+   \{assoc: \newline
+   $\SHADE{\quad\SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} \ \LEX{{|}{|}} \ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$\newline
+   \} \textgreater{}\newline
+   \{       \newline
+   $\SHADE{\quad\SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-2-Expressions}{lexp} \ \LEX{{=}} \ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp}}$\newline
+   \}
 \end{quote}
+
+% {% endraw %}
+
 

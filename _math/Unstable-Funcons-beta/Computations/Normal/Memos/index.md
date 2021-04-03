@@ -9,17 +9,20 @@ ancestor: Unstable-Funcons-beta
 
 {::comment}{% raw %}{:/}
 
+
+----
+
 ### Memos
                
 
 
 $$\begin{align*}
   [ \
-  \KEY{Entity} \ & \NAMEREF{memo-map} \\
-  \KEY{Funcon} \ & \NAMEREF{initialise-memos} \\
-  \KEY{Funcon} \ & \NAMEREF{memo-value} \\
-  \KEY{Funcon} \ & \NAMEREF{initialise-memo-value} \\
-  \KEY{Funcon} \ & \NAMEREF{memo-value-recall}
+  \KEY{Entity} \quad & \NAMEREF{memo-map} \\
+  \KEY{Funcon} \quad & \NAMEREF{initialise-memos} \\
+  \KEY{Funcon} \quad & \NAMEREF{memo-value} \\
+  \KEY{Funcon} \quad & \NAMEREF{initialise-memo-value} \\
+  \KEY{Funcon} \quad & \NAMEREF{memo-value-recall}
   \ ]
 \end{align*}$$
 
@@ -31,7 +34,7 @@ to values.
 
 
 $$\begin{align*}
-  \KEY{Entity} \
+  \KEY{Entity} \quad
   & \langle \_, \NAMEDECL{memo-map}(\_ : \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{maps}
                                                             (  \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{ground-values}, 
                                                                    \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values} )) \rangle \TRANS  \\& 
@@ -41,12 +44,12 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{initialise-memos}(
                        \_ :  \TO \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values}) 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     &  \langle \NAMEREF{initialise-memos}
                             (  \VAR{X} ), \NAMEREF{memo-map} (  \_ ) \rangle \TRANS 
         \langle \VAR{X}, \NAMEREF{memo-map} (  \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{map}
@@ -63,7 +66,7 @@ by $$\SHADE{\VAR{X}}$$.
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{memo-value}(
                        \VAR{K} : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{ground-values}, \VAR{X} :  \TO \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values}) 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values} \\&\quad
@@ -90,12 +93,12 @@ funcon would take an extra argument to roll back the effects of $$\SHADE{\VAR{X}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{initialise-memo-value}(
                        \_ : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{ground-values}, \_ : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values}) 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{map-unite}
           (  \VAR{M}, 
@@ -109,7 +112,7 @@ $$\begin{align*}
           \langle \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-value}, \NAMEREF{memo-map} (  \VAR{M}' ) \rangle
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{map-unite}
           (  \VAR{M}, 
@@ -125,12 +128,12 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{memo-value-recall}(
                        \_ : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{ground-values}) 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{values} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{lookup}
           (  \VAR{M}, 
@@ -142,7 +145,7 @@ $$\begin{align*}
           \langle \VAR{V}, \NAMEREF{memo-map} (  \VAR{M} ) \rangle
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Maps}{lookup}
           (  \VAR{M}, 
@@ -154,6 +157,7 @@ $$\begin{align*}
           \langle \NAMEHYPER{../../../../Funcons-beta/Computations/Abnormal}{Failing}{fail}, \NAMEREF{memo-map} (  \VAR{M} ) \rangle
       }
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -178,7 +182,9 @@ $$\begin{align*}
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

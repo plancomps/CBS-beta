@@ -16,6 +16,7 @@ ancestor: Funcons-beta
 {:toc}
 </details>
 
+----
 ### Integers
 
 <div class="highlighter-rouge"><pre class="highlight"><code>[

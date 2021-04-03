@@ -1,12 +1,15 @@
 {::comment}{% raw %}{:/}
 <details open markdown="block">
   <summary>
-    Outline
+    OUTLINE
   </summary>
   {: .text-delta }
 - TOC
 {:toc}
 </details>
+
+
+----
 
 ## Value Types
                
@@ -14,23 +17,23 @@
 
 $$\begin{align*}
   [ \
-  \KEY{Type} \ & \NAMEREF{values} \\
-  \KEY{Alias} \ & \NAMEREF{vals} \\
-  \KEY{Type} \ & \NAMEREF{value-types} \\
-  \KEY{Alias} \ & \NAMEREF{types} \\
-  \KEY{Type} \ & \NAMEREF{empty-type} \\
-  \KEY{Funcon} \ & \NAMEREF{is-in-type} \\
-  \KEY{Alias} \ & \NAMEREF{is} \\
-  \KEY{Funcon} \ & \NAMEREF{is-value} \\
-  \KEY{Alias} \ & \NAMEREF{is-val} \\
-  \KEY{Funcon} \ & \NAMEREF{when-true} \\
-  \KEY{Alias} \ & \NAMEREF{when} \\
-  \KEY{Type} \ & \NAMEREF{cast-to-type} \\
-  \KEY{Alias} \ & \NAMEREF{cast} \\
-  \KEY{Type} \ & \NAMEREF{ground-values} \\
-  \KEY{Alias} \ & \NAMEREF{ground-vals} \\
-  \KEY{Funcon} \ & \NAMEREF{is-equal} \\
-  \KEY{Alias} \ & \NAMEREF{is-eq}
+  \KEY{Type} \quad & \NAMEREF{values} \\
+  \KEY{Alias} \quad & \NAMEREF{vals} \\
+  \KEY{Type} \quad & \NAMEREF{value-types} \\
+  \KEY{Alias} \quad & \NAMEREF{types} \\
+  \KEY{Type} \quad & \NAMEREF{empty-type} \\
+  \KEY{Funcon} \quad & \NAMEREF{is-in-type} \\
+  \KEY{Alias} \quad & \NAMEREF{is} \\
+  \KEY{Funcon} \quad & \NAMEREF{is-value} \\
+  \KEY{Alias} \quad & \NAMEREF{is-val} \\
+  \KEY{Funcon} \quad & \NAMEREF{when-true} \\
+  \KEY{Alias} \quad & \NAMEREF{when} \\
+  \KEY{Type} \quad & \NAMEREF{cast-to-type} \\
+  \KEY{Alias} \quad & \NAMEREF{cast} \\
+  \KEY{Type} \quad & \NAMEREF{ground-values} \\
+  \KEY{Alias} \quad & \NAMEREF{ground-vals} \\
+  \KEY{Funcon} \quad & \NAMEREF{is-equal} \\
+  \KEY{Alias} \quad & \NAMEREF{is-eq}
   \ ]
 \end{align*}$$
 
@@ -39,10 +42,10 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Built-in Type} \ 
+  \KEY{Built-in Type} \quad 
   & \NAMEDECL{values}  
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{vals} = \NAMEREF{values}
 \end{align*}$$
 
@@ -66,7 +69,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Meta-variables} \
+  \KEY{Meta-variables} \quad
   & \VAR{T}, \VAR{T}\SUB{1}, \VAR{T}\SUB{2} <: \NAMEREF{values}
 \end{align*}$$
 
@@ -75,15 +78,15 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Built-in Type} \ 
+  \KEY{Built-in Type} \quad 
   & \NAMEDECL{value-types}  
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{types} = \NAMEREF{value-types}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Built-in Type} \ 
+  \KEY{Built-in Type} \quad 
   & \NAMEDECL{empty-type}  
 \end{align*}$$
 
@@ -141,12 +144,12 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{is-in-type}(
                        \VAR{V} : \NAMEREF{values}, \VAR{T} : \NAMEREF{types}) 
     :  \TO \NAMEHYPER{../Primitive}{Booleans}{booleans} 
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{is} = \NAMEREF{is-in-type}
 \end{align*}$$
 
@@ -158,7 +161,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{V} : \VAR{T}
       }{
@@ -168,7 +171,7 @@ $$\begin{align*}
           \NAMEHYPER{../Primitive}{Booleans}{true}
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{V} : \mathop{\sim} \VAR{T}
       }{
@@ -198,12 +201,12 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{is-value}(
                        \_ : \NAMEREF{values}\QUERY) 
     :  \TO \NAMEHYPER{../Primitive}{Booleans}{booleans} 
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{is-val} = \NAMEREF{is-value}
 \end{align*}$$
 
@@ -213,24 +216,24 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{is-value}
         (  \_ : \NAMEREF{values} ) \leadsto 
         \NAMEHYPER{../Primitive}{Booleans}{true}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{is-value}
         (   \  ) \leadsto 
         \NAMEHYPER{../Primitive}{Booleans}{false}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{when-true}(
                        \_ : \NAMEHYPER{../Primitive}{Booleans}{booleans}, \_ : \VAR{T}) 
     :  \TO (  \VAR{T} )\QUERY 
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{when} = \NAMEREF{when-true}
 \end{align*}$$
 
@@ -241,13 +244,13 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{when-true}
         (  \NAMEHYPER{../Primitive}{Booleans}{true}, 
                \VAR{V} : \NAMEREF{values} ) \leadsto 
         \VAR{V}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{when-true}
         (  \NAMEHYPER{../Primitive}{Booleans}{false}, 
                \VAR{V} : \NAMEREF{values} ) \leadsto 
@@ -255,12 +258,12 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{cast-to-type}(
                        \VAR{V} : \NAMEREF{values}, \VAR{T} : \NAMEREF{types}) 
     :  \TO (  \VAR{T} )\QUERY 
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{cast} = \NAMEREF{cast-to-type}
 \end{align*}$$
 
@@ -271,7 +274,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{V} : \VAR{T}
       }{
@@ -281,7 +284,7 @@ $$\begin{align*}
           \VAR{V}
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{V} : \mathop{\sim} \VAR{T}
       }{
@@ -297,10 +300,10 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Built-in Type} \ 
+  \KEY{Built-in Type} \quad 
   & \NAMEDECL{ground-values}  
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{ground-vals} = \NAMEREF{ground-values}
 \end{align*}$$
 
@@ -313,12 +316,12 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{is-equal}(
                        \VAR{V} : \NAMEREF{values}, \VAR{W} : \NAMEREF{values}) 
     :  \TO \NAMEHYPER{../Primitive}{Booleans}{booleans} 
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{is-eq} = \NAMEREF{is-equal}
 \end{align*}$$
 
@@ -330,7 +333,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \VAR{V} 
         == \VAR{W}
@@ -341,7 +344,7 @@ $$\begin{align*}
           \NAMEHYPER{../Primitive}{Booleans}{true}
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \VAR{V} 
         \neq \VAR{W}
@@ -352,18 +355,19 @@ $$\begin{align*}
           \NAMEHYPER{../Primitive}{Booleans}{false}
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{is-equal}
         (  \VAR{V} : \mathop{\sim} \NAMEREF{ground-values}, 
                \VAR{W} : \NAMEREF{values} ) \leadsto 
         \NAMEHYPER{../Primitive}{Booleans}{false}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{is-equal}
         (  \VAR{V} : \NAMEREF{values}, 
                \VAR{W} : \mathop{\sim} \NAMEREF{ground-values} ) \leadsto 
         \NAMEHYPER{../Primitive}{Booleans}{false}
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

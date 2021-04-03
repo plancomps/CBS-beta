@@ -1,0 +1,33 @@
+\contentsline {section}{Computations}{2}{section*.2}%
+\contentsline {subsection}{Normal computation}{2}{section*.3}%
+\contentsline {subsubsection}{Flowing}{2}{section*.4}%
+\contentsline {subsubsection}{Giving}{2}{section*.5}%
+\contentsline {subsubsection}{Binding}{2}{section*.6}%
+\contentsline {subsubsection}{Generating}{2}{section*.7}%
+\contentsline {subsubsection}{Storing}{3}{section*.8}%
+\contentsline {subsubsection}{Interacting}{3}{section*.9}%
+\contentsline {paragraph}{Input}{3}{section*.10}%
+\contentsline {paragraph}{Output}{3}{section*.11}%
+\contentsline {subsection}{Abnormal computation}{3}{section*.12}%
+\contentsline {subsubsection}{Terminating abruptly}{3}{section*.13}%
+\contentsline {subsubsection}{Failing}{3}{section*.14}%
+\contentsline {subsubsection}{Throwing}{3}{section*.15}%
+\contentsline {subsubsection}{Returning}{3}{section*.16}%
+\contentsline {section}{Values}{4}{section*.17}%
+\contentsline {subsection}{Value Types}{4}{section*.18}%
+\contentsline {subsection}{Primitive values}{4}{section*.19}%
+\contentsline {subsubsection}{Booleans}{4}{section*.20}%
+\contentsline {subsubsection}{Integers}{5}{section*.21}%
+\contentsline {subsubsection}{The null value}{5}{section*.22}%
+\contentsline {subsection}{Composite values}{5}{section*.23}%
+\contentsline {subsubsection}{Sequences of values}{5}{section*.24}%
+\contentsline {subsubsection}{Tuples}{5}{section*.25}%
+\contentsline {subsubsection}{Lists}{6}{section*.26}%
+\contentsline {subsubsection}{Vectors}{6}{section*.27}%
+\contentsline {subsubsection}{Sets}{6}{section*.28}%
+\contentsline {subsubsection}{Maps}{6}{section*.29}%
+\contentsline {subsection}{Abstraction values}{6}{section*.30}%
+\contentsline {subsubsection}{Generic abstractions}{6}{section*.31}%
+\contentsline {subsubsection}{Thunks}{6}{section*.32}%
+\contentsline {subsubsection}{Functions}{7}{section*.33}%
+\contentsline {subsubsection}{Patterns}{7}{section*.34}%

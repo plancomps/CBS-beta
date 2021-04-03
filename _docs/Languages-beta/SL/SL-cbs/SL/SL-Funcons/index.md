@@ -16,6 +16,7 @@ ancestor: Languages-beta
 {:toc}
 </details>
 
+----
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Language</i> <span id="Language_SL">"SL"</span></code></pre></div>
 <div class="highlighter-rouge"><pre class="highlight"><code>[
   // SL-specific funcons

@@ -10,14 +10,17 @@ ancestor: Languages-beta
 {::comment}{% raw %}{:/}
 <details open markdown="block">
   <summary>
-    Outline
+    OUTLINE
   </summary>
   {: .text-delta }
 - TOC
 {:toc}
 </details>
 
-$$\KEY{Language} \STRING{OCaml Light}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{OCaml Light}$$
 
 # $$\SECT{2}$$ Values
            
@@ -29,7 +32,7 @@ $$\KEY{Language} \STRING{OCaml Light}$$
 
 
 $$\begin{align*}
-  \KEY{Type} \ 
+  \KEY{Type} \quad 
   & \NAMEDECL{implemented-values}  \\&\quad
     \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} \\&\quad\quad\quad \mid \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{booleans} \\&\quad\quad\quad \mid \NAMEREF{implemented-integers} \\&\quad\quad\quad \mid \NAMEREF{implemented-floats} \\&\quad\quad\quad \mid \NAMEREF{implemented-characters} \\&\quad\quad\quad \mid \NAMEREF{implemented-strings} \\&\quad\quad\quad \mid \NAMEREF{implemented-tuples} \\&\quad\quad\quad \mid \NAMEREF{implemented-lists} \\&\quad\quad\quad \mid \NAMEREF{implemented-records} \\&\quad\quad\quad \mid \NAMEREF{implemented-references} \\&\quad\quad\quad \mid \NAMEREF{implemented-vectors} \\&\quad\quad\quad \mid \NAMEREF{implemented-variants} \\&\quad\quad\quad \mid \NAMEREF{implemented-functions}
 \end{align*}$$
@@ -49,19 +52,19 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Type} \ 
+  \KEY{Type} \quad 
   & \NAMEDECL{implemented-integers}  \\&\quad
     \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integers}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{implemented-integer}(
                        \VAR{I} : \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integers}) 
     :  \TO \NAMEREF{implemented-integers} \\&\quad
     \leadsto \VAR{I}
 \\
-  \KEY{Assert} \
+  \KEY{Assert} \quad
   & \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-equal}
       ( \\&\quad \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null}, \\&\quad
              \NAMEREF{implemented-integer}
@@ -72,14 +75,14 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{implemented-integers-width} 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{natural-numbers} \\&\quad
     \leadsto 31
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{implemented-integer-literal}(
                        \VAR{IL} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{strings}) 
     :  \TO \NAMEREF{implemented-integers} \\&\quad
@@ -89,7 +92,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{implemented-bit-vector}(
                        \VAR{I} : \NAMEREF{implemented-integers}) \\&\quad
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Bits}{bit-vectors}
@@ -111,19 +114,19 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Type} \ 
+  \KEY{Type} \quad 
   & \NAMEDECL{implemented-floats}  
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{implemented-floats-format} 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{float-formats} \\&\quad
     \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{binary64}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{implemented-float-literal}(
                        \VAR{FL} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{strings}) 
     :  \TO \NAMEREF{implemented-floats} 
@@ -141,12 +144,12 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Type} \ 
+  \KEY{Type} \quad 
   & \NAMEDECL{implemented-characters} <: \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Characters}{characters} 
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Type} \ 
+  \KEY{Type} \quad 
   & \NAMEDECL{implemented-character-points}  \\&\quad
     \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{bounded-integers}
                (  0, 
@@ -154,7 +157,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{implemented-character}(
                        \VAR{C} : \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Characters}{characters}) 
     :  \TO \NAMEREF{implemented-characters}\QUERY \\&\quad
@@ -173,13 +176,13 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Type} \ 
+  \KEY{Type} \quad 
   & \NAMEDECL{implemented-strings} <: \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{lists}
                                      (  \NAMEREF{implemented-characters} ) 
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{implemented-string}(
                        \VAR{L} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{lists}
                                  (  \NAMEREF{implemented-characters} )) 
@@ -204,7 +207,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Type} \ 
+  \KEY{Type} \quad 
   & \NAMEDECL{implemented-tuples} <: \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuples}
                                      (  \NAMEREF{implemented-values}\STAR ) \\&\quad
     \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuples}
@@ -212,7 +215,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{implemented-tuple}(
                        \VAR{T} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuples}
                                  (  \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}\STAR )) 
@@ -237,7 +240,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Type} \ 
+  \KEY{Type} \quad 
   & \NAMEDECL{implemented-lists} <: \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{lists}
                                      (  \NAMEREF{implemented-values} ) \\&\quad
     \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{lists}
@@ -245,7 +248,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{implemented-list}(
                        \VAR{L} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{lists}
                                  (  \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} )) 
@@ -271,7 +274,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Type} \ 
+  \KEY{Type} \quad 
   & \NAMEDECL{implemented-records} <: \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Records}{records}
                                      (  \NAMEREF{implemented-values} ) \\&\quad
     \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Records}{records}
@@ -279,7 +282,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{implemented-record}(
                        \VAR{R} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Records}{records}
                                  (  \NAMEREF{implemented-values} )) 
@@ -300,7 +303,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Type} \ 
+  \KEY{Type} \quad 
   & \NAMEDECL{implemented-references}  
     \leadsto \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{variables}
 \end{align*}$$
@@ -317,7 +320,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Type} \ 
+  \KEY{Type} \quad 
   & \NAMEDECL{implemented-vectors} <: \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vectors}
                                      (  \NAMEREF{implemented-values} ) \\&\quad
     \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vectors}
@@ -325,7 +328,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{implemented-vector}(
                        \VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vectors}
                                  (  \NAMEREF{implemented-values} )) 
@@ -353,7 +356,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Type} \ 
+  \KEY{Type} \quad 
   & \NAMEDECL{implemented-variants} <: \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Variants}{variants}
                                      (  \NAMEREF{implemented-values} ) \\&\quad
     \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Variants}{variants}
@@ -361,7 +364,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{implemented-variant}(
                        \VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Variants}{variants}
                                  (  \NAMEREF{implemented-values} )) 
@@ -378,7 +381,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Type} \ 
+  \KEY{Type} \quad 
   & \NAMEDECL{implemented-functions} <: \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{functions}
                                      (  \NAMEREF{implemented-values}, 
                                             \NAMEREF{implemented-values} ) \\&\quad
@@ -388,7 +391,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{implemented-function}(
                        \VAR{F} : \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{functions}
                                  (  \NAMEREF{implemented-values}, 
@@ -396,6 +399,7 @@ $$\begin{align*}
     :  \TO \NAMEREF{implemented-functions} \\&\quad
     \leadsto \VAR{F}
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -420,7 +424,9 @@ $$\begin{align*}
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

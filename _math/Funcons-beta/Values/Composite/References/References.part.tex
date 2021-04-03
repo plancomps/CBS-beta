@@ -1,44 +1,58 @@
-\subsubsection*{References and pointers}\hypertarget{references-and-pointers}{}\label{references-and-pointers}
+% {% raw %}
+
+
+\begin{center}
+\rule{3in}{0.4pt}
+\end{center}
+
+\subsubsection{References and pointers}\hypertarget{references-and-pointers}{}\label{references-and-pointers}
 
 \begin{align*}
-  [ ~ 
-  \KEY{Datatype} ~ & \NAMEREF{references} \\
-  \KEY{Funcon} ~ & \NAMEREF{reference} \\
-  \KEY{Type} ~ & \NAMEREF{pointers} \\
-  \KEY{Funcon} ~ & \NAMEREF{pointer-null} \\
-  \KEY{Funcon} ~ & \NAMEREF{dereference}
-  ~ ]
+  [ \
+  \KEY{Datatype} \quad & \NAMEREF{references} \\
+  \KEY{Funcon} \quad & \NAMEREF{reference} \\
+  \KEY{Type} \quad & \NAMEREF{pointers} \\
+  \KEY{Funcon} \quad & \NAMEREF{pointer-null} \\
+  \KEY{Funcon} \quad & \NAMEREF{dereference}
+  \ ]
 \end{align*}
 \begin{align*}
-  \KEY{Meta-variables} ~ 
+  \KEY{Meta-variables} \quad
   & \VAR{T} <: \NAMEHYPER{../..}{Value-Types}{values}
 \end{align*}
 \begin{align*}
-  \KEY{Datatype} ~ 
-  \NAMEDECL{references}(\VAR{T} )  
-  ~ ::= ~ & \NAMEDECL{reference} (\_ : \VAR{T})
+  \KEY{Datatype} \quad 
+  \NAMEDECL{references}(
+                     \VAR{T} ) 
+  \ ::= \ & \NAMEDECL{reference}(
+                               \_ : \VAR{T})
 \end{align*}
 \begin{align*}
-  \KEY{Datatype} ~ 
-  \NAMEDECL{pointers}(\VAR{T} )  
-  ~ ::= ~ & 
-  \NAMEDECL{pointer-null}  \\
-  ~ \mid ~ & \{ \_ : \NAMEREF{references}
-               ( \VAR{T} ) \}
+  \KEY{Datatype} \quad 
+  \NAMEDECL{pointers}(
+                     \VAR{T} ) 
+  \ ::= \ &
+  \NAMEDECL{pointer-null} \mid \{ \_ : \NAMEREF{references}
+               (  \VAR{T} ) \}
 \end{align*}
 \begin{align*}
-  \KEY{Funcon} ~ 
-  & \NAMEDECL{dereference}(\_ : \NAMEREF{pointers}
-                                ( \VAR{T} )) :  \TO ( \VAR{T} )\QUERY
+  \KEY{Funcon} \quad
+  & \NAMEDECL{dereference}(
+                       \_ : \NAMEREF{pointers}
+                                 (  \VAR{T} )) 
+    :  \TO (  \VAR{T} )\QUERY 
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \quad
     & \NAMEREF{dereference}
-        ( \NAMEREF{reference}
-            ( \VAR{V} : \VAR{T} ) ) \leadsto
+        (  \NAMEREF{reference}
+                (  \VAR{V} : \VAR{T} ) ) \leadsto 
         \VAR{V}
 \\
-  \KEY{Rule} ~ 
+  \KEY{Rule} \quad
     & \NAMEREF{dereference}
-        ( \NAMEREF{pointer-null} ) \leadsto
-        (  ~  )
+        (  \NAMEREF{pointer-null} ) \leadsto 
+        (   \  )
 \end{align*}
+% {% endraw %}
+
+

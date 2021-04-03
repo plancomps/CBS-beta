@@ -1,21 +1,24 @@
 {::comment}{% raw %}{:/}
 <details open markdown="block">
   <summary>
-    Outline
+    OUTLINE
   </summary>
   {: .text-delta }
 - TOC
 {:toc}
 </details>
 
-$$\KEY{Language} \STRING{OCaml Light}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{OCaml Light}$$
 
 # $$\SECT{8}$$ Type and exception definitions
            
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{TDS} : \SYN{type-definition}
       \ ::= \ & \
       \LEX{type} \ \SYNREF{typedef} \ \SYNREF{and-typedef}\STAR
@@ -89,11 +92,11 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{define-types} \LEFTPHRASE \ \_ : \SYNREF{type-definition} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{environments} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{define-types} \LEFTPHRASE \
                             \LEX{type} \ \VARREF{TD} \ \VARREF{ATD}\STAR \
                           \RIGHTPHRASE  = 
@@ -104,11 +107,11 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{define-typedefs} \LEFTPHRASE \ \_ : \LEFTGROUP \SYNREF{typedef} \ \SYNREF{and-typedef}\STAR \RIGHTGROUP \ \RIGHTPHRASE  
     : (   \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{environments} )\PLUS 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{define-typedefs} \LEFTPHRASE \
                             \VARREF{TD}\SUB{1} \ \LEX{and} \ \VARREF{TD}\SUB{2} \ \VARREF{ATD}\STAR \
                           \RIGHTPHRASE  = \\&\quad
@@ -119,7 +122,7 @@ $$\begin{align*}
                             \VAR{TD}\SUB{2} \ \VAR{ATD}\STAR \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{define-typedefs} \LEFTPHRASE \
                             \VARREF{TPS}\QUERY \ \VARHYPER{../.}{OC-L-03-Names}{TCN} \ \LEX{{=}} \ \VARREF{CD} \ \VARREF{BCD}\STAR \
                           \RIGHTPHRASE  = \\&\quad
@@ -127,14 +130,14 @@ $$\begin{align*}
                             \VAR{CD} \ \VAR{BCD}\STAR \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{define-typedefs} \LEFTPHRASE \
                             \VARREF{TPS}\QUERY \ \VARHYPER{../.}{OC-L-03-Names}{TCN} \ \LEX{{=}} \ \VARREF{RD} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Maps}{map}
         (   \  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{define-typedefs} \LEFTPHRASE \
                             \VARREF{TPS}\QUERY \ \VARHYPER{../.}{OC-L-03-Names}{TCN} \ \LEX{{=}} \ \VARHYPER{../.}{OC-L-04-Type-Expressions}{T} \
                           \RIGHTPHRASE  = 
@@ -143,11 +146,11 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{define-constrs} \LEFTPHRASE \ \_ : \LEFTGROUP \SYNREF{constr-decl} \ \SYNREF{bar-constr-decl}\STAR \RIGHTGROUP \ \RIGHTPHRASE  
     : (   \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{environments} )\PLUS 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{define-constrs} \LEFTPHRASE \
                             \VARREF{CD}\SUB{1} \ \LEX{{|}} \ \VARREF{CD}\SUB{2} \ \VARREF{BCD}\STAR \
                           \RIGHTPHRASE  = \\&\quad
@@ -158,7 +161,7 @@ $$\begin{align*}
                             \VAR{CD}\SUB{2} \ \VAR{BCD}\STAR \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{define-constrs} \LEFTPHRASE \
                             \VARHYPER{../.}{OC-L-03-Names}{CN} \
                           \RIGHTPHRASE  = \\&\quad
@@ -172,7 +175,7 @@ $$\begin{align*}
                     \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
                      (   \  ) ) \}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{define-constrs} \LEFTPHRASE \
                             \VARHYPER{../.}{OC-L-03-Names}{CN} \ \LEX{of} \ \VARREF{CA} \
                           \RIGHTPHRASE  = \\&\quad
@@ -193,11 +196,11 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{define-exception} \LEFTPHRASE \ \_ : \SYNREF{exception-definition} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{environments} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{define-exception} \LEFTPHRASE \
                             \LEX{exception} \ \VARREF{CD} \
                           \RIGHTPHRASE  = 
@@ -205,13 +208,14 @@ $$\begin{align*}
                             \VAR{CD} \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{define-exception} \LEFTPHRASE \
                             \LEX{exception} \ \VARHYPER{../.}{OC-L-03-Names}{CN} \ \LEX{{=}} \ \VARHYPER{../.}{OC-L-03-Names}{CSTR} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Maps}{map}
         (   \  )
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

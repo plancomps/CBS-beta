@@ -8,6 +8,7 @@ ancestor: Funcons-beta
 [Funcons-beta] : [Computation-Types.cbs] \| [PRETTY] \| [PDF]
 
 
+----
 ## Computation Types
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>

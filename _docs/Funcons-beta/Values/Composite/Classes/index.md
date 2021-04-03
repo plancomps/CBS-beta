@@ -8,6 +8,7 @@ ancestor: Funcons-beta
 [Funcons-beta] : [Classes.cbs] \| [PRETTY] \| [PDF]
 
 
+----
 ### Classes
 
 <div class="highlighter-rouge"><pre class="highlight"><code>[

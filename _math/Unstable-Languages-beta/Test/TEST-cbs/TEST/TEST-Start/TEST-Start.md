@@ -1,5 +1,9 @@
 {::comment}{% raw %}{:/}
-$$\KEY{Language} \STRING{Test}$$
+
+
+----
+
+$$\KEY{Language} \quad \STRING{Test}$$
 
 # ASCII characters
                
@@ -10,12 +14,13 @@ The apostrophe and the backslash have to be escaped in terminal symbols.
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
-  \SYN{test}
-  \ ::= \ & \
-  \LEX{{!}~{"}~{\HASH}~{\DOLLAR}~{\PERCENT}~{\AMPERSAND}~{\APOSTROPHE}~{(}~{)}~{*}~{+}~{,}~{-}~{.}~{/}~{:}~{;}} \\
-  \ \mid \ & \ \LEX{{<}~{=}~{>}~{?}~{@}~{[}~{\BACKSLASH}~{]}~{\CARET}~{\UNDERSCORE}~{\GRAVE}~{\LEFTBRACE}~{|}~{\RIGHTBRACE}~{\TILDE}~A~Z~a~z~0~9}
+  \KEY{Syntax} \quad
+     \SYN{test}
+      \ ::= \ & \
+      \LEX{{!}~{"}~{\HASH}~{\DOLLAR}~{\PERCENT}~{\AMPERSAND}~{\APOSTROPHE}~{(}~{)}~{*}~{+}~{,}~{-}~{.}~{/}~{:}~{;}} \\
+      \ \mid \ & \ \LEX{{<}~{=}~{>}~{?}~{@}~{[}~{\BACKSLASH}~{]}~{\CARET}~{\UNDERSCORE}~{\GRAVE}~{\LEFTBRACE}~{|}~{\RIGHTBRACE}~{\TILDE}~A~Z~a~z~0~9}
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

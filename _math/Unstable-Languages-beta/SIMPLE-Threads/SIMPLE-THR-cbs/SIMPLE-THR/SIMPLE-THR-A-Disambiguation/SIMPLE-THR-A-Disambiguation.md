@@ -1,6 +1,9 @@
 {::comment}{% raw %}{:/}
 
-$$\KEY{Language} \STRING{SIMPLE-THR}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{SIMPLE-THR}$$
 
 # $$\SECT{A}$$ Disambiguation
            
@@ -62,6 +65,7 @@ $$\KEY{Language} \STRING{SIMPLE-THR}$$
 >    {\\
 >    $$\SHADE{\quad\SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}  \ ::= \  \  \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{lexp} \ \LEX{{=}} \ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exp}}$$\\
 >    }
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

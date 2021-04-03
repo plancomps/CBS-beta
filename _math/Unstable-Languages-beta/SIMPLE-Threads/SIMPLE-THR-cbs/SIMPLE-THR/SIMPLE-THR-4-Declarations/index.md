@@ -10,28 +10,31 @@ ancestor: Unstable-Languages-beta
 {::comment}{% raw %}{:/}
 <details open markdown="block">
   <summary>
-    Outline
+    OUTLINE
   </summary>
   {: .text-delta }
 - TOC
 {:toc}
 </details>
 
-$$\KEY{Language} \STRING{SIMPLE-THR}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{SIMPLE-THR}$$
 
 # $$\SECT{4}$$ Declarations
            
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{Decl} : \SYN{decl}
       \ ::= \ & \
       \SYNREF{vars-decl} \mid \SYNREF{func-decl}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{declare} \LEFTPHRASE \ \_ : \SYNREF{decl} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{environments} 
 \end{align*}$$
@@ -41,7 +44,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{VarsDecl} : \SYN{vars-decl}
       \ ::= \ & \
       \LEX{var} \ \SYNREF{declarators} \ \LEX{{;}}
@@ -52,7 +55,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \LEX{var} \ \VARREF{Declarator} \ \LEX{{,}} \ \VARREF{Declarators} \ \LEX{{;}} \ \VARHYPER{../.}{SIMPLE-THR-3-Statements}{Stmts}\QUERY \
       \RIGHTPHRASE : \SYNHYPER{../.}{SIMPLE-THR-3-Statements}{stmts} = \\&
@@ -60,7 +63,7 @@ $$\begin{align*}
         \LEX{var} \ \VAR{Declarator} \ \LEX{{;}} \ \LEX{var} \ \VAR{Declarators} \ \LEX{{;}} \ \VAR{Stmts}\QUERY \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \LEX{var} \ \VARREF{Declarator} \ \LEX{{,}} \ \VARREF{Declarators} \ \LEX{{;}} \ \VARHYPER{../.}{SIMPLE-THR-5-Programs}{Decls}\QUERY \
       \RIGHTPHRASE : \SYNHYPER{../.}{SIMPLE-THR-5-Programs}{decls} = \\&
@@ -68,7 +71,7 @@ $$\begin{align*}
         \LEX{var} \ \VAR{Declarator} \ \LEX{{;}} \ \LEX{var} \ \VAR{Declarators} \ \LEX{{;}} \ \VAR{Decls}\QUERY \
       \RIGHTPHRASE
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{declare} \LEFTPHRASE \
                             \LEX{var} \ \VARREF{Declarator} \ \LEX{{;}} \
                           \RIGHTPHRASE  = 
@@ -78,7 +81,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{Declarator} : \SYN{declarator}
       \ ::= \ & \
       \SYNHYPER{../.}{SIMPLE-THR-1-Lexical}{id} \\
@@ -87,11 +90,11 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{var-declare} \LEFTPHRASE \ \_ : \SYNREF{declarator} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{environments} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{var-declare} \LEFTPHRASE \
                             \VARHYPER{../.}{SIMPLE-THR-1-Lexical}{Id} \
                           \RIGHTPHRASE  = 
@@ -102,7 +105,7 @@ $$\begin{align*}
                \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{allocate-variable}
                 (  \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{var-declare} \LEFTPHRASE \
                             \VARHYPER{../.}{SIMPLE-THR-1-Lexical}{Id} \ \LEX{{=}} \ \VARHYPER{../.}{SIMPLE-THR-2-Expressions}{Exp} \
                           \RIGHTPHRASE  = \\&\quad
@@ -116,7 +119,7 @@ $$\begin{align*}
                                             \VAR{Exp} \
                                           \RIGHTPHRASE  ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{var-declare} \LEFTPHRASE \
                             \VARHYPER{../.}{SIMPLE-THR-1-Lexical}{Id} \ \VARREF{Ranks} \
                           \RIGHTPHRASE  = \\&\quad
@@ -135,14 +138,14 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{Ranks} : \SYN{ranks}
       \ ::= \ & \
       \LEX{{[}} \ \SYNHYPER{../.}{SIMPLE-THR-2-Expressions}{exps} \ \LEX{{]}} \ \SYNREF{ranks}\QUERY
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \LEFTPHRASE \
         \LEX{{[}} \ \VARHYPER{../.}{SIMPLE-THR-2-Expressions}{Exp} \ \LEX{{,}} \ \VARHYPER{../.}{SIMPLE-THR-2-Expressions}{Exps} \ \LEX{{]}} \ \VARREF{Ranks}\QUERY \
       \RIGHTPHRASE : \SYNREF{ranks} = \\&
@@ -152,11 +155,11 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{ranks} \LEFTPHRASE \ \_ : \SYNREF{ranks} \ \RIGHTPHRASE  
     : (   \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{nats} )\PLUS 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{ranks} \LEFTPHRASE \
                             \LEX{{[}} \ \VARHYPER{../.}{SIMPLE-THR-2-Expressions}{Exp} \ \LEX{{]}} \
                           \RIGHTPHRASE  = 
@@ -164,7 +167,7 @@ $$\begin{align*}
                             \VAR{Exp} \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{ranks} \LEFTPHRASE \
                             \LEX{{[}} \ \VARHYPER{../.}{SIMPLE-THR-2-Expressions}{Exp} \ \LEX{{]}} \ \VARREF{Ranks} \
                           \RIGHTPHRASE  = 
@@ -177,12 +180,12 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{allocate-nested-vectors}(
                        \_ : \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{nats}\PLUS) 
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{variables} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{allocate-nested-vectors}
         (  \VAR{N} : \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{nats} ) \leadsto \\&\quad
         \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{allocate-initialised-variable}
@@ -195,7 +198,7 @@ $$\begin{align*}
                                  1, 
                                  \VAR{N} ) ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{allocate-nested-vectors}
         (  \VAR{N} : \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{nats}, 
                \VAR{N}\PLUS : \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{nats}\PLUS ) \leadsto \\&\quad
@@ -215,14 +218,14 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{FuncDecl} : \SYN{func-decl}
       \ ::= \ & \
       \LEX{function} \ \SYNHYPER{../.}{SIMPLE-THR-1-Lexical}{id} \ \LEX{{(}} \ \SYNREF{ids}\QUERY \ \LEX{{)}} \ \SYNHYPER{../.}{SIMPLE-THR-3-Statements}{block}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{declare} \LEFTPHRASE \
                             \LEX{function} \ \VARHYPER{../.}{SIMPLE-THR-1-Lexical}{Id} \ \LEX{{(}} \ \VARREF{Ids}\QUERY \ \LEX{{)}} \ \VARHYPER{../.}{SIMPLE-THR-3-Statements}{Block} \
                           \RIGHTPHRASE  = \\&\quad
@@ -238,17 +241,17 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{initialise} \LEFTPHRASE \ \_ : \SYNREF{decl} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{initialise} \LEFTPHRASE \
                             \LEX{var} \ \VARREF{Declarators} \ \LEX{{;}} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{initialise} \LEFTPHRASE \
                             \LEX{function} \ \VARHYPER{../.}{SIMPLE-THR-1-Lexical}{Id} \ \LEX{{(}} \ \VARREF{Ids}\QUERY \ \LEX{{)}} \ \VARHYPER{../.}{SIMPLE-THR-3-Statements}{Block} \
                           \RIGHTPHRASE  = \\&\quad
@@ -273,24 +276,24 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{Ids} : \SYN{ids}
       \ ::= \ & \
       \SYNHYPER{../.}{SIMPLE-THR-1-Lexical}{id} \ \LEFTGROUP \LEX{{,}} \ \SYNREF{ids} \RIGHTGROUP\QUERY
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{patts} \LEFTPHRASE \ \_ : \SYNREF{ids}\QUERY \ \RIGHTPHRASE  
     : \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Patterns}{patterns}\STAR 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{patts} \LEFTPHRASE \
                              \
                           \RIGHTPHRASE  = 
       (   \  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{patts} \LEFTPHRASE \
                             \VARHYPER{../.}{SIMPLE-THR-1-Lexical}{Id} \
                           \RIGHTPHRASE  = \\&\quad
@@ -304,7 +307,7 @@ $$\begin{align*}
                           (  \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}, 
                                  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} ) ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{patts} \LEFTPHRASE \
                             \VARHYPER{../.}{SIMPLE-THR-1-Lexical}{Id} \ \LEX{{,}} \ \VARREF{Ids} \
                           \RIGHTPHRASE  = \\&\quad
@@ -315,6 +318,7 @@ $$\begin{align*}
                             \VAR{Ids} \
                           \RIGHTPHRASE 
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -339,7 +343,9 @@ $$\begin{align*}
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

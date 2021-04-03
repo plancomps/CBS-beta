@@ -8,6 +8,7 @@ ancestor: Funcons-beta
 [Funcons-beta] : [Abrupting.cbs] \| [PRETTY] \| [PDF]
 
 
+----
 ### Abruptly terminating
 
 <div class="highlighter-rouge"><pre class="highlight"><code>[

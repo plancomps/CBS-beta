@@ -10,12 +10,15 @@ ancestor: Funcons-beta
 {::comment}{% raw %}{:/}
 <details open markdown="block">
   <summary>
-    Outline
+    OUTLINE
   </summary>
   {: .text-delta }
 - TOC
 {:toc}
 </details>
+
+
+----
 
 ### Giving
                
@@ -23,29 +26,29 @@ ancestor: Funcons-beta
 
 $$\begin{align*}
   [ \
-  \KEY{Entity} \ & \NAMEREF{given-value} \\
-  \KEY{Funcon} \ & \NAMEREF{initialise-giving} \\
-  \KEY{Funcon} \ & \NAMEREF{give} \\
-  \KEY{Funcon} \ & \NAMEREF{given} \\
-  \KEY{Funcon} \ & \NAMEREF{no-given} \\
-  \KEY{Funcon} \ & \NAMEREF{left-to-right-map} \\
-  \KEY{Funcon} \ & \NAMEREF{interleave-map} \\
-  \KEY{Funcon} \ & \NAMEREF{left-to-right-repeat} \\
-  \KEY{Funcon} \ & \NAMEREF{interleave-repeat} \\
-  \KEY{Funcon} \ & \NAMEREF{left-to-right-filter} \\
-  \KEY{Funcon} \ & \NAMEREF{interleave-filter} \\
-  \KEY{Funcon} \ & \NAMEREF{fold-left} \\
-  \KEY{Funcon} \ & \NAMEREF{fold-right}
+  \KEY{Entity} \quad & \NAMEREF{given-value} \\
+  \KEY{Funcon} \quad & \NAMEREF{initialise-giving} \\
+  \KEY{Funcon} \quad & \NAMEREF{give} \\
+  \KEY{Funcon} \quad & \NAMEREF{given} \\
+  \KEY{Funcon} \quad & \NAMEREF{no-given} \\
+  \KEY{Funcon} \quad & \NAMEREF{left-to-right-map} \\
+  \KEY{Funcon} \quad & \NAMEREF{interleave-map} \\
+  \KEY{Funcon} \quad & \NAMEREF{left-to-right-repeat} \\
+  \KEY{Funcon} \quad & \NAMEREF{interleave-repeat} \\
+  \KEY{Funcon} \quad & \NAMEREF{left-to-right-filter} \\
+  \KEY{Funcon} \quad & \NAMEREF{interleave-filter} \\
+  \KEY{Funcon} \quad & \NAMEREF{fold-left} \\
+  \KEY{Funcon} \quad & \NAMEREF{fold-right}
   \ ]
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Meta-variables} \
+  \KEY{Meta-variables} \quad
   & \VAR{T}, \VAR{T}' <: \NAMEHYPER{../../../Values}{Value-Types}{values} \qquad \\& \VAR{T}\QUERY <: \NAMEHYPER{../../../Values}{Value-Types}{values}\QUERY
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Entity} \
+  \KEY{Entity} \quad
   & \NAMEDECL{given-value}(\_ : \NAMEHYPER{../../../Values}{Value-Types}{values}\QUERY) \vdash \_ \TRANS  \_
 \end{align*}$$
 
@@ -56,7 +59,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{initialise-giving}(
                        \VAR{X} : (   \  ) \TO \VAR{T}') 
     : (   \  ) \TO \VAR{T}' \\&\quad
@@ -71,7 +74,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{give}(
                        \_ : \VAR{T}, \_ : \VAR{T} \TO \VAR{T}') 
     :  \TO \VAR{T}' 
@@ -86,7 +89,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEREF{given-value} (  \VAR{V} ) \vdash \VAR{Y} \TRANS 
           \VAR{Y}'
@@ -99,7 +102,7 @@ $$\begin{align*}
                    \VAR{Y}' )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{give}
         (  \_ : \VAR{T}, 
                \VAR{W} : \VAR{T}' ) \leadsto 
@@ -107,7 +110,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{given} 
     : \VAR{T} \TO \VAR{T} 
 \end{align*}$$
@@ -117,17 +120,17 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{given-value} (  \VAR{V} : \NAMEHYPER{../../../Values}{Value-Types}{values} ) \vdash \NAMEREF{given} \TRANS 
         \VAR{V}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{given-value} (   \  ) \vdash \NAMEREF{given} \TRANS 
         \NAMEHYPER{../../Abnormal}{Failing}{fail}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{no-given}(
                        \_ : (   \  ) \TO \VAR{T}') 
     : (   \  ) \TO \VAR{T}' 
@@ -139,7 +142,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEREF{given-value} (   \  ) \vdash \VAR{X} \TRANS 
           \VAR{X}'
@@ -150,7 +153,7 @@ $$\begin{align*}
             (  \VAR{X}' )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{no-given}
         (  \VAR{U} : \VAR{T}' ) \leadsto 
         \VAR{U}
@@ -170,7 +173,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{left-to-right-map}(
                        \_ : \VAR{T} \TO \VAR{T}', \_ : (  \VAR{T} )\STAR) 
     :  \TO (  \VAR{T}' )\STAR 
@@ -184,7 +187,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{left-to-right-map}
         (  \VAR{F}, 
                \VAR{V} : \VAR{T}, 
@@ -197,7 +200,7 @@ $$\begin{align*}
                   (  \VAR{F}, 
                          \VAR{V}\STAR ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{left-to-right-map}
         (  \_, 
                (   \  ) ) \leadsto 
@@ -205,7 +208,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{interleave-map}(
                        \_ : \VAR{T} \TO \VAR{T}', \_ : (  \VAR{T} )\STAR) 
     :  \TO (  \VAR{T}' )\STAR 
@@ -219,7 +222,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{interleave-map}
         (  \VAR{F}, 
                \VAR{V} : \VAR{T}, 
@@ -232,7 +235,7 @@ $$\begin{align*}
                   (  \VAR{F}, 
                          \VAR{V}\STAR ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{interleave-map}
         (  \_, 
                (   \  ) ) \leadsto 
@@ -240,7 +243,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{left-to-right-repeat}(
                        \_ : \NAMEHYPER{../../../Values/Primitive}{Integers}{integers} \TO \VAR{T}', \_ : \NAMEHYPER{../../../Values/Primitive}{Integers}{integers}, \_ : \NAMEHYPER{../../../Values/Primitive}{Integers}{integers}) 
     :  \TO (  \VAR{T}' )\STAR 
@@ -255,7 +258,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../Values/Primitive}{Integers}{is-less-or-equal}
           (  \VAR{M}, 
@@ -278,7 +281,7 @@ $$\begin{align*}
                            \VAR{N} ) )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../Values/Primitive}{Integers}{is-less-or-equal}
           (  \VAR{M}, 
@@ -294,7 +297,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{interleave-repeat}(
                        \_ : \NAMEHYPER{../../../Values/Primitive}{Integers}{integers} \TO \VAR{T}', \_ : \NAMEHYPER{../../../Values/Primitive}{Integers}{integers}, \_ : \NAMEHYPER{../../../Values/Primitive}{Integers}{integers}) 
     :  \TO (  \VAR{T}' )\STAR 
@@ -309,7 +312,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../Values/Primitive}{Integers}{is-less-or-equal}
           (  \VAR{M}, 
@@ -332,7 +335,7 @@ $$\begin{align*}
                            \VAR{N} ) )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       & \NAMEHYPER{../../../Values/Primitive}{Integers}{is-less-or-equal}
           (  \VAR{M}, 
@@ -361,7 +364,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{left-to-right-filter}(
                        \_ : \VAR{T} \TO \NAMEHYPER{../../../Values/Primitive}{Booleans}{booleans}, \_ : (  \VAR{T} )\STAR) 
     :  \TO (  \VAR{T} )\STAR 
@@ -376,7 +379,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{left-to-right-filter}
         (  \VAR{P}, 
                \VAR{V} : \VAR{T}, 
@@ -391,14 +394,14 @@ $$\begin{align*}
                   (  \VAR{P}, 
                          \VAR{V}\STAR ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{left-to-right-filter}
         (  \_ ) \leadsto 
         (   \  )
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{interleave-filter}(
                        \_ : \VAR{T} \TO \NAMEHYPER{../../../Values/Primitive}{Booleans}{booleans}, \_ : (  \VAR{T} )\STAR) 
     :  \TO (  \VAR{T} )\STAR 
@@ -412,7 +415,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{interleave-filter}
         (  \VAR{P}, 
                \VAR{V} : \VAR{T}, 
@@ -427,7 +430,7 @@ $$\begin{align*}
                   (  \VAR{P}, 
                          \VAR{V}\STAR ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{interleave-filter}
         (  \_ ) \leadsto 
         (   \  )
@@ -438,7 +441,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{fold-left}(
                        \_ : \NAMEHYPER{../../../Values/Composite}{Tuples}{tuples}
                                  (  \VAR{T}, 
@@ -457,14 +460,14 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{fold-left}
         (  \_, 
                \VAR{A} : \VAR{T}, 
                (   \  ) ) \leadsto 
         \VAR{A}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{fold-left}
         (  \VAR{F}, 
                \VAR{A} : \VAR{T}, 
@@ -481,7 +484,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{fold-right}(
                        \_ : \NAMEHYPER{../../../Values/Composite}{Tuples}{tuples}
                                  (  \VAR{T}, 
@@ -500,14 +503,14 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{fold-right}
         (  \_, 
                \VAR{A} : \VAR{T}', 
                (   \  ) ) \leadsto 
         \VAR{A}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{fold-right}
         (  \VAR{F}, 
                \VAR{A} : \VAR{T}', 
@@ -522,6 +525,7 @@ $$\begin{align*}
                                  \VAR{V}\STAR ) ), 
                  \VAR{F} )
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -546,7 +550,9 @@ $$\begin{align*}
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

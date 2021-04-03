@@ -1,15 +1,18 @@
 {::comment}{% raw %}{:/}
 
+
+----
+
 ### Value indexing
                
 
 
 $$\begin{align*}
   [ \
-  \KEY{Entity} \ & \NAMEREF{value-index} \\
-  \KEY{Funcon} \ & \NAMEREF{initialise-index} \\
-  \KEY{Funcon} \ & \NAMEREF{allocate-index} \\
-  \KEY{Funcon} \ & \NAMEREF{lookup-index}
+  \KEY{Entity} \quad & \NAMEREF{value-index} \\
+  \KEY{Funcon} \quad & \NAMEREF{initialise-index} \\
+  \KEY{Funcon} \quad & \NAMEREF{allocate-index} \\
+  \KEY{Funcon} \quad & \NAMEREF{lookup-index}
   \ ]
 \end{align*}$$
 
@@ -20,28 +23,28 @@ and to allow finding the index of a value.
 
 
 $$\begin{align*}
-  \KEY{Entity} \
+  \KEY{Entity} \quad
   & \langle \_, \NAMEDECL{value-index}(\_ : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{ground-values}\STAR) \rangle \TRANS  \\& 
     \langle \_, \NAME{value-index}(\_ : \NAME{ground-values}\STAR) \rangle
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{initialise-index} 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     &  \langle \NAMEREF{initialise-index}, \NAMEREF{value-index} (  \_ ) \rangle \TRANS 
         \langle \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Null}{null-value}, \NAMEREF{value-index} (   \  ) \rangle
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{allocate-index}(
                        \_ : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{ground-values}) 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Integers}{natural-numbers} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     &  \langle \NAMEREF{allocate-index}
                             (  \VAR{V} : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{ground-values} ), \NAMEREF{value-index} (  \VAR{V}\STAR ) \rangle \TRANS \\&\quad
         \langle \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Sequences}{length}
@@ -51,24 +54,25 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{lookup-index}(
                        \_ : \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Integers}{natural-numbers}) 
     :  \TO \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{ground-values} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     &  \langle \NAMEREF{lookup-index}
                             (  \VAR{N} : \NAMEHYPER{../../../../Funcons-beta/Values/Primitive}{Integers}{natural-numbers} ), \NAMEREF{value-index} (  \VAR{V}\STAR ) \rangle \TRANS \\&\quad
         \langle \NAMEHYPER{../../../../Funcons-beta/Values/Composite}{Sequences}{index}
                   (  \VAR{N}, 
                          \VAR{V}\STAR ), \NAMEREF{value-index} (  \VAR{V}\STAR ) \rangle
 \\
-  \KEY{Assert} \
+  \KEY{Assert} \quad
   &  \NAMEREF{lookup-index}
                   (  \NAMEREF{allocate-index}
                           (  \VAR{V} : \NAMEHYPER{../../../../Funcons-beta/Values}{Value-Types}{ground-values} ) ) \TRANS 
       \VAR{V}
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

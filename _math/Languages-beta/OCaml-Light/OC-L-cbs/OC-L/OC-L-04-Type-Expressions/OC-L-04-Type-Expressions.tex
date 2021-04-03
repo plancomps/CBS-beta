@@ -1,15 +1,32 @@
 \documentclass[fleqn]{article}
-\usepackage{parskip}
 \usepackage{cbs-latex}
-\geometry{a4paper, textwidth=150mm, top=10mm, bottom=20mm}
-\title{Languages-beta: OC-L-04-Type-Expressions}
-\author{\href{https://plancomps.github.io}{The PLanCompS Project}}
-\date{%
-  \href{https://github.com/plancomps/CBS-beta/blob/master/Languages-beta/OC-L/OC-L-04-Type-Expressions/OC-L-04-Type-Expressions.cbs}{\texttt{Languages-beta/OC-L/OC-L-04-Type-Expressions/OC-L-04-Type-Expressions.cbs}}%
-  \footnote{%
+% Hide link box borders:
+\hypersetup{filebordercolor=White}
+% Suppress hyperref warnings about removing math shift tokens:
+\makeatletter\pdfstringdefDisableCommands{\let\HyPsd@CatcodeWarning\@gobble}\makeatother
+% Outline:
+\setcounter{secnumdepth}{0}
+\setcounter{tocdepth}{4}
+\renewcommand{\contentsname}{\vspace{-6ex}}
+\let\Contentsline\contentsline
+\renewcommand\contentsline[3]{\Contentsline{#1}{#2}{}}
+\makeatletter\renewcommand\@dotsep{200}\makeatother
+% Page format:
+\usepackage{geometry}
+\geometry{a4paper, textwidth=150mm, top=10mm, bottom=20mm, footnotesep=10mm plus 10mm}
+\usepackage{parskip}
+% Global sans serif fonts:
+\usepackage{cmbright}
+% Meta-information:
+\title{Languages-beta: OC-L-04-Type-Expressions \footnote{
     Suggestions for improvement: \href{mailto:plancomps@gmail.com}{\texttt{plancomps@gmail.com}}.\\
-    Issues: \url{https://github.com/plancomps/CBS-beta/issues}.
-}}
+    Reports of issues: \url{https://github.com/plancomps/CBS-beta/issues}.}}
+\author{\href{https://plancomps.github.io}{The PLanCompS Project}}
+\date{
+  \href{https://github.com/plancomps/CBS-beta/blob/master/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-04-Type-Expressions/OC-L-04-Type-Expressions.cbs}{\texttt{OC-L-04-Type-Expressions.cbs}} ~\textbar~
+  \href{/CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-04-Type-Expressions/index.html}{PLAIN} ~\textbar~
+  \href{/CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-04-Type-Expressions/index.html}{PRETTY}          
+}
 \begin{document}
 \maketitle
 \input{OC-L-04-Type-Expressions.part.tex}

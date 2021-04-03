@@ -1,13 +1,16 @@
 {::comment}{% raw %}{:/}
 
-$$\KEY{Language} \STRING{IMP}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{IMP}$$
 
 # $$\SECT{1}$$ Arithmetic expressions
            
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{AExp} : \SYN{aexp}
       \ ::= \ & \
       \SYNREF{num} \\
@@ -18,11 +21,11 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{eval-arith} \LEFTPHRASE \ \_ : \SYNREF{aexp} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integers} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval-arith} \LEFTPHRASE \
                             \VARREF{N} \
                           \RIGHTPHRASE  = 
@@ -30,7 +33,7 @@ $$\begin{align*}
                             \VAR{N} \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval-arith} \LEFTPHRASE \
                             \VARREF{I} \
                           \RIGHTPHRASE  = 
@@ -40,7 +43,7 @@ $$\begin{align*}
                                             \VAR{I} \
                                           \RIGHTPHRASE  ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval-arith} \LEFTPHRASE \
                             \VARREF{AExp}\SUB{1} \ \LEX{{+}} \ \VARREF{AExp}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -52,7 +55,7 @@ $$\begin{align*}
                                     \VAR{AExp}\SUB{2} \
                                   \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval-arith} \LEFTPHRASE \
                             \VARREF{AExp}\SUB{1} \ \LEX{{/}} \ \VARREF{AExp}\SUB{2} \
                           \RIGHTPHRASE  = \\&\quad
@@ -65,7 +68,7 @@ $$\begin{align*}
                                       \VAR{AExp}\SUB{2} \
                                     \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{eval-arith} \LEFTPHRASE \
                             \LEX{{(}} \ \VARREF{AExp} \ \LEX{{)}} \
                           \RIGHTPHRASE  = 
@@ -75,30 +78,30 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{N} : \SYN{num}
       \ ::= \ & \
       \LEX{{-}}\QUERY \_ \SYNREF{decimal}
 \\
-  \KEY{Lexis} \
+  \KEY{Lexis} \quad
     \VARDECL{D} : \SYN{decimal}
       \ ::= \ & \
-      \LEFTGROUP \LEX{0} - \LEX{9} \RIGHTGROUP\PLUS
+      \LEFTGROUP \LEX{0} {-} \LEX{9} \RIGHTGROUP\PLUS
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{int-val} \LEFTPHRASE \ \_ : \SYNREF{num} \ \RIGHTPHRASE  
     : \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integers} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{int-val} \LEFTPHRASE \
                             \VARREF{D} \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{decimal-natural}
         (  \textsf{\textquotedblleft}\VAR{D}\textsf{\textquotedblright} )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{int-val} \LEFTPHRASE \
                             \LEX{{-}} \ \VARREF{D} \
                           \RIGHTPHRASE  = 
@@ -109,18 +112,18 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Lexis} \
+  \KEY{Lexis} \quad
     \VARDECL{I} : \SYN{id}
       \ ::= \ & \
-      \LEFTGROUP \LEX{A} - \LEX{Z} \mid \LEX{a} - \LEX{z} \RIGHTGROUP\PLUS
+      \LEFTGROUP \LEX{A} {-} \LEX{Z} \mid \LEX{a} {-} \LEX{z} \RIGHTGROUP\PLUS
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{id} \LEFTPHRASE \ \_ : \SYNREF{id} \ \RIGHTPHRASE  
     : \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{ids} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{id} \LEFTPHRASE \
                             \VARREF{I} \
                           \RIGHTPHRASE  = 
@@ -128,11 +131,12 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Lexis} \
+  \KEY{Lexis} \quad
      \SYN{keyword}
       \ ::= \ & \
       \LEX{else} \mid \LEX{false} \mid \LEX{if} \mid \LEX{true} \mid \LEX{while}
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

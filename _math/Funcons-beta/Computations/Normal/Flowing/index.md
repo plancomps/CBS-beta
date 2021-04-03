@@ -10,12 +10,15 @@ ancestor: Funcons-beta
 {::comment}{% raw %}{:/}
 <details open markdown="block">
   <summary>
-    Outline
+    OUTLINE
   </summary>
   {: .text-delta }
 - TOC
 {:toc}
 </details>
+
+
+----
 
 ### Flowing
                
@@ -23,33 +26,33 @@ ancestor: Funcons-beta
 
 $$\begin{align*}
   [ \
-  \KEY{Funcon} \ & \NAMEREF{left-to-right} \\
-  \KEY{Alias} \ & \NAMEREF{l-to-r} \\
-  \KEY{Funcon} \ & \NAMEREF{right-to-left} \\
-  \KEY{Alias} \ & \NAMEREF{r-to-l} \\
-  \KEY{Funcon} \ & \NAMEREF{sequential} \\
-  \KEY{Alias} \ & \NAMEREF{seq} \\
-  \KEY{Funcon} \ & \NAMEREF{effect} \\
-  \KEY{Funcon} \ & \NAMEREF{choice} \\
-  \KEY{Funcon} \ & \NAMEREF{if-true-else} \\
-  \KEY{Alias} \ & \NAMEREF{if-else} \\
-  \KEY{Funcon} \ & \NAMEREF{while-true} \\
-  \KEY{Alias} \ & \NAMEREF{while} \\
-  \KEY{Funcon} \ & \NAMEREF{do-while-true} \\
-  \KEY{Alias} \ & \NAMEREF{do-while} \\
-  \KEY{Funcon} \ & \NAMEREF{interleave} \\
-  \KEY{Datatype} \ & \NAMEREF{yielding} \\
-  \KEY{Funcon} \ & \NAMEREF{signal} \\
-  \KEY{Funcon} \ & \NAMEREF{yielded} \\
-  \KEY{Funcon} \ & \NAMEREF{yield} \\
-  \KEY{Funcon} \ & \NAMEREF{yield-on-value} \\
-  \KEY{Funcon} \ & \NAMEREF{yield-on-abrupt} \\
-  \KEY{Funcon} \ & \NAMEREF{atomic}
+  \KEY{Funcon} \quad & \NAMEREF{left-to-right} \\
+  \KEY{Alias} \quad & \NAMEREF{l-to-r} \\
+  \KEY{Funcon} \quad & \NAMEREF{right-to-left} \\
+  \KEY{Alias} \quad & \NAMEREF{r-to-l} \\
+  \KEY{Funcon} \quad & \NAMEREF{sequential} \\
+  \KEY{Alias} \quad & \NAMEREF{seq} \\
+  \KEY{Funcon} \quad & \NAMEREF{effect} \\
+  \KEY{Funcon} \quad & \NAMEREF{choice} \\
+  \KEY{Funcon} \quad & \NAMEREF{if-true-else} \\
+  \KEY{Alias} \quad & \NAMEREF{if-else} \\
+  \KEY{Funcon} \quad & \NAMEREF{while-true} \\
+  \KEY{Alias} \quad & \NAMEREF{while} \\
+  \KEY{Funcon} \quad & \NAMEREF{do-while-true} \\
+  \KEY{Alias} \quad & \NAMEREF{do-while} \\
+  \KEY{Funcon} \quad & \NAMEREF{interleave} \\
+  \KEY{Datatype} \quad & \NAMEREF{yielding} \\
+  \KEY{Funcon} \quad & \NAMEREF{signal} \\
+  \KEY{Funcon} \quad & \NAMEREF{yielded} \\
+  \KEY{Funcon} \quad & \NAMEREF{yield} \\
+  \KEY{Funcon} \quad & \NAMEREF{yield-on-value} \\
+  \KEY{Funcon} \quad & \NAMEREF{yield-on-abrupt} \\
+  \KEY{Funcon} \quad & \NAMEREF{atomic}
   \ ]
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Meta-variables} \
+  \KEY{Meta-variables} \quad
   & \VAR{T} <: \NAMEHYPER{../../../Values}{Value-Types}{values} \qquad \\& \VAR{T}\STAR <: \NAMEHYPER{../../../Values}{Value-Types}{values}\STAR
 \end{align*}$$
 
@@ -58,12 +61,12 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{left-to-right}(
                        \_ : (   \TO (  \VAR{T} )\STAR )\STAR) 
     :  \TO (  \VAR{T} )\STAR 
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{l-to-r} = \NAMEREF{left-to-right}
 \end{align*}$$
 
@@ -93,7 +96,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{Y} \TRANS 
           \VAR{Y}'
@@ -108,19 +111,19 @@ $$\begin{align*}
                    \VAR{Z}\STAR )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{left-to-right}
         (  \VAR{V}\STAR : (  \VAR{T} )\STAR ) \leadsto 
         \VAR{V}\STAR
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{right-to-left}(
                        \_ : (   \TO (  \VAR{T} )\STAR )\STAR) 
     :  \TO (  \VAR{T} )\STAR 
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{r-to-l} = \NAMEREF{right-to-left}
 \end{align*}$$
 
@@ -139,7 +142,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{Y} \TRANS 
           \VAR{Y}'
@@ -154,19 +157,19 @@ $$\begin{align*}
                    \VAR{V}\STAR )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{right-to-left}
         (  \VAR{V}\STAR : (  \VAR{T} )\STAR ) \leadsto 
         \VAR{V}\STAR
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{sequential}(
                        \_ : (   \TO \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} )\STAR, \_ :  \TO \VAR{T}) 
     :  \TO \VAR{T} 
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{seq} = \NAMEREF{sequential}
 \end{align*}$$
 
@@ -183,7 +186,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{X} \TRANS 
           \VAR{X}'
@@ -196,21 +199,21 @@ $$\begin{align*}
                    \VAR{Y}\PLUS )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{sequential}
         (  \NAMEHYPER{../../../Values/Primitive}{Null}{null-value}, 
                \VAR{Y}\PLUS ) \leadsto 
         \NAMEREF{sequential}
           (  \VAR{Y}\PLUS )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{sequential}
         (  \VAR{Y} ) \leadsto 
         \VAR{Y}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{effect}(
                        \VAR{V}\STAR : \VAR{T}\STAR) 
     :  \TO \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} \\&\quad
@@ -228,7 +231,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{choice}(
                        \_ : (   \TO \VAR{T} )\PLUS) 
     :  \TO \VAR{T} 
@@ -242,7 +245,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{choice}
         (  \VAR{X}\STAR, 
                \VAR{Y}, 
@@ -251,12 +254,12 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{if-true-else}(
                        \_ : \NAMEHYPER{../../../Values/Primitive}{Booleans}{booleans}, \_ :  \TO \VAR{T}, \_ :  \TO \VAR{T}) 
     :  \TO \VAR{T} 
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{if-else} = \NAMEREF{if-true-else}
 \end{align*}$$
 
@@ -269,14 +272,14 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{if-true-else}
         (  \NAMEHYPER{../../../Values/Primitive}{Booleans}{true}, 
                \VAR{X}, 
                \VAR{Y} ) \leadsto 
         \VAR{X}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{if-true-else}
         (  \NAMEHYPER{../../../Values/Primitive}{Booleans}{false}, 
                \VAR{X}, 
@@ -289,7 +292,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{while-true}(
                        \VAR{B} :  \TO \NAMEHYPER{../../../Values/Primitive}{Booleans}{booleans}, \VAR{X} :  \TO \NAMEHYPER{../../../Values/Primitive}{Null}{null-type}) 
     :  \TO \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} \\&\quad
@@ -302,7 +305,7 @@ $$\begin{align*}
                                       \VAR{X} ) ), 
                       \NAMEHYPER{../../../Values/Primitive}{Null}{null-value} )
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{while} = \NAMEREF{while-true}
 \end{align*}$$
 
@@ -324,7 +327,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{do-while-true}(
                        \VAR{X} :  \TO \NAMEHYPER{../../../Values/Primitive}{Null}{null-type}, \VAR{B} :  \TO \NAMEHYPER{../../../Values/Primitive}{Booleans}{booleans}) 
     :  \TO \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} \\&\quad
@@ -337,7 +340,7 @@ $$\begin{align*}
                                       \VAR{B} ), 
                               \NAMEHYPER{../../../Values/Primitive}{Null}{null-value} ) )
 \\
-  \KEY{Alias} \
+  \KEY{Alias} \quad
   & \NAMEDECL{do-while} = \NAMEREF{do-while-true}
 \end{align*}$$
 
@@ -356,7 +359,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{interleave}(
                        \_ : \VAR{T}\STAR) 
     :  \TO \VAR{T}\STAR 
@@ -376,20 +379,20 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{interleave}
         (  \VAR{V}\STAR : \VAR{T}\STAR ) \leadsto 
         \VAR{V}\STAR
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Datatype} \ 
+  \KEY{Datatype} \quad 
   \NAMEDECL{yielding} 
   \ ::= \ & \NAMEDECL{signal}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Entity} \
+  \KEY{Entity} \quad
   & \_ \xrightarrow{\NAMEDECL{yielded}(\_ : \NAMEREF{yielding}\QUERY)} \_
 \end{align*}$$
 
@@ -403,7 +406,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{yield} 
     :  \TO \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} \\&\quad
     \leadsto \NAMEREF{yield-on-value}
@@ -411,7 +414,7 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{yield-on-value}(
                        \_ : \VAR{T}) 
     :  \TO \VAR{T} 
@@ -424,14 +427,14 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     &  \NAMEREF{yield-on-value}
                     (  \VAR{V} : \VAR{T} ) \xrightarrow{\NAMEREF{yielded}(  \NAMEREF{signal} )}_{} 
         \VAR{V}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{yield-on-abrupt}(
                        \_ :  \TO \VAR{T}) 
     :  \TO \VAR{T} 
@@ -444,7 +447,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{X} \xrightarrow{\NAMEHYPER{../../Abnormal}{Abrupting}{abrupt}(  \VAR{V} : \VAR{T} ), \NAMEREF{yielded}(  \_\QUERY )}_{} 
           \VAR{X}'
@@ -455,7 +458,7 @@ $$\begin{align*}
             (  \VAR{X}' )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{X} \xrightarrow{\NAMEHYPER{../../Abnormal}{Abrupting}{abrupt}(   \  )}_{} 
           \VAR{X}'
@@ -466,14 +469,14 @@ $$\begin{align*}
             (  \VAR{X}' )
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{yield-on-abrupt}
         (  \VAR{V} : \VAR{T} ) \leadsto 
         \VAR{V}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Funcon} \
+  \KEY{Funcon} \quad
   & \NAMEDECL{atomic}(
                        \_ :  \TO \VAR{T}) 
     :  \TO \VAR{T} 
@@ -488,7 +491,7 @@ $$\begin{align*}
 
 
 $$\begin{align*}
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{X} \xrightarrow{\NAMEREF{yielded}(   \  )}_{1} 
           \VAR{X}'\\&
@@ -501,7 +504,7 @@ $$\begin{align*}
           \VAR{X}''
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{X} \xrightarrow{\NAMEREF{yielded}(   \  )}_{} 
           \VAR{V}\\&
@@ -512,12 +515,12 @@ $$\begin{align*}
           \VAR{V}
       }
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \NAMEREF{atomic}
         (  \VAR{V} : \VAR{T} ) \leadsto 
         \VAR{V}
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \RULE{
       &  \VAR{X} \xrightarrow{\NAMEREF{yielded}(  \NAMEREF{signal} )}_{} 
           \VAR{X}'
@@ -528,6 +531,7 @@ $$\begin{align*}
             (  \VAR{X}' )
       }
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -552,7 +556,9 @@ $$\begin{align*}
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

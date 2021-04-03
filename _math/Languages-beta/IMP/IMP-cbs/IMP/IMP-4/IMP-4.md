@@ -1,24 +1,27 @@
 {::comment}{% raw %}{:/}
 
-$$\KEY{Language} \STRING{IMP}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{IMP}$$
 
 # $$\SECT{4}$$ Programs and variable declarations
            
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{Pgm} : \SYN{pgm}
       \ ::= \ & \
       \LEX{int} \ \SYNREF{idlist} \ \LEX{{;}} \ \SYNHYPER{../.}{IMP-3}{stmt}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{run} \LEFTPHRASE \ \_ : \SYNREF{pgm} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{run} \LEFTPHRASE \
                             \LEX{int} \ \VARREF{IL} \ \LEX{{;}} \ \VARHYPER{../.}{IMP-3}{Stmt} \
                           \RIGHTPHRASE  = \\&\quad
@@ -33,18 +36,18 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{IL} : \SYN{idlist}
       \ ::= \ & \
       \SYNHYPER{../.}{IMP-1}{id} \ \LEFTGROUP \LEX{{,}} \ \SYNREF{idlist} \RIGHTGROUP\QUERY
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{declare-int-vars} \LEFTPHRASE \ \_ : \SYNREF{idlist} \ \RIGHTPHRASE  
     : (   \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{environments} )\PLUS 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{declare-int-vars} \LEFTPHRASE \
                             \VARHYPER{../.}{IMP-1}{I} \
                           \RIGHTPHRASE  = \\&\quad
@@ -56,7 +59,7 @@ $$\begin{align*}
                 (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integers}, 
                        0 ) )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{declare-int-vars} \LEFTPHRASE \
                             \VARHYPER{../.}{IMP-1}{I} \ \LEX{{,}} \ \VARREF{IL} \
                           \RIGHTPHRASE  = \\&\quad
@@ -67,6 +70,7 @@ $$\begin{align*}
                             \VAR{IL} \
                           \RIGHTPHRASE 
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta

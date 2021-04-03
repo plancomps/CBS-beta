@@ -8,6 +8,7 @@ ancestor: Funcons-beta
 [Funcons-beta] : [Vectors.cbs] \| [PRETTY] \| [PDF]
 
 
+----
 ### Vectors
 
 <div class="highlighter-rouge"><pre class="highlight"><code>[

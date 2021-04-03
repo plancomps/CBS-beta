@@ -1,0 +1,7 @@
+\contentsline {subsubsection}{Characters}{2}{section*.2}%
+\contentsline {paragraph}{Unicode character set}{2}{section*.3}%
+\contentsline {paragraph}{Unicode basic multilingual plane}{3}{section*.4}%
+\contentsline {paragraph}{ISO Latin-1 character set}{3}{section*.5}%
+\contentsline {paragraph}{ASCII character set}{3}{section*.6}%
+\contentsline {paragraph}{Character point encodings}{4}{section*.7}%
+\contentsline {paragraph}{Control characters}{4}{section*.8}%

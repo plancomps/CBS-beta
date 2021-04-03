@@ -1,6 +1,9 @@
 {::comment}{% raw %}{:/}
 
-$$\KEY{Language} \STRING{OCaml Light}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{OCaml Light}$$
 
 # $$\SECT{10}$$ Module types
            
@@ -8,6 +11,7 @@ $$\KEY{Language} \STRING{OCaml Light}$$
 
 
   Omitted
+
 
 
 

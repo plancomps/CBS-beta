@@ -9,14 +9,17 @@ ancestor: Languages-beta
 
 {::comment}{% raw %}{:/}
 
-$$\KEY{Language} \STRING{OCaml Light}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{OCaml Light}$$
 
 # $$\SECT{11}$$ Module implementations
            
 
 
 $$\begin{align*}
-  \KEY{Syntax} \
+  \KEY{Syntax} \quad
     \VARDECL{UI} : \SYN{unit-implementation}
       \ ::= \ & \
       \LEFTGROUP \SYNREF{semicolon-pair}\STAR \ \SYNREF{module-items} \ \SYNREF{semicolon-pair}\STAR \RIGHTGROUP\QUERY
@@ -38,25 +41,25 @@ $$\begin{align*}
       \ \mid \ & \ \SYNHYPER{../.}{OC-L-08-Type-and-Exception-Definitions}{type-definition} \\
       \ \mid \ & \ \SYNHYPER{../.}{OC-L-08-Type-and-Exception-Definitions}{exception-definition}
 \\
-  \KEY{Lexis} \
+  \KEY{Lexis} \quad
     \VARDECL{SCP} : \SYN{semicolon-pair}
       \ ::= \ & \
       \LEX{{;}{;}}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{interpret} \LEFTPHRASE \ \VARREF{UI} : \SYNREF{unit-implementation} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{environments} 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{interpret} \LEFTPHRASE \
                              \
                           \RIGHTPHRASE  = 
       \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Maps}{map}
         (   \  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{interpret} \LEFTPHRASE \
                             \VARREF{SCP}\SUB{1}\STAR \ \VARREF{MIS} \ \VARREF{SCP}\SUB{2}\STAR \
                           \RIGHTPHRASE  = \\&\quad
@@ -78,11 +81,11 @@ $$\begin{align*}
 \end{align*}$$
 
 $$\begin{align*}
-  \KEY{Semantics} \
+  \KEY{Semantics} \quad
   & \SEMDECL{define-or-evaluate-items} \LEFTPHRASE \ \_ : \SYNREF{module-items} \ \RIGHTPHRASE  
     : (   \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{envs} )\PLUS 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{define-or-evaluate-items} \LEFTPHRASE \
                             \VARHYPER{../.}{OC-L-07-Expressions}{LD} \
                           \RIGHTPHRASE  = \\&\quad
@@ -91,7 +94,7 @@ $$\begin{align*}
                               \VAR{LD} \
                             \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{define-or-evaluate-items} \LEFTPHRASE \
                             \VARHYPER{../.}{OC-L-08-Type-and-Exception-Definitions}{TDS} \
                           \RIGHTPHRASE  = 
@@ -99,7 +102,7 @@ $$\begin{align*}
                             \VAR{TDS} \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{define-or-evaluate-items} \LEFTPHRASE \
                             \VARHYPER{../.}{OC-L-08-Type-and-Exception-Definitions}{ED} \
                           \RIGHTPHRASE  = 
@@ -107,7 +110,7 @@ $$\begin{align*}
                             \VAR{ED} \
                           \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{define-or-evaluate-items} \LEFTPHRASE \
                             \VARHYPER{../.}{OC-L-07-Expressions}{E} \
                           \RIGHTPHRASE  = \\&\quad
@@ -116,7 +119,7 @@ $$\begin{align*}
                               \VAR{E} \
                             \RIGHTPHRASE 
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{define-or-evaluate-items} \LEFTPHRASE \
                             \VARREF{MIS} \ \VARREF{SCP}\STAR \ \VARREF{D} \
                           \RIGHTPHRASE  = \\&\quad
@@ -127,7 +130,7 @@ $$\begin{align*}
                                   \VAR{D} \
                                 \RIGHTPHRASE  )
 \\
-  \KEY{Rule} \
+  \KEY{Rule} \quad
     & \SEMREF{define-or-evaluate-items} \LEFTPHRASE \
                             \VARREF{MIS} \ \VARREF{SCP}\STAR \ \VARREF{SCP} \ \VARHYPER{../.}{OC-L-07-Expressions}{E} \
                           \RIGHTPHRASE  = \\&\quad
@@ -138,6 +141,7 @@ $$\begin{align*}
                                   \VAR{E} \
                                 \RIGHTPHRASE  )
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
@@ -162,7 +166,9 @@ $$\begin{align*}
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
 
+
 ____
+
 From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
 
 [CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues

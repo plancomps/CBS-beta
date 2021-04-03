@@ -16,6 +16,7 @@ ancestor: Funcons-beta
 {:toc}
 </details>
 
+----
 ### Characters
 
 <div class="highlighter-rouge"><pre class="highlight"><code>[

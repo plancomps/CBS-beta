@@ -1,6 +1,9 @@
 {::comment}{% raw %}{:/}
 
-$$\KEY{Language} \STRING{MiniJava}$$
+
+----
+
+$$\KEY{Language} \quad \STRING{MiniJava}$$
 
 
 
@@ -133,11 +136,11 @@ $$\begin{align*}
   \\
    \SYNHYPER{../.}{MiniJava-Dynamics}{letter}
     \ ::= \ & \
-    \LEX{a} - \LEX{z} \mid \LEX{A} - \LEX{Z}
+    \LEX{a} {-} \LEX{z} \mid \LEX{A} {-} \LEX{Z}
   \\
    \SYNHYPER{../.}{MiniJava-Dynamics}{digit}
     \ ::= \ & \
-    \LEX{0} - \LEX{9}
+    \LEX{0} {-} \LEX{9}
 \end{align*}$$
 
 
@@ -189,7 +192,7 @@ $$\begin{align*}
 >    $$\SHADE{\SYNHYPER{../.}{MiniJava-Dynamics}{identifier}}$$ = $$\SHADE{\SYNREF{reserved-id}}$$ {reject}
 
 $$\begin{align*}
-  \KEY{Lexis} \
+  \KEY{Lexis} \quad
      \SYN{reserved-id}
       \ ::= \ & \
       \LEX{String} \\
@@ -213,6 +216,7 @@ $$\begin{align*}
       \ \mid \ & \ \LEX{true} \\
       \ \mid \ & \ \LEX{void}
 \end{align*}$$
+
 
 
 [Funcons-beta]: /CBS-beta/math/Funcons-beta
