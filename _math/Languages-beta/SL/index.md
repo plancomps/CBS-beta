@@ -1,1 +1,7 @@
-../../../_link/Languages-beta/SL/index.md
+---
+title: SL
+parent: Languages-beta
+nav_order: 4
+---
+
+{% include common/Languages-beta/SL/index.md %}

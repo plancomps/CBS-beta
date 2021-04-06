@@ -45,6 +45,7 @@ exclude:
   - "Languages-beta/"
   - "Unstable-Funcons-beta/"
   - "Unstable-Languages-beta/"
+  - "_link/"
 
 include:
   - "Funcons-beta/index.md"

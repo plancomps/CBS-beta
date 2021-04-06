@@ -1,1 +1,6 @@
-../../_link/Languages-beta/index.md
+---
+title: Languages-beta
+nav_order: 3
+---
+
+{% include common/Languages-beta/index.md %}

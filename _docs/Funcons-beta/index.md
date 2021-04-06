@@ -1,1 +1,6 @@
-../../_link/Funcons-beta/index.md
+---
+title: Funcons-beta
+nav_order: 2
+---
+
+{% include common/Funcons-beta/index.md %}
