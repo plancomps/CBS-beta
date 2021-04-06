@@ -1,7 +1,8 @@
 ---
-title: Computations
-parent: Funcons-beta
-nav_order: 1
+title: Abnormal
+parent: Computations
+ancestor: Funcons-beta
+nav_order: 3
 ---
 
-{% include common/Funcons-beta/Computations/index.md %}
+{% include common/Funcons-beta/Computations/Abnormal/index.md %}

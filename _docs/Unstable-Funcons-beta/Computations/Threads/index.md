@@ -1,6 +1,8 @@
 ---
-title: Unstable-Funcons-beta
-nav_order: 4
+title: Threads
+parent: Computations
+ancestor: Unstable-Funcons-beta
+nav_order: 1
 ---
 
-{% include common/Unstable-Funcons-beta/index.md %}
+{% include common/Unstable-Funcons-beta/Computations/Threads/index.md %}
