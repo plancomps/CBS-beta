@@ -2,17 +2,7 @@
 title: Abnormal
 parent: Computations
 ancestor: Unstable-Funcons-beta
-nav_order: "3"
+nav_order: 3
 ---
 
-Abnormal computation
-====================
-
-These funcons are potentially of general use, but first defined for use in
-connection with languages that include threads.
-
-- [Postponing]\: adding after-effects to an enclosing term
-
-[Postponing]:     Postponing
-
-[Unstable-Languages-beta]: ../../Unstable-Languages-beta
+{% include common/Unstable-Funcons-beta/Computations/Abnormal/index.md %}
