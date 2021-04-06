@@ -10,6 +10,9 @@ This page lists significant additions and changes to the funcon definitions and
 language specifications included in the CBS beta-release, and to how they are 
 presented on this website.
 
+2021-04-06: [CBS-beta](/CBS-beta/) (experimental math branch)
+* Symlinks replaced by inclusions, for building on GitHub Pages
+
 2021-04-02: [CBS-beta](/CBS-beta/) (experimental math branch)
 * Formatting enhancements:
   - Developed generation of LaTeX from CBS sources
