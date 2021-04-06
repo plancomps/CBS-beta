@@ -36,6 +36,18 @@ Browsing CBS-beta offline
 
 Stop the local server with Control-C when no longer needed.
 
+Color schemes
+-------------
+
+{:.note}
+> When browsing these web pages on GitHub, the color scheme matches the system/browser preference.
+
+To make local browsing independent of the system/browser preference,
+replace `auto_dark_scheme: dark` by `color_scheme: light` or `color_scheme: dark` in `_config.yml`
+and restart `jekyll serve`.
+
+The colors used for CBS highlighting in the `light` and `dark` schemes can be adjusted by editing the SCSS files in `_sass/custom`.
+
 
 [CBS-beta project site on Github]: https://github.com/plancomps/CBS-beta
 
