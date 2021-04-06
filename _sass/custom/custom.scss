@@ -1,62 +1,3 @@
-/* In case of accidental use of TAB: */
-
-pre{
-    tab-size: 4;
-}
-
-// Link wrap
-
-.main-content a {
-    white-space: normal;
-}
-
-/* CBS syntax highlighting: */
-
-/* PLAIN */
-
-i.keyword {
-    color: $grey-dk-000;
-    background-color: inherit;
-}
-
-span.name, span.name a, span.comment span.name a {
-    color: $red-300;
-    background-color: inherit;
-}
-
-span.ent-name, span.ent-name a, span.comment span.ent-name a {
-    color: $grey-dk-300;
-    background-color: inherit;
-}
-
-span.syn-name, span.syn-name a, span.comment span.syn-name a {
-    color: $green-200;
-    background-color: inherit;
-}
-
-i.sem-name, i.sem-name a, span.comment i.sem-name a {
-    color: $blue-200;
-    background-color: inherit;
-}
-
-i.var, i.var a, sub, sup {
-    color: $grey-dk-300;
-    background-color: inherit;
-}
-
-span.sectnumtitle a:link {
-    color: $grey-dk-300;
-    background-color: inherit;
-}
-
-/* PRETTY */
-
-// Potential workaround for KaTeX 0.13.0 bug https://github.com/KaTeX/KaTeX/issues/2815
-
-.katex .vlist-t2 > .vlist-r:nth-child(2) > .vlist {
-	pointer-events: none;
-}
-
 .MathJax, .katex {
   padding: $sp-3;
   margin-top: 0;
@@ -77,14 +18,55 @@ p, li, a, dt, dd, td, th, h1, h2, h3, h4, h5, h6 {
 .MathJax a, .katex a {
   color: $body-text-color;
   background-image: none;
-  white-space: nowrap;
 }
+
+// Potential workaround for KaTeX 0.13.0 bug https://github.com/KaTeX/KaTeX/issues/2815
+
+.katex .vlist-t2 > .vlist-r:nth-child(2) > .vlist {
+  pointer-events: none;
+}
+
+// Links in MathJax
 
 mjx-container[jax="SVG"] > svg a[href] {
   fill: $body-text-color;
   stroke: $body-text-color;
 }
-      
+
+// CBS highlighting
+
+/* PLAIN */
+
+i.keyword {
+    color: Silver;
+}
+
+span.name, span.name a, span.comment span.name a {
+    color: DarkRed;
+}
+
+span.ent-name, span.ent-name a, span.comment span.ent-name a {
+    color: DarkRed;
+}
+
+span.syn-name, span.syn-name a, span.comment span.syn-name a {
+    color: SeaGreen;
+}
+
+i.sem-name, i.sem-name a, span.comment i.sem-name a {
+    color: DarkBlue;
+}
+
+i.var, i.var a, sub, sup {
+    color: $body-text-color;
+}
+
+span.sectnumtitle a:link {
+    color: $body-text-color;
+}
+
+/* PRETTY */
+
 .MathJax, .katex {
   .cbs-Key {
     color: Silver;
@@ -93,7 +75,7 @@ mjx-container[jax="SVG"] > svg a[href] {
     color: DarkRed;
   }
   .cbs-SyntaxName {
-    color: MediumSeaGreen;
+    color: SeaGreen;
   }
   .cbs-SemanticsName {
     color: DarkBlue;
@@ -104,47 +86,4 @@ mjx-container[jax="SVG"] > svg a[href] {
   .cbs-SectionNumber {
     color: $body-text-color;
   }
-}
-
-/* Customised tables for Funcons-Reuse: */
-
-table.cbs-reuse {
-  table-layout: fixed;
-  width: 100%;
-}
-// Highlighting table rows:
-table.cbs-reuse tbody tr:hover td {
-  background-color: $grey-lt-200;
-}
-// Kind:
-table.cbs-reuse thead th:nth-child(1) {
-  width: 11%;
-}
-// Name:
-table.cbs-reuse thead th:nth-child(2) {
-  width: 33%;
-}
-// Alias:
-table.cbs-reuse thead th:nth-child(3) {
-  width: 21%;
-}
-// IMP:
-table.cbs-reuse thead th:nth-child(4) {
-  width: 7%;
-}
-// SMP:
-table.cbs-reuse thead th:nth-child(5) {
-  width: 7%;
-}
-// MiniJ:
-table.cbs-reuse thead th:nth-child(6) {
-  width: 8%;
-}
-// SL:
-table.cbs-reuse thead th:nth-child(7) {
-  width: 5%;
-}
-// OC-L:
-table.cbs-reuse thead th:nth-child(8) {
-  width: 8%;
 }

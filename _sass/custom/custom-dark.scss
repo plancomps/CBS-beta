@@ -1,0 +1,59 @@
+
+.search-input {
+  color: $body-text-color;
+}
+
+// CBS highlighting
+
+/* PLAIN */
+
+i.keyword {
+    color: Gray;
+}
+
+span.name, span.name a, span.comment span.name a {
+    color: Violet;
+}
+
+span.ent-name, span.ent-name a, span.comment span.ent-name a {
+    color: Violet;
+}
+
+span.syn-name, span.syn-name a, span.comment span.syn-name a {
+    color: MediumSeaGreen;
+}
+
+i.sem-name, i.sem-name a, span.comment i.sem-name a {
+    color: MediumPurple;
+}
+
+i.var, i.var a, sub, sup {
+    color: $body-text-color;
+}
+
+span.sectnumtitle a:link {
+    color: $body-text-color;
+}
+
+/* PRETTY */
+
+.MathJax, .katex {
+  .cbs-Key {
+    color: Gray;
+  }
+  .cbs-Name {
+    color: Violet;
+  }
+  .cbs-SyntaxName {
+    color: MediumSeaGreen;
+  }
+  .cbs-SemanticsName {
+    color: MediumPurple;
+  }
+  .cbs-PartVariable {
+    color: $body-text-color;
+  }
+  .cbs-SectionNumber {
+    color: $body-text-color;
+  }
+}

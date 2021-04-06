@@ -1,0 +1,9 @@
+@import "./custom/custom";
+
+{% if include.color_scheme == "dark" %}
+@import "./custom/custom-dark";
+{% elsif include.color_scheme == "auto-dark" %}
+@media (prefers-color-scheme: dark) {
+  @import "./custom/custom-dark";
+}
+{% endif %}
