@@ -1,5 +1,0 @@
-\contentsline {subsubsection}{Flowing}{1}{section*.2}%
-\contentsline {paragraph}{Sequencing}{2}{section*.3}%
-\contentsline {paragraph}{Choosing}{2}{section*.4}%
-\contentsline {paragraph}{Iterating}{3}{section*.5}%
-\contentsline {paragraph}{Interleaving}{3}{section*.6}%

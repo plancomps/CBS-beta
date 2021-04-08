@@ -1,3 +1,0 @@
-\contentsline {subsubsection}{Interacting}{1}{section*.2}%
-\contentsline {paragraph}{Output}{1}{section*.3}%
-\contentsline {paragraph}{Input}{1}{section*.4}%

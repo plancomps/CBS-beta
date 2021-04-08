@@ -1,4 +1,0 @@
-\contentsline {section}{$\leavevmode {\color {SectionNumber}\text {\bf 1}}$ Lexemes}{1}{section*.2}%
-\contentsline {subsection}{Identifiers}{1}{section*.3}%
-\contentsline {subsection}{Numerals}{1}{section*.4}%
-\contentsline {subsection}{Strings}{1}{section*.5}%

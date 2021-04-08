@@ -1,5 +1,0 @@
-\contentsline {subsubsection}{Binding}{1}{section*.2}%
-\contentsline {paragraph}{Environments}{2}{section*.3}%
-\contentsline {paragraph}{Current bindings}{2}{section*.4}%
-\contentsline {paragraph}{Scope}{3}{section*.5}%
-\contentsline {paragraph}{Recurse}{4}{section*.6}%

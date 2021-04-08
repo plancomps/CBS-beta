@@ -1,6 +1,0 @@
-\contentsline {subsubsection}{Integers}{2}{section*.2}%
-\contentsline {paragraph}{Subtypes of integers}{3}{section*.3}%
-\contentsline {paragraph}{Natural numbers}{3}{section*.4}%
-\contentsline {paragraph}{Arithmetic}{3}{section*.5}%
-\contentsline {paragraph}{Comparison}{4}{section*.6}%
-\contentsline {paragraph}{Conversion}{4}{section*.7}%

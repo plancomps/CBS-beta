@@ -1,4 +1,0 @@
-\contentsline {subsubsection}{Giving}{1}{section*.2}%
-\contentsline {paragraph}{Mapping}{2}{section*.3}%
-\contentsline {paragraph}{Filtering}{3}{section*.4}%
-\contentsline {paragraph}{Folding}{3}{section*.5}%

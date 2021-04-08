@@ -1,3 +1,0 @@
-\contentsline {section}{$\leavevmode {\color {SectionNumber}\text {\bf 8}}$ Type and exception definitions}{1}{section*.2}%
-\contentsline {subsection}{Type definitions}{2}{section*.3}%
-\contentsline {subsection}{Exception definitions}{2}{section*.4}%

@@ -1,7 +1,0 @@
-\contentsline {section}{SL-specific funcons}{1}{section*.2}%
-\contentsline {section}{Abbreviations}{2}{section*.3}%
-\contentsline {section}{Further funcons}{2}{section*.4}%
-\contentsline {subsection}{Binding}{2}{section*.5}%
-\contentsline {subsection}{Local variables}{2}{section*.6}%
-\contentsline {subsection}{Global bindings}{3}{section*.7}%
-\contentsline {subsection}{Composite input and output}{3}{section*.8}%

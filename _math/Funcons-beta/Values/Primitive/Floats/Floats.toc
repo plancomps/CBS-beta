@@ -1,6 +1,0 @@
-\contentsline {subsubsection}{Floats}{2}{section*.2}%
-\contentsline {paragraph}{Conversions}{3}{section*.3}%
-\contentsline {paragraph}{Comparison}{4}{section*.4}%
-\contentsline {paragraph}{Arithmetic}{4}{section*.5}%
-\contentsline {paragraph}{Rounding}{5}{section*.6}%
-\contentsline {paragraph}{Miscellaneous}{5}{section*.7}%

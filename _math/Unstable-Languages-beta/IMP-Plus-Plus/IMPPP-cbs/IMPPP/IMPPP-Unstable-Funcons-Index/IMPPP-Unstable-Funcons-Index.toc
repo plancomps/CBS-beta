@@ -1,8 +1,0 @@
-\contentsline {section}{Computations}{1}{section*.2}%
-\contentsline {subsection}{Normal computation}{1}{section*.3}%
-\contentsline {subsubsection}{Value indexing}{1}{section*.4}%
-\contentsline {subsection}{Threads}{1}{section*.5}%
-\contentsline {subsubsection}{Multithreading}{1}{section*.6}%
-\contentsline {paragraph}{Activation}{1}{section*.7}%
-\contentsline {paragraph}{Execution}{1}{section*.8}%
-\contentsline {paragraph}{Termination}{1}{section*.9}%

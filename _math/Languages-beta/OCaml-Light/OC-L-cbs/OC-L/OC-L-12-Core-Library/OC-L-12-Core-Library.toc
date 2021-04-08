@@ -1,7 +1,0 @@
-\contentsline {section}{$\leavevmode {\color {SectionNumber}\text {\bf 12}}$ Core library}{1}{section*.2}%
-\contentsline {subsection}{Abbreviations}{1}{section*.3}%
-\contentsline {subsection}{Library}{2}{section*.4}%
-\contentsline {subsection}{Language-specific funcons}{4}{section*.5}%
-\contentsline {subsubsection}{Exception values}{4}{section*.6}%
-\contentsline {subsubsection}{Structural equality}{4}{section*.7}%
-\contentsline {subsubsection}{Console display}{6}{section*.8}%

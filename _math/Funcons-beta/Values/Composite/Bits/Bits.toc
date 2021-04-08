@@ -1,3 +1,0 @@
-\contentsline {subsubsection}{Bits and bit vectors}{1}{section*.2}%
-\contentsline {paragraph}{Bits}{1}{section*.3}%
-\contentsline {paragraph}{Bit vectors}{2}{section*.4}%

@@ -1,4 +1,0 @@
-\contentsline {section}{$\leavevmode {\color {SectionNumber}\text {\bf 3}}$ Names}{1}{section*.2}%
-\contentsline {subsection}{Naming objects}{1}{section*.3}%
-\contentsline {subsubsection}{Infix operator precedence}{2}{section*.4}%
-\contentsline {subsection}{Referring to named objects}{2}{section*.5}%
