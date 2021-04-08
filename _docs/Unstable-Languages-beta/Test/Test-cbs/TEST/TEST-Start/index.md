@@ -38,7 +38,7 @@ The apostrophe and the backslash have to be escaped in terminal symbols.
   "CBS SOURCE WEB PAGE"
 [PRETTY]: /CBS-beta/math/Unstable-Languages-beta/Test/TEST-cbs/TEST/TEST-Start
   "CBS-KATEX WEB PAGE"
-[PDF]: /CBS-beta/math/Unstable-Languages-beta/Test/TEST-cbs/TEST/TEST-Start/TEST-Start.pdf
+[PDF]: https://github.com/plancomps/CBS-beta/blob/master/Unstable-Languages-beta/Test/TEST-cbs/TEST/TEST-Start/TEST-Start.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

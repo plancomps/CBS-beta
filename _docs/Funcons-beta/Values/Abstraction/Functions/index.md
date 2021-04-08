@@ -128,7 +128,7 @@ ancestor: Funcons-beta
   "CBS SOURCE WEB PAGE"
 [PRETTY]: /CBS-beta/math/Funcons-beta/Values/Abstraction/Functions
   "CBS-KATEX WEB PAGE"
-[PDF]: /CBS-beta/math/Funcons-beta/Values/Abstraction/Functions/Functions.pdf
+[PDF]: https://github.com/plancomps/CBS-beta/blob/master/Funcons-beta/Values/Abstraction/Functions/Functions.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

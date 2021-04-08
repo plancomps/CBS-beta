@@ -1427,7 +1427,7 @@ the details of how it affects the result of $$\SHADE{\NAMEREF{update-thread-step
   "CBS SOURCE WEB PAGE"
  [PRETTY]: /CBS-beta/math/Unstable-Funcons-beta/Computations/Threads/Multithreading
   "CBS-KATEX WEB PAGE"
-[PDF]: /CBS-beta/math/Unstable-Funcons-beta/Computations/Threads/Multithreading/Multithreading.pdf
+[PDF]: https://github.com/plancomps/CBS-beta/blob/master/Unstable-Funcons-beta/Computations/Threads/Multithreading/Multithreading.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

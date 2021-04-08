@@ -1,0 +1,98 @@
+% {% raw %}
+
+
+\begin{center}
+\rule{3in}{0.4pt}
+\end{center}
+
+\begin{displaymath}
+\KEY{Language} \quad \STRING{SL}
+\end{displaymath}
+
+\section{$\SECT{A}$ Disambiguation}\hypertarget{secta-disambiguation}{}\label{secta-disambiguation}
+
+Specification of disambiguation for parsing currently requires direct use of
+  the corresponding SDF3 notation in comments, along with embedded productions
+  in CBS notation. The well-formedness of the SDF3 notation is not checked.
+  A future version of CBS is to include appropriate constructs for specifying
+  disambiguation.
+
+$\KEY{Syntax SDF}$
+
+\begin{quote}
+context-free syntax\newline
+   \newline
+   $\SHADE{\quad\SYNHYPER{../.}{SL-2-Expressions}{expr}  \ ::= \  \  \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{+}} \ \SYNHYPER{../.}{SL-2-Expressions}{expr}}$          \{left\}\newline
+   $\SHADE{\quad\SYNHYPER{../.}{SL-2-Expressions}{expr}  \ ::= \  \  \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{/}} \ \SYNHYPER{../.}{SL-2-Expressions}{expr}}$          \{left\}\newline
+   $\SHADE{\quad\SYNHYPER{../.}{SL-2-Expressions}{expr}  \ ::= \  \  \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{*}} \ \SYNHYPER{../.}{SL-2-Expressions}{expr}}$          \{left\}\newline
+   $\SHADE{\quad\SYNHYPER{../.}{SL-2-Expressions}{expr}  \ ::= \  \  \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{-}} \ \SYNHYPER{../.}{SL-2-Expressions}{expr}}$          \{left\}\newline
+   $\SHADE{\quad\SYNHYPER{../.}{SL-2-Expressions}{expr}  \ ::= \  \  \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{=}{=}} \ \SYNHYPER{../.}{SL-2-Expressions}{expr}}$         \{non-assoc\}\newline
+   $\SHADE{\quad\SYNHYPER{../.}{SL-2-Expressions}{expr}  \ ::= \  \  \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{<}{=}} \ \SYNHYPER{../.}{SL-2-Expressions}{expr}}$         \{non-assoc\}\newline
+   $\SHADE{\quad\SYNHYPER{../.}{SL-2-Expressions}{expr}  \ ::= \  \  \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{<}} \ \SYNHYPER{../.}{SL-2-Expressions}{expr}}$          \{non-assoc\}\newline
+   $\SHADE{\quad\SYNHYPER{../.}{SL-2-Expressions}{expr}  \ ::= \  \  \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{!}{=}} \ \SYNHYPER{../.}{SL-2-Expressions}{expr}}$         \{non-assoc\}\newline
+   $\SHADE{\quad\SYNHYPER{../.}{SL-2-Expressions}{expr}  \ ::= \  \  \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{>}{=}} \ \SYNHYPER{../.}{SL-2-Expressions}{expr}}$         \{non-assoc\}\newline
+   $\SHADE{\quad\SYNHYPER{../.}{SL-2-Expressions}{expr}  \ ::= \  \  \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{>}} \ \SYNHYPER{../.}{SL-2-Expressions}{expr}}$          \{non-assoc\}\newline
+   $\SHADE{\quad\SYNHYPER{../.}{SL-2-Expressions}{expr}  \ ::= \  \  \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{\AMPERSAND}{\AMPERSAND}} \ \SYNHYPER{../.}{SL-2-Expressions}{expr}}$         \{left\}\newline
+   $\SHADE{\quad\SYNHYPER{../.}{SL-2-Expressions}{expr}  \ ::= \  \  \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{|}{|}} \ \SYNHYPER{../.}{SL-2-Expressions}{expr}}$         \{left\}\newline
+   $\SHADE{\quad\SYNHYPER{../.}{SL-2-Expressions}{expr}  \ ::= \  \  \SYNHYPER{../.}{SL-1-Lexemes}{id} \ \LEX{{=}} \ \SYNHYPER{../.}{SL-2-Expressions}{expr}}$            \{right\}\newline
+   $\SHADE{\quad\SYNHYPER{../.}{SL-2-Expressions}{expr}  \ ::= \  \  \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{.}} \ \SYNHYPER{../.}{SL-1-Lexemes}{id} \ \LEX{{=}} \ \SYNHYPER{../.}{SL-2-Expressions}{expr}}$   \{right\}\newline
+   \newline
+   context-free priorities\newline
+   \newline
+     \{left: \newline
+       $\SHADE{ \SYNHYPER{../.}{SL-2-Expressions}{expr}  \ ::= \  \  \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{.}} \ \SYNHYPER{../.}{SL-1-Lexemes}{id} \ \LEX{{(}} \ \SYNHYPER{../.}{SL-2-Expressions}{expr-list}\QUERY \ \LEX{{)}}}$  \newline
+     \}\newline
+     \textgreater{} \newline
+     \{right: \newline
+       $\SHADE{ \SYNHYPER{../.}{SL-2-Expressions}{expr}  \ ::= \  \  \LEX{{!}} \ \SYNHYPER{../.}{SL-2-Expressions}{expr}}$\newline
+     \}\newline
+     \textgreater{} \newline
+     \{left: \newline
+       $\SHADE{ \SYNHYPER{../.}{SL-2-Expressions}{expr}  \ ::= \  \  \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{*}} \ \SYNHYPER{../.}{SL-2-Expressions}{expr}}$\newline
+       $\SHADE{ \SYNHYPER{../.}{SL-2-Expressions}{expr}  \ ::= \  \  \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{\AMPERSAND}{\AMPERSAND}} \ \SYNHYPER{../.}{SL-2-Expressions}{expr}}$\newline
+     \}\newline
+     \textgreater{} \newline
+     \{non-assoc: \newline
+       $\SHADE{ \SYNHYPER{../.}{SL-2-Expressions}{expr}  \ ::= \  \  \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{=}{=}} \ \SYNHYPER{../.}{SL-2-Expressions}{expr}}$\newline
+       $\SHADE{ \SYNHYPER{../.}{SL-2-Expressions}{expr}  \ ::= \  \  \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{<}{=}} \ \SYNHYPER{../.}{SL-2-Expressions}{expr}}$\newline
+       $\SHADE{ \SYNHYPER{../.}{SL-2-Expressions}{expr}  \ ::= \  \  \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{<}} \ \SYNHYPER{../.}{SL-2-Expressions}{expr}}$\newline
+       $\SHADE{ \SYNHYPER{../.}{SL-2-Expressions}{expr}  \ ::= \  \  \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{!}{=}} \ \SYNHYPER{../.}{SL-2-Expressions}{expr}}$\newline
+       $\SHADE{ \SYNHYPER{../.}{SL-2-Expressions}{expr}  \ ::= \  \  \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{>}{=}} \ \SYNHYPER{../.}{SL-2-Expressions}{expr}}$\newline
+       $\SHADE{ \SYNHYPER{../.}{SL-2-Expressions}{expr}  \ ::= \  \  \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{>}} \ \SYNHYPER{../.}{SL-2-Expressions}{expr}}$\newline
+     \}\newline
+     \textgreater{} \newline
+     \{left: \newline
+       $\SHADE{ \SYNHYPER{../.}{SL-2-Expressions}{expr}  \ ::= \  \  \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{+}} \ \SYNHYPER{../.}{SL-2-Expressions}{expr}}$\newline
+       $\SHADE{ \SYNHYPER{../.}{SL-2-Expressions}{expr}  \ ::= \  \  \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{-}} \ \SYNHYPER{../.}{SL-2-Expressions}{expr}}$\newline
+       $\SHADE{ \SYNHYPER{../.}{SL-2-Expressions}{expr}  \ ::= \  \  \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{|}{|}} \ \SYNHYPER{../.}{SL-2-Expressions}{expr}}$\newline
+     \}\newline
+     \textgreater{} \newline
+     \{right: \newline
+       $\SHADE{ \SYNHYPER{../.}{SL-2-Expressions}{expr}  \ ::= \  \  \SYNHYPER{../.}{SL-1-Lexemes}{id} \ \LEX{{=}} \ \SYNHYPER{../.}{SL-2-Expressions}{expr}}$\newline
+       $\SHADE{ \SYNHYPER{../.}{SL-2-Expressions}{expr}  \ ::= \  \  \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{.}} \ \SYNHYPER{../.}{SL-1-Lexemes}{id} \ \LEX{{=}} \ \SYNHYPER{../.}{SL-2-Expressions}{expr}}$\newline
+     \}
+\end{quote}
+
+$\KEY{Lexis SDF}$
+
+\begin{quote}
+lexical syntax\newline
+   $\SHADE{\SYNHYPER{../.}{SL-1-Lexemes}{id}}$ = ``function'' \{reject\}\newline
+   $\SHADE{\SYNHYPER{../.}{SL-1-Lexemes}{id}}$ = ``true''     \{reject\}\newline
+   $\SHADE{\SYNHYPER{../.}{SL-1-Lexemes}{id}}$ = ``false''    \{reject\}\newline
+   $\SHADE{\SYNHYPER{../.}{SL-1-Lexemes}{id}}$ = ``return''   \{reject\}\newline
+   $\SHADE{\SYNHYPER{../.}{SL-1-Lexemes}{id}}$ = ``break''    \{reject\}\newline
+   $\SHADE{\SYNHYPER{../.}{SL-1-Lexemes}{id}}$ = ``continue'' \{reject\}\newline
+   $\SHADE{\SYNHYPER{../.}{SL-1-Lexemes}{id}}$ = ``while''    \{reject\}\newline
+   $\SHADE{\SYNHYPER{../.}{SL-1-Lexemes}{id}}$ = ``if''       \{reject\}\newline
+   $\SHADE{\SYNHYPER{../.}{SL-1-Lexemes}{id}}$ = ``else''     \{reject\}\newline
+   \newline
+   lexical restrictions\newline
+   // Ensure greedy matching for lexicals\newline
+   $\SHADE{\SYNHYPER{../.}{SL-1-Lexemes}{nat}}$ -/- {[}0-9{]}\newline
+   $\SHADE{\SYNHYPER{../.}{SL-1-Lexemes}{id}}$  -/- {[}a-zA-Z0-9\_{]}
+\end{quote}
+
+% {% endraw %}
+
+

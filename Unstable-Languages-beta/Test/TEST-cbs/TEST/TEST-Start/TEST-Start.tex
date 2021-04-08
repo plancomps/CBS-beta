@@ -1,0 +1,33 @@
+\documentclass[fleqn]{article}
+\usepackage{cbs-latex}
+% Hide link box borders:
+\hypersetup{filebordercolor=White}
+% Suppress hyperref warnings about removing math shift tokens:
+\makeatletter\pdfstringdefDisableCommands{\let\HyPsd@CatcodeWarning\@gobble}\makeatother
+% Outline:
+\setcounter{secnumdepth}{0}
+\setcounter{tocdepth}{4}
+\renewcommand{\contentsname}{\vspace{-6ex}}
+\let\Contentsline\contentsline
+\renewcommand\contentsline[3]{\Contentsline{#1}{#2}{}}
+\makeatletter\renewcommand\@dotsep{200}\makeatother
+% Page format:
+\usepackage{geometry}
+\geometry{a4paper, textwidth=150mm, top=10mm, bottom=20mm, footnotesep=10mm plus 10mm}
+\usepackage{parskip}
+% Global sans serif fonts:
+\usepackage{cmbright}
+% Meta-information:
+\title{Languages-beta: TEST-Start \footnote{
+    Suggestions for improvement: \href{mailto:plancomps@gmail.com}{\texttt{plancomps@gmail.com}}.\\
+    Reports of issues: \url{https://github.com/plancomps/CBS-beta/issues}.}}
+\author{\href{https://plancomps.github.io}{The PLanCompS Project}}
+\date{
+  \href{https://github.com/plancomps/CBS-beta/blob/master/Unstable-Languages-beta/Test/TEST-cbs/TEST/TEST-Start/TEST-Start.cbs}{\texttt{TEST-Start.cbs}} ~\textbar~
+  \href{/CBS-beta/docs/Unstable-Languages-beta/Test/TEST-cbs/TEST/TEST-Start/index.html}{PLAIN} ~\textbar~
+  \href{/CBS-beta/math/Unstable-Languages-beta/Test/TEST-cbs/TEST/TEST-Start/index.html}{PRETTY}          
+}
+\begin{document}
+\maketitle
+\input{TEST-Start.part.tex}
+\end{document}

@@ -465,7 +465,7 @@ $$\begin{align*}
   "CBS SOURCE WEB PAGE"
  [PRETTY]: /CBS-beta/math/Funcons-beta/Values/Primitive/Integers
   "CBS-KATEX WEB PAGE"
-[PDF]: /CBS-beta/math/Funcons-beta/Values/Primitive/Integers/Integers.pdf
+[PDF]: https://github.com/plancomps/CBS-beta/blob/master/Funcons-beta/Values/Primitive/Integers/Integers.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

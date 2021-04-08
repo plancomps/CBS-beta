@@ -107,7 +107,7 @@ ancestor: Funcons-beta
   "CBS SOURCE WEB PAGE"
 [PRETTY]: /CBS-beta/math/Funcons-beta/Values/Composite/Multisets
   "CBS-KATEX WEB PAGE"
-[PDF]: /CBS-beta/math/Funcons-beta/Values/Composite/Multisets/Multisets.pdf
+[PDF]: https://github.com/plancomps/CBS-beta/blob/master/Funcons-beta/Values/Composite/Multisets/Multisets.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

@@ -1,0 +1,215 @@
+% {% raw %}
+
+
+
+    OUTLINE
+  \tableofcontents
+\begin{center}
+\rule{3in}{0.4pt}
+\end{center}
+
+\subsubsection{Bits and bit vectors}\hypertarget{bits-and-bit-vectors}{}\label{bits-and-bit-vectors}
+
+\begin{align*}
+  [ \
+  \KEY{Type} \quad & \NAMEREF{bits} \\
+  \KEY{Datatype} \quad & \NAMEREF{bit-vectors} \\
+  \KEY{Funcon} \quad & \NAMEREF{bit-vector} \\
+  \KEY{Type} \quad & \NAMEREF{bytes} \\
+  \KEY{Alias} \quad & \NAMEREF{octets} \\
+  \KEY{Funcon} \quad & \NAMEREF{bit-vector-not} \\
+  \KEY{Funcon} \quad & \NAMEREF{bit-vector-and} \\
+  \KEY{Funcon} \quad & \NAMEREF{bit-vector-or} \\
+  \KEY{Funcon} \quad & \NAMEREF{bit-vector-xor} \\
+  \KEY{Funcon} \quad & \NAMEREF{bit-vector-shift-left} \\
+  \KEY{Funcon} \quad & \NAMEREF{bit-vector-logical-shift-right} \\
+  \KEY{Funcon} \quad & \NAMEREF{bit-vector-arithmetic-shift-right} \\
+  \KEY{Funcon} \quad & \NAMEREF{integer-to-bit-vector} \\
+  \KEY{Funcon} \quad & \NAMEREF{bit-vector-to-integer} \\
+  \KEY{Funcon} \quad & \NAMEREF{bit-vector-to-natural} \\
+  \KEY{Funcon} \quad & \NAMEREF{unsigned-bit-vector-maximum} \\
+  \KEY{Funcon} \quad & \NAMEREF{signed-bit-vector-maximum} \\
+  \KEY{Funcon} \quad & \NAMEREF{signed-bit-vector-minimum} \\
+  \KEY{Funcon} \quad & \NAMEREF{is-in-signed-bit-vector} \\
+  \KEY{Funcon} \quad & \NAMEREF{is-in-unsigned-bit-vector}
+  \ ]
+\end{align*}
+\paragraph{Bits}\hypertarget{bits}{}\label{bits}
+
+\begin{align*}
+  \KEY{Type} \quad 
+  & \NAMEDECL{bits}  
+    \leadsto \NAMEHYPER{../../Primitive}{Booleans}{booleans}
+\end{align*}
+$\SHADE{\NAMEHYPER{../../Primitive}{Booleans}{false}}$ represents the absence of a bit, $\SHADE{\NAMEHYPER{../../Primitive}{Booleans}{true}}$ its presence.
+
+\paragraph{Bit vectors}\hypertarget{bit-vectors}{}\label{bit-vectors}
+
+\begin{align*}
+  \KEY{Datatype} \quad 
+  \NAMEDECL{bit-vectors}(
+                     \VAR{N} : \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}) 
+  \ ::= \ & \NAMEDECL{bit-vector}(
+                               \_ : \NAMEREF{bits}^{\VAR{N}})
+\end{align*}
+\begin{align*}
+  \KEY{Type} \quad 
+  & \NAMEDECL{bytes}  
+    \leadsto \NAMEREF{bit-vectors}
+               (  8 )
+\\
+  \KEY{Alias} \quad
+  & \NAMEDECL{octets} = \NAMEREF{bytes}
+\end{align*}
+\begin{align*}
+  \KEY{Meta-variables} \quad
+  & \VAR{BT} <: \NAMEREF{bit-vectors}
+                                                     (  \_ )
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{bit-vector-not}(
+                       \_ : \VAR{BT}) 
+    :  \TO \VAR{BT} 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{bit-vector-and}(
+                       \_ : \VAR{BT}, \_ : \VAR{BT}) 
+    :  \TO \VAR{BT} 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{bit-vector-or}(
+                       \_ : \VAR{BT}, \_ : \VAR{BT}) 
+    :  \TO \VAR{BT} 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{bit-vector-xor}(
+                       \_ : \VAR{BT}, \_ : \VAR{BT}) 
+    :  \TO \VAR{BT} 
+\end{align*}
+The above four funcons are the natural extensions of funcons from $\SHADE{\NAMEHYPER{../../Primitive}{Booleans}{booleans}}$
+  to $\SHADE{\NAMEREF{bit-vectors}
+           (  \VAR{N} )}$ of the same length.
+
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{bit-vector-shift-left}(
+                       \_ : \VAR{BT}, \_ : \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}) 
+    : \VAR{BT} 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{bit-vector-logical-shift-right}(
+                       \_ : \VAR{BT}, \_ : \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}) 
+    : \VAR{BT} 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{bit-vector-arithmetic-shift-right}(
+                       \_ : \VAR{BT}, \_ : \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}) 
+    : \VAR{BT} 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{integer-to-bit-vector}(
+                       \_ : \NAMEHYPER{../../Primitive}{Integers}{integers}, \VAR{N} : \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}) 
+    : \NAMEREF{bit-vectors}
+        (  \VAR{N} ) 
+\end{align*}
+$\SHADE{\NAMEREF{integer-to-bit-vector}
+           (  \VAR{M}, 
+                  \VAR{N} )}$ converts an integer $\SHADE{\VAR{M}}$ to a bit-vector of
+  length $\SHADE{\VAR{N}}$, using Two's Complement representation.  If the integer is out of
+  range of the representation, it will wrap around (modulo 2\^{}N).
+
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{bit-vector-to-integer}(
+                       \_ : \VAR{BT}) 
+    :  \TO \NAMEHYPER{../../Primitive}{Integers}{integers} 
+\end{align*}
+$\SHADE{\NAMEREF{bit-vector-to-integer}
+           (  \VAR{B} )}$ interprets a bit-vector $\SHADE{\VAR{BV}}$ as an integer
+  in Two's Complement representation.
+
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{bit-vector-to-natural}(
+                       \_ : \VAR{BT}) 
+    :  \TO \NAMEHYPER{../../Primitive}{Integers}{natural-numbers} 
+\end{align*}
+$\SHADE{\NAMEREF{bit-vector-to-natural}
+           (  \VAR{BV} )}$ interprets a bit-vector $\SHADE{\VAR{BV}}$ as a natural number
+  in unsigned representation.
+
+\begin{align*}
+  \KEY{Funcon} \quad
+  & \NAMEDECL{unsigned-bit-vector-maximum}(
+                       \VAR{N} : \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}) 
+    :  \TO \NAMEHYPER{../../Primitive}{Integers}{natural-numbers} \\&\quad
+    \leadsto \NAMEHYPER{../../Primitive}{Integers}{integer-subtract}
+               (  \NAMEHYPER{../../Primitive}{Integers}{integer-power}
+                       (  2, 
+                              \VAR{N} ), 
+                      1 )
+\end{align*}
+\begin{align*}
+  \KEY{Funcon} \quad
+  & \NAMEDECL{signed-bit-vector-maximum}(
+                       \VAR{N} : \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}) 
+    :  \TO \NAMEHYPER{../../Primitive}{Integers}{integers} \\&\quad
+    \leadsto \NAMEHYPER{../../Primitive}{Integers}{integer-subtract}
+               (  \NAMEHYPER{../../Primitive}{Integers}{integer-power}
+                       (  2, 
+                              \NAMEHYPER{../../Primitive}{Integers}{integer-subtract}
+                               (  \VAR{N}, 
+                                      1 ) ), 
+                      1 )
+\end{align*}
+\begin{align*}
+  \KEY{Funcon} \quad
+  & \NAMEDECL{signed-bit-vector-minimum}(
+                       \VAR{N} : \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}) 
+    :  \TO \NAMEHYPER{../../Primitive}{Integers}{integers} \\&\quad
+    \leadsto \NAMEHYPER{../../Primitive}{Integers}{integer-negate}
+               (  \NAMEHYPER{../../Primitive}{Integers}{integer-power}
+                       (  2, 
+                              \NAMEHYPER{../../Primitive}{Integers}{integer-subtract}
+                               (  \VAR{N}, 
+                                      1 ) ) )
+\end{align*}
+\begin{align*}
+  \KEY{Funcon} \quad
+  & \NAMEDECL{is-in-signed-bit-vector}(
+                       \VAR{M} : \NAMEHYPER{../../Primitive}{Integers}{integers}, \VAR{N} : \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}) 
+    :  \TO \NAMEHYPER{../../Primitive}{Booleans}{booleans} \\&\quad
+    \leadsto \NAMEHYPER{../../Primitive}{Booleans}{and}
+               ( \\&\quad\quad\quad\quad \NAMEHYPER{../../Primitive}{Integers}{integer-is-less-or-equal}
+                       (  \VAR{M}, 
+                              \NAMEREF{signed-bit-vector-maximum}
+                               (  \VAR{N} ) ), \\&\quad\quad\quad\quad
+                      \NAMEHYPER{../../Primitive}{Integers}{integer-is-greater-or-equal}
+                       (  \VAR{M}, 
+                              \NAMEREF{signed-bit-vector-minimum}
+                               (  \VAR{N} ) ) )
+\end{align*}
+\begin{align*}
+  \KEY{Funcon} \quad
+  & \NAMEDECL{is-in-unsigned-bit-vector}(
+                       \VAR{M} : \NAMEHYPER{../../Primitive}{Integers}{integers}, \VAR{N} : \NAMEHYPER{../../Primitive}{Integers}{natural-numbers}) 
+    :  \TO \NAMEHYPER{../../Primitive}{Booleans}{booleans} \\&\quad
+    \leadsto \NAMEHYPER{../../Primitive}{Booleans}{and}
+               ( \\&\quad\quad\quad\quad \NAMEHYPER{../../Primitive}{Integers}{integer-is-less-or-equal}
+                       (  \VAR{M}, 
+                              \NAMEREF{unsigned-bit-vector-maximum}
+                               (  \VAR{N} ) ), \\&\quad\quad\quad\quad
+                      \NAMEHYPER{../../Primitive}{Integers}{integer-is-greater-or-equal}
+                       (  \VAR{M}, 
+                              0 ) )
+\end{align*}
+% {% endraw %}
+
+

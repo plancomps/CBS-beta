@@ -315,7 +315,7 @@ together with funcons that (atomically) inspect and update them accordngly.
   "CBS SOURCE WEB PAGE"
  [PRETTY]: /CBS-beta/math/Unstable-Funcons-beta/Computations/Threads/Synchronising
   "CBS-KATEX WEB PAGE"
-[PDF]: /CBS-beta/math/Unstable-Funcons-beta/Computations/Threads/Synchronising/Synchronising.pdf
+[PDF]: https://github.com/plancomps/CBS-beta/blob/master/Unstable-Funcons-beta/Computations/Threads/Synchronising/Synchronising.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

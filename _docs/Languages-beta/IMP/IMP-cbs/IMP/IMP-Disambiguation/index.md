@@ -43,7 +43,7 @@ context-free syntax
   "CBS SOURCE WEB PAGE"
 [PRETTY]: /CBS-beta/math/Languages-beta/IMP/IMP-cbs/IMP/IMP-Disambiguation
   "CBS-KATEX WEB PAGE"
-[PDF]: /CBS-beta/math/Languages-beta/IMP/IMP-cbs/IMP/IMP-Disambiguation/IMP-Disambiguation.pdf
+[PDF]: https://github.com/plancomps/CBS-beta/blob/master/Languages-beta/IMP/IMP-cbs/IMP/IMP-Disambiguation/IMP-Disambiguation.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

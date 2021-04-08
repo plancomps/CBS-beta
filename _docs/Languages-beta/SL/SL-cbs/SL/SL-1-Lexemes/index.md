@@ -80,7 +80,7 @@ ancestor: Languages-beta
   "CBS SOURCE WEB PAGE"
 [PRETTY]: /CBS-beta/math/Languages-beta/SL/SL-cbs/SL/SL-1-Lexemes
   "CBS-KATEX WEB PAGE"
-[PDF]: /CBS-beta/math/Languages-beta/SL/SL-cbs/SL/SL-1-Lexemes/SL-1-Lexemes.pdf
+[PDF]: https://github.com/plancomps/CBS-beta/blob/master/Languages-beta/SL/SL-cbs/SL/SL-1-Lexemes/SL-1-Lexemes.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

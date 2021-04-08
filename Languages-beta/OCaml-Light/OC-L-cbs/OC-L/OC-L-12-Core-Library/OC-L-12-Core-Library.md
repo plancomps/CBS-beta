@@ -1,0 +1,1311 @@
+{::comment}{% raw %}{:/}
+<details open markdown="block">
+  <summary>
+    OUTLINE
+  </summary>
+  {: .text-delta }
+- TOC
+{:toc}
+</details>
+
+
+----
+
+$$\KEY{Language} \quad \STRING{OCaml Light}$$
+
+# $$\SECT{12}$$ Core library
+           
+
+
+$$\begin{align*}
+  [ \
+  \KEY{Funcon} \quad & \NAMEREF{ocaml-light-core-library} \\
+  \KEY{Funcon} \quad & \NAMEREF{ocaml-light-match-failure} \\
+  \KEY{Funcon} \quad & \NAMEREF{ocaml-light-is-structurally-equal} \\
+  \KEY{Funcon} \quad & \NAMEREF{ocaml-light-to-string} \\
+  \KEY{Funcon} \quad & \NAMEREF{ocaml-light-define-and-display} \\
+  \KEY{Funcon} \quad & \NAMEREF{ocaml-light-evaluate-and-display}
+  \ ]
+\end{align*}$$
+
+$$\begin{align*}
+  \KEY{Meta-variables} \quad
+  & \VAR{R}, \VAR{S}, \VAR{S}\SUB{1}, \VAR{S}\SUB{2}, \VAR{S}\SUB{3}, \VAR{T}, \VAR{U} <: \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} \qquad \\& \VAR{S}\STAR <: \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}\STAR \qquad \\& \VAR{T}\PLUS <: \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}\PLUS
+\end{align*}$$
+
+## Abbreviations
+               
+
+
+
+  The following funcons take computations $$\SHADE{\VAR{X}}$$ and return (curried) functions.
+  $$\SHADE{\VAR{X}}$$ refers to a single function argument as $$\SHADE{\NAMEREF{arg}}$$, or to individual arguments
+  of a curried function of several arguments as $$\SHADE{\NAMEREF{arg-1}}$$, $$\SHADE{\NAMEREF{arg-2}}$$, $$\SHADE{\NAMEREF{arg-3}}$$.
+
+
+$$\begin{align*}
+  \KEY{Auxiliary Funcon} \quad
+  & \NAMEDECL{op-1}(
+                       \VAR{X} : \VAR{S} \TO \VAR{T}) 
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{functions}
+                     (  \VAR{S}, 
+                            \VAR{T} ) \\&\quad
+    \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{function} \ 
+               \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Generic}{abstraction} \ 
+                 \VAR{X}
+\end{align*}$$
+
+$$\begin{align*}
+  \KEY{Auxiliary Funcon} \quad
+  & \NAMEDECL{op-2}(
+                       \VAR{X} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuples}
+                                 (  \VAR{S}\SUB{1}, 
+                                        \VAR{S}\SUB{2} ) \TO \VAR{T}) 
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{functions}
+                     (  \VAR{S}\SUB{1}, 
+                            \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{functions}
+                             (  \VAR{S}\SUB{2}, 
+                                    \VAR{T} ) ) \\&\quad
+    \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{curry} \ 
+               \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{function} \ 
+                 \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Generic}{abstraction} \ 
+                   \VAR{X}
+\end{align*}$$
+
+$$\begin{align*}
+  \KEY{Auxiliary Funcon} \quad
+  & \NAMEDECL{op-3}(
+                       \VAR{X} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuples}
+                                 (  \VAR{S}\SUB{1}, 
+                                        \VAR{S}\SUB{2}, 
+                                        \VAR{S}\SUB{3} ) \TO \VAR{T}) 
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{functions}
+                     (  \VAR{S}\SUB{1}, 
+                            \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{functions}
+                             (  \VAR{S}\SUB{2}, 
+                                    \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{functions}
+                                     (  \VAR{S}\SUB{3}, 
+                                            \VAR{T} ) ) ) \\&\quad
+    \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{function} \ 
+               \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Generic}{abstraction}
+                 ( \\&\quad\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{curry} \ 
+                         \NAMEREF{partial-apply-first}
+                           (  \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{function} \ 
+                                   \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Generic}{abstraction} \ 
+                                     \VAR{X}, 
+                                  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} ) )
+\end{align*}$$
+
+$$\begin{align*}
+  \KEY{Auxiliary Funcon} \quad
+  & \NAMEDECL{partial-apply-first}(
+                       \VAR{F} : \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{functions}
+                                 (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuples}
+                                         (  \VAR{R}, 
+                                                \VAR{S}, 
+                                                \VAR{T}\PLUS ), 
+                                        \VAR{U} ), \VAR{V} : \VAR{R}) \\&\quad
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{functions}
+                     (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuples}
+                             (  \VAR{S}, 
+                                    \VAR{T}\PLUS ), 
+                            \VAR{U} ) \\&\quad
+    \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{function} \ 
+               \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Generic}{abstraction}
+                 (  \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{apply}
+                         (  \VAR{F}, 
+                                \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
+                                 (  \VAR{V}, 
+                                        \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple-elements} \ 
+                                         \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} ) ) )
+\end{align*}$$
+
+
+  $$\SHADE{\NAMEREF{partial-apply-first}
+           (  \VAR{F}, 
+                  \VAR{V} )}$$ provides $$\SHADE{\VAR{V}}$$ as the first argument to a function
+  expecting a tuple of 3 or more arguments, returning a function expecting
+  a tuple of one fewer arguments.
+
+
+$$\begin{align*}
+  \KEY{Auxiliary Funcon} \quad
+  & \NAMEDECL{arg} 
+    : \VAR{T} \TO \VAR{T} \\&\quad
+    \leadsto \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given}
+\end{align*}$$
+
+$$\begin{align*}
+  \KEY{Auxiliary Funcon} \quad
+  & \NAMEDECL{arg-1} 
+    : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuples}
+        (  \VAR{S}\SUB{1}, 
+               \VAR{S}\STAR ) \TO \VAR{S}\SUB{1} \\&\quad
+    \leadsto \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{checked} \ 
+               \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sequences}{index}
+                 (  1, 
+                        \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple-elements} \ 
+                         \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} )
+\end{align*}$$
+
+$$\begin{align*}
+  \KEY{Auxiliary Funcon} \quad
+  & \NAMEDECL{arg-2} 
+    : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuples}
+        (  \VAR{S}\SUB{1}, 
+               \VAR{S}\SUB{2}, 
+               \VAR{S}\STAR ) \TO \VAR{S}\SUB{2} \\&\quad
+    \leadsto \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{checked} \ 
+               \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sequences}{index}
+                 (  2, 
+                        \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple-elements} \ 
+                         \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} )
+\end{align*}$$
+
+$$\begin{align*}
+  \KEY{Auxiliary Funcon} \quad
+  & \NAMEDECL{arg-3} 
+    : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuples}
+        (  \VAR{S}\SUB{1}, 
+               \VAR{S}\SUB{2}, 
+               \VAR{S}\SUB{3}, 
+               \VAR{S}\STAR ) \TO \VAR{S}\SUB{3} \\&\quad
+    \leadsto \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{checked} \ 
+               \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sequences}{index}
+                 (  3, 
+                        \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple-elements} \ 
+                         \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} )
+\end{align*}$$
+
+## Library
+               
+
+
+
+  The $$\SHADE{\NAMEREF{ocaml-light-core-library}}$$ environment maps most of the names defined
+  in OCaml Module Pervasives (the initially opened module) to funcon terms.
+  See <https://caml.inria.fr/pub/docs/manual-ocaml-4.06/core.html> for further
+  details and comments.
+  
+  It also maps some other names defined in the OCaml Standard Libarary to
+  funcon terms (to support tests using them without opening those modules).
+
+
+$$\begin{align*}
+  \KEY{Funcon} \quad
+  & \NAMEDECL{ocaml-light-core-library} 
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{environments} \\&\quad
+    \leadsto \{ \STRING{Match{\UNDERSCORE}failure} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Variants}{variant}
+                            (  \STRING{Match{\UNDERSCORE}failure}, 
+                                   \NAMEREF{arg} ) ), \\&\quad\quad\quad\quad
+                \STRING{Invalid{\UNDERSCORE}argument} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Variants}{variant}
+                            (  \STRING{Invalid{\UNDERSCORE}argument}, 
+                                   \NAMEREF{arg} ) ), \\&\quad\quad\quad\quad
+                \STRING{Division{\UNDERSCORE}by{\UNDERSCORE}zero} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Variants}{variant}
+                    (  \STRING{Division{\UNDERSCORE}by{\UNDERSCORE}zero}, 
+                           \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
+                            (   \  ) ), \\&\quad\quad\quad\quad
+                \STRING{raise} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Throwing}{throw}
+                            (  \NAMEREF{arg} ) ), \\&\quad\quad\quad\quad
+                \STRING{{(}{=}{)}} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-2}
+                    (  \NAMEREF{ocaml-light-is-structurally-equal}
+                            (  \NAMEREF{arg-1}, 
+                                   \NAMEREF{arg-2} ) ), \\&\quad\quad\quad\quad
+                \STRING{{(}{<}{>}{)}} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-2}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{not}
+                            (  \NAMEREF{ocaml-light-is-structurally-equal}
+                                    (  \NAMEREF{arg-1}, 
+                                           \NAMEREF{arg-2} ) ) ), \\&\quad\quad\quad\quad
+                \STRING{{(}{<}{)}} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-2}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-less}
+                            (  \NAMEREF{arg-1}, 
+                                   \NAMEREF{arg-2} ) ), \\&\quad\quad\quad\quad
+                \STRING{{(}{>}{)}} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-2}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-greater}
+                            (  \NAMEREF{arg-1}, 
+                                   \NAMEREF{arg-2} ) ), \\&\quad\quad\quad\quad
+                \STRING{{(}{<}{=}{)}} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-2}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-less-or-equal}
+                            (  \NAMEREF{arg-1}, 
+                                   \NAMEREF{arg-2} ) ), \\&\quad\quad\quad\quad
+                \STRING{{(}{>}{=}{)}} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-2}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-greater-or-equal}
+                            (  \NAMEREF{arg-1}, 
+                                   \NAMEREF{arg-2} ) ), \\&\quad\quad\quad\quad
+                \STRING{min} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-2}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{if-true-else}
+                            (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-less}
+                                    (  \NAMEREF{arg-1}, 
+                                           \NAMEREF{arg-2} ), 
+                                   \NAMEREF{arg-1}, 
+                                   \NAMEREF{arg-2} ) ), \\&\quad\quad\quad\quad
+                \STRING{max} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-2}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{if-true-else}
+                            (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-greater}
+                                    (  \NAMEREF{arg-1}, 
+                                           \NAMEREF{arg-2} ), 
+                                   \NAMEREF{arg-1}, 
+                                   \NAMEREF{arg-2} ) ), \\&\quad\quad\quad\quad
+                \STRING{{(}{=}{=}{)}} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-2}
+                    ( \\&\quad\quad\quad\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{if-true-else}
+                            ( \\&\quad\quad\quad\quad\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{and}
+                                    (  \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-in-type}
+                                            (  \NAMEREF{arg-1}, 
+                                                   \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{ground-values} ), 
+                                           \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-in-type}
+                                            (  \NAMEREF{arg-2}, 
+                                                   \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{ground-values} ) ), \\&\quad\quad\quad\quad\quad\quad\quad
+                                   \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-equal}
+                                    (  \NAMEREF{arg-1}, 
+                                           \NAMEREF{arg-2} ), \\&\quad\quad\quad\quad\quad\quad\quad
+                                   \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Throwing}{throw}
+                                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Variants}{variant}
+                                            (  \STRING{Invalid{\UNDERSCORE}argument}, 
+                                                   \STRING{equal{:}~functional~value} ) ) ) ), \\&\quad\quad\quad\quad
+                \STRING{{(}{!}{=}{)}} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-2}
+                    ( \\&\quad\quad\quad\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{if-true-else}
+                            ( \\&\quad\quad\quad\quad\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{and}
+                                    (  \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-in-type}
+                                            (  \NAMEREF{arg-1}, 
+                                                   \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{ground-values} ), 
+                                           \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-in-type}
+                                            (  \NAMEREF{arg-2}, 
+                                                   \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{ground-values} ) ), \\&\quad\quad\quad\quad\quad\quad\quad
+                                   \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{not} \ 
+                                    \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-equal}
+                                      (  \NAMEREF{arg-1}, 
+                                             \NAMEREF{arg-2} ), \\&\quad\quad\quad\quad\quad\quad\quad
+                                   \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Throwing}{throw}
+                                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Variants}{variant}
+                                            (  \STRING{Invalid{\UNDERSCORE}argument}, 
+                                                   \STRING{equal{:}~functional~value} ) ) ) ), \\&\quad\quad\quad\quad
+                \STRING{not} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{not}
+                            (  \NAMEREF{arg} ) ), \\&\quad\quad\quad\quad
+                \STRING{{(}{\TILDE}{-}{)}} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-integer} \ 
+                            \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-negate}
+                              (  \NAMEREF{arg} ) ), \\&\quad\quad\quad\quad
+                \STRING{{(}{\TILDE}{+}{)}} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-integer} \ 
+                            \NAMEREF{arg} ), \\&\quad\quad\quad\quad
+                \STRING{succ} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-integer} \ 
+                            \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-add}
+                              (  \NAMEREF{arg}, 
+                                     1 ) ), \\&\quad\quad\quad\quad
+                \STRING{pred} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-integer} \ 
+                            \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-subtract}
+                              (  \NAMEREF{arg}, 
+                                     1 ) ), \\&\quad\quad\quad\quad
+                \STRING{{(}{+}{)}} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-2}
+                    (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-integer} \ 
+                            \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-add}
+                              (  \NAMEREF{arg-1}, 
+                                     \NAMEREF{arg-2} ) ), \\&\quad\quad\quad\quad
+                \STRING{{(}{-}{)}} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-2}
+                    (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-integer} \ 
+                            \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-subtract}
+                              (  \NAMEREF{arg-1}, 
+                                     \NAMEREF{arg-2} ) ), \\&\quad\quad\quad\quad
+                \STRING{{(}{*}{)}} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-2}
+                    (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-integer} \ 
+                            \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-multiply}
+                              (  \NAMEREF{arg-1}, 
+                                     \NAMEREF{arg-2} ) ), \\&\quad\quad\quad\quad
+                \STRING{{(}{/}{)}} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-2}
+                    ( \\&\quad\quad\quad\quad\quad\quad \NAMEHYPER{../.}{OC-L-02-Values}{implemented-integer} \ 
+                            \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{if-true-else}
+                              ( \\&\quad\quad\quad\quad\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-equal}
+                                      (  \NAMEREF{arg-2}, 
+                                             0 ), \\&\quad\quad\quad\quad\quad\quad\quad
+                                     \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Throwing}{throw}
+                                      (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Variants}{variant}
+                                              (  \STRING{Division{\UNDERSCORE}by{\UNDERSCORE}zero}, 
+                                                     \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
+                                                      (   \  ) ) ), \\&\quad\quad\quad\quad\quad\quad\quad
+                                     \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{checked} \ 
+                                      \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-divide}
+                                        (  \NAMEREF{arg-1}, 
+                                               \NAMEREF{arg-2} ) ) ), \\&\quad\quad\quad\quad
+                \STRING{{(}mod{)}} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-2}
+                    (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-integer} \ 
+                            \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{checked} \ 
+                              \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-modulo}
+                                (  \NAMEREF{arg-1}, 
+                                       \NAMEREF{arg-2} ) ), \\&\quad\quad\quad\quad
+                \STRING{abs} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-integer} \ 
+                            \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integer-absolute-value}
+                              (  \NAMEREF{arg} ) ), \\&\quad\quad\quad\quad
+                \STRING{max{\UNDERSCORE}int} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Bits}{signed-bit-vector-maximum}
+                            (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-integers-width} ) ), \\&\quad\quad\quad\quad
+                \STRING{min{\UNDERSCORE}int} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Bits}{signed-bit-vector-minimum}
+                            (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-integers-width} ) ), \\&\quad\quad\quad\quad
+                \STRING{{(}land{)}} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-2}
+                    ( \\&\quad\quad\quad\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Bits}{bit-vector-to-integer} \\&\quad\quad\quad\quad\quad\quad\quad 
+                            \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Bits}{bit-vector-and}
+                              ( \\&\quad\quad\quad\quad\quad\quad\quad\quad \NAMEHYPER{../.}{OC-L-02-Values}{implemented-bit-vector} \ 
+                                      \NAMEREF{arg-1}, \\&\quad\quad\quad\quad\quad\quad\quad\quad
+                                     \NAMEHYPER{../.}{OC-L-02-Values}{implemented-bit-vector} \ 
+                                      \NAMEREF{arg-2} ) ), \\&\quad\quad\quad\quad
+                \STRING{{(}lor{)}} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-2}
+                    ( \\&\quad\quad\quad\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Bits}{bit-vector-to-integer} \\&\quad\quad\quad\quad\quad\quad\quad 
+                            \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Bits}{bit-vector-or}
+                              ( \\&\quad\quad\quad\quad\quad\quad\quad\quad \NAMEHYPER{../.}{OC-L-02-Values}{implemented-bit-vector} \ 
+                                      \NAMEREF{arg-1}, \\&\quad\quad\quad\quad\quad\quad\quad\quad
+                                     \NAMEHYPER{../.}{OC-L-02-Values}{implemented-bit-vector} \ 
+                                      \NAMEREF{arg-2} ) ), \\&\quad\quad\quad\quad
+                \STRING{{(}lxor{)}} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-2}
+                    ( \\&\quad\quad\quad\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Bits}{bit-vector-to-integer} \\&\quad\quad\quad\quad\quad\quad\quad 
+                            \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Bits}{bit-vector-xor}
+                              ( \\&\quad\quad\quad\quad\quad\quad\quad\quad \NAMEHYPER{../.}{OC-L-02-Values}{implemented-bit-vector} \ 
+                                      \NAMEREF{arg-1}, \\&\quad\quad\quad\quad\quad\quad\quad\quad
+                                     \NAMEHYPER{../.}{OC-L-02-Values}{implemented-bit-vector} \ 
+                                      \NAMEREF{arg-2} ) ), \\&\quad\quad\quad\quad
+                \STRING{lnot} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    ( \\&\quad\quad\quad\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Bits}{bit-vector-to-integer} \\&\quad\quad\quad\quad\quad\quad\quad 
+                            \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Bits}{bit-vector-not}
+                              (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-bit-vector} \ 
+                                      \NAMEREF{arg} ) ), \\&\quad\quad\quad\quad
+                \STRING{{(}lsl{)}} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-2}
+                    ( \\&\quad\quad\quad\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Bits}{bit-vector-to-integer} \\&\quad\quad\quad\quad\quad\quad\quad 
+                            \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Bits}{bit-vector-shift-left}
+                              (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-bit-vector} \ 
+                                      \NAMEREF{arg-1}, 
+                                     \NAMEREF{arg-2} ) ), \\&\quad\quad\quad\quad
+                \STRING{{(}lsr{)}} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-2}
+                    ( \\&\quad\quad\quad\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Bits}{bit-vector-to-integer} \\&\quad\quad\quad\quad\quad\quad\quad 
+                            \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Bits}{bit-vector-logical-shift-right}
+                              (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-bit-vector} \ 
+                                      \NAMEREF{arg-1}, 
+                                     \NAMEREF{arg-2} ) ), \\&\quad\quad\quad\quad
+                \STRING{{(}asr{)}} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-2}
+                    ( \\&\quad\quad\quad\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Bits}{bit-vector-to-integer} \\&\quad\quad\quad\quad\quad\quad\quad 
+                            \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Bits}{bit-vector-arithmetic-shift-right}
+                              (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-bit-vector} \ 
+                                      \NAMEREF{arg-1}, 
+                                     \NAMEREF{arg-2} ) ), \\&\quad\quad\quad\quad
+                \STRING{{(}{\TILDE}{-}{.}{)}} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{float-negate}
+                            (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats-format}, 
+                                   \NAMEREF{arg} ) ), \\&\quad\quad\quad\quad
+                \STRING{{(}{\TILDE}{+}{.}{)}} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEREF{arg} ), \\&\quad\quad\quad\quad
+                \STRING{{(}{+}{.}{)}} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-2}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{float-add}
+                            (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats-format}, 
+                                   \NAMEREF{arg-1}, 
+                                   \NAMEREF{arg-2} ) ), \\&\quad\quad\quad\quad
+                \STRING{{(}{-}{.}{)}} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-2}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{float-subtract}
+                            (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats-format}, 
+                                   \NAMEREF{arg-1}, 
+                                   \NAMEREF{arg-2} ) ), \\&\quad\quad\quad\quad
+                \STRING{{(}{*}{.}{)}} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-2}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{float-multiply}
+                            (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats-format}, 
+                                   \NAMEREF{arg-1}, 
+                                   \NAMEREF{arg-2} ) ), \\&\quad\quad\quad\quad
+                \STRING{{(}{/}{.}{)}} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-2}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{float-divide}
+                            (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats-format}, 
+                                   \NAMEREF{arg-1}, 
+                                   \NAMEREF{arg-2} ) ), \\&\quad\quad\quad\quad
+                \STRING{{(}{*}{*}{)}} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-2}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{float-float-power}
+                            (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats-format}, 
+                                   \NAMEREF{arg-1}, 
+                                   \NAMEREF{arg-2} ) ), \\&\quad\quad\quad\quad
+                \STRING{sqrt} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{float-sqrt}
+                            (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats-format}, 
+                                   \NAMEREF{arg} ) ), \\&\quad\quad\quad\quad
+                \STRING{exp} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{float-exp}
+                            (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats-format}, 
+                                   \NAMEREF{arg} ) ), \\&\quad\quad\quad\quad
+                \STRING{log} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{float-log}
+                            (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats-format}, 
+                                   \NAMEREF{arg} ) ), \\&\quad\quad\quad\quad
+                \STRING{log10} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{float-log10}
+                            (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats-format}, 
+                                   \NAMEREF{arg} ) ), \\&\quad\quad\quad\quad
+                \STRING{cos} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{float-cos}
+                            (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats-format}, 
+                                   \NAMEREF{arg} ) ), \\&\quad\quad\quad\quad
+                \STRING{sin} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{float-sin}
+                            (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats-format}, 
+                                   \NAMEREF{arg} ) ), \\&\quad\quad\quad\quad
+                \STRING{tan} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{float-tan}
+                            (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats-format}, 
+                                   \NAMEREF{arg} ) ), \\&\quad\quad\quad\quad
+                \STRING{acos} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{float-acos}
+                            (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats-format}, 
+                                   \NAMEREF{arg} ) ), \\&\quad\quad\quad\quad
+                \STRING{asin} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{float-asin}
+                            (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats-format}, 
+                                   \NAMEREF{arg} ) ), \\&\quad\quad\quad\quad
+                \STRING{atan} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{float-atan}
+                            (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats-format}, 
+                                   \NAMEREF{arg} ) ), \\&\quad\quad\quad\quad
+                \STRING{atan2} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-2}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{float-atan2}
+                            (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats-format}, 
+                                   \NAMEREF{arg-1}, 
+                                   \NAMEREF{arg-2} ) ), \\&\quad\quad\quad\quad
+                \STRING{cosh} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{float-cosh}
+                            (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats-format}, 
+                                   \NAMEREF{arg} ) ), \\&\quad\quad\quad\quad
+                \STRING{sinh} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{float-sinh}
+                            (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats-format}, 
+                                   \NAMEREF{arg} ) ), \\&\quad\quad\quad\quad
+                \STRING{tanh} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{float-tanh}
+                            (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats-format}, 
+                                   \NAMEREF{arg} ) ), \\&\quad\quad\quad\quad
+                \STRING{ceil} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-integer} \ 
+                            \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{float-ceiling}
+                              (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats-format}, 
+                                     \NAMEREF{arg} ) ), \\&\quad\quad\quad\quad
+                \STRING{floor} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-integer} \ 
+                            \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{float-floor}
+                              (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats-format}, 
+                                     \NAMEREF{arg} ) ), \\&\quad\quad\quad\quad
+                \STRING{abs{\UNDERSCORE}float} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{float-absolute-value}
+                            (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats-format}, 
+                                   \NAMEREF{arg} ) ), \\&\quad\quad\quad\quad
+                \STRING{mod{\UNDERSCORE}float} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-2}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{float-remainder}
+                            (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats-format}, 
+                                   \NAMEREF{arg-1}, 
+                                   \NAMEREF{arg-2} ) ), \\&\quad\quad\quad\quad
+                \STRING{int{\UNDERSCORE}of{\UNDERSCORE}float} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-integer} \ 
+                            \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Floats}{float-truncate}
+                              (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats-format}, 
+                                     \NAMEREF{arg} ) ), \\&\quad\quad\quad\quad
+                \STRING{float{\UNDERSCORE}of{\UNDERSCORE}int} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-float-literal}
+                            (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{string-append}
+                                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{to-string}
+                                            (  \NAMEREF{arg} ), 
+                                           \STRING{{.}0} ) ) ), \\&\quad\quad\quad\quad
+                \STRING{{(}{\CARET}{)}} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-2}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{string-append}
+                            (  \NAMEREF{arg-1}, 
+                                   \NAMEREF{arg-2} ) ), \\&\quad\quad\quad\quad
+                \STRING{string{\UNDERSCORE}of{\UNDERSCORE}int} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{to-string}
+                            (  \NAMEREF{arg} ) ), \\&\quad\quad\quad\quad
+                \STRING{int{\UNDERSCORE}of{\UNDERSCORE}string} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-integer} \ 
+                            \NAMEHYPER{../.}{OC-L-02-Values}{implemented-integer-literal}
+                              (  \NAMEREF{arg} ) ), \\&\quad\quad\quad\quad
+                \STRING{string{\UNDERSCORE}of{\UNDERSCORE}float} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{to-string}
+                            (  \NAMEREF{arg} ) ), \\&\quad\quad\quad\quad
+                \STRING{float{\UNDERSCORE}of{\UNDERSCORE}string} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-float-literal}
+                            (  \NAMEREF{arg} ) ), \\&\quad\quad\quad\quad
+                \STRING{{(}{@}{)}} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-2}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{list-append}
+                            (  \NAMEREF{arg-1}, 
+                                   \NAMEREF{arg-2} ) ), \\&\quad\quad\quad\quad
+                \STRING{print{\UNDERSCORE}char} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Interacting}{print}
+                            (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{to-string}
+                                    (  \NAMEREF{arg} ) ) ), \\&\quad\quad\quad\quad
+                \STRING{print{\UNDERSCORE}string} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Interacting}{print}
+                            (  \NAMEREF{arg} ) ), \\&\quad\quad\quad\quad
+                \STRING{print{\UNDERSCORE}int} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Interacting}{print}
+                            (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{to-string}
+                                    (  \NAMEREF{arg} ) ) ), \\&\quad\quad\quad\quad
+                \STRING{print{\UNDERSCORE}float} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Interacting}{print}
+                            (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{to-string}
+                                    (  \NAMEREF{arg} ) ) ), \\&\quad\quad\quad\quad
+                \STRING{print{\UNDERSCORE}newline} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Interacting}{print} \ 
+                            \STRING{{\BACKSLASH}n} ), \\&\quad\quad\quad\quad
+                \STRING{read{\UNDERSCORE}line} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Interacting}{read} ), \\&\quad\quad\quad\quad
+                \STRING{read{\UNDERSCORE}int} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-integer-literal}
+                            (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Interacting}{read} ) ), \\&\quad\quad\quad\quad
+                \STRING{read{\UNDERSCORE}float} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-float-literal}
+                            (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Interacting}{read} ) ), \\&\quad\quad\quad\quad
+                \STRING{ref} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{allocate-initialised-variable}
+                            (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-values}, 
+                                   \NAMEREF{arg} ) ), \\&\quad\quad\quad\quad
+                \STRING{{(}{!}{)}} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assigned}
+                            (  \NAMEREF{arg} ) ), \\&\quad\quad\quad\quad
+                \STRING{{(}{:}{=}{)}} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-2}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assign}
+                            (  \NAMEREF{arg-1}, 
+                                   \NAMEREF{arg-2} ) ), \\&\quad\quad\quad\quad
+                \STRING{length} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-integer} \ 
+                            \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{list-length}
+                              (  \NAMEREF{arg} ) ), \\&\quad\quad\quad\quad
+                \STRING{cons} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-2}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{cons}
+                            (  \NAMEREF{arg-1}, 
+                                   \NAMEREF{arg-2} ) ), \\&\quad\quad\quad\quad
+                \STRING{hd} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{else}
+                            (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{head}
+                                    (  \NAMEREF{arg} ), 
+                                   \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Throwing}{throw}
+                                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Variants}{variant}
+                                            (  \STRING{Failure}, 
+                                                   \STRING{hd} ) ) ) ), \\&\quad\quad\quad\quad
+                \STRING{tl} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{else}
+                            (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{tail}
+                                    (  \NAMEREF{arg} ), 
+                                   \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Throwing}{throw}
+                                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Variants}{variant}
+                                            (  \STRING{Failure}, 
+                                                   \STRING{tl} ) ) ) ), \\&\quad\quad\quad\quad
+                \STRING{rev} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{list}
+                            (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sequences}{reverse}
+                                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Lists}{list-elements}
+                                            (  \NAMEREF{arg} ) ) ) ), \\&\quad\quad\quad\quad
+                \STRING{array{\UNDERSCORE}length} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-1}
+                    (  \NAMEHYPER{../.}{OC-L-02-Values}{implemented-integer} \ 
+                            \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sequences}{length}
+                              (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vector-elements}
+                                      (  \NAMEREF{arg} ) ) ), \\&\quad\quad\quad\quad
+                \STRING{array{\UNDERSCORE}make} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-2}
+                    ( \\&\quad\quad\quad\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{if-true-else}
+                            ( \\&\quad\quad\quad\quad\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{is-greater-or-equal}
+                                    (  \NAMEREF{arg-1}, 
+                                           0 ), \\&\quad\quad\quad\quad\quad\quad\quad
+                                   \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vector}
+                                    ( \\&\quad\quad\quad\quad\quad\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{interleave-map}
+                                            ( \\&\quad\quad\quad\quad\quad\quad\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{allocate-initialised-variable}
+                                                    (  \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}, 
+                                                           \NAMEREF{arg} ), \\&\quad\quad\quad\quad\quad\quad\quad\quad\quad
+                                                   \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sequences}{n-of}
+                                                    (  \NAMEREF{arg-1}, 
+                                                           \NAMEREF{arg-2} ) ) ), \\&\quad\quad\quad\quad\quad\quad\quad
+                                   \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Throwing}{throw}
+                                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Variants}{variant}
+                                            (  \STRING{Invalid{\UNDERSCORE}argument}, 
+                                                   \STRING{array{\UNDERSCORE}make} ) ) ) ), \\&\quad\quad\quad\quad
+                \STRING{array{\UNDERSCORE}append} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-2}
+                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vector}
+                            (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vector-elements}
+                                    (  \NAMEREF{arg-1} ), 
+                                   \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vector-elements}
+                                    (  \NAMEREF{arg-2} ) ) ), \\&\quad\quad\quad\quad
+                \STRING{array{\UNDERSCORE}get} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-2}
+                    ( \\&\quad\quad\quad\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{else}
+                            ( \\&\quad\quad\quad\quad\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assigned}
+                                    (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{checked} \ 
+                                            \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sequences}{index}
+                                              (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{nat-succ} \ 
+                                                      \NAMEREF{arg-2}, 
+                                                     \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vector-elements}
+                                                      (  \NAMEREF{arg-1} ) ) ), \\&\quad\quad\quad\quad\quad\quad\quad
+                                   \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Throwing}{throw}
+                                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Variants}{variant}
+                                            (  \STRING{Invalid{\UNDERSCORE}argument}, 
+                                                   \STRING{array{\UNDERSCORE}get} ) ) ) ), \\&\quad\quad\quad\quad
+                \STRING{array{\UNDERSCORE}set} \mapsto \\&\quad\quad\quad\quad\quad
+                  \NAMEREF{op-3}
+                    ( \\&\quad\quad\quad\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{else}
+                            ( \\&\quad\quad\quad\quad\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assign}
+                                    (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{checked} \ 
+                                            \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sequences}{index}
+                                              (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{nat-succ} \ 
+                                                      \NAMEREF{arg-2}, 
+                                                     \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vector-elements}
+                                                      (  \NAMEREF{arg-1} ) ), 
+                                           \NAMEREF{arg-3} ), \\&\quad\quad\quad\quad\quad\quad\quad
+                                   \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Throwing}{throw}
+                                    (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Variants}{variant}
+                                            (  \STRING{Invalid{\UNDERSCORE}argument}, 
+                                                   \STRING{array{\UNDERSCORE}set} ) ) ) ) \}
+\end{align*}$$
+
+## Language-specific funcons
+               
+
+
+### Exception values
+               
+
+
+$$\begin{align*}
+  \KEY{Funcon} \quad
+  & \NAMEDECL{ocaml-light-match-failure} 
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Variants}{variants}
+                     (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuples}
+                             (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{strings}, 
+                                    \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integers}, 
+                                    \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integers} ) ) \\&\quad
+    \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Variants}{variant}
+               (  \STRING{Match{\UNDERSCORE}failure}, 
+                      \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
+                       (  \STRING{}, 
+                              0, 
+                              0 ) )
+\end{align*}$$
+
+
+  $$\SHADE{\NAMEREF{ocaml-light-match-failure}}$$ gives a value to be thrown when a match fails.
+  The variant value should consist of the source program text, line, and column,
+  but these are currently not included in the translation of OCaml Light.
+
+
+$$\begin{align*}
+  \KEY{Funcon} \quad
+  & \NAMEDECL{ocaml-light-assert-failure} 
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Variants}{variants}
+                     (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuples}
+                             (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{strings}, 
+                                    \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integers}, 
+                                    \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integers} ) ) \\&\quad
+    \leadsto \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Variants}{variant}
+               (  \STRING{Assert{\UNDERSCORE}failure}, 
+                      \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
+                       (  \STRING{}, 
+                              0, 
+                              0 ) )
+\end{align*}$$
+
+
+  $$\SHADE{\NAMEREF{ocaml-light-assert-failure}}$$ gives a value to be thrown when an assertion fails.
+  The variant value should consist of the source program text, line, and column,
+  but these are currently not included in the translation of OCaml Light.
+
+
+### Structural equality
+               
+
+
+$$\begin{align*}
+  \KEY{Funcon} \quad
+  & \NAMEDECL{ocaml-light-is-structurally-equal}(
+                       \_ : \NAMEHYPER{../.}{OC-L-02-Values}{implemented-values}, \_ : \NAMEHYPER{../.}{OC-L-02-Values}{implemented-values}) \\&\quad
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{booleans} 
+\end{align*}$$
+
+
+  $$\SHADE{\NAMEREF{ocaml-light-is-structurally-equal}
+           (  \VAR{V}\SUB{1}, 
+                  \VAR{V}\SUB{2} )}$$ is false whenever $$\SHADE{\VAR{V}\SUB{1}}$$ or $$\SHADE{\VAR{V}\SUB{2}}$$ contains a
+  function. For vectors, it compares all their respective assigned values.
+  It is equality on primitive values, and defined inductively on composite values.
+
+
+ Unit Type 
+
+$$\begin{align*}
+  \KEY{Rule} \quad
+    & \NAMEREF{ocaml-light-is-structurally-equal}
+        (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-value}, 
+               \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-value} ) \leadsto 
+        \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{true}
+\end{align*}$$
+
+ Booleans 
+
+$$\begin{align*}
+  \KEY{Rule} \quad
+    & \NAMEREF{ocaml-light-is-structurally-equal}
+        (  \VAR{B}\SUB{1} : \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{booleans}, 
+               \VAR{B}\SUB{2} : \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{booleans} ) \leadsto 
+        \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-equal}
+          (  \VAR{B}\SUB{1}, 
+                 \VAR{B}\SUB{2} )
+\end{align*}$$
+
+ Integers 
+
+$$\begin{align*}
+  \KEY{Rule} \quad
+    & \NAMEREF{ocaml-light-is-structurally-equal}
+        (  \VAR{I}\SUB{1} : \NAMEHYPER{../.}{OC-L-02-Values}{implemented-integers}, 
+               \VAR{I}\SUB{2} : \NAMEHYPER{../.}{OC-L-02-Values}{implemented-integers} ) \leadsto \\&\quad
+        \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-equal}
+          (  \VAR{I}\SUB{1}, 
+                 \VAR{I}\SUB{2} )
+\end{align*}$$
+
+ Floats 
+
+$$\begin{align*}
+  \KEY{Rule} \quad
+    & \NAMEREF{ocaml-light-is-structurally-equal}
+        (  \VAR{F}\SUB{1} : \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats}, 
+               \VAR{F}\SUB{2} : \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats} ) \leadsto \\&\quad
+        \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-equal}
+          (  \VAR{F}\SUB{1}, 
+                 \VAR{F}\SUB{2} )
+\end{align*}$$
+
+ Characters 
+
+$$\begin{align*}
+  \KEY{Rule} \quad
+    & \NAMEREF{ocaml-light-is-structurally-equal}
+        (  \VAR{C}\SUB{1} : \NAMEHYPER{../.}{OC-L-02-Values}{implemented-characters}, 
+               \VAR{C}\SUB{2} : \NAMEHYPER{../.}{OC-L-02-Values}{implemented-characters} ) \leadsto \\&\quad
+        \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-equal}
+          (  \VAR{C}\SUB{1}, 
+                 \VAR{C}\SUB{2} )
+\end{align*}$$
+
+ Strings 
+
+$$\begin{align*}
+  \KEY{Rule} \quad
+    & \NAMEREF{ocaml-light-is-structurally-equal}
+        (  \VAR{S}\SUB{1} : \NAMEHYPER{../.}{OC-L-02-Values}{implemented-strings}, 
+               \VAR{S}\SUB{2} : \NAMEHYPER{../.}{OC-L-02-Values}{implemented-strings} ) \leadsto \\&\quad
+        \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-equal}
+          (  \VAR{S}\SUB{1}, 
+                 \VAR{S}\SUB{2} )
+\end{align*}$$
+
+ Tuples 
+
+$$\begin{align*}
+  \KEY{Rule} \quad
+    & \NAMEREF{ocaml-light-is-structurally-equal}
+        (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
+                (   \  ), 
+               \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
+                (   \  ) ) \leadsto 
+        \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{true}
+\\
+  \KEY{Rule} \quad
+    & \NAMEREF{ocaml-light-is-structurally-equal}
+        (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
+                (   \  ), 
+               \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
+                (  \VAR{V}\PLUS ) ) \leadsto 
+        \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false}
+\\
+  \KEY{Rule} \quad
+    & \NAMEREF{ocaml-light-is-structurally-equal}
+        (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
+                (  \VAR{V}\PLUS ), 
+               \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
+                (   \  ) ) \leadsto 
+        \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false}
+\\
+  \KEY{Rule} \quad
+    & \NAMEREF{ocaml-light-is-structurally-equal}
+        (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
+                (  \VAR{V}, 
+                       \VAR{V}\STAR ), 
+               \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
+                (  \VAR{W}, 
+                       \VAR{W}\STAR ) ) \leadsto \\&\quad
+        \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{and}
+          ( \\&\quad\quad \NAMEREF{ocaml-light-is-structurally-equal}
+                  (  \VAR{V}, 
+                         \VAR{W} ), \\&\quad\quad
+                 \NAMEREF{ocaml-light-is-structurally-equal}
+                  (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
+                          (  \VAR{V}\STAR ), 
+                         \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
+                          (  \VAR{W}\STAR ) ) )
+\end{align*}$$
+
+ Lists 
+
+$$\begin{align*}
+  \KEY{Rule} \quad
+    & \NAMEREF{ocaml-light-is-structurally-equal}
+        (  [   \  ], 
+               [   \  ] ) \leadsto 
+        \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{true}
+\\
+  \KEY{Rule} \quad
+    & \NAMEREF{ocaml-light-is-structurally-equal}
+        (  [   \  ], 
+               [  \VAR{V}\PLUS ] ) \leadsto 
+        \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false}
+\\
+  \KEY{Rule} \quad
+    & \NAMEREF{ocaml-light-is-structurally-equal}
+        (  [  \VAR{V}\PLUS ], 
+               [   \  ] ) \leadsto 
+        \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false}
+\\
+  \KEY{Rule} \quad
+    & \NAMEREF{ocaml-light-is-structurally-equal}
+        (  [  \VAR{V}, 
+                     \VAR{V}\STAR ], 
+               [  \VAR{W}, 
+                     \VAR{W}\STAR ] ) \leadsto \\&\quad
+        \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{and}
+          ( \\&\quad\quad \NAMEREF{ocaml-light-is-structurally-equal}
+                  (  \VAR{V}, 
+                         \VAR{W} ), \\&\quad\quad
+                 \NAMEREF{ocaml-light-is-structurally-equal}
+                  (  [  \VAR{V}\STAR ], 
+                         [  \VAR{W}\STAR ] ) )
+\end{align*}$$
+
+ Records 
+
+$$\begin{align*}
+  \KEY{Rule} \quad
+    & \RULE{
+      & \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Maps}{dom}
+          (  \VAR{Map}\SUB{1} ) 
+        == \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Maps}{dom}
+             (  \VAR{Map}\SUB{2} )
+      }{
+      & \NAMEREF{ocaml-light-is-structurally-equal}
+          (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Records}{record}
+                  (  \VAR{Map}\SUB{1} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Maps}{maps}
+                                    (  \_, 
+                                           \_ ) ), 
+                 \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Records}{record}
+                  (  \VAR{Map}\SUB{2} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Maps}{maps}
+                                    (  \_, 
+                                           \_ ) ) ) \leadsto \\&\quad
+          \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{not}
+            ( \\&\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sets}{is-in-set}
+                    ( \\&\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false}, \\&\quad\quad\quad
+                           \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sets}{set}
+                            ( \\&\quad\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{interleave-map}
+                                    ( \\&\quad\quad\quad\quad\quad \NAMEREF{ocaml-light-is-structurally-equal}
+                                            ( \\&\quad\quad\quad\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{checked} \ 
+                                                    \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Maps}{lookup}
+                                                      (  \VAR{Map}\SUB{1}, 
+                                                             \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} ), \\&\quad\quad\quad\quad\quad\quad
+                                                   \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{checked} \ 
+                                                    \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Maps}{lookup}
+                                                      (  \VAR{Map}\SUB{2}, 
+                                                             \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} ) ), \\&\quad\quad\quad\quad\quad
+                                           \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sets}{set-elements}
+                                            (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Maps}{dom}
+                                                    (  \VAR{Map}\SUB{1} ) ) ) ) ) )
+      }
+\end{align*}$$
+
+ References 
+
+$$\begin{align*}
+  \KEY{Rule} \quad
+    & \NAMEREF{ocaml-light-is-structurally-equal}
+        (  \VAR{V}\SUB{1} : \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{variables}, 
+               \VAR{V}\SUB{2} : \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{variables} ) \leadsto \\&\quad
+        \NAMEREF{ocaml-light-is-structurally-equal}
+          (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assigned}
+                  (  \VAR{V}\SUB{1} ), 
+                 \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assigned}
+                  (  \VAR{V}\SUB{2} ) )
+\end{align*}$$
+
+ Vectors 
+
+$$\begin{align*}
+  \KEY{Rule} \quad
+    & \NAMEREF{ocaml-light-is-structurally-equal}
+        (  \VAR{Vec}\SUB{1} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vectors}
+                          (  \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} ), 
+               \VAR{Vec}\SUB{2} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vectors}
+                          (  \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} ) ) \leadsto \\&\quad
+        \NAMEREF{ocaml-light-is-structurally-equal}
+          (  [  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vector-elements}
+                        (  \VAR{Vec}\SUB{1} ) ], 
+                 [  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vector-elements}
+                        (  \VAR{Vec}\SUB{2} ) ] )
+\end{align*}$$
+
+ Variants 
+
+$$\begin{align*}
+  \KEY{Rule} \quad
+    & \NAMEREF{ocaml-light-is-structurally-equal}
+        (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Variants}{variant}
+                (  \VAR{Con}\SUB{1}, 
+                       \VAR{V}\SUB{1} ), 
+               \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Variants}{variant}
+                (  \VAR{Con}\SUB{2}, 
+                       \VAR{V}\SUB{2} ) ) \leadsto \\&\quad
+        \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{if-true-else}
+          ( \\&\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-equal}
+                  (  \VAR{Con}\SUB{1}, 
+                         \VAR{Con}\SUB{2} ), \\&\quad\quad
+                 \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{if-true-else}
+                  ( \\&\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{or}
+                          (  \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-equal}
+                                  (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
+                                          (   \  ), 
+                                         \VAR{V}\SUB{1} ), 
+                                 \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-equal}
+                                  (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
+                                          (   \  ), 
+                                         \VAR{V}\SUB{2} ) ), \\&\quad\quad\quad
+                         \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{and}
+                          (  \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-equal}
+                                  (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
+                                          (   \  ), 
+                                         \VAR{V}\SUB{1} ), 
+                                 \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-equal}
+                                  (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
+                                          (   \  ), 
+                                         \VAR{V}\SUB{2} ) ), \\&\quad\quad\quad
+                         \NAMEREF{ocaml-light-is-structurally-equal}
+                          (  \VAR{V}\SUB{1}, 
+                                 \VAR{V}\SUB{2} ) ), \\&\quad\quad
+                 \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{false} )
+\end{align*}$$
+
+ Functions 
+
+$$\begin{align*}
+  \KEY{Rule} \quad
+    & \NAMEREF{ocaml-light-is-structurally-equal}
+        (  \_ : \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{functions}
+                          (  \_, 
+                                 \_ ), 
+               \_ : \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{functions}
+                          (  \_, 
+                                 \_ ) ) \leadsto \\&\quad
+        \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Throwing}{throw}
+          (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Variants}{variant}
+                  (  \STRING{Invalid{\UNDERSCORE}argument}, 
+                         \STRING{equal{:}~functional~value} ) )
+\end{align*}$$
+
+### Console display
+               
+
+
+$$\begin{align*}
+  \KEY{Funcon} \quad
+  & \NAMEDECL{ocaml-light-to-string}(
+                       \_ : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}) 
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{strings} 
+\end{align*}$$
+
+
+  $$\SHADE{\NAMEREF{ocaml-light-to-string}
+           (  \VAR{V} )}$$ gives the string represention of OCaml Light values
+  as implemented by the ocaml interpreter.
+
+
+$$\begin{align*}
+  \KEY{Rule} \quad
+    & \NAMEREF{ocaml-light-to-string}
+        (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-value} ) \leadsto 
+        \STRING{{(}{)}}
+\\
+  \KEY{Rule} \quad
+    & \NAMEREF{ocaml-light-to-string}
+        (  \VAR{B} : \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{booleans} ) \leadsto 
+        \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{to-string}
+          (  \VAR{B} )
+\\
+  \KEY{Rule} \quad
+    & \NAMEREF{ocaml-light-to-string}
+        (  \VAR{I} : \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Integers}{integers} ) \leadsto 
+        \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{to-string}
+          (  \VAR{I} )
+\\
+  \KEY{Rule} \quad
+    & \NAMEREF{ocaml-light-to-string}
+        (  \VAR{F} : \NAMEHYPER{../.}{OC-L-02-Values}{implemented-floats} ) \leadsto 
+        \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{to-string}
+          (  \VAR{F} )
+\\
+  \KEY{Rule} \quad
+    & \NAMEREF{ocaml-light-to-string}
+        (  \VAR{C} : \NAMEHYPER{../.}{OC-L-02-Values}{implemented-characters} ) \leadsto \\&\quad
+        \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{string-append}
+          (  \STRING{{\APOSTROPHE}}, 
+                 \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{to-string}
+                  (  \VAR{C} ), 
+                 \STRING{{\APOSTROPHE}} )
+\\
+  \KEY{Rule} \quad
+    & \RULE{
+      & \VAR{S} 
+        \neq [   \  ]
+      }{
+      & \NAMEREF{ocaml-light-to-string}
+          (  \VAR{S} : \NAMEHYPER{../.}{OC-L-02-Values}{implemented-strings} ) \leadsto 
+          \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{string-append}
+            (  \STRING{{"}}, 
+                   \VAR{S}, 
+                   \STRING{{"}} )
+      }
+\\
+  \KEY{Rule} \quad
+    & \NAMEREF{ocaml-light-to-string}
+        (  \_ : \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{functions}
+                          (  \_, 
+                                 \_ ) ) \leadsto 
+        \STRING{{<}fun{>}}
+\\
+  \KEY{Rule} \quad
+    & \NAMEREF{ocaml-light-to-string}
+        (  \VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{variables} ) \leadsto \\&\quad
+        \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{string-append}
+          (  \STRING{ref~}, 
+                 \NAMEREF{ocaml-light-to-string}
+                  (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assigned}
+                          (  \VAR{V} ) ) )
+\\
+  \KEY{Rule} \quad
+    & \NAMEREF{ocaml-light-to-string}
+        (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Variants}{variant}
+                (  \VAR{Con}, 
+                       \VAR{Arg} ) ) \leadsto \\&\quad
+        \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{if-true-else}
+          ( \\&\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{is-equal}
+                  (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
+                          (   \  ), 
+                         \VAR{Arg} ), \\&\quad\quad
+                 \VAR{Con}, \\&\quad\quad
+                 \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{string-append}
+                  (  \VAR{Con}, 
+                         \STRING{~}, 
+                         \NAMEREF{ocaml-light-to-string}
+                          (  \VAR{Arg} ) ) )
+\\
+  \KEY{Rule} \quad
+    & \NAMEREF{ocaml-light-to-string}
+        (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
+                (  \VAR{V} : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}, 
+                       \VAR{V}\PLUS : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}\PLUS ) ) \leadsto \\&\quad
+        \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{string-append}
+          ( \\&\quad\quad \STRING{{(}}, \\&\quad\quad
+                 \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sequences}{intersperse}
+                  (  \STRING{{,}~}, 
+                         \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{interleave-map}
+                          (  \NAMEREF{ocaml-light-to-string}
+                                  (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} ), 
+                                 \VAR{V}, 
+                                 \VAR{V}\PLUS ) ), \\&\quad\quad
+                 \STRING{{)}} )
+\\
+  \KEY{Rule} \quad
+    & \NAMEREF{ocaml-light-to-string}
+        (  [  \VAR{V}\STAR : \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values}\STAR ] ) \leadsto \\&\quad
+        \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{string-append}
+          ( \\&\quad\quad \STRING{{[}}, \\&\quad\quad
+                 \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sequences}{intersperse}
+                  (  \STRING{{;}~}, 
+                         \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{interleave-map}
+                          (  \NAMEREF{ocaml-light-to-string}
+                                  (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} ), 
+                                 \VAR{V}\STAR ) ), \\&\quad\quad
+                 \STRING{{]}} )
+\\
+  \KEY{Rule} \quad
+    & \NAMEREF{ocaml-light-to-string}
+        (  \VAR{V} : \NAMEHYPER{../.}{OC-L-02-Values}{implemented-vectors} ) \leadsto \\&\quad
+        \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{string-append}
+          ( \\&\quad\quad \STRING{{[}{|}}, \\&\quad\quad
+                 \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sequences}{intersperse}
+                  ( \\&\quad\quad\quad \STRING{{;}~}, \\&\quad\quad\quad
+                         \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{interleave-map}
+                          ( \\&\quad\quad\quad\quad \NAMEREF{ocaml-light-to-string}
+                                  (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assigned}
+                                          (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{given} ) ), \\&\quad\quad\quad\quad
+                                 \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Vectors}{vector-elements}
+                                  (  \VAR{V} ) ) ), \\&\quad\quad
+                 \STRING{{|}{]}} )
+\\
+  \KEY{Rule} \quad
+    & \NAMEREF{ocaml-light-to-string}
+        (  \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Records}{record}
+                (  \VAR{M} : \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Maps}{maps}
+                                  (  \_, 
+                                         \_ ) ) ) \leadsto \\&\quad
+        \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{string-append}
+          ( \\&\quad\quad \STRING{{\LEFTBRACE}}, \\&\quad\quad
+                 \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Sequences}{intersperse}
+                  ( \\&\quad\quad\quad \STRING{{;}~}, \\&\quad\quad\quad
+                         \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{interleave-map}
+                          ( \\&\quad\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Strings}{string-append}
+                                  (  \NAMEREF{arg-1}, 
+                                         \STRING{~{=}~}, 
+                                         \NAMEREF{ocaml-light-to-string}
+                                          (  \NAMEREF{arg-2} ) ), \\&\quad\quad\quad\quad
+                                 \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Maps}{map-elements}
+                                  (  \VAR{M} ) ) ), \\&\quad\quad
+                 \STRING{{\RIGHTBRACE}} )
+\end{align*}$$
+
+$$\begin{align*}
+  \KEY{Funcon} \quad
+  & \NAMEDECL{ocaml-light-define-and-display}(
+                       \VAR{Env} : \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{envs}) 
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{envs} \\&\quad
+    \leadsto \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
+               ( \\&\quad\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{effect} \ 
+                       \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{left-to-right-map}
+                         ( \\&\quad\quad\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Interacting}{print}
+                                 (  \NAMEREF{arg-1}, 
+                                        \STRING{~{=}~}, 
+                                        \NAMEREF{ocaml-light-to-string} \ 
+                                         \NAMEREF{arg-2}, 
+                                        \STRING{{\BACKSLASH}n} ), \\&\quad\quad\quad\quad\quad
+                                \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Maps}{map-elements} \ 
+                                 \VAR{Env} ), \\&\quad\quad\quad\quad
+                      \VAR{Env} )
+\end{align*}$$
+
+$$\begin{align*}
+  \KEY{Funcon} \quad
+  & \NAMEDECL{ocaml-light-evaluate-and-display}(
+                       \VAR{V} : \NAMEHYPER{../.}{OC-L-02-Values}{implemented-values}) 
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{envs} \\&\quad
+    \leadsto \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
+               ( \\&\quad\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Interacting}{print}
+                       (  \STRING{{-}~{=}~}, 
+                              \NAMEREF{ocaml-light-to-string} \ 
+                               \VAR{V}, 
+                              \STRING{{\BACKSLASH}n} ), \\&\quad\quad\quad\quad
+                      \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Maps}{map}
+                       (   \  ) )
+\end{align*}$$
+
+
+
+[Funcons-beta]: /CBS-beta/math/Funcons-beta
+  "FUNCONS-BETA"
+[Unstable-Funcons-beta]: /CBS-beta/math/Unstable-Funcons-beta
+  "UNSTABLE-FUNCONS-BETA"
+[Languages-beta]: /CBS-beta/math/Languages-beta
+  "LANGUAGES-BETA"
+[Unstable-Languages-beta]: /CBS-beta/math/Unstable-Languages-beta
+  "UNSTABLE-LANGUAGES-BETA"
+[CBS-beta]: /CBS-beta
+  "CBS-BETA"
+[OC-L-12-Core-Library.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-12-Core-Library/OC-L-12-Core-Library.cbs
+  "CBS SOURCE FILE ON GITHUB"
+[PLAIN]: /CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-12-Core-Library
+  "CBS SOURCE WEB PAGE"
+ [PRETTY]: /CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-12-Core-Library
+  "CBS-KATEX WEB PAGE"
+[PDF]: https://github.com/plancomps/CBS-beta/blob/master/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-12-Core-Library/OC-L-12-Core-Library.pdf
+  "CBS-LATEX PDF FILE"
+[PLanCompS Project]: https://plancomps.github.io
+  "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
+{::comment}{% endraw %}{:/}
