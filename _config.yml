@@ -30,8 +30,8 @@ just_the_docs:
 
 # Alternative color schemes:
 
-auto_dark_scheme: dark
-# color_scheme: light 
+# auto_dark_scheme: dark
+color_scheme: light 
 # color_scheme: dark 
 
 callouts:
