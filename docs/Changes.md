@@ -10,6 +10,16 @@ This page lists significant additions and changes to the funcon definitions and
 language specifications included in the CBS beta-release, and to how they are 
 presented on this website.
 
+{:.note}
+> If you notice a problem with browsing the experimental [math webpages](Pretty),
+> please [report it as an issue on GitHub](https://github.com/plancomps/CBS-beta/issues). 
+> If relevant, include the browser type and version, and a screenshot illustrating the problem.
+
+2021-04-15: [CBS-beta](/CBS-beta/) (experimental math branch)
+* Auto-switching to dark mode replaced by manual toggle buttons (&#x263c; &#x263d;) at top of navigation menu
+* [Minimised FOUC](https://www.primative.net/blog/how-to-get-rid-of-the-flash-of-unstyled-content/) 
+  when opening larger math pages (mainly affecting Firefox)
+
 2021-04-06: [CBS-beta](/CBS-beta/) (experimental math branch)
 * Symlinks replaced by inclusions, for building on GitHub Pages
 * Improved automatic switching to dark mode
