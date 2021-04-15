@@ -28,11 +28,17 @@ just_the_docs:
       nav_fold: true
       search_exclude: true
 
-# Alternative color schemes:
-
-# auto_dark_scheme: dark
-color_scheme: light 
-# color_scheme: dark 
+# Color scheme supports "dark", "light", and your custom schemes:
+# color_scheme: nil                # default: light
+# To add a button to switch all pages to a different scheme:
+toggle_color_scheme: dark          # default: nil (no toggle button)
+# To display the toggle button only on one page:
+# toggle_page_url: "/"               # default: nil (display on all pages)
+# To toggle automatically when the system mode preference changes:
+# toggle_auto_mode: true             # default: nil (manual toggle)
+# To set the button text for toggling and reverting:
+toggle_text_1: "&rarr; &#x26ab;" # default: "&rarr; Dark Mode"
+toggle_text_2: "&rarr; &#x26ab;" # default: "&rarr; Light Mode"
 
 callouts:
   note:
