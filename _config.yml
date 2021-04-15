@@ -37,8 +37,8 @@ toggle_color_scheme: dark          # default: nil (no toggle button)
 # To toggle automatically when the system mode preference changes:
 # toggle_auto_mode: true             # default: nil (manual toggle)
 # To set the button text for toggling and reverting:
-toggle_text_1: "&rarr; &#x26ab;" # default: "&rarr; Dark Mode"
-toggle_text_2: "&rarr; &#x26ab;" # default: "&rarr; Light Mode"
+toggle_text_1: "&#x263d;" # default: "&rarr; Dark Mode"
+toggle_text_2: "&#x263c;" # default: "&rarr; Light Mode"
 
 callouts:
   note:
