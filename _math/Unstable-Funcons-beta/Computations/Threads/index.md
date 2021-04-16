@@ -37,7 +37,7 @@ The [multithreading] funcons involve multiple mutable entities, and are
 generally specified by inference rules with premises involving the values of
 those entities before and after a transition.
 
-The [synchronising] funcons only involve the $$\SHADE{\NAME{store}}$$ entity, and wrap
+The [synchronising] funcons only involve the $$\SHADE{\NAMEHYPER{../../../Funcons-beta/Computations/Normal}{Storing}{store}}$$ entity, and wrap
 compound funcon terms in $$\SHADE{\NAME{thread-atomic}
            (  \_ )}$$ to inhibit preemption.
 
@@ -65,13 +65,13 @@ Some of the unit tests are based on examples in an [IBM threads] guide.
   "UNSTABLE-LANGUAGES-BETA"
 [CBS-beta]: /CBS-beta
   "CBS-BETA"
-[Threads.cbs]: https://github.com/plancomps/CBS-beta/blob/math/Unstable-Funcons-beta/Computations/Threads/Threads.cbs
+[Threads.cbs]: /CBS-beta/Unstable-Funcons-beta/Computations/Threads/Threads.cbs
   "CBS SOURCE FILE ON GITHUB"
 [PLAIN]: /CBS-beta/docs/Unstable-Funcons-beta/Computations/Threads
   "CBS SOURCE WEB PAGE"
  [PRETTY]: /CBS-beta/math/Unstable-Funcons-beta/Computations/Threads
   "CBS-KATEX WEB PAGE"
-[PDF]: https://github.com/plancomps/CBS-beta/blob/math/Unstable-Funcons-beta/Computations/Threads/Threads.pdf
+[PDF]: /CBS-beta/Unstable-Funcons-beta/Computations/Threads/Threads.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
