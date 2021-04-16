@@ -63,9 +63,6 @@ exclude:
   - "*/*/*/*.tex"
   - "*/*/*/*/*.tex"
   - "*/*/*/*/*/*.tex"
-  - "*/*/*/*.md"
-  - "*/*/*/*/*.md"
-  - "*/*/*/*/*/*.md"
 
 search_enabled: true
 search:
