@@ -40,27 +40,16 @@ Color schemes
 -------------
 
 {:.note}
-> When browsing these web pages on GitHub, the color scheme matches the system/browser preference.
+> When browsing these web pages on GitHub, the color scheme can be toggled
+> between a light and a dark scheme, independently of the system/browser preference.
 
-To make local browsing independent of the system/browser preference,
-replace `auto_dark_scheme: dark` by `color_scheme: light` or `color_scheme: dark` in `_config.yml`
-and restart `jekyll serve`.
+To make the color scheme for local browsing dependent on the system/browser preference,
+set `toggle_auto_mode: true` in `_config.yml` and restart `jekyll serve`.
 
-The colors used for CBS highlighting in the `light` and `dark` schemes can be adjusted by editing the SCSS files in `_sass/custom`.
+The colors used for CBS highlighting in the `light` and `dark` schemes can be adjusted
+by editing the SCSS files in `_sass/custom`.
 
-
-[CBS-beta project site on Github]: https://github.com/plancomps/CBS-beta
-
-[`Languages-beta/IMP/IMP-cbs/IMP/IMP-Start/index.html`]: /CBS-beta/Languages-beta/IMP/IMP-cbs/IMP/IMP-Start/index.html
-
-[`Funcons-beta/Funcons-Index/index.html`]: /CBS-beta/Funcons-beta/Funcons-Index/index.html
 
 [Ruby]: https://www.ruby-lang.org/
 
 [Jekyll]: https://help.github.com/en/articles/setting-up-your-github-pages-site-locally-with-jekyll
-
-[jekyll-remote-theme]: https://github.com/benbalter/jekyll-remote-theme
-
-[Python3]: https://docs.python.org/3/library/http.server.html
-
-[Python2]: https://docs.python.org/2/library/simplehttpserver.html#module-SimpleHTTPServer
