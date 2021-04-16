@@ -50,16 +50,22 @@ exclude:
   - "logs/"
   - makefile
   - sunshine2.jar
-  - "Funcons-beta/"
-  - "Languages-beta/"
-  - "Unstable-Funcons-beta/"
-  - "Unstable-Languages-beta/"
-
-include:
-  - "Funcons-beta/index.md"
-  - "Languages-beta/index.md"
-  - "Unstable-Funcons-beta/index.md"
-  - "Unstable-Languages-beta/index.md"
+  - "Languages-beta/*/*/Funcons-beta"
+  - "Unstable-Funcons-beta/Funcons-beta"
+  - "Unstable-Languages-beta/*/*/Unstable-Funcons-beta"
+  - "*/target"
+  - "*/*/target"
+  - "*/*/*/target"
+  - "*/*/*/*/target"
+  - "*/*/*/*/*/target"
+  - "*/*/*/*/tests"
+  - "*/*/*/*/*/tests"
+  - "*/*/*/*.tex"
+  - "*/*/*/*/*.tex"
+  - "*/*/*/*/*/*.tex"
+  - "*/*/*/*.md"
+  - "*/*/*/*/*.md"
+  - "*/*/*/*/*/*.md"
 
 search_enabled: true
 search:
