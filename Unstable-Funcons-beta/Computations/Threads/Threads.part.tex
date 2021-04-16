@@ -1,0 +1,37 @@
+% {% raw %}
+
+
+\begin{center}
+\rule{3in}{0.4pt}
+\end{center}
+
+\subsection{Threads}\hypertarget{threads}{}\label{threads}
+
+\begin{align*}
+  [ \
+  \textsf{Multithreading
+          } \ & \textsf{} \\
+  \textsf{Synchronising
+          } \ & \textsf{} \\
+  \textsf{Locks
+          } \ & \textsf{} \\
+  \textsf{Notifications
+          } \ & \textsf{}
+  \ ]
+\end{align*}
+The funcons for threads are tentative. They have not yet been rigorously
+unit-tested, nor used significantly in language definitions.
+
+The \href{Multithreading}{multithreading} funcons involve multiple mutable entities, and are
+generally specified by inference rules with premises involving the values of
+those entities before and after a transition.
+
+The \href{Synchronising}{synchronising} funcons only involve the $\SHADE{\NAME{store}}$ entity, and wrap
+compound funcon terms in $\SHADE{\NAME{thread-atomic}
+           (  \_ )}$ to inhibit preemption.
+
+Some of the unit tests are based on examples in an \href{https://www.ibm.com/support/knowledgecenter/ssw_aix_72/com.ibm.aix.genprogc/chapter12.htm}{IBM threads} guide.
+
+% {% endraw %}
+
+

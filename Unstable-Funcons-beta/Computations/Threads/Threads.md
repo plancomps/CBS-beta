@@ -1,12 +1,3 @@
----
-title: "Threads"
-math: katex
-parent: Computations
-ancestor: Unstable-Funcons-beta
-
----
-[Unstable-Funcons-beta] : [Threads.cbs] \| [PLAIN] \| [PDF]
-
 {::comment}{% raw %}{:/}
 
 
@@ -76,13 +67,3 @@ Some of the unit tests are based on examples in an [IBM threads] guide.
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
 {::comment}{% endraw %}{:/}
-
-
-____
-
-From the [PLanCompS Project] | [CBS-beta issues...] | [Suggest an improvement...]
-
-[CBS-beta issues...]: https://github.com/plancomps/CBS-beta/issues
-  "CBS-BETA ISSUE REPORTS ON GITHUB"
-[Suggest an improvement...]: mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&Body=Re%3A%20CBS-beta%20specification%20at%20Computations/Threads/Threads.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A
-  "GENERATE AN EMAIL TEMPLATE"
