@@ -19,6 +19,7 @@ presented on this website.
 * Auto-switching to dark mode replaced by manual toggle buttons (&#x263c; &#x263d;) at top of navigation menu
 * [Minimised FOUC](https://www.primative.net/blog/how-to-get-rid-of-the-flash-of-unstyled-content/) 
   when opening larger math pages (mainly affecting Firefox)
+* Internal links relativised
 
 2021-04-06: [CBS-beta](/CBS-beta/) (experimental math branch)
 * Symlinks replaced by inclusions, for building on GitHub Pages
