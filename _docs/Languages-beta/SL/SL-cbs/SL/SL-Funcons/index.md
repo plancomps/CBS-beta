@@ -208,13 +208,13 @@ ancestor: Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
 [CBS-beta]: /CBS-beta
   "CBS-BETA"
-[SL-Funcons.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Languages-beta/SL/SL-cbs/SL/SL-Funcons/SL-Funcons.cbs
+[SL-Funcons.cbs]: https://github.com/plancomps/CBS-beta/blob/math/Languages-beta/SL/SL-cbs/SL/SL-Funcons/SL-Funcons.cbs
   "CBS SOURCE FILE ON GITHUB"
 [PLAIN]: /CBS-beta/docs/Languages-beta/SL/SL-cbs/SL/SL-Funcons
   "CBS SOURCE WEB PAGE"
 [PRETTY]: /CBS-beta/math/Languages-beta/SL/SL-cbs/SL/SL-Funcons
   "CBS-KATEX WEB PAGE"
-[PDF]: https://github.com/plancomps/CBS-beta/blob/master/Languages-beta/SL/SL-cbs/SL/SL-Funcons/SL-Funcons.pdf
+[PDF]: https://github.com/plancomps/CBS-beta/blob/math/Languages-beta/SL/SL-cbs/SL/SL-Funcons/SL-Funcons.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

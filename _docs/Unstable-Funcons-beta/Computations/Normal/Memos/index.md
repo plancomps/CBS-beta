@@ -89,13 +89,13 @@ funcon would take an extra argument to roll back the effects of <code><i class="
   "UNSTABLE-LANGUAGES-BETA"
 [CBS-beta]: /CBS-beta
   "CBS-BETA"
-[Memos.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Unstable-Funcons-beta/Computations/Normal/Memos/Memos.cbs
+[Memos.cbs]: https://github.com/plancomps/CBS-beta/blob/math/Unstable-Funcons-beta/Computations/Normal/Memos/Memos.cbs
   "CBS SOURCE FILE ON GITHUB"
 [PLAIN]: /CBS-beta/docs/Unstable-Funcons-beta/Computations/Normal/Memos
   "CBS SOURCE WEB PAGE"
 [PRETTY]: /CBS-beta/math/Unstable-Funcons-beta/Computations/Normal/Memos
   "CBS-KATEX WEB PAGE"
-[PDF]: https://github.com/plancomps/CBS-beta/blob/master/Unstable-Funcons-beta/Computations/Normal/Memos/Memos.pdf
+[PDF]: https://github.com/plancomps/CBS-beta/blob/math/Unstable-Funcons-beta/Computations/Normal/Memos/Memos.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

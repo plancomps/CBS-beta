@@ -227,13 +227,13 @@ Unstable Funcons, for use only in Unstable Languages
   "UNSTABLE-LANGUAGES-BETA"
 [CBS-beta]: /CBS-beta
   "CBS-BETA"
-[Unstable-Funcons-Index.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Unstable-Funcons-beta/Unstable-Funcons-Index/Unstable-Funcons-Index.cbs
+[Unstable-Funcons-Index.cbs]: https://github.com/plancomps/CBS-beta/blob/math/Unstable-Funcons-beta/Unstable-Funcons-Index/Unstable-Funcons-Index.cbs
   "CBS SOURCE FILE ON GITHUB"
 [PLAIN]: /CBS-beta/docs/Unstable-Funcons-beta/Unstable-Funcons-Index
   "CBS SOURCE WEB PAGE"
 [PRETTY]: /CBS-beta/math/Unstable-Funcons-beta/Unstable-Funcons-Index
   "CBS-KATEX WEB PAGE"
-[PDF]: https://github.com/plancomps/CBS-beta/blob/master/Unstable-Funcons-beta/Unstable-Funcons-Index/Unstable-Funcons-Index.pdf
+[PDF]: https://github.com/plancomps/CBS-beta/blob/math/Unstable-Funcons-beta/Unstable-Funcons-Index/Unstable-Funcons-Index.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

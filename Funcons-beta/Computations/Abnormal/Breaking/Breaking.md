@@ -123,13 +123,13 @@ $$\begin{align*}
   "UNSTABLE-LANGUAGES-BETA"
 [CBS-beta]: /CBS-beta
   "CBS-BETA"
-[Breaking.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Funcons-beta/Computations/Abnormal/Breaking/Breaking.cbs
+[Breaking.cbs]: https://github.com/plancomps/CBS-beta/blob/math/Funcons-beta/Computations/Abnormal/Breaking/Breaking.cbs
   "CBS SOURCE FILE ON GITHUB"
 [PLAIN]: /CBS-beta/docs/Funcons-beta/Computations/Abnormal/Breaking
   "CBS SOURCE WEB PAGE"
  [PRETTY]: /CBS-beta/math/Funcons-beta/Computations/Abnormal/Breaking
   "CBS-KATEX WEB PAGE"
-[PDF]: https://github.com/plancomps/CBS-beta/blob/master/Funcons-beta/Computations/Abnormal/Breaking/Breaking.pdf
+[PDF]: https://github.com/plancomps/CBS-beta/blob/math/Funcons-beta/Computations/Abnormal/Breaking/Breaking.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

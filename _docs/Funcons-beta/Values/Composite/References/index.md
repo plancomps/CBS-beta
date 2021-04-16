@@ -53,13 +53,13 @@ ancestor: Funcons-beta
   "UNSTABLE-LANGUAGES-BETA"
 [CBS-beta]: /CBS-beta
   "CBS-BETA"
-[References.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Funcons-beta/Values/Composite/References/References.cbs
+[References.cbs]: https://github.com/plancomps/CBS-beta/blob/math/Funcons-beta/Values/Composite/References/References.cbs
   "CBS SOURCE FILE ON GITHUB"
 [PLAIN]: /CBS-beta/docs/Funcons-beta/Values/Composite/References
   "CBS SOURCE WEB PAGE"
 [PRETTY]: /CBS-beta/math/Funcons-beta/Values/Composite/References
   "CBS-KATEX WEB PAGE"
-[PDF]: https://github.com/plancomps/CBS-beta/blob/master/Funcons-beta/Values/Composite/References/References.pdf
+[PDF]: https://github.com/plancomps/CBS-beta/blob/math/Funcons-beta/Values/Composite/References/References.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

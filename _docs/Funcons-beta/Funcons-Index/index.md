@@ -649,13 +649,13 @@ parent: Funcons-beta
   "UNSTABLE-LANGUAGES-BETA"
 [CBS-beta]: /CBS-beta
   "CBS-BETA"
-[Funcons-Index.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Funcons-beta/Funcons-Index/Funcons-Index.cbs
+[Funcons-Index.cbs]: https://github.com/plancomps/CBS-beta/blob/math/Funcons-beta/Funcons-Index/Funcons-Index.cbs
   "CBS SOURCE FILE ON GITHUB"
 [PLAIN]: /CBS-beta/docs/Funcons-beta/Funcons-Index
   "CBS SOURCE WEB PAGE"
 [PRETTY]: /CBS-beta/math/Funcons-beta/Funcons-Index
   "CBS-KATEX WEB PAGE"
-[PDF]: https://github.com/plancomps/CBS-beta/blob/master/Funcons-beta/Funcons-Index/Funcons-Index.pdf
+[PDF]: https://github.com/plancomps/CBS-beta/blob/math/Funcons-beta/Funcons-Index/Funcons-Index.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

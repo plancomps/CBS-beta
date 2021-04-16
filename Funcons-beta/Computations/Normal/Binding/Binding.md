@@ -564,13 +564,13 @@ $$\begin{align*}
   "UNSTABLE-LANGUAGES-BETA"
 [CBS-beta]: /CBS-beta
   "CBS-BETA"
-[Binding.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Funcons-beta/Computations/Normal/Binding/Binding.cbs
+[Binding.cbs]: https://github.com/plancomps/CBS-beta/blob/math/Funcons-beta/Computations/Normal/Binding/Binding.cbs
   "CBS SOURCE FILE ON GITHUB"
 [PLAIN]: /CBS-beta/docs/Funcons-beta/Computations/Normal/Binding
   "CBS SOURCE WEB PAGE"
  [PRETTY]: /CBS-beta/math/Funcons-beta/Computations/Normal/Binding
   "CBS-KATEX WEB PAGE"
-[PDF]: https://github.com/plancomps/CBS-beta/blob/master/Funcons-beta/Computations/Normal/Binding/Binding.pdf
+[PDF]: https://github.com/plancomps/CBS-beta/blob/math/Funcons-beta/Computations/Normal/Binding/Binding.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

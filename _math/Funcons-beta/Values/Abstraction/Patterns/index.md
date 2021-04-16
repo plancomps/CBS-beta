@@ -578,13 +578,13 @@ $$\begin{align*}
   "UNSTABLE-LANGUAGES-BETA"
 [CBS-beta]: /CBS-beta
   "CBS-BETA"
-[Patterns.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Funcons-beta/Values/Abstraction/Patterns/Patterns.cbs
+[Patterns.cbs]: https://github.com/plancomps/CBS-beta/blob/math/Funcons-beta/Values/Abstraction/Patterns/Patterns.cbs
   "CBS SOURCE FILE ON GITHUB"
 [PLAIN]: /CBS-beta/docs/Funcons-beta/Values/Abstraction/Patterns
   "CBS SOURCE WEB PAGE"
  [PRETTY]: /CBS-beta/math/Funcons-beta/Values/Abstraction/Patterns
   "CBS-KATEX WEB PAGE"
-[PDF]: https://github.com/plancomps/CBS-beta/blob/master/Funcons-beta/Values/Abstraction/Patterns/Patterns.pdf
+[PDF]: https://github.com/plancomps/CBS-beta/blob/math/Funcons-beta/Values/Abstraction/Patterns/Patterns.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

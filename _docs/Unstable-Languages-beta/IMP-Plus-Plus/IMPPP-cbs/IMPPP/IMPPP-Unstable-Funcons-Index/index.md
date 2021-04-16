@@ -73,13 +73,13 @@ Unstable Funcons, for use only in Unstable Languages
   "UNSTABLE-LANGUAGES-BETA"
 [CBS-beta]: /CBS-beta
   "CBS-BETA"
-[IMPPP-Unstable-Funcons-Index.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-Unstable-Funcons-Index/IMPPP-Unstable-Funcons-Index.cbs
+[IMPPP-Unstable-Funcons-Index.cbs]: https://github.com/plancomps/CBS-beta/blob/math/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-Unstable-Funcons-Index/IMPPP-Unstable-Funcons-Index.cbs
   "CBS SOURCE FILE ON GITHUB"
 [PLAIN]: /CBS-beta/docs/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-Unstable-Funcons-Index
   "CBS SOURCE WEB PAGE"
 [PRETTY]: /CBS-beta/math/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-Unstable-Funcons-Index
   "CBS-KATEX WEB PAGE"
-[PDF]: https://github.com/plancomps/CBS-beta/blob/master/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-Unstable-Funcons-Index/IMPPP-Unstable-Funcons-Index.pdf
+[PDF]: https://github.com/plancomps/CBS-beta/blob/math/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-Unstable-Funcons-Index/IMPPP-Unstable-Funcons-Index.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

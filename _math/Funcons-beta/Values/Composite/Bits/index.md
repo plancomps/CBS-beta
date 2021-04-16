@@ -270,13 +270,13 @@ $$\begin{align*}
   "UNSTABLE-LANGUAGES-BETA"
 [CBS-beta]: /CBS-beta
   "CBS-BETA"
-[Bits.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Funcons-beta/Values/Composite/Bits/Bits.cbs
+[Bits.cbs]: https://github.com/plancomps/CBS-beta/blob/math/Funcons-beta/Values/Composite/Bits/Bits.cbs
   "CBS SOURCE FILE ON GITHUB"
 [PLAIN]: /CBS-beta/docs/Funcons-beta/Values/Composite/Bits
   "CBS SOURCE WEB PAGE"
  [PRETTY]: /CBS-beta/math/Funcons-beta/Values/Composite/Bits
   "CBS-KATEX WEB PAGE"
-[PDF]: https://github.com/plancomps/CBS-beta/blob/master/Funcons-beta/Values/Composite/Bits/Bits.pdf
+[PDF]: https://github.com/plancomps/CBS-beta/blob/math/Funcons-beta/Values/Composite/Bits/Bits.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

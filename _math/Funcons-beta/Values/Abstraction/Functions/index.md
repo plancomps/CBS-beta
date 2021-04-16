@@ -256,13 +256,13 @@ $$\begin{align*}
   "UNSTABLE-LANGUAGES-BETA"
 [CBS-beta]: /CBS-beta
   "CBS-BETA"
-[Functions.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Funcons-beta/Values/Abstraction/Functions/Functions.cbs
+[Functions.cbs]: https://github.com/plancomps/CBS-beta/blob/math/Funcons-beta/Values/Abstraction/Functions/Functions.cbs
   "CBS SOURCE FILE ON GITHUB"
 [PLAIN]: /CBS-beta/docs/Funcons-beta/Values/Abstraction/Functions
   "CBS SOURCE WEB PAGE"
  [PRETTY]: /CBS-beta/math/Funcons-beta/Values/Abstraction/Functions
   "CBS-KATEX WEB PAGE"
-[PDF]: https://github.com/plancomps/CBS-beta/blob/master/Funcons-beta/Values/Abstraction/Functions/Functions.pdf
+[PDF]: https://github.com/plancomps/CBS-beta/blob/math/Funcons-beta/Values/Abstraction/Functions/Functions.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

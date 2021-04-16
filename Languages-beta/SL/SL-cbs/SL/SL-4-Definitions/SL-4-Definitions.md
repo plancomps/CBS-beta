@@ -137,13 +137,13 @@ $$\begin{align*}
   "UNSTABLE-LANGUAGES-BETA"
 [CBS-beta]: /CBS-beta
   "CBS-BETA"
-[SL-4-Definitions.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Languages-beta/SL/SL-cbs/SL/SL-4-Definitions/SL-4-Definitions.cbs
+[SL-4-Definitions.cbs]: https://github.com/plancomps/CBS-beta/blob/math/Languages-beta/SL/SL-cbs/SL/SL-4-Definitions/SL-4-Definitions.cbs
   "CBS SOURCE FILE ON GITHUB"
 [PLAIN]: /CBS-beta/docs/Languages-beta/SL/SL-cbs/SL/SL-4-Definitions
   "CBS SOURCE WEB PAGE"
  [PRETTY]: /CBS-beta/math/Languages-beta/SL/SL-cbs/SL/SL-4-Definitions
   "CBS-KATEX WEB PAGE"
-[PDF]: https://github.com/plancomps/CBS-beta/blob/master/Languages-beta/SL/SL-cbs/SL/SL-4-Definitions/SL-4-Definitions.pdf
+[PDF]: https://github.com/plancomps/CBS-beta/blob/math/Languages-beta/SL/SL-cbs/SL/SL-4-Definitions/SL-4-Definitions.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

@@ -414,13 +414,13 @@ $$\begin{align*}
   "UNSTABLE-LANGUAGES-BETA"
 [CBS-beta]: /CBS-beta
   "CBS-BETA"
-[LD-Start.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Start/LD-Start.cbs
+[LD-Start.cbs]: https://github.com/plancomps/CBS-beta/blob/math/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Start/LD-Start.cbs
   "CBS SOURCE FILE ON GITHUB"
 [PLAIN]: /CBS-beta/docs/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Start
   "CBS SOURCE WEB PAGE"
  [PRETTY]: /CBS-beta/math/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Start
   "CBS-KATEX WEB PAGE"
-[PDF]: https://github.com/plancomps/CBS-beta/blob/master/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Start/LD-Start.pdf
+[PDF]: https://github.com/plancomps/CBS-beta/blob/math/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Start/LD-Start.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

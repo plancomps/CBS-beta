@@ -504,13 +504,13 @@ $$\begin{align*}
   "UNSTABLE-LANGUAGES-BETA"
 [CBS-beta]: /CBS-beta
   "CBS-BETA"
-[OC-L-Funcons-Index.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-Funcons-Index/OC-L-Funcons-Index.cbs
+[OC-L-Funcons-Index.cbs]: https://github.com/plancomps/CBS-beta/blob/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-Funcons-Index/OC-L-Funcons-Index.cbs
   "CBS SOURCE FILE ON GITHUB"
 [PLAIN]: /CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-Funcons-Index
   "CBS SOURCE WEB PAGE"
  [PRETTY]: /CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-Funcons-Index
   "CBS-KATEX WEB PAGE"
-[PDF]: https://github.com/plancomps/CBS-beta/blob/master/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-Funcons-Index/OC-L-Funcons-Index.pdf
+[PDF]: https://github.com/plancomps/CBS-beta/blob/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-Funcons-Index/OC-L-Funcons-Index.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

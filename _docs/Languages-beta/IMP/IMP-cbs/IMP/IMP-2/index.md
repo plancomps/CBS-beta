@@ -48,13 +48,13 @@ ancestor: Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
 [CBS-beta]: /CBS-beta
   "CBS-BETA"
-[IMP-2.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Languages-beta/IMP/IMP-cbs/IMP/IMP-2/IMP-2.cbs
+[IMP-2.cbs]: https://github.com/plancomps/CBS-beta/blob/math/Languages-beta/IMP/IMP-cbs/IMP/IMP-2/IMP-2.cbs
   "CBS SOURCE FILE ON GITHUB"
 [PLAIN]: /CBS-beta/docs/Languages-beta/IMP/IMP-cbs/IMP/IMP-2
   "CBS SOURCE WEB PAGE"
 [PRETTY]: /CBS-beta/math/Languages-beta/IMP/IMP-cbs/IMP/IMP-2
   "CBS-KATEX WEB PAGE"
-[PDF]: https://github.com/plancomps/CBS-beta/blob/master/Languages-beta/IMP/IMP-cbs/IMP/IMP-2/IMP-2.pdf
+[PDF]: https://github.com/plancomps/CBS-beta/blob/math/Languages-beta/IMP/IMP-cbs/IMP/IMP-2/IMP-2.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

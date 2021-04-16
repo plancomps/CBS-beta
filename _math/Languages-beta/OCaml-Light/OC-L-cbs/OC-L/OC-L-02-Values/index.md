@@ -412,13 +412,13 @@ $$\begin{align*}
   "UNSTABLE-LANGUAGES-BETA"
 [CBS-beta]: /CBS-beta
   "CBS-BETA"
-[OC-L-02-Values.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-02-Values/OC-L-02-Values.cbs
+[OC-L-02-Values.cbs]: https://github.com/plancomps/CBS-beta/blob/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-02-Values/OC-L-02-Values.cbs
   "CBS SOURCE FILE ON GITHUB"
 [PLAIN]: /CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-02-Values
   "CBS SOURCE WEB PAGE"
  [PRETTY]: /CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-02-Values
   "CBS-KATEX WEB PAGE"
-[PDF]: https://github.com/plancomps/CBS-beta/blob/master/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-02-Values/OC-L-02-Values.pdf
+[PDF]: https://github.com/plancomps/CBS-beta/blob/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-02-Values/OC-L-02-Values.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

@@ -70,13 +70,13 @@ ancestor: Languages-beta
   "UNSTABLE-LANGUAGES-BETA"
 [CBS-beta]: /CBS-beta
   "CBS-BETA"
-[SL-3-Statements.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Languages-beta/SL/SL-cbs/SL/SL-3-Statements/SL-3-Statements.cbs
+[SL-3-Statements.cbs]: https://github.com/plancomps/CBS-beta/blob/math/Languages-beta/SL/SL-cbs/SL/SL-3-Statements/SL-3-Statements.cbs
   "CBS SOURCE FILE ON GITHUB"
 [PLAIN]: /CBS-beta/docs/Languages-beta/SL/SL-cbs/SL/SL-3-Statements
   "CBS SOURCE WEB PAGE"
 [PRETTY]: /CBS-beta/math/Languages-beta/SL/SL-cbs/SL/SL-3-Statements
   "CBS-KATEX WEB PAGE"
-[PDF]: https://github.com/plancomps/CBS-beta/blob/master/Languages-beta/SL/SL-cbs/SL/SL-3-Statements/SL-3-Statements.pdf
+[PDF]: https://github.com/plancomps/CBS-beta/blob/math/Languages-beta/SL/SL-cbs/SL/SL-3-Statements/SL-3-Statements.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

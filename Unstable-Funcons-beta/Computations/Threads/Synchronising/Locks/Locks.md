@@ -894,13 +894,13 @@ $$\begin{align*}
   "UNSTABLE-LANGUAGES-BETA"
 [CBS-beta]: /CBS-beta
   "CBS-BETA"
-[Locks.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Unstable-Funcons-beta/Computations/Threads/Synchronising/Locks/Locks.cbs
+[Locks.cbs]: https://github.com/plancomps/CBS-beta/blob/math/Unstable-Funcons-beta/Computations/Threads/Synchronising/Locks/Locks.cbs
   "CBS SOURCE FILE ON GITHUB"
 [PLAIN]: /CBS-beta/docs/Unstable-Funcons-beta/Computations/Threads/Synchronising/Locks
   "CBS SOURCE WEB PAGE"
  [PRETTY]: /CBS-beta/math/Unstable-Funcons-beta/Computations/Threads/Synchronising/Locks
   "CBS-KATEX WEB PAGE"
-[PDF]: https://github.com/plancomps/CBS-beta/blob/master/Unstable-Funcons-beta/Computations/Threads/Synchronising/Locks/Locks.pdf
+[PDF]: https://github.com/plancomps/CBS-beta/blob/math/Unstable-Funcons-beta/Computations/Threads/Synchronising/Locks/Locks.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

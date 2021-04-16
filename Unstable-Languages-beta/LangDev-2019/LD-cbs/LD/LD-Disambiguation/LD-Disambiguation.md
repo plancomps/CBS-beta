@@ -140,13 +140,13 @@ $$\KEY{Language} \quad \STRING{LD}$$
   "UNSTABLE-LANGUAGES-BETA"
 [CBS-beta]: /CBS-beta
   "CBS-BETA"
-[LD-Disambiguation.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Disambiguation/LD-Disambiguation.cbs
+[LD-Disambiguation.cbs]: https://github.com/plancomps/CBS-beta/blob/math/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Disambiguation/LD-Disambiguation.cbs
   "CBS SOURCE FILE ON GITHUB"
 [PLAIN]: /CBS-beta/docs/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Disambiguation
   "CBS SOURCE WEB PAGE"
  [PRETTY]: /CBS-beta/math/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Disambiguation
   "CBS-KATEX WEB PAGE"
-[PDF]: https://github.com/plancomps/CBS-beta/blob/master/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Disambiguation/LD-Disambiguation.pdf
+[PDF]: https://github.com/plancomps/CBS-beta/blob/math/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Disambiguation/LD-Disambiguation.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

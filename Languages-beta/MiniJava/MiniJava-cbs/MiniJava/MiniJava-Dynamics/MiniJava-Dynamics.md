@@ -929,13 +929,13 @@ $$\begin{align*}
   "UNSTABLE-LANGUAGES-BETA"
 [CBS-beta]: /CBS-beta
   "CBS-BETA"
-[MiniJava-Dynamics.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Dynamics/MiniJava-Dynamics.cbs
+[MiniJava-Dynamics.cbs]: https://github.com/plancomps/CBS-beta/blob/math/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Dynamics/MiniJava-Dynamics.cbs
   "CBS SOURCE FILE ON GITHUB"
 [PLAIN]: /CBS-beta/docs/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Dynamics
   "CBS SOURCE WEB PAGE"
  [PRETTY]: /CBS-beta/math/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Dynamics
   "CBS-KATEX WEB PAGE"
-[PDF]: https://github.com/plancomps/CBS-beta/blob/master/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Dynamics/MiniJava-Dynamics.pdf
+[PDF]: https://github.com/plancomps/CBS-beta/blob/math/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Dynamics/MiniJava-Dynamics.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

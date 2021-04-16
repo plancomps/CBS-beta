@@ -301,13 +301,13 @@ $$\KEY{Language} \quad \STRING{OCaml Light}$$
   "UNSTABLE-LANGUAGES-BETA"
 [CBS-beta]: /CBS-beta
   "CBS-BETA"
-[OC-L-A-Disambiguation.cbs]: https://github.com/plancomps/CBS-beta/blob/master/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-A-Disambiguation/OC-L-A-Disambiguation.cbs
+[OC-L-A-Disambiguation.cbs]: https://github.com/plancomps/CBS-beta/blob/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-A-Disambiguation/OC-L-A-Disambiguation.cbs
   "CBS SOURCE FILE ON GITHUB"
 [PLAIN]: /CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-A-Disambiguation
   "CBS SOURCE WEB PAGE"
  [PRETTY]: /CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-A-Disambiguation
   "CBS-KATEX WEB PAGE"
-[PDF]: https://github.com/plancomps/CBS-beta/blob/master/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-A-Disambiguation/OC-L-A-Disambiguation.pdf
+[PDF]: https://github.com/plancomps/CBS-beta/blob/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-A-Disambiguation/OC-L-A-Disambiguation.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
