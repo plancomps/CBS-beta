@@ -298,9 +298,9 @@ operational behaviour of a funcon.
 
 [Unstable-Funcons-beta]: Unstable-Funcons-beta
 
-[Funcons-Index]: /CBS-beta/Funcons-beta/Funcons-Index/
+[Funcons-Index]: Funcons-beta/Funcons-Index
 
-[Unstable-Funcons-Index]: /CBS-beta/Unstable-Funcons-beta/Unstable-Funcons-Index
+[Unstable-Funcons-Index]: Unstable-Funcons-beta/Unstable-Funcons-Index
 
 [Funcon Reuse]: Languages-beta/Reuse
 
@@ -308,7 +308,7 @@ operational behaviour of a funcon.
 
 [Unstable-Languages-beta]: Unstable-Languages-beta
 
-[CBS-beta]: /CBS-beta/
+[CBS-beta]: /CBS-beta
 
 [PLanCompS Project]: http://plancomps.org
 
@@ -316,16 +316,16 @@ operational behaviour of a funcon.
 
 [Suggest an improvement...]: mailto:plancomps@gmail.com
 
-[CBS of IMP]: /CBS-beta/Languages-beta/IMP/IMP-cbs/IMP/IMP-Start/
+[CBS of IMP]: Languages-beta/IMP/IMP-cbs/IMP/IMP-Start
 
-[Values]: /CBS-beta/docs/Funcons-beta/Values
+[Values]: Funcons-beta/Values
 
-[Computations]: /CBS-beta/docs/Funcons-beta/Computations
+[Computations]: Funcons-beta/Computations
 
-[`num ::= '-'?_decimal`]: /CBS-beta/Languages-beta/IMP/IMP-cbs/IMP/IMP-1/#SyntaxName_num
+[`num ::= '-'?_decimal`]: Languages-beta/IMP/IMP-cbs/IMP/IMP-1/#SyntaxName_num
 
-[`decimal`]: /CBS-beta/Languages-beta/IMP/IMP-cbs/IMP/IMP-1/#SyntaxName_decimal
+[`decimal`]: Languages-beta/IMP/IMP-cbs/IMP/IMP-1/#SyntaxName_decimal
 
-[`fail`]: /CBS-beta/Funcons-beta/Computations/Abnormal/Failing/#Name_fail
+[`fail`]: Funcons-beta/Computations/Abnormal/Failing/#Name_fail
 
-[`if-true-else`]: /CBS-beta/Funcons-beta/Computations/Normal/Flowing/#Name_if-true-else
+[`if-true-else`]: Funcons-beta/Computations/Normal/Flowing/#Name_if-true-else
