@@ -98,6 +98,7 @@ nav_next_prev: true
 plugins:
   - jekyll-remote-theme
   - jekyll-include-cache
+  - jekyll-seo-tag
 
 compress_html:
   blanklines: false
