@@ -42,7 +42,7 @@ presented on this website.
 * GitHub Pages theme updated to
   [pdmosses/just-the-docs@combination-rec-nav](https://github.com/pdmosses/just-the-docs/tree/combination-rec-nav)
 
-2020-11-02: [MiniJava-Syntax](/CBS-beta/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Syntax/)
+2020-11-02: [MiniJava-Syntax](Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Syntax/)
 * Layout corrected
 
 2020-10-31: [Languages-beta](Languages-beta), [Unstable-Languages-beta](Unstable-Languages-beta)
@@ -61,7 +61,7 @@ presented on this website.
 2020-10-30: [Funcons-beta](Funcons-beta), [Languages-beta](Languages-beta)
 * Regenerated CBS web page sources, eliminating `grand_parent` and `nav_order` fields
 
-2020-10-30: [Storing](/CBS-beta/Funcons-beta/Computations/Normal/Storing/)
+2020-10-30: [Storing](Funcons-beta/Computations/Normal/Storing/)
 * Added parentheses for premise disambiguation (twice)
 
 2020-10-29: [Funcons-beta](Funcons-beta), [Languages-beta](Languages-beta)
@@ -107,7 +107,7 @@ presented on this website.
 * CBS-beta now a GitHub project (instead of a folder in the PLanCompS project)
 * Downloading guidelines updated
 
-2020-03-17: [MiniJava-Syntax](/CBS-beta/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Syntax/)
+2020-03-17: [MiniJava-Syntax](Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Syntax/)
 * Layout corrected
 
 2019-08-18: [CBS-beta](/CBS-beta/)
@@ -182,39 +182,39 @@ presented on this website.
   added to [Funcons-beta](Funcons-beta), partly because of pending
   improvements to the tool support for use of CBS.
 
-2018-09-14: [`right-to-left`](/CBS-beta/Funcons-beta/Computations/Normal/Flowing/#Name_right-to-left)
+2018-09-14: [`right-to-left`](Funcons-beta/Computations/Normal/Flowing/#Name_right-to-left)
 * funcon added.
 
 2018-09-07: [Funcons-beta](Funcons-beta), [Languages-beta](Languages-beta)
 * CBS web pages regenerated:
   hyperlinks corrected (for variable references in rules), confusing tooltips removed.
 
-2018-09-07: [Characters](/CBS-beta/Funcons-beta/Values/Primitive/Characters/)
+2018-09-07: [Characters](Funcons-beta/Values/Primitive/Characters/)
 * `char` (alias for `unicode-character`) renamed to `unicode-char`.
 * `ascii-character` (alias `ascii-char`) added to
-  [Funcons-Index](/CBS-beta/Funcons-beta/Funcons-Index/) and
+  [Funcons-Index](Funcons-beta/Funcons-Index/) and
   [funcon reuse overview](Languages-beta/Reuse).
 
 ~~2018-08-26: [Browsing](Browsing)~~
 * ~~folding now applies to sequences of rules, not individual rules.~~
 * ~~blank lines following a rule are now preserved when it is folded.~~
 
-2018-08-22: [`current-value`](/CBS-beta/Funcons-beta/Computations/Normal/Storing/#Name_current-value)
+2018-08-22: [`current-value`](Funcons-beta/Computations/Normal/Storing/#Name_current-value)
 * `current-value` was an alias for
-  [`structural-assigned`](/CBS-beta/Funcons-beta/Computations/Normal/Storing/#Name_structural-assigned),
+  [`structural-assigned`](Funcons-beta/Computations/Normal/Storing/#Name_structural-assigned),
   which returns the value of a simple or structured variable by replacing all
   simple sub-variables in it by their assigned values; `current-value(V)` is
   still equivalent to `structural-assigned(V)` when `V` is itself a _simple_
   variable, but when `V` is a _structured_ variable, it now simply returns `V`.
 
   The only use of `current-value(V)` in `Languages-beta` was in the definition of
-  [`ocaml-light-to-string`](/CBS-beta/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-12-Core-Library/#Name_ocaml-light-to-string),
+  [`ocaml-light-to-string`](Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-12-Core-Library/#Name_ocaml-light-to-string),
   which has now been changed to use `assigned`.
 
 2018-08-17: [Downloads](Downloads)
 * added a page about downloading for offline browsing.
 
-2018-08-14: [`first-n`](/CBS-beta/Funcons-beta/Values/Composite/Sequences/#Name_first-n)
+2018-08-14: [`first-n`](Funcons-beta/Values/Composite/Sequences/#Name_first-n)
 * rule corrected.
 
 2018-07-17: [MiniJava](Languages-beta/MiniJava)
@@ -237,6 +237,6 @@ presented on this website.
 * [added an overview of funcon reuse](Languages-beta/Reuse).
 
 2018-07-09: [OCaml Light](Languages-beta/OCaml-Light)
-* [added `expr ::= 'assert' expr`](/CBS-beta/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-07-Expressions/).
-* [added disambiguation rules for `'{' expr 'with' ... '}'`](/CBS-beta/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-A-Disambiguation/).
-* [corrected the rule defining `implemented-vector`](/CBS-beta/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-02-Values/).
+* [added `expr ::= 'assert' expr`](Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-07-Expressions/).
+* [added disambiguation rules for `'{' expr 'with' ... '}'`](Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-A-Disambiguation/).
+* [corrected the rule defining `implemented-vector`](Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-02-Values/).
