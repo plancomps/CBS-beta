@@ -18,6 +18,7 @@ p, li, a, dt, dd, td, th, h1, h2, h3, h4, h5, h6 {
 .MathJax a, .katex a {
   color: $body-text-color;
   background-image: none;
+  white-space: nowrap;
 }
 
 // Potential workaround for KaTeX 0.13.0 bug https://github.com/KaTeX/KaTeX/issues/2815
