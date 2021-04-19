@@ -92,4 +92,4 @@ The funcons used to compute such values are not regarded as constructors, as the
 
 [computations]: ../../Computations
 
-[ground values]: ../Values#ground-values
+[ground values]: ../../Values#ground-values

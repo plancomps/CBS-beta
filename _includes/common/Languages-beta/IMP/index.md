@@ -42,7 +42,7 @@ Keywords:
 Main contributors:
   - Peter Mosses
 
-[IMP in the K framework]: http://www.kframework.org/language-pdfs/new/imp.pdf
+[IMP in the K framework]: https://kframework.org/k-distribution/pl-tutorial/1_k/2_imp/lesson_5/imp/
 
 [IMP]:               IMP-cbs/IMP/IMP-Start
 [IMP-Funcons-Index]: IMP-cbs/IMP/IMP-Funcons-Index

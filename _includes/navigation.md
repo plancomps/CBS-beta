@@ -53,7 +53,7 @@ The [Downloads] page explains how to obtain a copy and serve the files locally.
 [Plain sources]: https://github.com/plancomps/CBS-beta/tree/math/_docs
 [Pretty and PDF sources]: https://github.com/plancomps/CBS-beta/tree/math/_math
 [CBS-LaTeX]: https://github.com/plancomps/CBS-beta/blob/math/_includes/cbs-latex.sty
-[CBS-KaTeX]: https://github.com/plancomps/CBS-beta/blob/math/_includes/cbs-katex.html
+[CBS-KaTeX]: https://github.com/plancomps/CBS-beta/blob/math/_includes/cbs-katex.sty
 [CSS]: https://github.com/plancomps/CBS-beta/blob/math/_sass/custom/custom.scss
 [CBS-beta]: https://plancomps.github.io/CBS-beta
 

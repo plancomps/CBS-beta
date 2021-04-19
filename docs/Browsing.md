@@ -22,7 +22,7 @@ all names declared in [Funcons-beta] are globally visible,
 and names declared in a particular language specification are local to that language,
 regardless of where the specification files are located.
 
-The global Funcons-Index page lists the names of all current funcons, grouped by file.
+The global [Funcons-Index] page lists the names of all current funcons, grouped by file.
 The local Funcons-Index page for a particular language lists only the names of the funcons actually used in its specification.
 
 The [Funcon Reuse] page shows which of the languages in [Languages-beta] reference each funcon.
@@ -85,19 +85,19 @@ Support pages
 
 [Downloads]: Downloads
 
-[Funcons-beta]: ../Funcons-beta
+[Funcons-beta]: Funcons-beta
 
-[Unstable-Funcons-beta]: ../Unstable-Funcons-beta
+[Unstable-Funcons-beta]: Languages-beta
 
-[Funcons-Index]: ../Funcons-Index/
+[Funcons-Index]: Funcons-beta/Funcons-Index
 
-[Unstable-Funcons-Index]: ../Unstable-Funcons-Index
+[Unstable-Funcons-Index]: Languages-beta/Unstable-Funcons-Index
 
-[Funcon Reuse]: ../Reuse
+[Funcon Reuse]: Languages-beta/Reuse
 
-[Languages-beta]: ../Languages-beta
+[Languages-beta]: Languages-beta
 
-[Unstable-Languages-beta]: .//Unstable-Languages-beta
+[Unstable-Languages-beta]: Unstable-Languages-beta
 
 [CBS-beta]: /CBS-beta
 

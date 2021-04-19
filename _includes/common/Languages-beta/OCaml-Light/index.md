@@ -51,13 +51,13 @@ Main contributors:
   - previous: Martin Churchill, Paolo Torrini
 
 
-[Caml-Light]:   https://caml.inria.fr/caml-light/
-[OCaml Manual]: https://caml.inria.fr/pub/docs/manual-ocaml-4.08
+[Caml-Light]:   https://ocaml.org/caml-light/
+[OCaml Manual]: https://ocaml.org/releases/4.08/htmlman/
 [OCaml]:        https://ocaml.org
 [OCaml Implementation]: https://ocaml.org/docs/install.html
 [A formal specification for OCaml: the Core Language]: https://github.com/ott-lang/ott/tree/master/examples/ocaml_light
 [Reusable Components of Semantic Specifications]: http://plancomps.org/taosd2015
-[Ott framework]: https://www.cl.cam.ac.uk/~pes20/ott/
+[Ott framework]: https://github.com/ott-lang/ott
 
 [OCaml-Light]:               OC-L-cbs/OC-L/OC-L-Start
 [OCaml-Light-Funcons-Index]: OC-L-cbs/OC-L/OC-L-Funcons-Index

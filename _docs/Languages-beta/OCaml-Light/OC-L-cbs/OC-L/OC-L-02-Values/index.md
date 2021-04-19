@@ -22,7 +22,7 @@ ancestor: Languages-beta
 
 
   The comments below are excerpts from section 7.2 of [The OCaml System,
-  release 4.06](https://caml.inria.fr/pub/docs/manual-ocaml-4.06/values.html).
+  release 4.06](https://ocaml.org/releases/4.06/htmlman/values.html).
 
 
 // FIX-ME: Allow implementation-dependent variations
