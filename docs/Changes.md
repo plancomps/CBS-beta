@@ -15,6 +15,10 @@ presented on this website.
 > please [report it as an issue on GitHub](https://github.com/plancomps/CBS-beta/issues). 
 > If relevant, include the browser type and version, and a screenshot illustrating the problem.
 
+2021-04-19: [CBS-beta](/CBS-beta/) (experimental math branch)
+* Updated to use initial version of [CBS-LaTeX](https://plancomps.github.io/cbs-latex/) macro packages
+  for formatting [Pretty](Pretty) web pages and PDFs
+
 2021-04-15: [CBS-beta](/CBS-beta/) (experimental math branch)
 * Auto-switching to dark mode replaced by manual toggle buttons (&#x263c; &#x263d;) at top of navigation menu
 * [Minimised FOUC](https://www.primative.net/blog/how-to-get-rid-of-the-flash-of-unstyled-content/) 

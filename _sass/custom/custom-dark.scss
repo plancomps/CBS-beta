@@ -1,11 +1,29 @@
-
-.search-input {
-  color: $body-text-color;
-}
-
 // CBS highlighting
 
-/* PLAIN */
+// PRETTY
+
+.MathJax, .katex {
+  .cbs-Key {
+    color: Gray;
+  }
+  .cbs-Name {
+    color: Violet;
+  }
+  .cbs-SyntaxName {
+    color: MediumSeaGreen;
+  }
+  .cbs-SemanticsName {
+    color: MediumPurple;
+  }
+  .cbs-PartVariable {
+    color: $body-text-color;
+  }
+  .cbs-SectionNumber {
+    color: $body-text-color;
+  }
+}
+
+// PLAIN
 
 i.keyword {
     color: Gray;
@@ -33,27 +51,4 @@ i.var, i.var a, sub, sup {
 
 span.sectnumtitle a:link {
     color: $body-text-color;
-}
-
-/* PRETTY */
-
-.MathJax, .katex {
-  .cbs-Key {
-    color: Gray;
-  }
-  .cbs-Name {
-    color: Violet;
-  }
-  .cbs-SyntaxName {
-    color: MediumSeaGreen;
-  }
-  .cbs-SemanticsName {
-    color: MediumPurple;
-  }
-  .cbs-PartVariable {
-    color: $body-text-color;
-  }
-  .cbs-SectionNumber {
-    color: $body-text-color;
-  }
 }

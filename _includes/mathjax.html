@@ -1,0 +1,28 @@
+<script>
+  MathJax = { 
+    tex: { 
+      maxBuffer: 10 * 1024,
+      tags: 'ams',
+      packages: {'[+]': ['textmacros']},
+      macros: {
+        relax: ''
+        }
+    },
+    loader: {
+      load: ['[tex]/textmacros']
+    },
+    chtml: { 
+      mtextFont: 'sans-serif', 
+      displayAlign: 'left', 
+      displayIndent: '2em'
+    },
+    svg: { 
+      mtextFont: 'sans-serif', 
+      displayAlign: 'left', 
+      displayIndent: '2em',
+      fontCache: 'global'
+    }
+  };
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>

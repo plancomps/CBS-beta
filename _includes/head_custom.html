@@ -1,15 +1,13 @@
-<link rel="shortcut icon" type="image/x-icon"   href="/CBS-beta/assets/icons/favicon.ico">
-<link rel="apple-touch-icon" sizes="180x180"    href="/CBS-beta/assets/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/CBS-beta/assets/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/CBS-beta/assets/icons/favicon-16x16.png">
-<link rel="mask-icon" href="/CBS-beta/assets/icons/safari-pinned-tab.svg">
-<link rel="manifest"  href="/CBS-beta/assets/icons/site.webmanifest">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
+{%- comment -%}
+  Math rendering
+{%- endcomment -%}
 
-{% case page.math %}
+{% assign math = page.math | default: layout.math %}
+{% case math %}
   {% when "katex" %}
-    {% include cbs-katex.html %}
+    {% include katex.html %}
+  {% when "mathjax" %}
+    {% include mathjax.html %}
 {% endcase %}
 
 <!-- https://www.primative.net/blog/how-to-get-rid-of-the-flash-of-unstyled-content/ -->
@@ -18,3 +16,12 @@
     visibility: visible;
   }
 </style>
+
+<link rel="shortcut icon" type="image/x-icon"   href="/cbs-latex/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180"    href="/CBS-beta/assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/CBS-beta/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/CBS-beta/assets/icons/favicon-16x16.png">
+<link rel="mask-icon" href="/CBS-beta/assets/icons/safari-pinned-tab.svg">
+<link rel="manifest"  href="/CBS-beta/assets/icons/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
