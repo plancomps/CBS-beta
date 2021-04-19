@@ -1,6 +1,5 @@
 ---
 title: "OC-L-10-Module-Types"
-math: katex
 parent: OC-L
 ancestor: Languages-beta
 
@@ -40,7 +39,7 @@ $$\KEY{Language} \quad \STRING{OCaml Light}$$
   "CBS SOURCE WEB PAGE"
  [PRETTY]: /CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-10-Module-Types
   "CBS-KATEX WEB PAGE"
-[PDF]: https://github.com/plancomps/CBS-beta/blob/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-10-Module-Types/OC-L-10-Module-Types.pdf
+[PDF]: /CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-10-Module-Types/OC-L-10-Module-Types.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

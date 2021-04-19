@@ -1,6 +1,5 @@
 ---
 title: "SL-Start"
-math: katex
 parent: SL
 ancestor: Languages-beta
 nav_order: SL
@@ -100,7 +99,7 @@ $$\begin{align*}
   "CBS SOURCE WEB PAGE"
  [PRETTY]: /CBS-beta/math/Languages-beta/SL/SL-cbs/SL/SL-Start
   "CBS-KATEX WEB PAGE"
-[PDF]: https://github.com/plancomps/CBS-beta/blob/math/Languages-beta/SL/SL-cbs/SL/SL-Start/SL-Start.pdf
+[PDF]: /CBS-beta/math/Languages-beta/SL/SL-cbs/SL/SL-Start/SL-Start.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

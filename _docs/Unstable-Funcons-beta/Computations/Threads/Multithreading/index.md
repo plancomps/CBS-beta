@@ -767,7 +767,7 @@ the details of how it affects the result of <code><span class="name"><a href="#N
   "CBS SOURCE WEB PAGE"
 [PRETTY]: /CBS-beta/math/Unstable-Funcons-beta/Computations/Threads/Multithreading
   "CBS-KATEX WEB PAGE"
-[PDF]: https://github.com/plancomps/CBS-beta/blob/math/Unstable-Funcons-beta/Computations/Threads/Multithreading/Multithreading.pdf
+[PDF]: /CBS-beta/math/Unstable-Funcons-beta/Computations/Threads/Multithreading/Multithreading.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

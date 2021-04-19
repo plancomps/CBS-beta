@@ -1,6 +1,5 @@
 ---
 title: "SL-4-Definitions"
-math: katex
 parent: SL
 ancestor: Languages-beta
 
@@ -152,7 +151,7 @@ $$\begin{align*}
   "CBS SOURCE WEB PAGE"
  [PRETTY]: /CBS-beta/math/Languages-beta/SL/SL-cbs/SL/SL-4-Definitions
   "CBS-KATEX WEB PAGE"
-[PDF]: https://github.com/plancomps/CBS-beta/blob/math/Languages-beta/SL/SL-cbs/SL/SL-4-Definitions/SL-4-Definitions.pdf
+[PDF]: /CBS-beta/math/Languages-beta/SL/SL-cbs/SL/SL-4-Definitions/SL-4-Definitions.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

@@ -54,7 +54,7 @@ ancestor: Languages-beta
   "CBS SOURCE WEB PAGE"
 [PRETTY]: /CBS-beta/math/Languages-beta/IMP/IMP-cbs/IMP/IMP-2
   "CBS-KATEX WEB PAGE"
-[PDF]: https://github.com/plancomps/CBS-beta/blob/math/Languages-beta/IMP/IMP-cbs/IMP/IMP-2/IMP-2.pdf
+[PDF]: /CBS-beta/math/Languages-beta/IMP/IMP-cbs/IMP/IMP-2/IMP-2.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

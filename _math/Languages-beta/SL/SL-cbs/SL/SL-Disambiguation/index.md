@@ -1,6 +1,5 @@
 ---
 title: "SL-Disambiguation"
-math: katex
 parent: SL
 ancestor: Languages-beta
 
@@ -116,7 +115,7 @@ $$\KEY{Language} \quad \STRING{SL}$$
   "CBS SOURCE WEB PAGE"
  [PRETTY]: /CBS-beta/math/Languages-beta/SL/SL-cbs/SL/SL-Disambiguation
   "CBS-KATEX WEB PAGE"
-[PDF]: https://github.com/plancomps/CBS-beta/blob/math/Languages-beta/SL/SL-cbs/SL/SL-Disambiguation/SL-Disambiguation.pdf
+[PDF]: /CBS-beta/math/Languages-beta/SL/SL-cbs/SL/SL-Disambiguation/SL-Disambiguation.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

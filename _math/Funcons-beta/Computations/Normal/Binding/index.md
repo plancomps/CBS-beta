@@ -1,6 +1,5 @@
 ---
 title: "Binding"
-math: katex
 parent: Normal
 ancestor: Funcons-beta
 
@@ -579,7 +578,7 @@ $$\begin{align*}
   "CBS SOURCE WEB PAGE"
  [PRETTY]: /CBS-beta/math/Funcons-beta/Computations/Normal/Binding
   "CBS-KATEX WEB PAGE"
-[PDF]: https://github.com/plancomps/CBS-beta/blob/math/Funcons-beta/Computations/Normal/Binding/Binding.pdf
+[PDF]: /CBS-beta/math/Funcons-beta/Computations/Normal/Binding/Binding.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

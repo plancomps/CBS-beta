@@ -1,6 +1,5 @@
 ---
 title: "Null"
-math: katex
 parent: Primitive
 ancestor: Funcons-beta
 
@@ -57,7 +56,7 @@ $$\begin{align*}
   "CBS SOURCE WEB PAGE"
  [PRETTY]: /CBS-beta/math/Funcons-beta/Values/Primitive/Null
   "CBS-KATEX WEB PAGE"
-[PDF]: https://github.com/plancomps/CBS-beta/blob/math/Funcons-beta/Values/Primitive/Null/Null.pdf
+[PDF]: /CBS-beta/math/Funcons-beta/Values/Primitive/Null/Null.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"

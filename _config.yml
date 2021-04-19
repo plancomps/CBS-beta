@@ -50,19 +50,16 @@ exclude:
   - "logs/"
   - makefile
   - sunshine2.jar
-  - "Languages-beta/*/*/Funcons-beta"
-  - "Unstable-Funcons-beta/Funcons-beta"
-  - "Unstable-Languages-beta/*/*/Unstable-Funcons-beta"
-  - "*/target"
-  - "*/*/target"
-  - "*/*/*/target"
-  - "*/*/*/*/target"
-  - "*/*/*/*/*/target"
-  - "*/*/*/*/tests"
-  - "*/*/*/*/*/tests"
-  - "*/*/*/*.tex"
-  - "*/*/*/*/*.tex"
-  - "*/*/*/*/*/*.tex"
+  - "Funcons-beta/"
+  - "Languages-beta/"
+  - "Unstable-Funcons-beta/"
+  - "Unstable-Languages-beta/"
+
+include:
+  - "Funcons-beta/index.md"
+  - "Languages-beta/index.md"
+  - "Unstable-Funcons-beta/index.md"
+  - "Unstable-Languages-beta/index.md"
 
 search_enabled: true
 search:
@@ -104,7 +101,7 @@ plugins:
   - jekyll-seo-tag
 
 compress_html:
-  blanklines: false
+  blanklines: true
 
 nav_next_prev: true
 
@@ -119,7 +116,7 @@ defaults:
     values: {layout: default}
   -
     scope: {type: math}
-    values: {layout: default}
+    values: {layout: cbs-katex}
   -
     scope: {path: "*/index.md", type: pages}
     values: {layout: default}
@@ -262,3 +259,22 @@ defaults:
   - 
     scope: {path: "*/Funcons-beta/Values/Abstraction/Patterns"}
     values: {nav_order: 4}
+
+# Unstable-Funcons-beta
+
+  # Computations
+
+  # Threads
+  - 
+    scope: {path: "*/Unstable-Funcons-beta/Computations/Threads"}
+    values: {nav_order: 1}
+
+  # Normal
+  - 
+    scope: {path: "*/Unstable-Funcons-beta/Computations/Normal"}
+    values: {nav_order: 2}
+
+  # Abormal
+  - 
+    scope: {path: "*/Unstable-Funcons-beta/Computations/Abnormal"}
+    values: {nav_order: 3}

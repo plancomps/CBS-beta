@@ -1,6 +1,5 @@
 ---
 title: "Memos"
-math: katex
 parent: Normal
 ancestor: Unstable-Funcons-beta
 
@@ -176,7 +175,7 @@ $$\begin{align*}
   "CBS SOURCE WEB PAGE"
  [PRETTY]: /CBS-beta/math/Unstable-Funcons-beta/Computations/Normal/Memos
   "CBS-KATEX WEB PAGE"
-[PDF]: https://github.com/plancomps/CBS-beta/blob/math/Unstable-Funcons-beta/Computations/Normal/Memos/Memos.pdf
+[PDF]: /CBS-beta/math/Unstable-Funcons-beta/Computations/Normal/Memos/Memos.pdf
   "CBS-LATEX PDF FILE"
 [PLanCompS Project]: https://plancomps.github.io
   "PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE"
