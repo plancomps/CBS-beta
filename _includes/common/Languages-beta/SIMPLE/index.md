@@ -46,9 +46,9 @@ Main contributors:
   - Thomas van Binsbergen, Peter Mosses, Neil Sculthorpe
 
 [K Overview and SIMPLE Case Study]:  http://dx.doi.org/10.1016/j.entcs.2014.05.002
-[SIMPLE in the K framework]: http://fsl.cs.illinois.edu/index.php/K_Overview_and_SIMPLE_Case_Study
+[SIMPLE in the K framework]: https://kframework.org/k-distribution/pl-tutorial/2_languages/1_simple/2_typed/2_dynamic/simple-typed-dynamic/
 
 [SIMPLE]:               SIMPLE-cbs/SIMPLE/SIMPLE-Start
 [SIMPLE-Funcons-Index]: SIMPLE-cbs/SIMPLE/SIMPLE-Funcons-Index
 
-[SIMPLE-Threads]: ../Unstable-Languages-beta/SIMPLE-Threads
+[SIMPLE-Threads]: ../../Unstable-Languages-beta/SIMPLE-Threads

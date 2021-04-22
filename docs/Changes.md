@@ -15,6 +15,9 @@ presented on this website.
 > please [report it as an issue on GitHub](https://github.com/plancomps/CBS-beta/issues). 
 > If relevant, include the browser type and version, and a screenshot illustrating the problem.
 
+2021-04-22: [CBS-beta](/CBS-beta/) (experimental math branch)
+* Fixed various broken links
+
 2021-04-19: [CBS-beta](/CBS-beta/) (experimental math branch)
 * Updated to use initial version of [CBS-LaTeX](https://plancomps.github.io/cbs-latex/) macro packages
   for formatting [Pretty](Pretty) web pages and PDFs
