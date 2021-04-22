@@ -19,8 +19,9 @@ Language "MiniJava"
 
 #1 Programs
 
+```
 Syntax
-``
+
 START:
   start ::= program
 P:  
@@ -32,9 +33,13 @@ MC:
         statement
       '}' 
     '}'
-``
+```
+
 #2 Declarations
-``
+
+```
+Syntax
+
 CD:
   class-declaration ::=
     'class' identifier ( 'extends' identifier )? '{' 
@@ -58,9 +63,12 @@ T:
 FL:
   formal-list ::= 
     type identifier ( ',' formal-list )?
-``
+```
+
 #3 Statements
-``
+
+```
+Syntax
 S:
   statement ::= '{' statement* '}'
               | 'if' '(' expression ')' statement 'else' statement
@@ -68,9 +76,12 @@ S:
               | 'System''.''out''.''println' '(' expression ')' ';'
               | identifier '=' expression ';'
               | identifier '[' expression ']' '=' expression ';'
-``
+```
+
 #4 Expressions
-``
+
+```
+Syntax
 E:
   expression ::= expression '&&' expression
                | expression '<' expression
@@ -92,11 +103,13 @@ E:
 EL:
   expression-list ::=
     expression ( ',' expression-list )?
-``
+```
+
 #5 Lexemes
 
+```
 Lexis
-``
+
 ID:
   identifier ::= letter ( letter | digit | '_' )*
 IL:
@@ -105,7 +118,7 @@ IL:
   letter ::= 'a'-'z' | 'A'-'Z'
   
   digit ::= '0'-'9'
-``
+```
 */
 
 #6 Disambiguation
@@ -115,7 +128,7 @@ IL:
   be disambiguated by parsers generated from the above grammar.
   
   The specified rules are adequate to disambiguate all the example programs
-  provided at http://www.cambridge.org/us/features/052182060X/#progs
+  provided at <https://www.cambridge.org/us/features/052182060X/#progs>.
 */
 
 Syntax SDF
