@@ -7,19 +7,10 @@ ancestor: Unstable-Languages-beta
 
 [Unstable-Languages-beta] : [SIMPLE-THR-1-Lexical.cbs] \| [PRETTY] \| [PDF]
 
-<details open markdown="block">
-  <summary>
-    Outline
-  </summary>
-  {: .text-delta }
-- TOC
-{:toc}
-</details>
 
 ----
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Language</i> <span id="Language_SIMPLE-THR">"SIMPLE-THR"</span></code></pre></div>
-# <span id="SectionNumber_1">1</span> Lexical Syntax
-
+# 1 Lexical Syntax {#SectionNumber_1}
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Syntax</i>
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_V">V</span></i> :</i> <span class="syn-name"><span id="SyntaxName_value">value</span></span> ::= <span class="syn-name"><a href="#SyntaxName_bool">bool</a></span> | <span class="syn-name"><a href="#SyntaxName_int">int</a></span> | <span class="syn-name"><a href="#SyntaxName_string">string</a></span>
@@ -35,8 +26,7 @@ ancestor: Unstable-Languages-beta
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Semantics</i>
   <i class="sem-name"><span id="SemanticsName_val">val</span></i>[[ _:<span class="syn-name"><a href="#SyntaxName_value">value</a></span> ]] : =><span class="name"><a href="../../../../../Funcons-beta/Values/Value-Types/index.html#Name_values">values</a></span></code></pre></div>
-# <span id="SectionNumber_1.1">1.1</span> Booleans
-
+# 1.1 Booleans {#SectionNumber_1.1}
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Rule</i>
   <i class="sem-name"><a href="#SemanticsName_val">val</a></i>[[ <b class="atom">'false'</b> ]] = <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Booleans/index.html#Name_false">false</a></span>
@@ -44,20 +34,17 @@ ancestor: Unstable-Languages-beta
   <i class="sem-name"><a href="#SemanticsName_val">val</a></i>[[ <b class="atom">'true'</b> ]] = <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Booleans/index.html#Name_true">true</a></span></code></pre></div>
 
 
-# <span id="SectionNumber_1.2">1.2</span> Integers
-
+# 1.2 Integers {#SectionNumber_1.2}
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Rule</i>
   <i class="sem-name"><a href="#SemanticsName_val">val</a></i>[[ <span id="Variable177_Z"><i class="var"><a href="#VariableStem_Z">Z</a></i></span> ]] = <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Integers/index.html#Name_decimal-natural">decimal-natural</a></span>(\"<a href="#Variable177_Z"><i class="var">Z</i></a>\")</code></pre></div>
 
 
-# <span id="SectionNumber_1.3">1.3</span> Strings
-
+# 1.3 Strings {#SectionNumber_1.3}
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Rule</i>
   <i class="sem-name"><a href="#SemanticsName_val">val</a></i>[[ <b class="atom">'"'</b> <span id="Variable219_S"><i class="var"><a href="#VariableStem_S">S</a></i></span> <b class="atom">'"'</b> ]] = \"<a href="#Variable219_S"><i class="var">S</i></a>\"</code></pre></div>
 
 
-# <span id="SectionNumber_1.4">1.4</span> Identifiers
-
+# 1.4 Identifiers {#SectionNumber_1.4}
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Lexis</i>
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_Id">Id</span></i> :</i> <span class="syn-name"><span id="SyntaxName_id">id</span></span> ::= (<b class="atom">'A'</b>-<b class="atom">'Z'</b>|<b class="atom">'a'</b>-<b class="atom">'z'</b>|<b class="atom">'_'</b>) (<b class="atom">'0'</b>-<b class="atom">'9'</b>|<b class="atom">'A'</b>-<b class="atom">'Z'</b>|<b class="atom">'a'</b>-<b class="atom">'z'</b>|<b class="atom">'_'</b>)<sup class="sup">*</sup></code></pre></div>
 

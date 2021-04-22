@@ -12,11 +12,11 @@
 \KEY{Language} \quad \STRING{OCaml Light}
 \end{displaymath}
 
-\section{$\SECT{6}$ Patterns}\hypertarget{sect6-patterns}{}\label{sect6-patterns}
+\section{$\SECT{6}$ Patterns}\hypertarget{SectionNumber:6}{}\label{SectionNumber:6}
 
 \begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{P} : \SYN{pattern}
+    \VARDECL{P} : \SYNDECL{pattern}
       \ ::= \ & \
       \SYNHYPER{../.}{OC-L-03-Names}{value-name} \\
       \ \mid \ & \ \LEX{{\UNDERSCORE}} \\
@@ -31,15 +31,15 @@
       \ \mid \ & \ \LEX{{[}} \ \SYNREF{pattern} \ \SYNREF{semic-pattern}\STAR \ \LEX{{;}}\QUERY \ \LEX{{]}} \\
       \ \mid \ & \ \SYNREF{pattern} \ \LEX{{:}{:}} \ \SYNREF{pattern}
     \\
-    \VARDECL{CP} : \SYN{comma-pattern}
+    \VARDECL{CP} : \SYNDECL{comma-pattern}
       \ ::= \ & \
       \LEX{{,}} \ \SYNREF{pattern}
     \\
-    \VARDECL{SP} : \SYN{semic-pattern}
+    \VARDECL{SP} : \SYNDECL{semic-pattern}
       \ ::= \ & \
       \LEX{{;}} \ \SYNREF{pattern}
     \\
-    \VARDECL{SFP} : \SYN{semic-field-pattern}
+    \VARDECL{SFP} : \SYNDECL{semic-field-pattern}
       \ ::= \ & \
       \LEX{{;}} \ \SYNHYPER{../.}{OC-L-03-Names}{field} \ \LEX{{=}} \ \SYNREF{pattern}
 \end{align*}

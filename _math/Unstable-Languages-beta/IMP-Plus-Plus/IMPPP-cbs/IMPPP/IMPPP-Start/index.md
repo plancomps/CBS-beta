@@ -32,7 +32,7 @@ See also [Unstable-Funcons-beta]
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{START} : \SYN{start}
+    \VARDECL{START} : \SYNDECL{start}
       \ ::= \ & \
       \SYNHYPER{../.}{IMPPP-4}{stmt}\STAR
 \end{align*}$$

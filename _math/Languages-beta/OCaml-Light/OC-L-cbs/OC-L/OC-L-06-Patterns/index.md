@@ -21,13 +21,12 @@ ancestor: Languages-beta
 
 $$\KEY{Language} \quad \STRING{OCaml Light}$$
 
-# $$\SECT{6}$$ Patterns
-           
+# $$\SECT{6}$$ Patterns {#SectionNumber:6}
 
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{P} : \SYN{pattern}
+    \VARDECL{P} : \SYNDECL{pattern}
       \ ::= \ & \
       \SYNHYPER{../.}{OC-L-03-Names}{value-name} \\
       \ \mid \ & \ \LEX{{\UNDERSCORE}} \\
@@ -42,15 +41,15 @@ $$\begin{align*}
       \ \mid \ & \ \LEX{{[}} \ \SYNREF{pattern} \ \SYNREF{semic-pattern}\STAR \ \LEX{{;}}\QUERY \ \LEX{{]}} \\
       \ \mid \ & \ \SYNREF{pattern} \ \LEX{{:}{:}} \ \SYNREF{pattern}
     \\
-    \VARDECL{CP} : \SYN{comma-pattern}
+    \VARDECL{CP} : \SYNDECL{comma-pattern}
       \ ::= \ & \
       \LEX{{,}} \ \SYNREF{pattern}
     \\
-    \VARDECL{SP} : \SYN{semic-pattern}
+    \VARDECL{SP} : \SYNDECL{semic-pattern}
       \ ::= \ & \
       \LEX{{;}} \ \SYNREF{pattern}
     \\
-    \VARDECL{SFP} : \SYN{semic-field-pattern}
+    \VARDECL{SFP} : \SYNDECL{semic-field-pattern}
       \ ::= \ & \
       \LEX{{;}} \ \SYNHYPER{../.}{OC-L-03-Names}{field} \ \LEX{{=}} \ \SYNREF{pattern}
 \end{align*}$$

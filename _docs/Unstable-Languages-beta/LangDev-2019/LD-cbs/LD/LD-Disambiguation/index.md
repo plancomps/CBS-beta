@@ -7,21 +7,11 @@ ancestor: Unstable-Languages-beta
 
 [Unstable-Languages-beta] : [LD-Disambiguation.cbs] \| [PRETTY] \| [PDF]
 
-<details open markdown="block">
-  <summary>
-    Outline
-  </summary>
-  {: .text-delta }
-- TOC
-{:toc}
-</details>
 
 ----
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Language</i> <span id="Language_LD">"LD"</span></code></pre></div>
-# <span id="SectionNumber_A">A</span> Disambiguation
-
-# <span id="SectionNumber_A.1">A.1</span> Lexical constructs
-
+# A Disambiguation {#SectionNumber_A}
+# A.1 Lexical constructs {#SectionNumber_A.1}
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Lexis</i> <i class="keyword">SDF</i>
 
@@ -34,96 +24,92 @@ lexical restrictions
 <i class="keyword">Syntax</i> <i class="keyword">SDF</i>
 
 context-free syntax
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_start">start</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code> {prefer}</code></pre></div>
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_start">start</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> {prefer}</code></pre></div>
 
 
-# <span id="SectionNumber_A.2">A.2</span> Call-by-value lambda-calculus
-
+# A.2 Call-by-value lambda-calculus {#SectionNumber_A.2}
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Syntax</i> <i class="keyword">SDF</i>
 
 context-free syntax
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <b class="atom">'lambda'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_id">id</a></span> <b class="atom">'.'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code> {longest-match}
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code> {left}
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <b class="atom">'let'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_id">id</a></span> <b class="atom">'='</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'in'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code> {longest-match}
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <b class="atom">'lambda'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_id">id</a></span> <b class="atom">'.'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> {longest-match}
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> {left}
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <b class="atom">'let'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_id">id</a></span> <b class="atom">'='</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'in'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> {longest-match}
 
 context-free priorities
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code>
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span>
 > {
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <b class="atom">'lambda'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_id">id</a></span> <b class="atom">'.'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code>
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <b class="atom">'let'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_id">id</a></span> <b class="atom">'='</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'in'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code>
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <b class="atom">'lambda'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_id">id</a></span> <b class="atom">'.'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span>
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <b class="atom">'let'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_id">id</a></span> <b class="atom">'='</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'in'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span>
 }</code></pre></div>
 
 
-# <span id="SectionNumber_A.3">A.3</span> Arithmetic and Boolean expressions
-
+# A.3 Arithmetic and Boolean expressions {#SectionNumber_A.3}
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Syntax</i> <i class="keyword">SDF</i>
 
 context-free syntax
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'+'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code> {left}
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'*'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code> {left}
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'/'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code> {left}
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'<='</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code> {non-assoc}
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'&&'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code> {right}
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <b class="atom">'if'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'then'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'else'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code> {longest-match}
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'+'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> {left}
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'*'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> {left}
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'/'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> {left}
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'<='</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> {non-assoc}
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'&&'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> {right}
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <b class="atom">'if'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'then'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'else'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> {longest-match}
 
 context-free priorities
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code>
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span>
 >
 {left:
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'*'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code>
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'/'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code>
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'*'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span>
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'/'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span>
 } >
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'+'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code>
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'+'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span>
 >
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'<='</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code>
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'<='</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span>
 >
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'&&'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code>
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'&&'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span>
 > {
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <b class="atom">'lambda'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_id">id</a></span> <b class="atom">'.'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code>
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <b class="atom">'let'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_id">id</a></span> <b class="atom">'='</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'in'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code>
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <b class="atom">'lambda'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_id">id</a></span> <b class="atom">'.'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span>
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <b class="atom">'let'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_id">id</a></span> <b class="atom">'='</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'in'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span>
 }</code></pre></div>
 
 
-# <span id="SectionNumber_A.4">A.4</span> References and imperatives
-
+# A.4 References and imperatives {#SectionNumber_A.4}
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Syntax</i> <i class="keyword">SDF</i>
 
 context-free syntax
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">':='</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code> {non-assoc}
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">';'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code> {right}
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <b class="atom">'while'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'do'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code> {longest-match}
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">':='</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> {non-assoc}
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">';'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> {right}
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <b class="atom">'while'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'do'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> {longest-match}
 
 context-free priorities
 {
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <b class="atom">'ref'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code>
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <b class="atom">'!'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code>
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <b class="atom">'ref'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span>
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <b class="atom">'!'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span>
 }>
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code>
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span>
 
 context-free priorities
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'&&'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code>
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'&&'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span>
 >
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">':='</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code>
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">':='</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span>
 > {
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <b class="atom">'lambda'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_id">id</a></span> <b class="atom">'.'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code>
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <b class="atom">'while'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'do'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code>
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <b class="atom">'lambda'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_id">id</a></span> <b class="atom">'.'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span>
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <b class="atom">'while'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'do'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span>
 } >
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">';'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code>
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">';'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span>
 >
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <b class="atom">'let'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_id">id</a></span> <b class="atom">'='</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'in'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code></code></pre></div>
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <b class="atom">'let'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_id">id</a></span> <b class="atom">'='</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">'in'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code></pre></div>
 
 
-# <span id="SectionNumber_A.5">A.5</span> Multithreading
-
+# A.5 Multithreading {#SectionNumber_A.5}
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Syntax</i> <i class="keyword">SDF</i>
 
 context-free priorities
 {
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <b class="atom">'spawn'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code>
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <b class="atom">'join'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code>
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <b class="atom">'spawn'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span>
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <b class="atom">'join'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span>
 }
 >
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">';'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code></code></pre></div>
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> ::= <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span> <b class="atom">';'</b> <span class="syn-name"><a href="../LD-Start/index.html#SyntaxName_exp">exp</a></span></code></pre></div>
 
 
 

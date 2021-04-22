@@ -13,8 +13,7 @@
 
 $$\KEY{Language} \quad \STRING{OCaml Light}$$
 
-# $$\SECT{12}$$ Core library
-           
+# $$\SECT{12}$$ Core library {#SectionNumber:12}
 
 
 $$\begin{align*}

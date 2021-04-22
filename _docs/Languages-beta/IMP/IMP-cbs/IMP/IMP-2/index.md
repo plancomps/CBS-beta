@@ -10,8 +10,7 @@ ancestor: Languages-beta
 
 ----
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Language</i> <span id="Language_IMP">"IMP"</span></code></pre></div>
-# <span id="SectionNumber_2">2</span> Boolean expressions
-
+# 2 Boolean expressions {#SectionNumber_2}
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Syntax</i>
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_BExp">BExp</span></i> :</i> <span class="syn-name"><span id="SyntaxName_bexp">bexp</span></span> ::= <b class="atom">'false'</b>
                |  <b class="atom">'true'</b>

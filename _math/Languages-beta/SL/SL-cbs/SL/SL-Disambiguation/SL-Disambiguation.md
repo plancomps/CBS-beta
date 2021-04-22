@@ -5,8 +5,7 @@
 
 $$\KEY{Language} \quad \STRING{SL}$$
 
-# $$\SECT{A}$$ Disambiguation
-           
+# $$\SECT{A}$$ Disambiguation {#SectionNumber:A}
 
 
 

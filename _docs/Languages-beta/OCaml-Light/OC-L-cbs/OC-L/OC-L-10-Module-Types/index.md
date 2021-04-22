@@ -10,8 +10,7 @@ ancestor: Languages-beta
 
 ----
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Language</i> <span id="Language_OCaml Light">"OCaml Light"</span></code></pre></div>
-# <span id="SectionNumber_10">10</span> Module types
-
+# 10 Module types {#SectionNumber_10}
 
   Omitted
 

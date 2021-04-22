@@ -21,76 +21,75 @@ ancestor: Languages-beta
 
 $$\KEY{Language} \quad \STRING{OCaml Light}$$
 
-# $$\SECT{8}$$ Type and exception definitions
-           
+# $$\SECT{8}$$ Type and exception definitions {#SectionNumber:8}
 
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{TDS} : \SYN{type-definition}
+    \VARDECL{TDS} : \SYNDECL{type-definition}
       \ ::= \ & \
       \LEX{type} \ \SYNREF{typedef} \ \SYNREF{and-typedef}\STAR
     \\
-    \VARDECL{ATD} : \SYN{and-typedef}
+    \VARDECL{ATD} : \SYNDECL{and-typedef}
       \ ::= \ & \
       \LEX{and} \ \SYNREF{typedef}
     \\
-    \VARDECL{TD} : \SYN{typedef}
+    \VARDECL{TD} : \SYNDECL{typedef}
       \ ::= \ & \
       \SYNREF{type-params}\QUERY \ \SYNHYPER{../.}{OC-L-03-Names}{typeconstr-name} \ \SYNREF{type-information}
     \\
-    \VARDECL{TI} : \SYN{type-information}
+    \VARDECL{TI} : \SYNDECL{type-information}
       \ ::= \ & \
       \SYNREF{type-equation}\QUERY \ \SYNREF{type-representation}\QUERY \ \SYNREF{type-constraint}\STAR
     \\
-    \VARDECL{TE} : \SYN{type-equation}
+    \VARDECL{TE} : \SYNDECL{type-equation}
       \ ::= \ & \
       \LEX{{=}} \ \SYNHYPER{../.}{OC-L-04-Type-Expressions}{typexpr}
     \\
-    \VARDECL{TR} : \SYN{type-representation}
+    \VARDECL{TR} : \SYNDECL{type-representation}
       \ ::= \ & \
       \LEX{{=}} \ \LEX{{|}}\QUERY \ \SYNREF{constr-decl} \ \SYNREF{bar-constr-decl}\STAR \\
       \ \mid \ & \ \LEX{{=}} \ \SYNREF{record-decl}
     \\
-    \VARDECL{BCD} : \SYN{bar-constr-decl}
+    \VARDECL{BCD} : \SYNDECL{bar-constr-decl}
       \ ::= \ & \
       \LEX{{|}} \ \SYNREF{constr-decl}
     \\
-    \VARDECL{TPS} : \SYN{type-params}
+    \VARDECL{TPS} : \SYNDECL{type-params}
       \ ::= \ & \
       \SYNREF{type-param} \\
       \ \mid \ & \ \LEX{{(}} \ \SYNREF{type-param} \ \LEFTGROUP \LEX{{,}} \ \SYNREF{type-param} \RIGHTGROUP\STAR \ \LEX{{)}}
     \\
-    \VARDECL{TP} : \SYN{type-param}
+    \VARDECL{TP} : \SYNDECL{type-param}
       \ ::= \ & \
       \SYNREF{variance}\QUERY \ \LEX{{\APOSTROPHE}} \ \SYNHYPER{../.}{OC-L-01-Lexical-Conventions}{ident}
     \\
-     \SYN{variance}
+     \SYNDECL{variance}
       \ ::= \ & \
       \LEX{{+}} \mid \LEX{{-}}
     \\
-    \VARDECL{RD} : \SYN{record-decl}
+    \VARDECL{RD} : \SYNDECL{record-decl}
       \ ::= \ & \
       \LEX{{\LEFTBRACE}} \ \SYNREF{field-decl} \ \LEFTGROUP \LEX{{;}} \ \SYNREF{field-decl} \RIGHTGROUP\STAR \ \LEX{{;}}\QUERY \ \LEX{{\RIGHTBRACE}}
     \\
-    \VARDECL{CD} : \SYN{constr-decl}
+    \VARDECL{CD} : \SYNDECL{constr-decl}
       \ ::= \ & \
       \LEFTGROUP \SYNHYPER{../.}{OC-L-03-Names}{constr-name} \mid \LEX{{[}} \ \LEX{{]}} \mid \LEX{{(}{:}{:}{)}} \RIGHTGROUP \ \LEFTGROUP \LEX{of} \ \SYNREF{constr-args} \RIGHTGROUP\QUERY
     \\
-    \VARDECL{CA} : \SYN{constr-args}
+    \VARDECL{CA} : \SYNDECL{constr-args}
       \ ::= \ & \
       \SYNHYPER{../.}{OC-L-04-Type-Expressions}{typexpr} \ \SYNHYPER{../.}{OC-L-04-Type-Expressions}{star-typexpr}\STAR
     \\
-    \VARDECL{FD} : \SYN{field-decl}
+    \VARDECL{FD} : \SYNDECL{field-decl}
       \ ::= \ & \
       \SYNHYPER{../.}{OC-L-03-Names}{field-name} \ \LEX{{:}} \ \SYNHYPER{../.}{OC-L-04-Type-Expressions}{poly-typexpr}
     \\
-    \VARDECL{ED} : \SYN{exception-definition}
+    \VARDECL{ED} : \SYNDECL{exception-definition}
       \ ::= \ & \
       \LEX{exception} \ \SYNREF{constr-decl} \\
       \ \mid \ & \ \LEX{exception} \ \SYNHYPER{../.}{OC-L-03-Names}{constr-name} \ \LEX{{=}} \ \SYNHYPER{../.}{OC-L-03-Names}{constr}
     \\
-    \VARDECL{TC} : \SYN{type-constraint}
+    \VARDECL{TC} : \SYNDECL{type-constraint}
       \ ::= \ & \
       \LEX{constraint} \ \LEX{{\APOSTROPHE}} \ \SYNHYPER{../.}{OC-L-01-Lexical-Conventions}{ident} \ \LEX{{=}} \ \SYNHYPER{../.}{OC-L-04-Type-Expressions}{typexpr}
 \end{align*}$$

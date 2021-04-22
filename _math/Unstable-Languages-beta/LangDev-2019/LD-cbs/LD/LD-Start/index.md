@@ -42,15 +42,15 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Lexis} \quad
-    \VARDECL{X} : \SYN{id}
+    \VARDECL{X} : \SYNDECL{id}
       \ ::= \ & \
       \LEFTGROUP \LEX{a} {-} \LEX{z} \RIGHTGROUP \ \LEFTGROUP \LEX{a} {-} \LEX{z} \mid \LEX{0} {-} \LEX{9} \RIGHTGROUP\STAR
     \\
-    \VARDECL{N} : \SYN{int}
+    \VARDECL{N} : \SYNDECL{int}
       \ ::= \ & \
       \LEFTGROUP \LEX{0} {-} \LEX{9} \RIGHTGROUP\PLUS
     \\
-     \SYN{keyword}
+     \SYNDECL{keyword}
       \ ::= \ & \
       \LEX{do} \mid \LEX{else} \mid \LEX{fork} \mid \LEX{if} \\
       \ \mid \ & \ \LEX{in} \mid \LEX{join} \mid \LEX{lambda} \mid \LEX{let} \\
@@ -63,7 +63,7 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{E} : \SYN{exp}
+    \VARDECL{E} : \SYNDECL{exp}
       \ ::= \ & \
       \SYNREF{int} \\
       \ \mid \ & \ \SYNREF{id} \\
@@ -105,8 +105,7 @@ $$\begin{align*}
     :  \TO \NAMEREF{ld-values} 
 \end{align*}$$
 
-# $$\SECT{1}$$ Lexical constructs
-           
+# $$\SECT{1}$$ Lexical constructs {#SectionNumber:1}
 
 
 $$\begin{align*}
@@ -125,8 +124,7 @@ $$\begin{align*}
         \textsf{\textquotedblleft}\VAR{X}\textsf{\textquotedblright}
 \end{align*}$$
 
-# $$\SECT{2}$$ Call-by-value lambda-calculus
-           
+# $$\SECT{2}$$ Call-by-value lambda-calculus {#SectionNumber:2}
 
 
 $$\begin{align*}
@@ -196,8 +194,7 @@ $$\begin{align*}
                           \RIGHTPHRASE 
 \end{align*}$$
 
-# $$\SECT{3}$$ Arithmetic and Boolean expressions
-           
+# $$\SECT{3}$$ Arithmetic and Boolean expressions {#SectionNumber:3}
 
 
 $$\begin{align*}
@@ -280,8 +277,7 @@ $$\begin{align*}
                                   \RIGHTPHRASE  )
 \end{align*}$$
 
-# $$\SECT{4}$$ References and imperatives
-           
+# $$\SECT{4}$$ References and imperatives {#SectionNumber:4}
 
 
 $$\begin{align*}
@@ -349,8 +345,7 @@ $$\begin{align*}
                                           \RIGHTPHRASE  ) )
 \end{align*}$$
 
-# $$\SECT{5}$$ Multithreading
-           
+# $$\SECT{5}$$ Multithreading {#SectionNumber:5}
 
 
 
@@ -381,13 +376,12 @@ $$\begin{align*}
                                   \RIGHTPHRASE  )
 \end{align*}$$
 
-# $$\SECT{6}$$ Programs
-           
+# $$\SECT{6}$$ Programs {#SectionNumber:6}
 
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{START} : \SYN{start}
+    \VARDECL{START} : \SYNDECL{start}
       \ ::= \ & \
       \SYNREF{exp}
 \end{align*}$$

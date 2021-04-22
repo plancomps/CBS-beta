@@ -13,13 +13,12 @@
 
 $$\KEY{Language} \quad \STRING{SIMPLE}$$
 
-# $$\SECT{4}$$ Declarations
-           
+# $$\SECT{4}$$ Declarations {#SectionNumber:4}
 
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{Decl} : \SYN{decl}
+    \VARDECL{Decl} : \SYNDECL{decl}
       \ ::= \ & \
       \SYNREF{vars-decl} \mid \SYNREF{func-decl}
 \end{align*}$$
@@ -30,17 +29,16 @@ $$\begin{align*}
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{environments} 
 \end{align*}$$
 
-## $$\SECT{4.1}$$ Variable Declarations
-           
+## $$\SECT{4.1}$$ Variable Declarations {#SectionNumber:4.1}
 
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{VarsDecl} : \SYN{vars-decl}
+    \VARDECL{VarsDecl} : \SYNDECL{vars-decl}
       \ ::= \ & \
       \LEX{var} \ \SYNREF{declarators} \ \LEX{{;}}
     \\
-    \VARDECL{Declarators} : \SYN{declarators}
+    \VARDECL{Declarators} : \SYNDECL{declarators}
       \ ::= \ & \
       \SYNREF{declarator} \ \LEFTGROUP \LEX{{,}} \ \SYNREF{declarators} \RIGHTGROUP\QUERY
 \end{align*}$$
@@ -73,7 +71,7 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{Declarator} : \SYN{declarator}
+    \VARDECL{Declarator} : \SYNDECL{declarator}
       \ ::= \ & \
       \SYNHYPER{../.}{SIMPLE-1-Lexical}{id} \\
       \ \mid \ & \ \SYNHYPER{../.}{SIMPLE-1-Lexical}{id} \ \LEX{{=}} \ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} \\
@@ -124,13 +122,12 @@ $$\begin{align*}
                                           \RIGHTPHRASE  ) )
 \end{align*}$$
 
-## $$\SECT{4.2}$$ Arrays
-           
+## $$\SECT{4.2}$$ Arrays {#SectionNumber:4.2}
 
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{Ranks} : \SYN{ranks}
+    \VARDECL{Ranks} : \SYNDECL{ranks}
       \ ::= \ & \
       \LEX{{[}} \ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exps} \ \LEX{{]}} \ \SYNREF{ranks}\QUERY
 \end{align*}$$
@@ -206,13 +203,12 @@ $$\begin{align*}
                                  \VAR{N} ) ) )
 \end{align*}$$
 
-## $$\SECT{4.3}$$ Function Declarations
-           
+## $$\SECT{4.3}$$ Function Declarations {#SectionNumber:4.3}
 
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{FuncDecl} : \SYN{func-decl}
+    \VARDECL{FuncDecl} : \SYNDECL{func-decl}
       \ ::= \ & \
       \LEX{function} \ \SYNHYPER{../.}{SIMPLE-1-Lexical}{id} \ \LEX{{(}} \ \SYNREF{ids}\QUERY \ \LEX{{)}} \ \SYNHYPER{../.}{SIMPLE-3-Statements}{block}
 \end{align*}$$
@@ -270,7 +266,7 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{Ids} : \SYN{ids}
+    \VARDECL{Ids} : \SYNDECL{ids}
       \ ::= \ & \
       \SYNHYPER{../.}{SIMPLE-1-Lexical}{id} \ \LEFTGROUP \LEX{{,}} \ \SYNREF{ids} \RIGHTGROUP\QUERY
 \end{align*}$$

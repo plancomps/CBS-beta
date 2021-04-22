@@ -18,8 +18,7 @@ ancestor: Unstable-Languages-beta
 
 ----
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Language</i> <span id="Language_IMPPP">"IMPPP"</span></code></pre></div>
-# <span id="SectionNumber_1">1</span> Values
-
+# 1 Values {#SectionNumber_1}
 ## Integers
 
 

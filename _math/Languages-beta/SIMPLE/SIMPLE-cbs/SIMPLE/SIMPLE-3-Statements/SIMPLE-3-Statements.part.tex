@@ -9,23 +9,23 @@
 \KEY{Language} \quad \STRING{SIMPLE}
 \end{displaymath}
 
-\section{$\SECT{3}$ Statements}\hypertarget{sect3-statements}{}\label{sect3-statements}
+\section{$\SECT{3}$ Statements}\hypertarget{SectionNumber:3}{}\label{SectionNumber:3}
 
 \begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{Block} : \SYN{block}
+    \VARDECL{Block} : \SYNDECL{block}
       \ ::= \ & \
       \LEX{{\LEFTBRACE}} \ \SYNREF{stmts}\QUERY \ \LEX{{\RIGHTBRACE}}
     \\
-    \VARDECL{Stmts} : \SYN{stmts}
+    \VARDECL{Stmts} : \SYNDECL{stmts}
       \ ::= \ & \
       \SYNREF{stmt} \ \SYNREF{stmts}\QUERY
     \\
-    \VARDECL{Stmt} : \SYN{stmt}
+    \VARDECL{Stmt} : \SYNDECL{stmt}
       \ ::= \ & \
       \SYNREF{imp-stmt} \mid \SYNHYPER{../.}{SIMPLE-4-Declarations}{vars-decl}
     \\
-    \VARDECL{ImpStmt} : \SYN{imp-stmt}
+    \VARDECL{ImpStmt} : \SYNDECL{imp-stmt}
       \ ::= \ & \
       \SYNREF{block} \\
       \ \mid \ & \ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} \ \LEX{{;}} \\

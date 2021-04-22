@@ -21,8 +21,7 @@ ancestor: Languages-beta
 
 $$\KEY{Language} \quad \STRING{SL}$$
 
-# $$\SECT{1}$$ Lexemes
-           
+# $$\SECT{1}$$ Lexemes {#SectionNumber:1}
 
 
 ## Identifiers
@@ -31,7 +30,7 @@ $$\KEY{Language} \quad \STRING{SL}$$
 
 $$\begin{align*}
   \KEY{Lexis} \quad
-    \VARDECL{Id} : \SYN{id}
+    \VARDECL{Id} : \SYNDECL{id}
       \ ::= \ & \
       \LEFTGROUP \LEX{a} {-} \LEX{z} \mid \LEX{A} {-} \LEX{Z} \RIGHTGROUP \ \LEFTGROUP \LEX{a} {-} \LEX{z} \mid \LEX{A} {-} \LEX{Z} \mid \LEX{0} {-} \LEX{9} \RIGHTGROUP\STAR
 \end{align*}$$
@@ -54,12 +53,12 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{Int} : \SYN{int}
+    \VARDECL{Int} : \SYNDECL{int}
       \ ::= \ & \
       \LEX{{-}}\QUERY \_ \SYNREF{nat}
 \\
   \KEY{Lexis} \quad
-    \VARDECL{Nat} : \SYN{nat}
+    \VARDECL{Nat} : \SYNDECL{nat}
       \ ::= \ & \
       \LEFTGROUP \LEX{0} {-} \LEX{9} \RIGHTGROUP\PLUS
 \end{align*}$$
@@ -92,16 +91,16 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{String} : \SYN{string}
+    \VARDECL{String} : \SYNDECL{string}
       \ ::= \ & \
       \LEX{{"}} \_ \SYNREF{string-chars} \_ \LEX{{"}}
 \\
   \KEY{Lexis} \quad
-    \VARDECL{StringChars} : \SYN{string-chars}
+    \VARDECL{StringChars} : \SYNDECL{string-chars}
       \ ::= \ & \
       \SYNREF{string-char}\STAR
     \\
-     \SYN{string-char}
+     \SYNDECL{string-char}
       \ ::= \ & \
       \mathop{\sim} \LEFTGROUP \LEX{{"}} \mid \LEX{{\BACKSLASH}n} \RIGHTGROUP
 \end{align*}$$

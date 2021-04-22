@@ -13,13 +13,12 @@
 
 $$\KEY{Language} \quad \STRING{OCaml Light}$$
 
-# $$\SECT{7}$$ Expressions
-           
+# $$\SECT{7}$$ Expressions {#SectionNumber:7}
 
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{E} : \SYN{expr}
+    \VARDECL{E} : \SYNDECL{expr}
       \ ::= \ & \
       \SYNHYPER{../.}{OC-L-03-Names}{value-path} \\
       \ \mid \ & \ \SYNHYPER{../.}{OC-L-05-Constants}{constant} \\
@@ -62,42 +61,42 @@ $$\begin{align*}
       \ \mid \ & \ \SYNREF{let-definition} \ \LEX{in} \ \SYNREF{expr} \\
       \ \mid \ & \ \LEX{assert} \ \SYNREF{expr}
     \\
-    \VARDECL{A} : \SYN{argument}
+    \VARDECL{A} : \SYNDECL{argument}
       \ ::= \ & \
       \SYNREF{expr}
     \\
-    \VARDECL{PM} : \SYN{pattern-matching}
+    \VARDECL{PM} : \SYNDECL{pattern-matching}
       \ ::= \ & \
       \SYNHYPER{../.}{OC-L-06-Patterns}{pattern} \ \LEX{{-}{>}} \ \SYNREF{expr} \ \SYNREF{pattern-expr}\STAR \\
       \ \mid \ & \ \LEX{{|}} \ \SYNHYPER{../.}{OC-L-06-Patterns}{pattern} \ \LEX{{-}{>}} \ \SYNREF{expr} \ \SYNREF{pattern-expr}\STAR
     \\
-    \VARDECL{LD} : \SYN{let-definition}
+    \VARDECL{LD} : \SYNDECL{let-definition}
       \ ::= \ & \
       \LEX{let} \ \LEFTGROUP \LEX{rec} \RIGHTGROUP\QUERY \ \SYNREF{let-binding} \ \SYNREF{and-let-binding}\STAR
     \\
-    \VARDECL{LB} : \SYN{let-binding}
+    \VARDECL{LB} : \SYNDECL{let-binding}
       \ ::= \ & \
       \SYNHYPER{../.}{OC-L-06-Patterns}{pattern} \ \LEX{{=}} \ \SYNREF{expr} \\
       \ \mid \ & \ \SYNHYPER{../.}{OC-L-03-Names}{value-name} \ \SYNHYPER{../.}{OC-L-06-Patterns}{pattern}\PLUS \ \LEX{{=}} \ \SYNREF{expr} \\
       \ \mid \ & \ \SYNHYPER{../.}{OC-L-03-Names}{value-name} \ \LEX{{:}} \ \SYNHYPER{../.}{OC-L-04-Type-Expressions}{poly-typexpr} \ \LEX{{=}} \ \SYNREF{expr}
     \\
-    \VARDECL{ALB} : \SYN{and-let-binding}
+    \VARDECL{ALB} : \SYNDECL{and-let-binding}
       \ ::= \ & \
       \LEX{and} \ \SYNREF{let-binding}
     \\
-    \VARDECL{CE} : \SYN{comma-expr}
+    \VARDECL{CE} : \SYNDECL{comma-expr}
       \ ::= \ & \
       \LEX{{,}} \ \SYNREF{expr}
     \\
-    \VARDECL{SE} : \SYN{semic-expr}
+    \VARDECL{SE} : \SYNDECL{semic-expr}
       \ ::= \ & \
       \LEX{{;}} \ \SYNREF{expr}
     \\
-    \VARDECL{SFE} : \SYN{semic-field-expr}
+    \VARDECL{SFE} : \SYNDECL{semic-field-expr}
       \ ::= \ & \
       \LEX{{;}} \ \SYNHYPER{../.}{OC-L-03-Names}{field} \ \LEX{{=}} \ \SYNREF{expr}
     \\
-    \VARDECL{PE} : \SYN{pattern-expr}
+    \VARDECL{PE} : \SYNDECL{pattern-expr}
       \ ::= \ & \
       \LEX{{|}} \ \SYNHYPER{../.}{OC-L-06-Patterns}{pattern} \ \LEX{{-}{>}} \ \SYNREF{expr}
 \end{align*}$$

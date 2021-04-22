@@ -13,8 +13,7 @@ ancestor: Languages-beta
 
 $$\KEY{Language} \quad \STRING{IMP}$$
 
-# $$\SECT{A}$$ Disambiguation
-           
+# $$\SECT{A}$$ Disambiguation {#SectionNumber:A}
 
 
 \$$\KEY{Lexis SDF}$$

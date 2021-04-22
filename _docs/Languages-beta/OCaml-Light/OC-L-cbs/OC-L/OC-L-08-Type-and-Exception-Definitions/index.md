@@ -18,8 +18,7 @@ ancestor: Languages-beta
 
 ----
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Language</i> <span id="Language_OCaml Light">"OCaml Light"</span></code></pre></div>
-# <span id="SectionNumber_8">8</span> Type and exception definitions
-
+# 8 Type and exception definitions {#SectionNumber_8}
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Syntax</i>
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_TDS">TDS</span></i> :</i> <span class="syn-name"><span id="SyntaxName_type-definition">type-definition</span></span> 
   ::= <b class="atom">'type'</b> <span class="syn-name"><a href="#SyntaxName_typedef">typedef</a></span> <span class="syn-name"><a href="#SyntaxName_and-typedef">and-typedef</a></span><sup class="sup">*</sup>

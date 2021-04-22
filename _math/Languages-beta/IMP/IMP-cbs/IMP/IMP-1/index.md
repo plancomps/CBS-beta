@@ -13,13 +13,12 @@ ancestor: Languages-beta
 
 $$\KEY{Language} \quad \STRING{IMP}$$
 
-# $$\SECT{1}$$ Arithmetic expressions
-           
+# $$\SECT{1}$$ Arithmetic expressions {#SectionNumber:1}
 
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{AExp} : \SYN{aexp}
+    \VARDECL{AExp} : \SYNDECL{aexp}
       \ ::= \ & \
       \SYNREF{num} \\
       \ \mid \ & \ \SYNREF{id} \\
@@ -87,12 +86,12 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{N} : \SYN{num}
+    \VARDECL{N} : \SYNDECL{num}
       \ ::= \ & \
       \LEX{{-}}\QUERY \_ \SYNREF{decimal}
 \\
   \KEY{Lexis} \quad
-    \VARDECL{D} : \SYN{decimal}
+    \VARDECL{D} : \SYNDECL{decimal}
       \ ::= \ & \
       \LEFTGROUP \LEX{0} {-} \LEX{9} \RIGHTGROUP\PLUS
 \end{align*}$$
@@ -121,7 +120,7 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Lexis} \quad
-    \VARDECL{I} : \SYN{id}
+    \VARDECL{I} : \SYNDECL{id}
       \ ::= \ & \
       \LEFTGROUP \LEX{A} {-} \LEX{Z} \mid \LEX{a} {-} \LEX{z} \RIGHTGROUP\PLUS
 \end{align*}$$
@@ -140,7 +139,7 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Lexis} \quad
-     \SYN{keyword}
+     \SYNDECL{keyword}
       \ ::= \ & \
       \LEX{else} \mid \LEX{false} \mid \LEX{if} \mid \LEX{true} \mid \LEX{while}
 \end{align*}$$

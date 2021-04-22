@@ -18,8 +18,7 @@ ancestor: Languages-beta
 
 ----
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Language</i> <span id="Language_OCaml Light">"OCaml Light"</span></code></pre></div>
-# <span id="SectionNumber_7">7</span> Expressions
-
+# 7 Expressions {#SectionNumber_7}
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Syntax</i>
  <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_E">E</span></i> :</i> <span class="syn-name"><span id="SyntaxName_expr">expr</span></span>
  ::= <span class="syn-name"><a href="../OC-L-03-Names/index.html#SyntaxName_value-path">value-path</a></span>

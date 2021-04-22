@@ -21,8 +21,7 @@ ancestor: Unstable-Languages-beta
 
 $$\KEY{Language} \quad \STRING{IMPPP}$$
 
-# $$\SECT{1}$$ Values
-           
+# $$\SECT{1}$$ Values {#SectionNumber:1}
 
 
 ## Integers
@@ -31,12 +30,12 @@ $$\KEY{Language} \quad \STRING{IMPPP}$$
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{N} : \SYN{int}
+    \VARDECL{N} : \SYNDECL{int}
       \ ::= \ & \
       \LEX{{-}}\QUERY \_ \SYNREF{decimal}
 \\
   \KEY{Lexis} \quad
-    \VARDECL{D} : \SYN{decimal}
+    \VARDECL{D} : \SYNDECL{decimal}
       \ ::= \ & \
       \LEFTGROUP \LEX{0} {-} \LEX{9} \RIGHTGROUP\PLUS
 \end{align*}$$
@@ -69,12 +68,12 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{S} : \SYN{string}
+    \VARDECL{S} : \SYNDECL{string}
       \ ::= \ & \
       \LEX{{"}} \_ \SYNREF{string-chars} \_ \LEX{{"}}
 \\
   \KEY{Lexis} \quad
-    \VARDECL{SCS} : \SYN{string-chars}
+    \VARDECL{SCS} : \SYNDECL{string-chars}
       \ ::= \ & \
       \LEFTGROUP \mathop{\sim} \LEX{{"}} \RIGHTGROUP\STAR
 \end{align*}$$
@@ -97,7 +96,7 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Lexis} \quad
-    \VARDECL{I} : \SYN{id}
+    \VARDECL{I} : \SYNDECL{id}
       \ ::= \ & \
       \LEFTGROUP \LEX{A} {-} \LEX{Z} \mid \LEX{a} {-} \LEX{z} \mid \LEX{{\UNDERSCORE}} \RIGHTGROUP \ \LEFTGROUP \LEX{0} {-} \LEX{9} \mid \LEX{A} {-} \LEX{Z} \mid \LEX{a} {-} \LEX{z} \mid \LEX{{\UNDERSCORE}} \RIGHTGROUP\STAR
 \end{align*}$$
@@ -116,7 +115,7 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Lexis} \quad
-     \SYN{keyword}
+     \SYNDECL{keyword}
       \ ::= \ & \
       \LEX{else} \mid \LEX{false} \mid \LEX{if} \mid \LEX{halt} \mid \LEX{join} \\
       \ \mid \ & \ \LEX{print} \mid \LEX{read} \mid \LEX{spawn} \mid \LEX{true} \mid \LEX{while}

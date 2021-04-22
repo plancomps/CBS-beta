@@ -18,8 +18,7 @@ ancestor: Languages-beta
 
 ----
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Language</i> <span id="Language_OCaml Light">"OCaml Light"</span></code></pre></div>
-# <span id="SectionNumber_3">3</span> Names
-
+# 3 Names {#SectionNumber_3}
 ## Naming objects
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Syntax</i>

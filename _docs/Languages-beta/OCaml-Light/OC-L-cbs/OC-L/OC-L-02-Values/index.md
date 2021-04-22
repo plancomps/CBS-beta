@@ -18,8 +18,7 @@ ancestor: Languages-beta
 
 ----
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Language</i> <span id="Language_OCaml Light">"OCaml Light"</span></code></pre></div>
-# <span id="SectionNumber_2">2</span> Values
-
+# 2 Values {#SectionNumber_2}
 
   The comments below are excerpts from section 7.2 of [The OCaml System,
   release 4.06](https://ocaml.org/releases/4.06/htmlman/values.html).

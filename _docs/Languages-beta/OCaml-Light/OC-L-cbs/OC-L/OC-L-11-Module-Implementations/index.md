@@ -10,8 +10,7 @@ ancestor: Languages-beta
 
 ----
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Language</i> <span id="Language_OCaml Light">"OCaml Light"</span></code></pre></div>
-# <span id="SectionNumber_11">11</span> Module implementations
-
+# 11 Module implementations {#SectionNumber_11}
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Syntax</i>
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_UI">UI</span></i> :</i> <span class="syn-name"><span id="SyntaxName_unit-implementation">unit-implementation</span></span>

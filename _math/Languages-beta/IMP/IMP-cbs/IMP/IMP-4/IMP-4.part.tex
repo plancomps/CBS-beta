@@ -9,11 +9,11 @@
 \KEY{Language} \quad \STRING{IMP}
 \end{displaymath}
 
-\section{$\SECT{4}$ Programs and variable declarations}\hypertarget{sect4-programs-and-variable-declarations}{}\label{sect4-programs-and-variable-declarations}
+\section{$\SECT{4}$ Programs and variable declarations}\hypertarget{SectionNumber:4}{}\label{SectionNumber:4}
 
 \begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{Pgm} : \SYN{pgm}
+    \VARDECL{Pgm} : \SYNDECL{pgm}
       \ ::= \ & \
       \LEX{int} \ \SYNREF{idlist} \ \LEX{{;}} \ \SYNHYPER{../.}{IMP-3}{stmt}
 \end{align*}
@@ -37,7 +37,7 @@
 \end{align*}
 \begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{IL} : \SYN{idlist}
+    \VARDECL{IL} : \SYNDECL{idlist}
       \ ::= \ & \
       \SYNHYPER{../.}{IMP-1}{id} \ \LEFTGROUP \LEX{{,}} \ \SYNREF{idlist} \RIGHTGROUP\QUERY
 \end{align*}

@@ -32,7 +32,7 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{START} : \SYN{start}
+    \VARDECL{START} : \SYNDECL{start}
       \ ::= \ & \
       \SYNHYPER{../.}{IMP-4}{pgm}
 \end{align*}$$

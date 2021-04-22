@@ -10,8 +10,7 @@ ancestor: Languages-beta
 
 ----
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Language</i> <span id="Language_OCaml Light">"OCaml Light"</span></code></pre></div>
-# <span id="SectionNumber_5">5</span> Constants
-
+# 5 Constants {#SectionNumber_5}
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Syntax</i>
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_CNST">CNST</span></i> :</i> <span class="syn-name"><span id="SyntaxName_constant">constant</span></span> 
   ::= <span class="syn-name"><a href="../OC-L-01-Lexical-Conventions/index.html#SyntaxName_integer-literal">integer-literal</a></span> 

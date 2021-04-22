@@ -5,35 +5,34 @@
 
 $$\KEY{Language} \quad \STRING{OCaml Light}$$
 
-# $$\SECT{11}$$ Module implementations
-           
+# $$\SECT{11}$$ Module implementations {#SectionNumber:11}
 
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{UI} : \SYN{unit-implementation}
+    \VARDECL{UI} : \SYNDECL{unit-implementation}
       \ ::= \ & \
       \LEFTGROUP \SYNREF{semicolon-pair}\STAR \ \SYNREF{module-items} \ \SYNREF{semicolon-pair}\STAR \RIGHTGROUP\QUERY
     \\
-    \VARDECL{MIS} : \SYN{module-items}
+    \VARDECL{MIS} : \SYNDECL{module-items}
       \ ::= \ & \
       \SYNREF{definition} \\
       \ \mid \ & \ \SYNHYPER{../.}{OC-L-07-Expressions}{expr} \\
       \ \mid \ & \ \SYNREF{module-items} \ \SYNREF{semicolon-pair}\STAR \ \SYNREF{module-item}
     \\
-    \VARDECL{MI} : \SYN{module-item}
+    \VARDECL{MI} : \SYNDECL{module-item}
       \ ::= \ & \
       \SYNREF{definition} \\
       \ \mid \ & \ \SYNREF{semicolon-pair} \ \SYNHYPER{../.}{OC-L-07-Expressions}{expr}
     \\
-    \VARDECL{D} : \SYN{definition}
+    \VARDECL{D} : \SYNDECL{definition}
       \ ::= \ & \
       \SYNHYPER{../.}{OC-L-07-Expressions}{let-definition} \\
       \ \mid \ & \ \SYNHYPER{../.}{OC-L-08-Type-and-Exception-Definitions}{type-definition} \\
       \ \mid \ & \ \SYNHYPER{../.}{OC-L-08-Type-and-Exception-Definitions}{exception-definition}
 \\
   \KEY{Lexis} \quad
-    \VARDECL{SCP} : \SYN{semicolon-pair}
+    \VARDECL{SCP} : \SYNDECL{semicolon-pair}
       \ ::= \ & \
       \LEX{{;}{;}}
 \end{align*}$$

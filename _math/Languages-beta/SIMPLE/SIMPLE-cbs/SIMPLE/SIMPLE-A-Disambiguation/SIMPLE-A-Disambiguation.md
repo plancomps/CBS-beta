@@ -5,8 +5,7 @@
 
 $$\KEY{Language} \quad \STRING{SIMPLE}$$
 
-# $$\SECT{A}$$ Disambiguation
-           
+# $$\SECT{A}$$ Disambiguation {#SectionNumber:A}
 
 
 \$$\KEY{Lexis SDF}$$

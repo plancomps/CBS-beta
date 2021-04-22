@@ -13,13 +13,12 @@ ancestor: Languages-beta
 
 $$\KEY{Language} \quad \STRING{SL}$$
 
-# $$\SECT{2}$$ Expressions
-           
+# $$\SECT{2}$$ Expressions {#SectionNumber:2}
 
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{Expr} : \SYN{expr}
+    \VARDECL{Expr} : \SYNDECL{expr}
       \ ::= \ & \
       \SYNHYPER{../.}{SL-1-Lexemes}{int} \\
       \ \mid \ & \ \SYNHYPER{../.}{SL-1-Lexemes}{string} \\
@@ -417,7 +416,7 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{ExprList} : \SYN{expr-list}
+    \VARDECL{ExprList} : \SYNDECL{expr-list}
       \ ::= \ & \
       \SYNREF{expr} \ \LEFTGROUP \LEX{{,}} \ \SYNREF{expr-list} \RIGHTGROUP\QUERY
 \end{align*}$$

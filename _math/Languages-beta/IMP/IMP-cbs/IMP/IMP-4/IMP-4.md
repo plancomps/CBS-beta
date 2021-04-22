@@ -5,13 +5,12 @@
 
 $$\KEY{Language} \quad \STRING{IMP}$$
 
-# $$\SECT{4}$$ Programs and variable declarations
-           
+# $$\SECT{4}$$ Programs and variable declarations {#SectionNumber:4}
 
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{Pgm} : \SYN{pgm}
+    \VARDECL{Pgm} : \SYNDECL{pgm}
       \ ::= \ & \
       \LEX{int} \ \SYNREF{idlist} \ \LEX{{;}} \ \SYNHYPER{../.}{IMP-3}{stmt}
 \end{align*}$$
@@ -37,7 +36,7 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{IL} : \SYN{idlist}
+    \VARDECL{IL} : \SYNDECL{idlist}
       \ ::= \ & \
       \SYNHYPER{../.}{IMP-1}{id} \ \LEFTGROUP \LEX{{,}} \ \SYNREF{idlist} \RIGHTGROUP\QUERY
 \end{align*}$$

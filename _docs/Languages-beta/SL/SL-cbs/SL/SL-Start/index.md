@@ -7,14 +7,6 @@ nav_order: SL
 
 [Languages-beta] : [SL-Start.cbs] \| [PRETTY] \| [PDF]
 
-<details open markdown="block">
-  <summary>
-    Outline
-  </summary>
-  {: .text-delta }
-- TOC
-{:toc}
-</details>
 
 ----
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Language</i> <span id="Language_SL">"SL"</span></code></pre></div>

@@ -21,13 +21,12 @@ ancestor: Languages-beta
 
 $$\KEY{Language} \quad \STRING{SL}$$
 
-# $$\SECT{4}$$ Function definitions
-           
+# $$\SECT{4}$$ Function definitions {#SectionNumber:4}
 
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{FunDef} : \SYN{fun-def}
+    \VARDECL{FunDef} : \SYNDECL{fun-def}
       \ ::= \ & \
       \LEX{function} \ \SYNHYPER{../.}{SL-1-Lexemes}{id} \ \LEX{{(}} \ \SYNREF{id-list}\QUERY \ \LEX{{)}} \ \SYNHYPER{../.}{SL-3-Statements}{block}
 \end{align*}$$
@@ -83,7 +82,7 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{IdList} : \SYN{id-list}
+    \VARDECL{IdList} : \SYNDECL{id-list}
       \ ::= \ & \
       \SYNHYPER{../.}{SL-1-Lexemes}{id} \ \LEFTGROUP \LEX{{,}} \ \SYNREF{id-list} \RIGHTGROUP\QUERY
 \end{align*}$$

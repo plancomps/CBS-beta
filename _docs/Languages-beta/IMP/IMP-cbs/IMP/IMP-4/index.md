@@ -10,8 +10,7 @@ ancestor: Languages-beta
 
 ----
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Language</i> <span id="Language_IMP">"IMP"</span></code></pre></div>
-# <span id="SectionNumber_4">4</span> Programs and variable declarations
-
+# 4 Programs and variable declarations {#SectionNumber_4}
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Syntax</i>
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_Pgm">Pgm</span></i> :</i> <span class="syn-name"><span id="SyntaxName_pgm">pgm</span></span> ::= <b class="atom">'int'</b> <span class="syn-name"><a href="#SyntaxName_idlist">idlist</a></span> <b class="atom">';'</b> <span class="syn-name"><a href="../IMP-3/index.html#SyntaxName_stmt">stmt</a></span></code></pre></div>
 

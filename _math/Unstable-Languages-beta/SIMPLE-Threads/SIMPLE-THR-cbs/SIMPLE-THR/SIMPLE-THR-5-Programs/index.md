@@ -13,13 +13,12 @@ ancestor: Unstable-Languages-beta
 
 $$\KEY{Language} \quad \STRING{SIMPLE-THR}$$
 
-# $$\SECT{5}$$ Programs
-           
+# $$\SECT{5}$$ Programs {#SectionNumber:5}
 
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{Pgm} : \SYN{pgm}
+    \VARDECL{Pgm} : \SYNDECL{pgm}
       \ ::= \ & \
       \SYNREF{decls}
 \end{align*}$$
@@ -47,7 +46,7 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{Decls} : \SYN{decls}
+    \VARDECL{Decls} : \SYNDECL{decls}
       \ ::= \ & \
       \SYNHYPER{../.}{SIMPLE-THR-4-Declarations}{decl} \ \SYNREF{decls}\QUERY
 \end{align*}$$

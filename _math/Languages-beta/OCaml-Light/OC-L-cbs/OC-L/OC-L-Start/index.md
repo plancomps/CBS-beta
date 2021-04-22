@@ -17,7 +17,7 @@ $$\KEY{Language} \quad \STRING{OCaml Light}$$
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{START} : \SYN{start}
+    \VARDECL{START} : \SYNDECL{start}
       \ ::= \ & \
       \SYNHYPER{../.}{OC-L-11-Module-Implementations}{unit-implementation}
 \end{align*}$$

@@ -18,8 +18,7 @@ ancestor: Languages-beta
 
 ----
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Language</i> <span id="Language_OCaml Light">"OCaml Light"</span></code></pre></div>
-# <span id="SectionNumber_1">1</span> Lexical conventions
-
+# 1 Lexical conventions {#SectionNumber_1}
 
 ## Identifiers
 

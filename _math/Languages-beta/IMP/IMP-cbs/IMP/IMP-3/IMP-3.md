@@ -5,13 +5,12 @@
 
 $$\KEY{Language} \quad \STRING{IMP}$$
 
-# $$\SECT{3}$$ Statements and blocks
-           
+# $$\SECT{3}$$ Statements and blocks {#SectionNumber:3}
 
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{Stmt} : \SYN{stmt}
+    \VARDECL{Stmt} : \SYNDECL{stmt}
       \ ::= \ & \
       \SYNREF{block} \\
       \ \mid \ & \ \SYNHYPER{../.}{IMP-1}{id} \ \LEX{{=}} \ \SYNHYPER{../.}{IMP-1}{aexp} \ \LEX{{;}} \\
@@ -20,7 +19,7 @@ $$\begin{align*}
       \ \mid \ & \ \SYNREF{stmt} \ \SYNREF{stmt}
 \\
   \KEY{Syntax} \quad
-    \VARDECL{Block} : \SYN{block}
+    \VARDECL{Block} : \SYNDECL{block}
       \ ::= \ & \
       \LEX{{\LEFTBRACE}} \ \SYNREF{stmt}\QUERY \ \LEX{{\RIGHTBRACE}}
 \end{align*}$$

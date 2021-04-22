@@ -20,7 +20,7 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{START} : \SYN{start}
+    \VARDECL{START} : \SYNDECL{start}
       \ ::= \ & \
       \SYNREF{program}
 \end{align*}$$
@@ -45,7 +45,7 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{Program} : \SYN{program}
+    \VARDECL{Program} : \SYNDECL{program}
       \ ::= \ & \
       \SYNHYPER{../.}{SL-4-Definitions}{fun-def}\STAR
 \end{align*}$$

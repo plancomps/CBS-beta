@@ -12,11 +12,11 @@
 \KEY{Language} \quad \STRING{SIMPLE}
 \end{displaymath}
 
-\section{$\SECT{4}$ Declarations}\hypertarget{sect4-declarations}{}\label{sect4-declarations}
+\section{$\SECT{4}$ Declarations}\hypertarget{SectionNumber:4}{}\label{SectionNumber:4}
 
 \begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{Decl} : \SYN{decl}
+    \VARDECL{Decl} : \SYNDECL{decl}
       \ ::= \ & \
       \SYNREF{vars-decl} \mid \SYNREF{func-decl}
 \end{align*}
@@ -25,15 +25,15 @@
   & \SEMDECL{declare} \LEFTPHRASE \ \_ : \SYNREF{decl} \ \RIGHTPHRASE  
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{environments} 
 \end{align*}
-\subsection{$\SECT{4.1}$ Variable Declarations}\hypertarget{sect41-variable-declarations}{}\label{sect41-variable-declarations}
+\subsection{$\SECT{4.1}$ Variable Declarations}\hypertarget{SectionNumber:4.1}{}\label{SectionNumber:4.1}
 
 \begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{VarsDecl} : \SYN{vars-decl}
+    \VARDECL{VarsDecl} : \SYNDECL{vars-decl}
       \ ::= \ & \
       \LEX{var} \ \SYNREF{declarators} \ \LEX{{;}}
     \\
-    \VARDECL{Declarators} : \SYN{declarators}
+    \VARDECL{Declarators} : \SYNDECL{declarators}
       \ ::= \ & \
       \SYNREF{declarator} \ \LEFTGROUP \LEX{{,}} \ \SYNREF{declarators} \RIGHTGROUP\QUERY
 \end{align*}
@@ -64,7 +64,7 @@
 \end{align*}
 \begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{Declarator} : \SYN{declarator}
+    \VARDECL{Declarator} : \SYNDECL{declarator}
       \ ::= \ & \
       \SYNHYPER{../.}{SIMPLE-1-Lexical}{id} \\
       \ \mid \ & \ \SYNHYPER{../.}{SIMPLE-1-Lexical}{id} \ \LEX{{=}} \ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} \\
@@ -113,11 +113,11 @@
                                             \VAR{Ranks} \
                                           \RIGHTPHRASE  ) )
 \end{align*}
-\subsection{$\SECT{4.2}$ Arrays}\hypertarget{sect42-arrays}{}\label{sect42-arrays}
+\subsection{$\SECT{4.2}$ Arrays}\hypertarget{SectionNumber:4.2}{}\label{SectionNumber:4.2}
 
 \begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{Ranks} : \SYN{ranks}
+    \VARDECL{Ranks} : \SYNDECL{ranks}
       \ ::= \ & \
       \LEX{{[}} \ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exps} \ \LEX{{]}} \ \SYNREF{ranks}\QUERY
 \end{align*}
@@ -189,11 +189,11 @@ Compare this with p28 of the K version.
                                  1, 
                                  \VAR{N} ) ) )
 \end{align*}
-\subsection{$\SECT{4.3}$ Function Declarations}\hypertarget{sect43-function-declarations}{}\label{sect43-function-declarations}
+\subsection{$\SECT{4.3}$ Function Declarations}\hypertarget{SectionNumber:4.3}{}\label{SectionNumber:4.3}
 
 \begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{FuncDecl} : \SYN{func-decl}
+    \VARDECL{FuncDecl} : \SYNDECL{func-decl}
       \ ::= \ & \
       \LEX{function} \ \SYNHYPER{../.}{SIMPLE-1-Lexical}{id} \ \LEX{{(}} \ \SYNREF{ids}\QUERY \ \LEX{{)}} \ \SYNHYPER{../.}{SIMPLE-3-Statements}{block}
 \end{align*}
@@ -248,7 +248,7 @@ Compare this with p28 of the K version.
 \end{align*}
 \begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{Ids} : \SYN{ids}
+    \VARDECL{Ids} : \SYNDECL{ids}
       \ ::= \ & \
       \SYNHYPER{../.}{SIMPLE-1-Lexical}{id} \ \LEFTGROUP \LEX{{,}} \ \SYNREF{ids} \RIGHTGROUP\QUERY
 \end{align*}

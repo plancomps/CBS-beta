@@ -7,27 +7,17 @@ ancestor: Unstable-Languages-beta
 
 [Unstable-Languages-beta] : [SIMPLE-THR-4-Declarations.cbs] \| [PRETTY] \| [PDF]
 
-<details open markdown="block">
-  <summary>
-    Outline
-  </summary>
-  {: .text-delta }
-- TOC
-{:toc}
-</details>
 
 ----
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Language</i> <span id="Language_SIMPLE-THR">"SIMPLE-THR"</span></code></pre></div>
-# <span id="SectionNumber_4">4</span> Declarations
-
+# 4 Declarations {#SectionNumber_4}
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Syntax</i>
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_Decl">Decl</span></i> :</i> <span class="syn-name"><span id="SyntaxName_decl">decl</span></span> ::= <span class="syn-name"><a href="#SyntaxName_vars-decl">vars-decl</a></span> | <span class="syn-name"><a href="#SyntaxName_func-decl">func-decl</a></span></code></pre></div>
 
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Semantics</i>
   <i class="sem-name"><span id="SemanticsName_declare">declare</span></i>[[ _:<span class="syn-name"><a href="#SyntaxName_decl">decl</a></span> ]] : =><span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Binding/index.html#Name_environments">environments</a></span></code></pre></div>
-# <span id="SectionNumber_4.1">4.1</span> Variable Declarations
-
+# 4.1 Variable Declarations {#SectionNumber_4.1}
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Syntax</i>
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_VarsDecl">VarsDecl</span></i> :</i> <span class="syn-name"><span id="SyntaxName_vars-decl">vars-decl</span></span> ::= <b class="atom">'var'</b> <span class="syn-name"><a href="#SyntaxName_declarators">declarators</a></span> <b class="atom">';'</b>
 
@@ -59,8 +49,7 @@ ancestor: Unstable-Languages-beta
 
 
 
-# <span id="SectionNumber_4.2">4.2</span> Arrays
-
+# 4.2 Arrays {#SectionNumber_4.2}
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Syntax</i>
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_Ranks">Ranks</span></i> :</i> <span class="syn-name"><span id="SyntaxName_ranks">ranks</span></span> ::= <b class="atom">'['</b> <span class="syn-name"><a href="../SIMPLE-THR-2-Expressions/index.html#SyntaxName_exps">exps</a></span> <b class="atom">']'</b> <span class="syn-name"><a href="#SyntaxName_ranks">ranks</a></span><sup class="sup">?</sup></code></pre></div>
 
@@ -88,8 +77,7 @@ ancestor: Unstable-Languages-beta
 
 
 
-# <span id="SectionNumber_4.3">4.3</span> Function Declarations
-
+# 4.3 Function Declarations {#SectionNumber_4.3}
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Syntax</i>
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_FuncDecl">FuncDecl</span></i> :</i> <span class="syn-name"><span id="SyntaxName_func-decl">func-decl</span></span> ::= <b class="atom">'function'</b> <span class="syn-name"><a href="../SIMPLE-THR-1-Lexical/index.html#SyntaxName_id">id</a></span> <b class="atom">'('</b> <span class="syn-name"><a href="#SyntaxName_ids">ids</a></span><sup class="sup">?</sup> <b class="atom">')'</b> <span class="syn-name"><a href="../SIMPLE-THR-3-Statements/index.html#SyntaxName_block">block</a></span></code></pre></div>
 

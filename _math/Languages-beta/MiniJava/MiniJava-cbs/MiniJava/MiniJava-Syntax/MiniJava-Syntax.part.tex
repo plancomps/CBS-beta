@@ -26,125 +26,126 @@ The rest of this file gives an overview of the MiniJava syntax. It is mostly
 
 $\SECTHYPER{../.}{MiniJava-Dynamics}{1}$ Programs
 
-Syntax
-
 \begin{align*}
-  \VARDECL{START} : \SYNHYPER{../.}{MiniJava-Start}{start}
-    \ ::= \ & \
-    \SYNHYPER{../.}{MiniJava-Dynamics}{program}
-  \\
-  \VARDECL{P} : \SYNHYPER{../.}{MiniJava-Dynamics}{program}
-    \ ::= \ & \
-    \SYNHYPER{../.}{MiniJava-Dynamics}{main-class} \ \SYNHYPER{../.}{MiniJava-Dynamics}{class-declaration}\STAR
-  \\
-  \VARDECL{MC} : \SYNHYPER{../.}{MiniJava-Dynamics}{main-class}
-    \ ::= \ & \
-    \LEX{class} \ \SYNHYPER{../.}{MiniJava-Dynamics}{identifier} \ \LEX{{\LEFTBRACE}} \\
-                                                             & \ \LEX{public} \ \LEX{static} \ \LEX{void} \ \LEX{main} \ \LEX{{(}} \ \LEX{String} \ \LEX{{[}} \ \LEX{{]}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{identifier} \ \LEX{{)}} \ \LEX{{\LEFTBRACE}} \\
-                                                                                                                                                                                                                                                                                                    & \ \SYNHYPER{../.}{MiniJava-Dynamics}{statement} \\
-                                                                                                                                                                                                                                                                                                                         & \ \LEX{{\RIGHTBRACE}} \\
-                                                                                                                                                                                                                                                                                                                                              & \ \LEX{{\RIGHTBRACE}}
+  \KEY{Syntax} \quad
+    \VARDECL{START} : \SYNDECL{start}
+      \ ::= \ & \
+      \SYNREF{program}
+    \\
+    \VARDECL{P} : \SYNDECL{program}
+      \ ::= \ & \
+      \SYNREF{main-class} \ \SYNREF{class-declaration}\STAR
+    \\
+    \VARDECL{MC} : \SYNDECL{main-class}
+      \ ::= \ & \
+      \LEX{class} \ \SYNREF{identifier} \ \LEX{{\LEFTBRACE}} \\
+      & \ \LEX{public} \ \LEX{static} \ \LEX{void} \ \LEX{main} \ \LEX{{(}} \ \LEX{String} \ \LEX{{[}} \ \LEX{{]}} \ \SYNREF{identifier} \ \LEX{{)}} \ \LEX{{\LEFTBRACE}} \\
+      & \ \SYNREF{statement} \\
+      & \ \LEX{{\RIGHTBRACE}} \\
+      & \ \LEX{{\RIGHTBRACE}}
 \end{align*}
 $\SECTHYPER{../.}{MiniJava-Dynamics}{2}$ Declarations
 
 \begin{align*}
-  \VARDECL{CD} : \SYNHYPER{../.}{MiniJava-Dynamics}{class-declaration}
-    \ ::= \ & \
-    \LEX{class} \ \SYNHYPER{../.}{MiniJava-Dynamics}{identifier} \ \LEFTGROUP \LEX{extends} \ \SYNHYPER{../.}{MiniJava-Dynamics}{identifier} \RIGHTGROUP\QUERY \ \LEX{{\LEFTBRACE}} \\
-                                                                                  & \ \SYNHYPER{../.}{MiniJava-Dynamics}{var-declaration}\STAR \\
-                                                                                                       & \ \SYNHYPER{../.}{MiniJava-Dynamics}{method-declaration}\STAR \\
-                                                                                                                            & \ \LEX{{\RIGHTBRACE}}
-  \\
-  \VARDECL{VD} : \SYNHYPER{../.}{MiniJava-Dynamics}{var-declaration}
-    \ ::= \ & \
-    \SYNHYPER{../.}{MiniJava-Dynamics}{type} \ \SYNHYPER{../.}{MiniJava-Dynamics}{identifier} \ \LEX{{;}}
-  \\
-  \VARDECL{MD} : \SYNHYPER{../.}{MiniJava-Dynamics}{method-declaration}
-    \ ::= \ & \
-    \LEX{public} \ \SYNHYPER{../.}{MiniJava-Dynamics}{type} \ \SYNHYPER{../.}{MiniJava-Dynamics}{identifier} \ \LEX{{(}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{formal-list}\QUERY \ \LEX{{)}} \ \LEX{{\LEFTBRACE}} \\
-                                                                                                                                                 & \ \SYNHYPER{../.}{MiniJava-Dynamics}{var-declaration}\STAR \\
-                                                                                                                                                                      & \ \SYNHYPER{../.}{MiniJava-Dynamics}{statement}\STAR \\
-                                                                                                                                                                                           & \ \LEX{return} \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \ \LEX{{;}} \\
-                                                                                                                                                                                                                                                          & \ \LEX{{\RIGHTBRACE}}
-  \\
-  \VARDECL{T} : \SYNHYPER{../.}{MiniJava-Dynamics}{type}
-    \ ::= \ & \
-    \LEX{int} \ \LEX{{[}} \ \LEX{{]}} \\
-    \ \mid \ & \ \LEX{boolean} \\
-    \ \mid \ & \ \LEX{int} \\
-    \ \mid \ & \ \SYNHYPER{../.}{MiniJava-Dynamics}{identifier}
-  \\
-  \VARDECL{FL} : \SYNHYPER{../.}{MiniJava-Dynamics}{formal-list}
-    \ ::= \ & \
-    \SYNHYPER{../.}{MiniJava-Dynamics}{type} \ \SYNHYPER{../.}{MiniJava-Dynamics}{identifier} \ \LEFTGROUP \LEX{{,}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{formal-list} \RIGHTGROUP\QUERY
+  \KEY{Syntax} \quad
+    \VARDECL{CD} : \SYNDECL{class-declaration}
+      \ ::= \ & \
+      \LEX{class} \ \SYNREF{identifier} \ \LEFTGROUP \LEX{extends} \ \SYNREF{identifier} \RIGHTGROUP\QUERY \ \LEX{{\LEFTBRACE}} \\
+      & \ \SYNREF{var-declaration}\STAR \\
+      & \ \SYNREF{method-declaration}\STAR \\
+      & \ \LEX{{\RIGHTBRACE}}
+    \\
+    \VARDECL{VD} : \SYNDECL{var-declaration}
+      \ ::= \ & \
+      \SYNREF{type} \ \SYNREF{identifier} \ \LEX{{;}}
+    \\
+    \VARDECL{MD} : \SYNDECL{method-declaration}
+      \ ::= \ & \
+      \LEX{public} \ \SYNREF{type} \ \SYNREF{identifier} \ \LEX{{(}} \ \SYNREF{formal-list}\QUERY \ \LEX{{)}} \ \LEX{{\LEFTBRACE}} \\
+      & \ \SYNREF{var-declaration}\STAR \\
+      & \ \SYNREF{statement}\STAR \\
+      & \ \LEX{return} \ \SYNREF{expression} \ \LEX{{;}} \\
+      & \ \LEX{{\RIGHTBRACE}}
+    \\
+    \VARDECL{T} : \SYNDECL{type}
+      \ ::= \ & \
+      \LEX{int} \ \LEX{{[}} \ \LEX{{]}} \\
+      \ \mid \ & \ \LEX{boolean} \\
+      \ \mid \ & \ \LEX{int} \\
+      \ \mid \ & \ \SYNREF{identifier}
+    \\
+    \VARDECL{FL} : \SYNDECL{formal-list}
+      \ ::= \ & \
+      \SYNREF{type} \ \SYNREF{identifier} \ \LEFTGROUP \LEX{{,}} \ \SYNREF{formal-list} \RIGHTGROUP\QUERY
 \end{align*}
 $\SECTHYPER{../.}{MiniJava-Dynamics}{3}$ Statements
 
 \begin{align*}
-  \VARDECL{S} : \SYNHYPER{../.}{MiniJava-Dynamics}{statement}
-    \ ::= \ & \
-    \LEX{{\LEFTBRACE}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{statement}\STAR \ \LEX{{\RIGHTBRACE}} \\
-    \ \mid \ & \ \LEX{if} \ \LEX{{(}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \ \LEX{{)}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{statement} \ \LEX{else} \ \SYNHYPER{../.}{MiniJava-Dynamics}{statement} \\
-    \ \mid \ & \ \LEX{while} \ \LEX{{(}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \ \LEX{{)}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{statement} \\
-    \ \mid \ & \ \LEX{System} \ \LEX{{.}} \ \LEX{out} \ \LEX{{.}} \ \LEX{println} \ \LEX{{(}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \ \LEX{{)}} \ \LEX{{;}} \\
-    \ \mid \ & \ \SYNHYPER{../.}{MiniJava-Dynamics}{identifier} \ \LEX{{=}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \ \LEX{{;}} \\
-    \ \mid \ & \ \SYNHYPER{../.}{MiniJava-Dynamics}{identifier} \ \LEX{{[}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \ \LEX{{]}} \ \LEX{{=}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \ \LEX{{;}}
+  \KEY{Syntax} \quad
+    \VARDECL{S} : \SYNDECL{statement}
+      \ ::= \ & \
+      \LEX{{\LEFTBRACE}} \ \SYNREF{statement}\STAR \ \LEX{{\RIGHTBRACE}} \\
+      \ \mid \ & \ \LEX{if} \ \LEX{{(}} \ \SYNREF{expression} \ \LEX{{)}} \ \SYNREF{statement} \ \LEX{else} \ \SYNREF{statement} \\
+      \ \mid \ & \ \LEX{while} \ \LEX{{(}} \ \SYNREF{expression} \ \LEX{{)}} \ \SYNREF{statement} \\
+      \ \mid \ & \ \LEX{System} \ \LEX{{.}} \ \LEX{out} \ \LEX{{.}} \ \LEX{println} \ \LEX{{(}} \ \SYNREF{expression} \ \LEX{{)}} \ \LEX{{;}} \\
+      \ \mid \ & \ \SYNREF{identifier} \ \LEX{{=}} \ \SYNREF{expression} \ \LEX{{;}} \\
+      \ \mid \ & \ \SYNREF{identifier} \ \LEX{{[}} \ \SYNREF{expression} \ \LEX{{]}} \ \LEX{{=}} \ \SYNREF{expression} \ \LEX{{;}}
 \end{align*}
 $\SECTHYPER{../.}{MiniJava-Dynamics}{4}$ Expressions
 
 \begin{align*}
-  \VARDECL{E} : \SYNHYPER{../.}{MiniJava-Dynamics}{expression}
-    \ ::= \ & \
-    \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \ \LEX{{\AMPERSAND}{\AMPERSAND}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \\
-    \ \mid \ & \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \ \LEX{{<}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \\
-    \ \mid \ & \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \ \LEX{{+}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \\
-    \ \mid \ & \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \ \LEX{{-}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \\
-    \ \mid \ & \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \ \LEX{{*}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \\
-    \ \mid \ & \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \ \LEX{{[}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \ \LEX{{]}} \\
-    \ \mid \ & \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \ \LEX{{.}} \ \LEX{length} \\
-    \ \mid \ & \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \ \LEX{{.}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{identifier} \ \LEX{{(}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression-list}\QUERY \ \LEX{{)}} \\
-    \ \mid \ & \ \SYNHYPER{../.}{MiniJava-Dynamics}{integer-literal} \\
-    \ \mid \ & \ \LEX{true} \\
-    \ \mid \ & \ \LEX{false} \\
-    \ \mid \ & \ \SYNHYPER{../.}{MiniJava-Dynamics}{identifier} \\
-    \ \mid \ & \ \LEX{this} \\
-    \ \mid \ & \ \LEX{new} \ \LEX{int} \ \LEX{{[}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \ \LEX{{]}} \\
-    \ \mid \ & \ \LEX{new} \ \SYNHYPER{../.}{MiniJava-Dynamics}{identifier} \ \LEX{{(}} \ \LEX{{)}} \\
-    \ \mid \ & \ \LEX{{!}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \\
-    \ \mid \ & \ \LEX{{(}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \ \LEX{{)}}
-  \\
-  \VARDECL{EL} : \SYNHYPER{../.}{MiniJava-Dynamics}{expression-list}
-    \ ::= \ & \
-    \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \ \LEFTGROUP \LEX{{,}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression-list} \RIGHTGROUP\QUERY
+  \KEY{Syntax} \quad
+    \VARDECL{E} : \SYNDECL{expression}
+      \ ::= \ & \
+      \SYNREF{expression} \ \LEX{{\AMPERSAND}{\AMPERSAND}} \ \SYNREF{expression} \\
+      \ \mid \ & \ \SYNREF{expression} \ \LEX{{<}} \ \SYNREF{expression} \\
+      \ \mid \ & \ \SYNREF{expression} \ \LEX{{+}} \ \SYNREF{expression} \\
+      \ \mid \ & \ \SYNREF{expression} \ \LEX{{-}} \ \SYNREF{expression} \\
+      \ \mid \ & \ \SYNREF{expression} \ \LEX{{*}} \ \SYNREF{expression} \\
+      \ \mid \ & \ \SYNREF{expression} \ \LEX{{[}} \ \SYNREF{expression} \ \LEX{{]}} \\
+      \ \mid \ & \ \SYNREF{expression} \ \LEX{{.}} \ \LEX{length} \\
+      \ \mid \ & \ \SYNREF{expression} \ \LEX{{.}} \ \SYNREF{identifier} \ \LEX{{(}} \ \SYNREF{expression-list}\QUERY \ \LEX{{)}} \\
+      \ \mid \ & \ \SYNREF{integer-literal} \\
+      \ \mid \ & \ \LEX{true} \\
+      \ \mid \ & \ \LEX{false} \\
+      \ \mid \ & \ \SYNREF{identifier} \\
+      \ \mid \ & \ \LEX{this} \\
+      \ \mid \ & \ \LEX{new} \ \LEX{int} \ \LEX{{[}} \ \SYNREF{expression} \ \LEX{{]}} \\
+      \ \mid \ & \ \LEX{new} \ \SYNREF{identifier} \ \LEX{{(}} \ \LEX{{)}} \\
+      \ \mid \ & \ \LEX{{!}} \ \SYNREF{expression} \\
+      \ \mid \ & \ \LEX{{(}} \ \SYNREF{expression} \ \LEX{{)}}
+    \\
+    \VARDECL{EL} : \SYNDECL{expression-list}
+      \ ::= \ & \
+      \SYNREF{expression} \ \LEFTGROUP \LEX{{,}} \ \SYNREF{expression-list} \RIGHTGROUP\QUERY
 \end{align*}
 $\SECTHYPER{../.}{MiniJava-Dynamics}{5}$ Lexemes
 
-Lexis
-
 \begin{align*}
-  \VARDECL{ID} : \SYNHYPER{../.}{MiniJava-Dynamics}{identifier}
-    \ ::= \ & \
-    \SYNHYPER{../.}{MiniJava-Dynamics}{letter} \ \LEFTGROUP \SYNHYPER{../.}{MiniJava-Dynamics}{letter} \mid \SYNHYPER{../.}{MiniJava-Dynamics}{digit} \mid \LEX{{\UNDERSCORE}} \RIGHTGROUP\STAR
-  \\
-  \VARDECL{IL} : \SYNHYPER{../.}{MiniJava-Dynamics}{integer-literal}
-    \ ::= \ & \
-    \SYNHYPER{../.}{MiniJava-Dynamics}{digit}\PLUS
-  \\
-   \SYNHYPER{../.}{MiniJava-Dynamics}{letter}
-    \ ::= \ & \
-    \LEX{a} {-} \LEX{z} \mid \LEX{A} {-} \LEX{Z}
-  \\
-   \SYNHYPER{../.}{MiniJava-Dynamics}{digit}
-    \ ::= \ & \
-    \LEX{0} {-} \LEX{9}
+  \KEY{Lexis} \quad
+    \VARDECL{ID} : \SYNDECL{identifier}
+      \ ::= \ & \
+      \SYNREF{letter} \ \LEFTGROUP \SYNREF{letter} \mid \SYNREF{digit} \mid \LEX{{\UNDERSCORE}} \RIGHTGROUP\STAR
+    \\
+    \VARDECL{IL} : \SYNDECL{integer-literal}
+      \ ::= \ & \
+      \SYNREF{digit}\PLUS
+    \\
+     \SYNDECL{letter}
+      \ ::= \ & \
+      \LEX{a} {-} \LEX{z} \mid \LEX{A} {-} \LEX{Z}
+    \\
+     \SYNDECL{digit}
+      \ ::= \ & \
+      \LEX{0} {-} \LEX{9}
 \end{align*}
-\section{$\SECT{6}$ Disambiguation}\hypertarget{sect6-disambiguation}{}\label{sect6-disambiguation}
+\section{$\SECT{6}$ Disambiguation}\hypertarget{SectionNumber:6}{}\label{SectionNumber:6}
 
 The mixture of CBS and SDF below specifies how MiniJava texts are to
   be disambiguated by parsers generated from the above grammar.
 
 The specified rules are adequate to disambiguate all the example programs
-  provided at http://www.cambridge.org/us/features/052182060X/\#progs
+  provided at \href{https://www.cambridge.org/us/features/052182060X/#progs}{https://www.cambridge.org/us/features/052182060X/\#progs}.
 
 $\KEY{Syntax SDF}$
 
@@ -186,7 +187,7 @@ lexical restrictions\newline
 
 \begin{align*}
   \KEY{Lexis} \quad
-     \SYN{reserved-id}
+     \SYNDECL{reserved-id}
       \ ::= \ & \
       \LEX{String} \\
       \ \mid \ & \ \LEX{System} \\

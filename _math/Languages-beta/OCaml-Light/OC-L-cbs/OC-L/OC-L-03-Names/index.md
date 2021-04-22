@@ -21,8 +21,7 @@ ancestor: Languages-beta
 
 $$\KEY{Language} \quad \STRING{OCaml Light}$$
 
-# $$\SECT{3}$$ Names
-           
+# $$\SECT{3}$$ Names {#SectionNumber:3}
 
 
 ## Naming objects
@@ -31,16 +30,16 @@ $$\KEY{Language} \quad \STRING{OCaml Light}$$
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{VN} : \SYN{value-name}
+    \VARDECL{VN} : \SYNDECL{value-name}
       \ ::= \ & \
       \SYNHYPER{../.}{OC-L-01-Lexical-Conventions}{lowercase-ident} \\
       \ \mid \ & \ \LEX{{(}} \ \SYNREF{operator-name} \ \LEX{{)}}
     \\
-    \VARDECL{ON} : \SYN{operator-name}
+    \VARDECL{ON} : \SYNDECL{operator-name}
       \ ::= \ & \
       \SYNREF{prefix-op} \mid \SYNREF{infix-op}
     \\
-    \VARDECL{PO} : \SYN{prefix-op}
+    \VARDECL{PO} : \SYNDECL{prefix-op}
       \ ::= \ & \
       \SYNHYPER{../.}{OC-L-01-Lexical-Conventions}{prefix-symbol}
 \end{align*}$$
@@ -58,32 +57,32 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{IO} : \SYN{infix-op}
+    \VARDECL{IO} : \SYNDECL{infix-op}
       \ ::= \ & \
       \SYNREF{infix-op-1} \mid \SYNREF{infix-op-2} \mid \SYNREF{infix-op-3} \mid \SYNREF{infix-op-4} \\
       \ \mid \ & \ \SYNREF{infix-op-5} \mid \SYNREF{infix-op-6} \mid \SYNREF{infix-op-7} \mid \SYNREF{infix-op-8}
 \\
   \KEY{Lexis} \quad
-    \VARDECL{IO-1} : \SYN{infix-op-1}
+    \VARDECL{IO-1} : \SYNDECL{infix-op-1}
       \ ::= \ & \
       \LEX{{*}{*}} \ \SYNHYPER{../.}{OC-L-01-Lexical-Conventions}{operator-char}\STAR \mid \LEX{lsl} \mid \LEX{lsr} \mid \LEX{asr}
     \\
-    \VARDECL{IO-2} : \SYN{infix-op-2}
+    \VARDECL{IO-2} : \SYNDECL{infix-op-2}
       \ ::= \ & \
       \LEX{{*}} \\
       \ \mid \ & \ \LEX{{*}} \ \SYNHYPER{../.}{OC-L-01-Lexical-Conventions}{operator-char-not-asterisk} \ \SYNHYPER{../.}{OC-L-01-Lexical-Conventions}{operator-char}\STAR \\
       \ \mid \ & \ \LEFTGROUP \LEX{{/}} \mid \LEX{{\PERCENT}} \RIGHTGROUP \ \SYNHYPER{../.}{OC-L-01-Lexical-Conventions}{operator-char}\STAR \\
       \ \mid \ & \ \LEX{mod} \mid \LEX{land} \mid \LEX{lor} \mid \LEX{lxor}
     \\
-    \VARDECL{IO-3} : \SYN{infix-op-3}
+    \VARDECL{IO-3} : \SYNDECL{infix-op-3}
       \ ::= \ & \
       \LEFTGROUP \LEX{{+}} \mid \LEX{{-}} \RIGHTGROUP \ \SYNHYPER{../.}{OC-L-01-Lexical-Conventions}{operator-char}\STAR
     \\
-    \VARDECL{IO-4} : \SYN{infix-op-4}
+    \VARDECL{IO-4} : \SYNDECL{infix-op-4}
       \ ::= \ & \
       \LEFTGROUP \LEX{{@}} \mid \LEX{{\CARET}} \RIGHTGROUP \ \SYNHYPER{../.}{OC-L-01-Lexical-Conventions}{operator-char}\STAR
     \\
-    \VARDECL{IO-5} : \SYN{infix-op-5}
+    \VARDECL{IO-5} : \SYNDECL{infix-op-5}
       \ ::= \ & \
       \LEFTGROUP \LEX{{=}} \mid \LEX{{<}} \mid \LEX{{>}} \mid \LEX{{\DOLLAR}} \RIGHTGROUP \ \SYNHYPER{../.}{OC-L-01-Lexical-Conventions}{operator-char}\STAR \\
       \ \mid \ & \ \LEX{{|}} \ \LEFTGROUP \SYNHYPER{../.}{OC-L-01-Lexical-Conventions}{operator-char-not-bar} \ \SYNHYPER{../.}{OC-L-01-Lexical-Conventions}{operator-char}\STAR \RIGHTGROUP\QUERY \\
@@ -92,32 +91,32 @@ $$\begin{align*}
       \ \mid \ & \ \LEX{{\AMPERSAND}{\AMPERSAND}} \ \SYNHYPER{../.}{OC-L-01-Lexical-Conventions}{operator-char}\PLUS \\
       \ \mid \ & \ \LEX{{!}{=}}
     \\
-    \VARDECL{IO-6} : \SYN{infix-op-6}
+    \VARDECL{IO-6} : \SYNDECL{infix-op-6}
       \ ::= \ & \
       \LEX{{\AMPERSAND}} \mid \LEX{{\AMPERSAND}{\AMPERSAND}}
     \\
-    \VARDECL{IO-7} : \SYN{infix-op-7}
+    \VARDECL{IO-7} : \SYNDECL{infix-op-7}
       \ ::= \ & \
       \LEX{or} \mid \LEX{{|}{|}}
     \\
-    \VARDECL{IO-8} : \SYN{infix-op-8}
+    \VARDECL{IO-8} : \SYNDECL{infix-op-8}
       \ ::= \ & \
       \LEX{{:}{=}}
 \\
   \KEY{Lexis} \quad
-    \VARDECL{CN} : \SYN{constr-name}
+    \VARDECL{CN} : \SYNDECL{constr-name}
       \ ::= \ & \
       \SYNHYPER{../.}{OC-L-01-Lexical-Conventions}{capitalized-ident}
     \\
-    \VARDECL{TCN} : \SYN{typeconstr-name}
+    \VARDECL{TCN} : \SYNDECL{typeconstr-name}
       \ ::= \ & \
       \SYNHYPER{../.}{OC-L-01-Lexical-Conventions}{lowercase-ident}
     \\
-    \VARDECL{FN} : \SYN{field-name}
+    \VARDECL{FN} : \SYNDECL{field-name}
       \ ::= \ & \
       \SYNHYPER{../.}{OC-L-01-Lexical-Conventions}{lowercase-ident}
     \\
-    \VARDECL{MN} : \SYN{module-name}
+    \VARDECL{MN} : \SYNDECL{module-name}
       \ ::= \ & \
       \SYNHYPER{../.}{OC-L-01-Lexical-Conventions}{capitalized-ident}
 \end{align*}$$
@@ -128,19 +127,19 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{VP} : \SYN{value-path}
+    \VARDECL{VP} : \SYNDECL{value-path}
       \ ::= \ & \
       \SYNREF{value-name}
     \\
-    \VARDECL{CSTR} : \SYN{constr}
+    \VARDECL{CSTR} : \SYNDECL{constr}
       \ ::= \ & \
       \SYNREF{constr-name}
     \\
-    \VARDECL{TCSTR} : \SYN{typeconstr}
+    \VARDECL{TCSTR} : \SYNDECL{typeconstr}
       \ ::= \ & \
       \SYNREF{typeconstr-name}
     \\
-    \VARDECL{F} : \SYN{field}
+    \VARDECL{F} : \SYNDECL{field}
       \ ::= \ & \
       \SYNREF{field-name}
 \end{align*}$$

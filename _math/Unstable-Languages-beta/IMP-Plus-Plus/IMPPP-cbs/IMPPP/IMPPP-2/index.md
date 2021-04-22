@@ -21,13 +21,12 @@ ancestor: Unstable-Languages-beta
 
 $$\KEY{Language} \quad \STRING{IMPPP}$$
 
-# $$\SECT{2}$$ Value expressions
-           
+# $$\SECT{2}$$ Value expressions {#SectionNumber:2}
 
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{AExp} : \SYN{aexp}
+    \VARDECL{AExp} : \SYNDECL{aexp}
       \ ::= \ & \
       \SYNHYPER{../.}{IMPPP-1}{int} \\
       \ \mid \ & \ \SYNHYPER{../.}{IMPPP-1}{string} \\
@@ -198,7 +197,7 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{AExps} : \SYN{aexps}
+    \VARDECL{AExps} : \SYNDECL{aexps}
       \ ::= \ & \
       \SYNREF{aexp} \ \LEFTGROUP \LEX{{,}} \ \SYNREF{aexps} \RIGHTGROUP\QUERY
 \end{align*}$$

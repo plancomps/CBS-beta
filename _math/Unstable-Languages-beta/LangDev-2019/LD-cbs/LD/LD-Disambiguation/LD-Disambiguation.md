@@ -13,12 +13,10 @@
 
 $$\KEY{Language} \quad \STRING{LD}$$
 
-# $$\SECT{A}$$ Disambiguation
-           
+# $$\SECT{A}$$ Disambiguation {#SectionNumber:A}
 
 
-## $$\SECT{A.1}$$ Lexical constructs
-           
+## $$\SECT{A.1}$$ Lexical constructs {#SectionNumber:A.1}
 
 
 \$$\KEY{Lexis SDF}$$
@@ -35,8 +33,7 @@ $$\KEY{Language} \quad \STRING{LD}$$
 >    context-free syntax\\
 >    $$\SHADE{\quad\SYNHYPER{../.}{LD-Start}{start}  \ ::= \  \  \SYNHYPER{../.}{LD-Start}{exp}}$$ {prefer}
 
-## $$\SECT{A.2}$$ Call-by-value lambda-calculus
-           
+## $$\SECT{A.2}$$ Call-by-value lambda-calculus {#SectionNumber:A.2}
 
 
 \$$\KEY{Syntax SDF}$$
@@ -53,8 +50,7 @@ $$\KEY{Language} \quad \STRING{LD}$$
 >    $$\SHADE{\quad\SYNHYPER{../.}{LD-Start}{exp}  \ ::= \  \  \LEX{let} \ \SYNHYPER{../.}{LD-Start}{id} \ \LEX{{=}} \ \SYNHYPER{../.}{LD-Start}{exp} \ \LEX{in} \ \SYNHYPER{../.}{LD-Start}{exp}}$$\\
 >    }
 
-## $$\SECT{A.3}$$ Arithmetic and Boolean expressions
-           
+## $$\SECT{A.3}$$ Arithmetic and Boolean expressions {#SectionNumber:A.3}
 
 
 \$$\KEY{Syntax SDF}$$
@@ -84,8 +80,7 @@ $$\KEY{Language} \quad \STRING{LD}$$
 >    $$\SHADE{\quad\SYNHYPER{../.}{LD-Start}{exp}  \ ::= \  \  \LEX{let} \ \SYNHYPER{../.}{LD-Start}{id} \ \LEX{{=}} \ \SYNHYPER{../.}{LD-Start}{exp} \ \LEX{in} \ \SYNHYPER{../.}{LD-Start}{exp}}$$\\
 >    }
 
-## $$\SECT{A.4}$$ References and imperatives
-           
+## $$\SECT{A.4}$$ References and imperatives {#SectionNumber:A.4}
 
 
 \$$\KEY{Syntax SDF}$$
@@ -114,8 +109,7 @@ $$\KEY{Language} \quad \STRING{LD}$$
 >    \>\\
 >    $$\SHADE{\quad\SYNHYPER{../.}{LD-Start}{exp}  \ ::= \  \  \LEX{let} \ \SYNHYPER{../.}{LD-Start}{id} \ \LEX{{=}} \ \SYNHYPER{../.}{LD-Start}{exp} \ \LEX{in} \ \SYNHYPER{../.}{LD-Start}{exp}}$$
 
-## $$\SECT{A.5}$$ Multithreading
-           
+## $$\SECT{A.5}$$ Multithreading {#SectionNumber:A.5}
 
 
 \$$\KEY{Syntax SDF}$$

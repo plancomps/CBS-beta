@@ -12,11 +12,11 @@
 \KEY{Language} \quad \STRING{IMPPP}
 \end{displaymath}
 
-\section{$\SECT{2}$ Value expressions}\hypertarget{sect2-value-expressions}{}\label{sect2-value-expressions}
+\section{$\SECT{2}$ Value expressions}\hypertarget{SectionNumber:2}{}\label{SectionNumber:2}
 
 \begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{AExp} : \SYN{aexp}
+    \VARDECL{AExp} : \SYNDECL{aexp}
       \ ::= \ & \
       \SYNHYPER{../.}{IMPPP-1}{int} \\
       \ \mid \ & \ \SYNHYPER{../.}{IMPPP-1}{string} \\
@@ -181,7 +181,7 @@
 
 \begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{AExps} : \SYN{aexps}
+    \VARDECL{AExps} : \SYNDECL{aexps}
       \ ::= \ & \
       \SYNREF{aexp} \ \LEFTGROUP \LEX{{,}} \ \SYNREF{aexps} \RIGHTGROUP\QUERY
 \end{align*}

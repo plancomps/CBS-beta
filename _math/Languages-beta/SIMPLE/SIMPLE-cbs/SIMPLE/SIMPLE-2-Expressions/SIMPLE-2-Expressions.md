@@ -5,13 +5,12 @@
 
 $$\KEY{Language} \quad \STRING{SIMPLE}$$
 
-# $$\SECT{2}$$ Expressions
-           
+# $$\SECT{2}$$ Expressions {#SectionNumber:2}
 
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{Exp} : \SYN{exp}
+    \VARDECL{Exp} : \SYNDECL{exp}
       \ ::= \ & \
       \LEX{{(}} \ \SYNREF{exp} \ \LEX{{)}} \\
       \ \mid \ & \ \SYNHYPER{../.}{SIMPLE-1-Lexical}{value} \\
@@ -315,7 +314,7 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{Exps} : \SYN{exps}
+    \VARDECL{Exps} : \SYNDECL{exps}
       \ ::= \ & \
       \SYNREF{exp} \ \LEFTGROUP \LEX{{,}} \ \SYNREF{exps} \RIGHTGROUP\QUERY
 \end{align*}$$
@@ -353,7 +352,7 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{LExp} : \SYN{lexp}
+    \VARDECL{LExp} : \SYNDECL{lexp}
       \ ::= \ & \
       \SYNHYPER{../.}{SIMPLE-1-Lexical}{id} \mid \SYNREF{lexp} \ \LEX{{[}} \ \SYNREF{exps} \ \LEX{{]}}
 \end{align*}$$

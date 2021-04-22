@@ -10,8 +10,7 @@ ancestor: Languages-beta
 
 ----
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Language</i> <span id="Language_SL">"SL"</span></code></pre></div>
-# <span id="SectionNumber_3">3</span> Statements
-
+# 3 Statements {#SectionNumber_3}
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Syntax</i>
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_Stmt">Stmt</span></i>  :</i> <span class="syn-name"><span id="SyntaxName_stmt">stmt</span></span>  ::= <span class="syn-name"><a href="../SL-2-Expressions/index.html#SyntaxName_expr">expr</a></span> <b class="atom">';'</b>
                   | <b class="atom">'return'</b> <span class="syn-name"><a href="../SL-2-Expressions/index.html#SyntaxName_expr">expr</a></span> <b class="atom">';'</b>

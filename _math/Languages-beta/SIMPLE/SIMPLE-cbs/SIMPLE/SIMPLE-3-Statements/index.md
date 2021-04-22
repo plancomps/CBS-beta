@@ -13,25 +13,24 @@ ancestor: Languages-beta
 
 $$\KEY{Language} \quad \STRING{SIMPLE}$$
 
-# $$\SECT{3}$$ Statements
-           
+# $$\SECT{3}$$ Statements {#SectionNumber:3}
 
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{Block} : \SYN{block}
+    \VARDECL{Block} : \SYNDECL{block}
       \ ::= \ & \
       \LEX{{\LEFTBRACE}} \ \SYNREF{stmts}\QUERY \ \LEX{{\RIGHTBRACE}}
     \\
-    \VARDECL{Stmts} : \SYN{stmts}
+    \VARDECL{Stmts} : \SYNDECL{stmts}
       \ ::= \ & \
       \SYNREF{stmt} \ \SYNREF{stmts}\QUERY
     \\
-    \VARDECL{Stmt} : \SYN{stmt}
+    \VARDECL{Stmt} : \SYNDECL{stmt}
       \ ::= \ & \
       \SYNREF{imp-stmt} \mid \SYNHYPER{../.}{SIMPLE-4-Declarations}{vars-decl}
     \\
-    \VARDECL{ImpStmt} : \SYN{imp-stmt}
+    \VARDECL{ImpStmt} : \SYNDECL{imp-stmt}
       \ ::= \ & \
       \SYNREF{block} \\
       \ \mid \ & \ \SYNHYPER{../.}{SIMPLE-2-Expressions}{exp} \ \LEX{{;}} \\

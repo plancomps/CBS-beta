@@ -27,15 +27,15 @@ Lexical syntax:
 
 \begin{align*}
   \KEY{Lexis} \quad
-    \VARDECL{X} : \SYN{id}
+    \VARDECL{X} : \SYNDECL{id}
       \ ::= \ & \
       \LEFTGROUP \LEX{a} {-} \LEX{z} \RIGHTGROUP \ \LEFTGROUP \LEX{a} {-} \LEX{z} \mid \LEX{0} {-} \LEX{9} \RIGHTGROUP\STAR
     \\
-    \VARDECL{N} : \SYN{int}
+    \VARDECL{N} : \SYNDECL{int}
       \ ::= \ & \
       \LEFTGROUP \LEX{0} {-} \LEX{9} \RIGHTGROUP\PLUS
     \\
-     \SYN{keyword}
+     \SYNDECL{keyword}
       \ ::= \ & \
       \LEX{do} \mid \LEX{else} \mid \LEX{fork} \mid \LEX{if} \\
       \ \mid \ & \ \LEX{in} \mid \LEX{join} \mid \LEX{lambda} \mid \LEX{let} \\
@@ -45,7 +45,7 @@ Context-free syntax:
 
 \begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{E} : \SYN{exp}
+    \VARDECL{E} : \SYNDECL{exp}
       \ ::= \ & \
       \SYNREF{int} \\
       \ \mid \ & \ \SYNREF{id} \\
@@ -82,7 +82,7 @@ Expression evaluation:
   & \SEMDECL{eval} \LEFTPHRASE \ \_ : \SYNREF{exp} \ \RIGHTPHRASE  
     :  \TO \NAMEREF{ld-values} 
 \end{align*}
-\section{$\SECT{1}$ Lexical constructs}\hypertarget{sect1-lexical-constructs}{}\label{sect1-lexical-constructs}
+\section{$\SECT{1}$ Lexical constructs}\hypertarget{SectionNumber:1}{}\label{SectionNumber:1}
 
 \begin{align*}
   \KEY{Rule} \quad
@@ -99,7 +99,7 @@ Expression evaluation:
       \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{bound} \ 
         \textsf{\textquotedblleft}\VAR{X}\textsf{\textquotedblright}
 \end{align*}
-\section{$\SECT{2}$ Call-by-value lambda-calculus}\hypertarget{sect2-call-by-value-lambda-calculus}{}\label{sect2-call-by-value-lambda-calculus}
+\section{$\SECT{2}$ Call-by-value lambda-calculus}\hypertarget{SectionNumber:2}{}\label{SectionNumber:2}
 
 \begin{align*}
   \KEY{Rule} \quad
@@ -162,7 +162,7 @@ Desugaring (alternative to the above rule):
                             \VAR{E} \
                           \RIGHTPHRASE 
 \end{align*}
-\section{$\SECT{3}$ Arithmetic and Boolean expressions}\hypertarget{sect3-arithmetic-and-boolean-expressions}{}\label{sect3-arithmetic-and-boolean-expressions}
+\section{$\SECT{3}$ Arithmetic and Boolean expressions}\hypertarget{SectionNumber:3}{}\label{SectionNumber:3}
 
 \begin{align*}
   \KEY{Rule} \quad
@@ -243,7 +243,7 @@ Desugaring (alternative to the above rule):
                                     \VAR{E}\SUB{3} \
                                   \RIGHTPHRASE  )
 \end{align*}
-\section{$\SECT{4}$ References and imperatives}\hypertarget{sect4-references-and-imperatives}{}\label{sect4-references-and-imperatives}
+\section{$\SECT{4}$ References and imperatives}\hypertarget{SectionNumber:4}{}\label{SectionNumber:4}
 
 \begin{align*}
   \KEY{Rule} \quad
@@ -309,7 +309,7 @@ Desugaring (alternative to the above rule):
                                             \VAR{E}\SUB{2} \
                                           \RIGHTPHRASE  ) )
 \end{align*}
-\section{$\SECT{5}$ Multithreading}\hypertarget{sect5-multithreading}{}\label{sect5-multithreading}
+\section{$\SECT{5}$ Multithreading}\hypertarget{SectionNumber:5}{}\label{SectionNumber:5}
 
 N.B. The funcons for multithreading have not yet been fully validated,
 so they are defined in Unstable-Funcons-beta instead of Funcons-beta.
@@ -336,11 +336,11 @@ so they are defined in Unstable-Funcons-beta instead of Funcons-beta.
                                     \VAR{E} \
                                   \RIGHTPHRASE  )
 \end{align*}
-\section{$\SECT{6}$ Programs}\hypertarget{sect6-programs}{}\label{sect6-programs}
+\section{$\SECT{6}$ Programs}\hypertarget{SectionNumber:6}{}\label{SectionNumber:6}
 
 \begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{START} : \SYN{start}
+    \VARDECL{START} : \SYNDECL{start}
       \ ::= \ & \
       \SYNREF{exp}
 \end{align*}

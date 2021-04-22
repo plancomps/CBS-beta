@@ -13,13 +13,12 @@ ancestor: Languages-beta
 
 $$\KEY{Language} \quad \STRING{SL}$$
 
-# $$\SECT{3}$$ Statements
-           
+# $$\SECT{3}$$ Statements {#SectionNumber:3}
 
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{Stmt} : \SYN{stmt}
+    \VARDECL{Stmt} : \SYNDECL{stmt}
       \ ::= \ & \
       \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{;}} \\
       \ \mid \ & \ \LEX{return} \ \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{;}} \\
@@ -31,7 +30,7 @@ $$\begin{align*}
       \ \mid \ & \ \LEX{continue} \ \LEX{{;}} \\
       \ \mid \ & \ \SYNREF{block}
     \\
-    \VARDECL{Block} : \SYN{block}
+    \VARDECL{Block} : \SYNDECL{block}
       \ ::= \ & \
       \LEX{{\LEFTBRACE}} \ \SYNREF{stmt}\STAR \ \LEX{{\RIGHTBRACE}}
 \end{align*}$$

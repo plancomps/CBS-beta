@@ -5,8 +5,7 @@
 
 $$\KEY{Language} \quad \STRING{OCaml Light}$$
 
-# $$\SECT{A}$$ Disambiguation
-           
+# $$\SECT{A}$$ Disambiguation {#SectionNumber:A}
 
 
 \$$\KEY{Lexis SDF}$$

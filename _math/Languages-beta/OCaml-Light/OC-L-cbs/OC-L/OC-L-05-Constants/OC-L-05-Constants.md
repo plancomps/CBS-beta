@@ -5,13 +5,12 @@
 
 $$\KEY{Language} \quad \STRING{OCaml Light}$$
 
-# $$\SECT{5}$$ Constants
-           
+# $$\SECT{5}$$ Constants {#SectionNumber:5}
 
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{CNST} : \SYN{constant}
+    \VARDECL{CNST} : \SYNDECL{constant}
       \ ::= \ & \
       \SYNHYPER{../.}{OC-L-01-Lexical-Conventions}{integer-literal} \\
       \ \mid \ & \ \SYNHYPER{../.}{OC-L-01-Lexical-Conventions}{float-literal} \\

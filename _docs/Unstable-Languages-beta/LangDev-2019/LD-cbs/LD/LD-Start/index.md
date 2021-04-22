@@ -7,24 +7,16 @@ nav_order: LD
 
 [Unstable-Languages-beta] : [LD-Start.cbs] \| [PRETTY] \| [PDF]
 
-<details open markdown="block">
-  <summary>
-    Outline
-  </summary>
-  {: .text-delta }
-- TOC
-{:toc}
-</details>
 
 ----
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Language</i> <span id="Language_LD">"LD"</span></code></pre></div>
 <div class="highlighter-rouge"><pre class="highlight"><code>[
-# <a href="SectionNumber_1">1</a> Lexical constructs
-# <a href="SectionNumber_2">2</a> Call-by-value lambda-calculus
-# <a href="SectionNumber_3">3</a> Arithmetic and Boolean expressions
-# <a href="SectionNumber_4">4</a> References and imperatives
-# <a href="SectionNumber_5">5</a> Multithreading
-# <a href="SectionNumber_6">6</a> Programs
+# <a href="#SectionNumber_1">1</a> Lexical constructs
+# <a href="#SectionNumber_2">2</a> Call-by-value lambda-calculus
+# <a href="#SectionNumber_3">3</a> Arithmetic and Boolean expressions
+# <a href="#SectionNumber_4">4</a> References and imperatives
+# <a href="#SectionNumber_5">5</a> Multithreading
+# <a href="#SectionNumber_6">6</a> Programs
 # <a href="../LD-Disambiguation/index.html#SectionNumber_A">A</a> Disambiguation
 ]</code></pre></div>
 
@@ -86,16 +78,14 @@ nav_order: LD
 
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Semantics</i> <i class="sem-name"><span id="SemanticsName_eval">eval</span></i>[[ _:<span class="syn-name"><a href="#SyntaxName_exp">exp</a></span> ]] : => <span class="name"><a href="#Name_ld-values">ld-values</a></span></code></pre></div>
-# <span id="SectionNumber_1">1</span> Lexical constructs
-
+# 1 Lexical constructs {#SectionNumber_1}
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Rule</i> <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <span id="Variable411_N"><i class="var"><a href="#VariableStem_N">N</a></i></span> ]] = <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Integers/index.html#Name_decimal">decimal</a></span> \"<a href="#Variable411_N"><i class="var">N</i></a>\"
 <i class="keyword">Rule</i> <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <span id="Variable436_X"><i class="var"><a href="#VariableStem_X">X</a></i></span> ]] = <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Binding/index.html#Name_bound">bound</a></span> \"<a href="#Variable436_X"><i class="var">X</i></a>\"</code></pre></div>
 
 
 
-# <span id="SectionNumber_2">2</span> Call-by-value lambda-calculus
-
+# 2 Call-by-value lambda-calculus {#SectionNumber_2}
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Rule</i> <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <b class="atom">'lambda'</b> <span id="Variable474_X"><i class="var"><a href="#VariableStem_X">X</a></i></span> <b class="atom">'.'</b> <span id="Variable481_E"><i class="var"><a href="#VariableStem_E">E</a></i></span> ]] =
   <span class="name"><a href="../../../../../Funcons-beta/Values/Abstraction/Functions/index.html#Name_function">function</a></span> <span class="name"><a href="../../../../../Funcons-beta/Values/Abstraction/Generic/index.html#Name_closure">closure</a></span>
@@ -117,8 +107,7 @@ Desugaring (alternative to the above rule):
 
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Rule</i> <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <b class="atom">'('</b> <span id="Variable778_E"><i class="var"><a href="#VariableStem_E">E</a></i></span> <b class="atom">')'</b> ]] = <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <a href="#Variable778_E"><i class="var">E</i></a> ]]</code></pre></div>
-# <span id="SectionNumber_3">3</span> Arithmetic and Boolean expressions
-
+# 3 Arithmetic and Boolean expressions {#SectionNumber_3}
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Rule</i> <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <span id="Variable826_E1"><i class="var"><a href="#VariableStem_E">E</a><sub class="sub">1</sub></i></span> <b class="atom">'+'</b> <span id="Variable834_E2"><i class="var"><a href="#VariableStem_E">E</a><sub class="sub">2</sub></i></span> ]] =
   <span class="name"><a href="../../../../../Funcons-beta/Values/Primitive/Integers/index.html#Name_int-add">int-add</a></span>( <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <a href="#Variable826_E1"><i class="var">E<sub class="sub">1</sub></i></a> ]], <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <a href="#Variable834_E2"><i class="var">E<sub class="sub">2</sub></i></a> ]] )
@@ -135,8 +124,7 @@ Desugaring (alternative to the above rule):
 
 
 
-# <span id="SectionNumber_4">4</span> References and imperatives
-
+# 4 References and imperatives {#SectionNumber_4}
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Rule</i> <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <b class="atom">'ref'</b> <span id="Variable1248_E"><i class="var"><a href="#VariableStem_E">E</a></i></span> ]] =
   <span class="name"><a href="../../../../../Funcons-beta/Computations/Normal/Storing/index.html#Name_allocate-initialised-variable">allocate-initialised-variable</a></span>( <span class="name"><a href="#Name_ld-values">ld-values</a></span>, <i class="sem-name"><a href="#SemanticsName_eval">eval</a></i>[[ <a href="#Variable1248_E"><i class="var">E</i></a> ]] )
@@ -151,8 +139,7 @@ Desugaring (alternative to the above rule):
 
 
 
-# <span id="SectionNumber_5">5</span> Multithreading
-
+# 5 Multithreading {#SectionNumber_5}
 
 N.B. The funcons for multithreading have not yet been fully validated,
 so they are defined in Unstable-Funcons-beta instead of Funcons-beta.
@@ -163,8 +150,7 @@ so they are defined in Unstable-Funcons-beta instead of Funcons-beta.
 
 
 
-# <span id="SectionNumber_6">6</span> Programs
-
+# 6 Programs {#SectionNumber_6}
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Syntax</i> <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_START">START</span></i>:</i><span class="syn-name"><span id="SyntaxName_start">start</span></span> ::= <span class="syn-name"><a href="#SyntaxName_exp">exp</a></span></code></pre></div>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Semantics</i> <i class="sem-name"><span id="SemanticsName_start">start</span></i>[[ _:<span class="syn-name"><a href="#SyntaxName_start">start</a></span> ]] : =><span class="name"><a href="../../../../../Funcons-beta/Values/Value-Types/index.html#Name_values">values</a></span>

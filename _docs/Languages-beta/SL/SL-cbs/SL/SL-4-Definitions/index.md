@@ -7,19 +7,10 @@ ancestor: Languages-beta
 
 [Languages-beta] : [SL-4-Definitions.cbs] \| [PRETTY] \| [PDF]
 
-<details open markdown="block">
-  <summary>
-    Outline
-  </summary>
-  {: .text-delta }
-- TOC
-{:toc}
-</details>
 
 ----
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Language</i> <span id="Language_SL">"SL"</span></code></pre></div>
-# <span id="SectionNumber_4">4</span> Function definitions
-
+# 4 Function definitions {#SectionNumber_4}
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Syntax</i>
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_FunDef">FunDef</span></i> :</i> <span class="syn-name"><span id="SyntaxName_fun-def">fun-def</span></span> ::= <b class="atom">'function'</b> <span class="syn-name"><a href="../SL-1-Lexemes/index.html#SyntaxName_id">id</a></span> <b class="atom">'('</b> <span class="syn-name"><a href="#SyntaxName_id-list">id-list</a></span><sup class="sup">?</sup> <b class="atom">')'</b> <span class="syn-name"><a href="../SL-3-Statements/index.html#SyntaxName_block">block</a></span></code></pre></div>
    

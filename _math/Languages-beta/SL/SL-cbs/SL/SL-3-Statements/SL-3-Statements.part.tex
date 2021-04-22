@@ -9,11 +9,11 @@
 \KEY{Language} \quad \STRING{SL}
 \end{displaymath}
 
-\section{$\SECT{3}$ Statements}\hypertarget{sect3-statements}{}\label{sect3-statements}
+\section{$\SECT{3}$ Statements}\hypertarget{SectionNumber:3}{}\label{SectionNumber:3}
 
 \begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{Stmt} : \SYN{stmt}
+    \VARDECL{Stmt} : \SYNDECL{stmt}
       \ ::= \ & \
       \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{;}} \\
       \ \mid \ & \ \LEX{return} \ \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{;}} \\
@@ -25,7 +25,7 @@
       \ \mid \ & \ \LEX{continue} \ \LEX{{;}} \\
       \ \mid \ & \ \SYNREF{block}
     \\
-    \VARDECL{Block} : \SYN{block}
+    \VARDECL{Block} : \SYNDECL{block}
       \ ::= \ & \
       \LEX{{\LEFTBRACE}} \ \SYNREF{stmt}\STAR \ \LEX{{\RIGHTBRACE}}
 \end{align*}

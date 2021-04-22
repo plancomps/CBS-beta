@@ -5,8 +5,7 @@
 
 $$\KEY{Language} \quad \STRING{OCaml Light}$$
 
-# $$\SECT{10}$$ Module types
-           
+# $$\SECT{10}$$ Module types {#SectionNumber:10}
 
 
 

@@ -16,23 +16,22 @@ $$\KEY{Language} \quad \STRING{MiniJava}$$
 
 
 
-# $$\SECT{1}$$ Programs
-           
+# $$\SECT{1}$$ Programs {#SectionNumber:1}
 
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{P} : \SYN{program}
+    \VARDECL{P} : \SYNDECL{program}
       \ ::= \ & \
       \SYNREF{main-class} \ \SYNREF{class-declaration}\STAR
     \\
-    \VARDECL{MC} : \SYN{main-class}
+    \VARDECL{MC} : \SYNDECL{main-class}
       \ ::= \ & \
       \LEX{class} \ \SYNREF{identifier} \ \LEX{{\LEFTBRACE}} \\
-                                                               & \ \LEX{public} \ \LEX{static} \ \LEX{void} \ \LEX{main} \ \LEX{{(}} \ \LEX{String} \ \LEX{{[}} \ \LEX{{]}} \ \SYNREF{identifier} \ \LEX{{)}} \ \LEX{{\LEFTBRACE}} \\
-                                                                                                                                                                                                                                                                                                      & \ \SYNREF{statement} \\
-                                                                                                                                                                                                                                                                                                                           & \ \LEX{{\RIGHTBRACE}} \\
-                                                                                                                                                                                                                                                                                                                                                & \ \LEX{{\RIGHTBRACE}}
+      & \ \LEX{public} \ \LEX{static} \ \LEX{void} \ \LEX{main} \ \LEX{{(}} \ \LEX{String} \ \LEX{{[}} \ \LEX{{]}} \ \SYNREF{identifier} \ \LEX{{)}} \ \LEX{{\LEFTBRACE}} \\
+      & \ \SYNREF{statement} \\
+      & \ \LEX{{\RIGHTBRACE}} \\
+      & \ \LEX{{\RIGHTBRACE}}
 \end{align*}$$
 
 $$\begin{align*}
@@ -66,8 +65,7 @@ $$\begin{align*}
   $$\SHADE{\VAR{ID}\SUB{1}}$$ and $$\SHADE{\VAR{ID}\SUB{2}}$$ are not referenced in $$\SHADE{\VAR{S}}$$ or $$\SHADE{\VAR{CD}\STAR}$$
 
 
-# $$\SECT{2}$$ Declarations
-           
+# $$\SECT{2}$$ Declarations {#SectionNumber:2}
 
 
 ## Classes
@@ -76,12 +74,12 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{CD} : \SYN{class-declaration}
+    \VARDECL{CD} : \SYNDECL{class-declaration}
       \ ::= \ & \
       \LEX{class} \ \SYNREF{identifier} \ \LEFTGROUP \LEX{extends} \ \SYNREF{identifier} \RIGHTGROUP\QUERY \ \LEX{{\LEFTBRACE}} \\
-                                                                                    & \ \SYNREF{var-declaration}\STAR \\
-                                                                                                         & \ \SYNREF{method-declaration}\STAR \\
-                                                                                                                              & \ \LEX{{\RIGHTBRACE}}
+      & \ \SYNREF{var-declaration}\STAR \\
+      & \ \SYNREF{method-declaration}\STAR \\
+      & \ \LEX{{\RIGHTBRACE}}
 \end{align*}$$
 
 $$\begin{align*}
@@ -212,7 +210,7 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{VD} : \SYN{var-declaration}
+    \VARDECL{VD} : \SYNDECL{var-declaration}
       \ ::= \ & \
       \SYNREF{type} \ \SYNREF{identifier} \ \LEX{{;}}
 \end{align*}$$
@@ -263,7 +261,7 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{T} : \SYN{type}
+    \VARDECL{T} : \SYNDECL{type}
       \ ::= \ & \
       \LEX{int} \ \LEX{{[}} \ \LEX{{]}} \\
       \ \mid \ & \ \LEX{boolean} \\
@@ -340,13 +338,13 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{MD} : \SYN{method-declaration}
+    \VARDECL{MD} : \SYNDECL{method-declaration}
       \ ::= \ & \
       \LEX{public} \ \SYNREF{type} \ \SYNREF{identifier} \ \LEX{{(}} \ \SYNREF{formal-list}\QUERY \ \LEX{{)}} \ \LEX{{\LEFTBRACE}} \\
-                                                                                                                                                   & \ \SYNREF{var-declaration}\STAR \\
-                                                                                                                                                                        & \ \SYNREF{statement}\STAR \\
-                                                                                                                                                                                             & \ \LEX{return} \ \SYNREF{expression} \ \LEX{{;}} \\
-                                                                                                                                                                                                                                                            & \ \LEX{{\RIGHTBRACE}}
+      & \ \SYNREF{var-declaration}\STAR \\
+      & \ \SYNREF{statement}\STAR \\
+      & \ \LEX{return} \ \SYNREF{expression} \ \LEX{{;}} \\
+      & \ \LEX{{\RIGHTBRACE}}
 \end{align*}$$
 
 $$\begin{align*}
@@ -432,7 +430,7 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{FL} : \SYN{formal-list}
+    \VARDECL{FL} : \SYNDECL{formal-list}
       \ ::= \ & \
       \SYNREF{type} \ \SYNREF{identifier} \ \LEFTGROUP \LEX{{,}} \ \SYNREF{formal-list} \RIGHTGROUP\QUERY
 \end{align*}$$
@@ -475,13 +473,12 @@ $$\begin{align*}
       (   \  )
 \end{align*}$$
 
-# $$\SECT{3}$$ Statements
-           
+# $$\SECT{3}$$ Statements {#SectionNumber:3}
 
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{S} : \SYN{statement}
+    \VARDECL{S} : \SYNDECL{statement}
       \ ::= \ & \
       \LEX{{\LEFTBRACE}} \ \SYNREF{statement}\STAR \ \LEX{{\RIGHTBRACE}} \\
       \ \mid \ & \ \LEX{if} \ \LEX{{(}} \ \SYNREF{expression} \ \LEX{{)}} \ \SYNREF{statement} \ \LEX{else} \ \SYNREF{statement} \\
@@ -596,13 +593,12 @@ $$\begin{align*}
                                   \RIGHTPHRASE  )
 \end{align*}$$
 
-# $$\SECT{4}$$ Expressions
-           
+# $$\SECT{4}$$ Expressions {#SectionNumber:4}
 
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{E} : \SYN{expression}
+    \VARDECL{E} : \SYNDECL{expression}
       \ ::= \ & \
       \SYNREF{expression} \ \LEX{{\AMPERSAND}{\AMPERSAND}} \ \SYNREF{expression} \\
       \ \mid \ & \ \SYNREF{expression} \ \LEX{{<}} \ \SYNREF{expression} \\
@@ -840,7 +836,7 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{EL} : \SYN{expression-list}
+    \VARDECL{EL} : \SYNDECL{expression-list}
       \ ::= \ & \
       \SYNREF{expression} \ \LEFTGROUP \LEX{{,}} \ \SYNREF{expression-list} \RIGHTGROUP\QUERY
 \end{align*}$$
@@ -876,13 +872,12 @@ $$\begin{align*}
       (   \  )
 \end{align*}$$
 
-# $$\SECT{5}$$ Lexemes
-           
+# $$\SECT{5}$$ Lexemes {#SectionNumber:5}
 
 
 $$\begin{align*}
   \KEY{Lexis} \quad
-    \VARDECL{ID} : \SYN{identifier}
+    \VARDECL{ID} : \SYNDECL{identifier}
       \ ::= \ & \
       \SYNREF{letter} \ \LEFTGROUP \SYNREF{letter} \mid \SYNREF{digit} \mid \LEX{{\UNDERSCORE}} \RIGHTGROUP\STAR
 \end{align*}$$
@@ -896,15 +891,15 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Lexis} \quad
-    \VARDECL{IL} : \SYN{integer-literal}
+    \VARDECL{IL} : \SYNDECL{integer-literal}
       \ ::= \ & \
       \SYNREF{digit}\PLUS
     \\
-     \SYN{letter}
+     \SYNDECL{letter}
       \ ::= \ & \
       \LEX{a} {-} \LEX{z} \mid \LEX{A} {-} \LEX{Z}
     \\
-     \SYN{digit}
+     \SYNDECL{digit}
       \ ::= \ & \
       \LEX{0} {-} \LEX{9}
 \end{align*}$$

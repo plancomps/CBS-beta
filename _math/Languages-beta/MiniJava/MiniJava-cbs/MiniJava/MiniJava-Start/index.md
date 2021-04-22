@@ -17,7 +17,7 @@ $$\KEY{Language} \quad \STRING{MiniJava}$$
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{START} : \SYN{start}
+    \VARDECL{START} : \SYNDECL{start}
       \ ::= \ & \
       \SYNHYPER{../.}{MiniJava-Dynamics}{program}
 \end{align*}$$

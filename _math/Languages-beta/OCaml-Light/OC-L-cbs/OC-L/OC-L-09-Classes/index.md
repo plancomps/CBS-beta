@@ -13,8 +13,7 @@ ancestor: Languages-beta
 
 $$\KEY{Language} \quad \STRING{OCaml Light}$$
 
-# $$\SECT{9}$$ Classes
-           
+# $$\SECT{9}$$ Classes {#SectionNumber:9}
 
 
 

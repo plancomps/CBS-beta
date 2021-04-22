@@ -9,11 +9,11 @@
 \KEY{Language} \quad \STRING{IMP}
 \end{displaymath}
 
-\section{$\SECT{3}$ Statements and blocks}\hypertarget{sect3-statements-and-blocks}{}\label{sect3-statements-and-blocks}
+\section{$\SECT{3}$ Statements and blocks}\hypertarget{SectionNumber:3}{}\label{SectionNumber:3}
 
 \begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{Stmt} : \SYN{stmt}
+    \VARDECL{Stmt} : \SYNDECL{stmt}
       \ ::= \ & \
       \SYNREF{block} \\
       \ \mid \ & \ \SYNHYPER{../.}{IMP-1}{id} \ \LEX{{=}} \ \SYNHYPER{../.}{IMP-1}{aexp} \ \LEX{{;}} \\
@@ -22,7 +22,7 @@
       \ \mid \ & \ \SYNREF{stmt} \ \SYNREF{stmt}
 \\
   \KEY{Syntax} \quad
-    \VARDECL{Block} : \SYN{block}
+    \VARDECL{Block} : \SYNDECL{block}
       \ ::= \ & \
       \LEX{{\LEFTBRACE}} \ \SYNREF{stmt}\QUERY \ \LEX{{\RIGHTBRACE}}
 \end{align*}

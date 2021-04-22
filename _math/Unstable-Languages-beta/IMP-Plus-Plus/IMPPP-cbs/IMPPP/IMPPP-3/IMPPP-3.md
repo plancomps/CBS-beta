@@ -5,13 +5,12 @@
 
 $$\KEY{Language} \quad \STRING{IMPPP}$$
 
-# $$\SECT{3}$$ Boolean expressions
-           
+# $$\SECT{3}$$ Boolean expressions {#SectionNumber:3}
 
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{BExp} : \SYN{bexp}
+    \VARDECL{BExp} : \SYNDECL{bexp}
       \ ::= \ & \
       \LEX{false} \\
       \ \mid \ & \ \LEX{true} \\

@@ -9,11 +9,11 @@
 \KEY{Language} \quad \STRING{SL}
 \end{displaymath}
 
-\section{$\SECT{2}$ Expressions}\hypertarget{sect2-expressions}{}\label{sect2-expressions}
+\section{$\SECT{2}$ Expressions}\hypertarget{SectionNumber:2}{}\label{SectionNumber:2}
 
 \begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{Expr} : \SYN{expr}
+    \VARDECL{Expr} : \SYNDECL{expr}
       \ ::= \ & \
       \SYNHYPER{../.}{SL-1-Lexemes}{int} \\
       \ \mid \ & \ \SYNHYPER{../.}{SL-1-Lexemes}{string} \\
@@ -407,7 +407,7 @@
 \end{align*}
 \begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{ExprList} : \SYN{expr-list}
+    \VARDECL{ExprList} : \SYNDECL{expr-list}
       \ ::= \ & \
       \SYNREF{expr} \ \LEFTGROUP \LEX{{,}} \ \SYNREF{expr-list} \RIGHTGROUP\QUERY
 \end{align*}

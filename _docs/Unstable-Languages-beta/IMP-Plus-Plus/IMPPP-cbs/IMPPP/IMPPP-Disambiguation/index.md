@@ -10,8 +10,7 @@ ancestor: Unstable-Languages-beta
 
 ----
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Language</i> <span id="Language_IMPPP">"IMPPP"</span></code></pre></div>
-# <span id="SectionNumber_A">A</span> Disambiguation
-
+# A Disambiguation {#SectionNumber_A}
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Lexis</i> <i class="keyword">SDF</i>
 
@@ -22,20 +21,20 @@ lexical restrictions
 <i class="keyword">Syntax</i> <i class="keyword">SDF</i>
 
 context-free syntax
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../IMPPP-2/index.html#SyntaxName_aexp">aexp</a></span> ::= <span class="syn-name"><a href="../IMPPP-2/index.html#SyntaxName_aexp">aexp</a></span> <b class="atom">'+'</b> <span class="syn-name"><a href="../IMPPP-2/index.html#SyntaxName_aexp">aexp</a></span></code>  {assoc}
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../IMPPP-3/index.html#SyntaxName_bexp">bexp</a></span> ::= <span class="syn-name"><a href="../IMPPP-3/index.html#SyntaxName_bexp">bexp</a></span> <b class="atom">'&&'</b> <span class="syn-name"><a href="../IMPPP-3/index.html#SyntaxName_bexp">bexp</a></span></code> {assoc}
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../IMPPP-2/index.html#SyntaxName_aexp">aexp</a></span> ::= <span class="syn-name"><a href="../IMPPP-2/index.html#SyntaxName_aexp">aexp</a></span> <b class="atom">'+'</b> <span class="syn-name"><a href="../IMPPP-2/index.html#SyntaxName_aexp">aexp</a></span>  {assoc}
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../IMPPP-3/index.html#SyntaxName_bexp">bexp</a></span> ::= <span class="syn-name"><a href="../IMPPP-3/index.html#SyntaxName_bexp">bexp</a></span> <b class="atom">'&&'</b> <span class="syn-name"><a href="../IMPPP-3/index.html#SyntaxName_bexp">bexp</a></span> {assoc}
 
 context-free priorities
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../IMPPP-2/index.html#SyntaxName_aexp">aexp</a></span> ::= <span class="syn-name"><a href="../IMPPP-2/index.html#SyntaxName_aexp">aexp</a></span> <b class="atom">'/'</b> <span class="syn-name"><a href="../IMPPP-2/index.html#SyntaxName_aexp">aexp</a></span></code>
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../IMPPP-2/index.html#SyntaxName_aexp">aexp</a></span> ::= <span class="syn-name"><a href="../IMPPP-2/index.html#SyntaxName_aexp">aexp</a></span> <b class="atom">'/'</b> <span class="syn-name"><a href="../IMPPP-2/index.html#SyntaxName_aexp">aexp</a></span>
 >
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../IMPPP-2/index.html#SyntaxName_aexp">aexp</a></span> ::= <span class="syn-name"><a href="../IMPPP-2/index.html#SyntaxName_aexp">aexp</a></span> <b class="atom">'+'</b> <span class="syn-name"><a href="../IMPPP-2/index.html#SyntaxName_aexp">aexp</a></span></code>
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../IMPPP-2/index.html#SyntaxName_aexp">aexp</a></span> ::= <span class="syn-name"><a href="../IMPPP-2/index.html#SyntaxName_aexp">aexp</a></span> <b class="atom">'+'</b> <span class="syn-name"><a href="../IMPPP-2/index.html#SyntaxName_aexp">aexp</a></span>
 >
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../IMPPP-2/index.html#SyntaxName_aexp">aexp</a></span> ::= <span class="syn-name"><a href="../IMPPP-1/index.html#SyntaxName_id">id</a></span> <b class="atom">'='</b> <span class="syn-name"><a href="../IMPPP-2/index.html#SyntaxName_aexp">aexp</a></span></code>
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../IMPPP-2/index.html#SyntaxName_aexp">aexp</a></span> ::= <span class="syn-name"><a href="../IMPPP-1/index.html#SyntaxName_id">id</a></span> <b class="atom">'='</b> <span class="syn-name"><a href="../IMPPP-2/index.html#SyntaxName_aexp">aexp</a></span>
 
 context-free priorities
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../IMPPP-3/index.html#SyntaxName_bexp">bexp</a></span> ::= <b class="atom">'!'</b> <span class="syn-name"><a href="../IMPPP-3/index.html#SyntaxName_bexp">bexp</a></span></code>
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../IMPPP-3/index.html#SyntaxName_bexp">bexp</a></span> ::= <b class="atom">'!'</b> <span class="syn-name"><a href="../IMPPP-3/index.html#SyntaxName_bexp">bexp</a></span>
 >
-<code><i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../IMPPP-3/index.html#SyntaxName_bexp">bexp</a></span> ::= <span class="syn-name"><a href="../IMPPP-3/index.html#SyntaxName_bexp">bexp</a></span> <b class="atom">'&&'</b> <span class="syn-name"><a href="../IMPPP-3/index.html#SyntaxName_bexp">bexp</a></span></code></code></pre></div>
+<i class="keyword"></i><i class="var"></i><span class="syn-name"><a href="../IMPPP-3/index.html#SyntaxName_bexp">bexp</a></span> ::= <span class="syn-name"><a href="../IMPPP-3/index.html#SyntaxName_bexp">bexp</a></span> <b class="atom">'&&'</b> <span class="syn-name"><a href="../IMPPP-3/index.html#SyntaxName_bexp">bexp</a></span></code></pre></div>
 
 
 

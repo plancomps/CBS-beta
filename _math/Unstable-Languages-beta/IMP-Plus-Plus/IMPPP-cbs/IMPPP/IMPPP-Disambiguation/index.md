@@ -13,8 +13,7 @@ ancestor: Unstable-Languages-beta
 
 $$\KEY{Language} \quad \STRING{IMPPP}$$
 
-# $$\SECT{A}$$ Disambiguation
-           
+# $$\SECT{A}$$ Disambiguation {#SectionNumber:A}
 
 
 \$$\KEY{Lexis SDF}$$

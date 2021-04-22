@@ -7,19 +7,10 @@ ancestor: Unstable-Languages-beta
 
 [Unstable-Languages-beta] : [IMPPP-2.cbs] \| [PRETTY] \| [PDF]
 
-<details open markdown="block">
-  <summary>
-    Outline
-  </summary>
-  {: .text-delta }
-- TOC
-{:toc}
-</details>
 
 ----
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Language</i> <span id="Language_IMPPP">"IMPPP"</span></code></pre></div>
-# <span id="SectionNumber_2">2</span> Value expressions
-
+# 2 Value expressions {#SectionNumber_2}
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Syntax</i> 
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_AExp">AExp</span></i> :</i> <span class="syn-name"><span id="SyntaxName_aexp">aexp</span></span> ::= <span class="syn-name"><a href="../IMPPP-1/index.html#SyntaxName_int">int</a></span>
                |  <span class="syn-name"><a href="../IMPPP-1/index.html#SyntaxName_string">string</a></span>

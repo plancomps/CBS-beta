@@ -10,8 +10,7 @@ ancestor: Languages-beta
 
 ----
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Language</i> <span id="Language_IMP">"IMP"</span></code></pre></div>
-# <span id="SectionNumber_1">1</span> Arithmetic expressions
-
+# 1 Arithmetic expressions {#SectionNumber_1}
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Syntax</i> 
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_AExp">AExp</span></i> :</i> <span class="syn-name"><span id="SyntaxName_aexp">aexp</span></span> ::= <span class="syn-name"><a href="#SyntaxName_num">num</a></span>
                |  <span class="syn-name"><a href="#SyntaxName_id">id</a></span> 

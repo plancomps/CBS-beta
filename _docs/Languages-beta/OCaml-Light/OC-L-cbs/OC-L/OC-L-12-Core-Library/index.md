@@ -18,8 +18,7 @@ ancestor: Languages-beta
 
 ----
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Language</i> <span id="Language_OCaml Light">"OCaml Light"</span></code></pre></div>
-# <span id="SectionNumber_12">12</span> Core library
-
+# 12 Core library {#SectionNumber_12}
 <div class="highlighter-rouge"><pre class="highlight"><code>[
 <i class="keyword">Funcon</i> <span class="name"><a href="#Name_ocaml-light-core-library">ocaml-light-core-library</a></span>
 <i class="keyword">Funcon</i> <span class="name"><a href="#Name_ocaml-light-match-failure">ocaml-light-match-failure</a></span>

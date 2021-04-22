@@ -21,8 +21,7 @@ ancestor: Languages-beta
 
 $$\KEY{Language} \quad \STRING{OCaml Light}$$
 
-# $$\SECT{1}$$ Lexical conventions
-           
+# $$\SECT{1}$$ Lexical conventions {#SectionNumber:1}
 
 
 ## Identifiers
@@ -31,28 +30,28 @@ $$\KEY{Language} \quad \STRING{OCaml Light}$$
 
 $$\begin{align*}
   \KEY{Lexis} \quad
-    \VARDECL{I} : \SYN{ident}
+    \VARDECL{I} : \SYNDECL{ident}
       \ ::= \ & \
       \SYNREF{capitalized-ident} \mid \SYNREF{lowercase-ident}
     \\
-    \VARDECL{CI} : \SYN{capitalized-ident}
+    \VARDECL{CI} : \SYNDECL{capitalized-ident}
       \ ::= \ & \
       \SYNREF{uppercase} \ \LEFTGROUP \SYNREF{uppercase} \mid \SYNREF{lowercase} \mid \SYNREF{decimal} \mid \LEX{{\UNDERSCORE}} \mid \LEX{{\APOSTROPHE}} \RIGHTGROUP\STAR
     \\
-    \VARDECL{LI} : \SYN{lowercase-ident}
+    \VARDECL{LI} : \SYNDECL{lowercase-ident}
       \ ::= \ & \
       \SYNREF{lowercase} \ \LEFTGROUP \SYNREF{uppercase} \mid \SYNREF{lowercase} \mid \SYNREF{decimal} \mid \LEX{{\UNDERSCORE}} \mid \LEX{{\APOSTROPHE}} \RIGHTGROUP\STAR \\
       \ \mid \ & \ \LEX{{\UNDERSCORE}} \ \LEFTGROUP \SYNREF{uppercase} \mid \SYNREF{lowercase} \mid \SYNREF{decimal} \mid \LEX{{\UNDERSCORE}} \mid \LEX{{\APOSTROPHE}} \RIGHTGROUP\PLUS
     \\
-     \SYN{uppercase}
+     \SYNDECL{uppercase}
       \ ::= \ & \
       \LEX{A} {-} \LEX{Z}
     \\
-     \SYN{lowercase}
+     \SYNDECL{lowercase}
       \ ::= \ & \
       \LEX{a} {-} \LEX{z}
     \\
-     \SYN{decimal}
+     \SYNDECL{decimal}
       \ ::= \ & \
       \LEX{0} {-} \LEX{9}
 \end{align*}$$
@@ -75,11 +74,11 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{IL} : \SYN{integer-literal}
+    \VARDECL{IL} : \SYNDECL{integer-literal}
       \ ::= \ & \
       \LEX{{-}}\QUERY \_ \SYNREF{natural-literal}
     \\
-    \VARDECL{NL} : \SYN{natural-literal}
+    \VARDECL{NL} : \SYNDECL{natural-literal}
       \ ::= \ & \
       \SYNREF{decimal-plus} \\
       \ \mid \ & \ \LEFTGROUP \LEX{0x} \mid \LEX{0X} \RIGHTGROUP \ \SYNREF{hexadecimal-plus} \\
@@ -87,19 +86,19 @@ $$\begin{align*}
       \ \mid \ & \ \LEFTGROUP \LEX{0b} \mid \LEX{0B} \RIGHTGROUP \ \SYNREF{binary-plus}
 \\
   \KEY{Lexis} \quad
-    \VARDECL{DP} : \SYN{decimal-plus}
+    \VARDECL{DP} : \SYNDECL{decimal-plus}
       \ ::= \ & \
       \SYNREF{decimal}\PLUS
     \\
-    \VARDECL{HP} : \SYN{hexadecimal-plus}
+    \VARDECL{HP} : \SYNDECL{hexadecimal-plus}
       \ ::= \ & \
       \LEFTGROUP \SYNREF{decimal} \mid \LEX{A} {-} \LEX{F} \mid \LEX{a} {-} \LEX{f} \RIGHTGROUP\PLUS
     \\
-    \VARDECL{OP} : \SYN{octal-plus}
+    \VARDECL{OP} : \SYNDECL{octal-plus}
       \ ::= \ & \
       \LEFTGROUP \LEX{0} {-} \LEX{7} \RIGHTGROUP\PLUS
     \\
-    \VARDECL{BP} : \SYN{binary-plus}
+    \VARDECL{BP} : \SYNDECL{binary-plus}
       \ ::= \ & \
       \LEFTGROUP \LEX{0} \mid \LEX{1} \RIGHTGROUP\PLUS
 \end{align*}$$
@@ -133,11 +132,11 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{FL} : \SYN{float-literal}
+    \VARDECL{FL} : \SYNDECL{float-literal}
       \ ::= \ & \
       \LEX{{-}}\QUERY \_ \SYNREF{non-negative-float-literal}
     \\
-    \VARDECL{NNFL} : \SYN{non-negative-float-literal}
+    \VARDECL{NNFL} : \SYNDECL{non-negative-float-literal}
       \ ::= \ & \
       \SYNREF{decimal-plus} \_ \LEX{{.}} \_ \SYNREF{decimal-plus} \\
       \ \mid \ & \ \SYNREF{decimal-plus} \_ \LEX{{.}} \\
@@ -145,7 +144,7 @@ $$\begin{align*}
       \ \mid \ & \ \SYNREF{decimal-plus} \_ \LEX{{.}} \_ \SYNREF{float-exponent} \\
       \ \mid \ & \ \SYNREF{decimal-plus} \_ \SYNREF{float-exponent}
     \\
-    \VARDECL{FE} : \SYN{float-exponent}
+    \VARDECL{FE} : \SYNDECL{float-exponent}
       \ ::= \ & \
       \LEFTGROUP \LEX{e} \mid \LEX{E} \RIGHTGROUP \_ \LEFTGROUP \LEX{{+}} \mid \LEX{{-}} \RIGHTGROUP\QUERY \_ \SYNREF{decimal-plus}
 \end{align*}$$
@@ -262,26 +261,26 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{CL} : \SYN{char-literal}
+    \VARDECL{CL} : \SYNDECL{char-literal}
       \ ::= \ & \
       \LEX{{\APOSTROPHE}} \_ \SYNREF{regular-char} \_ \LEX{{\APOSTROPHE}} \\
       \ \mid \ & \ \LEX{{\APOSTROPHE}} \_ \SYNREF{escape-sequence} \_ \LEX{{\APOSTROPHE}}
     \\
-    \VARDECL{ES} : \SYN{escape-sequence}
+    \VARDECL{ES} : \SYNDECL{escape-sequence}
       \ ::= \ & \
       \LEX{{\BACKSLASH}} \_ \SYNREF{escaped-char} \\
       \ \mid \ & \ \LEX{{\BACKSLASH}} \_ \SYNREF{escaped-char-code}
 \\
   \KEY{Lexis} \quad
-    \VARDECL{RC} : \SYN{regular-char}
+    \VARDECL{RC} : \SYNDECL{regular-char}
       \ ::= \ & \
       \mathop{\sim} \LEFTGROUP \LEX{{\APOSTROPHE}} \mid \LEX{{\BACKSLASH}} \RIGHTGROUP
     \\
-    \VARDECL{EC} : \SYN{escaped-char}
+    \VARDECL{EC} : \SYNDECL{escaped-char}
       \ ::= \ & \
       \LEX{{\BACKSLASH}} \mid \LEX{{"}} \mid \LEX{{\APOSTROPHE}} \mid \LEX{n} \mid \LEX{t} \mid \LEX{b} \mid \LEX{r} \mid \LEX{~}
     \\
-    \VARDECL{ECC} : \SYN{escaped-char-code}
+    \VARDECL{ECC} : \SYNDECL{escaped-char-code}
       \ ::= \ & \
       \SYNREF{decimal} \ \SYNREF{decimal} \ \SYNREF{decimal}
 \end{align*}$$
@@ -365,22 +364,22 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{SL} : \SYN{string-literal}
+    \VARDECL{SL} : \SYNDECL{string-literal}
       \ ::= \ & \
       \LEX{{"}} \_ \SYNREF{string-character-star} \_ \LEX{{"}}
     \\
-    \VARDECL{SCS} : \SYN{string-character-star}
+    \VARDECL{SCS} : \SYNDECL{string-character-star}
       \ ::= \ & \
       \SYNREF{string-character} \_ \SYNREF{string-character-star} \\
       \ \mid \ & \ \LEFTGROUP  \RIGHTGROUP
     \\
-    \VARDECL{SC} : \SYN{string-character}
+    \VARDECL{SC} : \SYNDECL{string-character}
       \ ::= \ & \
       \SYNREF{regular-string-char} \\
       \ \mid \ & \ \SYNREF{escape-sequence}
 \\
   \KEY{Lexis} \quad
-    \VARDECL{RSC} : \SYN{regular-string-char}
+    \VARDECL{RSC} : \SYNDECL{regular-string-char}
       \ ::= \ & \
       \mathop{\sim} \LEFTGROUP \LEX{{"}} \mid \LEX{{\BACKSLASH}} \RIGHTGROUP
 \end{align*}$$
@@ -451,27 +450,27 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Lexis} \quad
-    \VARDECL{PS} : \SYN{prefix-symbol}
+    \VARDECL{PS} : \SYNDECL{prefix-symbol}
       \ ::= \ & \
       \LEX{{!}} \ \SYNREF{operator-char}\STAR \\
       \ \mid \ & \ \LEFTGROUP \LEX{{?}} \mid \LEX{{\TILDE}} \RIGHTGROUP \ \SYNREF{operator-char}\PLUS
     \\
-     \SYN{operator-char}
+     \SYNDECL{operator-char}
       \ ::= \ & \
       \LEX{{!}} \mid \LEX{{\DOLLAR}} \mid \LEX{{\PERCENT}} \mid \LEX{{\AMPERSAND}} \mid \LEX{{*}} \mid \LEX{{+}} \mid \LEX{{-}} \mid \LEX{{.}} \mid \LEX{{/}} \\
       \ \mid \ & \ \LEX{{:}} \mid \LEX{{<}} \mid \LEX{{=}} \mid \LEX{{>}} \mid \LEX{{?}} \mid \LEX{{@}} \mid \LEX{{\CARET}} \mid \LEX{{|}} \mid \LEX{{\TILDE}}
     \\
-     \SYN{operator-char-not-asterisk}
+     \SYNDECL{operator-char-not-asterisk}
       \ ::= \ & \
       \LEX{{!}} \mid \LEX{{\DOLLAR}} \mid \LEX{{\PERCENT}} \mid \LEX{{\AMPERSAND}} \mid \LEX{{+}} \mid \LEX{{-}} \mid \LEX{{.}} \mid \LEX{{/}} \\
       \ \mid \ & \ \LEX{{:}} \mid \LEX{{<}} \mid \LEX{{=}} \mid \LEX{{>}} \mid \LEX{{?}} \mid \LEX{{@}} \mid \LEX{{\CARET}} \mid \LEX{{|}} \mid \LEX{{\TILDE}}
     \\
-     \SYN{operator-char-not-bar}
+     \SYNDECL{operator-char-not-bar}
       \ ::= \ & \
       \LEX{{!}} \mid \LEX{{\DOLLAR}} \mid \LEX{{\PERCENT}} \mid \LEX{{\AMPERSAND}} \mid \LEX{{*}} \mid \LEX{{+}} \mid \LEX{{-}} \mid \LEX{{.}} \mid \LEX{{/}} \\
       \ \mid \ & \ \LEX{{:}} \mid \LEX{{<}} \mid \LEX{{=}} \mid \LEX{{>}} \mid \LEX{{?}} \mid \LEX{{@}} \mid \LEX{{\CARET}} \mid \LEX{{\TILDE}}
     \\
-     \SYN{operator-char-not-ampersand}
+     \SYNDECL{operator-char-not-ampersand}
       \ ::= \ & \
       \LEX{{!}} \mid \LEX{{\DOLLAR}} \mid \LEX{{\PERCENT}} \mid \LEX{{*}} \mid \LEX{{+}} \mid \LEX{{-}} \mid \LEX{{.}} \mid \LEX{{/}} \\
       \ \mid \ & \ \LEX{{:}} \mid \LEX{{<}} \mid \LEX{{=}} \mid \LEX{{>}} \mid \LEX{{?}} \mid \LEX{{@}} \mid \LEX{{\CARET}} \mid \LEX{{|}} \mid \LEX{{\TILDE}}
@@ -483,7 +482,7 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Lexis} \quad
-     \SYN{keyword}
+     \SYNDECL{keyword}
       \ ::= \ & \
       \LEX{and} \mid \LEX{as} \mid \LEX{assert} \mid \LEX{asr} \mid \LEX{begin} \mid \LEX{class} \\
       \ \mid \ & \ \LEX{constraint} \mid \LEX{do} \mid \LEX{done} \mid \LEX{downto} \mid \LEX{else} \mid \LEX{end} \\

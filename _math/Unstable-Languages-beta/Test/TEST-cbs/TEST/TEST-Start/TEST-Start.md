@@ -15,7 +15,7 @@ The apostrophe and the backslash have to be escaped in terminal symbols.
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-     \SYN{test}
+     \SYNDECL{test}
       \ ::= \ & \
       \LEX{{!}~{"}~{\HASH}~{\DOLLAR}~{\PERCENT}~{\AMPERSAND}~{\APOSTROPHE}~{(}~{)}~{*}~{+}~{,}~{-}~{.}~{/}~{:}~{;}} \\
       \ \mid \ & \ \LEX{{<}~{=}~{>}~{?}~{@}~{[}~{\BACKSLASH}~{]}~{\CARET}~{\UNDERSCORE}~{\GRAVE}~{\LEFTBRACE}~{|}~{\RIGHTBRACE}~{\TILDE}~A~Z~a~z~0~9}

@@ -9,7 +9,7 @@ $$\KEY{Language} \quad \STRING{SIMPLE-THR}$$
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{START} : \SYN{start}
+    \VARDECL{START} : \SYNDECL{start}
       \ ::= \ & \
       \SYNHYPER{../.}{SIMPLE-THR-5-Programs}{pgm}
 \end{align*}$$

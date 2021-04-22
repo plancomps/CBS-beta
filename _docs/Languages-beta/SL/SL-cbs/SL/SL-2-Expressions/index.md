@@ -10,8 +10,7 @@ ancestor: Languages-beta
 
 ----
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Language</i> <span id="Language_SL">"SL"</span></code></pre></div>
-# <span id="SectionNumber_2">2</span> Expressions
-
+# 2 Expressions {#SectionNumber_2}
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Syntax</i>
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_Expr">Expr</span></i> :</i> <span class="syn-name"><span id="SyntaxName_expr">expr</span></span> ::= <span class="syn-name"><a href="../SL-1-Lexemes/index.html#SyntaxName_int">int</a></span>
                 | <span class="syn-name"><a href="../SL-1-Lexemes/index.html#SyntaxName_string">string</a></span>

@@ -10,8 +10,7 @@ ancestor: Unstable-Languages-beta
 
 ----
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Language</i> <span id="Language_IMPPP">"IMPPP"</span></code></pre></div>
-# <span id="SectionNumber_3">3</span> Boolean expressions
-
+# 3 Boolean expressions {#SectionNumber_3}
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Syntax</i>
   <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_BExp">BExp</span></i> :</i> <span class="syn-name"><span id="SyntaxName_bexp">bexp</span></span> ::= <b class="atom">'false'</b>
                |  <b class="atom">'true'</b>

@@ -21,13 +21,12 @@ ancestor: Unstable-Languages-beta
 
 $$\KEY{Language} \quad \STRING{IMPPP}$$
 
-# $$\SECT{4}$$ Statements and blocks
-           
+# $$\SECT{4}$$ Statements and blocks {#SectionNumber:4}
 
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{Stmt} : \SYN{stmt}
+    \VARDECL{Stmt} : \SYNDECL{stmt}
       \ ::= \ & \
       \SYNREF{block} \\
       \ \mid \ & \ \LEX{int} \ \SYNREF{ids} \ \LEX{{;}} \\
@@ -38,7 +37,7 @@ $$\begin{align*}
       \ \mid \ & \ \LEX{halt} \ \LEX{{;}} \\
       \ \mid \ & \ \LEX{join} \ \SYNHYPER{../.}{IMPPP-2}{aexp} \ \LEX{{;}}
     \\
-    \VARDECL{Block} : \SYN{block}
+    \VARDECL{Block} : \SYNDECL{block}
       \ ::= \ & \
       \LEX{{\LEFTBRACE}} \ \SYNREF{stmt}\STAR \ \LEX{{\RIGHTBRACE}}
 \end{align*}$$
@@ -164,7 +163,7 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{IL} : \SYN{ids}
+    \VARDECL{IL} : \SYNDECL{ids}
       \ ::= \ & \
       \SYNHYPER{../.}{IMPPP-1}{id} \ \LEFTGROUP \LEX{{,}} \ \SYNREF{ids} \RIGHTGROUP\QUERY
 \end{align*}$$

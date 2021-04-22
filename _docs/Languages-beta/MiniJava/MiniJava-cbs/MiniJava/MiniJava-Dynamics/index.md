@@ -18,8 +18,7 @@ ancestor: Languages-beta
 
 ----
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Language</i> <span id="Language_MiniJava">"MiniJava"</span></code></pre></div>
-# <span id="SectionNumber_1">1</span> Programs
-
+# 1 Programs {#SectionNumber_1}
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Syntax</i>
 <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_P">P</span></i>:</i>  
   <span class="syn-name"><span id="SyntaxName_program">program</span></span> ::= <span class="syn-name"><a href="#SyntaxName_main-class">main-class</a></span> <span class="syn-name"><a href="#SyntaxName_class-declaration">class-declaration</a></span><sup class="sup">*</sup>
@@ -48,8 +47,7 @@ ancestor: Languages-beta
     
 
 
-# <span id="SectionNumber_2">2</span> Declarations
-
+# 2 Declarations {#SectionNumber_2}
 ## Classes
 
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Syntax</i>
@@ -218,8 +216,7 @@ ancestor: Languages-beta
 
 
 
-# <span id="SectionNumber_3">3</span> Statements
-
+# 3 Statements {#SectionNumber_3}
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Syntax</i>
 <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_S">S</span></i>:</i>
   <span class="syn-name"><span id="SyntaxName_statement">statement</span></span> ::= <b class="atom">'{'</b> <span class="syn-name"><a href="#SyntaxName_statement">statement</a></span><sup class="sup">*</sup> <b class="atom">'}'</b>
@@ -258,8 +255,7 @@ ancestor: Languages-beta
 
 
 
-# <span id="SectionNumber_4">4</span> Expressions
-
+# 4 Expressions {#SectionNumber_4}
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Syntax</i>
 <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_E">E</span></i>:</i>
   <span class="syn-name"><span id="SyntaxName_expression">expression</span></span> ::= <span class="syn-name"><a href="#SyntaxName_expression">expression</a></span> <b class="atom">'&&'</b> <span class="syn-name"><a href="#SyntaxName_expression">expression</a></span>
@@ -361,8 +357,7 @@ ancestor: Languages-beta
 
 
 
-# <span id="SectionNumber_5">5</span> Lexemes
-
+# 5 Lexemes {#SectionNumber_5}
 <div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Lexis</i>
 <i class="keyword"></i><i class="var"><i class="var"><span id="VariableStem_ID">ID</span></i>:</i>
   <span class="syn-name"><span id="SyntaxName_identifier">identifier</span></span> ::= <span class="syn-name"><a href="#SyntaxName_letter">letter</a></span> ( <span class="syn-name"><a href="#SyntaxName_letter">letter</a></span> | <span class="syn-name"><a href="#SyntaxName_digit">digit</a></span> | <b class="atom">'_'</b> )<sup class="sup">*</sup></code></pre></div>

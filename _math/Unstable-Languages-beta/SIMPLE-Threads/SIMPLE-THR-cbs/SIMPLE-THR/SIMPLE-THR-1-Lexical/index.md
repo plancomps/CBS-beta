@@ -21,32 +21,31 @@ ancestor: Unstable-Languages-beta
 
 $$\KEY{Language} \quad \STRING{SIMPLE-THR}$$
 
-# $$\SECT{1}$$ Lexical Syntax
-           
+# $$\SECT{1}$$ Lexical Syntax {#SectionNumber:1}
 
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{V} : \SYN{value}
+    \VARDECL{V} : \SYNDECL{value}
       \ ::= \ & \
       \SYNREF{bool} \mid \SYNREF{int} \mid \SYNREF{string}
     \\
-     \SYN{bool}
+     \SYNDECL{bool}
       \ ::= \ & \
       \LEX{false} \mid \LEX{true}
 \\
   \KEY{Lexis} \quad
-    \VARDECL{Z} : \SYN{int}
+    \VARDECL{Z} : \SYNDECL{int}
       \ ::= \ & \
       \LEFTGROUP \LEX{0} {-} \LEX{9} \RIGHTGROUP\PLUS
 \\
   \KEY{Syntax} \quad
-     \SYN{string}
+     \SYNDECL{string}
       \ ::= \ & \
       \LEX{{"}} \_ \SYNREF{string-chars} \_ \LEX{{"}}
 \\
   \KEY{Lexis} \quad
-    \VARDECL{S} : \SYN{string-chars}
+    \VARDECL{S} : \SYNDECL{string-chars}
       \ ::= \ & \
       \LEFTGROUP \mathop{\sim} \LEX{{"}} \RIGHTGROUP\STAR
 \end{align*}$$
@@ -57,8 +56,7 @@ $$\begin{align*}
     :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} 
 \end{align*}$$
 
-## $$\SECT{1.1}$$ Booleans
-           
+## $$\SECT{1.1}$$ Booleans {#SectionNumber:1.1}
 
 
 $$\begin{align*}
@@ -75,8 +73,7 @@ $$\begin{align*}
       \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Booleans}{true}
 \end{align*}$$
 
-## $$\SECT{1.2}$$ Integers
-           
+## $$\SECT{1.2}$$ Integers {#SectionNumber:1.2}
 
 
 $$\begin{align*}
@@ -88,8 +85,7 @@ $$\begin{align*}
         (  \textsf{\textquotedblleft}\VAR{Z}\textsf{\textquotedblright} )
 \end{align*}$$
 
-## $$\SECT{1.3}$$ Strings
-           
+## $$\SECT{1.3}$$ Strings {#SectionNumber:1.3}
 
 
 $$\begin{align*}
@@ -100,13 +96,12 @@ $$\begin{align*}
       \textsf{\textquotedblleft}\VAR{S}\textsf{\textquotedblright}
 \end{align*}$$
 
-## $$\SECT{1.4}$$ Identifiers
-           
+## $$\SECT{1.4}$$ Identifiers {#SectionNumber:1.4}
 
 
 $$\begin{align*}
   \KEY{Lexis} \quad
-    \VARDECL{Id} : \SYN{id}
+    \VARDECL{Id} : \SYNDECL{id}
       \ ::= \ & \
       \LEFTGROUP \LEX{A} {-} \LEX{Z} \mid \LEX{a} {-} \LEX{z} \mid \LEX{{\UNDERSCORE}} \RIGHTGROUP \ \LEFTGROUP \LEX{0} {-} \LEX{9} \mid \LEX{A} {-} \LEX{Z} \mid \LEX{a} {-} \LEX{z} \mid \LEX{{\UNDERSCORE}} \RIGHTGROUP\STAR
 \end{align*}$$
@@ -125,7 +120,7 @@ $$\begin{align*}
 
 $$\begin{align*}
   \KEY{Lexis} \quad
-     \SYN{keyword}
+     \SYNDECL{keyword}
       \ ::= \ & \
       \LEX{false} \mid \LEX{true} \mid \LEX{var} \mid \LEX{function} \mid \LEX{sizeOf} \mid \LEX{read} \\
       \ \mid \ & \ \LEX{spawn} \mid \LEX{if} \mid \LEX{else} \mid \LEX{while} \mid \LEX{for} \mid \LEX{print} \mid \LEX{return} \\

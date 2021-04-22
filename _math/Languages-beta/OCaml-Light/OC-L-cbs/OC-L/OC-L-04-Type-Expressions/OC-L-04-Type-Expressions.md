@@ -5,13 +5,12 @@
 
 $$\KEY{Language} \quad \STRING{OCaml Light}$$
 
-# $$\SECT{4}$$ Type expressions
-           
+# $$\SECT{4}$$ Type expressions {#SectionNumber:4}
 
 
 $$\begin{align*}
   \KEY{Syntax} \quad
-    \VARDECL{T} : \SYN{typexpr}
+    \VARDECL{T} : \SYNDECL{typexpr}
       \ ::= \ & \
       \LEX{{\APOSTROPHE}} \ \SYNHYPER{../.}{OC-L-01-Lexical-Conventions}{ident} \\
       \ \mid \ & \ \LEX{{\UNDERSCORE}} \\
@@ -22,15 +21,15 @@ $$\begin{align*}
       \ \mid \ & \ \SYNREF{typexpr} \ \SYNHYPER{../.}{OC-L-03-Names}{typeconstr} \\
       \ \mid \ & \ \LEX{{(}} \ \SYNREF{typexpr} \ \SYNREF{comma-typexpr}\PLUS \ \LEX{{)}} \ \SYNHYPER{../.}{OC-L-03-Names}{typeconstr}
     \\
-    \VARDECL{ST} : \SYN{star-typexpr}
+    \VARDECL{ST} : \SYNDECL{star-typexpr}
       \ ::= \ & \
       \LEX{{*}} \ \SYNREF{typexpr}
     \\
-    \VARDECL{CT} : \SYN{comma-typexpr}
+    \VARDECL{CT} : \SYNDECL{comma-typexpr}
       \ ::= \ & \
       \LEX{{,}} \ \SYNREF{typexpr}
     \\
-    \VARDECL{PT} : \SYN{poly-typexpr}
+    \VARDECL{PT} : \SYNDECL{poly-typexpr}
       \ ::= \ & \
       \SYNREF{typexpr} \\
       \ \mid \ & \ \LEFTGROUP \LEX{{\APOSTROPHE}} \ \SYNHYPER{../.}{OC-L-01-Lexical-Conventions}{ident} \RIGHTGROUP\PLUS \ \LEX{{.}} \ \SYNREF{typexpr}
