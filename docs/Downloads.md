@@ -39,13 +39,6 @@ Stop the local server with Control-C when no longer needed.
 Color schemes
 -------------
 
-{:.note}
-> When browsing these web pages on GitHub, the color scheme can be toggled
-> between a light and a dark scheme, independently of the system/browser preference.
-
-To make the color scheme for local browsing dependent on the system/browser preference,
-set `toggle_auto_mode: true` in `_config.yml` and restart `jekyll serve`.
-
 The colors used for CBS highlighting in the `light` and `dark` schemes can be adjusted
 by editing the SCSS files in `_sass/custom`.
 

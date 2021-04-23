@@ -8,10 +8,6 @@ nav_exclude: true
 CBS-beta
 ========
 
-> {:.note}
-> > You can toggle the color scheme between light and dark using the button 
-> > (&#x263c; &#x263d;) at the top of the navigation menu.
-
 _CBS_ is a framework and meta-language for _component-based specification of
 programming languages_. The main idea is to translate languages to so-called
 _'funcons'_ ([fundamental programming constructs]). The behaviour of the funcons
