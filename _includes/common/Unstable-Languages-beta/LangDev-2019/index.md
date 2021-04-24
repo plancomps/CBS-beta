@@ -42,7 +42,7 @@ Main contributors:
 
 [LangDev Meetup 2019]: http://langdevcon.org "HOME PAGE"
 
-[Demonstration]: LD-Demo
+[Demonstration]: LD-demo
 
 [LangDev-2019]:                        LD-cbs/LD/LD-Start "CBS"
 [LangDev-2019-Funcons-Index]:          LD-cbs/LD/LD-Funcons-Index
