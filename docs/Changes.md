@@ -15,9 +15,6 @@ presented on this website.
 > please [report it as an issue on GitHub](https://github.com/plancomps/CBS-beta/issues). 
 > If relevant, include the browser type and version, and a screenshot illustrating the problem.
 
-2021-04-23: [CBS-beta](/CBS-beta/) (experimental math branch)
-* Toggle for dark mode removed (due to incompatibility between its CSS and the search feature).
-
 2021-04-22: [CBS-beta](/CBS-beta/) (experimental math branch)
 * Fixed various broken links
 

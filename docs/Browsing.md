@@ -32,6 +32,10 @@ Hovering on a reference to a funcon displays the declared arity of symbol:
 
 ## Web pages
 
+> {:.note}
+> > You can toggle the color scheme between light and dark using the button 
+> > (&#x263c; &#x263d;) at the top of the navigation menu.
+
 Browsing CBS specifications on this website is supported by direct links to related pages.
 Such links are shown in the navigation panel, and at the top or bottom of each page.
 
