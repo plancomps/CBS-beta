@@ -15,6 +15,11 @@ presented on this website.
 > please [report it as an issue on GitHub](https://github.com/plancomps/CBS-beta/issues). 
 > If relevant, include the browser type and version, and a screenshot illustrating the problem.
 
+2021-07-05: [CBS-beta](/CBS-beta/) (experimental math branch)
+* Added redirection from `CBS-beta/Funcons-beta#Name:FUNCON-NAME` to 
+  `CBS-beta/math/Funcons-beta/PATH-TO-FUNCON-DECLARATION/#Name:FUNCON-NAME`,
+  to support permanent URLs for funcon declarations
+
 2021-04-22: [CBS-beta](/CBS-beta/) (experimental math branch)
 * Fixed various broken links
 
@@ -148,11 +153,16 @@ presented on this website.
   The presentation of CBS specifications now shows multi-line comments as
   running text, with CBS notation displayed as code. This change encourages
   a more 'literate' style of specification, to include extensive comments that
-  motivate and explain the formal specifications.
+  motivate and explain the formal specifications.[^literate]
 
   Literate CBS is illustrated in [Unstable-Funcons-beta](Unstable-Funcons-beta).
   Extensive comments have yet to be added to the CBS specifications of funcons
   and languages in the rest of the website.
+
+[^literate]:
+    The well-formedness of CBS specifications is unaffected by the order in which
+    they are presented, so here, literate specification does not require the introduction
+    of a web of macros.
 
 2019-07-08: [CBS-beta](/CBS-beta/)
 * Website structure: documentation moved to a new `docs` folder.

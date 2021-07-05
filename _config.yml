@@ -50,16 +50,16 @@ exclude:
   - "logs/"
   - makefile
   - sunshine2.jar
-  - "Funcons-beta/"
-  - "Languages-beta/"
-  - "Unstable-Funcons-beta/"
-  - "Unstable-Languages-beta/"
+  - "Funcons-beta/*/*"
+  - "Languages-beta/*/*"
+  - "Unstable-Funcons-beta/*/*"
+  - "Unstable-Languages-beta/*/*"
 
-include:
-  - "Funcons-beta/index.md"
-  - "Languages-beta/index.md"
-  - "Unstable-Funcons-beta/index.md"
-  - "Unstable-Languages-beta/index.md"
+# include: # requires jekyll >= 4.0
+#   - "Funcons-beta/index.md"
+#   - "Languages-beta/index.md"
+#   - "Unstable-Funcons-beta/index.md"
+#   - "Unstable-Languages-beta/index.md"
 
 search_enabled: true
 search:
@@ -103,7 +103,7 @@ plugins:
 compress_html:
   blanklines: true
 
-nav_next_prev: true
+nav_cache: true
 
 # Navigation order for generated funcons files
 

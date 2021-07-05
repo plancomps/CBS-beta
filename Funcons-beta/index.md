@@ -2,6 +2,7 @@
 title: Funcons-beta
 parent: Browsing
 nav_order: 2
+id_redirects: decls.json
 ---
 
 # Funcons-beta
