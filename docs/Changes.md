@@ -15,10 +15,17 @@ presented on this website.
 > please [report it as an issue on GitHub](https://github.com/plancomps/CBS-beta/issues). 
 > If relevant, include the browser type and version, and a screenshot illustrating the problem.
 
-2021-07-05: [CBS-beta](/CBS-beta/) (experimental math branch)
-* Added redirection from `CBS-beta/Funcons-beta#Name:FUNCON-NAME` to 
-  `CBS-beta/math/Funcons-beta/PATH-TO-FUNCON-DECLARATION/#Name:FUNCON-NAME`,
-  to support permanent URLs for funcon declarations
+2021-07-07: [CBS-beta](/CBS-beta/) (experimental math branch)
+* Added redirection from `CBS-beta/Unstable-Languages-beta/LangDev-2019#SyntaxName:SYNTAX-NAME` to 
+  `CBS-beta/math/FUnstable-Languages-beta/LangDev-2019/PATH-TO-SYNTAX-DECLARATION/#SyntaxName:SYNTAX-NAME`,
+  (and similarly for `SemanticsName`)
+  to support permanent URLs for declarations in language specifications.
+  (The corresponding redirections for other parts of the CBS-beta collection have not yet been added.)
+  
+  2021-07-05: [CBS-beta](/CBS-beta/) (experimental math branch)
+  * Added redirection from `CBS-beta/Funcons-beta#Name:FUNCON-NAME` to 
+    `CBS-beta/math/Funcons-beta/PATH-TO-FUNCON-DECLARATION/#Name:FUNCON-NAME`,
+    to support permanent URLs for funcon declarations
 
 2021-04-22: [CBS-beta](/CBS-beta/) (experimental math branch)
 * Fixed various broken links

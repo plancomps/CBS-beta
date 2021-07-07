@@ -10,7 +10,7 @@
   {% if page.id_redirects %}
     <script src="/CBS-beta/assets/js/id_redirection.js"></script>
     <script>
-      redirect_location_id({% include_relative {{ page.id_redirects }} %});
+      redirect_location_id('{{ page.id_redirects | remove: "decls.json" }}', {% include_relative {{ page.id_redirects }} %});
     </script
   {% endif %}
 

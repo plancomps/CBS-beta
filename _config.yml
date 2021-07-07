@@ -55,11 +55,13 @@ exclude:
   - "Unstable-Funcons-beta/*/*"
   - "Unstable-Languages-beta/*/*"
 
-# include: # requires jekyll >= 4.0
-#   - "Funcons-beta/index.md"
-#   - "Languages-beta/index.md"
-#   - "Unstable-Funcons-beta/index.md"
-#   - "Unstable-Languages-beta/index.md"
+include: # requires jekyll >= 4.0
+  - "Funcons-beta/index.md"
+  - "Languages-beta/index.md"
+  - "Unstable-Funcons-beta/index.md"
+  - "Unstable-Languages-beta/index.md"
+  - "Unstable-Languages-beta/LangDev-2019/index.md"
+  - "Unstable-Languages-beta/LangDev-2019/LD-cbs/not_found.md"
 
 search_enabled: true
 search:
@@ -119,6 +121,9 @@ defaults:
     values: {layout: cbs-katex}
   -
     scope: {path: "*/index.md", type: pages}
+    values: {layout: default}
+  -
+    scope: {path: "*/*/index.md", type: pages}
     values: {layout: default}
 
 # Funcons-beta

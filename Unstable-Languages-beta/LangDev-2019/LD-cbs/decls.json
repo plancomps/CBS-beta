@@ -1,0 +1,22 @@
+{"LD/LD-Start":
+   ["Language:LD",
+    "Name:ld-values",
+    "SectionNumber:#1",
+    "SectionNumber:#2",
+    "SectionNumber:#3",
+    "SectionNumber:#4",
+    "SectionNumber:#5",
+    "SectionNumber:#6",
+    "SemanticsName:eval",
+    "SemanticsName:start",
+    "SyntaxName:exp",
+    "SyntaxName:id",
+    "SyntaxName:int",
+    "SyntaxName:keyword",
+    "SyntaxName:start",
+    "VariableStem:E",
+    "VariableStem:N",
+    "VariableStem:START",
+    "VariableStem:X"
+   ]
+}
