@@ -1,0 +1,55 @@
+% {% raw %}
+
+
+\begin{center}
+\rule{3in}{0.4pt}
+\end{center}
+
+\begin{displaymath}
+\KEY{Language} \quad \STRING{OCaml Light}
+\end{displaymath}
+
+\begin{align*}
+  \KEY{Syntax} \quad
+    \VARDECL{START} : \SYNDECL{start}
+      \ ::= \ & \
+      \SYNHYPER{../.}{OC-L-11-Module-Implementations}{unit-implementation}
+\end{align*}
+\begin{align*}
+  \KEY{Semantics} \quad
+  & \SEMDECL{start} \LEFTPHRASE \ \_ : \SYNREF{start} \ \RIGHTPHRASE  
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{environments}  \mid \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
+\\
+  \KEY{Rule} \quad
+    & \SEMREF{start} \LEFTPHRASE \
+                            \VARHYPER{../.}{OC-L-11-Module-Implementations}{UI} \
+                          \RIGHTPHRASE  = \\&\quad
+      \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{initialise-binding} \ 
+        \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{initialise-storing} \ 
+          \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{initialise-giving} \\&\quad\quad 
+            \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{finalise-failing} \ 
+              \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Throwing}{finalise-throwing} \\&\quad\quad\quad 
+                \SEMHYPER{../.}{OC-L-11-Module-Implementations}{interpret} \LEFTPHRASE \
+                                      \VAR{UI} \
+                                    \RIGHTPHRASE 
+\end{align*}
+\begin{align*}
+  [ \
+  \textsf{\SECTHYPER{../.}{OC-L-01-Lexical-Conventions}{1}} \ & \textsf{Lexical conventions} \\
+  \textsf{\SECTHYPER{../.}{OC-L-02-Values}{2}} \ & \textsf{Values} \\
+  \textsf{\SECTHYPER{../.}{OC-L-03-Names}{3}} \ & \textsf{Names} \\
+  \textsf{\SECTHYPER{../.}{OC-L-04-Type-Expressions}{4}} \ & \textsf{Type expressions} \\
+  \textsf{\SECTHYPER{../.}{OC-L-05-Constants}{5}} \ & \textsf{Constants} \\
+  \textsf{\SECTHYPER{../.}{OC-L-06-Patterns}{6}} \ & \textsf{Patterns} \\
+  \textsf{\SECTHYPER{../.}{OC-L-07-Expressions}{7}} \ & \textsf{Expressions} \\
+  \textsf{\SECTHYPER{../.}{OC-L-08-Type-and-Exception-Definitions}{8}} \ & \textsf{Type and exception definitions} \\
+  \textsf{\SECTHYPER{../.}{OC-L-09-Classes}{9}} \ & \textsf{Classes} \\
+  \textsf{\SECTHYPER{../.}{OC-L-10-Module-Types}{10}} \ & \textsf{Module interfaces} \\
+  \textsf{\SECTHYPER{../.}{OC-L-11-Module-Implementations}{11}} \ & \textsf{Module implementations} \\
+  \textsf{\SECTHYPER{../.}{OC-L-12-Core-Library}{12}} \ & \textsf{Core library} \\
+  \textsf{\SECTHYPER{../.}{OC-L-A-Disambiguation}{A}} \ & \textsf{Disambiguation}
+  \ ]
+\end{align*}
+% {% endraw %}
+
+

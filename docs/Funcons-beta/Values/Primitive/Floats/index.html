@@ -1,0 +1,771 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link rel="shortcut icon" href="/CBS-beta/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/CBS-beta/assets/css/just-the-docs-default.css">
+    <script type="text/javascript" src="/CBS-beta/assets/js/vendor/lunr.min.js"></script>
+  <script type="text/javascript" src="/CBS-beta/assets/js/just-the-docs.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Floats | CBS-beta</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="Floats" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Funcons-beta : Floats.cbs | PRETTY | PDF" />
+<meta property="og:description" content="Funcons-beta : Floats.cbs | PRETTY | PDF" />
+<link rel="canonical" href="https://plancomps.github.io/CBS-beta/docs/Funcons-beta/Values/Primitive/Floats/" />
+<meta property="og:url" content="https://plancomps.github.io/CBS-beta/docs/Funcons-beta/Values/Primitive/Floats/" />
+<meta property="og:site_name" content="CBS-beta" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-07-08T16:55:11+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Floats" />
+<script type="application/ld+json">
+{"headline":"Floats","description":"Funcons-beta : Floats.cbs | PRETTY | PDF","dateModified":"2021-07-08T16:55:11+00:00","datePublished":"2021-07-08T16:55:11+00:00","url":"https://plancomps.github.io/CBS-beta/docs/Funcons-beta/Values/Primitive/Floats/","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://plancomps.github.io/CBS-beta/docs/Funcons-beta/Values/Primitive/Floats/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- https://www.primative.net/blog/how-to-get-rid-of-the-flash-of-unstyled-content/ -->
+<style>
+  .no-js {
+    visibility: visible;
+  }
+</style>
+<link rel="shortcut icon" type="image/x-icon"   href="/CBS-beta/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180"    href="/CBS-beta/assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/CBS-beta/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/CBS-beta/assets/icons/favicon-16x16.png">
+<link rel="mask-icon" href="/CBS-beta/assets/icons/safari-pinned-tab.svg">
+<link rel="manifest"  href="/CBS-beta/assets/icons/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+</head>
+<!-- https://www.primative.net/blog/how-to-get-rid-of-the-flash-of-unstyled-content/ -->
+<body style="visibility: hidden;" class="no-js">
+  <script>
+    document.querySelector('body').classList.remove('no-js');
+  </script>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="svg-link" viewBox="0 0 24 24">
+      <title>Link</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+      </svg>
+    </symbol>
+    <symbol id="svg-search" viewBox="0 0 24 24">
+      <title>Search</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+        <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+    </symbol>
+    <symbol id="svg-menu" viewBox="0 0 24 24">
+      <title>Menu</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+        <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </symbol>
+    <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+      <title>Expand</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </symbol>
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+      <title>Document</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+        <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+      </svg>
+    </symbol>
+  </svg>
+  <script type="text/javascript" src="/CBS-beta/assets/js/toggle_init.js"></script>
+  <div class="side-bar">
+    <div class="site-header">
+      <a href="https://plancomps.github.io/CBS-beta/" class="site-title lh-tight">
+  CBS-beta
+</a>
+      <a href="#" id="menu-button" class="site-button">
+        <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+      </a>
+    </div>
+  <button id="theme-toggle" onclick="modeSwitcher()" 
+    type="button" name="button" class="btn theme-toggle" ></button>
+  <script>
+    function modeSwitcher() {
+      let currentMode = document.documentElement.getAttribute('data-theme');
+      if (currentMode === "dark") {
+        document.documentElement.setAttribute('data-theme', 'light');
+        window.localStorage.setItem('theme', 'light');
+        document.getElementById("theme-toggle").innerHTML = "&#x263d;";
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        window.localStorage.setItem('theme', 'dark');
+        document.getElementById("theme-toggle").innerHTML = "&#x263c;";
+      }
+    }
+  </script>
+    <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      <ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Browsing.html" class="nav-list-link">Browsing</a><ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/Funcons-beta/" class="nav-list-link">Funcons-beta</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/Funcons-beta/Funcons-Index/" class="nav-list-link">Funcons-Index</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="/CBS-beta/Languages-beta/" class="nav-list-link">Languages-beta</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/Unstable-Funcons-beta/" class="nav-list-link">Unstable-Funcons-beta</a></li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/Unstable-Languages-beta/" class="nav-list-link">Unstable-Languages-beta</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/Unstable-Languages-beta/LangDev-2019/" class="nav-list-link">LangDev-2019</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Sources.html" class="nav-list-link">Sources</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Plain.html" class="nav-list-link">Plain</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Pretty.html" class="nav-list-link">Pretty</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/PDF.html" class="nav-list-link">PDF</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Notation.html" class="nav-list-link">Notation</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Publications.html" class="nav-list-link">Publications</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Changes.html" class="nav-list-link">Changes</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Downloads.html" class="nav-list-link">Downloads</a></li>
+</ul>
+          <ul class="nav-list nav-category-list">
+            <li class="nav-list-item active"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><div class="nav-category">Plain</div><ul class="nav-list"><li class="nav-list-item active"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Funcons-beta/index.html" class="nav-list-link active">Funcons-beta</a><ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Funcons-beta/Computations/index.html" class="nav-list-link">Computations</a><ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Funcons-beta/Computations/Normal/index.html" class="nav-list-link">Normal</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Computations/Normal/Flowing/index.html" class="nav-list-link">Flowing</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Computations/Normal/Giving/index.html" class="nav-list-link">Giving</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Computations/Normal/Binding/index.html" class="nav-list-link">Binding</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Computations/Normal/Generating/index.html" class="nav-list-link">Generating</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Computations/Normal/Storing/index.html" class="nav-list-link">Storing</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Computations/Normal/Linking/index.html" class="nav-list-link">Linking</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Computations/Normal/Interacting/index.html" class="nav-list-link">Interacting</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Funcons-beta/Computations/Abnormal/index.html" class="nav-list-link">Abnormal</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Computations/Abnormal/Abrupting/index.html" class="nav-list-link">Abrupting</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Computations/Abnormal/Failing/index.html" class="nav-list-link">Failing</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Computations/Abnormal/Throwing/index.html" class="nav-list-link">Throwing</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Computations/Abnormal/Returning/index.html" class="nav-list-link">Returning</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Computations/Abnormal/Breaking/index.html" class="nav-list-link">Breaking</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Computations/Abnormal/Continuing/index.html" class="nav-list-link">Continuing</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Computations/Abnormal/Controlling/index.html" class="nav-list-link">Controlling</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Computations/Computation-Types/index.html" class="nav-list-link">Computation-Types</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Entities/index.html" class="nav-list-link">Entities</a></li>
+<li class="nav-list-item active"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Funcons-beta/Values/index.html" class="nav-list-link active">Values</a><ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Funcons-beta/Values/Abstraction/index.html" class="nav-list-link">Abstraction</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Abstraction/Generic/index.html" class="nav-list-link">Generic</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Abstraction/Thunks/index.html" class="nav-list-link">Thunks</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Abstraction/Functions/index.html" class="nav-list-link">Functions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Abstraction/Patterns/index.html" class="nav-list-link">Patterns</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/index.html" class="nav-list-link">Composite</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/Sequences/index.html" class="nav-list-link">Sequences</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/Datatypes/index.html" class="nav-list-link">Datatypes</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/Tuples/index.html" class="nav-list-link">Tuples</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/Lists/index.html" class="nav-list-link">Lists</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/Strings/index.html" class="nav-list-link">Strings</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/Vectors/index.html" class="nav-list-link">Vectors</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/Trees/index.html" class="nav-list-link">Trees</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/References/index.html" class="nav-list-link">References</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/Records/index.html" class="nav-list-link">Records</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/Variants/index.html" class="nav-list-link">Variants</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/Classes/index.html" class="nav-list-link">Classes</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/Objects/index.html" class="nav-list-link">Objects</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/Bits/index.html" class="nav-list-link">Bits</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/Sets/index.html" class="nav-list-link">Sets</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/Maps/index.html" class="nav-list-link">Maps</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/Multisets/index.html" class="nav-list-link">Multisets</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/Graphs/index.html" class="nav-list-link">Graphs</a></li>
+</ul>
+</li>
+<li class="nav-list-item active"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Funcons-beta/Values/Primitive/index.html" class="nav-list-link active">Primitive</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Primitive/Booleans/index.html" class="nav-list-link">Booleans</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Primitive/Integers/index.html" class="nav-list-link">Integers</a></li>
+<li class="nav-list-item active"><a href="/CBS-beta/docs/Funcons-beta/Values/Primitive/Floats/index.html" class="nav-list-link active">Floats</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Primitive/Characters/index.html" class="nav-list-link">Characters</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Primitive/Null/index.html" class="nav-list-link">Null</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Value-Types/index.html" class="nav-list-link">Value-Types</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Funcons-Index/index.html" class="nav-list-link">Funcons-Index</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Languages-beta/index.html" class="nav-list-link">Languages-beta</a><ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Languages-beta/IMP/index.html" class="nav-list-link">IMP</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/IMP/IMP-cbs/IMP/IMP-Start/index.html" class="nav-list-link">IMP-Start</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/IMP/IMP-cbs/IMP/IMP-1/index.html" class="nav-list-link">IMP-1</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/IMP/IMP-cbs/IMP/IMP-2/index.html" class="nav-list-link">IMP-2</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/IMP/IMP-cbs/IMP/IMP-3/index.html" class="nav-list-link">IMP-3</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/IMP/IMP-cbs/IMP/IMP-4/index.html" class="nav-list-link">IMP-4</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/IMP/IMP-cbs/IMP/IMP-Disambiguation/index.html" class="nav-list-link">IMP-Disambiguation</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/IMP/IMP-cbs/IMP/IMP-Funcons-Index/index.html" class="nav-list-link">IMP-Funcons-Index</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Languages-beta/SIMPLE/index.html" class="nav-list-link">SIMPLE</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-Start/index.html" class="nav-list-link">SIMPLE-Start</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-1-Lexical/index.html" class="nav-list-link">SIMPLE-1-Lexical</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-2-Expressions/index.html" class="nav-list-link">SIMPLE-2-Expressions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-3-Statements/index.html" class="nav-list-link">SIMPLE-3-Statements</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-4-Declarations/index.html" class="nav-list-link">SIMPLE-4-Declarations</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-5-Programs/index.html" class="nav-list-link">SIMPLE-5-Programs</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-A-Disambiguation/index.html" class="nav-list-link">SIMPLE-A-Disambiguation</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-Funcons-Index/index.html" class="nav-list-link">SIMPLE-Funcons-Index</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Languages-beta/MiniJava/index.html" class="nav-list-link">MiniJava</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Start/index.html" class="nav-list-link">MiniJava-Start</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Dynamics/index.html" class="nav-list-link">MiniJava-Dynamics</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Funcons-Index/index.html" class="nav-list-link">MiniJava-Funcons-Index</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Syntax/index.html" class="nav-list-link">MiniJava-Syntax</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Languages-beta/SL/index.html" class="nav-list-link">SL</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/SL/SL-cbs/SL/SL-Start/index.html" class="nav-list-link">SL-Start</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/SL/SL-cbs/SL/SL-1-Lexemes/index.html" class="nav-list-link">SL-1-Lexemes</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/SL/SL-cbs/SL/SL-2-Expressions/index.html" class="nav-list-link">SL-2-Expressions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/SL/SL-cbs/SL/SL-3-Statements/index.html" class="nav-list-link">SL-3-Statements</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/SL/SL-cbs/SL/SL-4-Definitions/index.html" class="nav-list-link">SL-4-Definitions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/SL/SL-cbs/SL/SL-Disambiguation/index.html" class="nav-list-link">SL-Disambiguation</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/SL/SL-cbs/SL/SL-Funcons/index.html" class="nav-list-link">SL-Funcons</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/SL/SL-cbs/SL/SL-Funcons-Index/index.html" class="nav-list-link">SL-Funcons-Index</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Languages-beta/OCaml-Light/index.html" class="nav-list-link">OC-L</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-Start/index.html" class="nav-list-link">OC-L-Start</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-01-Lexical-Conventions/index.html" class="nav-list-link">OC-L-01-Lexical-Conventions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-02-Values/index.html" class="nav-list-link">OC-L-02-Values</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-03-Names/index.html" class="nav-list-link">OC-L-03-Names</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-04-Type-Expressions/index.html" class="nav-list-link">OC-L-04-Type-Expressions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-05-Constants/index.html" class="nav-list-link">OC-L-05-Constants</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-06-Patterns/index.html" class="nav-list-link">OC-L-06-Patterns</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-07-Expressions/index.html" class="nav-list-link">OC-L-07-Expressions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-08-Type-and-Exception-Definitions/index.html" class="nav-list-link">OC-L-08-Type-and-Exception-Definitions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-09-Classes/index.html" class="nav-list-link">OC-L-09-Classes</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-10-Module-Types/index.html" class="nav-list-link">OC-L-10-Module-Types</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-11-Module-Implementations/index.html" class="nav-list-link">OC-L-11-Module-Implementations</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-12-Core-Library/index.html" class="nav-list-link">OC-L-12-Core-Library</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-A-Disambiguation/index.html" class="nav-list-link">OC-L-A-Disambiguation</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-Funcons-Index/index.html" class="nav-list-link">OC-L-Funcons-Index</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/Reuse.html" class="nav-list-link">Funcon reuse</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Unstable-Funcons-beta/index.html" class="nav-list-link">Unstable-Funcons-beta</a><ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Unstable-Funcons-beta/Computations/index.html" class="nav-list-link">Computations</a><ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Unstable-Funcons-beta/Computations/Threads/index.html" class="nav-list-link">Threads</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Funcons-beta/Computations/Threads/Multithreading/index.html" class="nav-list-link">Multithreading</a></li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Unstable-Funcons-beta/Computations/Threads/Synchronising/index.html" class="nav-list-link">Synchronising</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Funcons-beta/Computations/Threads/Synchronising/Locks/index.html" class="nav-list-link">Locks</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Funcons-beta/Computations/Threads/Synchronising/Notifications/index.html" class="nav-list-link">Notifications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Unstable-Funcons-beta/Computations/Normal/index.html" class="nav-list-link">Normal</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Funcons-beta/Computations/Normal/Indexing/index.html" class="nav-list-link">Indexing</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Funcons-beta/Computations/Normal/Memos/index.html" class="nav-list-link">Memos</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Unstable-Funcons-beta/Computations/Abnormal/index.html" class="nav-list-link">Abnormal</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Funcons-beta/Computations/Abnormal/Postponing/index.html" class="nav-list-link">Postponing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Funcons-beta/Unstable-Funcons-Index/index.html" class="nav-list-link">Unstable-Funcons-Index</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Unstable-Languages-beta/index.html" class="nav-list-link">Unstable-Languages-beta</a><ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Unstable-Languages-beta/IMP-Plus-Plus/index.html" class="nav-list-link">IMPPP</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-Start/index.html" class="nav-list-link">IMPPP-Start</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-1/index.html" class="nav-list-link">IMPPP-1</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-2/index.html" class="nav-list-link">IMPPP-2</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-3/index.html" class="nav-list-link">IMPPP-3</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-4/index.html" class="nav-list-link">IMPPP-4</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-Disambiguation/index.html" class="nav-list-link">IMPPP-Disambiguation</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-Funcons-Index/index.html" class="nav-list-link">IMPPP-Funcons-Index</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-Unstable-Funcons-Index/index.html" class="nav-list-link">IMPPP-Unstable-Funcons-Index</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Unstable-Languages-beta/SIMPLE-Threads/index.html" class="nav-list-link">SIMPLE-THR</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-Start/index.html" class="nav-list-link">SIMPLE-THR-Start</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-1-Lexical/index.html" class="nav-list-link">SIMPLE-THR-1-Lexical</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-2-Expressions/index.html" class="nav-list-link">SIMPLE-THR-2-Expressions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-3-Statements/index.html" class="nav-list-link">SIMPLE-THR-3-Statements</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-4-Declarations/index.html" class="nav-list-link">SIMPLE-THR-4-Declarations</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-5-Programs/index.html" class="nav-list-link">SIMPLE-THR-5-Programs</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-A-Disambiguation/index.html" class="nav-list-link">SIMPLE-THR-A-Disambiguation</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-Funcons-Index/index.html" class="nav-list-link">SIMPLE-THR-Funcons-Index</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-Unstable-Funcons-Index/index.html" class="nav-list-link">SIMPLE-THR-Unstable-Funcons-Index</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Unstable-Languages-beta/LangDev-2019/index.html" class="nav-list-link">LD</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Start/index.html" class="nav-list-link">LD-Start</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Disambiguation/index.html" class="nav-list-link">LD-Disambiguation</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Funcons-Index/index.html" class="nav-list-link">LD-Funcons-Index</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Unstable-Funcons-Index/index.html" class="nav-list-link">LD-Unstable-Funcons-Index</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/LangDev-2019/LD-demo.html" class="nav-list-link">LD-demo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+          </ul>
+          <ul class="nav-list nav-category-list">
+            <li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><div class="nav-category">Pretty</div><ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Funcons-beta/index.html" class="nav-list-link">Funcons-beta</a><ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Funcons-beta/Computations/index.html" class="nav-list-link">Computations</a><ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Funcons-beta/Computations/Normal/index.html" class="nav-list-link">Normal</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Computations/Normal/Flowing/index.html" class="nav-list-link">Flowing</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Computations/Normal/Giving/index.html" class="nav-list-link">Giving</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Computations/Normal/Binding/index.html" class="nav-list-link">Binding</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Computations/Normal/Generating/index.html" class="nav-list-link">Generating</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Computations/Normal/Storing/index.html" class="nav-list-link">Storing</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Computations/Normal/Linking/index.html" class="nav-list-link">Linking</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Computations/Normal/Interacting/index.html" class="nav-list-link">Interacting</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Funcons-beta/Computations/Abnormal/index.html" class="nav-list-link">Abnormal</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Computations/Abnormal/Abrupting/index.html" class="nav-list-link">Abrupting</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Computations/Abnormal/Failing/index.html" class="nav-list-link">Failing</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Computations/Abnormal/Throwing/index.html" class="nav-list-link">Throwing</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Computations/Abnormal/Returning/index.html" class="nav-list-link">Returning</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Computations/Abnormal/Breaking/index.html" class="nav-list-link">Breaking</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Computations/Abnormal/Continuing/index.html" class="nav-list-link">Continuing</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Computations/Abnormal/Controlling/index.html" class="nav-list-link">Controlling</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Computations/Computation-Types/index.html" class="nav-list-link">Computation-Types</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Funcons-beta/Values/index.html" class="nav-list-link">Values</a><ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Funcons-beta/Values/Abstraction/index.html" class="nav-list-link">Abstraction</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Abstraction/Generic/index.html" class="nav-list-link">Generic</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Abstraction/Thunks/index.html" class="nav-list-link">Thunks</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Abstraction/Functions/index.html" class="nav-list-link">Functions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Abstraction/Patterns/index.html" class="nav-list-link">Patterns</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Funcons-beta/Values/Composite/index.html" class="nav-list-link">Composite</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Composite/Sequences/index.html" class="nav-list-link">Sequences</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Composite/Datatypes/index.html" class="nav-list-link">Datatypes</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Composite/Tuples/index.html" class="nav-list-link">Tuples</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Composite/Lists/index.html" class="nav-list-link">Lists</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Composite/Strings/index.html" class="nav-list-link">Strings</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Composite/Vectors/index.html" class="nav-list-link">Vectors</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Composite/Trees/index.html" class="nav-list-link">Trees</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Composite/References/index.html" class="nav-list-link">References</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Composite/Records/index.html" class="nav-list-link">Records</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Composite/Variants/index.html" class="nav-list-link">Variants</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Composite/Classes/index.html" class="nav-list-link">Classes</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Composite/Objects/index.html" class="nav-list-link">Objects</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Composite/Bits/index.html" class="nav-list-link">Bits</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Composite/Sets/index.html" class="nav-list-link">Sets</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Composite/Maps/index.html" class="nav-list-link">Maps</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Composite/Multisets/index.html" class="nav-list-link">Multisets</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Composite/Graphs/index.html" class="nav-list-link">Graphs</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Funcons-beta/Values/Primitive/index.html" class="nav-list-link">Primitive</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Primitive/Booleans/index.html" class="nav-list-link">Booleans</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Primitive/Integers/index.html" class="nav-list-link">Integers</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Primitive/Floats/index.html" class="nav-list-link">Floats</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Primitive/Characters/index.html" class="nav-list-link">Characters</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Primitive/Null/index.html" class="nav-list-link">Null</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Value-Types/index.html" class="nav-list-link">Value-Types</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Entities/index.html" class="nav-list-link">Entities</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Funcons-Index/index.html" class="nav-list-link">Funcons-Index</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Languages-beta/index.html" class="nav-list-link">Languages-beta</a><ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Languages-beta/IMP/index.html" class="nav-list-link">IMP</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/IMP/IMP-cbs/IMP/IMP-Start/index.html" class="nav-list-link">IMP-Start</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/IMP/IMP-cbs/IMP/IMP-1/index.html" class="nav-list-link">IMP-1</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/IMP/IMP-cbs/IMP/IMP-2/index.html" class="nav-list-link">IMP-2</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/IMP/IMP-cbs/IMP/IMP-3/index.html" class="nav-list-link">IMP-3</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/IMP/IMP-cbs/IMP/IMP-4/index.html" class="nav-list-link">IMP-4</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/IMP/IMP-cbs/IMP/IMP-Disambiguation/index.html" class="nav-list-link">IMP-Disambiguation</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/IMP/IMP-cbs/IMP/IMP-Funcons-Index/index.html" class="nav-list-link">IMP-Funcons-Index</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Languages-beta/SIMPLE/index.html" class="nav-list-link">SIMPLE</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-Start/index.html" class="nav-list-link">SIMPLE-Start</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-1-Lexical/index.html" class="nav-list-link">SIMPLE-1-Lexical</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-2-Expressions/index.html" class="nav-list-link">SIMPLE-2-Expressions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-3-Statements/index.html" class="nav-list-link">SIMPLE-3-Statements</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-4-Declarations/index.html" class="nav-list-link">SIMPLE-4-Declarations</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-5-Programs/index.html" class="nav-list-link">SIMPLE-5-Programs</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-A-Disambiguation/index.html" class="nav-list-link">SIMPLE-A-Disambiguation</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-Funcons-Index/index.html" class="nav-list-link">SIMPLE-Funcons-Index</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Languages-beta/MiniJava/index.html" class="nav-list-link">MiniJava</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Start/index.html" class="nav-list-link">MiniJava-Start</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Dynamics/index.html" class="nav-list-link">MiniJava-Dynamics</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Funcons-Index/index.html" class="nav-list-link">MiniJava-Funcons-Index</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Syntax/index.html" class="nav-list-link">MiniJava-Syntax</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Languages-beta/SL/index.html" class="nav-list-link">SL</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/SL/SL-cbs/SL/SL-Start/index.html" class="nav-list-link">SL-Start</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/SL/SL-cbs/SL/SL-1-Lexemes/index.html" class="nav-list-link">SL-1-Lexemes</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/SL/SL-cbs/SL/SL-2-Expressions/index.html" class="nav-list-link">SL-2-Expressions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/SL/SL-cbs/SL/SL-3-Statements/index.html" class="nav-list-link">SL-3-Statements</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/SL/SL-cbs/SL/SL-4-Definitions/index.html" class="nav-list-link">SL-4-Definitions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/SL/SL-cbs/SL/SL-Disambiguation/index.html" class="nav-list-link">SL-Disambiguation</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/SL/SL-cbs/SL/SL-Funcons/index.html" class="nav-list-link">SL-Funcons</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/SL/SL-cbs/SL/SL-Funcons-Index/index.html" class="nav-list-link">SL-Funcons-Index</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Languages-beta/OCaml-Light/index.html" class="nav-list-link">OC-L</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-Start/index.html" class="nav-list-link">OC-L-Start</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-01-Lexical-Conventions/index.html" class="nav-list-link">OC-L-01-Lexical-Conventions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-02-Values/index.html" class="nav-list-link">OC-L-02-Values</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-03-Names/index.html" class="nav-list-link">OC-L-03-Names</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-04-Type-Expressions/index.html" class="nav-list-link">OC-L-04-Type-Expressions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-05-Constants/index.html" class="nav-list-link">OC-L-05-Constants</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-06-Patterns/index.html" class="nav-list-link">OC-L-06-Patterns</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-07-Expressions/index.html" class="nav-list-link">OC-L-07-Expressions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-08-Type-and-Exception-Definitions/index.html" class="nav-list-link">OC-L-08-Type-and-Exception-Definitions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-09-Classes/index.html" class="nav-list-link">OC-L-09-Classes</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-10-Module-Types/index.html" class="nav-list-link">OC-L-10-Module-Types</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-11-Module-Implementations/index.html" class="nav-list-link">OC-L-11-Module-Implementations</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-12-Core-Library/index.html" class="nav-list-link">OC-L-12-Core-Library</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-A-Disambiguation/index.html" class="nav-list-link">OC-L-A-Disambiguation</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-Funcons-Index/index.html" class="nav-list-link">OC-L-Funcons-Index</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/Reuse.html" class="nav-list-link">Funcon reuse</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Unstable-Funcons-beta/index.html" class="nav-list-link">Unstable-Funcons-beta</a><ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Unstable-Funcons-beta/Computations/index.html" class="nav-list-link">Computations</a><ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Unstable-Funcons-beta/Computations/Threads/index.html" class="nav-list-link">Threads</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Funcons-beta/Computations/Threads/Multithreading/index.html" class="nav-list-link">Multithreading</a></li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Unstable-Funcons-beta/Computations/Threads/Synchronising/index.html" class="nav-list-link">Synchronising</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Funcons-beta/Computations/Threads/Synchronising/Locks/index.html" class="nav-list-link">Locks</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Funcons-beta/Computations/Threads/Synchronising/Notifications/index.html" class="nav-list-link">Notifications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Unstable-Funcons-beta/Computations/Normal/index.html" class="nav-list-link">Normal</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Funcons-beta/Computations/Normal/Indexing/index.html" class="nav-list-link">Indexing</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Funcons-beta/Computations/Normal/Memos/index.html" class="nav-list-link">Memos</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Unstable-Funcons-beta/Computations/Abnormal/index.html" class="nav-list-link">Abnormal</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Funcons-beta/Computations/Abnormal/Postponing/index.html" class="nav-list-link">Postponing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Funcons-beta/Unstable-Funcons-Index/index.html" class="nav-list-link">Unstable-Funcons-Index</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Unstable-Languages-beta/index.html" class="nav-list-link">Unstable-Languages-beta</a><ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Unstable-Languages-beta/IMP-Plus-Plus/index.html" class="nav-list-link">IMPPP</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-Start/index.html" class="nav-list-link">IMPPP-Start</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-1/index.html" class="nav-list-link">IMPPP-1</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-2/index.html" class="nav-list-link">IMPPP-2</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-3/index.html" class="nav-list-link">IMPPP-3</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-4/index.html" class="nav-list-link">IMPPP-4</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-Disambiguation/index.html" class="nav-list-link">IMPPP-Disambiguation</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-Funcons-Index/index.html" class="nav-list-link">IMPPP-Funcons-Index</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-Unstable-Funcons-Index/index.html" class="nav-list-link">IMPPP-Unstable-Funcons-Index</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Unstable-Languages-beta/SIMPLE-Threads/index.html" class="nav-list-link">SIMPLE-THR</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-Start/index.html" class="nav-list-link">SIMPLE-THR-Start</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-1-Lexical/index.html" class="nav-list-link">SIMPLE-THR-1-Lexical</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-2-Expressions/index.html" class="nav-list-link">SIMPLE-THR-2-Expressions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-3-Statements/index.html" class="nav-list-link">SIMPLE-THR-3-Statements</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-4-Declarations/index.html" class="nav-list-link">SIMPLE-THR-4-Declarations</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-5-Programs/index.html" class="nav-list-link">SIMPLE-THR-5-Programs</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-A-Disambiguation/index.html" class="nav-list-link">SIMPLE-THR-A-Disambiguation</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-Funcons-Index/index.html" class="nav-list-link">SIMPLE-THR-Funcons-Index</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-Unstable-Funcons-Index/index.html" class="nav-list-link">SIMPLE-THR-Unstable-Funcons-Index</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Unstable-Languages-beta/LangDev-2019/index.html" class="nav-list-link">LD</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Start/index.html" class="nav-list-link">LD-Start</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Disambiguation/index.html" class="nav-list-link">LD-Disambiguation</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Funcons-Index/index.html" class="nav-list-link">LD-Funcons-Index</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Unstable-Funcons-Index/index.html" class="nav-list-link">LD-Unstable-Funcons-Index</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/LangDev-2019/LD-demo.html" class="nav-list-link">LD-demo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+          </ul>
+    </nav>
+    <footer class="site-footer">
+      This site uses <a href="https://github.com/pmarsceill/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    </footer>
+  </div>
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+        <div class="search">
+          <div class="search-input-wrap">
+            <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search CBS-beta" aria-label="Search CBS-beta" autocomplete="off">
+            <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+          </div>
+          <div id="search-results" class="search-results"></div>
+        </div>
+        <nav aria-label="Auxiliary" class="aux-nav">
+          <ul class="aux-nav-list">
+              <li class="aux-nav-list-item">
+                <a href="//github.com/plancomps/CBS-beta" class="site-button"
+                >
+                  CBS-beta on GitHub
+                </a>
+              </li>
+          </ul>
+        </nav>
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+<nav class="nav-rel">
+    <a href="/CBS-beta/docs/Funcons-beta/Values/Primitive/Integers/index.html" class="nav-rel-link">&larr;</a>
+    <a href="/CBS-beta/docs/Funcons-beta/Values/Primitive/index.html" class="nav-rel-link">&uarr;</a>
+    <a href="/CBS-beta/docs/Funcons-beta/Values/Primitive/Characters/index.html" class="nav-rel-link">&rarr;</a>
+</nav>
+<nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item">
+      <a href="/CBS-beta/docs/Funcons-beta/index.html">Funcons-beta</a>
+    </li><li class="breadcrumb-nav-list-item">
+      <a href="/CBS-beta/docs/Funcons-beta/Values/index.html">Values</a>
+    </li><li class="breadcrumb-nav-list-item">
+      <a href="/CBS-beta/docs/Funcons-beta/Values/Primitive/index.html">Primitive</a>
+    </li><li class="breadcrumb-nav-list-item">
+      <span>Floats</span>
+    </li>
+  </ol>
+</nav>
+      <div id="main-content" class="main-content" role="main">
+          <p><a href="/CBS-beta/docs/Funcons-beta" title="FUNCONS-BETA">Funcons-beta</a> : <a href="https://github.com/plancomps/CBS-beta/blob/math/Funcons-beta/Values/Primitive/Floats/Floats.cbs" title="CBS SOURCE FILE ON GITHUB">Floats.cbs</a> | <a href="/CBS-beta/math/Funcons-beta/Values/Primitive/Floats" title="CBS-KATEX WEB PAGE">PRETTY</a> | <a href="/CBS-beta/math/Funcons-beta/Values/Primitive/Floats/Floats.pdf" title="CBS-LATEX PDF FILE">PDF</a></p>
+<details open="">
+  <summary class="text-delta">
+    Outline
+  </summary>
+<ul id="markdown-toc">
+  <li><a href="#floats" id="markdown-toc-floats">Floats</a>    <ul>
+      <li><a href="#conversions" id="markdown-toc-conversions">Conversions</a></li>
+      <li><a href="#comparison" id="markdown-toc-comparison">Comparison</a></li>
+      <li><a href="#arithmetic" id="markdown-toc-arithmetic">Arithmetic</a></li>
+      <li><a href="#rounding" id="markdown-toc-rounding">Rounding</a></li>
+      <li><a href="#miscellaneous" id="markdown-toc-miscellaneous">Miscellaneous</a></li>
+    </ul>
+  </li>
+</ul>
+</details><hr />
+      <h3 id="floats">
+          <a href="#floats" class="anchor-heading" aria-labelledby="floats"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Floats
+      </h3>
+<div class="highlighter-rouge"><pre class="highlight"><code>[
+  <i class="keyword">Datatype</i> <span class="name"><a href="#Name_float-formats">float-formats</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_binary32">binary32</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_binary64">binary64</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_binary128">binary128</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_decimal64">decimal64</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_decimal128">decimal128</a></span>
+  <i class="keyword">Type</i>     <span class="name"><a href="#Name_floats">floats</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float">float</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_quiet-not-a-number">quiet-not-a-number</a></span>       <i class="keyword">Alias</i> <span class="name"><a href="#Name_qNaN">qNaN</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_signaling-not-a-number">signaling-not-a-number</a></span>   <i class="keyword">Alias</i> <span class="name"><a href="#Name_sNaN">sNaN</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_positive-infinity">positive-infinity</a></span>        <i class="keyword">Alias</i> <span class="name"><a href="#Name_pos-inf">pos-inf</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_negative-infinity">negative-infinity</a></span>        <i class="keyword">Alias</i> <span class="name"><a href="#Name_neg-inf">neg-inf</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-convert">float-convert</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_decimal-float">decimal-float</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-equal">float-equal</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-is-less">float-is-less</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-is-less-or-equal">float-is-less-or-equal</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-is-greater">float-is-greater</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-is-greater-or-equal">float-is-greater-or-equal</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-negate">float-negate</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-absolute-value">float-absolute-value</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-add">float-add</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-subtract">float-subtract</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-multiply">float-multiply</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-multiply-add">float-multiply-add</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-divide">float-divide</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-remainder">float-remainder</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-sqrt">float-sqrt</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-integer-power">float-integer-power</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-float-power">float-float-power</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-round-ties-to-even">float-round-ties-to-even</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-round-ties-to-infinity">float-round-ties-to-infinity</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-floor">float-floor</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-ceiling">float-ceiling</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-truncate">float-truncate</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-pi">float-pi</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-e">float-e</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-log">float-log</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-log10">float-log10</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-exp">float-exp</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-sin">float-sin</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-cos">float-cos</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-tan">float-tan</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-asin">float-asin</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-acos">float-acos</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-atan">float-atan</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-sinh">float-sinh</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-cosh">float-cosh</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-tanh">float-tanh</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-asinh">float-asinh</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-acosh">float-acosh</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-atanh">float-atanh</a></span>
+  <i class="keyword">Funcon</i>   <span class="name"><a href="#Name_float-atan2">float-atan2</a></span>
+]</code></pre></div>
+<p>Floating-point numbers according to the IEEE 754 Standard (2008).</p>
+<p>See:</p>
+<ul>
+  <li><a href="http://doi.org/10.1109/IEEESTD.2008.4610935">http://doi.org/10.1109/IEEESTD.2008.4610935</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/IEEE_754">https://en.wikipedia.org/wiki/IEEE_754</a></li>
+</ul>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Datatype</i>
+  <span class="name"><span id="Name_float-formats">float-formats</span></span> ::= <span id="Name_binary32">binary32</span> | <span id="Name_binary64">binary64</span> | <span id="Name_binary128">binary128</span> | <span id="Name_decimal64">decimal64</span> | <span id="Name_decimal128">decimal128</span></code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Type</i>
+  <span class="name"><span id="Name_floats">floats</span></span>(_:<span class="name"><a href="#Name_float-formats">float-formats</a></span>)</code></pre></div>
+<p>Note that for distinct formats <code><i class="var">FF<sub class="sub">1</sub></i></code>, <code><i class="var">FF<sub class="sub">2</sub></i></code>, the types <code><span class="name"><a href="#Name_floats">floats</a></span>(<i class="var">FF<sub class="sub">1</sub></i>)</code> and
+  <code><span class="name"><a href="#Name_floats">floats</a></span>(<i class="var">FF<sub class="sub">2</sub></i>)</code> are not necessarily disjoint.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float">float</span></span>(<span id="Variable373_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>, 
+        _:<span class="name"><a href="../Integers/index.html#Name_bounded-integers">bounded-integers</a></span>(0, 1), _:<span class="name"><a href="../Integers/index.html#Name_natural-numbers">natural-numbers</a></span>, _:<span class="name"><a href="../Integers/index.html#Name_integers">integers</a></span>) : =&gt;<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable426_FF"><i class="var">FF</i></span>)</code></pre></div>
+<p>Each finite number is described by three integers:</p>
+<ul>
+  <li>s = a sign (zero or one),</li>
+  <li>c = a significand (or ‘coefficient’),</li>
+  <li>q = an exponent. 
+  The numerical value of a finite number is (-1)^s * c * b^q
+  where b is the base (2 or 10), also called radix.</li>
+</ul>
+<p>The possible finite values that can be represented in a format
+  are determined by the base b, the number of digits in the significand 
+  (precision p), and the exponent parameter emax:</p>
+<ul>
+  <li>c must be an integer in the range zero through (b^p)-1
+(e.g., if b=10 and p=7 then c is 0 through 9999999);</li>
+  <li>q must be an integer such that 1-emax &lt;= q+p-1 &lt;= emax
+(e.g., if p=7 and emax=96 then q is -101 through 90).</li>
+</ul>
+<p>Note that <code><span class="name"><a href="#Name_float">float</a></span>(<i class="var">FF</i>, <i class="var">S</i>, <i class="var">C</i>, <i class="var">Q</i>)</code> is not a 1-1 operation.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_quiet-not-a-number">quiet-not-a-number</span></span>(<span id="Variable528_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>) : <span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable543_FF"><i class="var">FF</i></span>)
+<i class="keyword">Alias</i>
+  <span class="name"><span id="Name_qNaN">qNaN</span></span> = <span class="name"><a href="#Name_quiet-not-a-number">quiet-not-a-number</a></span></code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_signaling-not-a-number">signaling-not-a-number</span></span>(<span id="Variable561_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>) : <span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable576_FF"><i class="var">FF</i></span>)
+<i class="keyword">Alias</i>
+  <span class="name"><span id="Name_sNaN">sNaN</span></span> = <span class="name"><a href="#Name_signaling-not-a-number">signaling-not-a-number</a></span></code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_positive-infinity">positive-infinity</span></span>(<span id="Variable594_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>) : <span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable609_FF"><i class="var">FF</i></span>)
+<i class="keyword">Alias</i>
+  <span class="name"><span id="Name_pos-inf">pos-inf</span></span> = <span class="name"><a href="#Name_positive-infinity">positive-infinity</a></span></code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_negative-infinity">negative-infinity</span></span>(<span id="Variable627_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>) : <span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable642_FF"><i class="var">FF</i></span>)
+<i class="keyword">Alias</i>
+  <span class="name"><span id="Name_neg-inf">neg-inf</span></span> = <span class="name"><a href="#Name_negative-infinity">negative-infinity</a></span></code></pre></div>
+      <h4 id="conversions">
+          <a href="#conversions" class="anchor-heading" aria-labelledby="conversions"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Conversions
+      </h4>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-convert">float-convert</span></span>(<span id="Variable681_FF1"><i class="var">FF<sub class="sub">1</sub></i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>, 
+                <span id="Variable691_FF2"><i class="var">FF<sub class="sub">2</sub></i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>, <span id="Variable700_F"><i class="var">F</i></span>:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable706_FF1"><i class="var">FF<sub class="sub">1</sub></i></span>)) : =&gt;<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable730_FF2"><i class="var">FF<sub class="sub">2</sub></i></span>)</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_decimal-float">decimal-float</span></span>(<span id="Variable746_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>, 
+                _:<span class="name"><a href="../../Composite/Strings/index.html#Name_strings">strings</a></span>, _:<span class="name"><a href="../../Composite/Strings/index.html#Name_strings">strings</a></span>, _:<span class="name"><a href="../../Composite/Strings/index.html#Name_strings">strings</a></span>) : =&gt;<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable789_FF"><i class="var">FF</i></span>)</code></pre></div>
+<p><code><span class="name"><a href="#Name_decimal-float">decimal-float</a></span>(<i class="var">F</i>, "M", "N", "E")</code> is an approximation in <code><span class="name"><a href="#Name_floats">floats</a></span>(<i class="var">FF</i>)</code> to the
+  value of ‘M.N’ times 10 to the power ‘E’, where “M.N” is decimal notation
+  (optionally-signed) for a fixed-point number and “E” is decimal notation
+  (optionally signed) for an integer. When any argument string is invalid,
+  the result is <code><span class="name"><a href="#Name_quiet-not-a-number">quiet-not-a-number</a></span>(<i class="var">F</i>)</code>.</p>
+      <h4 id="comparison">
+          <a href="#comparison" class="anchor-heading" aria-labelledby="comparison"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Comparison
+      </h4>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-equal">float-equal</span></span>(<span id="Variable892_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>,
+              _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable905_FF"><i class="var">FF</i></span>), _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable923_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="../Booleans/index.html#Name_booleans">booleans</a></span></code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-is-less">float-is-less</span></span>(<span id="Variable952_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>,
+                _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable965_FF"><i class="var">FF</i></span>), _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable983_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="../Booleans/index.html#Name_booleans">booleans</a></span></code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-is-less-or-equal">float-is-less-or-equal</span></span>(<span id="Variable1012_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>,
+                         _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1025_FF"><i class="var">FF</i></span>), _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1043_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="../Booleans/index.html#Name_booleans">booleans</a></span></code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-is-greater">float-is-greater</span></span>(<span id="Variable1072_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>,
+                   _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1085_FF"><i class="var">FF</i></span>), _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1103_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="../Booleans/index.html#Name_booleans">booleans</a></span></code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-is-greater-or-equal">float-is-greater-or-equal</span></span>(<span id="Variable1132_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>,
+                            _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1145_FF"><i class="var">FF</i></span>), _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1163_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="../Booleans/index.html#Name_booleans">booleans</a></span></code></pre></div>
+      <h4 id="arithmetic">
+          <a href="#arithmetic" class="anchor-heading" aria-labelledby="arithmetic"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Arithmetic
+      </h4>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-negate">float-negate</span></span>(<span id="Variable1206_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>, _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1219_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1241_FF"><i class="var">FF</i></span>)</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-absolute-value">float-absolute-value</span></span>(<span id="Variable1257_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>, _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1270_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1292_FF"><i class="var">FF</i></span>)</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-add">float-add</span></span>(<span id="Variable1308_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>, _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1321_FF"><i class="var">FF</i></span>), _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1339_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1362_FF"><i class="var">FF</i></span>)</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-subtract">float-subtract</span></span>(<span id="Variable1378_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>, _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1391_FF"><i class="var">FF</i></span>), _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1409_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1432_FF"><i class="var">FF</i></span>)</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-multiply">float-multiply</span></span>(<span id="Variable1448_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>, _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1461_FF"><i class="var">FF</i></span>), _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1479_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1502_FF"><i class="var">FF</i></span>)</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-multiply-add">float-multiply-add</span></span>(<span id="Variable1518_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>,
+                     _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1531_FF"><i class="var">FF</i></span>), _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1549_FF"><i class="var">FF</i></span>), _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1567_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1591_FF"><i class="var">FF</i></span>)</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-divide">float-divide</span></span>(<span id="Variable1607_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>, _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1620_FF"><i class="var">FF</i></span>), _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1638_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1661_FF"><i class="var">FF</i></span>)</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-remainder">float-remainder</span></span>(<span id="Variable1677_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>, _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1690_FF"><i class="var">FF</i></span>), _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1708_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1731_FF"><i class="var">FF</i></span>)</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-sqrt">float-sqrt</span></span>(<span id="Variable1747_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>, _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1760_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1782_FF"><i class="var">FF</i></span>)</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-integer-power">float-integer-power</span></span>(<span id="Variable1798_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>, _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1811_FF"><i class="var">FF</i></span>), _:<span class="name"><a href="../Integers/index.html#Name_integers">integers</a></span>) : =&gt;<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1842_FF"><i class="var">FF</i></span>)</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-float-power">float-float-power</span></span>(<span id="Variable1858_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>, _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1871_FF"><i class="var">FF</i></span>), _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1889_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1912_FF"><i class="var">FF</i></span>)</code></pre></div>
+      <h4 id="rounding">
+          <a href="#rounding" class="anchor-heading" aria-labelledby="rounding"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Rounding
+      </h4>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-round-ties-to-even">float-round-ties-to-even</span></span>(<span id="Variable1948_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>, _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable1961_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="../Integers/index.html#Name_integers">integers</a></span></code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-round-ties-to-infinity">float-round-ties-to-infinity</span></span>(<span id="Variable1989_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>, _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2002_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="../Integers/index.html#Name_integers">integers</a></span></code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-floor">float-floor</span></span>(<span id="Variable2030_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>, _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2043_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="../Integers/index.html#Name_integers">integers</a></span></code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-ceiling">float-ceiling</span></span>(<span id="Variable2071_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>, _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2084_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="../Integers/index.html#Name_integers">integers</a></span></code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-truncate">float-truncate</span></span>(<span id="Variable2112_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>, _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2125_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="../Integers/index.html#Name_integers">integers</a></span></code></pre></div>
+      <h4 id="miscellaneous">
+          <a href="#miscellaneous" class="anchor-heading" aria-labelledby="miscellaneous"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Miscellaneous
+      </h4>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-pi">float-pi</span></span>(<span id="Variable2167_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>) : =&gt;<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2183_FF"><i class="var">FF</i></span>)</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-e">float-e</span></span>(<span id="Variable2199_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>) : =&gt;<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2215_FF"><i class="var">FF</i></span>)</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-log">float-log</span></span>(<span id="Variable2231_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>, _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2244_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2266_FF"><i class="var">FF</i></span>)</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-log10">float-log10</span></span>(<span id="Variable2282_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>, _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2295_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2317_FF"><i class="var">FF</i></span>)</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-exp">float-exp</span></span>(<span id="Variable2333_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>, _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2346_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2368_FF"><i class="var">FF</i></span>)</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-sin">float-sin</span></span>(<span id="Variable2384_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>, _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2397_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2419_FF"><i class="var">FF</i></span>)</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-cos">float-cos</span></span>(<span id="Variable2435_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>, _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2448_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2470_FF"><i class="var">FF</i></span>)</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-tan">float-tan</span></span>(<span id="Variable2486_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>, _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2499_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2521_FF"><i class="var">FF</i></span>)</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-asin">float-asin</span></span>(<span id="Variable2537_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>, _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2550_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2572_FF"><i class="var">FF</i></span>)</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-acos">float-acos</span></span>(<span id="Variable2588_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>, _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2601_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2623_FF"><i class="var">FF</i></span>)</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-atan">float-atan</span></span>(<span id="Variable2639_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>, _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2652_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2674_FF"><i class="var">FF</i></span>)</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-sinh">float-sinh</span></span>(<span id="Variable2690_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>, _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2703_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2725_FF"><i class="var">FF</i></span>)</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-cosh">float-cosh</span></span>(<span id="Variable2741_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>, _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2754_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2776_FF"><i class="var">FF</i></span>)</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-tanh">float-tanh</span></span>(<span id="Variable2792_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>, _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2805_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2827_FF"><i class="var">FF</i></span>)</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-asinh">float-asinh</span></span>(<span id="Variable2843_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>, _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2856_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2878_FF"><i class="var">FF</i></span>)</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-acosh">float-acosh</span></span>(<span id="Variable2894_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>, _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2907_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2929_FF"><i class="var">FF</i></span>)</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-atanh">float-atanh</span></span>(<span id="Variable2945_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>, _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2958_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable2980_FF"><i class="var">FF</i></span>)</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><i class="keyword">Built-in</i> <i class="keyword">Funcon</i>
+  <span class="name"><span id="Name_float-atan2">float-atan2</span></span>(<span id="Variable2996_FF"><i class="var">FF</i></span>:<span class="name"><a href="#Name_float-formats">float-formats</a></span>, _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable3009_FF"><i class="var">FF</i></span>), _:<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable3027_FF"><i class="var">FF</i></span>)) : =&gt;<span class="name"><a href="#Name_floats">floats</a></span>(<span id="Variable3050_FF"><i class="var">FF</i></span>)</code></pre></div><hr />
+<div class="table-wrapper"><table>
+  <tbody>
+    <tr>
+      <td>From the <a href="https://plancomps.github.io" title="PROGRAMMING LANGUAGE COMPONENTS AND SPECIFICATIONS PROJECT HOME PAGE">PLanCompS Project</a></td>
+      <td><a href="https://github.com/plancomps/CBS-beta/issues" title="CBS-BETA ISSUE REPORTS ON GITHUB">CBS-beta issues…</a></td>
+      <td><a href="mailto:plancomps@gmail.com?Subject=CBS-beta%20-%20comment&amp;Body=Re%3A%20CBS-beta%20specification%20at%20Values/Primitive/Floats/Floats.cbs%0A%0AComment/Query/Issue/Suggestion%3A%0A%0A%0ASignature%3A%0A" title="GENERATE AN EMAIL TEMPLATE">Suggest an improvement…</a></td>
+    </tr>
+  </tbody>
+</table></div>
+          <hr>
+  <p class="nav-rel">
+      <a href="/CBS-beta/docs/Funcons-beta/Values/Primitive/Integers/index.html" class="nav-rel-link">&larr;</a>
+      <a href="/CBS-beta/docs/Funcons-beta/Values/Primitive/index.html" class="nav-rel-link">&uarr;</a>
+      <a href="/CBS-beta/docs/Funcons-beta/Values/Primitive/Characters/index.html" class="nav-rel-link">&rarr;</a>
+  </p>
+          <hr>
+          <footer>
+              <p><a href="#top" id="back-to-top">Back to top</a></p>
+            <p class="text-small text-grey-dk-100 mb-0"></p>
+          </footer>
+      </div>
+    </div>
+        <a href="#" id="search-button" class="search-button">
+          <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-search"></use></svg>
+        </a>
+      <div class="search-overlay"></div>
+  </div>
+  <script type="text/javascript" src="/CBS-beta/assets/js/toggle_mode.js"></script>
+  <!-- https://www.primative.net/blog/how-to-get-rid-of-the-flash-of-unstyled-content/ -->
+  <style>body { visibility: visible; }</style>
+</body>
+</html>

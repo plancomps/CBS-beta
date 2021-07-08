@@ -1,0 +1,43 @@
+% {% raw %}
+
+
+\begin{center}
+\rule{3in}{0.4pt}
+\end{center}
+
+\subsubsection{Vectors}\hypertarget{vectors}{}\label{vectors}
+
+\begin{align*}
+  [ \
+  \KEY{Datatype} \quad & \NAMEREF{vectors} \\
+  \KEY{Funcon} \quad & \NAMEREF{vector} \\
+  \KEY{Funcon} \quad & \NAMEREF{vector-elements}
+  \ ]
+\end{align*}
+\begin{align*}
+  \KEY{Meta-variables} \quad
+  & \VAR{T} <: \NAMEHYPER{../..}{Value-Types}{values}
+\end{align*}
+\begin{align*}
+  \KEY{Datatype} \quad 
+  \NAMEDECL{vectors}(
+                     \VAR{T} ) 
+  \ ::= \ & \NAMEDECL{vector}(
+                               \_ : (  \VAR{T} )\STAR)
+\end{align*}
+\begin{align*}
+  \KEY{Funcon} \quad
+  & \NAMEDECL{vector-elements}(
+                       \_ : \NAMEREF{vectors}
+                                 (  \VAR{T} )) 
+    :  \TO (  \VAR{T} )\STAR 
+\\
+  \KEY{Rule} \quad
+    & \NAMEREF{vector-elements}
+        (  \NAMEREF{vector}
+                (  \VAR{V}\STAR : (  \VAR{T} )\STAR ) ) \leadsto 
+        \VAR{V}\STAR
+\end{align*}
+% {% endraw %}
+
+

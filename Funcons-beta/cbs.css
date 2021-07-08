@@ -1,0 +1,244 @@
+body, i.keyword {
+    color: grey;
+    background-color: white;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;
+}
+
+pre, nav div.buttons {
+    tab-size: 4;
+    padding: 1em 1em 0em 1em;
+    font-family: Consolas, "Lucida Console", Monaco, monospace;
+}
+
+span.name, span.name a, span.comment span.name a {
+    color: darkred;
+    background-color: white;
+}
+
+span.ent-name, span.ent-name a, span.comment span.ent-name a {
+    color: black;
+    background-color: white;
+}
+
+span.syn-name, span.syn-name a, span.comment span.syn-name a {
+    color: green;
+    background-color: white;
+}
+
+i.sem-name, i.sem-name a, span.comment i.sem-name a {
+    color: blue;
+    background-color: white;
+}
+
+i.var, i.var a, sub, sup {
+    color: black;
+}
+
+span.comment, span.comment a:link {
+    color: grey;
+    background-color: white;
+}
+
+span.sectnumtitle a:link {
+    color: black;
+    background-color: white;
+}
+
+/* Body */
+
+body {
+    margin: 1em;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+/* Details */
+
+details pre {
+	margin-top: -2em;
+}
+
+details {
+	margin-bottom: -2em;
+}
+
+summary {
+	outline:none;
+	margin-top: -1em;
+}
+
+summary pre {
+	margin-top: -2em;
+}
+
+/* Header */
+
+header {
+    background-color: #F1F1F1;
+    font-size: 1.2em;
+    padding: 1em;
+    text-align: center;
+}
+
+header div {
+    padding: 0em 1em 0em 0em;
+}
+
+header div.topic {
+    margin-left: 0;
+    margin-right: auto;
+    text-align: left;
+}
+
+header div.title {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Footer */
+
+footer {
+    background-color: #F1F1F1;
+    text-align: left;
+    padding: 1.2em;
+}
+
+footer span {
+    padding: 0em 3em 0em 0em;
+    display: inline-block;
+}
+
+footer span a, header div a {
+    background-color: #F1F1F1;
+    color: #3e8e41;
+}
+
+/* Menus */
+
+@media screen {
+
+    pre {
+        margin-left: 1em;
+    }
+
+	/* Style The Dropdown Button */
+	.dropbtn {
+	    background-color: #4CAF50;
+	    color: white;
+	    padding: 0.5em;
+	    font-size: 1.2em;
+	    border: none;
+	    cursor: pointer;
+	}
+	
+	/* The container <div> - needed to position the dropdown content */
+	.dropdown {
+	    position: fixed;
+	    top: 2em;
+	    right: 2em;
+	    display: inline-block;
+	}
+	
+	/* Dropdown Content (Hidden by Default) */
+	.dropdown-content {
+	    display: none;
+	    position: absolute;
+	    right: 0;
+	    background-color: #f9f9f9;
+	    min-width: 10em;
+	    box-shadow: 0em 0.5em 1em 0em rgba(0,0,0,0.2);
+	    z-index: 1;
+	}
+	
+	/* Links and spans inside the dropdown */
+	.dropdown-content a, .dropdown-content span {
+	    color: black;
+	    padding: 0.75em 0.75em;
+	    text-decoration: none;
+	    display: block;
+	}
+	
+	/* Change color of dropdown links on hover */
+	.dropdown-content a:hover {background-color: #f1f1f1}
+	
+	/* Show the dropdown menu on hover */
+	.dropdown:hover .dropdown-content {
+	    display: block;
+	}
+	
+	/* Change the background color of the dropdown button when the dropdown content is shown */
+	.dropdown:hover .dropbtn {
+	    background-color: #3e8e41;
+	}
+
+    div.buttons {
+      float: right;
+      display: block;
+      text-align: right;
+      font-weight: bold;
+    }
+}
+
+@media print {
+
+	/* Style The Dropdown Button */
+	.dropbtn {
+	    display: none;
+	    padding: 0.5em;
+	    font-size: 1.2em;
+	    border: none;
+	    cursor: pointer;
+	}
+	
+	/* The container <div> - needed to position the dropdown content */
+	.dropdown {
+	    position: fixed;
+	    top: 0.5em;
+	    right: 0.5em;
+	    display: none;
+	}
+	
+	/* Dropdown Content (Hidden by Default) */
+	.dropdown-content {
+	    display: none;
+	    position: absolute;
+	    right: 0;
+	    background-color: #f9f9f9;
+	    min-width: 10em;
+	    box-shadow: 0em 0.5em 1em 0em rgba(0,0,0,0.2);
+	    z-index: 1;
+	}
+ 
+    div.buttons {
+      float: right;
+      display: none;
+      text-align: right;
+      font-weight: bold;
+    }
+
+    details > summary {
+      list-style: none;
+    }
+    /* Needed for Chrome? */
+    details > summary::-webkit-details-marker {
+      display: none;
+}
+
+
+}

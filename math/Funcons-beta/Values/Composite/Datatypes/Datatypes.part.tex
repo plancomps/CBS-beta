@@ -1,0 +1,76 @@
+% {% raw %}
+
+
+\begin{center}
+\rule{3in}{0.4pt}
+\end{center}
+
+\subsubsection{Datatypes}\hypertarget{datatypes}{}\label{datatypes}
+
+\begin{align*}
+  [ \
+  \KEY{Type} \quad & \NAMEREF{datatype-values} \\
+  \KEY{Funcon} \quad & \NAMEREF{datatype-value} \\
+  \KEY{Funcon} \quad & \NAMEREF{datatype-value-id} \\
+  \KEY{Funcon} \quad & \NAMEREF{datatype-value-elements}
+  \ ]
+\end{align*}
+A datatype value consists of an identifier and a sequence of values.
+
+`Datatype T ::= \ldots{}' declares the type $\SHADE{\VAR{T}}$ to refer to a fresh value
+  constructor in $\SHADE{\NAMEHYPER{../..}{Value-Types}{types}}$, and asserts $\SHADE{\VAR{T} <: \NAMEREF{datatype-values}}$.
+
+Each constructor funcon `F(\_:T\_1,\ldots{},\_:T\_n)' of the datatype declaration
+  generates values in $\SHADE{\VAR{T}}$ of the form $\SHADE{\NAMEREF{datatype-value}
+           (  \STRING{F}, 
+                  \VAR{V}\SUB{1}, 
+                  \cdots, 
+                  \VAR{V}\SUB{n} )}$ from
+  $\SHADE{\VAR{V}\SUB{1} : \VAR{T}\SUB{1}}$, \ldots{}, $\SHADE{\VAR{V}\SUB{n} : \VAR{T}\SUB{n}}$.
+
+Note that a computation $\SHADE{\VAR{X}}$ cannot be directly included in datatype values:
+  it is necessary to encapsulate it in $\SHADE{\NAMEHYPER{../../Abstraction}{Generic}{abstraction}
+           (  \VAR{X} )}$.
+
+`Datatype T', followed by declarations of constructor funcons for `T',
+  allows specification of GADTs.
+
+\begin{align*}
+  \KEY{Built-in Type} \quad 
+  & \NAMEDECL{datatype-values}  
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{datatype-value}(
+                       \_ : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}, \_ : \NAMEHYPER{../..}{Value-Types}{values}\STAR) 
+    : \NAMEREF{datatype-values} 
+\end{align*}
+\begin{align*}
+  \KEY{Funcon} \quad
+  & \NAMEDECL{datatype-value-id}(
+                       \_ : \NAMEREF{datatype-values}) 
+    :  \TO \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers} 
+\\
+  \KEY{Rule} \quad
+    & \NAMEREF{datatype-value-id}
+        (  \NAMEREF{datatype-value}
+                (  \VAR{I} : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}, 
+                       \_\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ) ) \leadsto 
+        \VAR{I}
+\end{align*}
+\begin{align*}
+  \KEY{Funcon} \quad
+  & \NAMEDECL{datatype-value-elements}(
+                       \_ : \NAMEREF{datatype-values}) 
+    :  \TO \NAMEHYPER{../..}{Value-Types}{values}\STAR 
+\\
+  \KEY{Rule} \quad
+    & \NAMEREF{datatype-value-elements}
+        (  \NAMEREF{datatype-value}
+                (  \_ : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}, 
+                       \VAR{V}\STAR : \NAMEHYPER{../..}{Value-Types}{values}\STAR ) ) \leadsto 
+        \VAR{V}\STAR
+\end{align*}
+% {% endraw %}
+
+

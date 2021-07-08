@@ -1,0 +1,142 @@
+% {% raw %}
+
+
+\begin{center}
+\rule{3in}{0.4pt}
+\end{center}
+
+\begin{displaymath}
+\KEY{Language} \quad \STRING{SL}
+\end{displaymath}
+
+\section{$\SECT{3}$ Statements}\hypertarget{SectionNumber:3}{}\label{SectionNumber:3}
+
+\begin{align*}
+  \KEY{Syntax} \quad
+    \VARDECL{Stmt} : \SYNDECL{stmt}
+      \ ::= \ & \
+      \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{;}} \\
+      \ \mid \ & \ \LEX{return} \ \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{;}} \\
+      \ \mid \ & \ \LEX{return} \ \LEX{{;}} \\
+      \ \mid \ & \ \LEX{if} \ \LEX{{(}} \ \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{)}} \ \SYNREF{block} \\
+      \ \mid \ & \ \LEX{if} \ \LEX{{(}} \ \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{)}} \ \SYNREF{block} \ \LEX{else} \ \SYNREF{block} \\
+      \ \mid \ & \ \LEX{while} \ \LEX{{(}} \ \SYNHYPER{../.}{SL-2-Expressions}{expr} \ \LEX{{)}} \ \SYNREF{block} \\
+      \ \mid \ & \ \LEX{break} \ \LEX{{;}} \\
+      \ \mid \ & \ \LEX{continue} \ \LEX{{;}} \\
+      \ \mid \ & \ \SYNREF{block}
+    \\
+    \VARDECL{Block} : \SYNDECL{block}
+      \ ::= \ & \
+      \LEX{{\LEFTBRACE}} \ \SYNREF{stmt}\STAR \ \LEX{{\RIGHTBRACE}}
+\end{align*}
+\begin{align*}
+  \KEY{Rule} \quad
+    & \LEFTPHRASE \
+        \LEX{if} \ \LEX{{(}} \ \VARHYPER{../.}{SL-2-Expressions}{Expr} \ \LEX{{)}} \ \VARREF{Block} \
+      \RIGHTPHRASE : \SYNREF{stmt} = \\&
+      \LEFTPHRASE \
+        \LEX{if} \ \LEX{{(}} \ \VAR{Expr} \ \LEX{{)}} \ \VAR{Block} \ \LEX{else} \ \LEX{{\LEFTBRACE}} \ \LEX{{\RIGHTBRACE}} \
+      \RIGHTPHRASE
+\end{align*}
+\begin{align*}
+  \KEY{Semantics} \quad
+  & \SEMDECL{exec} \LEFTPHRASE \ \VARREF{Stmt}\STAR : \SYNREF{stmt}\STAR \ \RIGHTPHRASE  
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
+\\
+  \KEY{Rule} \quad
+    & \SEMREF{exec} \LEFTPHRASE \
+                            \VARHYPER{../.}{SL-2-Expressions}{Expr} \ \LEX{{;}} \
+                          \RIGHTPHRASE  = 
+      \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{effect}
+        (  \SEMHYPER{../.}{SL-2-Expressions}{eval} \LEFTPHRASE \
+                                    \VAR{Expr} \
+                                  \RIGHTPHRASE  )
+\\
+  \KEY{Rule} \quad
+    & \SEMREF{exec} \LEFTPHRASE \
+                            \LEX{return} \ \VARHYPER{../.}{SL-2-Expressions}{Expr} \ \LEX{{;}} \
+                          \RIGHTPHRASE  = 
+      \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Returning}{return}
+        (  \SEMHYPER{../.}{SL-2-Expressions}{eval} \LEFTPHRASE \
+                                    \VAR{Expr} \
+                                  \RIGHTPHRASE  )
+\\
+  \KEY{Rule} \quad
+    & \SEMREF{exec} \LEFTPHRASE \
+                            \LEX{return} \ \LEX{{;}} \
+                          \RIGHTPHRASE  = 
+      \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Returning}{return}
+        (  \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-value} )
+\\
+  \KEY{Rule} \quad
+    & \SEMREF{exec} \LEFTPHRASE \
+                            \LEX{if} \ \LEX{{(}} \ \VARHYPER{../.}{SL-2-Expressions}{Expr} \ \LEX{{)}} \ \VARREF{Block}\SUB{1} \ \LEX{else} \ \VARREF{Block}\SUB{2} \
+                          \RIGHTPHRASE  = \\&\quad
+      \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{if-true-else}
+        (  \NAMEHYPER{../.}{SL-Funcons}{bool} \ 
+                \SEMHYPER{../.}{SL-2-Expressions}{eval} \LEFTPHRASE \
+                                      \VAR{Expr} \
+                                    \RIGHTPHRASE , 
+               \SEMREF{exec} \LEFTPHRASE \
+                                    \VAR{Block}\SUB{1} \
+                                  \RIGHTPHRASE , 
+               \SEMREF{exec} \LEFTPHRASE \
+                                    \VAR{Block}\SUB{2} \
+                                  \RIGHTPHRASE  )
+\\
+  \KEY{Rule} \quad
+    & \SEMREF{exec} \LEFTPHRASE \
+                            \LEX{while} \ \LEX{{(}} \ \VARHYPER{../.}{SL-2-Expressions}{Expr} \ \LEX{{)}} \ \VARREF{Block} \
+                          \RIGHTPHRASE  = \\&\quad
+      \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Breaking}{handle-break}
+        ( \\&\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{while-true}
+                ( \\&\quad\quad\quad \NAMEHYPER{../.}{SL-Funcons}{bool} \ 
+                        \SEMHYPER{../.}{SL-2-Expressions}{eval} \LEFTPHRASE \
+                                              \VAR{Expr} \
+                                            \RIGHTPHRASE , \\&\quad\quad\quad
+                       \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Continuing}{handle-continue}
+                        (  \SEMREF{exec} \LEFTPHRASE \
+                                                    \VAR{Block} \
+                                                  \RIGHTPHRASE  ) ) )
+\\
+  \KEY{Rule} \quad
+    & \SEMREF{exec} \LEFTPHRASE \
+                            \LEX{break} \ \LEX{{;}} \
+                          \RIGHTPHRASE  = 
+      \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Breaking}{break}
+\\
+  \KEY{Rule} \quad
+    & \SEMREF{exec} \LEFTPHRASE \
+                            \LEX{continue} \ \LEX{{;}} \
+                          \RIGHTPHRASE  = 
+      \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Continuing}{continue}
+\\
+  \KEY{Rule} \quad
+    & \SEMREF{exec} \LEFTPHRASE \
+                            \LEX{{\LEFTBRACE}} \ \VARREF{Stmt}\STAR \ \LEX{{\RIGHTBRACE}} \
+                          \RIGHTPHRASE  = 
+      \SEMREF{exec} \LEFTPHRASE \
+                            \VAR{Stmt}\STAR \
+                          \RIGHTPHRASE 
+\\
+  \KEY{Rule} \quad
+    & \SEMREF{exec} \LEFTPHRASE \
+                             \
+                          \RIGHTPHRASE  = 
+      \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-value}
+\\
+  \KEY{Rule} \quad
+    & \SEMREF{exec} \LEFTPHRASE \
+                            \VARREF{Stmt} \ \VARREF{Stmt}\PLUS \
+                          \RIGHTPHRASE  = \\&\quad
+      \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
+        (  \SEMREF{exec} \LEFTPHRASE \
+                                    \VAR{Stmt} \
+                                  \RIGHTPHRASE , 
+               \SEMREF{exec} \LEFTPHRASE \
+                                    \VAR{Stmt}\PLUS \
+                                  \RIGHTPHRASE  )
+\end{align*}
+% {% endraw %}
+
+

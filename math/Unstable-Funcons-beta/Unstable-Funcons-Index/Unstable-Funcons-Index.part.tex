@@ -1,0 +1,230 @@
+% {% raw %}
+
+
+
+    OUTLINE
+  \tableofcontents
+\begin{center}
+\rule{3in}{0.4pt}
+\end{center}
+
+Unstable Funcons, for use only in Unstable Languages
+
+\section{Computations}\hypertarget{computations}{}\label{computations}
+
+\subsection{Normal computation}\hypertarget{normal-computation}{}\label{normal-computation}
+
+\subsubsection{Value indexing}\hypertarget{value-indexing}{}\label{value-indexing}
+
+\begin{align*}
+  [ \
+  \KEY{Entity} \quad & \NAMEHYPER{../Computations/Normal}{Indexing}{value-index} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Normal}{Indexing}{initialise-index} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Normal}{Indexing}{allocate-index} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Normal}{Indexing}{lookup-index}
+  \ ]
+\end{align*}
+\subsubsection{Memos}\hypertarget{memos}{}\label{memos}
+
+\begin{align*}
+  [ \
+  \KEY{Entity} \quad & \NAMEHYPER{../Computations/Normal}{Memos}{memo-map} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Normal}{Memos}{initialise-memos} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Normal}{Memos}{memo-value} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Normal}{Memos}{initialise-memo-value} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Normal}{Memos}{memo-value-recall}
+  \ ]
+\end{align*}
+\subsection{Abnormal computation}\hypertarget{abnormal-computation}{}\label{abnormal-computation}
+
+\subsubsection{Postponing}\hypertarget{postponing}{}\label{postponing}
+
+\begin{align*}
+  [ \
+  \KEY{Entity} \quad & \NAMEHYPER{../Computations/Abnormal}{Postponing}{postponing} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Abnormal}{Postponing}{postpone} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Abnormal}{Postponing}{postpone-after-effect} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Abnormal}{Postponing}{after-effect}
+  \ ]
+\end{align*}
+\subsection{Threads}\hypertarget{threads}{}\label{threads}
+
+\subsubsection{Multithreading}\hypertarget{multithreading}{}\label{multithreading}
+
+\begin{align*}
+  [ \
+  \KEY{Datatype} \quad & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-ids} \\
+  \KEY{Datatype} \quad & \NAMEHYPER{../Computations/Threads}{Multithreading}{threads} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-joinable} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-detached}
+  \ ]
+\end{align*}
+\paragraph{Initialisation}\hypertarget{initialisation}{}\label{initialisation}
+
+\begin{align*}
+  [ \
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads}{Multithreading}{initialise-multithreading}
+  \ ]
+\end{align*}
+\paragraph{Activation}\hypertarget{activation}{}\label{activation}
+
+\begin{align*}
+  [ \
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads}{Multithreading}{multithread} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-activate} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-detach}
+  \ ]
+\end{align*}
+\paragraph{Execution}\hypertarget{execution}{}\label{execution}
+
+\begin{align*}
+  [ \
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads}{Multithreading}{current-thread} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-atomic} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-yield} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-spin} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-suspend} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-resume}
+  \ ]
+\end{align*}
+\paragraph{Termination}\hypertarget{termination}{}\label{termination}
+
+\begin{align*}
+  [ \
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-terminate} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads}{Multithreading}{is-thread-terminated} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-value} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-join} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-exterminate}
+  \ ]
+\end{align*}
+\paragraph{Scheduling}\hypertarget{scheduling}{}\label{scheduling}
+
+\begin{align*}
+  [ \
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads}{Multithreading}{update-thread-stepping} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads}{Multithreading}{update-thread-schedule} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads}{Multithreading}{current-thread-schedule} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads}{Multithreading}{is-thread-preemptible} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-preemptible} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads}{Multithreading}{thread-cooperative}
+  \ ]
+\end{align*}
+\subsubsection{Thread synchronisation}\hypertarget{thread-synchronisation}{}\label{thread-synchronisation}
+
+\paragraph{Syncs}\hypertarget{syncs}{}\label{syncs}
+
+\begin{align*}
+  [ \
+  \KEY{Datatype} \quad & \NAMEHYPER{../Computations/Threads}{Synchronising}{syncs} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads}{Synchronising}{sync-create} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads}{Synchronising}{sync-feature} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads}{Synchronising}{is-sync-feature}
+  \ ]
+\end{align*}
+\paragraph{Sync features}\hypertarget{sync-features}{}\label{sync-features}
+
+\begin{align*}
+  [ \
+  \KEY{Datatype} \quad & \NAMEHYPER{../Computations/Threads}{Synchronising}{sync-features} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads}{Synchronising}{sync-waiting-list} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads}{Synchronising}{sync-held} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads}{Synchronising}{sync-holder} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads}{Synchronising}{sync-count} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads}{Synchronising}{sync-feature-create}
+  \ ]
+\end{align*}
+\paragraph{Locks}\hypertarget{locks}{}\label{locks}
+
+\begin{align*}
+  [ \
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{is-exclusive-lock-holder}
+  \ ]
+\end{align*}
+\subparagraph{Spin locks}\hypertarget{spin-locks}{}\label{spin-locks}
+
+\begin{align*}
+  [ \
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{spin-lock-create} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{spin-lock-sync} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{spin-lock-release}
+  \ ]
+\end{align*}
+\subparagraph{Exclusive locks}\hypertarget{exclusive-locks}{}\label{exclusive-locks}
+
+\begin{align*}
+  [ \
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{exclusive-lock-create} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{exclusive-lock-sync} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{exclusive-lock-sync-else-wait} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{exclusive-lock-release}
+  \ ]
+\end{align*}
+\subparagraph{Reentrant locks}\hypertarget{reentrant-locks}{}\label{reentrant-locks}
+
+\begin{align*}
+  [ \
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{reentrant-lock-create} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{reentrant-lock-sync} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{reentrant-lock-sync-else-wait} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{reentrant-lock-release} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{reentrant-lock-exit}
+  \ ]
+\end{align*}
+\subparagraph{Semaphores}\hypertarget{semaphores}{}\label{semaphores}
+
+\begin{align*}
+  [ \
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{semaphore-create} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{semaphore-sync} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{semaphore-sync-else-wait} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{semaphore-release}
+  \ ]
+\end{align*}
+\subparagraph{Shared-exclusive locks}\hypertarget{shared-exclusive-locks}{}\label{shared-exclusive-locks}
+
+\begin{align*}
+  [ \
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{rw-lock-create} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{rw-lock-sync-exclusive} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{rw-lock-sync-shared} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{rw-lock-sync-exclusive-else-wait} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{rw-lock-sync-shared-else-wait} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{rw-lock-release-exclusive} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads/Synchronising}{Locks}{rw-lock-release-shared}
+  \ ]
+\end{align*}
+\paragraph{Notifications}\hypertarget{notifications}{}\label{notifications}
+
+\subparagraph{Barriers}\hypertarget{barriers}{}\label{barriers}
+
+\begin{align*}
+  [ \
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads/Synchronising}{Notifications}{barrier-create} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads/Synchronising}{Notifications}{barrier-sync} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads/Synchronising}{Notifications}{barrier-sync-else-wait}
+  \ ]
+\end{align*}
+\subparagraph{Conditions}\hypertarget{conditions}{}\label{conditions}
+
+\begin{align*}
+  [ \
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads/Synchronising}{Notifications}{condition-create} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads/Synchronising}{Notifications}{condition-wait} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads/Synchronising}{Notifications}{condition-wait-with-lock} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads/Synchronising}{Notifications}{condition-notify-all} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads/Synchronising}{Notifications}{condition-notify-first}
+  \ ]
+\end{align*}
+\subparagraph{Rendezvous}\hypertarget{rendezvous}{}\label{rendezvous}
+
+\begin{align*}
+  [ \
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads/Synchronising}{Notifications}{rendezvous-create} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads/Synchronising}{Notifications}{rendezvous-sync} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../Computations/Threads/Synchronising}{Notifications}{rendezvous-sync-else-wait}
+  \ ]
+\end{align*}
+% {% endraw %}
+
+

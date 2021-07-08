@@ -1,0 +1,65 @@
+% {% raw %}
+
+
+\begin{center}
+\rule{3in}{0.4pt}
+\end{center}
+
+\subsubsection{Records}\hypertarget{records}{}\label{records}
+
+\begin{align*}
+  [ \
+  \KEY{Datatype} \quad & \NAMEREF{records} \\
+  \KEY{Funcon} \quad & \NAMEREF{record} \\
+  \KEY{Funcon} \quad & \NAMEREF{record-map} \\
+  \KEY{Funcon} \quad & \NAMEREF{record-select}
+  \ ]
+\end{align*}
+\begin{align*}
+  \KEY{Meta-variables} \quad
+  & \VAR{T} <: \NAMEHYPER{../..}{Value-Types}{values}
+\end{align*}
+\begin{align*}
+  \KEY{Datatype} \quad 
+  \NAMEDECL{records}(
+                     \VAR{T} ) 
+  \ ::= \ & \NAMEDECL{record}(
+                               \_ : \NAMEHYPER{../.}{Maps}{maps}
+                                         (  \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}, 
+                                                \VAR{T} ))
+\end{align*}
+A value of type $\SHADE{\NAMEREF{records}
+           (  \VAR{T} )}$ contains a map from identifiers to values of
+  type $\SHADE{\VAR{T}}$.
+
+\begin{align*}
+  \KEY{Funcon} \quad
+  & \NAMEDECL{record-map}(
+                       \_ : \NAMEREF{records}
+                                 (  \VAR{T} )) 
+    :  \TO \NAMEHYPER{../.}{Maps}{maps}
+                     (  \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}, 
+                            \VAR{T} ) 
+\\
+  \KEY{Rule} \quad
+    & \NAMEREF{record-map}
+        (  \NAMEREF{record}
+                (  \VAR{M} : \NAMEHYPER{../.}{Maps}{maps}
+                                  (  \_, 
+                                         \_ ) ) ) \leadsto 
+        \VAR{M}
+\end{align*}
+\begin{align*}
+  \KEY{Funcon} \quad
+  & \NAMEDECL{record-select}(
+                       \VAR{R} : \NAMEREF{records}
+                                 (  \VAR{T} ), \VAR{I} : \NAMEHYPER{../../../Computations/Normal}{Binding}{identifiers}) 
+    :  \TO \VAR{T}\QUERY \\&\quad
+    \leadsto \NAMEHYPER{../.}{Maps}{map-lookup}
+               (  \NAMEREF{record-map}
+                       (  \VAR{R} ), 
+                      \VAR{I} )
+\end{align*}
+% {% endraw %}
+
+

@@ -1,0 +1,85 @@
+% {% raw %}
+
+
+
+    OUTLINE
+  \tableofcontents
+\begin{center}
+\rule{3in}{0.4pt}
+\end{center}
+
+\subsubsection{Interacting}\hypertarget{interacting}{}\label{interacting}
+
+\paragraph{Output}\hypertarget{output}{}\label{output}
+
+\begin{align*}
+  [ \
+  \KEY{Entity} \quad & \NAMEREF{standard-out} \\
+  \KEY{Funcon} \quad & \NAMEREF{print}
+  \ ]
+\end{align*}
+\begin{align*}
+  \KEY{Entity} \quad
+  & \_ \xrightarrow{\NAMEDECL{standard-out}!(\_ : \NAMEHYPER{../../../Values}{Value-Types}{values}\STAR)} \_
+\end{align*}
+This entity represents the sequence of values output by a particular
+  transition, where the empty sequence $\SHADE{(   \  )}$ represents the lack of output.
+  Composition of transitions concatenates their output sequences.
+
+\begin{align*}
+  \KEY{Funcon} \quad
+  & \NAMEDECL{print}(
+                       \_ : \NAMEHYPER{../../../Values}{Value-Types}{values}\STAR) 
+    :  \TO \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} 
+\end{align*}
+$\SHADE{\NAMEREF{print}
+           (  \VAR{X}\STAR )}$ evaluates the arguments $\SHADE{\VAR{X}\STAR}$ and emits the resulting sequence of
+  values on the standard-out channel. $\SHADE{\NAMEREF{print}
+           (   \  )}$ has no effect.
+
+\begin{align*}
+  \KEY{Rule} \quad
+    &  \NAMEREF{print}
+                    (  \VAR{V}\STAR : \NAMEHYPER{../../../Values}{Value-Types}{values}\STAR ) \xrightarrow{\NAMEREF{standard-out}!(  \VAR{V}\STAR )}_{} 
+        \NAMEHYPER{../../../Values/Primitive}{Null}{null-value}
+\end{align*}
+\paragraph{Input}\hypertarget{input}{}\label{input}
+
+\begin{align*}
+  [ \
+  \KEY{Entity} \quad & \NAMEREF{standard-in} \\
+  \KEY{Funcon} \quad & \NAMEREF{read}
+  \ ]
+\end{align*}
+\begin{align*}
+  \KEY{Entity} \quad
+  & \_ \xrightarrow{\NAMEDECL{standard-in}?(\_ : \NAMEHYPER{../../../Values}{Value-Types}{values}\STAR)} \_
+\end{align*}
+This entity represents the sequence of values input by a particular
+  transition, where the empty sequence $\SHADE{(   \  )}$ represents that no values are
+  input. The value $\SHADE{\NAMEHYPER{../../../Values/Primitive}{Null}{null-value}}$ represents the end of the input.
+
+Composition of transitions concatenates their input sequences, except that
+  when the first sequence ends with $\SHADE{\NAMEHYPER{../../../Values/Primitive}{Null}{null-value}}$, the second seqeunce has to be
+  just $\SHADE{\NAMEHYPER{../../../Values/Primitive}{Null}{null-value}}$.
+
+\begin{align*}
+  \KEY{Funcon} \quad
+  & \NAMEDECL{read} 
+    :  \TO \NAMEHYPER{../../../Values}{Value-Types}{values} 
+\end{align*}
+$\SHADE{\NAMEREF{read}}$ inputs a single value from the standard-in channel, and returns it.
+  If the end of the input has been reached, $\SHADE{\NAMEREF{read}}$ fails.
+
+\begin{align*}
+  \KEY{Rule} \quad
+    &  \NAMEREF{read} \xrightarrow{\NAMEREF{standard-in}?(  \VAR{V} : \mathop{\sim} \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} )}_{} 
+        \VAR{V}
+\\
+  \KEY{Rule} \quad
+    &  \NAMEREF{read} \xrightarrow{\NAMEREF{standard-in}?(  \NAMEHYPER{../../../Values/Primitive}{Null}{null-value} )}_{} 
+        \NAMEHYPER{../../Abnormal}{Failing}{fail}
+\end{align*}
+% {% endraw %}
+
+

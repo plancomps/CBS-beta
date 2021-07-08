@@ -1,0 +1,110 @@
+% {% raw %}
+
+
+\begin{center}
+\rule{3in}{0.4pt}
+\end{center}
+
+\subsubsection{Returning}\hypertarget{returning}{}\label{returning}
+
+\begin{align*}
+  [ \
+  \KEY{Datatype} \quad & \NAMEREF{returning} \\
+  \KEY{Funcon} \quad & \NAMEREF{returned} \\
+  \KEY{Funcon} \quad & \NAMEREF{finalise-returning} \\
+  \KEY{Funcon} \quad & \NAMEREF{return} \\
+  \KEY{Funcon} \quad & \NAMEREF{handle-return}
+  \ ]
+\end{align*}
+\begin{align*}
+  \KEY{Meta-variables} \quad
+  & \VAR{T} <: \NAMEHYPER{../../../Values}{Value-Types}{values}
+\end{align*}
+\begin{align*}
+  \KEY{Datatype} \quad 
+  \NAMEDECL{returning} 
+  \ ::= \ & \NAMEDECL{returned}(
+                               \_ : \NAMEHYPER{../../../Values}{Value-Types}{values})
+\end{align*}
+$\SHADE{\NAMEREF{returned}
+           (  \VAR{V}\QUERY )}$ is a reason for abrupt termination.
+
+\begin{align*}
+  \KEY{Funcon} \quad
+  & \NAMEDECL{finalise-returning}(
+                       \VAR{X} :  \TO \VAR{T}) 
+    :  \TO \VAR{T}  \mid \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} \\&\quad
+    \leadsto \NAMEHYPER{../.}{Abrupting}{finalise-abrupting}
+               (  \VAR{X} )
+\end{align*}
+$\SHADE{\NAMEREF{finalise-returning}
+           (  \VAR{X} )}$ handles abrupt termination of $\SHADE{\VAR{X}}$ due to
+  executing $\SHADE{\NAMEREF{return}
+           (  \VAR{V} )}$.
+
+\begin{align*}
+  \KEY{Funcon} \quad
+  & \NAMEDECL{return}(
+                       \VAR{V} : \VAR{T}) 
+    :  \TO \NAMEHYPER{../../../Values}{Value-Types}{empty-type} \\&\quad
+    \leadsto \NAMEHYPER{../.}{Abrupting}{abrupt}
+               (  \NAMEREF{returned}
+                       (  \VAR{V} ) )
+\end{align*}
+$\SHADE{\NAMEREF{return}
+           (  \VAR{V} )}$ abruptly terminates all enclosing computations until it is
+  handled, then giving $\SHADE{\VAR{V}}$. Note that $\SHADE{\VAR{V}}$ may be $\SHADE{\NAMEHYPER{../../../Values/Primitive}{Null}{null-value}}$.
+
+\begin{align*}
+  \KEY{Funcon} \quad
+  & \NAMEDECL{handle-return}(
+                       \_ :  \TO \VAR{T}) 
+    :  \TO \VAR{T} 
+\end{align*}
+$\SHADE{\NAMEREF{handle-return}
+           (  \VAR{X} )}$ first evaluates $\SHADE{\VAR{X}}$. If $\SHADE{\VAR{X}}$ either terminates abruptly for 
+  reason $\SHADE{\NAMEREF{returned}
+           (  \VAR{V} )}$, or terminates normally with value $\SHADE{\VAR{V}}$, it gives $\SHADE{\VAR{V}}$.
+
+\begin{align*}
+  \KEY{Rule} \quad
+    & \RULE{
+      &  \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(   \  )}_{} 
+          \VAR{X}'
+      }{
+      &  \NAMEREF{handle-return}
+                      (  \VAR{X} ) \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(   \  )}_{} 
+          \NAMEREF{handle-return}
+            (  \VAR{X}' )
+      }
+\\
+  \KEY{Rule} \quad
+    & \RULE{
+      &  \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  \NAMEREF{returned}
+                                                                                  (  \VAR{V} : \NAMEHYPER{../../../Values}{Value-Types}{values} ) )}_{} 
+          \VAR{X}'
+      }{
+      &  \NAMEREF{handle-return}
+                      (  \VAR{X} ) \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(   \  )}_{} 
+          \VAR{V}
+      }
+\\
+  \KEY{Rule} \quad
+    & \RULE{
+      &  \VAR{X} \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  \VAR{V}' : \mathop{\sim} \NAMEREF{returning} )}_{} 
+          \VAR{X}'
+      }{
+      &  \NAMEREF{handle-return}
+                      (  \VAR{X} ) \xrightarrow{\NAMEHYPER{../.}{Abrupting}{abrupted}(  \VAR{V}' )}_{} 
+          \NAMEREF{handle-return}
+            (  \VAR{X}' )
+      }
+\\
+  \KEY{Rule} \quad
+    & \NAMEREF{handle-return}
+        (  \VAR{V} : \VAR{T} ) \leadsto 
+        \VAR{V}
+\end{align*}
+% {% endraw %}
+
+

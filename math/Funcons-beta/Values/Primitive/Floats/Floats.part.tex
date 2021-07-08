@@ -1,0 +1,531 @@
+% {% raw %}
+
+
+
+    OUTLINE
+  \tableofcontents
+\begin{center}
+\rule{3in}{0.4pt}
+\end{center}
+
+\subsubsection{Floats}\hypertarget{floats}{}\label{floats}
+
+\begin{align*}
+  [ \
+  \KEY{Datatype} \quad & \NAMEREF{float-formats} \\
+  \KEY{Funcon} \quad & \NAMEREF{binary32} \\
+  \KEY{Funcon} \quad & \NAMEREF{binary64} \\
+  \KEY{Funcon} \quad & \NAMEREF{binary128} \\
+  \KEY{Funcon} \quad & \NAMEREF{decimal64} \\
+  \KEY{Funcon} \quad & \NAMEREF{decimal128} \\
+  \KEY{Type} \quad & \NAMEREF{floats} \\
+  \KEY{Funcon} \quad & \NAMEREF{float} \\
+  \KEY{Funcon} \quad & \NAMEREF{quiet-not-a-number} \\
+  \KEY{Alias} \quad & \NAMEREF{qNaN} \\
+  \KEY{Funcon} \quad & \NAMEREF{signaling-not-a-number} \\
+  \KEY{Alias} \quad & \NAMEREF{sNaN} \\
+  \KEY{Funcon} \quad & \NAMEREF{positive-infinity} \\
+  \KEY{Alias} \quad & \NAMEREF{pos-inf} \\
+  \KEY{Funcon} \quad & \NAMEREF{negative-infinity} \\
+  \KEY{Alias} \quad & \NAMEREF{neg-inf} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-convert} \\
+  \KEY{Funcon} \quad & \NAMEREF{decimal-float} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-equal} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-is-less} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-is-less-or-equal} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-is-greater} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-is-greater-or-equal} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-negate} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-absolute-value} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-add} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-subtract} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-multiply} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-multiply-add} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-divide} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-remainder} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-sqrt} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-integer-power} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-float-power} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-round-ties-to-even} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-round-ties-to-infinity} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-floor} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-ceiling} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-truncate} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-pi} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-e} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-log} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-log10} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-exp} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-sin} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-cos} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-tan} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-asin} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-acos} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-atan} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-sinh} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-cosh} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-tanh} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-asinh} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-acosh} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-atanh} \\
+  \KEY{Funcon} \quad & \NAMEREF{float-atan2}
+  \ ]
+\end{align*}
+Floating-point numbers according to the IEEE 754 Standard (2008).
+
+See:
+
+\begin{itemize}
+\item{} \href{http://doi.org/10.1109/IEEESTD.2008.4610935}{http://doi.org/10.1109/IEEESTD.2008.4610935}
+\item{} \href{https://en.wikipedia.org/wiki/IEEE_754}{https://en.wikipedia.org/wiki/IEEE\_754}
+\end{itemize}
+
+\begin{align*}
+  \KEY{Datatype} \quad 
+  \NAMEDECL{float-formats} 
+  \ ::= \ &
+  \NAMEDECL{binary32} \mid \NAMEDECL{binary64} \mid \NAMEDECL{binary128} \mid \NAMEDECL{decimal64} \mid \NAMEDECL{decimal128}
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Type} \quad 
+  & \NAMEDECL{floats}(
+                       \_ : \NAMEREF{float-formats})  
+\end{align*}
+Note that for distinct formats $\SHADE{\VAR{FF}\SUB{1}}$, $\SHADE{\VAR{FF}\SUB{2}}$, the types $\SHADE{\NAMEREF{floats}
+           (  \VAR{FF}\SUB{1} )}$ and
+  $\SHADE{\NAMEREF{floats}
+           (  \VAR{FF}\SUB{2} )}$ are not necessarily disjoint.
+
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float}(\\&\quad
+                       \VAR{FF} : \NAMEREF{float-formats}, \\&\quad
+                       \_ : \NAMEHYPER{../.}{Integers}{bounded-integers}
+                                 (  0, 
+                                        1 ), \_ : \NAMEHYPER{../.}{Integers}{natural-numbers}, \_ : \NAMEHYPER{../.}{Integers}{integers}) \\&\quad
+    :  \TO \NAMEREF{floats}
+                     (  \VAR{FF} ) 
+\end{align*}
+Each finite number is described by three integers: 
+  * s = a sign (zero or one), 
+  * c = a significand (or `coefficient'), 
+  * q = an exponent. 
+  The numerical value of a finite number is (-1)\^{}s * c * b\^{}q
+  where b is the base (2 or 10), also called radix.
+
+The possible finite values that can be represented in a format
+  are determined by the base b, the number of digits in the significand 
+  (precision p), and the exponent parameter emax:
+  * c must be an integer in the range zero through (b\^{}p)-1
+    (e.g., if b=10 and p=7 then c is 0 through 9999999);
+  * q must be an integer such that 1-emax \textless{}= q+p-1 \textless{}= emax
+    (e.g., if p=7 and emax=96 then q is -101 through 90).
+
+Note that $\SHADE{\NAMEREF{float}
+           (  \VAR{FF}, 
+                  \VAR{S}, 
+                  \VAR{C}, 
+                  \VAR{Q} )}$ is not a 1-1 operation.
+
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{quiet-not-a-number}(
+                       \VAR{FF} : \NAMEREF{float-formats}) 
+    : \NAMEREF{floats}
+        (  \VAR{FF} ) 
+\\
+  \KEY{Alias} \quad
+  & \NAMEDECL{qNaN} = \NAMEREF{quiet-not-a-number}
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{signaling-not-a-number}(
+                       \VAR{FF} : \NAMEREF{float-formats}) 
+    : \NAMEREF{floats}
+        (  \VAR{FF} ) 
+\\
+  \KEY{Alias} \quad
+  & \NAMEDECL{sNaN} = \NAMEREF{signaling-not-a-number}
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{positive-infinity}(
+                       \VAR{FF} : \NAMEREF{float-formats}) 
+    : \NAMEREF{floats}
+        (  \VAR{FF} ) 
+\\
+  \KEY{Alias} \quad
+  & \NAMEDECL{pos-inf} = \NAMEREF{positive-infinity}
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{negative-infinity}(
+                       \VAR{FF} : \NAMEREF{float-formats}) 
+    : \NAMEREF{floats}
+        (  \VAR{FF} ) 
+\\
+  \KEY{Alias} \quad
+  & \NAMEDECL{neg-inf} = \NAMEREF{negative-infinity}
+\end{align*}
+\paragraph{Conversions}\hypertarget{conversions}{}\label{conversions}
+
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-convert}(\\&\quad
+                       \VAR{FF}\SUB{1} : \NAMEREF{float-formats}, \\&\quad
+                       \VAR{FF}\SUB{2} : \NAMEREF{float-formats}, \VAR{F} : \NAMEREF{floats}
+                                 (  \VAR{FF}\SUB{1} )) \\&\quad
+    :  \TO \NAMEREF{floats}
+                     (  \VAR{FF}\SUB{2} ) 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{decimal-float}(\\&\quad
+                       \VAR{FF} : \NAMEREF{float-formats}, \\&\quad
+                       \_ : \NAMEHYPER{../../Composite}{Strings}{strings}, \_ : \NAMEHYPER{../../Composite}{Strings}{strings}, \_ : \NAMEHYPER{../../Composite}{Strings}{strings}) \\&\quad
+    :  \TO \NAMEREF{floats}
+                     (  \VAR{FF} ) 
+\end{align*}
+$\SHADE{\NAMEREF{decimal-float}
+           (  \VAR{F}, 
+                  \STRING{M}, 
+                  \STRING{N}, 
+                  \STRING{E} )}$ is an approximation in $\SHADE{\NAMEREF{floats}
+           (  \VAR{FF} )}$ to the
+  value of `M.N' times 10 to the power `E', where ``M.N'' is decimal notation
+  (optionally-signed) for a fixed-point number and ``E'' is decimal notation
+  (optionally signed) for an integer. When any argument string is invalid,
+  the result is $\SHADE{\NAMEREF{quiet-not-a-number}
+           (  \VAR{F} )}$.
+
+\paragraph{Comparison}\hypertarget{comparison}{}\label{comparison}
+
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-equal}(\\&\quad
+                       \VAR{FF} : \NAMEREF{float-formats}, \\&\quad
+                       \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} ), \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) \\&\quad
+    :  \TO \NAMEHYPER{../.}{Booleans}{booleans} 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-is-less}(\\&\quad
+                       \VAR{FF} : \NAMEREF{float-formats}, \\&\quad
+                       \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} ), \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) \\&\quad
+    :  \TO \NAMEHYPER{../.}{Booleans}{booleans} 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-is-less-or-equal}(\\&\quad
+                       \VAR{FF} : \NAMEREF{float-formats}, \\&\quad
+                       \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} ), \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) \\&\quad
+    :  \TO \NAMEHYPER{../.}{Booleans}{booleans} 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-is-greater}(\\&\quad
+                       \VAR{FF} : \NAMEREF{float-formats}, \\&\quad
+                       \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} ), \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) \\&\quad
+    :  \TO \NAMEHYPER{../.}{Booleans}{booleans} 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-is-greater-or-equal}(\\&\quad
+                       \VAR{FF} : \NAMEREF{float-formats}, \\&\quad
+                       \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} ), \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) \\&\quad
+    :  \TO \NAMEHYPER{../.}{Booleans}{booleans} 
+\end{align*}
+\paragraph{Arithmetic}\hypertarget{arithmetic}{}\label{arithmetic}
+
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-negate}(
+                       \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) 
+    :  \TO \NAMEREF{floats}
+                     (  \VAR{FF} ) 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-absolute-value}(
+                       \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) 
+    :  \TO \NAMEREF{floats}
+                     (  \VAR{FF} ) 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-add}(
+                       \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} ), \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) 
+    :  \TO \NAMEREF{floats}
+                     (  \VAR{FF} ) 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-subtract}(
+                       \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} ), \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) 
+    :  \TO \NAMEREF{floats}
+                     (  \VAR{FF} ) 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-multiply}(
+                       \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} ), \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) 
+    :  \TO \NAMEREF{floats}
+                     (  \VAR{FF} ) 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-multiply-add}(\\&\quad
+                       \VAR{FF} : \NAMEREF{float-formats}, \\&\quad
+                       \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} ), \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} ), \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) \\&\quad
+    :  \TO \NAMEREF{floats}
+                     (  \VAR{FF} ) 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-divide}(
+                       \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} ), \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) 
+    :  \TO \NAMEREF{floats}
+                     (  \VAR{FF} ) 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-remainder}(
+                       \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} ), \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) 
+    :  \TO \NAMEREF{floats}
+                     (  \VAR{FF} ) 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-sqrt}(
+                       \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) 
+    :  \TO \NAMEREF{floats}
+                     (  \VAR{FF} ) 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-integer-power}(
+                       \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} ), \_ : \NAMEHYPER{../.}{Integers}{integers}) 
+    :  \TO \NAMEREF{floats}
+                     (  \VAR{FF} ) 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-float-power}(
+                       \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} ), \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) 
+    :  \TO \NAMEREF{floats}
+                     (  \VAR{FF} ) 
+\end{align*}
+\paragraph{Rounding}\hypertarget{rounding}{}\label{rounding}
+
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-round-ties-to-even}(
+                       \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) 
+    :  \TO \NAMEHYPER{../.}{Integers}{integers} 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-round-ties-to-infinity}(
+                       \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) 
+    :  \TO \NAMEHYPER{../.}{Integers}{integers} 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-floor}(
+                       \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) 
+    :  \TO \NAMEHYPER{../.}{Integers}{integers} 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-ceiling}(
+                       \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) 
+    :  \TO \NAMEHYPER{../.}{Integers}{integers} 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-truncate}(
+                       \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) 
+    :  \TO \NAMEHYPER{../.}{Integers}{integers} 
+\end{align*}
+\paragraph{Miscellaneous}\hypertarget{miscellaneous}{}\label{miscellaneous}
+
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-pi}(
+                       \VAR{FF} : \NAMEREF{float-formats}) 
+    :  \TO \NAMEREF{floats}
+                     (  \VAR{FF} ) 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-e}(
+                       \VAR{FF} : \NAMEREF{float-formats}) 
+    :  \TO \NAMEREF{floats}
+                     (  \VAR{FF} ) 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-log}(
+                       \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) 
+    :  \TO \NAMEREF{floats}
+                     (  \VAR{FF} ) 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-log10}(
+                       \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) 
+    :  \TO \NAMEREF{floats}
+                     (  \VAR{FF} ) 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-exp}(
+                       \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) 
+    :  \TO \NAMEREF{floats}
+                     (  \VAR{FF} ) 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-sin}(
+                       \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) 
+    :  \TO \NAMEREF{floats}
+                     (  \VAR{FF} ) 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-cos}(
+                       \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) 
+    :  \TO \NAMEREF{floats}
+                     (  \VAR{FF} ) 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-tan}(
+                       \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) 
+    :  \TO \NAMEREF{floats}
+                     (  \VAR{FF} ) 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-asin}(
+                       \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) 
+    :  \TO \NAMEREF{floats}
+                     (  \VAR{FF} ) 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-acos}(
+                       \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) 
+    :  \TO \NAMEREF{floats}
+                     (  \VAR{FF} ) 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-atan}(
+                       \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) 
+    :  \TO \NAMEREF{floats}
+                     (  \VAR{FF} ) 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-sinh}(
+                       \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) 
+    :  \TO \NAMEREF{floats}
+                     (  \VAR{FF} ) 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-cosh}(
+                       \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) 
+    :  \TO \NAMEREF{floats}
+                     (  \VAR{FF} ) 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-tanh}(
+                       \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) 
+    :  \TO \NAMEREF{floats}
+                     (  \VAR{FF} ) 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-asinh}(
+                       \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) 
+    :  \TO \NAMEREF{floats}
+                     (  \VAR{FF} ) 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-acosh}(
+                       \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) 
+    :  \TO \NAMEREF{floats}
+                     (  \VAR{FF} ) 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-atanh}(
+                       \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) 
+    :  \TO \NAMEREF{floats}
+                     (  \VAR{FF} ) 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{float-atan2}(
+                       \VAR{FF} : \NAMEREF{float-formats}, \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} ), \_ : \NAMEREF{floats}
+                                 (  \VAR{FF} )) 
+    :  \TO \NAMEREF{floats}
+                     (  \VAR{FF} ) 
+\end{align*}
+% {% endraw %}
+
+

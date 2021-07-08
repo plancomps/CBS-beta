@@ -1,0 +1,801 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link rel="shortcut icon" href="/CBS-beta/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/CBS-beta/assets/css/just-the-docs-default.css">
+    <script type="text/javascript" src="/CBS-beta/assets/js/vendor/lunr.min.js"></script>
+  <script type="text/javascript" src="/CBS-beta/assets/js/just-the-docs.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Notation | CBS-beta</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="Notation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Beta-release of the CBS framework" />
+<meta property="og:description" content="Beta-release of the CBS framework" />
+<link rel="canonical" href="https://plancomps.github.io/CBS-beta/docs/Notation.html" />
+<meta property="og:url" content="https://plancomps.github.io/CBS-beta/docs/Notation.html" />
+<meta property="og:site_name" content="CBS-beta" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Notation" />
+<script type="application/ld+json">
+{"headline":"Notation","description":"Beta-release of the CBS framework","url":"https://plancomps.github.io/CBS-beta/docs/Notation.html","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<!-- https://www.primative.net/blog/how-to-get-rid-of-the-flash-of-unstyled-content/ -->
+<style>
+  .no-js {
+    visibility: visible;
+  }
+</style>
+<link rel="shortcut icon" type="image/x-icon"   href="/CBS-beta/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180"    href="/CBS-beta/assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/CBS-beta/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/CBS-beta/assets/icons/favicon-16x16.png">
+<link rel="mask-icon" href="/CBS-beta/assets/icons/safari-pinned-tab.svg">
+<link rel="manifest"  href="/CBS-beta/assets/icons/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+</head>
+<!-- https://www.primative.net/blog/how-to-get-rid-of-the-flash-of-unstyled-content/ -->
+<body style="visibility: hidden;" class="no-js">
+  <script>
+    document.querySelector('body').classList.remove('no-js');
+  </script>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="svg-link" viewBox="0 0 24 24">
+      <title>Link</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+      </svg>
+    </symbol>
+    <symbol id="svg-search" viewBox="0 0 24 24">
+      <title>Search</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+        <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+    </symbol>
+    <symbol id="svg-menu" viewBox="0 0 24 24">
+      <title>Menu</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+        <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </symbol>
+    <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+      <title>Expand</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </symbol>
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+      <title>Document</title>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+        <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+      </svg>
+    </symbol>
+  </svg>
+  <script type="text/javascript" src="/CBS-beta/assets/js/toggle_init.js"></script>
+  <div class="side-bar">
+    <div class="site-header">
+      <a href="https://plancomps.github.io/CBS-beta/" class="site-title lh-tight">
+  CBS-beta
+</a>
+      <a href="#" id="menu-button" class="site-button">
+        <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
+      </a>
+    </div>
+  <button id="theme-toggle" onclick="modeSwitcher()" 
+    type="button" name="button" class="btn theme-toggle" ></button>
+  <script>
+    function modeSwitcher() {
+      let currentMode = document.documentElement.getAttribute('data-theme');
+      if (currentMode === "dark") {
+        document.documentElement.setAttribute('data-theme', 'light');
+        window.localStorage.setItem('theme', 'light');
+        document.getElementById("theme-toggle").innerHTML = "&#x263d;";
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        window.localStorage.setItem('theme', 'dark');
+        document.getElementById("theme-toggle").innerHTML = "&#x263c;";
+      }
+    }
+  </script>
+    <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      <ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Browsing.html" class="nav-list-link">Browsing</a><ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/Funcons-beta/" class="nav-list-link">Funcons-beta</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/Funcons-beta/Funcons-Index/" class="nav-list-link">Funcons-Index</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="/CBS-beta/Languages-beta/" class="nav-list-link">Languages-beta</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/Unstable-Funcons-beta/" class="nav-list-link">Unstable-Funcons-beta</a></li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/Unstable-Languages-beta/" class="nav-list-link">Unstable-Languages-beta</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/Unstable-Languages-beta/LangDev-2019/" class="nav-list-link">LangDev-2019</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Sources.html" class="nav-list-link">Sources</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Plain.html" class="nav-list-link">Plain</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Pretty.html" class="nav-list-link">Pretty</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/PDF.html" class="nav-list-link">PDF</a></li>
+</ul>
+</li>
+<li class="nav-list-item active"><a href="/CBS-beta/docs/Notation.html" class="nav-list-link active">Notation</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Publications.html" class="nav-list-link">Publications</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Changes.html" class="nav-list-link">Changes</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Downloads.html" class="nav-list-link">Downloads</a></li>
+</ul>
+          <ul class="nav-list nav-category-list">
+            <li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><div class="nav-category">Plain</div><ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Funcons-beta/index.html" class="nav-list-link">Funcons-beta</a><ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Funcons-beta/Computations/index.html" class="nav-list-link">Computations</a><ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Funcons-beta/Computations/Normal/index.html" class="nav-list-link">Normal</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Computations/Normal/Flowing/index.html" class="nav-list-link">Flowing</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Computations/Normal/Giving/index.html" class="nav-list-link">Giving</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Computations/Normal/Binding/index.html" class="nav-list-link">Binding</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Computations/Normal/Generating/index.html" class="nav-list-link">Generating</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Computations/Normal/Storing/index.html" class="nav-list-link">Storing</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Computations/Normal/Linking/index.html" class="nav-list-link">Linking</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Computations/Normal/Interacting/index.html" class="nav-list-link">Interacting</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Funcons-beta/Computations/Abnormal/index.html" class="nav-list-link">Abnormal</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Computations/Abnormal/Abrupting/index.html" class="nav-list-link">Abrupting</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Computations/Abnormal/Failing/index.html" class="nav-list-link">Failing</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Computations/Abnormal/Throwing/index.html" class="nav-list-link">Throwing</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Computations/Abnormal/Returning/index.html" class="nav-list-link">Returning</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Computations/Abnormal/Breaking/index.html" class="nav-list-link">Breaking</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Computations/Abnormal/Continuing/index.html" class="nav-list-link">Continuing</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Computations/Abnormal/Controlling/index.html" class="nav-list-link">Controlling</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Computations/Computation-Types/index.html" class="nav-list-link">Computation-Types</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Entities/index.html" class="nav-list-link">Entities</a></li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Funcons-beta/Values/index.html" class="nav-list-link">Values</a><ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Funcons-beta/Values/Abstraction/index.html" class="nav-list-link">Abstraction</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Abstraction/Generic/index.html" class="nav-list-link">Generic</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Abstraction/Thunks/index.html" class="nav-list-link">Thunks</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Abstraction/Functions/index.html" class="nav-list-link">Functions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Abstraction/Patterns/index.html" class="nav-list-link">Patterns</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/index.html" class="nav-list-link">Composite</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/Sequences/index.html" class="nav-list-link">Sequences</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/Datatypes/index.html" class="nav-list-link">Datatypes</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/Tuples/index.html" class="nav-list-link">Tuples</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/Lists/index.html" class="nav-list-link">Lists</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/Strings/index.html" class="nav-list-link">Strings</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/Vectors/index.html" class="nav-list-link">Vectors</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/Trees/index.html" class="nav-list-link">Trees</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/References/index.html" class="nav-list-link">References</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/Records/index.html" class="nav-list-link">Records</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/Variants/index.html" class="nav-list-link">Variants</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/Classes/index.html" class="nav-list-link">Classes</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/Objects/index.html" class="nav-list-link">Objects</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/Bits/index.html" class="nav-list-link">Bits</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/Sets/index.html" class="nav-list-link">Sets</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/Maps/index.html" class="nav-list-link">Maps</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/Multisets/index.html" class="nav-list-link">Multisets</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Composite/Graphs/index.html" class="nav-list-link">Graphs</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Funcons-beta/Values/Primitive/index.html" class="nav-list-link">Primitive</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Primitive/Booleans/index.html" class="nav-list-link">Booleans</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Primitive/Integers/index.html" class="nav-list-link">Integers</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Primitive/Floats/index.html" class="nav-list-link">Floats</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Primitive/Characters/index.html" class="nav-list-link">Characters</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Primitive/Null/index.html" class="nav-list-link">Null</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Values/Value-Types/index.html" class="nav-list-link">Value-Types</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Funcons-beta/Funcons-Index/index.html" class="nav-list-link">Funcons-Index</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Languages-beta/index.html" class="nav-list-link">Languages-beta</a><ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Languages-beta/IMP/index.html" class="nav-list-link">IMP</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/IMP/IMP-cbs/IMP/IMP-Start/index.html" class="nav-list-link">IMP-Start</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/IMP/IMP-cbs/IMP/IMP-1/index.html" class="nav-list-link">IMP-1</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/IMP/IMP-cbs/IMP/IMP-2/index.html" class="nav-list-link">IMP-2</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/IMP/IMP-cbs/IMP/IMP-3/index.html" class="nav-list-link">IMP-3</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/IMP/IMP-cbs/IMP/IMP-4/index.html" class="nav-list-link">IMP-4</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/IMP/IMP-cbs/IMP/IMP-Disambiguation/index.html" class="nav-list-link">IMP-Disambiguation</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/IMP/IMP-cbs/IMP/IMP-Funcons-Index/index.html" class="nav-list-link">IMP-Funcons-Index</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Languages-beta/SIMPLE/index.html" class="nav-list-link">SIMPLE</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-Start/index.html" class="nav-list-link">SIMPLE-Start</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-1-Lexical/index.html" class="nav-list-link">SIMPLE-1-Lexical</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-2-Expressions/index.html" class="nav-list-link">SIMPLE-2-Expressions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-3-Statements/index.html" class="nav-list-link">SIMPLE-3-Statements</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-4-Declarations/index.html" class="nav-list-link">SIMPLE-4-Declarations</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-5-Programs/index.html" class="nav-list-link">SIMPLE-5-Programs</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-A-Disambiguation/index.html" class="nav-list-link">SIMPLE-A-Disambiguation</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-Funcons-Index/index.html" class="nav-list-link">SIMPLE-Funcons-Index</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Languages-beta/MiniJava/index.html" class="nav-list-link">MiniJava</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Start/index.html" class="nav-list-link">MiniJava-Start</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Dynamics/index.html" class="nav-list-link">MiniJava-Dynamics</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Funcons-Index/index.html" class="nav-list-link">MiniJava-Funcons-Index</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Syntax/index.html" class="nav-list-link">MiniJava-Syntax</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Languages-beta/SL/index.html" class="nav-list-link">SL</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/SL/SL-cbs/SL/SL-Start/index.html" class="nav-list-link">SL-Start</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/SL/SL-cbs/SL/SL-1-Lexemes/index.html" class="nav-list-link">SL-1-Lexemes</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/SL/SL-cbs/SL/SL-2-Expressions/index.html" class="nav-list-link">SL-2-Expressions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/SL/SL-cbs/SL/SL-3-Statements/index.html" class="nav-list-link">SL-3-Statements</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/SL/SL-cbs/SL/SL-4-Definitions/index.html" class="nav-list-link">SL-4-Definitions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/SL/SL-cbs/SL/SL-Disambiguation/index.html" class="nav-list-link">SL-Disambiguation</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/SL/SL-cbs/SL/SL-Funcons/index.html" class="nav-list-link">SL-Funcons</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/SL/SL-cbs/SL/SL-Funcons-Index/index.html" class="nav-list-link">SL-Funcons-Index</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Languages-beta/OCaml-Light/index.html" class="nav-list-link">OC-L</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-Start/index.html" class="nav-list-link">OC-L-Start</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-01-Lexical-Conventions/index.html" class="nav-list-link">OC-L-01-Lexical-Conventions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-02-Values/index.html" class="nav-list-link">OC-L-02-Values</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-03-Names/index.html" class="nav-list-link">OC-L-03-Names</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-04-Type-Expressions/index.html" class="nav-list-link">OC-L-04-Type-Expressions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-05-Constants/index.html" class="nav-list-link">OC-L-05-Constants</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-06-Patterns/index.html" class="nav-list-link">OC-L-06-Patterns</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-07-Expressions/index.html" class="nav-list-link">OC-L-07-Expressions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-08-Type-and-Exception-Definitions/index.html" class="nav-list-link">OC-L-08-Type-and-Exception-Definitions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-09-Classes/index.html" class="nav-list-link">OC-L-09-Classes</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-10-Module-Types/index.html" class="nav-list-link">OC-L-10-Module-Types</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-11-Module-Implementations/index.html" class="nav-list-link">OC-L-11-Module-Implementations</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-12-Core-Library/index.html" class="nav-list-link">OC-L-12-Core-Library</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-A-Disambiguation/index.html" class="nav-list-link">OC-L-A-Disambiguation</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-Funcons-Index/index.html" class="nav-list-link">OC-L-Funcons-Index</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Languages-beta/Reuse.html" class="nav-list-link">Funcon reuse</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Unstable-Funcons-beta/index.html" class="nav-list-link">Unstable-Funcons-beta</a><ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Unstable-Funcons-beta/Computations/index.html" class="nav-list-link">Computations</a><ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Unstable-Funcons-beta/Computations/Threads/index.html" class="nav-list-link">Threads</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Funcons-beta/Computations/Threads/Multithreading/index.html" class="nav-list-link">Multithreading</a></li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Unstable-Funcons-beta/Computations/Threads/Synchronising/index.html" class="nav-list-link">Synchronising</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Funcons-beta/Computations/Threads/Synchronising/Locks/index.html" class="nav-list-link">Locks</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Funcons-beta/Computations/Threads/Synchronising/Notifications/index.html" class="nav-list-link">Notifications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Unstable-Funcons-beta/Computations/Normal/index.html" class="nav-list-link">Normal</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Funcons-beta/Computations/Normal/Indexing/index.html" class="nav-list-link">Indexing</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Funcons-beta/Computations/Normal/Memos/index.html" class="nav-list-link">Memos</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Unstable-Funcons-beta/Computations/Abnormal/index.html" class="nav-list-link">Abnormal</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Funcons-beta/Computations/Abnormal/Postponing/index.html" class="nav-list-link">Postponing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Funcons-beta/Unstable-Funcons-Index/index.html" class="nav-list-link">Unstable-Funcons-Index</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Unstable-Languages-beta/index.html" class="nav-list-link">Unstable-Languages-beta</a><ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Unstable-Languages-beta/IMP-Plus-Plus/index.html" class="nav-list-link">IMPPP</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-Start/index.html" class="nav-list-link">IMPPP-Start</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-1/index.html" class="nav-list-link">IMPPP-1</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-2/index.html" class="nav-list-link">IMPPP-2</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-3/index.html" class="nav-list-link">IMPPP-3</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-4/index.html" class="nav-list-link">IMPPP-4</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-Disambiguation/index.html" class="nav-list-link">IMPPP-Disambiguation</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-Funcons-Index/index.html" class="nav-list-link">IMPPP-Funcons-Index</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-Unstable-Funcons-Index/index.html" class="nav-list-link">IMPPP-Unstable-Funcons-Index</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Unstable-Languages-beta/SIMPLE-Threads/index.html" class="nav-list-link">SIMPLE-THR</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-Start/index.html" class="nav-list-link">SIMPLE-THR-Start</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-1-Lexical/index.html" class="nav-list-link">SIMPLE-THR-1-Lexical</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-2-Expressions/index.html" class="nav-list-link">SIMPLE-THR-2-Expressions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-3-Statements/index.html" class="nav-list-link">SIMPLE-THR-3-Statements</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-4-Declarations/index.html" class="nav-list-link">SIMPLE-THR-4-Declarations</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-5-Programs/index.html" class="nav-list-link">SIMPLE-THR-5-Programs</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-A-Disambiguation/index.html" class="nav-list-link">SIMPLE-THR-A-Disambiguation</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-Funcons-Index/index.html" class="nav-list-link">SIMPLE-THR-Funcons-Index</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-Unstable-Funcons-Index/index.html" class="nav-list-link">SIMPLE-THR-Unstable-Funcons-Index</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/docs/Unstable-Languages-beta/LangDev-2019/index.html" class="nav-list-link">LD</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Start/index.html" class="nav-list-link">LD-Start</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Disambiguation/index.html" class="nav-list-link">LD-Disambiguation</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Funcons-Index/index.html" class="nav-list-link">LD-Funcons-Index</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Unstable-Funcons-Index/index.html" class="nav-list-link">LD-Unstable-Funcons-Index</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/docs/Unstable-Languages-beta/LangDev-2019/LD-demo.html" class="nav-list-link">LD-demo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+          </ul>
+          <ul class="nav-list nav-category-list">
+            <li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><div class="nav-category">Pretty</div><ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Funcons-beta/index.html" class="nav-list-link">Funcons-beta</a><ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Funcons-beta/Computations/index.html" class="nav-list-link">Computations</a><ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Funcons-beta/Computations/Normal/index.html" class="nav-list-link">Normal</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Computations/Normal/Flowing/index.html" class="nav-list-link">Flowing</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Computations/Normal/Giving/index.html" class="nav-list-link">Giving</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Computations/Normal/Binding/index.html" class="nav-list-link">Binding</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Computations/Normal/Generating/index.html" class="nav-list-link">Generating</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Computations/Normal/Storing/index.html" class="nav-list-link">Storing</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Computations/Normal/Linking/index.html" class="nav-list-link">Linking</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Computations/Normal/Interacting/index.html" class="nav-list-link">Interacting</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Funcons-beta/Computations/Abnormal/index.html" class="nav-list-link">Abnormal</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Computations/Abnormal/Abrupting/index.html" class="nav-list-link">Abrupting</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Computations/Abnormal/Failing/index.html" class="nav-list-link">Failing</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Computations/Abnormal/Throwing/index.html" class="nav-list-link">Throwing</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Computations/Abnormal/Returning/index.html" class="nav-list-link">Returning</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Computations/Abnormal/Breaking/index.html" class="nav-list-link">Breaking</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Computations/Abnormal/Continuing/index.html" class="nav-list-link">Continuing</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Computations/Abnormal/Controlling/index.html" class="nav-list-link">Controlling</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Computations/Computation-Types/index.html" class="nav-list-link">Computation-Types</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Funcons-beta/Values/index.html" class="nav-list-link">Values</a><ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Funcons-beta/Values/Abstraction/index.html" class="nav-list-link">Abstraction</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Abstraction/Generic/index.html" class="nav-list-link">Generic</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Abstraction/Thunks/index.html" class="nav-list-link">Thunks</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Abstraction/Functions/index.html" class="nav-list-link">Functions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Abstraction/Patterns/index.html" class="nav-list-link">Patterns</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Funcons-beta/Values/Composite/index.html" class="nav-list-link">Composite</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Composite/Sequences/index.html" class="nav-list-link">Sequences</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Composite/Datatypes/index.html" class="nav-list-link">Datatypes</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Composite/Tuples/index.html" class="nav-list-link">Tuples</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Composite/Lists/index.html" class="nav-list-link">Lists</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Composite/Strings/index.html" class="nav-list-link">Strings</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Composite/Vectors/index.html" class="nav-list-link">Vectors</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Composite/Trees/index.html" class="nav-list-link">Trees</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Composite/References/index.html" class="nav-list-link">References</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Composite/Records/index.html" class="nav-list-link">Records</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Composite/Variants/index.html" class="nav-list-link">Variants</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Composite/Classes/index.html" class="nav-list-link">Classes</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Composite/Objects/index.html" class="nav-list-link">Objects</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Composite/Bits/index.html" class="nav-list-link">Bits</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Composite/Sets/index.html" class="nav-list-link">Sets</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Composite/Maps/index.html" class="nav-list-link">Maps</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Composite/Multisets/index.html" class="nav-list-link">Multisets</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Composite/Graphs/index.html" class="nav-list-link">Graphs</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Funcons-beta/Values/Primitive/index.html" class="nav-list-link">Primitive</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Primitive/Booleans/index.html" class="nav-list-link">Booleans</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Primitive/Integers/index.html" class="nav-list-link">Integers</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Primitive/Floats/index.html" class="nav-list-link">Floats</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Primitive/Characters/index.html" class="nav-list-link">Characters</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Primitive/Null/index.html" class="nav-list-link">Null</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Values/Value-Types/index.html" class="nav-list-link">Value-Types</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Entities/index.html" class="nav-list-link">Entities</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Funcons-beta/Funcons-Index/index.html" class="nav-list-link">Funcons-Index</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Languages-beta/index.html" class="nav-list-link">Languages-beta</a><ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Languages-beta/IMP/index.html" class="nav-list-link">IMP</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/IMP/IMP-cbs/IMP/IMP-Start/index.html" class="nav-list-link">IMP-Start</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/IMP/IMP-cbs/IMP/IMP-1/index.html" class="nav-list-link">IMP-1</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/IMP/IMP-cbs/IMP/IMP-2/index.html" class="nav-list-link">IMP-2</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/IMP/IMP-cbs/IMP/IMP-3/index.html" class="nav-list-link">IMP-3</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/IMP/IMP-cbs/IMP/IMP-4/index.html" class="nav-list-link">IMP-4</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/IMP/IMP-cbs/IMP/IMP-Disambiguation/index.html" class="nav-list-link">IMP-Disambiguation</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/IMP/IMP-cbs/IMP/IMP-Funcons-Index/index.html" class="nav-list-link">IMP-Funcons-Index</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Languages-beta/SIMPLE/index.html" class="nav-list-link">SIMPLE</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-Start/index.html" class="nav-list-link">SIMPLE-Start</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-1-Lexical/index.html" class="nav-list-link">SIMPLE-1-Lexical</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-2-Expressions/index.html" class="nav-list-link">SIMPLE-2-Expressions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-3-Statements/index.html" class="nav-list-link">SIMPLE-3-Statements</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-4-Declarations/index.html" class="nav-list-link">SIMPLE-4-Declarations</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-5-Programs/index.html" class="nav-list-link">SIMPLE-5-Programs</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-A-Disambiguation/index.html" class="nav-list-link">SIMPLE-A-Disambiguation</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/SIMPLE/SIMPLE-cbs/SIMPLE/SIMPLE-Funcons-Index/index.html" class="nav-list-link">SIMPLE-Funcons-Index</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Languages-beta/MiniJava/index.html" class="nav-list-link">MiniJava</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Start/index.html" class="nav-list-link">MiniJava-Start</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Dynamics/index.html" class="nav-list-link">MiniJava-Dynamics</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Funcons-Index/index.html" class="nav-list-link">MiniJava-Funcons-Index</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/MiniJava/MiniJava-cbs/MiniJava/MiniJava-Syntax/index.html" class="nav-list-link">MiniJava-Syntax</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Languages-beta/SL/index.html" class="nav-list-link">SL</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/SL/SL-cbs/SL/SL-Start/index.html" class="nav-list-link">SL-Start</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/SL/SL-cbs/SL/SL-1-Lexemes/index.html" class="nav-list-link">SL-1-Lexemes</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/SL/SL-cbs/SL/SL-2-Expressions/index.html" class="nav-list-link">SL-2-Expressions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/SL/SL-cbs/SL/SL-3-Statements/index.html" class="nav-list-link">SL-3-Statements</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/SL/SL-cbs/SL/SL-4-Definitions/index.html" class="nav-list-link">SL-4-Definitions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/SL/SL-cbs/SL/SL-Disambiguation/index.html" class="nav-list-link">SL-Disambiguation</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/SL/SL-cbs/SL/SL-Funcons/index.html" class="nav-list-link">SL-Funcons</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/SL/SL-cbs/SL/SL-Funcons-Index/index.html" class="nav-list-link">SL-Funcons-Index</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Languages-beta/OCaml-Light/index.html" class="nav-list-link">OC-L</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-Start/index.html" class="nav-list-link">OC-L-Start</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-01-Lexical-Conventions/index.html" class="nav-list-link">OC-L-01-Lexical-Conventions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-02-Values/index.html" class="nav-list-link">OC-L-02-Values</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-03-Names/index.html" class="nav-list-link">OC-L-03-Names</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-04-Type-Expressions/index.html" class="nav-list-link">OC-L-04-Type-Expressions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-05-Constants/index.html" class="nav-list-link">OC-L-05-Constants</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-06-Patterns/index.html" class="nav-list-link">OC-L-06-Patterns</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-07-Expressions/index.html" class="nav-list-link">OC-L-07-Expressions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-08-Type-and-Exception-Definitions/index.html" class="nav-list-link">OC-L-08-Type-and-Exception-Definitions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-09-Classes/index.html" class="nav-list-link">OC-L-09-Classes</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-10-Module-Types/index.html" class="nav-list-link">OC-L-10-Module-Types</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-11-Module-Implementations/index.html" class="nav-list-link">OC-L-11-Module-Implementations</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-12-Core-Library/index.html" class="nav-list-link">OC-L-12-Core-Library</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-A-Disambiguation/index.html" class="nav-list-link">OC-L-A-Disambiguation</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/OCaml-Light/OC-L-cbs/OC-L/OC-L-Funcons-Index/index.html" class="nav-list-link">OC-L-Funcons-Index</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Languages-beta/Reuse.html" class="nav-list-link">Funcon reuse</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Unstable-Funcons-beta/index.html" class="nav-list-link">Unstable-Funcons-beta</a><ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Unstable-Funcons-beta/Computations/index.html" class="nav-list-link">Computations</a><ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Unstable-Funcons-beta/Computations/Threads/index.html" class="nav-list-link">Threads</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Funcons-beta/Computations/Threads/Multithreading/index.html" class="nav-list-link">Multithreading</a></li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Unstable-Funcons-beta/Computations/Threads/Synchronising/index.html" class="nav-list-link">Synchronising</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Funcons-beta/Computations/Threads/Synchronising/Locks/index.html" class="nav-list-link">Locks</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Funcons-beta/Computations/Threads/Synchronising/Notifications/index.html" class="nav-list-link">Notifications</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Unstable-Funcons-beta/Computations/Normal/index.html" class="nav-list-link">Normal</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Funcons-beta/Computations/Normal/Indexing/index.html" class="nav-list-link">Indexing</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Funcons-beta/Computations/Normal/Memos/index.html" class="nav-list-link">Memos</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Unstable-Funcons-beta/Computations/Abnormal/index.html" class="nav-list-link">Abnormal</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Funcons-beta/Computations/Abnormal/Postponing/index.html" class="nav-list-link">Postponing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Funcons-beta/Unstable-Funcons-Index/index.html" class="nav-list-link">Unstable-Funcons-Index</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Unstable-Languages-beta/index.html" class="nav-list-link">Unstable-Languages-beta</a><ul class="nav-list"><li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Unstable-Languages-beta/IMP-Plus-Plus/index.html" class="nav-list-link">IMPPP</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-Start/index.html" class="nav-list-link">IMPPP-Start</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-1/index.html" class="nav-list-link">IMPPP-1</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-2/index.html" class="nav-list-link">IMPPP-2</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-3/index.html" class="nav-list-link">IMPPP-3</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-4/index.html" class="nav-list-link">IMPPP-4</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-Disambiguation/index.html" class="nav-list-link">IMPPP-Disambiguation</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-Funcons-Index/index.html" class="nav-list-link">IMPPP-Funcons-Index</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/IMP-Plus-Plus/IMPPP-cbs/IMPPP/IMPPP-Unstable-Funcons-Index/index.html" class="nav-list-link">IMPPP-Unstable-Funcons-Index</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Unstable-Languages-beta/SIMPLE-Threads/index.html" class="nav-list-link">SIMPLE-THR</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-Start/index.html" class="nav-list-link">SIMPLE-THR-Start</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-1-Lexical/index.html" class="nav-list-link">SIMPLE-THR-1-Lexical</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-2-Expressions/index.html" class="nav-list-link">SIMPLE-THR-2-Expressions</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-3-Statements/index.html" class="nav-list-link">SIMPLE-THR-3-Statements</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-4-Declarations/index.html" class="nav-list-link">SIMPLE-THR-4-Declarations</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-5-Programs/index.html" class="nav-list-link">SIMPLE-THR-5-Programs</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-A-Disambiguation/index.html" class="nav-list-link">SIMPLE-THR-A-Disambiguation</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-Funcons-Index/index.html" class="nav-list-link">SIMPLE-THR-Funcons-Index</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/SIMPLE-Threads/SIMPLE-THR-cbs/SIMPLE-THR/SIMPLE-THR-Unstable-Funcons-Index/index.html" class="nav-list-link">SIMPLE-THR-Unstable-Funcons-Index</a></li>
+</ul>
+</li>
+<li class="nav-list-item"><a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a><a href="/CBS-beta/math/Unstable-Languages-beta/LangDev-2019/index.html" class="nav-list-link">LD</a><ul class="nav-list"><li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Start/index.html" class="nav-list-link">LD-Start</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Disambiguation/index.html" class="nav-list-link">LD-Disambiguation</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Funcons-Index/index.html" class="nav-list-link">LD-Funcons-Index</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/LangDev-2019/LD-cbs/LD/LD-Unstable-Funcons-Index/index.html" class="nav-list-link">LD-Unstable-Funcons-Index</a></li>
+<li class="nav-list-item"><a href="/CBS-beta/math/Unstable-Languages-beta/LangDev-2019/LD-demo.html" class="nav-list-link">LD-demo</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+          </ul>
+    </nav>
+    <footer class="site-footer">
+      This site uses <a href="https://github.com/pmarsceill/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    </footer>
+  </div>
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+        <div class="search">
+          <div class="search-input-wrap">
+            <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search CBS-beta" aria-label="Search CBS-beta" autocomplete="off">
+            <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+          </div>
+          <div id="search-results" class="search-results"></div>
+        </div>
+        <nav aria-label="Auxiliary" class="aux-nav">
+          <ul class="aux-nav-list">
+              <li class="aux-nav-list-item">
+                <a href="//github.com/plancomps/CBS-beta" class="site-button"
+                >
+                  CBS-beta on GitHub
+                </a>
+              </li>
+          </ul>
+        </nav>
+    </div>
+    <div id="main-content-wrap" class="main-content-wrap">
+<nav class="nav-rel">
+    <a href="/CBS-beta/docs/Browsing.html" class="nav-rel-link">&larr;</a>
+    <a href="/CBS-beta/docs/Publications.html" class="nav-rel-link">&rarr;</a>
+</nav>
+      <div id="main-content" class="main-content" role="main">
+          <h1 class="no_toc" id="cbs-beta-notation">
+          <a href="#cbs-beta-notation" class="anchor-heading" aria-labelledby="cbs-beta-notation"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> CBS-beta Notation
+      </h1>
+      <h2 class="no_toc text-delta" id="contents">
+          <a href="#contents" class="anchor-heading" aria-labelledby="contents"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Contents
+      </h2>
+<ul id="markdown-toc">
+  <li><a href="#languages" id="markdown-toc-languages">Languages</a>    <ul>
+      <li><a href="#syntax" id="markdown-toc-syntax">Syntax</a></li>
+      <li><a href="#semantics" id="markdown-toc-semantics">Semantics</a></li>
+    </ul>
+  </li>
+  <li><a href="#funcons" id="markdown-toc-funcons">Funcons</a>    <ul>
+      <li><a href="#type-definitions" id="markdown-toc-type-definitions">Type definitions</a></li>
+      <li><a href="#funcon-definitions" id="markdown-toc-funcon-definitions">Funcon definitions</a></li>
+      <li><a href="#entities" id="markdown-toc-entities">Entities</a></li>
+    </ul>
+  </li>
+</ul>
+      <h2 id="languages">
+          <a href="#languages" class="anchor-heading" aria-labelledby="languages"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Languages
+      </h2>
+<p><strong>See the <a href="Languages-beta/IMP/IMP-cbs/IMP/IMP-Start">CBS of IMP</a> for illustration of the following points.</strong></p>
+<ul>
+  <li>
+    <p>Each file of the definition of a language <code class="language-plaintext highlighter-rouge">L</code> starts with the line
+<em><code class="language-plaintext highlighter-rouge">Language "L"</code></em>. Splitting a language definition across multiple files
+(within the same project) does not affect its well-formedness.</p>
+  </li>
+  <li>
+    <p>Language definitions can be split into numbered sections. A section number is
+written <code class="language-plaintext highlighter-rouge">#n</code>, where <code class="language-plaintext highlighter-rouge">n</code> can be a series of numbers or (single) letters,
+separated by dots. Section numbers are hyperlinks in a table of contents,
+which is written <code class="language-plaintext highlighter-rouge">[...]</code>, and in multi-line comments <code class="language-plaintext highlighter-rouge">/*...*/</code>.</p>
+  </li>
+  <li>
+    <p>Multi-line comments are written <code class="language-plaintext highlighter-rouge">/*...*/</code>, and may include funcon terms
+(delimited by back-ticks <code class="language-plaintext highlighter-rouge">`</code>). End-of-line comments are written <code class="language-plaintext highlighter-rouge">//...</code>.</p>
+  </li>
+</ul>
+<blockquote>
+  <p><strong>Multi-line comments are displayed as running text in generated web pages,
+without the enclosing <code class="language-plaintext highlighter-rouge">/*...*/</code>.</strong></p>
+</blockquote>
+      <h3 id="syntax">
+          <a href="#syntax" class="anchor-heading" aria-labelledby="syntax"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Syntax
+      </h3>
+<p><em><code class="language-plaintext highlighter-rouge">Syntax</code></em> introduces one or more grammar productions for the
+abstract (context-free) syntax of the language, together with meta-variables
+ranging over the associated sorts of ASTs.</p>
+<ul>
+  <li>Nonterminals start with lowercase letters, and may include letters, digits,
+and dashes <code class="language-plaintext highlighter-rouge">-</code>.</li>
+  <li>The start symbol of the grammar is named <code class="language-plaintext highlighter-rouge">start</code>.</li>
+  <li>Meta-variables start with uppercase letters, e.g., <em><code class="language-plaintext highlighter-rouge">Pgm</code></em>.</li>
+  <li>The left and right sides of productions are separated by <code class="language-plaintext highlighter-rouge">::=</code>.</li>
+  <li>Terminal symbols are enclosed in single quotes <code class="language-plaintext highlighter-rouge">'...'</code>.</li>
+  <li>Alternatives are separated by <code class="language-plaintext highlighter-rouge">|</code>. All alternatives for the same
+nonterminal have to be specified together.</li>
+  <li>Regular expressions are written using postfix <code class="language-plaintext highlighter-rouge">?</code> for optional parts,
+<code class="language-plaintext highlighter-rouge">*</code> for iteration, <code class="language-plaintext highlighter-rouge">+</code> for non-empty iteration, and grouping parentheses
+<code class="language-plaintext highlighter-rouge">(...)</code>.</li>
+  <li>Layout (including comments) is implicitly allowed everywhere in <em><code class="language-plaintext highlighter-rouge">Syntax</code></em>,
+but it can be excluded between two symbols by inserting an underscore <code class="language-plaintext highlighter-rouge">_</code>,
+e.g., <a href="Languages-beta/IMP/IMP-cbs/IMP/IMP-1/#SyntaxName_num"><code class="language-plaintext highlighter-rouge">num ::= '-'?_decimal</code></a>.</li>
+</ul>
+<p><em><code class="language-plaintext highlighter-rouge">Lexis</code></em> introduces one or more grammar productions for the
+lexical (regular or context-free) syntax of the language, together with
+meta-variables ranging over the specified <em>strings</em> of characters.</p>
+<ul>
+  <li>The range of characters from <code class="language-plaintext highlighter-rouge">'c1'</code> to <code class="language-plaintext highlighter-rouge">'c2'</code> is specified by <code class="language-plaintext highlighter-rouge">'c1'-'c2'</code>.
+For example, <a href="Languages-beta/IMP/IMP-cbs/IMP/IMP-1/#SyntaxName_decimal"><code class="language-plaintext highlighter-rouge">decimal</code></a> is defined as <code class="language-plaintext highlighter-rouge">('0'-'9')+</code>.</li>
+  <li>Layout (including comments) is implicitly <em>excluded</em> everywhere in <em><code class="language-plaintext highlighter-rouge">Lexis</code></em>.</li>
+  <li><em><code class="language-plaintext highlighter-rouge">Lexis</code></em> productions are otherwise specified as for <em><code class="language-plaintext highlighter-rouge">Syntax</code></em>.</li>
+</ul>
+<p>Parsers generated from grammars for abstract syntax are usually ambiguous.
+Associativity, relative priority, and lexical disambiguation are currently
+specified separately, using notation from SDF, embedded in multi-line comments
+<code class="language-plaintext highlighter-rouge">/*...*/</code>.</p>
+      <h3 id="semantics">
+          <a href="#semantics" class="anchor-heading" aria-labelledby="semantics"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Semantics
+      </h3>
+<p><em><code class="language-plaintext highlighter-rouge">Semantics</code></em> introduces a declaration of a translation function
+  from ASTs (with strings as leaves) to funcon terms.</p>
+<ul>
+  <li>A translation function takes a single AST (or string) as argument,
+enclosed in double brackets <code class="language-plaintext highlighter-rouge">[[...]]</code>.</li>
+  <li>The sort of the argument is specified by <code class="language-plaintext highlighter-rouge">_:...</code>.</li>
+  <li>The type of the resulting funcon term is specified after <code class="language-plaintext highlighter-rouge">:</code>. It is usually
+a computation type <code class="language-plaintext highlighter-rouge">=&gt;t</code> for some value type <code class="language-plaintext highlighter-rouge">t</code>; it can also be a
+computation sequence type of the form <code class="language-plaintext highlighter-rouge">(=&gt;t)*</code>.</li>
+</ul>
+<p><em><code class="language-plaintext highlighter-rouge">Rule</code></em> introduces an equation defining the translation function
+  on trees matching a specified pattern.</p>
+<ul>
+  <li>The pattern in a rule usually corresponds to a single alternative of the
+argument sort.</li>
+  <li>Meta-variables of the same sort in a rule are distinguished by subscripted
+digits, optionally followed by primes.</li>
+  <li>The notation <code class="language-plaintext highlighter-rouge">\"...\"</code> produces a funcon string value from a lexical symbol
+<code class="language-plaintext highlighter-rouge">...</code>. (In contrast, <code class="language-plaintext highlighter-rouge">"..."</code> is always a literal string, not containing
+references to meta-variables.)</li>
+  <li>Desugaring rules for ASTs are written <code class="language-plaintext highlighter-rouge">[[...]] : s = [[...]]</code>, where
+the patterns on both sides match the nonterminal symbol <code class="language-plaintext highlighter-rouge">s</code>. Note
+that desugaring rules do <em>not</em> refer to particular translation functions.</li>
+</ul>
+<p>All funcons (etc.) defined in <a href="Funcons-beta">Funcons-beta</a> can be used in all language
+definitions. Funcons defined in a language definition file must have fresh
+names, and cannot be reused in other language definitions (except by
+copy-paste).</p><hr />
+      <h2 id="funcons">
+          <a href="#funcons" class="anchor-heading" aria-labelledby="funcons"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Funcons
+      </h2>
+<p><em>Funcon names</em> start with lowercase letters, and may include letters, digits,
+and dashes <code class="language-plaintext highlighter-rouge">-</code>.</p>
+<p><em>Variables</em> in funcon terms start with uppercase letters, and may be suffixed by
+digits and/or primes. Variables that stand for sequences of indefinite length
+are suffixed by <code class="language-plaintext highlighter-rouge">*</code>, <code class="language-plaintext highlighter-rouge">+</code>, or <code class="language-plaintext highlighter-rouge">?</code>. Variables whose values are not required may
+be replaced by underscores <code class="language-plaintext highlighter-rouge">_</code>.</p>
+<p>A funcon term formed from a funcon <code class="language-plaintext highlighter-rouge">f</code> and argument sequence <code class="language-plaintext highlighter-rouge">s</code> is written in
+prefix form: <code class="language-plaintext highlighter-rouge">f s</code>. When <code class="language-plaintext highlighter-rouge">f</code> has no arguments, it is written without
+parentheses: <code class="language-plaintext highlighter-rouge">f</code>; when it has 2 or more arguments <code class="language-plaintext highlighter-rouge">t1</code>, …, <code class="language-plaintext highlighter-rouge">tn</code>, they are
+written in ordinary parentheses: <code class="language-plaintext highlighter-rouge">f(t1,...,tn)</code>. Parentheses are optional when
+there is a single argument term, so both <code class="language-plaintext highlighter-rouge">f t</code> and <code class="language-plaintext highlighter-rouge">f(t)</code> are allowed.</p>
+<ul>
+  <li><strong>N.B. Parentheses are also optional around composite argument terms:
+<code class="language-plaintext highlighter-rouge">f g t</code> is <em>always</em> grouped as <code class="language-plaintext highlighter-rouge">f(g(t))</code>!</strong></li>
+</ul>
+<p>Funcons are <em>not</em> higher-order, so implicit grouping of <code class="language-plaintext highlighter-rouge">f g t</code> as <code class="language-plaintext highlighter-rouge">(f g)(t)</code>
+would here be <em>completely useless</em>, as it would <em>never</em> give a well-formed term.
+Grouping in funcon terms treats funcon names as prefix operations, such as the
+‘<code class="language-plaintext highlighter-rouge">-</code>’ in ‘<code class="language-plaintext highlighter-rouge">-sin(x)</code>’. (Readers accustomed to higher-order programming in Haskell
+may find it helpful to imagine <code class="language-plaintext highlighter-rouge">f g t</code> written as <code class="language-plaintext highlighter-rouge">f$g t</code>.)</p>
+<p>Some funcons can take argument sequences of varying lengths; funcons may also
+compute sequences of values. An example of a funcon that does both is
+<code class="language-plaintext highlighter-rouge">left-to-right</code>, which is used to ensure that arguments are evaluated in the
+specified order (the default is to allow interleaving). Composition with
+<code class="language-plaintext highlighter-rouge">left-to-right</code> provides sequential variants of all multi-argument funcons, e.g.:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">integer-add left-to-right(t1,t2)</code> (which abbreviates
+<code class="language-plaintext highlighter-rouge">integer-add(left-to-right(t1,t2))</code>)</li>
+</ul>
+<p>The following special forms of funcon terms are allowed:</p>
+<ul>
+  <li>Natural numbers in decimal notation</li>
+  <li>Characters <code class="language-plaintext highlighter-rouge">'c'</code> (with the usual <code class="language-plaintext highlighter-rouge">\</code>-escapes)</li>
+  <li>Strings <code class="language-plaintext highlighter-rouge">"c1...cn"</code> (with the usual <code class="language-plaintext highlighter-rouge">\</code>-escapes)</li>
+  <li>Lists <code class="language-plaintext highlighter-rouge">[t1,...,tn]</code>, empty list <code class="language-plaintext highlighter-rouge">[ ]</code></li>
+  <li>Sets <code class="language-plaintext highlighter-rouge">{t1,...,tn}</code>, empty set <code class="language-plaintext highlighter-rouge">{ }</code></li>
+  <li>Maps <code class="language-plaintext highlighter-rouge">{k1|-&gt;t1,...,kn|-&gt;tn}</code>, empty map <code class="language-plaintext highlighter-rouge">map( )</code></li>
+  <li>Type union <code class="language-plaintext highlighter-rouge">t1|...|tn</code></li>
+  <li>Type intersection <code class="language-plaintext highlighter-rouge">t1&amp;...&amp;tn</code></li>
+  <li>Type complement <code class="language-plaintext highlighter-rouge">~t</code></li>
+  <li>Sequence types <code class="language-plaintext highlighter-rouge">t*</code>, <code class="language-plaintext highlighter-rouge">t+</code>, <code class="language-plaintext highlighter-rouge">t?</code>, <code class="language-plaintext highlighter-rouge">t^n</code></li>
+</ul>
+<p>The funcon definitions in <a href="Funcons-beta">Funcons-beta</a> are language-independent.</p>
+<p>CBS specifications do not refer to the hierarchy of folders and files
+  used for <a href="Funcons-beta">Funcons-beta</a>.</p>
+<p>Files in <a href="Funcons-beta">Funcons-beta</a> are generally divided into <em>unnumbered</em> subsections.
+The number of <code class="language-plaintext highlighter-rouge">#</code> characters in a subsection heading indicates its level,
+with the top level sections <a href="Funcons-beta/Computations">Computations</a> and <a href="Funcons-beta/Values">Values</a> having a single <code class="language-plaintext highlighter-rouge">#</code>.</p>
+      <h3 id="type-definitions">
+          <a href="#type-definitions" class="anchor-heading" aria-labelledby="type-definitions"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Type definitions
+      </h3>
+<p>In CBS, types are values. They can be given as arguments to funcons, and
+computed by funcons.</p>
+<p><em><code class="language-plaintext highlighter-rouge">Type</code></em> introduces a declaration of a fresh funcon name for a type, and lists
+any arguments. The type of values it computes is <code class="language-plaintext highlighter-rouge">types</code>.</p>
+<ul>
+  <li>A type definition <code class="language-plaintext highlighter-rouge">Type t... ~&gt; t1</code> combines a type declaration with a
+rewrite of the type to <code class="language-plaintext highlighter-rouge">t1</code>.</li>
+  <li>A type definition <code class="language-plaintext highlighter-rouge">Type t... &lt;: t1</code> combines a type declaration with an
+assertion that <code class="language-plaintext highlighter-rouge">t...</code> is a subtype of <code class="language-plaintext highlighter-rouge">t1</code>.</li>
+</ul>
+<p><em><code class="language-plaintext highlighter-rouge">Datatype</code></em> introduces a definition of an <em>algebraic datatype</em>, written
+  <code class="language-plaintext highlighter-rouge">t ::= f1(...) | ... | fn(...)</code>, which also declares the constructor funcons
+  <code class="language-plaintext highlighter-rouge">fi(...):t</code> for its values.</p>
+<ul>
+  <li>A datatype definition <code class="language-plaintext highlighter-rouge">Datatype t(...)</code> written without constructors allows
+separate declaration of constructors with different instantiations of the
+parameterised type <code class="language-plaintext highlighter-rouge">t(...)</code>, corresponding to a GADT.</li>
+</ul>
+<p><em><code class="language-plaintext highlighter-rouge">Meta-variables</code></em> introduces type constraints on variables used in rules.
+  These constraints are usually of the form <code class="language-plaintext highlighter-rouge">v &lt;: t</code> where <code class="language-plaintext highlighter-rouge">v</code> is a variable,
+  requiring <code class="language-plaintext highlighter-rouge">v</code> to be a subtype of <code class="language-plaintext highlighter-rouge">t</code>.</p>
+      <h3 id="funcon-definitions">
+          <a href="#funcon-definitions" class="anchor-heading" aria-labelledby="funcon-definitions"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Funcon definitions
+      </h3>
+<p><em><code class="language-plaintext highlighter-rouge">Funcon</code></em> introduces a declaration of a fresh funcon name,  together with
+its signature.</p>
+<ul>
+  <li>Funcon names start with lowercase letters, and may include letters, digits,
+and dashes <code class="language-plaintext highlighter-rouge">-</code>.</li>
+  <li>The signature of a funcon taking no arguments and computing values of type
+<code class="language-plaintext highlighter-rouge">t</code> is written <code class="language-plaintext highlighter-rouge">:=&gt;t</code>. For example, the signature of <a href="Funcons-beta/Computations/Abnormal/Failing/#Name_fail"><code class="language-plaintext highlighter-rouge">fail</code></a> is written
+<code class="language-plaintext highlighter-rouge">:=&gt;empty-type</code>.</li>
+  <li>The signature of a funcon taking one or more arguments and computing values
+of type <code class="language-plaintext highlighter-rouge">t</code> is written <code class="language-plaintext highlighter-rouge">(v1:ct1,...,vn:ctn):=&gt;t</code>, where each <code class="language-plaintext highlighter-rouge">vi</code> is a
+variable, and each <code class="language-plaintext highlighter-rouge">cti</code> is either a type of values <code class="language-plaintext highlighter-rouge">ti</code> or a computation
+type <code class="language-plaintext highlighter-rouge">=&gt;ti</code>. (Computation types <code class="language-plaintext highlighter-rouge">=&gt;ti</code> resemble the types of call-by-name
+parameters in Scala.) For example, the signature of <a href="Funcons-beta/Computations/Normal/Flowing/#Name_if-true-else"><code class="language-plaintext highlighter-rouge">if-true-else</code></a> is
+<code class="language-plaintext highlighter-rouge">(_:booleans, _:=&gt;T, _:=&gt;T) : =&gt;T</code>, where <code class="language-plaintext highlighter-rouge">T</code> is a type variable.</li>
+  <li>Arguments specified by <code class="language-plaintext highlighter-rouge">vi:ti</code> are implicitly pre-evaluated (possibly
+interleaved) whereas evaluation of arguments specified by <code class="language-plaintext highlighter-rouge">vi:=&gt;ti</code> is
+determined by explicit rules.</li>
+  <li>One of the argument types in a signature may be an indefinite sequence
+type, formed using a suffixed <code class="language-plaintext highlighter-rouge">*</code>, <code class="language-plaintext highlighter-rouge">+</code>, or <code class="language-plaintext highlighter-rouge">?</code>, allowing use of the funcon
+with varying numbers of arguments. (A sequence argument is usually at the
+end, but could be anywhere, since the other arguments in an application
+determine where to match it.)</li>
+  <li>The lack of a defined result of a partial funcon is represented by the
+empty sequence <code class="language-plaintext highlighter-rouge">( )</code>. The result type in the signature of a partial funcon
+is of the form <code class="language-plaintext highlighter-rouge">t?</code> for some value type <code class="language-plaintext highlighter-rouge">t</code>.</li>
+  <li>The signature of a <em>value constructor</em> is written <code class="language-plaintext highlighter-rouge">(v1:ct1,...,vn:ctn):t</code>,
+using a value result type <code class="language-plaintext highlighter-rouge">t</code> instead of a computation result type <code class="language-plaintext highlighter-rouge">=&gt;t</code>.</li>
+</ul>
+<p><em><code class="language-plaintext highlighter-rouge">Alias</code></em> introduces an equation <code class="language-plaintext highlighter-rouge">n1 = n2</code> that declares a fresh name <code class="language-plaintext highlighter-rouge">n1</code>
+  and defines it to be equivalent to another name <code class="language-plaintext highlighter-rouge">n2</code>. <code class="language-plaintext highlighter-rouge">n1</code> is usually an
+  abbreviation for a longer <code class="language-plaintext highlighter-rouge">n2</code>; its declaration as an alias prevents it from
+  being defined elsewhere to have a different interpretation.</p>
+<p><em><code class="language-plaintext highlighter-rouge">Built-in</code></em> introduces a declaration of a fresh funcon name and its
+  signature, but does not provide a definition for it. Built-ins can be regarded
+  as parameters of a collection of funcon definitions. They are generally
+  reserved for types of values such as integers, sets, and maps, which are not
+  amenable to specification using operational rules.</p>
+<p><em><code class="language-plaintext highlighter-rouge">Auxiliary</code></em> introduces a name that is not intended for direct use in
+language definitions.</p>
+<p><em><code class="language-plaintext highlighter-rouge">Rule</code></em> introduces a formula or inference rule defining the
+operational behaviour of a funcon.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">t1 ~&gt; t2</code> is a <em>rewrite</em> from <code class="language-plaintext highlighter-rouge">t1</code> to <code class="language-plaintext highlighter-rouge">t2</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">t1 ---&gt; t2</code> is simple <em>transition</em> from <code class="language-plaintext highlighter-rouge">t1</code> to <code class="language-plaintext highlighter-rouge">t2</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">e(v) |- t1 ---&gt; t2</code> specifies dependence on a <em>contextual entity</em> named <code class="language-plaintext highlighter-rouge">e</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;t1,s(v1)&gt; ---&gt; &lt;t2,s(v2)&gt;</code> specifies inspection of a <em>mutable entity</em> named
+   <code class="language-plaintext highlighter-rouge">s</code> and its replacement of its value <code class="language-plaintext highlighter-rouge">v1</code> by <code class="language-plaintext highlighter-rouge">v2</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">t1 --i?(v*)-&gt; t2</code> specifies a sequence of values <code class="language-plaintext highlighter-rouge">v*</code> for an <em>input entity</em>
+named <code class="language-plaintext highlighter-rouge">i</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">t1 --o!(v*)-&gt; t2</code> specifies a sequence of values <code class="language-plaintext highlighter-rouge">v*</code> for an <em>output entity</em>
+named <code class="language-plaintext highlighter-rouge">o</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">t1 --c(v?)-&gt; t2</code> specifies an optional value<code class="language-plaintext highlighter-rouge">v?</code> for a <em>control entity</em>
+named <code class="language-plaintext highlighter-rouge">c</code>.</li>
+  <li>An annotated variable <code class="language-plaintext highlighter-rouge">v:t</code> is restricted to <em>value</em> terms; un-annotated
+variables range over <em>computation</em> terms (including value terms), except that
+type variables declared by <em><code class="language-plaintext highlighter-rouge">Meta-variables</code></em> are restricted to type terms.</li>
+  <li>A single defining rewrite rule for a funcon may be combined with its
+declaration.</li>
+  <li>Arguments of funcons in rules may be <em>patterns</em> formed from variables and
+<em>value constructors</em> (which are usually introduced by <em><code class="language-plaintext highlighter-rouge">Datatype</code></em>
+definitions).</li>
+</ul>
+<p><em><code class="language-plaintext highlighter-rouge">Assert</code></em> introduces a formula that expresses the intention
+  that it should hold (either as a consequence of specified definitions, or
+  as a requirement for built-ins).</p>
+      <h3 id="entities">
+          <a href="#entities" class="anchor-heading" aria-labelledby="entities"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Entities
+      </h3>
+<p><em><code class="language-plaintext highlighter-rouge">Entity</code></em> introduces a declaration of a fresh auxiliary entity name.</p>
+<ul>
+  <li>Entities are implicitly propagated in transition rules when not mentioned.</li>
+  <li>Rewrites are independent of entities.</li>
+  <li>The declaration of an entity specifies how the entity is written when used,
+which determines how it is propagated when omitted in transition formulae.</li>
+  <li><code class="language-plaintext highlighter-rouge">e(v:t) |- _ ---&gt; _</code> declares a <em>contextual entity</em> <code class="language-plaintext highlighter-rouge">e</code> of type <code class="language-plaintext highlighter-rouge">t</code>, e.g.,
+<code class="language-plaintext highlighter-rouge">environment(_:environments) |- _ ---&gt; _</code>. When a contextual entity is
+omitted in a rule, it is implicitly the same in the conclusion and any
+premises.</li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;_,s(v1:t)&gt; ---&gt; &lt;_,s(v2:t)&gt;</code> declares a <em>mutable entity</em> <code class="language-plaintext highlighter-rouge">s</code> of type <code class="language-plaintext highlighter-rouge">t</code>,
+e.g., <code class="language-plaintext highlighter-rouge">&lt; _ , store(_:stores) &gt; ---&gt; &lt; _ , store(_:stores) &gt;</code>. When a mutable
+entity is omitted in an <em>axiom</em>, it is implicitly propagated unchanged.
+When it is omitted in a rule with a single premise, its value before the
+transition in the premise is the same as before the transition in the
+conclusion, and similarly for its value after the transitions. Changes to
+mutable entities are threaded through sequences of transitions.</li>
+  <li><code class="language-plaintext highlighter-rouge">_ --i?(v*:t*)-&gt; _</code> declares an <em>input entity</em> <code class="language-plaintext highlighter-rouge">i</code> of type <code class="language-plaintext highlighter-rouge">t*</code>, e.g.,
+<code class="language-plaintext highlighter-rouge">_ -- standard-in?(_:values*) -&gt; _</code>. When an input entity is omitted in an
+<em>axiom</em>, it is implicitly required to be the empty sequence. When it is
+omitted in a rule with a single premise, the sequence of values in the
+conclusion is implicitly the same as in the premise. The value sequences
+of an input entity are concatenated in sequences of transitions.</li>
+  <li><code class="language-plaintext highlighter-rouge">_ --o?(v*:t*)-&gt; _</code> declares an <em>output entity</em> <code class="language-plaintext highlighter-rouge">o</code> of type <code class="language-plaintext highlighter-rouge">t*</code>, e.g.,
+<code class="language-plaintext highlighter-rouge">_ -- standard-out!(_:values*) -&gt; _</code>. When an output entity is omitted in
+a rule, the implicit requirements are analogous to those for input entities.</li>
+  <li><code class="language-plaintext highlighter-rouge">_ --c(v?:t?)-&gt; _</code> declares a <em>control entity</em> <code class="language-plaintext highlighter-rouge">c</code> of type <code class="language-plaintext highlighter-rouge">t?</code>, e.g.,
+<code class="language-plaintext highlighter-rouge">_ --abrupted(_:values?)-&gt; _</code>. When a control entity is omitted in a rule,
+the implicit requirements are analogous to those for input entities,
+except that a transition with a non-empty control entity value cannot be
+followed by a further transition (before being handled).</li>
+</ul>
+          <hr>
+  <p class="nav-rel">
+      <a href="/CBS-beta/docs/Browsing.html" class="nav-rel-link">&larr;</a>
+      <a href="/CBS-beta/docs/Publications.html" class="nav-rel-link">&rarr;</a>
+  </p>
+          <hr>
+          <footer>
+              <p><a href="#top" id="back-to-top">Back to top</a></p>
+            <p class="text-small text-grey-dk-100 mb-0"></p>
+          </footer>
+      </div>
+    </div>
+        <a href="#" id="search-button" class="search-button">
+          <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-search"></use></svg>
+        </a>
+      <div class="search-overlay"></div>
+  </div>
+  <script type="text/javascript" src="/CBS-beta/assets/js/toggle_mode.js"></script>
+  <!-- https://www.primative.net/blog/how-to-get-rid-of-the-flash-of-unstyled-content/ -->
+  <style>body { visibility: visible; }</style>
+</body>
+</html>

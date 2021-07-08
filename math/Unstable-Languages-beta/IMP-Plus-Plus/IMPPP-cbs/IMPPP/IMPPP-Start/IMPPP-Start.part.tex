@@ -1,0 +1,50 @@
+% {% raw %}
+
+
+\begin{center}
+\rule{3in}{0.4pt}
+\end{center}
+
+\begin{displaymath}
+\KEY{Language} \quad \STRING{IMPPP}
+\end{displaymath}
+
+\begin{align*}
+  [ \
+  \textsf{\SECTHYPER{../.}{IMPPP-1}{1}} \ & \textsf{Values} \\
+  \textsf{\SECTHYPER{../.}{IMPPP-2}{2}} \ & \textsf{Value expressions} \\
+  \textsf{\SECTHYPER{../.}{IMPPP-3}{3}} \ & \textsf{Boolean expressions} \\
+  \textsf{\SECTHYPER{../.}{IMPPP-4}{4}} \ & \textsf{Statements and blocks} \\
+  \textsf{\SECTHYPER{../.}{IMPPP-Disambiguation}{A}} \ & \textsf{Disambiguation}
+  \ ]
+\end{align*}
+See also \href{/CBS-beta/math/Unstable-Funcons-beta}{Unstable-Funcons-beta}
+
+\begin{align*}
+  \KEY{Syntax} \quad
+    \VARDECL{START} : \SYNDECL{start}
+      \ ::= \ & \
+      \SYNHYPER{../.}{IMPPP-4}{stmt}\STAR
+\end{align*}
+\begin{align*}
+  \KEY{Semantics} \quad
+  & \SEMDECL{start} \LEFTPHRASE \ \_ : \SYNREF{start} \ \RIGHTPHRASE  
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} 
+\\
+  \KEY{Rule} \quad
+    & \SEMREF{start} \LEFTPHRASE \
+                            \VARHYPER{../.}{IMPPP-4}{Stmt}\STAR \
+                          \RIGHTPHRASE  = \\&\quad
+      \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{initialise-binding} \\&\quad\quad 
+        \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{initialise-storing} \\&\quad\quad\quad 
+          \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{finalise-failing} \\&\quad\quad\quad\quad 
+            \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
+              ( \\&\quad\quad\quad\quad\quad \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Normal}{Indexing}{initialise-index}, \\&\quad\quad\quad\quad\quad
+                     \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads}{Multithreading}{multithread} \ 
+                      \SEMHYPER{../.}{IMPPP-4}{execute} \LEFTPHRASE \
+                                            \VAR{Stmt}\STAR \
+                                          \RIGHTPHRASE  )
+\end{align*}
+% {% endraw %}
+
+

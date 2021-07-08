@@ -1,0 +1,215 @@
+% {% raw %}
+
+
+\begin{center}
+\rule{3in}{0.4pt}
+\end{center}
+
+\begin{displaymath}
+\KEY{Language} \quad \STRING{MiniJava}
+\end{displaymath}
+
+{[}The MiniJava Reference Manual{]}: 
+    \href{http://www.cambridge.org/us/features/052182060X/mjreference/mjreference.html}{http://www.cambridge.org/us/features/052182060X/mjreference/mjreference.html}
+
+{[}Modern Compiler Implementation in Java: the MiniJava Project{]}:
+    \href{http://www.cambridge.org/us/features/052182060X/}{http://www.cambridge.org/us/features/052182060X/}
+
+The grammar used here is mostly a transliteration of the one provided at:
+  \href{http://www.cambridge.org/us/features/052182060X/grammar.html}{http://www.cambridge.org/us/features/052182060X/grammar.html}
+  (which differs in trivial ways from the one in the cited reference manual).
+
+The rest of this file gives an overview of the MiniJava syntax. It is mostly
+  in the form of a comment with embedded productions. The nonterminal symbols
+  are hyperlinks to their actual specifications; similarly, section numbers
+  (such as $\SECTHYPER{../.}{MiniJava-Dynamics}{1}$ below) link to the corresponding specification section.
+
+$\SECTHYPER{../.}{MiniJava-Dynamics}{1}$ Programs
+
+\begin{align*}
+  \KEY{Syntax} \quad
+    \VARDECL{START} : \SYNDECL{start}
+      \ ::= \ & \
+      \SYNREF{program}
+    \\
+    \VARDECL{P} : \SYNDECL{program}
+      \ ::= \ & \
+      \SYNREF{main-class} \ \SYNREF{class-declaration}\STAR
+    \\
+    \VARDECL{MC} : \SYNDECL{main-class}
+      \ ::= \ & \
+      \LEX{class} \ \SYNREF{identifier} \ \LEX{{\LEFTBRACE}} \\
+      & \ \LEX{public} \ \LEX{static} \ \LEX{void} \ \LEX{main} \ \LEX{{(}} \ \LEX{String} \ \LEX{{[}} \ \LEX{{]}} \ \SYNREF{identifier} \ \LEX{{)}} \ \LEX{{\LEFTBRACE}} \\
+      & \ \SYNREF{statement} \\
+      & \ \LEX{{\RIGHTBRACE}} \\
+      & \ \LEX{{\RIGHTBRACE}}
+\end{align*}
+$\SECTHYPER{../.}{MiniJava-Dynamics}{2}$ Declarations
+
+\begin{align*}
+  \KEY{Syntax} \quad
+    \VARDECL{CD} : \SYNDECL{class-declaration}
+      \ ::= \ & \
+      \LEX{class} \ \SYNREF{identifier} \ \LEFTGROUP \LEX{extends} \ \SYNREF{identifier} \RIGHTGROUP\QUERY \ \LEX{{\LEFTBRACE}} \\
+      & \ \SYNREF{var-declaration}\STAR \\
+      & \ \SYNREF{method-declaration}\STAR \\
+      & \ \LEX{{\RIGHTBRACE}}
+    \\
+    \VARDECL{VD} : \SYNDECL{var-declaration}
+      \ ::= \ & \
+      \SYNREF{type} \ \SYNREF{identifier} \ \LEX{{;}}
+    \\
+    \VARDECL{MD} : \SYNDECL{method-declaration}
+      \ ::= \ & \
+      \LEX{public} \ \SYNREF{type} \ \SYNREF{identifier} \ \LEX{{(}} \ \SYNREF{formal-list}\QUERY \ \LEX{{)}} \ \LEX{{\LEFTBRACE}} \\
+      & \ \SYNREF{var-declaration}\STAR \\
+      & \ \SYNREF{statement}\STAR \\
+      & \ \LEX{return} \ \SYNREF{expression} \ \LEX{{;}} \\
+      & \ \LEX{{\RIGHTBRACE}}
+    \\
+    \VARDECL{T} : \SYNDECL{type}
+      \ ::= \ & \
+      \LEX{int} \ \LEX{{[}} \ \LEX{{]}} \\
+      \ \mid \ & \ \LEX{boolean} \\
+      \ \mid \ & \ \LEX{int} \\
+      \ \mid \ & \ \SYNREF{identifier}
+    \\
+    \VARDECL{FL} : \SYNDECL{formal-list}
+      \ ::= \ & \
+      \SYNREF{type} \ \SYNREF{identifier} \ \LEFTGROUP \LEX{{,}} \ \SYNREF{formal-list} \RIGHTGROUP\QUERY
+\end{align*}
+$\SECTHYPER{../.}{MiniJava-Dynamics}{3}$ Statements
+
+\begin{align*}
+  \KEY{Syntax} \quad
+    \VARDECL{S} : \SYNDECL{statement}
+      \ ::= \ & \
+      \LEX{{\LEFTBRACE}} \ \SYNREF{statement}\STAR \ \LEX{{\RIGHTBRACE}} \\
+      \ \mid \ & \ \LEX{if} \ \LEX{{(}} \ \SYNREF{expression} \ \LEX{{)}} \ \SYNREF{statement} \ \LEX{else} \ \SYNREF{statement} \\
+      \ \mid \ & \ \LEX{while} \ \LEX{{(}} \ \SYNREF{expression} \ \LEX{{)}} \ \SYNREF{statement} \\
+      \ \mid \ & \ \LEX{System} \ \LEX{{.}} \ \LEX{out} \ \LEX{{.}} \ \LEX{println} \ \LEX{{(}} \ \SYNREF{expression} \ \LEX{{)}} \ \LEX{{;}} \\
+      \ \mid \ & \ \SYNREF{identifier} \ \LEX{{=}} \ \SYNREF{expression} \ \LEX{{;}} \\
+      \ \mid \ & \ \SYNREF{identifier} \ \LEX{{[}} \ \SYNREF{expression} \ \LEX{{]}} \ \LEX{{=}} \ \SYNREF{expression} \ \LEX{{;}}
+\end{align*}
+$\SECTHYPER{../.}{MiniJava-Dynamics}{4}$ Expressions
+
+\begin{align*}
+  \KEY{Syntax} \quad
+    \VARDECL{E} : \SYNDECL{expression}
+      \ ::= \ & \
+      \SYNREF{expression} \ \LEX{{\AMPERSAND}{\AMPERSAND}} \ \SYNREF{expression} \\
+      \ \mid \ & \ \SYNREF{expression} \ \LEX{{<}} \ \SYNREF{expression} \\
+      \ \mid \ & \ \SYNREF{expression} \ \LEX{{+}} \ \SYNREF{expression} \\
+      \ \mid \ & \ \SYNREF{expression} \ \LEX{{-}} \ \SYNREF{expression} \\
+      \ \mid \ & \ \SYNREF{expression} \ \LEX{{*}} \ \SYNREF{expression} \\
+      \ \mid \ & \ \SYNREF{expression} \ \LEX{{[}} \ \SYNREF{expression} \ \LEX{{]}} \\
+      \ \mid \ & \ \SYNREF{expression} \ \LEX{{.}} \ \LEX{length} \\
+      \ \mid \ & \ \SYNREF{expression} \ \LEX{{.}} \ \SYNREF{identifier} \ \LEX{{(}} \ \SYNREF{expression-list}\QUERY \ \LEX{{)}} \\
+      \ \mid \ & \ \SYNREF{integer-literal} \\
+      \ \mid \ & \ \LEX{true} \\
+      \ \mid \ & \ \LEX{false} \\
+      \ \mid \ & \ \SYNREF{identifier} \\
+      \ \mid \ & \ \LEX{this} \\
+      \ \mid \ & \ \LEX{new} \ \LEX{int} \ \LEX{{[}} \ \SYNREF{expression} \ \LEX{{]}} \\
+      \ \mid \ & \ \LEX{new} \ \SYNREF{identifier} \ \LEX{{(}} \ \LEX{{)}} \\
+      \ \mid \ & \ \LEX{{!}} \ \SYNREF{expression} \\
+      \ \mid \ & \ \LEX{{(}} \ \SYNREF{expression} \ \LEX{{)}}
+    \\
+    \VARDECL{EL} : \SYNDECL{expression-list}
+      \ ::= \ & \
+      \SYNREF{expression} \ \LEFTGROUP \LEX{{,}} \ \SYNREF{expression-list} \RIGHTGROUP\QUERY
+\end{align*}
+$\SECTHYPER{../.}{MiniJava-Dynamics}{5}$ Lexemes
+
+\begin{align*}
+  \KEY{Lexis} \quad
+    \VARDECL{ID} : \SYNDECL{identifier}
+      \ ::= \ & \
+      \SYNREF{letter} \ \LEFTGROUP \SYNREF{letter} \mid \SYNREF{digit} \mid \LEX{{\UNDERSCORE}} \RIGHTGROUP\STAR
+    \\
+    \VARDECL{IL} : \SYNDECL{integer-literal}
+      \ ::= \ & \
+      \SYNREF{digit}\PLUS
+    \\
+     \SYNDECL{letter}
+      \ ::= \ & \
+      \LEX{a} {-} \LEX{z} \mid \LEX{A} {-} \LEX{Z}
+    \\
+     \SYNDECL{digit}
+      \ ::= \ & \
+      \LEX{0} {-} \LEX{9}
+\end{align*}
+\section{$\SECT{6}$ Disambiguation}\hypertarget{SectionNumber:6}{}\label{SectionNumber:6}
+
+The mixture of CBS and SDF below specifies how MiniJava texts are to
+  be disambiguated by parsers generated from the above grammar.
+
+The specified rules are adequate to disambiguate all the example programs
+  provided at \href{https://www.cambridge.org/us/features/052182060X/#progs}{https://www.cambridge.org/us/features/052182060X/\#progs}.
+
+$\KEY{Syntax SDF}$
+
+\begin{quote}
+context-free syntax\newline
+   $\SHADE{\quad\SYNHYPER{../.}{MiniJava-Dynamics}{expression}  \ ::= \  \  \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \ \LEX{{*}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression}}$ \{left\}\newline
+   $\SHADE{\quad\SYNHYPER{../.}{MiniJava-Dynamics}{expression}  \ ::= \  \  \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \ \LEX{{+}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression}}$ \{left\}\newline
+   $\SHADE{\quad\SYNHYPER{../.}{MiniJava-Dynamics}{expression}  \ ::= \  \  \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \ \LEX{{-}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression}}$ \{left\}\newline
+   $\SHADE{\quad\SYNHYPER{../.}{MiniJava-Dynamics}{expression}  \ ::= \  \  \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \ \LEX{{<}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression}}$ \{non-assoc\}\newline
+   $\SHADE{\quad\SYNHYPER{../.}{MiniJava-Dynamics}{expression}  \ ::= \  \  \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \ \LEX{{\AMPERSAND}{\AMPERSAND}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression}}$ \{left\}\newline
+   \newline
+   context-free priorities\newline
+   \{\newline
+   $\SHADE{\quad\SYNHYPER{../.}{MiniJava-Dynamics}{expression}  \ ::= \  \  \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \ \LEX{{.}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{identifier} \ \LEX{{(}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression-list}\QUERY \ \LEX{{)}}}$\newline
+   $\SHADE{\quad\SYNHYPER{../.}{MiniJava-Dynamics}{expression}  \ ::= \  \  \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \ \LEX{{[}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \ \LEX{{]}}}$\newline
+   \} \textless{}0\textgreater{} \textgreater{}\newline
+   $\SHADE{\quad\SYNHYPER{../.}{MiniJava-Dynamics}{expression}  \ ::= \  \  \LEX{{!}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression}}$\newline
+   \textgreater{}\newline
+   $\SHADE{\quad\SYNHYPER{../.}{MiniJava-Dynamics}{expression}  \ ::= \  \  \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \ \LEX{{*}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression}}$\newline
+   \textgreater{} \{\newline
+   $\SHADE{\quad\SYNHYPER{../.}{MiniJava-Dynamics}{expression}  \ ::= \  \  \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \ \LEX{{+}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression}}$\newline
+   $\SHADE{\quad\SYNHYPER{../.}{MiniJava-Dynamics}{expression}  \ ::= \  \  \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \ \LEX{{-}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression}}$\newline
+   \} \textgreater{}\newline
+   $\SHADE{\quad\SYNHYPER{../.}{MiniJava-Dynamics}{expression}  \ ::= \  \  \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \ \LEX{{<}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression}}$\newline
+   \textgreater{}\newline
+   $\SHADE{\quad\SYNHYPER{../.}{MiniJava-Dynamics}{expression}  \ ::= \  \  \SYNHYPER{../.}{MiniJava-Dynamics}{expression} \ \LEX{{\AMPERSAND}{\AMPERSAND}} \ \SYNHYPER{../.}{MiniJava-Dynamics}{expression}}$
+\end{quote}
+
+$\KEY{Lexis SDF}$
+
+\begin{quote}
+lexical restrictions\newline
+   $\SHADE{\SYNHYPER{../.}{MiniJava-Dynamics}{identifier}}$      -/- {[}a-zA-Z0-9\_{]}\newline
+   $\SHADE{\SYNHYPER{../.}{MiniJava-Dynamics}{integer-literal}}$ -/- {[}0-9{]}\newline
+   \newline
+   lexical syntax\newline
+   $\SHADE{\SYNHYPER{../.}{MiniJava-Dynamics}{identifier}}$ = $\SHADE{\SYNREF{reserved-id}}$ \{reject\}
+\end{quote}
+
+\begin{align*}
+  \KEY{Lexis} \quad
+     \SYNDECL{reserved-id}
+      \ ::= \ & \
+      \LEX{String} \\
+      \ \mid \ & \ \LEX{System} \\
+      \ \mid \ & \ \LEX{boolean} \\
+      \ \mid \ & \ \LEX{class} \\
+      \ \mid \ & \ \LEX{else} \\
+      \ \mid \ & \ \LEX{extends} \\
+      \ \mid \ & \ \LEX{false} \\
+      \ \mid \ & \ \LEX{if} \\
+      \ \mid \ & \ \LEX{int} \\
+      \ \mid \ & \ \LEX{length} \\
+      \ \mid \ & \ \LEX{main} \\
+      \ \mid \ & \ \LEX{new} \\
+      \ \mid \ & \ \LEX{out} \\
+      \ \mid \ & \ \LEX{println} \\
+      \ \mid \ & \ \LEX{public} \\
+      \ \mid \ & \ \LEX{return} \\
+      \ \mid \ & \ \LEX{static} \\
+      \ \mid \ & \ \LEX{this} \\
+      \ \mid \ & \ \LEX{true} \\
+      \ \mid \ & \ \LEX{void}
+\end{align*}
+% {% endraw %}
+
+

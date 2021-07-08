@@ -1,0 +1,60 @@
+% {% raw %}
+
+
+\begin{center}
+\rule{3in}{0.4pt}
+\end{center}
+
+\subsubsection{Strings}\hypertarget{strings}{}\label{strings}
+
+\begin{align*}
+  [ \
+  \KEY{Type} \quad & \NAMEREF{strings} \\
+  \KEY{Funcon} \quad & \NAMEREF{string} \\
+  \KEY{Funcon} \quad & \NAMEREF{string-append} \\
+  \KEY{Funcon} \quad & \NAMEREF{to-string}
+  \ ]
+\end{align*}
+\begin{align*}
+  \KEY{Type} \quad 
+  & \NAMEDECL{strings}  
+    \leadsto \NAMEHYPER{../.}{Lists}{lists}
+               (  \NAMEHYPER{../../Primitive}{Characters}{characters} )
+\end{align*}
+\begin{align*}
+  \KEY{Funcon} \quad
+  & \NAMEDECL{string}(
+                       \VAR{C}\STAR : \NAMEHYPER{../../Primitive}{Characters}{characters}\STAR) 
+    :  \TO \NAMEREF{strings} \\&\quad
+    \leadsto [  \VAR{C}\STAR ]
+\end{align*}
+Literal strings are written $\SHADE{\STRING{C{\UNDERSCORE}1{.}{.}{.}C{\UNDERSCORE}n}}$.
+  A double-quote or backslash needs to be escaped: $\SHADE{\STRING{{.}{.}{.}{\BACKSLASH}{"}{.}{.}{.}}}$, $\SHADE{\STRING{{.}{.}{.}{\BACKSLASH}{\BACKSLASH}{.}{.}{.}}}$.
+
+\begin{align*}
+  \KEY{Funcon} \quad
+  & \NAMEDECL{string-append}(
+                       \VAR{S}\STAR : \NAMEREF{strings}\STAR) 
+    :  \TO \NAMEREF{strings} \\&\quad
+    \leadsto \NAMEHYPER{../.}{Lists}{list-append}
+               (  \VAR{S}\STAR )
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{to-string}(
+                       \_ : \NAMEHYPER{../..}{Value-Types}{ground-values}) 
+    :  \TO \NAMEREF{strings} 
+\end{align*}
+The strings returned by $\SHADE{\NAMEREF{to-string}
+           (  \VAR{GV} )}$ are unspecified, except that when
+  $\SHADE{\VAR{GV}}$ is already a string, it is returned unchanged.
+
+\begin{align*}
+  \KEY{Assert} \quad
+  & \NAMEREF{to-string}
+      (  \VAR{S} : \NAMEREF{strings} ) 
+    == \VAR{S}
+\end{align*}
+% {% endraw %}
+
+

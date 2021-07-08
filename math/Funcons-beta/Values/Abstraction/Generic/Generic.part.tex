@@ -1,0 +1,86 @@
+% {% raw %}
+
+
+\begin{center}
+\rule{3in}{0.4pt}
+\end{center}
+
+\subsubsection{Generic abstractions}\hypertarget{generic-abstractions}{}\label{generic-abstractions}
+
+\begin{align*}
+  [ \
+  \KEY{Type} \quad & \NAMEREF{abstractions} \\
+  \KEY{Funcon} \quad & \NAMEREF{abstraction} \\
+  \KEY{Funcon} \quad & \NAMEREF{closure} \\
+  \KEY{Funcon} \quad & \NAMEREF{enact}
+  \ ]
+\end{align*}
+\begin{align*}
+  \KEY{Meta-variables} \quad
+  & \VAR{T} <: \NAMEHYPER{../..}{Value-Types}{values} \qquad \\& \VAR{T}\QUERY <: \NAMEHYPER{../..}{Value-Types}{values}\QUERY
+\end{align*}
+\begin{align*}
+  \KEY{Type} \quad 
+  & \NAMEDECL{abstractions}(
+                       \_ : \NAMEHYPER{../../../Computations}{Computation-Types}{computation-types})  
+\end{align*}
+\begin{align*}
+  \KEY{Funcon} \quad
+  & \NAMEDECL{abstraction}(
+                       \_ : \VAR{T}\QUERY \TO \VAR{T}) 
+    : \NAMEREF{abstractions}
+        (  \VAR{T}\QUERY \TO \VAR{T} ) 
+\end{align*}
+The funcon $\SHADE{\NAMEREF{abstraction}
+           (  \VAR{X} )}$ forms abstraction values from computations.
+
+References to bindings of identifiers in $\SHADE{\VAR{X}}$ are dynamic.
+  The funcon $\SHADE{\NAMEREF{closure}
+           (  \VAR{X} )}$ forms abstractions with static bindings.
+
+\begin{align*}
+  \KEY{Funcon} \quad
+  & \NAMEDECL{closure}(
+                       \_ : \VAR{T}\QUERY \TO \VAR{T}) 
+    :  \TO \NAMEREF{abstractions}
+                     (  \VAR{T}\QUERY \TO \VAR{T} ) 
+\end{align*}
+$\SHADE{\NAMEREF{closure}
+           (  \VAR{X} )}$ computes a closed abstraction from the computation $\SHADE{\VAR{X}}$.
+  In contrast to $\SHADE{\NAMEREF{abstraction}
+           (  \VAR{X} )}$, references to bindings of identifiers
+  in $\SHADE{\VAR{X}}$ are static. Moreover, $\SHADE{\NAMEREF{closure}
+           (  \VAR{X} )}$ is not a value constructor,
+  so it cannot be used in pattern terms in rules.
+
+\begin{align*}
+  \KEY{Rule} \quad
+    & \NAMEHYPER{../../../Computations/Normal}{Binding}{environment} (  \VAR{$\rho$} ) \vdash \NAMEREF{closure}
+                    (  \VAR{X} ) \TRANS 
+        \NAMEREF{abstraction}
+          (  \NAMEHYPER{../../../Computations/Normal}{Binding}{closed}
+                  (  \NAMEHYPER{../../../Computations/Normal}{Binding}{scope}
+                          (  \VAR{$\rho$}, 
+                                 \VAR{X} ) ) )
+\end{align*}
+\begin{align*}
+  \KEY{Funcon} \quad
+  & \NAMEDECL{enact}(
+                       \_ : \NAMEREF{abstractions}
+                                 (  \VAR{T}\QUERY \TO \VAR{T} )) 
+    : \VAR{T}\QUERY \TO \VAR{T} 
+\end{align*}
+$\SHADE{\NAMEREF{enact}
+           (  \VAR{A} )}$ executes the computation of the abstraction $\SHADE{\VAR{A}}$,
+  with access to all the current entities.
+
+\begin{align*}
+  \KEY{Rule} \quad
+    & \NAMEREF{enact}
+        (  \NAMEREF{abstraction}
+                (  \VAR{X} ) ) \leadsto 
+        \VAR{X}
+\end{align*}
+% {% endraw %}
+
+

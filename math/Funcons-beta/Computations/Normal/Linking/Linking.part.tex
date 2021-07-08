@@ -1,0 +1,122 @@
+% {% raw %}
+
+
+\begin{center}
+\rule{3in}{0.4pt}
+\end{center}
+
+\subsubsection{Linking}\hypertarget{linking}{}\label{linking}
+
+\begin{align*}
+  [ \
+  \KEY{Datatype} \quad & \NAMEREF{links} \\
+  \KEY{Funcon} \quad & \NAMEREF{initialise-linking} \\
+  \KEY{Funcon} \quad & \NAMEREF{link} \\
+  \KEY{Funcon} \quad & \NAMEREF{fresh-link} \\
+  \KEY{Funcon} \quad & \NAMEREF{fresh-initialised-link} \\
+  \KEY{Alias} \quad & \NAMEREF{fresh-init-link} \\
+  \KEY{Funcon} \quad & \NAMEREF{set-link} \\
+  \KEY{Funcon} \quad & \NAMEREF{follow-if-link}
+  \ ]
+\end{align*}
+\begin{align*}
+  \KEY{Meta-variables} \quad
+  & \VAR{T} <: \NAMEHYPER{../../../Values}{Value-Types}{values}
+\end{align*}
+\begin{align*}
+  \KEY{Datatype} \quad 
+  \NAMEDECL{links} 
+  \ ::= \ & \NAMEDECL{link}(
+                               \_ : \NAMEHYPER{../.}{Storing}{variables})
+\end{align*}
+\begin{align*}
+  \KEY{Funcon} \quad
+  & \NAMEDECL{initialise-linking}(
+                       \VAR{X} :  \TO \VAR{T}) 
+    :  \TO \VAR{T} \\&\quad
+    \leadsto \NAMEHYPER{../.}{Storing}{initialise-storing}
+               (  \VAR{X} )
+\end{align*}
+$\SHADE{\NAMEREF{initialise-linking}
+           (  \VAR{X} )}$ ensures that the entities used by the funcons for
+  linking are properly initialised.
+
+\begin{align*}
+  \KEY{Funcon} \quad
+  & \NAMEDECL{fresh-link}(
+                       \VAR{T} ) 
+    :  \TO \NAMEREF{links} \\&\quad
+    \leadsto \NAMEREF{link}
+               (  \NAMEHYPER{../.}{Storing}{allocate-variable}
+                       (  \VAR{T} ) )
+\end{align*}
+\begin{align*}
+  \KEY{Funcon} \quad
+  & \NAMEDECL{fresh-initialised-link}(
+                       \VAR{T} , \VAR{V} : \VAR{T}) 
+    :  \TO \NAMEREF{links} \\&\quad
+    \leadsto \NAMEREF{link}
+               (  \NAMEHYPER{../.}{Storing}{allocate-initialised-variable}
+                       (  \VAR{T}, 
+                              \VAR{V} ) )
+\\
+  \KEY{Alias} \quad
+  & \NAMEDECL{fresh-init-link} = \NAMEREF{fresh-initialised-link}
+\end{align*}
+\begin{align*}
+  \KEY{Funcon} \quad
+  & \NAMEDECL{set-link}(
+                       \_ : \NAMEREF{links}, \_ : \VAR{T}) 
+    :  \TO \NAMEHYPER{../../../Values/Primitive}{Null}{null-type} 
+\end{align*}
+The value of a link can be set only once.
+
+\begin{align*}
+  \KEY{Rule} \quad
+    & \NAMEREF{set-link}
+        (  \NAMEREF{link}
+                (  \VAR{Var} : \NAMEHYPER{../.}{Storing}{variables} ), 
+               \VAR{V} : \VAR{T} ) \leadsto 
+        \NAMEHYPER{../.}{Storing}{initialise-variable}
+          (  \VAR{Var}, 
+                 \VAR{V} )
+\end{align*}
+\begin{align*}
+  \KEY{Funcon} \quad
+  & \NAMEDECL{follow-link}(
+                       \_ : \NAMEREF{links}) 
+    :  \TO \NAMEHYPER{../../../Values}{Value-Types}{values} 
+\\
+  \KEY{Rule} \quad
+    & \NAMEREF{follow-link}
+        (  \NAMEREF{link}
+                (  \VAR{Var} : \NAMEHYPER{../.}{Storing}{variables} ) ) \leadsto 
+        \NAMEHYPER{../.}{Storing}{assigned}
+          (  \VAR{Var} )
+\end{align*}
+\begin{align*}
+  \KEY{Funcon} \quad
+  & \NAMEDECL{follow-if-link}(
+                       \_ : \NAMEHYPER{../../../Values}{Value-Types}{values}) 
+    :  \TO \NAMEHYPER{../../../Values}{Value-Types}{values} 
+\end{align*}
+If $\SHADE{\VAR{V}}$ is a link, $\SHADE{\NAMEREF{follow-if-link}
+           (  \VAR{V} )}$ computes the set value, and
+  otherwise it evaluates to $\SHADE{\VAR{V}}$.
+
+\begin{align*}
+  \KEY{Rule} \quad
+    & \NAMEREF{follow-if-link}
+        (  \NAMEREF{link}
+                (  \VAR{Var} : \NAMEHYPER{../.}{Storing}{variables} ) ) \leadsto 
+        \NAMEHYPER{../.}{Storing}{assigned}
+          (  \VAR{Var} )
+\\
+  \KEY{Rule} \quad
+    & \NAMEREF{follow-if-link}
+        (  \VAR{V} : \mathop{\sim} \NAMEREF{links} ) \leadsto 
+        \VAR{V}
+\end{align*}
+% {% endraw %}
+
+

@@ -1,0 +1,42 @@
+% {% raw %}
+
+
+\begin{center}
+\rule{3in}{0.4pt}
+\end{center}
+
+\begin{displaymath}
+\KEY{Language} \quad \STRING{OCaml Light}
+\end{displaymath}
+
+\section{$\SECT{4}$ Type expressions}\hypertarget{SectionNumber:4}{}\label{SectionNumber:4}
+
+\begin{align*}
+  \KEY{Syntax} \quad
+    \VARDECL{T} : \SYNDECL{typexpr}
+      \ ::= \ & \
+      \LEX{{\APOSTROPHE}} \ \SYNHYPER{../.}{OC-L-01-Lexical-Conventions}{ident} \\
+      \ \mid \ & \ \LEX{{\UNDERSCORE}} \\
+      \ \mid \ & \ \LEX{{(}} \ \SYNREF{typexpr} \ \LEX{{)}} \\
+      \ \mid \ & \ \SYNREF{typexpr} \ \LEX{{-}{>}} \ \SYNREF{typexpr} \\
+      \ \mid \ & \ \SYNREF{typexpr} \ \SYNREF{star-typexpr}\PLUS \\
+      \ \mid \ & \ \SYNHYPER{../.}{OC-L-03-Names}{typeconstr} \\
+      \ \mid \ & \ \SYNREF{typexpr} \ \SYNHYPER{../.}{OC-L-03-Names}{typeconstr} \\
+      \ \mid \ & \ \LEX{{(}} \ \SYNREF{typexpr} \ \SYNREF{comma-typexpr}\PLUS \ \LEX{{)}} \ \SYNHYPER{../.}{OC-L-03-Names}{typeconstr}
+    \\
+    \VARDECL{ST} : \SYNDECL{star-typexpr}
+      \ ::= \ & \
+      \LEX{{*}} \ \SYNREF{typexpr}
+    \\
+    \VARDECL{CT} : \SYNDECL{comma-typexpr}
+      \ ::= \ & \
+      \LEX{{,}} \ \SYNREF{typexpr}
+    \\
+    \VARDECL{PT} : \SYNDECL{poly-typexpr}
+      \ ::= \ & \
+      \SYNREF{typexpr} \\
+      \ \mid \ & \ \LEFTGROUP \LEX{{\APOSTROPHE}} \ \SYNHYPER{../.}{OC-L-01-Lexical-Conventions}{ident} \RIGHTGROUP\PLUS \ \LEX{{.}} \ \SYNREF{typexpr}
+\end{align*}
+% {% endraw %}
+
+

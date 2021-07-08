@@ -1,0 +1,96 @@
+% {% raw %}
+
+
+\begin{center}
+\rule{3in}{0.4pt}
+\end{center}
+
+\begin{displaymath}
+\KEY{Language} \quad \STRING{SIMPLE}
+\end{displaymath}
+
+\section{$\SECT{5}$ Programs}\hypertarget{SectionNumber:5}{}\label{SectionNumber:5}
+
+\begin{align*}
+  \KEY{Syntax} \quad
+    \VARDECL{Pgm} : \SYNDECL{pgm}
+      \ ::= \ & \
+      \SYNREF{decls}
+\end{align*}
+\begin{align*}
+  \KEY{Semantics} \quad
+  & \SEMDECL{run} \LEFTPHRASE \ \VARREF{Decls} : \SYNREF{pgm} \ \RIGHTPHRASE  
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} \\&\quad
+    =  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{scope}
+         ( \\&\quad\quad\quad\quad \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{collateral}
+                 (  \SEMREF{declarations} \LEFTPHRASE \
+                                             \VAR{Decls} \
+                                           \RIGHTPHRASE  ), \\&\quad\quad\quad\quad
+                \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Flowing}{sequential}
+                 ( \\&\quad\quad\quad\quad\quad \SEMREF{initialisations} \LEFTPHRASE \
+                                             \VAR{Decls} \
+                                           \RIGHTPHRASE , \\&\quad\quad\quad\quad\quad
+                        \NAMEHYPER{../../../../../Funcons-beta/Values/Abstraction}{Functions}{apply}
+                         (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{assigned}
+                                 (  \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{bound}
+                                         (  \STRING{main} ) ), 
+                                \NAMEHYPER{../../../../../Funcons-beta/Values/Composite}{Tuples}{tuple}
+                                 (   \  ) ) ) )
+\end{align*}
+\begin{align*}
+  \KEY{Syntax} \quad
+    \VARDECL{Decls} : \SYNDECL{decls}
+      \ ::= \ & \
+      \SYNHYPER{../.}{SIMPLE-4-Declarations}{decl} \ \SYNREF{decls}\QUERY
+\end{align*}
+\begin{align*}
+  \KEY{Semantics} \quad
+  & \SEMDECL{declarations} \LEFTPHRASE \ \_ : \SYNREF{decls} \ \RIGHTPHRASE  
+    : (   \TO \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{environments} )\PLUS 
+\\
+  \KEY{Rule} \quad
+    & \SEMREF{declarations} \LEFTPHRASE \
+                            \VARHYPER{../.}{SIMPLE-4-Declarations}{Decl} \
+                          \RIGHTPHRASE  = 
+      \SEMHYPER{../.}{SIMPLE-4-Declarations}{declare} \LEFTPHRASE \
+                            \VAR{Decl} \
+                          \RIGHTPHRASE 
+\\
+  \KEY{Rule} \quad
+    & \SEMREF{declarations} \LEFTPHRASE \
+                            \VARHYPER{../.}{SIMPLE-4-Declarations}{Decl} \ \VARREF{Decls} \
+                          \RIGHTPHRASE  = 
+      \SEMHYPER{../.}{SIMPLE-4-Declarations}{declare} \LEFTPHRASE \
+                            \VAR{Decl} \
+                          \RIGHTPHRASE , 
+       \SEMREF{declarations} \LEFTPHRASE \
+                            \VAR{Decls} \
+                          \RIGHTPHRASE 
+\end{align*}
+\begin{align*}
+  \KEY{Semantics} \quad
+  & \SEMDECL{initialisations} \LEFTPHRASE \ \_ : \SYNREF{decls} \ \RIGHTPHRASE  
+    : (   \TO \NAMEHYPER{../../../../../Funcons-beta/Values/Primitive}{Null}{null-type} )\PLUS 
+\\
+  \KEY{Rule} \quad
+    & \SEMREF{initialisations} \LEFTPHRASE \
+                            \VARHYPER{../.}{SIMPLE-4-Declarations}{Decl} \
+                          \RIGHTPHRASE  = 
+      \SEMHYPER{../.}{SIMPLE-4-Declarations}{initialise} \LEFTPHRASE \
+                            \VAR{Decl} \
+                          \RIGHTPHRASE 
+\\
+  \KEY{Rule} \quad
+    & \SEMREF{initialisations} \LEFTPHRASE \
+                            \VARHYPER{../.}{SIMPLE-4-Declarations}{Decl} \ \VARREF{Decls} \
+                          \RIGHTPHRASE  = \\&\quad
+      \SEMHYPER{../.}{SIMPLE-4-Declarations}{initialise} \LEFTPHRASE \
+                            \VAR{Decl} \
+                          \RIGHTPHRASE , 
+       \SEMREF{initialisations} \LEFTPHRASE \
+                            \VAR{Decls} \
+                          \RIGHTPHRASE 
+\end{align*}
+% {% endraw %}
+
+

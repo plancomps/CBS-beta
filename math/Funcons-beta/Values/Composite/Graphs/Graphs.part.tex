@@ -1,0 +1,64 @@
+% {% raw %}
+
+
+\begin{center}
+\rule{3in}{0.4pt}
+\end{center}
+
+\subsubsection{Graphs}\hypertarget{graphs}{}\label{graphs}
+
+\begin{align*}
+  [ \
+  \KEY{Type} \quad & \NAMEREF{directed-graphs} \\
+  \KEY{Funcon} \quad & \NAMEREF{is-cyclic} \\
+  \KEY{Funcon} \quad & \NAMEREF{topological-sort}
+  \ ]
+\end{align*}
+\begin{align*}
+  \KEY{Meta-variables} \quad
+  & \VAR{GT} <: \NAMEHYPER{../..}{Value-Types}{ground-values}
+\end{align*}
+\begin{align*}
+  \KEY{Type} \quad 
+  & \NAMEDECL{directed-graphs}(
+                       \VAR{GT} )  
+    \leadsto \NAMEHYPER{../.}{Maps}{maps}
+               (  \VAR{GT}, 
+                      \NAMEHYPER{../.}{Sets}{sets}
+                       (  \VAR{GT} ) )
+\end{align*}
+$\SHADE{\NAMEREF{directed-graphs}
+           (  \VAR{GT} )}$ models directed graphs with vertices of type $\SHADE{\VAR{GT}}$,
+  represented as maps from vertices to the set of vertices to which the
+  vertex has an edge.  E.g., the graph
+
+\begin{verbatim}(1)--->(2)
+\end{verbatim}
+
+would be represented as $\SHADE{\{ 1 \mapsto 
+              \{  2 \}, 
+            2 \mapsto 
+              \{   \  \} \}}$
+
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{is-cyclic}(
+                       \_ : \NAMEREF{directed-graphs}
+                                 (  \VAR{GT} )) 
+    :  \TO \NAMEHYPER{../../Primitive}{Booleans}{booleans} 
+\end{align*}
+\begin{align*}
+  \KEY{Built-in Funcon} \quad
+  & \NAMEDECL{topological-sort}(
+                       \_ : \NAMEREF{directed-graphs}
+                                 (  \VAR{GT} )) 
+    :  \TO (  \VAR{GT} )\STAR 
+\end{align*}
+$\SHADE{\NAMEREF{topological-sort}
+           (  \VAR{DG} )}$ returns a topological ordering of the vertices
+  of the graph $\SHADE{\VAR{DG}}$, as a sequence of vertices, provided that $\SHADE{\VAR{DG}}$ is not
+  cyclic.
+
+% {% endraw %}
+
+

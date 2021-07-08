@@ -1,0 +1,60 @@
+% {% raw %}
+
+
+\begin{center}
+\rule{3in}{0.4pt}
+\end{center}
+
+\subsubsection{Thunks}\hypertarget{thunks}{}\label{thunks}
+
+\begin{align*}
+  [ \
+  \KEY{Datatype} \quad & \NAMEREF{thunks} \\
+  \KEY{Funcon} \quad & \NAMEREF{thunk} \\
+  \KEY{Funcon} \quad & \NAMEREF{force}
+  \ ]
+\end{align*}
+\begin{align*}
+  \KEY{Meta-variables} \quad
+  & \VAR{T} <: \NAMEHYPER{../..}{Value-Types}{values}
+\end{align*}
+\begin{align*}
+  \KEY{Datatype} \quad 
+  \NAMEDECL{thunks}(
+                     \VAR{T} ) 
+  \ ::= \ & \NAMEDECL{thunk}(
+                               \_ : \NAMEHYPER{../.}{Generic}{abstractions}
+                                         (  (   \  ) \TO \VAR{T} ))
+\end{align*}
+$\SHADE{\NAMEREF{thunks}
+           (  \VAR{T} )}$ consists of abstractions whose bodies do not depend on
+  a given value, and whose executions normally compute values of type $\SHADE{\VAR{T}}$.
+  $\SHADE{\NAMEREF{thunk}
+           (  \NAMEHYPER{../.}{Generic}{abstraction}
+                   (  \VAR{X} ) )}$ evaluates to a thunk with dynamic bindings,
+  $\SHADE{\NAMEREF{thunk}
+           (  \NAMEHYPER{../.}{Generic}{closure}
+                   (  \VAR{X} ) )}$ computes a thunk with static bindings.
+
+\begin{align*}
+  \KEY{Funcon} \quad
+  & \NAMEDECL{force}(
+                       \_ : \NAMEREF{thunks}
+                                 (  \VAR{T} )) 
+    :  \TO \VAR{T} 
+\end{align*}
+$\SHADE{\NAMEREF{force}
+           (  \VAR{H} )}$ enacts the abstraction of the thunk $\SHADE{\VAR{H}}$.
+
+\begin{align*}
+  \KEY{Rule} \quad
+    & \NAMEREF{force}
+        (  \NAMEREF{thunk}
+                (  \NAMEHYPER{../.}{Generic}{abstraction}
+                        (  \VAR{X} ) ) ) \leadsto 
+        \NAMEHYPER{../../../Computations/Normal}{Giving}{no-given}
+          (  \VAR{X} )
+\end{align*}
+% {% endraw %}
+
+

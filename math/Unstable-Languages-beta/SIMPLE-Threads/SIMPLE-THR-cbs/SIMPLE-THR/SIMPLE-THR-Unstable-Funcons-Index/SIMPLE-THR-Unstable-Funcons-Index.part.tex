@@ -1,0 +1,99 @@
+% {% raw %}
+
+
+
+    OUTLINE
+  \tableofcontents
+\begin{center}
+\rule{3in}{0.4pt}
+\end{center}
+
+Unstable Funcons, for use only in Unstable Languages
+
+\section{Computations}\hypertarget{computations}{}\label{computations}
+
+\subsection{Normal computation}\hypertarget{normal-computation}{}\label{normal-computation}
+
+\subsubsection{Value indexing}\hypertarget{value-indexing}{}\label{value-indexing}
+
+\begin{align*}
+  [ \
+  \KEY{Funcon} \quad & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Normal}{Indexing}{allocate-index} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Normal}{Indexing}{lookup-index}
+  \ ]
+\end{align*}
+\subsubsection{Memos}\hypertarget{memos}{}\label{memos}
+
+\begin{align*}
+  [ \
+  \KEY{Funcon} \quad & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Normal}{Memos}{initialise-memos} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Normal}{Memos}{memo-value} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Normal}{Memos}{memo-value-recall}
+  \ ]
+\end{align*}
+\subsection{Abnormal computation}\hypertarget{abnormal-computation}{}\label{abnormal-computation}
+
+\subsubsection{Postponing}\hypertarget{postponing}{}\label{postponing}
+
+\begin{align*}
+  [ \
+  \KEY{Funcon} \quad & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Abnormal}{Postponing}{postpone} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Abnormal}{Postponing}{postpone-after-effect}
+  \ ]
+\end{align*}
+\subsection{Threads}\hypertarget{threads}{}\label{threads}
+
+\subsubsection{Multithreading}\hypertarget{multithreading}{}\label{multithreading}
+
+\begin{align*}
+  [ \
+  \KEY{Funcon} \quad & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads}{Multithreading}{thread-joinable}
+  \ ]
+\end{align*}
+\paragraph{Activation}\hypertarget{activation}{}\label{activation}
+
+\begin{align*}
+  [ \
+  \KEY{Funcon} \quad & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads}{Multithreading}{multithread} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads}{Multithreading}{thread-activate}
+  \ ]
+\end{align*}
+\paragraph{Termination}\hypertarget{termination}{}\label{termination}
+
+\begin{align*}
+  [ \
+  \KEY{Funcon} \quad & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads}{Multithreading}{thread-join}
+  \ ]
+\end{align*}
+\subsubsection{Thread synchronisation}\hypertarget{thread-synchronisation}{}\label{thread-synchronisation}
+
+\paragraph{Locks}\hypertarget{locks}{}\label{locks}
+
+\begin{align*}
+  [ \
+  \KEY{Funcon} \quad & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads/Synchronising}{Locks}{is-exclusive-lock-holder}
+  \ ]
+\end{align*}
+\subparagraph{Reentrant locks}\hypertarget{reentrant-locks}{}\label{reentrant-locks}
+
+\begin{align*}
+  [ \
+  \KEY{Funcon} \quad & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads/Synchronising}{Locks}{reentrant-lock-create} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads/Synchronising}{Locks}{reentrant-lock-sync-else-wait} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads/Synchronising}{Locks}{reentrant-lock-release} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads/Synchronising}{Locks}{reentrant-lock-exit}
+  \ ]
+\end{align*}
+\paragraph{Notifications}\hypertarget{notifications}{}\label{notifications}
+
+\subparagraph{Rendezvous}\hypertarget{rendezvous}{}\label{rendezvous}
+
+\begin{align*}
+  [ \
+  \KEY{Funcon} \quad & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads/Synchronising}{Notifications}{rendezvous-create} \\
+  \KEY{Funcon} \quad & \NAMEHYPER{../../../../../Unstable-Funcons-beta/Computations/Threads/Synchronising}{Notifications}{rendezvous-sync-else-wait}
+  \ ]
+\end{align*}
+% {% endraw %}
+
+

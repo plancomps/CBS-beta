@@ -1,0 +1,48 @@
+% {% raw %}
+
+
+\begin{center}
+\rule{3in}{0.4pt}
+\end{center}
+
+\begin{displaymath}
+\KEY{Language} \quad \STRING{SIMPLE}
+\end{displaymath}
+
+\begin{align*}
+  \KEY{Syntax} \quad
+    \VARDECL{START} : \SYNDECL{start}
+      \ ::= \ & \
+      \SYNHYPER{../.}{SIMPLE-5-Programs}{pgm}
+\end{align*}
+\begin{align*}
+  \KEY{Semantics} \quad
+  & \SEMDECL{start} \LEFTPHRASE \ \_ : \SYNREF{start} \ \RIGHTPHRASE  
+    :  \TO \NAMEHYPER{../../../../../Funcons-beta/Values}{Value-Types}{values} 
+\\
+  \KEY{Rule} \quad
+    & \SEMREF{start} \LEFTPHRASE \
+                            \VARHYPER{../.}{SIMPLE-5-Programs}{Pgm} \
+                          \RIGHTPHRASE  = \\&\quad
+      \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Binding}{initialise-binding} \ 
+        \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Storing}{initialise-storing} \ 
+          \NAMEHYPER{../../../../../Funcons-beta/Computations/Normal}{Giving}{initialise-giving} \\&\quad\quad 
+            \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Failing}{finalise-failing} \ 
+              \NAMEHYPER{../../../../../Funcons-beta/Computations/Abnormal}{Throwing}{finalise-throwing} \\&\quad\quad\quad 
+                \SEMHYPER{../.}{SIMPLE-5-Programs}{run} \LEFTPHRASE \
+                                      \VAR{Pgm} \
+                                    \RIGHTPHRASE 
+\end{align*}
+\begin{align*}
+  [ \
+  \textsf{\SECTHYPER{../.}{SIMPLE-1-Lexical}{1}} \ & \textsf{Lexical Syntax} \\
+  \textsf{\SECTHYPER{../.}{SIMPLE-2-Expressions}{2}} \ & \textsf{Expressions} \\
+  \textsf{\SECTHYPER{../.}{SIMPLE-3-Statements}{3}} \ & \textsf{Statements} \\
+  \textsf{\SECTHYPER{../.}{SIMPLE-4-Declarations}{4}} \ & \textsf{Declarations} \\
+  \textsf{\SECTHYPER{../.}{SIMPLE-5-Programs}{5}} \ & \textsf{Programs} \\
+  \textsf{\SECTHYPER{../.}{SIMPLE-A-Disambiguation}{A}} \ & \textsf{Disambiguation}
+  \ ]
+\end{align*}
+% {% endraw %}
+
+
