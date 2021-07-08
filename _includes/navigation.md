@@ -4,33 +4,29 @@ To browse these CBS specifications, click the link for the preferred format in t
 
 : CBS text files on GitHub
   
-  With line numbers (useful when reporting issues or suggesting improvements) but no highlighting or hyperlinks
-  
-  Navigation to related source files requires familiarity with the folder hierarchy
+  - With line numbers (useful when reporting issues or suggesting improvements) but no highlighting or hyperlinks
+  - Navigation to related source files requires familiarity with the folder hierarchy
 
 [Plain]
 
 : Web pages with verbatim copies of source files
   
-  Names are highlighted, and references are hyperlinked to declarations
-  
-  Links to related pages support navigation between specifications
+  - Names are highlighted, and references are hyperlinked to declarations
+  - Links to related pages support navigation between specifications
 
 [Pretty]
 
 : Web pages displaying CBS with mathematical typography using [KaTeX]
   
-  Names are highlighted, and name references are hyperlinked to declarations
-  
-  Links to related pages support navigation between specifications
+  - Names are highlighted, and name references are hyperlinked to declarations
+  - Links to related pages support navigation between specifications
 
 [PDF]
 
 : Documents displaying CBS with mathematical typography using [LaTeX]
   
-  Names are highlighted, and references are hyperlinked to declarations
-  
-  When browsing PDFs in a web browser, links to related pages are only in the navigation panel
+  - Names are highlighted, and references are hyperlinked to declarations
+  - When browsing PDFs in a web browser, links to related pages are only in the navigation panel
     
   {:.note}
   > On macOS (Catalina), the [Preview app does not support hyperlinks to specific targets] in PDF pages;
@@ -47,8 +43,8 @@ The Markdown and LaTeX files from which the web pages and PDFs were generated ar
 together with the required [CBS-LaTeX] and [CBS-KaTeX] macro definitions and [CSS].
 The [Downloads] page explains how to obtain a copy and serve the files locally.
 
-[Downloads]: ../docs/Downloads
-[PDF]: ../docs/PDF
+[Downloads]: /CBS-beta/docs/Downloads
+[PDF]: /CBS-beta/docs/PDF
 
 [Plain sources]: https://github.com/plancomps/CBS-beta/tree/math/_docs
 [Pretty and PDF sources]: https://github.com/plancomps/CBS-beta/tree/math/_math

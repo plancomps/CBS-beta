@@ -57,6 +57,7 @@ exclude:
 
 include: # requires jekyll >= 4.0
   - "Funcons-beta/index.md"
+  - "Funcons-beta/Funcons-Index/index.md"
   - "Languages-beta/index.md"
   - "Unstable-Funcons-beta/index.md"
   - "Unstable-Languages-beta/index.md"
