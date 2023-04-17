@@ -80,7 +80,7 @@ Funcon
 ##### Exclusive locks
 /*
 Exclusive locks support mutual exclusion and suspension of blocked requests.
-An exclusive lock – also called a mutex – can be held by only one thread at
+An exclusive lock -- also called a mutex -- can be held by only one thread at
 the same time. It can be used to ensure mutual exclusion of so-called critical
 regions of thread bodies, and to avoid potential interference due to thread
 interleaving.
@@ -260,7 +260,7 @@ Funcon
 
 ##### Shared-exclusive locks
 /*
-A [shared-exclusive lock][] – also called a readers-writer (rw) lock – can be 
+A [shared-exclusive lock][] -- also called a readers-writer (rw) lock -- can be 
 held exclusively by a single thread, or shared by any number of threads at the
 same time. It can be released by any thread.
 
